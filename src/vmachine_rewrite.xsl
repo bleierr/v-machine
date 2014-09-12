@@ -28,8 +28,6 @@
    and modify the filename below (for example, "../src/vmachine.js" becomes
    "vmachine.js") -->
    <xsl:variable name="jsInclude">../src/vmachine.js</xsl:variable>
-
-   <xsl:variable name="initialVersions">2</xsl:variable>
    
    <!-- To change the VM so that the bibliographic information page does not
    appear at the initial load, change "true" to "false" below -->
@@ -70,6 +68,8 @@
    <xsl:variable name="witnesses" select="//tei:witness[@xml:id]" />
    
    <xsl:variable name="numWitnesses" select="count($witnesses)" />
+   
+   <xsl:variable name="initialVersions">2</xsl:variable>
       
    <xsl:template match="/">
      <html lang="en">
@@ -317,25 +317,26 @@
                   </xsl:when>
                   <xsl:when test="//tei:pb[@ed and @facs] and //tei:listWit/tei:witness[@xml:id]">
                      <!-- RB: -->
-                     <div class="facs-images">
+                     
                      <xsl:apply-templates select="tei:pb[@ed and @facs]"></xsl:apply-templates>
-                     </div>
+                     
                   </xsl:when>
                </xsl:choose>
             </xsl:for-each>
-         <xsl:apply-templates select="//tei:body" />
+            <xsl:apply-templates select="//tei:body" />
+             
          </div>
         
       </div>
-      <xsl:if test="$increment &lt; $initialVersions">
+      <xsl:if test="$increment &lt; $numWitnesses"> <!-- RB: changes from $initialVersions to $numWitnesses -->
          <xsl:call-template name="manuscriptPanel">
             <xsl:with-param name="increment" select="$increment + 1" />
          </xsl:call-template>
       </xsl:if>
       
    </xsl:template>
-   
-   
+
+
    <xsl:template match="tei:pb[@ed and @facs]">
       <!-- RB: added image on pbs -->
       <xsl:variable name="wit">
@@ -344,14 +345,16 @@
       <xsl:variable name="facs_id">
          <xsl:value-of select="substring(@facs,2)"/>
       </xsl:variable>
-      <xsl:call-template name="imageLink">
+      <div class="pagebreak">
+         <xsl:call-template name="imageLink">
           <xsl:with-param name="imageURL">
              <xsl:value-of select="//tei:facsimile/tei:graphic[@xml:id=$facs_id]/@url"/>
           </xsl:with-param>
           <xsl:with-param name="witness" select="$wit" />
        </xsl:call-template>
+      </div>
+ 
    </xsl:template>
-   
    
    
    <xsl:template match="/tei:TEI/tei:teiHeader/tei:fileDesc">

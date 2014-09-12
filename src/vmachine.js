@@ -1066,3 +1066,15 @@ function isHidden(el) {
     return false;
 }
 
+
+
+/**RB edits**/
+$(document).ready(function(){
+	$(".mssPanel").each(function(index){
+		if(index>1){
+			$(this).hide();
+		};
+	});
+
+
+});
