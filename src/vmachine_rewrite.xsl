@@ -10,29 +10,24 @@
    <!-- New doctype declarationfrom http://stackoverflow.com/questions/6334381/how-to-output-doctype-html-with-xslt-->
    <xsl:output method="html" doctype-system="about:legacy-compat" />
 
-   <!-- <xsl:strip-space elements="*" /> -->
+   <!-- custom JS -->
+   <xsl:variable name="jsCustom">../src/custom.js</xsl:variable>
    
-   <xsl:variable name="indexPage">../samples.html</xsl:variable>
+   <!-- JQuery include files -->
+   <xsl:variable name="jsJquery">../src/jquery/jquery-1.11.2.min.js</xsl:variable>
    
-   <xsl:variable name="vmLogo">../vm-images/poweredby.gif</xsl:variable>
+   <!-- Underscore.js include files -->
+   <xsl:variable name="jsUnderscore">../src/underscore/underscore-min.js</xsl:variable>
    
-   <xsl:variable name="cssInclude">../src/vmachine.css</xsl:variable>
+   <!-- Bootstrap include files -->
+   <xsl:variable name="jsBootstrap">../src/bootstrap/dist/js/bootstrap.min.js</xsl:variable>
    
-   <!-- The JavaScript include file. Keep in mind that, as of April 1, 2008,
-   the current beta version of Firefox 3.0 has instituted strong JavaScript
-   security policies that prevent the inclusion of any JS files from outside
-   of the current directory when loading a document from the local filesystem
-   (i.e., anything on your local computer not beginning with "http://").
-   Because of this, if you want to use the VM offline, you will need to
-   move the JavaScript includes into the same directory as your TEI documents,
-   and modify the filename below (for example, "../src/vmachine.js" becomes
-   "vmachine.js") -->
-   <xsl:variable name="jsInclude">../src/vmachine.js</xsl:variable>
+   <xsl:variable name="cssBootstrap">../src/bootstrap/dist/css/bootstrap.min.css</xsl:variable>
    
-   <!-- To change the VM so that the bibliographic information page does not
-   appear at the initial load, change "true" to "false" below -->
-   <xsl:variable name="displayBibInfo">true</xsl:variable>
-   <xsl:variable name="displayCritInfo">true</xsl:variable>
+   <xsl:variable name="cssBootstrapTheme">../src/bootstrap/dist/css/bootstrap-theme.min.css</xsl:variable>
+   
+   <!-- Bootstrap custom css for testing -->
+   <xsl:variable name="cssBootstrapCustom">../src/custom-stylesheet.css</xsl:variable>
    
   <!-- To change the VM so that line numbers are hidden by default, change
   "true" to "false" below -->
@@ -68,17 +63,63 @@
    <xsl:variable name="witnesses" select="//tei:witness[@xml:id]" />
    
    <xsl:variable name="numWitnesses" select="count($witnesses)" />
-   
-   <xsl:variable name="initialVersions">2</xsl:variable>
       
    <xsl:template match="/">
      <html lang="en">
          <xsl:call-template name="htmlHead" />
-         <body onload="init();">
-            <xsl:call-template name="mainBanner" />
+         <body>
+            <!-- Bootstrap navigation -->
+            
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+               <div class="container">
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                     </button>
+                     <a class="navbar-brand" href="#">VM5</a>
+                  </div>
+                  <div id="navbar" class="collapse navbar-collapse">
+                     <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Text comparison</a></li>
+                        <li><a href="#">Bibliographic Info</a></li>
+                        <li><a href="#">Visualisation</a></li>
+                     </ul>
+                  </div><!--/.nav-collapse -->
+               </div>
+            </nav>
+            
+            
+            
+            <!--  <xsl:call-template name="mainBanner" />-->
             <xsl:call-template name="manuscriptArea" />
-            <xsl:call-template name="imageViewer" />
-            <!-- <p>There are <xsl:value-of select="count($witnesses)" /> witnesses.</p> -->
+            <!-- <xsl:call-template name="imageViewer" />
+            <p>There are <xsl:value-of select="count($witnesses)" /> witnesses.</p> -->
+            
+            <script type="text/javascript">
+               <xsl:attribute name="src">
+                  <xsl:value-of select="$jsJquery" />
+               </xsl:attribute>
+            </script>
+            <script type="text/javascript">
+               <xsl:attribute name="src">
+                  <xsl:value-of select="$jsBootstrap" />
+               </xsl:attribute>
+            </script>
+            <script type="text/javascript">
+               <xsl:attribute name="src">
+                  <xsl:value-of select="$jsUnderscore" />
+               </xsl:attribute>
+            </script>
+            <script type="text/javascript">
+               <xsl:attribute name="src">
+                  <xsl:value-of select="$jsCustom" />
+               </xsl:attribute>
+            </script>
+            
+            
          </body>
       </html>
    </xsl:template>
@@ -91,24 +132,23 @@
          </title>
          <link rel="stylesheet" type="text/css">
             <xsl:attribute name="href">
-               <xsl:value-of select="$cssInclude" />
+               <xsl:value-of select="$cssBootstrap" />
             </xsl:attribute>
          </link>
-         <!-- RB: JS and CSS files for the zoom and pan effect -->
-         <!-- RB: jquery.panzoom plugin from https://github.com/timmywil/jquery.panzoom -->
-         <link rel="stylesheet" type="text/css" href="../src/panzoom/styles/panzoom.css"></link>
-         <script src="../src/panzoom/js/jquery-1.11.0.min.js" type="text/javascript">//</script>
-         <script src="../src/panzoom/js/jquery.panzoom.min.js" type="text/javascript">//</script>
-         <script src="../src/panzoom/js/jquery.mousewheel.js" type="text/javascript">//</script>
-         
+         <link rel="stylesheet" type="text/css">
+            <xsl:attribute name="href">
+               <xsl:value-of select="$cssBootstrapTheme" />
+            </xsl:attribute>
+         </link>
+         <link rel="stylesheet" type="text/css">
+            <xsl:attribute name="href">
+               <xsl:value-of select="$cssBootstrapCustom" />
+            </xsl:attribute>
+         </link>
          <xsl:comment><![CDATA[[if IE 6]>
             <link rel="stylesheet" type="text/css" href="../src/vmachine_ie6.css">
          <![endif]]]></xsl:comment>
-         <script type="text/javascript">
-            <xsl:attribute name="src">
-               <xsl:value-of select="$jsInclude" />
-            </xsl:attribute>
-         </script>
+         
          <script type="text/javascript">
             <xsl:call-template name="jsWitnessArray" />
             <xsl:call-template name="createTimelinePoints" />
@@ -118,7 +158,7 @@
    </xsl:template>
    
    <xsl:template name="jsWitnessArray">
-      var witnesses = new Array();
+      var witnesses = new Object();
       <xsl:for-each select="$witnesses">
          <xsl:variable name="witID" select="@xml:id" />
          witnesses["<xsl:value-of select="$witID" />"] = "<xsl:for-each select="ancestor::tei:listWit[@xml:id]">
@@ -230,26 +270,34 @@
    </xsl:template>
    
    <xsl:template name="manuscriptArea">
-      <div id="mssArea">
+      <!-- start of Bootstrap container -->
+      <div id="mssArea" class="container">
          <xsl:apply-templates select="/tei:TEI/tei:teiHeader/tei:fileDesc" />
-         <div id="manuscripts">
-            
-               <xsl:value-of select="@xml:id"/>
+         <!-- start of Bootstrap rows -->
+         
+         
+         <div id="manuscripts" class="rows">
+            <div class="col-md-6">
+            <xsl:call-template name="manuscriptPanel">
+               <xsl:with-param name="id" select="'1'" />
+            </xsl:call-template>
+            </div>
+            <div class="col-md-6">
                <xsl:call-template name="manuscriptPanel">
-                  <xsl:with-param name="increment" select="'1'" />
+                  <xsl:with-param name="id" select="'2'" />
                </xsl:call-template>
-            
+            </div>
          </div>
-         <xsl:call-template name="notesPanel" />
-         <br class="clear" />
+         <!-- <xsl:call-template name="notesPanel" />
+         <br class="clear" /> -->
       </div>
    </xsl:template>
    
    <xsl:template name="manuscriptPanel">
-      <xsl:param name="increment" />
-    
-        
+      <xsl:param name="id" />
       <div class="panel mssPanel">
+         <xsl:attribute name="id">panel<xsl:value-of select="$id"/></xsl:attribute>
+         <!--  
          <div class="panelBanner">
             <img class="closePanel" onclick="closePanel(this.parentNode.parentNode);" src="../vm-images/closePanel.gif" alt="X (Close panel)" />
             <xsl:text>Witness </xsl:text>
@@ -264,17 +312,28 @@
                      </xsl:attribute>
                      <xsl:value-of select="position()" />
                      <xsl:text>: </xsl:text>
-                     <!--<xsl:value-of select="@xml:id" />-->
-                     <xsl:value-of select="." />
+                     <xsl:value-of select="@xml:id" />
                   </option>
                </xsl:for-each>
             </select>
+         </div>-->
+         <div class="witSelect">
+            <xsl:for-each select="$witnesses">
+               <xsl:variable name="witID" select="@xml:id" />
+               <xsl:element name="button">
+                  <xsl:attribute name="name">wit-button</xsl:attribute>
+                  <xsl:attribute name="class">wit-button</xsl:attribute>
+                  <xsl:attribute name="type">button</xsl:attribute>
+                  <xsl:attribute name="value"><xsl:value-of select="$witID"/></xsl:attribute>
+                  <xsl:value-of select="$witID"/>
+               </xsl:element>
+            </xsl:for-each>
          </div>
          <div class="mssContent">
             <xsl:for-each select="$witnesses">
                <xsl:variable name="witID" select="@xml:id" />
-            <!-- RB: creates body for each witness panel -->
-            <!--foreach witness with media-->
+
+               <!--foreach witness with media-->
                <xsl:for-each select="//tei:witDetail[@target = concat('#',$witID) and tei:media[@url]]">
 
                   <div>
@@ -302,63 +361,30 @@
 
                </xsl:for-each><!--foreach witness with media-->
 
-               <xsl:choose>
-                  <xsl:when test="//tei:note[@type='image']/tei:witDetail[@target = concat('#',$witID)]//tei:graphic[@url]">
-                  <!-- make only a div if images exist -->
+               <xsl:if test="//tei:note[@type='image']/tei:witDetail[@target = concat('#',$witID)]//tei:graphic[@url]">
+                  <!-- RB:make only a div if images exist -->
                   <div class="facs-images">
-                     <xsl:for-each select="//tei:note[@type='image']/tei:witDetail[@target = concat('#',$witID)]//tei:graphic[@url]">
-                        
-                        <xsl:call-template name="imageLink">
-                           <xsl:with-param name="imageURL" select="@url" />
-                           <xsl:with-param name="witness" select="translate(ancestor::tei:witDetail/@wit,'#','')" />
-                        </xsl:call-template>
-                     </xsl:for-each>
-                    </div>
-                  </xsl:when>
-                  <xsl:when test="//tei:pb[@ed and @facs] and //tei:listWit/tei:witness[@xml:id]">
-                     <!-- RB: -->
-                     
-                     <xsl:apply-templates select="tei:pb[@ed and @facs]"></xsl:apply-templates>
-                     
-                  </xsl:when>
-               </xsl:choose>
+               <xsl:for-each select="//tei:note[@type='image']/tei:witDetail[@target = concat('#',$witID)]//tei:graphic[@url]">
+                  <xsl:call-template name="imageLink">
+                     <xsl:with-param name="imageURL" select="@url" />
+                     <xsl:with-param name="witness" select="translate(ancestor::tei:witDetail/@wit,'#','')" />
+                  </xsl:call-template>
+               </xsl:for-each>
+                  </div>
+               </xsl:if>
             </xsl:for-each>
             <xsl:apply-templates select="//tei:body" />
-             
          </div>
-        
       </div>
-      <xsl:if test="$increment &lt; $numWitnesses"> <!-- RB: changes from $initialVersions to $numWitnesses -->
+      <!-- <xsl:if test="$increment &lt; $initialVersions">
          <xsl:call-template name="manuscriptPanel">
             <xsl:with-param name="increment" select="$increment + 1" />
          </xsl:call-template>
-      </xsl:if>
-      
+      </xsl:if> -->
    </xsl:template>
-
-
-   <xsl:template match="tei:pb[@ed and @facs]">
-      <!-- RB: added image on pbs -->
-      <xsl:variable name="wit">
-            <xsl:value-of select="@ed"/>
-      </xsl:variable>
-      <xsl:variable name="facs_id">
-         <xsl:value-of select="substring(@facs,2)"/>
-      </xsl:variable>
-      <div class="pagebreak">
-         <xsl:call-template name="imageLink">
-          <xsl:with-param name="imageURL">
-             <xsl:value-of select="//tei:facsimile/tei:graphic[@xml:id=$facs_id]/@url"/>
-          </xsl:with-param>
-          <xsl:with-param name="witness" select="$wit" />
-       </xsl:call-template>
-      </div>
- 
-   </xsl:template>
-   
    
    <xsl:template match="/tei:TEI/tei:teiHeader/tei:fileDesc">
-      <div class="panel" id="bibPanel">
+      <!--  <div class="panel" id="bibPanel">
          <xsl:if test="$displayBibInfo != 'true'">
             <xsl:attribute name="style">
                <xsl:text>display: none;</xsl:text>
@@ -489,7 +515,7 @@
          </div>
       </div>
       <div class="panel" id="critPanel">
-        <xsl:if test="$displayCritInfo != 'true' or not(tei:notesStmt/tei:note[@type='critIntro'])">
+         <xsl:if test="$displayCritInfo != 'true' or not(tei:notesStmt/tei:note[@type='critIntro'])">
                <xsl:attribute name="style">
                   <xsl:text>display: none;</xsl:text>
                </xsl:attribute>
@@ -509,14 +535,14 @@
                   
                   
                   
-              <!--    
+              
                   <xsl:for-each select="tei:notesStmt/tei:note[@type='critIntro']/tei:p">
                      <p>        <xsl:apply-templates /></p>
                   </xsl:for-each>
-                -->
+               
                </xsl:if>
             </div>
-         </div>
+         </div> -->
    </xsl:template>
    
    <xsl:template match="tei:publicationStmt">
@@ -664,11 +690,8 @@
    <xsl:template name="imageLink">
       <xsl:param name="imageURL" />
       <xsl:param name="witness" />
-      <xsl:variable name="pos">
-         <xsl:number value="position()" format="1" />
-      </xsl:variable>
       <xsl:if test="$imageURL != ''">
-         <div class="illgrp" id="item-image">
+         <img src="../vm-images/image.gif" alt="Facsimile Image Placeholder">
             <xsl:attribute name="class">
                <xsl:text>imageLink</xsl:text>
                <xsl:if test="$witness != ''">
@@ -676,49 +699,14 @@
                   <xsl:value-of select="$witness" />
                </xsl:if>
             </xsl:attribute>
-               <!-- RB: jquery.panzoom plugin from https://github.com/timmywil/jquery.panzoom The links to the JS and CSS files are in the facsimile template-->
-               
-               <xsl:variable name="img-container-id">panzoom<xsl:value-of select="$pos"/></xsl:variable>
-               <xsl:element name="div">
-                  <xsl:attribute name="class">section</xsl:attribute>
-                  <xsl:attribute name="id"><xsl:value-of select="$img-container-id"/></xsl:attribute>
-                  
-                  
-                  <div class="panzoom-parent">
-                     <!-- zoom control -->
-                     <div class="buttons">
-                        <button class="zoom-in">+</button>
-                        <button class="zoom-out">-</button>
-                        <input type="range" class="zoom-range"/>
-                        <button class="reset">Reset</button>
-                     </div>
-                     <!-- panzoom image -->
-                     <div class="panzoom">
-                        <img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image">
-                           <xsl:attribute name="src">
-                              <xsl:value-of select="$imageURL" />
-                           </xsl:attribute>
-                           
-                        </img>
-                     </div>
-                  </div>
-                  
-                  <script  type="text/javascript">
-                     (function() {
-                     var $section = $(<xsl:text>'div#</xsl:text><xsl:value-of select="$img-container-id"/><xsl:text>'</xsl:text>);
-                     $section.find('.panzoom').panzoom({
-                     $zoomIn: $section.find(".zoom-in"),
-                     $zoomOut: $section.find(".zoom-out"),
-                     $zoomRange: $section.find(".zoom-range"),
-                     $reset: $section.find(".reset")
-                     });
-                     })();
-                  </script>
-                  
-               </xsl:element>
-               <!-- End implementation of jquery.panzoom -->
-            </div>
-         
+            <xsl:attribute name="onclick">
+               <xsl:text>return showImgPanel(event, 'imageViewer','</xsl:text>
+               <xsl:value-of select="$imageURL" />
+               <xsl:text>','</xsl:text>
+               <xsl:value-of select="$witness" />
+               <xsl:text>','-250','0');</xsl:text>
+            </xsl:attribute>
+         </img>
       </xsl:if>
    </xsl:template>
    
@@ -733,17 +721,17 @@
             <xsl:value-of select="$uniqueID" />
          </xsl:attribute>
          
-         <!--DC-->
-         <xsl:if test="not(@loc) and not(descendant::*/@loc)">
-         <!--/DC-->
+         <!--DC
+         <xsl:if test="not(@loc) and not(descendant::*/@loc)">-->
+         <!--/DC
             <xsl:attribute name="onclick">
                <xsl:text>matchLine('line</xsl:text>
                <xsl:value-of select="$uniqueID" />
                <xsl:text>');</xsl:text>
-            </xsl:attribute>
-         <!--DC-->
+            </xsl:attribute>-->
+         <!--DC
          </xsl:if>
-         <!--/DC-->
+         /DC-->
          
          <div>
             <xsl:choose>
@@ -795,6 +783,7 @@
             </xsl:with-param>
          </xsl:call-template>
       </xsl:for-each>
+   
    </xsl:template>
       
    <xsl:template match="tei:hi">
@@ -850,10 +839,10 @@
    </xsl:template>
    
    <xsl:template match="tei:lb">
-      <br class="linebreak" />
+      <div class="linebreak"></div>
    </xsl:template>
    
-   <!--<xsl:template match="tei:pb">
+   <xsl:template match="tei:pb">
       <hr>
          <xsl:attribute name="class">
             <xsl:text>pagebreak</xsl:text>
@@ -864,6 +853,7 @@
          </xsl:attribute>
       </hr>
       <xsl:if test="not(ancestor::tei:l) and @facs">
+         <div class="facs-images">
          <xsl:call-template name="imageLink">
             <xsl:with-param name="imageURL">
                <xsl:choose>
@@ -889,8 +879,9 @@
                </xsl:choose>
             </xsl:with-param>
          </xsl:call-template>
+         </div>
       </xsl:if>
-   </xsl:template>-->
+   </xsl:template>
    
    
    <xsl:template match="tei:p|tei:u">
@@ -932,7 +923,6 @@
             </xsl:if>
          </xsl:attribute>
       </div>
-      <br/>
    </xsl:template>
 
    <xsl:template match="tei:table">
@@ -1011,7 +1001,7 @@
    </xsl:template>
    
    <xsl:template match="tei:note">
-      <div class="noteicon">
+      <!-- <div class="noteicon">
          <xsl:if test="$notesFormat != 'popup'">
             <xsl:attribute name="style">
                <xsl:text>display: none;</xsl:text>
@@ -1057,7 +1047,7 @@
             <xsl:text> </xsl:text>
             <xsl:apply-templates />
          </div>
-      </div>
+      </div> -->
    </xsl:template>
    
    <xsl:template match="tei:note//tei:note">
@@ -1102,7 +1092,7 @@
          <xsl:if test="count(ancestor::tei:l) = 0">
          -->   
 
-            <!--DC-->
+            <!--DC
             <xsl:choose>
                <xsl:when test="@loc"> 
                   <xsl:attribute name="onclick">
@@ -1117,7 +1107,7 @@
                   </xsl:attribute>
                </xsl:otherwise>
             </xsl:choose>
-            <!--/DC-->
+            /DC-->
    
          <!--DC
          </xsl:if>
@@ -1235,7 +1225,7 @@
       </a>
       
    </xsl:template>
-   <xsl:template match="tei:closer">
+  <xsl:template match="tei:closer">
       <div class="closer">
      
          <xsl:apply-templates/>
@@ -1243,6 +1233,7 @@
       </div>
       
    </xsl:template>
+   
    
    <xsl:template match="tei:head[(@type='section')]">
       <div class="section">
@@ -1312,7 +1303,3 @@
     </xsl:template>
    
 </xsl:stylesheet>
-
-
-
-
