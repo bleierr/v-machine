@@ -5,9 +5,9 @@ function init() {
    var mssPanels = getElementsByClass("mssPanel",mssArea,"div");
    for (i = 0; i < mssPanels.length; i++) {
       var currentPanel = mssPanels[i];
-      var witnessMenu = getElementsByClass("witnessMenu",currentPanel,"select")[0];
-      var witness = witnessMenu.value;
-      changeWitness(witness,currentPanel);
+      //var witnessMenu = getElementsByClass("witnessMenu",currentPanel,"select")[0];
+      //var witness = witnessMenu.value;
+      //changeWitness(witness,currentPanel);
    }
    //resizePanels();
 
@@ -146,14 +146,17 @@ function openPanel() {
       alert("Sorry, but the number of visible versions may not exceed the total number of available witnesses.");
    } else {
       var witnessIndex = getElementsByClass("witnessMenu",mssPanels[totalPanels - 1],"select")[0].selectedIndex;
-      var newPanel = mssPanels[totalPanels - 1].cloneNode(true);
-      var newMenu = getElementsByClass("witnessMenu",newPanel,"select")[0];
-      var newWitnessIndex = witnessIndex + 1;
-      if (newWitnessIndex >= newMenu.length) newWitnessIndex = witnessIndex;
-      newMenu.selectedIndex = newWitnessIndex;
-      manuscriptsDiv.appendChild(newPanel);
+      //var newPanel = mssPanels[totalPanels - 1].cloneNode(true);
+	  var newPanel = $(mssPanels[totalPanels - 1]).clone(true, true);
+	  newPanel.draggable().resizable().appendTo("#manuscripts");
+      //var newMenu = getElementsByClass("witnessMenu",newPanel,"select")[0];
+	  var newMenu = newPanel.find(".witnessMenu");
+      //var newWitnessIndex = witnessIndex + 1;
+      //if (newWitnessIndex >= newMenu.length) newWitnessIndex = witnessIndex;
+      //newMenu.selectedIndex = newWitnessIndex;
+      //manuscriptsDiv.appendChild(newPanel);
       //resizePanels();
-      changeWitness(newMenu.value,newPanel);
+      //changeWitness(newMenu.value,newPanel);
    }
 }
 function closePanel(panel) {
@@ -1066,6 +1069,7 @@ function isHidden(el) {
     return false;
 }
 
+
 //RB code
 
 $(function() {
@@ -1075,6 +1079,33 @@ $(function() {
 $( ".resizable" ).resizable();
 });
  
+$(document).ready(function(){
+	$("#manuscripts>.mssPanel").each(function(){
+		var value = $(this).find(".witnessMenu>option[selected]").attr("value");
+		
+	
+		var mssContent = $(this).find(".mssContent");
+		var elementList = $("#contentData").find("."+value);
+		
+		$.each(elementList, function(idx, ele){
+			$(ele).parent().attr("line-id");
+			mssContent.append(ele);
+		});
+	
+	});
+	
 
+});
   
   
+//select witnesses
+
+$(document).ready(function(){
+	$("#selectWitness").click(function(){
+		$("#witnessList").toggle();
+	});
+
+
+
+
+});
