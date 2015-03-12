@@ -1,4 +1,4 @@
-window.onresize = resizePanels;
+//window.onresize = resizePanels;
 
 function init() {
    var mssArea = document.getElementById("mssArea");
@@ -9,7 +9,7 @@ function init() {
       var witness = witnessMenu.value;
       changeWitness(witness,currentPanel);
    }
-   resizePanels();
+   //resizePanels();
 
 }//init
 
@@ -152,7 +152,7 @@ function openPanel() {
       if (newWitnessIndex >= newMenu.length) newWitnessIndex = witnessIndex;
       newMenu.selectedIndex = newWitnessIndex;
       manuscriptsDiv.appendChild(newPanel);
-      resizePanels();
+      //resizePanels();
       changeWitness(newMenu.value,newPanel);
    }
 }
@@ -166,7 +166,7 @@ function closePanel(panel) {
       alert("Sorry, but you cannot close all versions.");
    } else {
       manuscriptsDiv.removeChild(panel);
-      resizePanels();
+      //resizePanels();
       presentInlineNotes();
       if (panelButton.disabled == true) {
          panelButton.disabled = false;
@@ -431,7 +431,7 @@ function notesFormat(format) {
          icons[v].style.display = "none";
       }
    }
-   resizePanels();
+   //resizePanels();
 }
 function toggleBiblio() {
    var bibPanel = document.getElementById("bibPanel");
@@ -441,7 +441,7 @@ function toggleBiblio() {
    } else {
       bibPanel.style.display = "block";
    }
-   resizePanels();
+   //resizePanels();
 }
 
 function toggleCrit() {
@@ -452,7 +452,7 @@ function toggleCrit() {
    } else {
       critPanel.style.display = "block";
    }
-   resizePanels();
+   //resizePanels();
 }
 
 function hideNotesPanel(panel) {
@@ -464,7 +464,7 @@ function hideNotesPanel(panel) {
          notesMenu.selectedIndex = i;
       }
    }
-   resizePanels();
+   //resizePanels();
 }
 
 
@@ -1066,3 +1066,15 @@ function isHidden(el) {
     return false;
 }
 
+//RB code
+
+$(function() {
+    $( ".draggable" ).draggable();
+  });
+$(function() {
+$( ".resizable" ).resizable();
+});
+ 
+
+  
+  

@@ -18,6 +18,8 @@
    
    <xsl:variable name="cssInclude">../src/vmachine.css</xsl:variable>
    
+   <xsl:variable name="cssJQuery-UI">../src/js/jquery-ui-1.11.3/jquery-ui.min.css</xsl:variable>
+   
    <!-- The JavaScript include file. Keep in mind that, as of April 1, 2008,
    the current beta version of Firefox 3.0 has instituted strong JavaScript
    security policies that prevent the inclusion of any JS files from outside
@@ -29,6 +31,11 @@
    "vmachine.js") -->
    <xsl:variable name="jsInclude">../src/vmachine.js</xsl:variable>
 
+   <!-- JQuery include files -->
+   <xsl:variable name="jsJquery">../src/js/jquery-1.11.2.min.js</xsl:variable>
+   <xsl:variable name="jsJquery-UI">../src/js/jquery-ui-1.11.3/jquery-ui.min.js</xsl:variable>
+   
+   
    <xsl:variable name="initialVersions">2</xsl:variable>
    
    <!-- To change the VM so that the bibliographic information page does not
@@ -97,6 +104,24 @@
          <xsl:comment><![CDATA[[if IE 6]>
             <link rel="stylesheet" type="text/css" href="../src/vmachine_ie6.css">
          <![endif]]]></xsl:comment>
+         
+         <!-- RB: added JQuery and JQuery UI support -->
+         <link rel="stylesheet" type="text/css">
+            <xsl:attribute name="href">
+               <xsl:value-of select="$cssJQuery-UI" />
+            </xsl:attribute>
+         </link>
+         
+         <script type="text/javascript">
+            <xsl:attribute name="src">
+               <xsl:value-of select="$jsJquery" />
+            </xsl:attribute>
+         </script>
+         <script type="text/javascript">
+            <xsl:attribute name="src">
+               <xsl:value-of select="$jsJquery-UI" />
+            </xsl:attribute>
+         </script>
          <script type="text/javascript">
             <xsl:attribute name="src">
                <xsl:value-of select="$jsInclude" />
@@ -157,7 +182,7 @@
    <xsl:template name="mainControls">
       <div id="mainControls">
          <input type="button" id="newPanel" value="New Version" onclick="openPanel();" />
-         &#8226;
+         
          <input type="button" id="bibToggle" value="Bibliographic Info" onclick="toggleBiblio();" />
 
          <input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" >
@@ -171,14 +196,14 @@
          
          <!-- &#8226;
          <input type="button" id="helpToggle" value="Help Viewer" onclick="toggleHelp();" /> -->
-         &#8226;
+         
          <label for="toggleLineNumbers">Line Numbers:</label>
          <input type="checkbox" id="toggleLineNumbers" onclick="toggleLineNumbers(this.checked);">
             <xsl:if test="$displayLineNumbers != 'false'">
                <xsl:attribute name="checked">checked</xsl:attribute>
             </xsl:if>
          </input>
-         &#8226;
+         
          <select id="notesMenu">
             <xsl:choose>
                <xsl:when test="//tei:body//tei:note[not(@type='image')]">
@@ -212,7 +237,7 @@
                </xsl:otherwise>
             </xsl:choose>
          </select>
-         &#8226;
+         
          <a>
             <xsl:attribute name="href">
                <xsl:value-of select="$indexPage" />
@@ -237,7 +262,8 @@
    
    <xsl:template name="manuscriptPanel">
       <xsl:param name="increment" />
-      <div class="panel mssPanel">
+      <!-- RB: added draggable resizeable -->
+      <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable">
          <div class="panelBanner">
             <img class="closePanel" onclick="closePanel(this.parentNode.parentNode);" src="../vm-images/closePanel.gif" alt="X (Close panel)" />
             <xsl:text>Witness </xsl:text>

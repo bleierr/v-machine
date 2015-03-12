@@ -32,22 +32,20 @@ h6{
 }
 
 div#mainBanner{
-    position:relative;
-    top:0;
-    left:0;
-    width:58.69em;
+    float:left;
+    /*width:58.69em;*/
+	width:100%;
     min-width:770px;
     height:5.34em;
     min-height:70px;
 }
 div#mainBanner div#brandingLogo{
-    position:absolute;
-    top:0;
-    left:0;
+    float:left;
     width:8.38em;
     height:5.34em;
     min-height:70px;
     background:#6699CC;
+	
 }
 div#mainBanner div#brandingLogo img{
     width:8.38em;
@@ -57,9 +55,7 @@ div#mainBanner div#brandingLogo img{
     margin:1.22em auto 0 auto;
 }
 div#mainBanner div#headline{
-    position:absolute;
-    top:0;
-    left:8.38em;
+    float:left;
     width:46.7em;
     height:2.21em;
     font-family:sans-serif;
@@ -87,18 +83,7 @@ div#mainBanner div#headline span.versionCount{
     font-size:1.07em;
     font-style:italic;
 }
-div#mainBanner img#topEdge{
-    position:absolute;
-    top:0;
-    right:0;
-    width:3.85em;
-    min-width:50px;
-    height:2.2em;
-    min-height:29px;
-    border:none;
-    padding:0;
-    margin:0;
-}
+
 div#mainBanner div#mainControls{
     position:absolute;
     top:2.21em;
@@ -129,6 +114,7 @@ div#mssArea div.panel{
     float:left;
     border:1px solid black;
     min-height:250px;
+	width: 300px;
     margin:0;
     padding:0;
 }
@@ -458,3 +444,40 @@ span.viewerHandleLt{
     max-width:37.5em;
     max-height:37.5em;
 }
+/*RB edits*/
+#versionDropdown{
+	float:right;
+}
+#witnessList, #selectWitness{
+	background: #efefef; 
+	background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
+	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+	border-radius: 10px;
+	padding: 5px;
+	
+}
+#versionDropdown{
+	float:left;
+	
+}
+#selectWitness{
+	width:15em;
+	text-align:center;
+	font-size: 1.5em;
+}
+#witnessList{
+	display:none;
+}
+#witnessList ul {
+		padding:0;
+	}
+#witnessList li {
+		float: none; 
+		list-style: none;
+		padding: 5px;
+		border-top: 1px solid #6b727c;
+		border-bottom: 1px solid #575f6a;
+		position: relative;
+	}
