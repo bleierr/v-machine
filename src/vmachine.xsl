@@ -252,8 +252,7 @@
                      </xsl:attribute>
                      <xsl:value-of select="position()" />
                      <xsl:text>: </xsl:text>
-                     <!--<xsl:value-of select="@xml:id" />-->
-                     <xsl:value-of select="." />
+                     <xsl:value-of select="@xml:id" />
                   </option>
                </xsl:for-each>
             </select>
@@ -291,15 +290,14 @@
                </xsl:for-each><!--foreach witness with media-->
 
                <xsl:if test="//tei:note[@type='image']/tei:witDetail[@target = concat('#',$witID)]//tei:graphic[@url]">
-                  <!-- make only a div if images exist -->
+                  <!-- RB:make only a div if images exist -->
                   <div class="facs-images">
-                     <xsl:for-each select="//tei:note[@type='image']/tei:witDetail[@target = concat('#',$witID)]//tei:graphic[@url]">
-                        
-                        <xsl:call-template name="imageLink">
-                           <xsl:with-param name="imageURL" select="@url" />
-                           <xsl:with-param name="witness" select="translate(ancestor::tei:witDetail/@wit,'#','')" />
-                        </xsl:call-template>
-                     </xsl:for-each>
+               <xsl:for-each select="//tei:note[@type='image']/tei:witDetail[@target = concat('#',$witID)]//tei:graphic[@url]">
+                  <xsl:call-template name="imageLink">
+                     <xsl:with-param name="imageURL" select="@url" />
+                     <xsl:with-param name="witness" select="translate(ancestor::tei:witDetail/@wit,'#','')" />
+                  </xsl:call-template>
+               </xsl:for-each>
                   </div>
                </xsl:if>
             </xsl:for-each>
@@ -713,6 +711,7 @@
             </xsl:with-param>
          </xsl:call-template>
       </xsl:for-each>
+   
    </xsl:template>
       
    <xsl:template match="tei:hi">
@@ -768,7 +767,7 @@
    </xsl:template>
    
    <xsl:template match="tei:lb">
-      <br class="linebreak" />
+      <div class="linebreak"></div>
    </xsl:template>
    
    <xsl:template match="tei:pb">
@@ -782,6 +781,7 @@
          </xsl:attribute>
       </hr>
       <xsl:if test="not(ancestor::tei:l) and @facs">
+         <div class="facs-images">
          <xsl:call-template name="imageLink">
             <xsl:with-param name="imageURL">
                <xsl:choose>
@@ -807,6 +807,7 @@
                </xsl:choose>
             </xsl:with-param>
          </xsl:call-template>
+         </div>
       </xsl:if>
    </xsl:template>
    
@@ -850,7 +851,6 @@
             </xsl:if>
          </xsl:attribute>
       </div>
-      <br/>
    </xsl:template>
 
    <xsl:template match="tei:table">
@@ -1153,7 +1153,7 @@
       </a>
       
    </xsl:template>
-   <xsl:template match="tei:closer">
+  <xsl:template match="tei:closer">
       <div class="closer">
      
          <xsl:apply-templates/>
@@ -1161,6 +1161,7 @@
       </div>
       
    </xsl:template>
+   
    
    <xsl:template match="tei:head[(@type='section')]">
       <div class="section">
@@ -1230,7 +1231,3 @@
     </xsl:template>
    
 </xsl:stylesheet>
-
-
-
-

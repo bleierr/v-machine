@@ -1,0 +1,2419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="../src/vmachine.xsl"?>
+<?xml-model href="../schema/vmachine.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/vmachine.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Neak Luong Selections</title>
+            <respStmt>
+               <resp>transcribed, encoded, and edited by</resp>
+               <persName>Daniel Carter</persName>
+            </respStmt>
+         </titleStmt>
+
+         <editionStmt>
+            <edition n="1"/>
+            <respStmt>
+               <resp>Transcription, encoding, transformations, and notes</resp>
+               <persName>Daniel Carter</persName>
+               <orgName>University of Texas at Austin</orgName>
+            </respStmt>
+         </editionStmt>
+
+         <extent/>
+
+         <publicationStmt>
+            <publisher></publisher>
+            <address>
+               <addrLine/>
+            </address>
+            <idno type="ISBN"/>
+            <availability>
+               <p/>
+            </availability>
+            <distributor/>
+         </publicationStmt>
+
+         <notesStmt>
+            <note type="image" anchored="true">
+               <witDetail wit="#nb1" target="#nb1" place="apparatus"> Notebook 1
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook1-1of3-p6.jpg"/>
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook1-2of3-p7.jpg"/>
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook1-3of3-loosesheet.jpg"/>
+               </witDetail>
+               <witDetail wit="#nb3a" target="#nb3a" place="apparatus"> Notebook 3a
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook3a-1of3-p15.jpg"/>
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook3a-2of3-p16.jpg"/>
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook3a-3of3-p17.jpg"/>
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook3a-3of3-loosesheet.jpg"/>
+               </witDetail>
+               <witDetail wit="#nb3b" target="#nb3b" place="apparatus"> Notebook 3b
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook3b-1of3-p40.jpg"/>
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook3b-2of3-p41.jpg"/>
+               </witDetail>               
+               <witDetail wit="#nb4" target="#nb4" place="apparatus"> Notebook 4
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook4-1of9-p33.jpg"/>
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook4-2of9-p34.jpg"/>
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook4-3of9-p35.jpg"/>
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook4-4of9-p36.jpg"/>
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook4-5of9-p36a.jpg"/>
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook4-6of9-p37.jpg"/>
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook4-7of9-p38.jpg"/>
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook4-8of9-p39.jpg"/>
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook4-9of9-p40.jpg"/>
+               </witDetail> 
+               <witDetail wit="#nb5" target="#nb5" place="apparatus"> Notebook 5
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook5-1of4-p16.jpg"/>
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook5-2of4-p17.jpg"/>
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook5-3of4-p17a.jpg"/>
+                  <graphic url="images/SpaldingGray-NeakLuongsample-Notebook5-4of4-p18.jpg"/>
+               </witDetail>
+            </note>
+         </notesStmt>
+
+         <sourceDesc>
+            <listBibl>
+               <msDesc>
+                  <msIdentifier>
+                     <repository>See witness list.</repository>
+                  </msIdentifier>
+               </msDesc>
+            </listBibl>
+         </sourceDesc>
+      </fileDesc>
+
+      <encodingDesc>
+         <projectDesc>
+           <p></p>
+         </projectDesc>
+         <p>Transcriptions are encoded in TEI(P5)-conformant XML.</p>
+         <samplingDecl>
+           <p></p>
+         </samplingDecl>
+         <editorialDecl>
+            <p></p>
+         </editorialDecl>
+
+
+   
+
+      </encodingDesc>
+
+   </teiHeader>
+
+
+   <text>
+      <front>
+         <div>
+            
+            <listWit>
+               <witness xml:id="nb1">Notebook 1</witness>
+               <witness xml:id="nb3a">Notebook 3a</witness>
+               <witness xml:id="nb3b">Notebook 3b</witness>
+               <witness xml:id="nb4">Notebook 4</witness>
+               <witness xml:id="nb5">Notebook 5</witness>
+               <witness xml:id="book">Book Version</witness>
+               <!--<witness xml:id="film">Film Version</witness>-->
+               <witness xml:id="v1983">1983 Version</witness>
+               <witness xml:id="v1984">1984 Version</witness>
+            </listWit>
+            
+            <witDetail wit="#v1983" target="#v1983">
+               <media mimeType="audio/mp3" url="audio/SpaldingGray-NeakLuongsample-12-20-1983-HRC4751.mp3" />
+               <media mimeType="audio/ogg" url="audio/SpaldingGray-NeakLuongsample-12-20-1983-HRC4751.ogg" />
+            </witDetail>
+            
+            <witDetail wit="#v1984" target="#v1984">
+               <media mimeType="audio/mp3" url="audio/SpaldingGray-NeakLuongsample-01-03-1984-HRC4761.mp3" />
+               <media mimeType="audio/ogg" url="audio/SpaldingGray-NeakLuongsample-01-03-1984-HRC4761.ogg" />
+            </witDetail>
+
+            <witDetail wit="#film" target="#film">
+               <media mimeType="audio/mp3" url="audio/SpaldingGray-NeakLuongsample-filmversion.mp3" />
+               <media mimeType="audio/ogg" url="audio/SpaldingGray-NeakLuongsample-filmversion.ogg" />
+            </witDetail>
+
+         </div>
+      </front>
+      
+      <body>
+
+         <!--Notebook 1-->
+         <!--Notebook 1-->
+         <!--Notebook 1-->      
+
+         <p>
+            <app loc="700_dollars">
+               <rdg wit="#nb1"> 
+                  $700.00 FINE
+               </rdg>
+            </app>
+         </p>
+         
+         <p>
+            <app loc="artists_choppers">
+               <rdg wit="#nb1"> 
+                  TOTALLY ALIVE ....
+               </rdg>
+            </app>
+         </p>
+
+         <p rend="boxed">
+            <app loc="take_64">
+               <rdg wit="#nb1"> 
+                  TAKE 64
+               </rdg>
+            </app>
+         </p>
+         
+         <p>
+            <app loc="roland_not_taking">
+               <rdg wit="#nb1"> 
+                 ROLAND NOT TAKING CHANCE
+               </rdg>
+            </app>
+         </p>
+         
+         <p rend="red">
+            <app loc="by_the_way">
+               <rdg wit="#nb1"> 
+                  "BY THE WAY.... "
+               </rdg>
+            </app>
+         </p>
+         
+         <p>
+            <app loc="take_64">
+               <rdg wit="#nb1"> 
+                  <hi rend="boxed">TAKE 64</hi><hi rend="red">= LONG <lb />NEAK</hi>
+               </rdg>
+            </app>         
+         </p>
+         
+         <p rend="red">
+            <app loc="888_troops">
+               <rdg wit="#nb1"> 
+                  888 TROOPS
+               </rdg>
+            </app>  
+         </p>
+         
+         <p rend="boxed">
+            <app loc="take_65">
+               <rdg wit="#nb1"> 
+                  TAKE 65
+               </rdg>
+            </app>  
+         </p>
+         
+         <p>
+            <app loc="housing_devise">
+               <rdg wit="#nb1"> 
+                  HOUSING DEVISE
+                  <pb />
+               </rdg>
+            </app> 
+         </p>
+         
+         <p rend="boxed">
+            <app loc="take_66">
+               <rdg wit="#nb1"> 
+                  TAKE 66
+               </rdg>
+            </app>
+         </p>
+         
+         <p>
+            <app loc="crickets">
+               <rdg wit="#nb1"> 
+                  SOUND OF CRICKETS
+               </rdg>
+            </app>  
+         </p>
+         
+         <!--The transcription given skips a lot here-->                 
+
+         <p>
+            <app loc="computer_malfunction_repeat">
+               <rdg wit="#nb1"> 
+                  <pb />
+                  A COMPUTER MALFUNCTION <lb />PUT OUT THE WRONG SET <lb />OF CO-ORDINATES. <hi rend="red"><hi rend="circled">1</hi> 64</hi><lb />
+                  SEEMS A SINGLE B-52 <lb />OPENED UP OVER <lb />NEAK LONG <hi rend="red"><hi rend="circled">2</hi> 65</hi><lb /> 
+                  THERE’S A HOMING <hi rend="red"><hi rend="circled">3</hi> 66</hi> <lb />BEACON RIGHT IN THE <lb />MIDDLE OF TOWN.<lb />
+                  CHECK IT OUT SID
+               </rdg>
+            </app>
+         </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <!--Notebook 3a-->
+         <!--Notebook 3a-->
+         <!--Notebook 3a-->      
+
+         <p rend="boxed">
+            <app loc="last_scene">
+               <rdg wit="#nb3a"> 
+                  LAST SCENE
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="swimming_pool">
+               <rdg wit="#nb3a"> 
+                  SWIMMING POOL
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="tennis_court">
+               <rdg wit="#nb3a"> 
+                  TENNIS COURT
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="computer_malfunction">
+               <rdg wit="#nb3a"> 
+                  A COMPUTER MALFUNCTION<lb /> PUT OUT THE WRONG SET<lb /> 
+                  OF CO ORDINATES.
+               </rdg>
+            </app>
+            <app loc="b52">
+               <rdg wit="#nb3a"> 
+                  SEEMS<lb /> 
+                  A SINGLE B-52 OPENED<lb /> 
+                  UP OVER NEAK LONG<lb /> 
+               </rdg>
+            </app>
+            <app loc="beacons1">
+               <rdg wit="#nb3a"> 
+                  THERE’S A HOMING BEACON<lb /> 
+                  RIGHT IN THE MIDDLE OF<lb /> 
+                  TOWN. 
+               </rdg>
+            </app>
+            <app loc="sid">
+               <rdg wit="#nb3a"> 
+                  CHECK IT OUT SID
+               </rdg>
+            </app>            
+         </p>
+
+         <p>
+            <app loc="neak_long">
+               <rdg wit="#nb3a"> 
+                  NEAK LONG
+               </rdg>
+            </app>
+         </p>
+    
+         <p>
+            <app loc="700_dollars">
+               <rdg wit="#nb3a"> 
+                  $700 FINE
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="sydney">
+               <rdg wit="#nb3a"> 
+                  SYDNEY
+               </rdg>
+            </app>
+         </p>
+ 
+          <p>
+            <app loc="elizabeth">
+               <rdg wit="#nb3a"> 
+                  ELIZABETH BECKER
+               </rdg>
+            </app>
+         </p>
+
+          <p>
+            <app loc="elizabeth">
+               <rdg wit="#nb3a"> 
+                  <hi rend="boxed">TAKE 64</hi> <del>68</del>  64
+               </rdg>
+            </app>
+         </p>
+
+          <p>
+            <app loc="garbage_dump">
+               <rdg wit="#nb3a"> 
+                  GARBAGE DUMP
+               </rdg>
+            </app>
+         </p>
+
+          <p>
+            <app loc="colgate_guard">
+               <rdg wit="#nb3a"> 
+                  COLGATE GAURD ALL
+               </rdg>
+            </app>
+         </p>
+
+          <p rend="boxed">
+            <app loc="war_therapy">
+               <rdg wit="#nb3a"> 
+                  WAR THERAPY
+               </rdg>
+            </app>
+         </p>
+ 
+         <p rend="boxed">
+            <app loc="method_act">
+               <rdg wit="#nb3a"> 
+                  YOU DON’T HAVE TO ACT
+               </rdg>
+            </app>
+         </p>       
+   
+         <p>
+            <app loc="take_64">
+               <rdg wit="#nb3a"> 
+                  <hi rend="boxed">TAKE 6<del>3</del></hi> 64
+               </rdg>
+            </app>
+         </p>     
+
+         <p>
+            <app loc="888_troops">
+               <rdg wit="#nb3a"> 
+                  “LONG NEAK” <hi rend="circled">888</hi>
+               </rdg>
+            </app>
+         </p>
+ 
+          <p>
+            <app loc="fake_long_nol">
+               <rdg wit="#nb3a"> 
+                  FAKE LONG NOL REAL TROOPS<lb /> 
+                  WHO IS THAT VOICE<lb /> 
+                  WHAT IS THAT VOICE<lb /> 
+               </rdg>
+            </app>
+         </p>        
+
+         <p>
+            <app loc="take_65">
+               <rdg wit="#nb3a"> 
+                  <hi rend="boxed">TAKE <del>64</del></hi> 65
+               </rdg>
+            </app>
+         </p>    
+
+         <p>
+            <app loc="housing_devise">
+               <rdg wit="#nb3a"> 
+                  HOUSING DEVISE
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="in_character">
+               <rdg wit="#nb3a"> 
+                  IN CHARACTER
+               </rdg>
+            </app>
+         </p>
+  
+         <p rend="boxed">
+            <app loc="take_65">
+               <rdg wit="#nb3a"> 
+                  TAKE 66
+               </rdg>
+            </app>
+         </p> 
+   
+         <p>
+            <app loc="pigeon">
+               <rdg wit="#nb3a"> 
+                  A PIGION
+               </rdg>
+            </app>
+         </p>   
+
+         <p>
+            <app loc="30000_dollars">
+               <rdg wit="#nb3a"> 
+                  $30,000
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="crickets">
+               <rdg wit="#nb3a"> 
+                   SOUND OF CRICKETS
+               </rdg>
+            </app>
+         </p> 
+       
+  
+
+
+
+
+
+
+
+
+
+
+
+         <!--Notebook 3b-->
+         <!--Notebook 3b-->
+         <!--Notebook 3b-->      
+
+         <p>
+            <app loc="beacons1">
+               <rdg wit="#nb3b"> 
+                  COMPUTER MAL   FUNCTION
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="700_dollars">
+               <rdg wit="#nb3b"> 
+                  $700. FINE
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="sydney">
+               <rdg wit="#nb3b"> 
+                  SYDNEY STORY
+               </rdg>
+            </app>
+         </p>
+
+         <p rend="boxed">
+            <app loc="becker">
+               <rdg wit="#nb3b"> 
+                  CUT BECKER
+               </rdg>
+            </app>
+         </p>
+
+         <p rend="boxed">
+            <app loc="take_64">
+               <rdg wit="#nb3b"> 
+                  TAKE 64
+               </rdg>
+            </app>
+         </p>        
+
+         <p rend="boxed">
+            <app loc="by_the_way">
+               <rdg wit="#nb3b"> 
+                  BY THE WAY
+               </rdg>
+            </app>
+            <app loc="war_therapy">
+               <rdg wit="#nb3b"> 
+                  WAR THEORY
+               </rdg>
+            </app>
+         </p>  
+
+         <p rend="boxed">
+            <app loc="take_64">
+               <rdg wit="#nb3b"> 
+                  TAKE 64
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="888_troops">
+               <rdg wit="#nb3b"> 
+                  “LONG NEAK” <hi rend="circled">888</hi>
+               </rdg>
+            </app>
+         </p> 
+
+         <p rend="boxed">
+            <app loc="take_65">
+               <rdg wit="#nb3b"> 
+                  TAKE 65
+               </rdg>
+            </app>
+         </p> 
+
+         <p rend="boxed">
+            <app loc="housing_devise">
+               <rdg wit="#nb3b"> 
+                  HOUSING DEVISE
+               </rdg>
+            </app>
+         </p>
+
+         <p rend="boxed">
+            <app loc="in_character">
+               <rdg wit="#nb3b"> 
+                  “IN CHARACTER” 
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="malkovich">
+               <rdg wit="#nb3b"> 
+                  CUT = MALKOVITCH
+               </rdg>
+            </app>
+         </p>       
+   
+         <p>
+            <app loc="take_65">
+               <rdg wit="#nb3b"> 
+                  <hi rend="boxed">TAKE 66</hi>
+               </rdg>
+            </app>
+            <app loc="mother_hen">
+               <rdg wit="#nb3b"> 
+                  <hi rend="boxed">CUT = MOTHER HEN</hi>
+               </rdg>
+            </app>
+         </p>     
+
+         <p>
+            <app loc="pigion">
+               <rdg wit="#nb3b"> 
+                  HOMING PIGION
+               </rdg>
+            </app>
+         </p>                             
+
+          <p>
+            <app loc="30000_dollars">
+               <rdg wit="#nb3b"> 
+                  $30,000
+               </rdg>
+            </app>
+            <app loc="crickets">
+               <rdg wit="#nb3b"> 
+                  - SOUND OF CRICKETS
+               </rdg>
+            </app>
+         </p> 
+
+         <pb />
+
+         <p>
+            <app loc="computer_malfunction_repeat">
+               <rdg wit="#nb3b"> 
+                  A COMPUTER MALFUNCTION<lb /> 
+                  PUT OUT THE WRONG SET<lb /> 
+                  OF CO ORDINATES. <lb /> 
+                  SEEMS<lb /> 
+                  A SINGLE B-52 OPENED<lb /> 
+                  UP OVER NEAK LONG<lb /> 
+                  THERE’S A HOMING BEACON<lb /> 
+                  RIGHT IN THE MIDDLE OF<lb /> 
+                  TOWN.<lb /> 
+                  CHECK IT OUT SID
+               </rdg>
+            </app>
+         </p> 
+
+ 
+
+
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <!--Notebook 4-->
+         <!--Notebook 4-->
+         <!--Notebook 4-->      
+
+         <p>
+            <app loc="gulf_of_siam">
+               <rdg wit="#nb4"> 
+                  GULF OF SIAM
+               </rdg>
+            </app>
+         </p>
+
+         <pb />
+
+         <p>
+            <app loc="last_scene">
+               <rdg wit="#nb4"> 
+                  MY LAST BIG SCENE
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="hotel_phnom_penh">
+               <rdg wit="#nb4"> 
+                  HOTEL Phnom Penh
+               </rdg>
+            </app>
+            <app loc="swimming_pool">
+               <rdg wit="#nb4"> 
+                  SWIMMING POOL
+               </rdg>
+            </app> 
+            <app loc="tennis_court">
+               <rdg wit="#nb4"> 
+                  TENNIS COURT
+               </rdg>
+            </app>                        
+         </p>
+
+         <p>
+            <app loc="beacons1">
+               <rdg wit="#nb4"> 
+                  A HOMING BEACON<lb /> 
+                         PUT OUT WRONG<lb /> 
+                  SET OF COORDINATES<lb /> 
+
+                  SIX MILES UP DROPED<lb /> 
+                  BY COMPUTER
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="forgot_switch">
+               <rdg wit="#nb4"> 
+                  AUGUST 7, 1973
+               </rdg>
+            </app>
+         </p>
+         
+         <p>
+            <app loc="neak_luong">
+               <rdg wit="#nb4"> 
+                  DROPPED LOAD ON <lb /> 
+                  NEAK LUONG
+               </rdg>
+            </app>
+         </p>         
+
+         <p>
+            <app loc="700_dollars">
+               <rdg wit="#nb4"> 
+                  NAVIGATOR FINED<lb /> 
+                  $700
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="sydney">
+               <rdg wit="#nb4"> 
+                  SIDNEY CAME IN <lb /> 
+                  2 DAYS AFTER
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="blood_and_hair">
+               <rdg wit="#nb4"> 
+                  BLOOD AND HAIR
+               </rdg>
+            </app>
+         </p> 
+
+         <pb />
+
+         <p>
+            <app loc="200_killed">
+               <rdg wit="#nb4"> 
+                  200 PEOPLE KILLED
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="house_arrest">
+               <rdg wit="#nb4"> 
+                  POLITE HOUSE ARREST
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="100_dollars">
+               <rdg wit="#nb4"> 
+                  $100.00 LOST FAMILY
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="50_dollars">
+               <rdg wit="#nb4"> 
+                  $50.00 ARMS OR LEGS
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+
+            <app >
+               <rdg wit="#nb4"> 
+                  I PLAYED<lb />       
+               </rdg>
+            </app>
+
+            <app loc="grateful">
+               <rdg wit="#nb4"> 
+                   
+                  GRATEFUL       
+               </rdg>
+            </app>
+            <app loc="american_official">
+               <rdg wit="#nb4"> 
+                  ONE OF THOSE<lb /> 
+                                              OFFICIALS       
+               </rdg>
+            </app>
+            
+         </p>
+
+         <p>
+            <app loc="sid_walks">
+               <rdg wit="#nb4"> 
+                  SIDNEY WALKS OUT
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app>
+               <rdg wit="#nb4"> 
+                  LAST BIG SCENE
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="computer_malfunction_repeat">
+               <rdg wit="#nb4"> 
+                  “ A COMPUTER<lb /> 
+                           MALFUNCTION PUT<lb /> 
+                  OUT WRONG SET OF <lb /> 
+                  COORDINATES .  <lb /> 
+                  SEEMS
+                  A SINGLE B-52 OPENED<lb /> 
+                  UP OVER KEAN LUONG  <lb />  
+                  THERE A HOMING<lb /> 
+                  BEACON RIGHT IN THE<lb /> 
+                  MIDDLE OF TOWN.  <lb />  
+                  CHECK IT OUT SID.  ”   
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="pigeon">
+               <rdg wit="#nb4"> 
+                  EASY ENOUGH FOR<lb /> 
+                  SOME ACTORS<lb /> 
+                         CONCRETE IMAGE<lb />
+                  CONCRETE IMAGES FOR<lb /> 
+                  THE WORDS
+               </rdg>
+            </app>
+         </p>
+                  
+         <p>
+            <app>
+               <rdg wit="#nb4"> 
+                  CUT TO
+               </rdg>
+            </app>
+         </p>                     
+                     
+         <p>
+            <app loc="american_official">
+               <rdg wit="#nb4"> 
+                        BY THE WAY I PLAYED<lb /> 
+                  AMERICAN OFFICIAL<lb /> 
+                  FLEW INTO NEAK<lb /> 
+                                    LUONG               
+               </rdg>
+            </app>
+         </p> 
+             
+         <p>
+            <app loc="garbage_dump">
+               <rdg wit="#nb4"> 
+                  GARBAGE DUMP<lb /> 
+                  OUTSIDE BANGKOK               
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="artists_choppers">
+               <rdg wit="#nb4"> 
+                  WOULD THE ARTISTS<lb /> 
+                  PLEASE GET ON THE<lb /> 
+                  CHOPPERS<lb /> 
+
+                  CALL ME AN ARTIST<lb /> 
+
+                  TEN FEET UP<lb /> 
+
+                  STRAIGHT UP<lb /> 
+
+                  FELT LIKE I WAS<lb /> 
+                  IN A MOVIE<lb /> 
+                  APOCALYPSE NOW <lb /> 
+
+                  <pb />
+
+                  NO SAFETY BELTS<lb /> 
+
+                  NO FEAR<lb /> 
+
+                  BEING ON FILM<lb /> 
+                  PROTECTS YOU<lb /> 
+
+                  COLGATE GUARD-ALL<lb /> 
+
+                  CRASH<lb /> 
+
+                  RUSHES   TO   SURVIVE<lb /> 
+                                              ME<lb /> 
+
+                  WENT UP 6 TIMES !              
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="thai_peasants">
+               <rdg wit="#nb4"> 
+                  CHAO PHRAYA RIVER<lb /> 
+
+                  20 SQUARE MILES<lb /> 
+                        THAI JUNGLE<lb /> 
+
+                  BURNING RUBBER<lb /> 
+                  TIRES<lb /> 
+               </rdg>
+            </app>
+            <app loc="war_therapy">
+               <rdg wit="#nb4">  
+
+                  WAR THERAPY !              
+               </rdg>
+            </app>   
+         </p>
+
+         <pb />
+
+         <p>
+            <app loc="computer_malfunction_repeat">
+               <rdg wit="#nb4"> 
+                  A COMPUTER<lb /> 
+                    MALFUNCTION PUT<lb /> 
+                  OUT THE WRONG   SET   OF<lb /> 
+                  CO  ORDINATES <lb />            
+                  SEEMS A SINGLE<lb /> 
+                   B 52  OPENED  UP<lb /> 
+                   OVER    NEAK LONG  <lb />
+                  THERE’S A HOMING<lb /> 
+                  BEACON    RIGHT IN<lb /> 
+                             THE MIDDLE <lb /> 
+                               OF TOWN  <lb /> 
+                  CHECK IT OUT SID !
+               </rdg>
+            </app>
+         </p>
+
+         <pb />
+
+         <p>
+            <app loc="method_act">
+               <rdg wit="#nb4"> 
+                  YOU DON’T HAVE TO<lb /> 
+                  METHOD — ACT
+               </rdg>
+            </app>
+         </p>          
+ 
+         <p>
+            <app loc="helicopter_blades">
+               <rdg wit="#nb4">         
+                  HELICOPTER BLADES
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="thai_peasants2">
+               <rdg wit="#nb4">         
+                  THAI PEASANTS<lb /> 
+                            FAKE BLOOD<lb /> 
+                  110 DEGREES<lb /> 
+                                  15 HOURS<lb /> 
+
+                  $5 A DAY<lb /> 
+
+                  AMPUTEES   $7.50
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="computer_malfunction_repeat">
+               <rdg wit="#nb4">         
+                  A COMPUTER<lb /> 
+                      MALFUNCTION
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="spaghetti">
+               <rdg wit="#nb4">         
+                  SPAGHETTI
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="oscillator">
+               <rdg wit="#nb4">         
+                  COORDINATES = <lb /> 
+                          OSCILLATOR
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="b52">
+               <rdg wit="#nb4">         
+                  SINGLE  B-52<lb /> 
+                  OPENED UP OVER<lb /> 
+                  NEAK LUONG
+               </rdg>
+            </app>
+         </p> 
+
+         <pb />
+
+         <p>
+            <app loc="neak_luong_trouble">
+               <rdg wit="#nb4">         
+               TROUBLE  WITH<lb /> 
+                        “NEAK LUONG   ”
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="in_character">
+               <rdg wit="#nb4">         
+                  NIGHT SHOOT<lb /> 
+                           HUNG OVER<lb /> 
+
+                  MY CHARACTER<lb /> 
+                           DRINKING A LOT<lb /> 
+
+                  GET IN CHARACTER
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="malkovich">
+               <rdg wit="#nb4">         
+                  MALKOVICH = SEEMED<lb /> 
+                  TO BE IN CHARACTER<lb /> 
+                  ALL THE TIME<lb /> 
+                             THE KIND OF<lb /> 
+                  CHARACTER WHO WOULD<lb /> 
+                  SAY HE WASN’T IN<lb /> 
+                  CHARACTER WHEN HE<lb /> 
+                  REALLY WAS
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app>
+               <rdg wit="#nb4">         
+                  OK BOY + GIRLS
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="take_64">
+               <rdg wit="#nb4">         
+                  TAKE <hi rend="circled">64</hi> 
+               </rdg>
+            </app>
+         </p>
+
+         <pb />
+
+         <p>
+            <app loc="night_shoot">
+               <rdg wit="#nb4">         
+                  NIGHT SHOOT 
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="computer_malfunction_repeat">
+               <rdg wit="#nb4">         
+                  A COMPUTER MALFUNCTION
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="computer_malfunction_repeat">
+               <rdg wit="#nb4">         
+                  “LUONG  —  NEAK
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="cut">
+               <rdg wit="#nb4">         
+                  CUT
+               </rdg>
+            </app>
+         </p>
+    
+         <p>
+            <app loc="negative_voice">
+               <rdg wit="#nb4">         
+                  NEGATIVE   VOICE<lb /> 
+                  “ YOUR GOING<lb /> 
+                     TO MISS IT  ”
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="take_65">
+               <rdg wit="#nb4">         
+                  TAKE 65
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="housing_devise">
+               <rdg wit="#nb4">         
+                  “ HOUSING   DEVICE  ”
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="cut">
+               <rdg wit="#nb4">         
+                  CUT
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="take_66">
+               <rdg wit="#nb4">         
+                  TAKE 66
+               </rdg>
+            </app>
+         </p>           
+
+         <p>
+            <app loc="pigeon">
+               <rdg wit="#nb4">         
+                  HOMING PIGEON<lb /> 
+                  FLYING TOWARD<lb /> 
+                  A LIGHTHOUSE<lb /> 
+
+                       TO THE LIGHTHOUSE
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="66_takes_later">
+               <rdg wit="#nb4">         
+                  66 TAKES LATER
+               </rdg>
+            </app>
+         </p> 
+
+         <pb />
+
+         <p>
+            <app loc="applause">
+               <rdg wit="#nb4">         
+                  BURST INTO APPLAUSE
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="first_scene_evening">
+               <rdg wit="#nb4">         
+                  FIVER HOURS FIRST<lb /> 
+                  SCENE OF EVENING
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="30000_dollars">
+               <rdg wit="#nb4">         
+                  $30,000 TO PROCESS
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="crickets">
+               <rdg wit="#nb4">         
+                  REDUB ENTIRE<lb /> 
+                  SCENE SOUND OF<lb /> 
+                  CRICKETS
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="voice_in_nyc">
+               <rdg wit="#nb4">         
+                  WHAT YOU HEAR IS MY<lb /> 
+                  VOICE IN N.Y.C <lb /> 
+                  REACTING TO BLACK<lb /> 
+                  + WHITE FOOTAGE  SHOT<lb /> 
+                  ON HOT SUMMER    HIGHT<lb /> 
+                  GULF OF SIAM
+               </rdg>
+            </app>
+         </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <!--Notebook 5-->
+         <!--Notebook 5-->
+         <!--Notebook 5-->      
+
+         <p>
+            <app loc="last_scene">
+               <rdg wit="#nb5"> 
+                  MY LAST SCENE
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="leak_sam">
+               <rdg wit="#nb5"> 
+                  LEAK TO SAM
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="hotel_phnom_penh">
+               <rdg wit="#nb5"> 
+                  HWA HINE = HOTEL P.P.
+               </rdg>
+            </app>
+            <app loc="swimming_pool">
+               <rdg wit="#nb5"> 
+                  SWIMMING POOL
+               </rdg>
+            </app>
+            <app loc="tennis_court">
+               <rdg wit="#nb5"> 
+                  TENNIS COURT
+               </rdg>
+            </app>            
+         </p>
+
+         <p>
+            <app loc="beacons1">
+               <rdg wit="#nb5"> 
+                  HOMING BEACON = IN MIDDLE OF TOWN <lb />
+               </rdg>
+            </app>
+            <app loc="computer_malfunction">
+               <rdg wit="#nb5"> 
+                  COMPUTER CO ORDINATES<lb />
+               </rdg>
+            </app>
+            <app loc="forgot_switch">
+               <rdg wit="#nb5"> 
+                  AUG. 7, 1973 NAVIGATOR FORGETS SWITCH<lb />
+               </rdg>
+            </app> 
+            <app loc="neak_luong">
+               <rdg wit="#nb5"> 
+                  NEAK LONG<lb />
+               </rdg>
+            </app> 
+            <app loc="sydney">
+               <rdg wit="#nb5"> 
+                  SID GETS THERE   TWO DAYS LATE<lb />
+               </rdg>
+            </app> 
+           <app loc="blood_and_hair">
+               <rdg wit="#nb5"> 
+                  HAIR BLOOD<lb />
+               </rdg>
+            </app> 
+           <app loc="house_arrest">
+               <rdg wit="#nb5"> 
+                  POLITE HOUSE ARREST
+               </rdg>
+            </app> 
+         </p>
+
+         <pb />
+
+         <p>
+            <app loc="700_dollars">
+               <rdg wit="#nb5"> 
+                  NAVIGATOR FINED $700.
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="100_dollars">
+               <rdg wit="#nb5"> 
+                  EMERY SWANK = $100 BILLS
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="grateful">
+               <rdg wit="#nb5"> 
+                  GRATEFUL
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="sid_walks">
+               <rdg wit="#nb5"> 
+                  SID WALKS OUT<lb /> 
+                  CLOSE TO LIFE<lb />
+               </rdg>
+            </app>
+            <app loc="elizabeth">
+               <rdg wit="#nb5"> 
+                  ELIZABETH BECKER<lb /> 
+             “ALL THOSE ANTS”
+               </rdg>
+            </app>         
+         </p>
+
+         <p>
+            <app loc="reenacted">
+               <rdg wit="#nb5"> 
+                  * WE ALSO REINACTED THAT<lb /> 
+                  SCENE
+               </rdg>
+            </app>
+         </p>
+   
+         <p>
+            <app loc="artists_choppers">
+               <rdg wit="#nb5"> 
+                  ARTIST HELLICOPTER<lb /> 
+                 FEEL LIKE I’M IN A MOVIE<lb /> 
+                 APOCOLYPSE NOW<lb /> 
+
+                NO FEAR - CAMERA PROTECTS<lb /> 
+                EVEN IF CRASHES<lb /> 
+                           SHOW HOME MOVIE<lb /> 
+                  VIEW OF CHOW PRY RIVER
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="war_therapy">
+               <rdg wit="#nb5"> 
+                  * WAR THERAPY
+               </rdg>
+            </app>
+         </p>
+
+          <p>
+            <app loc="method_act">
+               <rdg wit="#nb5"> 
+                     NO METHOD ACTING
+               </rdg>
+            </app>
+         </p>    
+
+          <p>
+            <app loc="real_sound">
+               <rdg wit="#nb5"> 
+                     REAL SOUND
+               </rdg>
+            </app>
+         </p>
+
+          <p>
+            <app loc="thai_peasants2">
+               <rdg wit="#nb5"> 
+                  EXTRAS — 5.00<lb /> 
+                  AMPUTEES — 7.50
+               </rdg>
+            </app>
+         </p>
+
+         <p>
+            <app loc="last_scene">
+               <rdg wit="#nb5"> 
+                  SO I’M DOING MY<lb /> 
+                  LAST SCENE
+               </rdg>
+            </app>
+             <app loc="hungover">
+               <rdg wit="#nb5"> 
+                         WITH SAM<lb /> 
+                  HUNG OVER
+               </rdg>
+            </app>
+         </p>  
+
+         <pb />
+
+         <p>
+            <app loc="take_63">
+               <rdg wit="#nb5"> 
+                  63
+               </rdg>
+            </app>
+         </p>          
+
+         <p>
+            <app loc="artists_choppers">
+               <rdg wit="#nb5"> 
+                  HELICOPTER<lb /> 
+                 ME IN NEAK LONG<lb /> 
+               </rdg>
+            </app>
+            <app loc="in_character">
+               <rdg wit="#nb5"> 
+                 IN CHARACTER<lb /> 
+               </rdg>
+            </app>
+            <app loc="888_troops">
+               <rdg wit="#nb5">   
+                 888 THAI TROOPS
+               </rdg>
+            </app>
+         </p> 
+
+         <pb />
+            
+         <p>
+            <app loc="night_shoot">
+               <rdg wit="#nb5"> 
+                 NIGHT SHOOT<lb /> 
+                  HUNG OVER FROM PARTY
+               </rdg>
+            </app>
+         </p> 
+     
+         <p>
+            <app loc="in_character">
+               <rdg wit="#nb5"> 
+                  BUT IN CHARACTER<lb /> 
+                  * DAVID HENRY
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="pigeon">
+               <rdg wit="#nb5"> 
+                  I NEED AN IMAGE<lb /> 
+                  MAKE MY OWN FILM
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="computer_malfunction_repeat">
+               <rdg wit="#nb5"> 
+                   A COMPUTER MALFUNCTION<lb /> 
+                  PUT OUT THE WRONG SET<lb /> 
+                  OF CO-ORDINATES.<lb /> 
+                  SEEMS A<lb /> 
+                  SINGEL B-52 OPENED UP<lb /> 
+                  OVER NEAK LONG. <lb />
+                  THERE’S <lb /> 
+                  A HOMING BEACON RIGHT IN<lb /> 
+                  THE MIDDLE OF TOWN <lb />
+                  CHECK IT OUT SID. 
+               </rdg>
+            </app> 
+         </p> 
+
+         <p>
+            <app loc="110_degrees">
+               <rdg wit="#nb5"> 
+                  110*<lb /> 
+                  LAST “LEAK” SCENE<lb /> 
+               </rdg>
+            </app>
+            <app loc="888_troops">
+               <rdg wit="#nb5"> 
+                       888 THIA TROOPS
+               </rdg>
+            </app>
+         </p> 
+
+         <p>
+            <app loc="housing_devise">
+               <rdg wit="#nb5"> 
+                  <hi rend="circled">HOUSING DEVISE</hi> <lb /> 
+                 I’M SURE ITS A BEAUTIFUL<lb /> 
+                   SCENE
+               </rdg>
+            </app>
+         </p>     
+
+         <p>
+            <app loc="30000_dollars">
+               <rdg wit="#nb5"> 
+                  20-30 THOUSAND
+               </rdg>
+            </app>
+         </p>  
+
+         <p>
+            <app loc="inflated_psyche">
+               <rdg wit="#nb5"> 
+                  WHY HARD = ME SOFT<lb /> 
+                  LIKE SIGON - AMERICAN DOLLORS<lb /> 
+                         INFLATED PSYCHE
+               </rdg>
+            </app>
+         </p> 
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <!--Book Version-->
+         <!--Book Version-->
+         <!--Book Version-->
+         
+         <p>
+            <app loc="hotel_phnom_penh">
+               <rdg wit="#book">My last big scene was with Sam Waterston in Waheen, Gulf of Siam. Not at the Pleasure Prison, where we were sleeping, but at this beautiful Victorian hotel in Waheen that they had emptied out for the film because it looked like the Hotel Phnom Penh. </rdg>
+            </app>
+            <app loc="swimming_pool">
+               <rdg wit="#book">The only thing that made it inauthentic was that it didn't have a swimming pool </rdg>
+            </app>           
+            <app loc="tennis_court">
+               <rdg wit="#book">or a tennis court. So the film built a swimming pool and a tennis court. </rdg>
+            </app> 
+
+         </p>
+         
+         <p>
+            <app loc="beacons1">
+               <rdg wit="#book">
+                  Now what I had to say in my scene with Sam was simple—it was a little technical, but simple: "A computer malfunction put out the wrong set of coordinates. Seems a single B-52 opened up over Neak Luong. There's a homing beacon right in the middle of town. Check it out, Sid."
+               </rdg>
+            </app>         
+         </p>
+         
+         <p>
+           <app loc="simple_enough">
+              <rdg wit="#book">
+                 All right. Simple enough . . . for some actors. But this actor needs images for technical words like that. I have to build my own internal film, you see, or I can't remember the words.
+              </rdg>
+           </app>
+         </p>
+
+         <p>
+           <app loc="american_official">
+              <rdg wit="#book">
+                 By the way, I played one of those American officials who flew into Neak Luong. 
+              </rdg>
+           </app>
+           <app loc="garbage_dump">
+              <rdg wit="#book">
+                  We were at an old garbage dump that they had made into Neak Luong, right outside Bangkok. 
+              </rdg>
+           </app>
+           <app loc="artists_choppers">
+              <rdg wit="#book">
+                  The assistant director said, "Would the artists please get on the choppers." Now there is no way I would ordinarily get on a helicopter, but he called me an artist and hop, hop, I was right on that chopper like Pavlov's dog. They said it was only going to go up ten feet and then just land. All they needed was a shot of the embassy officials jumping off the choppers.
+              </rdg>
+           </app>           
+         </p>
+
+
+         <p>
+           <app loc="artists_choppers">
+              <rdg wit="#book">
+                 So I got on the helicopter and it went BRRRRRRRRR—straight up. Straight up above this incredible jungle. I felt like I was in a movie, like I was in Apocalypse Now, and then I realized that I was in a movie! They were filming me, and I had no fear, even though the door was wide open and I was looking down. Craig T. Nelson was practically falling out the door—we had no safety belts—but I suddenly had no fear because the camera eroticizes the space! It protects you like Colgate Guard-All. Even if the chopper crashed, at least there would be rushes, right? My friends could show them on New Year's Eve at the Performing Garage.
+              </rdg>
+           </app>
+        </p>
+
+         <p>
+           <app loc="artists_choppers">
+              <rdg wit="#book">
+                 We went up six times and the feeling was triumphant. I was looking up the Chao Phraya River and I saw, my God, how much area the film controlled!
+              </rdg>
+           </app>
+           <app loc="thai_peasants">
+              <rdg wit="#book">
+                 Twenty square miles of Thai jungle, all the way up the river, there were Thai peasants throwing more rubber tires on the fire to make black smoke, to make it look like war, 
+              </rdg>
+           </app>  
+           <app loc="war_therapy">
+              <rdg wit="#book">
+                  and I thought, of course! WAR THERAPY. Every country should make a major war movie every year. It would put a lot of people to work, help them get their rocks off. 
+              </rdg>
+           </app> 
+           <app loc="method_act">
+              <rdg wit="#book">
+                  And when you land in that jungle you don't have to Method-act.  
+              </rdg>
+           </app> 
+           <app loc="helicopter_blades">
+              <rdg wit="#book">
+                  When those helicopter blades are whirring overhead, you shout to be heard.
+              </rdg>
+           </app> 
+           <app loc="thai_peasants2">
+              <rdg wit="#book">
+                  You don't have to Method-act when you look down and see a Thai peasant covered with chicken giblets and fake blood 
+              </rdg>
+           </app> 
+           <app loc="110_degrees">
+              <rdg wit="#book">
+                   in 110-degree weather for fifteen hours a day for five dollars a day. (If they're real amputees they get seven-fifty.) It's just like the real event!
+              </rdg>
+           </app>            
+        </p> 
+
+         <p>
+           <app loc="spaghetti">
+              <rdg wit="#book">
+                 So, "a computer malfunctioned." I had an image of a computer in my mind, spaghetti coming out of it—a malfunction. 
+              </rdg>
+           </app>
+           <app loc="oscillator">
+              <rdg wit="#book">
+                 "Put out the wrong coordinates . . . ," for coordinates I had an image of an oscillator from a seventh-grade science project, I don't remember who had one, but it was a grid-work oscillator. 
+              </rdg>
+           </app>
+
+           <app loc="b52">
+              <rdg wit="#book">
+                 "It seems a single B-52 . . . ," I remembered B-52s from many drunken dinners in front of the TV during That War. "Opened up over Neak Luong . . . ," I was having trouble with Neak Luong.
+              </rdg>
+           </app>
+
+           <app loc="in_character">
+              <rdg wit="#book">
+                 It was a night shoot and I was a little hung over. At times I was calling it Luong Neak. I was a little shaky from that heavy party the night before, and the dose of marijuana and booze. But I didn't feel too bad about it because Roland told me that my character would be drinking a lot because he was very guilty. So I thought, to some extent, I was in character.
+              </rdg>
+           </app>
+        </p>
+
+         <p>
+           <app loc="malkovich">
+              <rdg wit="#book">
+                 You would be amazed at what some people went through to get in character for this film. For instance, John Malkovich seemed to be in character all the time. He was the same on camera as off, and I couldn't figure it out. So I went to him and asked him, "John, are you one of those actors who are in character all the time?" And he just said, "No, Spalding, not at all." I was a little confused but I finally figured out that John Malkovich's character was the kind of character who would say he wasn't in character when he really was.
+              </rdg>
+           </app>
+        </p>
+   
+         <p>
+           <app loc="in_character">
+              <rdg wit="#book">
+                 There was one British actor, a suburban guy from outside London with a wife and family, who seemed to be living his character in the streets of Bangkok. He was convinced that his character would fall in love with a Mamasan, one of the women who run dance halls in Pat Pong. So he did. He started to actually fall in love with one, and to believe that he ran the night club with her. And then he started thinking that he would stay behind after the film was finished and open his own club in Pat Pong. His wife kept calling up, asking, "Where's my husband?" At last she said, "You got him over there, you get him back." It took four people to get him on that plane back to London. He said it wasn't until he was halfway back that he realized he'd gone mad.
+              </rdg>
+           </app>
+        </p>
+
+        <p>
+           <app loc="take_64">
+              <rdg wit="#book">
+                 "Okay, boys and girls, let's go. Take sixty-four."
+              </rdg>
+           </app>
+        </p>
+
+        <p>
+           <app loc="housing_devise">
+              <rdg wit="#book">
+                 It was a night shoot and we were up to take sixty-four. And it was just the first scene of the night. I thought I had it down. "A computer malfunction put out the wrong set of coordinates. It seems a single B-52 opened up over Neak Luong. There's a . . ." and I couldn't get the image of the homing beacon. I said, "There's a housing device right in the middle of town."
+              </rdg>
+           </app>
+        </p>
+
+        <p>
+           <app>
+              <rdg wit="#book">
+                 "CUT. Okay, let's go back. Keep it together now."
+              </rdg>
+           </app>
+        </p>
+
+        <p>
+           <app loc="888_troops">
+              <rdg wit="#book">
+                 I don't know why I was feeling under so much pressure. I had already done my worst scene. It was one that was cut from the film, in which 888 Thai marching troops passed in front of what was supposed to be Lon Nol's reviewing stand. They were real Thai army troops playing Cambodians, and when the drummer got to my shoulder I was to be seen leaking information to Sam Waterston. When the drummer got to my shoulder I missed my cue. In 110 degrees, 888 troops had to march all the way back. It took about twenty minutes. Then Sam missed a cue. Then something went wrong with the camera. It took six takes, and by the sixth take, far into the day, I saw these troops coming at me and an insidious voice inside me was whispering, "You're going to miss it, you're going to miss it, you're going to miss it." Now who is that voice? And what is that voice? That's all I want to know.
+              </rdg>
+           </app>
+        </p>
+
+        <p>
+           <app loc="take_65">
+              <rdg wit="#book">
+                 "Okay, boys and girls, let's go. Take sixty-five."
+              </rdg>
+           </app>
+        </p>
+
+        <p>
+           <app loc="computer_malfunction_repeat">
+              <rdg wit="#book">
+                 "A computer malfunction put out the wrong set of coordinates. It seems a single B-52 opened up over Luong . . . over Neak . . . sorry."
+              </rdg>
+           </app>
+        </p>
+
+        <p>
+           <app loc="take_66">
+              <rdg wit="#book">
+                 "All right, Spalding. Take sixty-six."
+              </rdg>
+           </app>
+        </p>
+
+        <p>
+           <app loc="pigeon">
+              <rdg wit="#book">
+                 At last I had the image for homing beacon. I saw a pigeon, a homing pigeon, flying toward a lighthouse beacon in a children's storybook. Got it.
+              </rdg>
+           </app>
+        </p>
+
+        <p>
+           <app loc="take_66">
+              <rdg wit="#book">
+                 "Let's go. Take sixty-six."
+              </rdg>
+           </app>
+        </p>
+
+        <p>
+           <app loc="computer_malfunction_repeat">
+              <rdg wit="#book">
+                 "A computer malfunction put out the wrong set of coordinates. It seems a single B-52 opened up over Neak Luong. There's a . . ." and I knew it would work. It didn't matter what I was thinking, so long as I was thinking something. Because everyone looking at the film would be thinking their own thoughts and projecting them on me.
+              </rdg>
+           </app>
+        </p>
+
+        <p>
+           <app loc="computer_malfunction_repeat">
+              <rdg wit="#book">
+                 "There's a homing beacon right in the middle of town. Check it out, Sid."
+              </rdg>
+           </app>
+        </p>
+
+
+        <p>
+           <app loc="30000_dollars">
+              <rdg wit="#book">
+                 The entire crew burst into applause. Sixty-six takes later and five hours into the night we had finished the first scene of the evening. And I was told that it would cost $30,000 to process it, including the cost of the film and crew.
+              </rdg>
+           </app>
+           <app loc="crickets">
+              <rdg wit="#book">
+                  Then, when I got back to New York, I was called in to redub the entire scene anyway, because of the sound of crickets. So what you hear in the film is my voice in New York City, reacting to some black-and-white footage shot one hot summer night on the Gulf of Siam.
+              </rdg>
+           </app>
+        </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+
+
+
+
+
+
+
+         <!--1983-->
+         <!--1983-->
+         <!--1983-->
+         <u>
+            <app loc="gulf_of_siam">
+               <rdg wit="#v1983">
+                  <timeline xml:id="tl_1983" origin="#tl_1983_1" unit="s" >
+                     <when xml:id="tl_1983_1" />
+                     <when since="#tl_1983_1" interval="16" xml:id="tl_1983_2" />
+                  </timeline>
+                  Our second big scene was to take place the day after my marijuana debauch. On the Gulf of ... Siam, in the town of Waheen, in what was supposed to be the Hotel Phnom Penh. 
+               </rdg>
+            </app>
+
+            <app loc="leak_sam">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_2" interval="7.75" xml:id="tl_1983_3a" />
+                  </timeline>
+                  Now my job was my I was supposed to be a character who got a little drunk and was leaking information to Sidney Schanberg, played by Sam Waterston. 
+               </rdg>
+            </app>   
+
+            <app loc="hotel_phnom_penh">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_3a" interval="13" xml:id="tl_1983_3b" />
+                  </timeline>
+                  And so we’re at this beautiful hotel on the Gulf of Siam and um in fact the film had remade the hotel to suit their purposes. The actual Hotel Phnom Penh they put up big letters for it, 
+               </rdg>
+            </app>                      
+
+            <app loc="swimming_pool">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_3b" interval="4.5" xml:id="tl_1983_3c" />
+                  </timeline>
+                  and they built a swimming pool—because this hotel didn’t have one—they built a swimming pool 
+               </rdg>
+            </app>                     
+   
+            <app loc="tennis_court">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_3c" interval="4" xml:id="tl_1983_3d" />
+                  </timeline>
+                  and a tennis court so it would be look exactly like Hotel Phnom Penh.
+               </rdg>
+            </app>  
+
+            <app loc="neak_long">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_3d" interval="26" xml:id="tl_1983_4" />
+                  </timeline>               
+                  And um so the big scene that was coming up—so this hotel was not the hotel we were staying in, the big prison, but it was one downtown—the big scene that was coming up had to do with Neak Luong, which was a um … was a uh uh strate- strategic uh town um ... um vital to Lon Nol’s control ...
+               </rdg>
+            </app>
+   
+            <app loc="beacons1">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_4" interval="35.75" xml:id="tl_1983_5" />
+                  </timeline>               
+                  and they were placing radar beacons. You see when the bombers flew over from Thailand they had to take a scope on a radar beacon and then make a switch. They’d take their coordinates off the radar beacon then they’d throw a switch and the bombs would drop um on the sanctuaries. In fact, it was so fool proof, they said, that the American embassy actually had a beacon on it until they got freaked out and removed it. But they put this beacon in the town Neak Luong, right in the center of town. And the guy flying over, the navigator, forgot to throw the switch, so they dropped an entire load of bombs on this Cambodian town. Went right up the center street.
+               </rdg>
+            </app>  
+         </u>
+
+         <u>
+            <app loc="sydney">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_5" interval="14" xml:id="tl_1983_6" />
+                  </timeline>               
+                  Sidney Schanberg found out about it through Dith Pran, because Dith Pran had terrific connections with the Cambodians. And he started to go up there. Now the American embassy did everything to cover up the fact that 200 people have been- these bombs dropped right in the town. 
+               </rdg>
+            </app> 
+            <app loc="house_arrest">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_6" interval="7.25" xml:id="tl_1983_7" />
+                  </timeline>               
+                  Sidney gets up there and he’s put under polite house arrest by the Cambodians so he won’t break the story to UPS. 
+               </rdg>
+            </app> 
+            <app loc="blood_and_hair">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_7" interval="11" xml:id="tl_1983_8" />
+                  </timeline>               
+                  And uh so he’s under house arrest in in he said he knew something big had gone on because he could see pieces of hair and blood on the bushes, you see. So he’s under house arrest and in comes the Americans to do a ceremony for the people that were killed. 
+               </rdg>
+            </app>
+            <app loc="sid_walks">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_8" interval="19" xml:id="tl_1983_8a" />
+                  </timeline> 
+                  And he knows if he walks out of there in front of the Americans, the Cambodians won’t shoot him. They start screaming at him and they click their guns. He feels their guns aimed at his back and he just keeps walking. Now I talked to Sidney and he said he never felt higher in his life than when he was covering uh wars and when he was closest to death like this. 
+               </rdg>
+            </app> 
+         </u>
+
+         <u>
+            <app loc="elizabeth">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_8a" interval="76" xml:id="tl_1983_9" />
+                  </timeline>               
+                  Uh Elizabeth Becker who was for the Post was the same way. The film flew me down to Washington just to meet Elizabeth Becker and talk with her. Uh she was in Phnom Penh, she to me she looked like a middle-class housewife. She is married to this wonderful man, she’s got a cozy little Washington house. She has a child, but she wants to go back and cover this excitement, you see. I said, “Did you come close to death?” “Yes,” she said. “One of the reporters in the house I was staying in in Cambodia was murdered.” And as she’s telling me this we were eating pâté and white wine on her front steps. It was the first uh beginning in April, Washington was just starting to warm up. And she’s telling it to me and I’m fascinated by this um chain of ants that is coming to eat the pâté. I was kind of watching the ants and listening to her, so that was my visual trip: the ants and hearing her out of the corner- and I was fascinated by the ants. I mean I am a country kid at heart, I don’t see many ants here mainly roaches. But here was it was kind of it was kind of you know spring time thing and the ants were nibbling at leftover pieces of pâté. And when she finishes telling me the story, with one swipe she takes a linen napkin and with one swipe she take she draws across the entire line of ants and smashes them. And I’m going inside Oh my God the ants! You’ve killed the ants! 
+               </rdg>
+            </app>
+         </u>
+
+         <u>
+            <app loc="700_dollars">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_9" interval="6" xml:id="tl_1983_10" />
+                  </timeline>               
+                  The navigator of the plane was fined 700 dollars for flipping the wrong switch.
+               </rdg>
+            </app>
+            <app loc="100_dollars">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_10" interval="5.5" xml:id="tl_1983_11" />
+                  </timeline>               
+                  Emory Swank, then the American ambassador, came out and gave 100 dollars to each family that lost people
+               </rdg>
+            </app>  
+            <app loc="50_dollars">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_11" interval="3.25" xml:id="tl_1983_12" />
+                  </timeline>               
+                   and 50 dollars for people who lost any legs or arms.
+               </rdg>
+            </app> 
+            <app loc="grateful">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_12" interval="3.75" xml:id="tl_1983_12a" />
+                  </timeline>               
+                    The Cambodians were grateful. 
+               </rdg>
+            </app>              
+         </u>
+
+
+
+         <u>
+            <app loc="reenacted">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_12a" interval="8.75" xml:id="tl_1983_13" />
+                  </timeline>               
+                  Now we were actually reenacting uh I was we actually reenacted that scene of Neak Luong. 
+               </rdg>
+            </app>
+            <app loc="garbage_dump">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_13" interval="3.25" xml:id="tl_1983_14" />
+                  </timeline>               
+                  And it was a garbage dump outside of Bangkok. 
+               </rdg>
+            </app>
+            <app loc="artists_choppers">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_14" interval="81.5" xml:id="tl_1983_15" />
+                  </timeline>               
+                  And I was supposed to fly in on a helicopter but we- the helicopter was just supposed to go up ten feet and look as though it was landing. We were all very nervous about flying, particularly with the door wide open. And so they would say, “Would the artistes please get on the helicopter.” Now I know if they call you an artist you’ll do anything, you know. So I strode on the helicopter. We were supposed to come in and see this- they had this whole area that looked like it was bombed and burned and there were Thai extras lying on stretchers. So suddenly they decide they’re going to take off after all, and we go up and suddenly I overcome my fear of flying because it’s on camera! I have for some reason I have a feeling that nothing bad’s gonna happen, that the camera key is eroticizes the experience to a point of protection. But Craig T. Nelson, who’s sitting next to me—when the door opens and you can look right down over the jungles like Apocalypse Now—is terrifically afraid of flying, and he’s grabbing my knee and going, “Oh no don’t land!” And we had to go through this about six times. He asked the nurse for tranquilizers, she said, “I’m sorry we don’t keep them on the set.” Around the third time around, Craig was letting out with rebel yells, you know he was about hanging out of the thing. But you looked down and you realize how much of the world, how much of that area the film had taken over! For twenty miles you could see black smoke! They had Thai peasants all the way up up the Chao Phraya River burning tires! You see, they had taken over twenty square miles just to make this look like a war zone.
+               </rdg>
+            </app>
+            <app loc="war_therapy">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_15" interval="9.25" xml:id="tl_1983_16" />
+                  </timeline>               
+                  And I was beginning to think that yes, this could be War Therapy. Every nation should do a big war film once a year, you see, and we should all see it. It would keep people away from the actual thing.
+               </rdg>
+            </app>
+         </u>
+
+         <u>
+            <app loc="thai_peasants">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_16" interval="22" xml:id="tl_1983_17" />
+                  </timeline>               
+                  So we’re over there and we’re reenacting it and we land, and then I have to run to examine the stuff you know? And um here are these Thai peasants lying in 110 degrees on stretchers with chicken guts and giblets all over them, and fake blood. And they’re getting five dollars a day to lie there all day. And if they’re amputees they’re getting seven dollars and fifty cents. 
+               </rdg>
+            </app>
+         </u>
+
+         <u>
+            <app loc="computer_malfunction_repeat">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_17" interval="94" xml:id="tl_1983_18" />
+                  </timeline>               
+                  So we’re on this lovely porch of the Hotel Phnom Penh and I’m about to slip this information to Sidney Schanberg about the bombing of Neak Luong, about the accidental bombing. And um so I think that I’m not gonna have any problem with the scene. It should go uh it should go pretty fast: it’s only a few lines. But they uh slip me this new uh text, uh just a little addition to it. I mean as it was it was very technical, I say, “you might glance at the USSAC’s reports on the number of B-52 raids out of Thailand. My guess is they don’t have- they won’t have uh decreased.” And then I say, “A computer malfunction put out the wrong set of coordinates. Seems a single B-52 opened up over Neak Luong. There’s a homing beacon right in the middle of town.” Now as as an actor I usually have to get images for what I’m saying in order to memorize lines, so I’m given this new, short text and I couldn’t get an image for “coordinates,” but I could remember that. “B-52” I knew that. “Neak Luong” was a little problematic since it was a night shoot and I was a little tired and hungover. I’d occasionally say “Luong Neak.” You see. And then a “homing beacon.” So ever- I couldn’t get that, so I’d get to- I was doing it very intently, I’d say, “Seems a single B-52 opened up over Neak Luong.” And I got to “Neak Luong” and I’d go, “and … there’s a …” 
+
+                  I couldn’t get the image so I’d go, “There’s a … housing device in the middle of the town.” <lb />
+                  “Ok let’s roll it again, Take 52!”<lb />
+                  So I go, “Seems a single B-52 opened up over Luong Neak. There’s a …” <lb />
+                  “Take uh 50 uh 3.” <lb />
+                  “Seems a single 52 …” <lb />
+                  “Take 54.” <lb />
+                  “Seems a single B-52 opened up over Neak Luong. …” Then there’s a very long pause, which I think will be effective because on film they don’t know what you’re thinking.
+               </rdg>
+            </app>
+            <app loc="housing_devise">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_18" interval="42.5" xml:id="tl_1983_19" />
+                  </timeline>               
+                  I couldn’t get the image so I’d go, “There’s a … housing device in the middle of the town.” <lb />
+                  “Ok let’s roll it again, Take 52!”<lb />
+                  So I go, “Seems a single B-52 opened up over Luong Neak. There’s a …” <lb />
+                  “Take uh 50 uh 3.” <lb />
+                  “Seems a single 52 …” <lb />
+                  “Take 54.” <lb />
+                  “Seems a single B-52 opened up over Neak Luong. …” Then there’s a very long pause, which I think will be effective because on film they don’t know what you’re thinking. It’s just a photograph of your face. After all, the audience does all the thinking, all the projection. 
+               </rdg>
+            </app> 
+            <app loc="pigeon">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_19" interval="35" xml:id="tl_1983_20" />
+                  </timeline>               
+                  But I finally came up with this image of for “homing” a pigeon—homing pigeon—flying toward a beacon, this old lighthouse, one of the old ones you see in a storybooks. So I got it down in my head, “Seems a single B-52 opened-”<lb />
+                  “Take 56.”<lb />
+                  “Seems a single sp- B-52 opened up over Neak Luong. There’s a …” <lb />
+                  I could look up I could see the pigeon flying toward the lighthouse from my pause. <lb />
+                  “There’s a homing beacon right in the middle of town.” 
+               </rdg>
+            </app>                        
+         </u>
+
+         <u>
+            <app loc="30000_dollars">
+               <rdg wit="#v1983">
+                  <timeline unit="s" >
+                     <when since="#tl_1983_20" interval="22" xml:id="tl_1983_21" />
+                  </timeline>               
+                  Everybody clapped! 66 takes later and four hours into the night, we had- I had finished my my work in the film. I got an enormous reception, someone told me it prob- probably would’ve cost about twenty to thirty thousand to process the film, including the uh time that would be to pay the Sparks.  
+               </rdg>
+            </app> 
+         </u>
+
+          
+
+
+
+
+
+
+
+
+         <!--1984-->
+         <!--1984-->
+         <!--1984-->
+         
+         <u>
+            <app loc="last_scene">
+               <rdg wit="#v1984">
+                  <timeline xml:id="tl_1984" origin="#tl_1984_1" unit="s" >
+                     <when xml:id="tl_1984_1" />
+                     <when since="#tl_1984_1" interval="6" xml:id="tl_1984_2" />
+                  </timeline>  
+                  So I was recuperating from my marijuana hangover for my last big scene, with Sam Waterston who was playing Sydney Schanberg. 
+               </rdg>
+            </app>
+   
+            <app loc="gulf_of_siam">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_2" interval="5" xml:id="tl_1984_3" />
+                  </timeline>  
+                  And we are at the Gulf of uh uh Siam I at the pleasure prison. 
+               </rdg>
+            </app>
+            <app loc="hotel_phnom_penh">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_3" interval="4" xml:id="tl_1984_4" />
+                  </timeline>  
+                  And we are to reenact a scene which was supposed to be the Hotel Phnom Penh, 
+               </rdg>
+            </app>  
+            <app loc="leak_sam">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_4" interval="8" xml:id="tl_1984_5" />
+                  </timeline>  
+                  where I am leaking information to Sydney to tell him where to go to check out the bombing. Now they had remade this hotel to look exactly like the Hotel Phnom Penh. 
+               </rdg>
+            </app> 
+            <app loc="swimming_pool">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_5" interval="2.5" xml:id="tl_1984_6" />
+                  </timeline>  
+                  They put a swimming pool in--because it didn't have one--
+               </rdg>
+            </app> 
+            <app loc="tennis_court">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_6" interval="3" xml:id="tl_1984_7" />
+                  </timeline>  
+                  and a tennis court; the film had built their own swimming pool and tennis court.
+               </rdg>
+            </app>                          
+         </u> 
+         
+         <u>
+            <app loc="beacons1">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_7" interval="21" xml:id="tl_1984_8" />
+                  </timeline>  
+                  Now uh what what was happening was that I'm supposed to leak to Sydney that you see what happening was that they had homing beacons, what were called homing beacons so that the B-52 which were flying six miles up could take a uh computer coordinate on the beacon and throw a switch and the computer would drop the bombs all on automatic. Uh so the beacon could be anywhere, you know. There was one on top of the American embassy even. 
+               </rdg>
+            </app>         
+   
+            <app loc="neak_long_strategic">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_8" interval="3" xml:id="tl_1984_9" />
+                  </timeline>  
+                  There was one in a strategic town called Neak Luong, a ferry town,
+               </rdg>
+            </app> 
+   
+            <app loc="forgot_switch">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_9" interval="11" xml:id="tl_1984_10" />
+                  </timeline>  
+                  and the guy forgot to flip the switch on August 7, 1973. And the entire town was bombed, right up the center with a load of B-5- load of um bomb B-52 bombs. 
+               </rdg>
+            </app>           
+   
+            <app loc="700_dollars">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_10" interval="2" xml:id="tl_1984_11" />
+                  </timeline>  
+                  And he was fined 700 dollars for this.
+               </rdg>
+            </app> 
+         </u>
+
+         <u>
+            <app loc="blood_and_hair">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_11" interval="12" xml:id="tl_1984_12" />
+                  </timeline>  
+                  Now when Sydney found out about it he wanted to get up there. The American embassy said absolutely not. They said it's not- nothing's going on up there. He snuck in, and he saw blood and and uh hair all over the bushes. 
+               </rdg>
+            </app>  
+            <app loc="sydney">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_12" interval="2" xml:id="tl_1984_13" />
+                  </timeline>  
+                  It was two days late, he knew something big had happened.
+               </rdg>
+            </app> 
+            <app loc="house_arrest">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_13" interval="5" xml:id="tl_1984_14" />
+                  </timeline>  
+                  He was put under polite house arrest uh by the Cambodians. He was not allowed to break his story. 
+               </rdg>
+            </app> 
+         </u>
+
+         <u>
+            <app>
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_14" interval="12" xml:id="tl_1984_15" />
+                  </timeline>  
+                  In flies the American embassy, right? Swank uh uh, they fly in and they give money to the Cambodian families who'd lost people in the bombing. You know these are civilian Cambodians, 
+               </rdg>
+            </app> 
+
+            <app loc="100_dollars">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_15" interval="3.5" xml:id="tl_1984_16" />
+                  </timeline>  
+                  and they give a 100 dollar bill to people who had died in the family,
+               </rdg>
+            </app> 
+
+            <app loc="50_dollars">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_16" interval="2.25" xml:id="tl_1984_17" />
+                  </timeline>  
+                   and 50 dollars ones who lost arms and legs. 
+               </rdg>
+            </app> 
+
+
+            <app loc="grateful">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_17" interval="1.5" xml:id="tl_1984_18" />
+                  </timeline>  
+                   And the Cambodians are thankful. 
+               </rdg>
+            </app>
+
+            <app loc="sid_walks">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_18" interval="22.5" xml:id="tl_1984_19" />
+                  </timeline>  
+                   Now in the midst of this ordeal the Americans in there in Neak Luong, Sydney Schanberg begins to walk out, 'cause he says if I-  to th- he if I walk out they won't shoot me in front of the Americans. He hears them yelling, he hears the gun click, he hears the uh safety click, and he keeps walking. He said he'd never felt closer to life in his life when he was that close to death. It was a big high. He said he's never had any like like it since. 
+               </rdg>
+            </app>
+
+            <app loc="elizabeth_ants">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_19" interval="31" xml:id="tl_1984_20" />
+                  </timeline>  
+                   Like Elizabeth Becker told me the same thing. She was reporting for the Washington Post. I went down to visit her in Washington, was sitting on her back stair- uh front steps. It's April, uh beautiful day. She's telling me how a friend of hers was killed in the house she was living in by the Khmer Rouge. And as she's telling me this horror story I'm looking at this trail of ants that is going all the way across the pate that we're eating. And she just takes this linen napkin and just takes it and squshes, wipes out all the ants. And inside I go, oh my God! All those ants! And I'm weeping inside. 
+               </rdg>
+            </app>
+         </u>
+
+
+         <u>
+            <app loc="reenacted">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_20" interval="9" xml:id="tl_1984_21" />
+                  </timeline>  
+                  So anyway we're reenacting this and not only did we reenact, but we reenacted the American ambassador American ambassador coming in the helicopter to a 
+               </rdg>
+            </app> 
+            <app loc="garbage_dump">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_21" interval="4.5" xml:id="tl_1984_22" />
+                  </timeline>  
+                  garbage dump outside: it was Neak Luong, it was supposed to be- uh it was a garbage dump outside Bangkok. 
+               </rdg>
+            </app> 
+            <app loc="artists_choppers">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_22" interval="55.25" xml:id="tl_1984_23" />
+                  </timeline>  
+                  And I happen to be coming in, right? And Sydney's there. Now there's no way I was gonna get on a helicopter. Um they said well we'll just go up ten feet, you know. They said, "would the artists please get on the helicopters." You know they call us artist, you get on. So we get on I get on the helicopter and it doesn't go up ten feet it goes complip! up woah! and Craig T. Nelson is sitting beside me. There’s a gunner there, the door's completely open, you're looking down a jungle. I felt like I was in a movie--in Apocalypse Now--and I was in a movie: The Killing Fields. And suddenly I had no fear because I realized the camera was aimed at the helicopter and I was in the protection, the erotic protected magic shield of the camera. And I had no fear and I'm looking down at the jungle, I thought even if it crashed there'd be footage of it and my friends could show it on New Years Eve, you know there'd be some documentation of the death, that made the death great. And down below is this smoke coming up and for twenty miles you can see that the film has taken over the entire jungle. And there are peasants down there burning rubber tires to make it look like a war.
+               </rdg>
+            </app> 
+            <app loc="war_therapy">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_23" interval="9.5" xml:id="tl_1984_24" />
+                  </timeline>  
+                   And I thought, yes! War Therapy! Every country should do a major war film at least once a year, so everyone could just get it out and shoot all those guns.
+               </rdg>
+            </app> 
+         </u>
+
+
+         <u>
+            <app loc="method_act">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_24" interval="12" xml:id="tl_1984_25" />
+                  </timeline>  
+                  And we land in the helicopter and it's 110 degrees in the chopper. You don't have to method act, you're yelling and you’re “Hey what are you doing down here, Sydney!” And the blades chopping. I jump off the helicopter, here are the people are supposed to be sh- killed in Neak Luong. 
+               </rdg>
+            </app> 
+            <app loc="thai_peasants">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_25" interval="13" xml:id="tl_1984_26" />
+                  </timeline>  
+                  They are Thai peasants lying in 110 degree sun with chicken giblets over them for five dollars a day, fourteen hours a day. The amputees get $7.50. So you see it was just like the reenactment of Neak Luong, the actual event!  
+               </rdg>
+            </app> 
+         </u>
+
+
+         <u>
+            <app loc="computer_malfunction_repeat">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_26" interval="57" xml:id="tl_1984_27" />
+                  </timeline>  
+                  So I'm supposed to be telling Sam about Neak Luong at the Hotel Phnom Penh. And I'm walking down with him.   
+                  Now all I have to do is say this very simple thing, and I have to go, "A computer malfunction put out the wrong set of coordinates. Seems a single B-52 opened up over Neak Luong. There’s a homing beacon right in the middle of town. Check it out, Sid.” <lb />
+                  Oh it's easy enough, but for me as an actor I have to have an image of what I'm talking about. It's hard for me to do statistics. It's a very straight, serious scene. It's a night shoot: I'm hoping it will be done in an hour or so.  <lb />
+                  So I go, “a computer malfunction”: okay, I got an image of guys pulling wires out of a computer. Uh "put out the wrong set of coordinates": I had to look that up, I see a gridwork, right? Um "seems a single B-52": alright I remember the B-52s from television when I was ea- eating in front of the TV during the Vietnam War. I could see those bombs coming down. "Opened up over Neak Luong": I was a little hungover from the night before so I was saying "Luong Neak" and uh missing it, you know. <lb />
+               </rdg>
+            </app>
+            <app loc="in_character">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_27" interval="49" xml:id="tl_1984_27b" />
+                  </timeline>              
+                  But I thought I was in character because Roland told me my character would be drinking a lot- it's amazing what people do to get in character in the film. There's one British actor that was playing a reporter. He was a family man from suburbs of London. He was convinced that his character would fall in love with a Thai Mamasan. A Mamasan is the woman that runs the whorehouse. He did. He fell in love with this Mamasan, and pretty soon he began to think that he was running the bar. He had the fantasy he was running her bar. And pretty soon he began thinking he was gonna open his own bar in Pat Pong. By now he was through with the role, his wife was calling up and saying, "Where's my husband?" It took four people to get him on the Thai Air. Halfway to London he realized he had flipped out, he had gone crazy. <lb />
+
+                  So I figured I was kind of in character, I was a little shaky. So I go, “A computer malfunction put out the wrong set of coordinates. Seems a single B-52 opened up over Neak Luong. There's a ..."
+               </rdg>
+            </app> 
+            <app loc="housing_devise">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_27b" interval="39" xml:id="tl_1984_28" />
+                  </timeline> 
+                  I couldn't get an image for "homing beacon," you know. 
+                  So "Take 58 boys and girls, let's go!"  <lb />
+                  “A computer malfunction put out a wrong set of coordinates. Seems a single B-52 opened up over Leak. ..." <lb />
+                  "Take 59, boys and girls! Let's go, roll it up!" <lb />
+                  Uh, “A computer malfunction put out a wrong set of coordinates. Seems a single B-52 opened up over Neak Luong."  <lb />
+                  And fi- and I said, "There's a-" Instead of homing beacon I went, "There's a ... housing device right in the middle of town. Check it out, Sid." <lb />
+                  "Alright let's take it again, Take 60. Let's roll it boys and girls! Here we go." <lb />
+                  "A computer malfunction put out a wrong set of'-"
+               </rdg>
+            </app>
+
+            <app loc="888_troops">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_28" interval="23" xml:id="tl_1984_29" />
+                  </timeline> 
+                  This isn't as pressured as the scene I had with the 888 Thai marching troops. They were marching in front of Lon Nol, and every time they would get to me I had to take that as a queue. And sometime I'd miss it, it would take a half hour to reassemble those troops. Barump-bah-bum! Barump-bah-bum! They would march back in 110 degrees, and you see them coming at you again. <lb />
+                  “A computer malfunction put out the wrong set of coordinates. Seems a single B-52 opened"--
+               </rdg>
+            </app>  
+
+            <!--<app loc="pigeon">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_29" interval="23" xml:id="tl_1984_30" />
+                  </timeline> 
+                  and then I had it, the image for homing beacon: I saw a pigeon flying toward a lighthouse. (One of those lighthouses in the children’s book Ch-ch-ch-ch-ch.) <lb />
+                  “A computer malfunction put out the-" <lb />
+                  "Let's go boys and girls! Take 65." <lb />
+                  "A computer malfunction put out the wrong set of coordinates. Seems a single B-52 opened up over Neak Luong. There's a ..." and I looked up and I saw it, and I'm sure it would be a beautiful scene. It doesn't matter what I’m thinking about; the audience is gonna project on it. I see a pigeon flying toward a beacon and I go, "There's a homing beacon right in the middle of town. Check it out, Sid."
+               </rdg>
+            </app> 
+         </u>
+
+         <u>
+            <app loc="30000_dollars">
+               <rdg wit="#v1984">
+                  <timeline unit="s" >
+                     <when since="#tl_1984_30" interval="12" xml:id="tl_1984_31" />
+                  </timeline>  
+                  Everyone bursts into full applause. 66 takes later and two o'clock in the morning, and I'm told that if there's an assist- between Sam and I, and I'm told if all the film is processes and the people are paid it would be 30,000 dollars for that one scene.
+               </rdg>
+            </app>-->
+         </u>
+
+      </body>
+   </text>
+
+</TEI>

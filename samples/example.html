@@ -1,0 +1,1254 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+   <head>
+      <title>Lestrygonians -- The Versioning Machine 4.0</title>
+      <link rel="stylesheet" type="text/css" href="../src/vmachine.css"></link>
+      <!--[if IE 6]>
+            <link rel="stylesheet" type="text/css" href="../src/vmachine_ie6.css">
+         <![endif]--><script type="text/javascript" src="../src/vmachine.js"></script><script type="text/javascript">
+      var witnesses = new Array();
+      
+         witnesses["lr"] = "lr";
+      
+         witnesses["sb"] = "sb";
+      
+         witnesses["g"] = "g";
+      
+      var maxPanels = 3;
+   var timelinePoints = new Array();var timelineDurations = new Array();</script></head>
+   <body onload="init();">
+      <div id="mainBanner">
+         <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/poweredby.gif"></img></div>
+         <div id="headline">
+            <h1 onclick="toggleBiblio();">Lestrygonians</h1><span class="versionCount"> has 3 versions</span></div><img id="topEdge" src="../vm-images/topedge.gif" alt="Top edge"></img><div id="mainControls"><input type="button" id="newPanel" value="New Version" onclick="openPanel();"></input>
+            &#8226;
+            <input type="button" id="bibToggle" value="Bibliographic Info" onclick="toggleBiblio();"></input>
+            
+            &#8226;
+            <label for="toggleLineNumbers">Line Numbers:</label><input type="checkbox" id="toggleLineNumbers" onclick="toggleLineNumbers(this.checked);" checked="checked"></input>
+            &#8226;
+            <select id="notesMenu" disabled="&#xA;                     disabled&#xA;                  ">
+               <option>No notes found</option></select>
+            &#8226;
+            <a href="../samples.html">Index of texts</a></div>
+      </div>
+      <div id="mssArea">
+         <div class="panel" id="bibPanel">
+            <div class="panelBanner"><img class="closePanel" onclick="toggleBiblio();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+               Bibliographic Information
+               
+            </div>
+            <div class="bibContent">
+               <h2>Lestrygonians</h2>
+               <h3>
+                  by James Joyce
+               </h3>
+               <h4>Original Source</h4>
+                       
+               <p>Excerpts from the "Lestrygonians" chapter of James Joyce's Ulysses taken from The Little Review vol. 5 no. 9 (1919), the Shakespeare and Company edition (1922) and Hans Walter Gabler's revised Ulysses: The corrected text (1986).</p>
+                     
+               <h4>Witness List</h4>
+               <ul>
+                  <li><strong>Witness lr:</strong> The Little Review
+                  </li>
+                  <li><strong>Witness sb:</strong> Shakespeare and Company
+                  </li>
+                  <li><strong>Witness g:</strong> Gabler
+                  </li>
+               </ul>
+               <h4>Electronic Edition Information:</h4>
+               <h5>Responsibility Statement:</h5>
+               <ul>
+                  <li>Text Encoding by  Daniel Carter</li>
+               </ul>
+               <h5>Publication Details:</h5>
+                      
+               <p>[Publication statement required here.]</p>
+                    
+               <h4>Encoding Principles</h4>
+                     
+                   
+            </div>
+         </div>
+         <div class="panel" id="critPanel" style="display: none;">
+            <div class="panelBanner"><img class="closePanel" onclick="toggleCrit();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+               Critical Introduction
+               
+            </div>
+            <div class="critContent"></div>
+         </div>
+         <div id="manuscripts">
+            <div class="panel mssPanel">
+               <div class="panelBanner"><img class="closePanel" onclick="closePanel(this.parentNode.parentNode);" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness <select class="witnessMenu" onchange="changeWitness(this.value,this.parentNode.parentNode);">
+                     <option selected="selected" value="lr">1: The Little Review</option>
+                     <option value="sb">2: Shakespeare and Company</option>
+                     <option value="g">3: Gabler</option></select></div>
+               <div class="mssContent">
+                  
+                      
+                  <div class="div">
+                     
+                         	
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e91');">
+                           	    		
+                           <div data-witness="sb g" class="reading sb g">
+                              	    			Pineapple rock, lemon platt, butter scotch.
+                              	    		
+                           </div>
+                           	    		
+                           <div data-witness="lr" class="reading lr">
+                              	    			PINEAPPLE rock, lemon platt, butter-scotch.
+                              	    		
+                           </div>	    		
+                           	    	
+                        </div>
+                        	   	    
+                        	   	    
+                        <div class="apparatus" onclick="matchApp('app-d0e100');">
+                           	    		
+                           <div data-witness="all" class="reading all">
+                              	    			A sugarsticky girl shovelling scoopfuls of creams for a christian brother. Some school treat. Bad for their tummies.
+                              Lozenge and comfit manufacturer to His Majesty the King. God. Save. Our.
+                              	    		
+                           </div>
+                           	    	
+                        </div>
+                        
+                        	   	    
+                        <div class="apparatus" onclick="matchApp('app-d0e106');">
+                           	    		
+                           <div data-witness="g" class="reading g">
+                              	    			Sitting on his throne sucking red jujubes white. 
+                              	    		
+                           </div>
+                           	    		
+                           <div data-witness="sb" class="reading sb">
+                              	    			Sitting on his throne, sucking red jujubes white. 
+                              	    		
+                           </div>
+                           	    		
+                           <div data-witness="lr" class="reading lr">
+                              	    			Sitting on his throne, sucking jujubes. 
+                              	    		
+                           </div>	    			    		
+                           	    	
+                        </div>	    	
+                        	    
+                     </div>
+                     
+                     	    
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e121');">
+                           	    		
+                           <div data-witness="sb g" class="reading sb g">
+                              	    			A sombre Y. M. C. A. young man, watchful among the warm sweet fumes of Graham Lemon's, placed a throwaway in a hand
+                              of Mr Bloom.
+                              	    		
+                           </div>
+                           	    		
+                           <div data-witness="lr" class="reading lr">
+                              	    			A sombre young man, watchful among the warm sweet fumes of Graham Lemon's, placed a throwaway in a hand of Mr. Bloom.
+                              	    		
+                           </div>	  	    		  		
+                           	    	
+                        </div>
+                        	    
+                     </div>
+                     
+                     	    
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e133');">
+                           	    		
+                           <div data-witness="sb g" class="reading sb g">
+                              	    			Heart to heart talks.
+                              	    		
+                           </div>
+                           	    		
+                           <div data-witness="lr" class="reading lr">
+                              	    			Heart to heart talks. Bloo .... Me? No.
+                              	    		
+                           </div>	    			  	    		  		
+                           	    	
+                        </div>
+                        	    
+                     </div>
+                     
+                     	    
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e145');">
+                           	    		
+                           <div data-witness="sb" class="reading sb">
+                              	    			Bloo... Me? No.
+                              	    		
+                           </div>	
+                           	    		
+                           <div data-witness="g" class="reading g">
+                              	    			Bloo .... Me? No.
+                              	    		
+                           </div>		    		  	    		  		
+                           	    	
+                        </div>
+                        	    
+                     </div>
+                     
+                     	    
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e157');">
+                           	    		
+                           <div data-witness="g sb" class="reading g sb">
+                              	    			Blood of the Lamb. 
+                              	    		
+                           </div>			    		  	    		  		
+                           	    	
+                        </div>
+                        	    
+                     </div>
+                     
+                     	    
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e166');">
+                           	    		
+                           <div data-witness="all" class="reading all">
+                              	    			His slow feet walked him riverward, reading. 
+                              	    		
+                           </div>
+                           	    	
+                        </div>
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e172');">
+                           	    		
+                           <div data-witness="lr" class="reading lr">
+                              	    			All are washed in the blood of the lamb.
+                              	    		
+                           </div>
+                           	    		
+                           <div data-witness="g sb" class="reading g sb">
+                              	    			All are washed in the blood of the lamb. God wants blood victim. Birth, hymen, martyr, war, foundation of a building,
+                              sacrifice, kidney burntoffering, druids' altars.
+                              	    		
+                           </div>
+                           	    	
+                        </div>
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e181');">
+                           	    		
+                           <div data-witness="lr" class="reading lr">
+                              	    			Dr. John Alexander Dowie restorer of the church in Zion is coming. 
+                              	    		
+                           </div>
+                           	    		
+                           <div data-witness="g" class="reading g">
+                              	    			Elijah is coming. Dr John Alexander Dowie restorer of the church in Zion is coming.
+                              	    		
+                           </div>
+                           	    		
+                           <div data-witness="sb" class="reading sb">
+                              	    			Elijah is coming. Dr John Alexander Dowie, restorer of the church in Zion, is coming.
+                              	    		
+                           </div>	    		
+                           	    	
+                        </div>	    		    	
+                        	    
+                     </div>
+                     
+                     	    
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e196');">
+                           	    		
+                           <div data-witness="all" class="reading all">
+                              	    			Is coming! Is coming!! Is coming!!! 
+                              	    		
+                           </div>
+                           	    	
+                        </div>
+                        	    
+                     </div>
+                     
+                     	    
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e205');">
+                           	    		
+                           <div data-witness="all" class="reading all">
+                              	    			All heartily welcome. 
+                              	    		
+                           </div>
+                           	    	
+                        </div>
+                        	    
+                     </div>
+                     
+                     	    
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e214');">
+                           	    		
+                           <div data-witness="all" class="reading all">
+                              	    			Paying game.
+                              	    		
+                           </div>
+                           	    	
+                        </div>
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e220');">
+                           	    		
+                           <div data-witness="sb g" class="reading sb g">
+                              	    			Torry and Alexander last year. Polygamy. His wife will put the stopper on that.
+                              	    		
+                           </div>  		
+                           	    	
+                        </div>
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e226');">
+                           	    		
+                           <div data-witness="lr sb" class="reading lr sb">
+                              	    			Where was that ad some Birmingham firm the luminous crucifix? Our saviour.
+                              	    		
+                           </div>  
+                           	    		
+                           <div data-witness="g" class="reading g">
+                              	    			Where was that ad some Birmingham firm the luminous crucifix. Our Saviour.
+                              	    		
+                           </div>  	    				
+                           	    	
+                        </div>	
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e235');">
+                           	    		
+                           <div data-witness="all" class="reading all">
+                              	    			Wake up in the dead of night and see him on the wall, hanging. Pepper's ghost idea.
+                              	    		
+                           </div>  	    				
+                           	    	
+                        </div>	
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e241');">
+                           	    		
+                           <div data-witness="g" class="reading g">
+                              	    			Iron Nails Ran In.
+                              	    		
+                           </div>  
+                           	    		
+                           <div data-witness="sb lr" class="reading sb lr">
+                              	    			Iron nails ran in.
+                              	    		
+                           </div>   	    			    				
+                           	    	
+                        </div>		    		    	    		    	
+                        	    
+                     </div>
+                     
+                     	    
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e253');">
+                           	    		
+                           <div data-witness="lr sb" class="reading lr sb">
+                              	    			Phosphorous it must be done with.
+                              	    		
+                           </div>
+                           	    		
+                           <div data-witness="g" class="reading g">
+                              	    			Phosphorus it must be done with.
+                              	    		
+                           </div>
+                           	    	
+                        </div>
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e262');">
+                           	    		
+                           <div data-witness="all" class="reading all">
+                              	    			If you leave a bit of codfish for instance. I could see the bluey silver over it. Night I went down to the pantry
+                              in the kitchen.
+                              	    		
+                           </div>
+                           	    	
+                        </div>
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e268');">
+                           	    		
+                           <div data-witness="g sb" class="reading g sb">
+                              	    			Don't like all the smells in it waiting to rush out.
+                              	    		
+                           </div> 		
+                           	    	
+                        </div>	    	
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e274');">
+                           	    		
+                           <div data-witness="all" class="reading all">
+                              	    			What was it she wanted? The Malaga raisins.
+                              	    		
+                           </div> 		
+                           	    	
+                        </div>
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e280');">
+                           	    		
+                           <div data-witness="sb g" class="reading sb g">
+                              	    			Thinking of Spain.
+                              	    		
+                           </div>    				
+                           	    	
+                        </div>	
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e286');">
+                           	    		
+                           <div data-witness="all" class="reading all">
+                              	    			Before Rudy was born. The phosphorescence, that bluey greeny. Very good for the brain. 
+                              	    		
+                           </div>    				
+                           	    	
+                        </div>		    	    	
+                        		
+                     </div>
+                     
+                     		
+                     <div class="paragraph">
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e295');">
+                           				
+                           <div data-witness="all" class="reading all">
+                              					From Butler's monument house corner he glanced along Bachelor's walk.
+                              				
+                           </div>
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e301');">
+                           				
+                           <div data-witness="g sb" class="reading g sb">
+                              					Dedalus' daughter there still outside Dillon's auctionrooms.
+                              				
+                           </div>
+                           				
+                           <div data-witness="lr" class="reading lr">
+                              					Dedalus' daughter there still outside Dillon's auction rooms.
+                              				
+                           </div>
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e310');">
+                           				
+                           <div data-witness="all" class="reading all">
+                              					Must be selling off some old furniture. Knew her eyes at once from the father. Lobbing about waiting for him. Home always
+                              breaks up when the mother goes. Fifteen children he had. Birth every year almost. That's in their theology or the priest won't
+                              give the poor woman the confession, the absolution. Increase and multiply. Did you ever hear such an idea?
+                              				
+                           </div>
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e316');">
+                           				
+                           <div data-witness="sb g" class="reading sb g">
+                              					Eat you out of house and home.
+                              				
+                           </div>			
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e322');">
+                           				
+                           <div data-witness="all" class="reading all">
+                              					No families themselves to feed. Living on the fat of the land.
+                              				
+                           </div>			
+                           			
+                        </div>	
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e328');">
+                           				
+                           <div data-witness="g sb" class="reading g sb">
+                              					Their butteries and larders. I'd like to see them do the black fast Yom Kippur. Crossbuns. One meal and a collation for
+                              fear he'd collapse on the altar.
+                              				
+                           </div>						
+                           			
+                        </div>							
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e334');">
+                           				
+                           <div data-witness="g sb" class="reading g sb">
+                              					A housekeeper of one of those fellows if you could pick it out of her. Never pick it out of her.
+                              				
+                           </div>	
+                           				
+                           <div data-witness="lr" class="reading lr">
+                              					A housekeeper of one of those fellows if you could pick it out of her. Never pick it out of her:
+                              				
+                           </div>										
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e343');">
+                           				
+                           <div data-witness="g sb" class="reading g sb">
+                              					His reverence: mum's the word.
+                              				
+                           </div>	
+                           				
+                           <div data-witness="lr" class="reading lr">
+                              					his reverence: mum's the word. 
+                              				
+                           </div>										
+                           			
+                        </div>									
+                        		
+                     </div>
+                     
+                     		
+                     <div class="paragraph">
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e355');">
+                           				
+                           <div data-witness="lr" class="reading lr">
+                              					Good Lord that poor child's dress is in flitters.
+                              				
+                           </div>
+                           				
+                           <div data-witness="g" class="reading g">
+                              					Good lord, that poor child's dress is in flitters.
+                              				
+                           </div>
+                           				
+                           <div data-witness="sb" class="reading sb">
+                              					Good Lord, that poor child's dress is in flitters.
+                              				
+                           </div>
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e367');">
+                           				
+                           <div data-witness="sb g" class="reading sb g">
+                              					Underfed she looks too.
+                              				
+                           </div>
+                           				
+                           <div data-witness="lr" class="reading lr">
+                              					Under fed she looks too.
+                              				
+                           </div>
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e376');">
+                           				
+                           <div data-witness="g sb" class="reading g sb">
+                              					Potatoes and marge, marge and potatoes.
+                              				
+                           </div>
+                           			
+                        </div>	
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e382');">
+                           				
+                           <div data-witness="all" class="reading all">
+                              					It's after they feel it.
+                              				
+                           </div>
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e388');">
+                           				
+                           <div data-witness="g sb" class="reading g sb">
+                              					Proof of the pudding.
+                              				
+                           </div>
+                           			
+                        </div>	
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e394');">
+                           				
+                           <div data-witness="all" class="reading all">
+                              					Undermines the constitution. 
+                              				
+                           </div>
+                           			
+                        </div>												
+                        		
+                     </div>
+                     
+                     		
+                     <div class="paragraph">
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e403');">
+                           				
+                           <div data-witness="all" class="reading all">
+                              					As he set foot on O'Connell bridge a puffball of smoke plumed up from the parapet. Brewery barge with export stout. England.
+                              Sea air sours it, I heard. Be interesting some day get a pass through Hancock to see the brewery.
+                              				
+                           </div>
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e409');">
+                           				
+                           <div data-witness="sb g" class="reading sb g">
+                              					Regular world in itself.
+                              				
+                           </div>
+                           				
+                           <div data-witness="lr" class="reading lr">
+                              					Regular town in itself.
+                              				
+                           </div>				
+                           			
+                        </div>	
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e418');">
+                           				
+                           <div data-witness="sb" class="reading sb">
+                              					Vats of porter, wonderful.
+                              				
+                           </div>
+                           				
+                           <div data-witness="lr g" class="reading lr g">
+                              					Vats of porter wonderful.
+                              				
+                           </div>				
+                           			
+                        </div>	
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e427');">
+                           				
+                           <div data-witness="all" class="reading all">
+                              					Rats get in too. Drink themselves bloated as big as a collie floating. Dead drunk on the porter. Drink till they puke
+                              again like christians. Imagine drinking that! Rats : vats.
+                              				
+                           </div>				
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e433');">
+                           				
+                           <div data-witness="lr sb" class="reading lr sb">
+                              					Well of course if we knew all the things. 
+                              				
+                           </div>	
+                           				
+                           <div data-witness="g" class="reading g">
+                              					Well, of course, if we knew all the things. 
+                              				
+                           </div>								
+                           			
+                        </div>												
+                        		
+                     </div>
+                     
+                     	
+                     	
+                  </div>
+                  
+                          
+                      
+               </div>
+            </div>
+            <div class="panel mssPanel">
+               <div class="panelBanner"><img class="closePanel" onclick="closePanel(this.parentNode.parentNode);" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness <select class="witnessMenu" onchange="changeWitness(this.value,this.parentNode.parentNode);">
+                     <option value="lr">1: The Little Review</option>
+                     <option selected="selected" value="sb">2: Shakespeare and Company</option>
+                     <option value="g">3: Gabler</option></select></div>
+               <div class="mssContent">
+                  
+                      
+                  <div class="div">
+                     
+                         	
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e91');">
+                           	    		
+                           <div data-witness="sb g" class="reading sb g">
+                              	    			Pineapple rock, lemon platt, butter scotch.
+                              	    		
+                           </div>
+                           	    		
+                           <div data-witness="lr" class="reading lr">
+                              	    			PINEAPPLE rock, lemon platt, butter-scotch.
+                              	    		
+                           </div>	    		
+                           	    	
+                        </div>
+                        	   	    
+                        	   	    
+                        <div class="apparatus" onclick="matchApp('app-d0e100');">
+                           	    		
+                           <div data-witness="all" class="reading all">
+                              	    			A sugarsticky girl shovelling scoopfuls of creams for a christian brother. Some school treat. Bad for their tummies.
+                              Lozenge and comfit manufacturer to His Majesty the King. God. Save. Our.
+                              	    		
+                           </div>
+                           	    	
+                        </div>
+                        
+                        	   	    
+                        <div class="apparatus" onclick="matchApp('app-d0e106');">
+                           	    		
+                           <div data-witness="g" class="reading g">
+                              	    			Sitting on his throne sucking red jujubes white. 
+                              	    		
+                           </div>
+                           	    		
+                           <div data-witness="sb" class="reading sb">
+                              	    			Sitting on his throne, sucking red jujubes white. 
+                              	    		
+                           </div>
+                           	    		
+                           <div data-witness="lr" class="reading lr">
+                              	    			Sitting on his throne, sucking jujubes. 
+                              	    		
+                           </div>	    			    		
+                           	    	
+                        </div>	    	
+                        	    
+                     </div>
+                     
+                     	    
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e121');">
+                           	    		
+                           <div data-witness="sb g" class="reading sb g">
+                              	    			A sombre Y. M. C. A. young man, watchful among the warm sweet fumes of Graham Lemon's, placed a throwaway in a hand
+                              of Mr Bloom.
+                              	    		
+                           </div>
+                           	    		
+                           <div data-witness="lr" class="reading lr">
+                              	    			A sombre young man, watchful among the warm sweet fumes of Graham Lemon's, placed a throwaway in a hand of Mr. Bloom.
+                              	    		
+                           </div>	  	    		  		
+                           	    	
+                        </div>
+                        	    
+                     </div>
+                     
+                     	    
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e133');">
+                           	    		
+                           <div data-witness="sb g" class="reading sb g">
+                              	    			Heart to heart talks.
+                              	    		
+                           </div>
+                           	    		
+                           <div data-witness="lr" class="reading lr">
+                              	    			Heart to heart talks. Bloo .... Me? No.
+                              	    		
+                           </div>	    			  	    		  		
+                           	    	
+                        </div>
+                        	    
+                     </div>
+                     
+                     	    
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e145');">
+                           	    		
+                           <div data-witness="sb" class="reading sb">
+                              	    			Bloo... Me? No.
+                              	    		
+                           </div>	
+                           	    		
+                           <div data-witness="g" class="reading g">
+                              	    			Bloo .... Me? No.
+                              	    		
+                           </div>		    		  	    		  		
+                           	    	
+                        </div>
+                        	    
+                     </div>
+                     
+                     	    
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e157');">
+                           	    		
+                           <div data-witness="g sb" class="reading g sb">
+                              	    			Blood of the Lamb. 
+                              	    		
+                           </div>			    		  	    		  		
+                           	    	
+                        </div>
+                        	    
+                     </div>
+                     
+                     	    
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e166');">
+                           	    		
+                           <div data-witness="all" class="reading all">
+                              	    			His slow feet walked him riverward, reading. 
+                              	    		
+                           </div>
+                           	    	
+                        </div>
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e172');">
+                           	    		
+                           <div data-witness="lr" class="reading lr">
+                              	    			All are washed in the blood of the lamb.
+                              	    		
+                           </div>
+                           	    		
+                           <div data-witness="g sb" class="reading g sb">
+                              	    			All are washed in the blood of the lamb. God wants blood victim. Birth, hymen, martyr, war, foundation of a building,
+                              sacrifice, kidney burntoffering, druids' altars.
+                              	    		
+                           </div>
+                           	    	
+                        </div>
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e181');">
+                           	    		
+                           <div data-witness="lr" class="reading lr">
+                              	    			Dr. John Alexander Dowie restorer of the church in Zion is coming. 
+                              	    		
+                           </div>
+                           	    		
+                           <div data-witness="g" class="reading g">
+                              	    			Elijah is coming. Dr John Alexander Dowie restorer of the church in Zion is coming.
+                              	    		
+                           </div>
+                           	    		
+                           <div data-witness="sb" class="reading sb">
+                              	    			Elijah is coming. Dr John Alexander Dowie, restorer of the church in Zion, is coming.
+                              	    		
+                           </div>	    		
+                           	    	
+                        </div>	    		    	
+                        	    
+                     </div>
+                     
+                     	    
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e196');">
+                           	    		
+                           <div data-witness="all" class="reading all">
+                              	    			Is coming! Is coming!! Is coming!!! 
+                              	    		
+                           </div>
+                           	    	
+                        </div>
+                        	    
+                     </div>
+                     
+                     	    
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e205');">
+                           	    		
+                           <div data-witness="all" class="reading all">
+                              	    			All heartily welcome. 
+                              	    		
+                           </div>
+                           	    	
+                        </div>
+                        	    
+                     </div>
+                     
+                     	    
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e214');">
+                           	    		
+                           <div data-witness="all" class="reading all">
+                              	    			Paying game.
+                              	    		
+                           </div>
+                           	    	
+                        </div>
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e220');">
+                           	    		
+                           <div data-witness="sb g" class="reading sb g">
+                              	    			Torry and Alexander last year. Polygamy. His wife will put the stopper on that.
+                              	    		
+                           </div>  		
+                           	    	
+                        </div>
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e226');">
+                           	    		
+                           <div data-witness="lr sb" class="reading lr sb">
+                              	    			Where was that ad some Birmingham firm the luminous crucifix? Our saviour.
+                              	    		
+                           </div>  
+                           	    		
+                           <div data-witness="g" class="reading g">
+                              	    			Where was that ad some Birmingham firm the luminous crucifix. Our Saviour.
+                              	    		
+                           </div>  	    				
+                           	    	
+                        </div>	
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e235');">
+                           	    		
+                           <div data-witness="all" class="reading all">
+                              	    			Wake up in the dead of night and see him on the wall, hanging. Pepper's ghost idea.
+                              	    		
+                           </div>  	    				
+                           	    	
+                        </div>	
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e241');">
+                           	    		
+                           <div data-witness="g" class="reading g">
+                              	    			Iron Nails Ran In.
+                              	    		
+                           </div>  
+                           	    		
+                           <div data-witness="sb lr" class="reading sb lr">
+                              	    			Iron nails ran in.
+                              	    		
+                           </div>   	    			    				
+                           	    	
+                        </div>		    		    	    		    	
+                        	    
+                     </div>
+                     
+                     	    
+                     <div class="paragraph">
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e253');">
+                           	    		
+                           <div data-witness="lr sb" class="reading lr sb">
+                              	    			Phosphorous it must be done with.
+                              	    		
+                           </div>
+                           	    		
+                           <div data-witness="g" class="reading g">
+                              	    			Phosphorus it must be done with.
+                              	    		
+                           </div>
+                           	    	
+                        </div>
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e262');">
+                           	    		
+                           <div data-witness="all" class="reading all">
+                              	    			If you leave a bit of codfish for instance. I could see the bluey silver over it. Night I went down to the pantry
+                              in the kitchen.
+                              	    		
+                           </div>
+                           	    	
+                        </div>
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e268');">
+                           	    		
+                           <div data-witness="g sb" class="reading g sb">
+                              	    			Don't like all the smells in it waiting to rush out.
+                              	    		
+                           </div> 		
+                           	    	
+                        </div>	    	
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e274');">
+                           	    		
+                           <div data-witness="all" class="reading all">
+                              	    			What was it she wanted? The Malaga raisins.
+                              	    		
+                           </div> 		
+                           	    	
+                        </div>
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e280');">
+                           	    		
+                           <div data-witness="sb g" class="reading sb g">
+                              	    			Thinking of Spain.
+                              	    		
+                           </div>    				
+                           	    	
+                        </div>	
+                        	    	
+                        <div class="apparatus" onclick="matchApp('app-d0e286');">
+                           	    		
+                           <div data-witness="all" class="reading all">
+                              	    			Before Rudy was born. The phosphorescence, that bluey greeny. Very good for the brain. 
+                              	    		
+                           </div>    				
+                           	    	
+                        </div>		    	    	
+                        		
+                     </div>
+                     
+                     		
+                     <div class="paragraph">
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e295');">
+                           				
+                           <div data-witness="all" class="reading all">
+                              					From Butler's monument house corner he glanced along Bachelor's walk.
+                              				
+                           </div>
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e301');">
+                           				
+                           <div data-witness="g sb" class="reading g sb">
+                              					Dedalus' daughter there still outside Dillon's auctionrooms.
+                              				
+                           </div>
+                           				
+                           <div data-witness="lr" class="reading lr">
+                              					Dedalus' daughter there still outside Dillon's auction rooms.
+                              				
+                           </div>
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e310');">
+                           				
+                           <div data-witness="all" class="reading all">
+                              					Must be selling off some old furniture. Knew her eyes at once from the father. Lobbing about waiting for him. Home always
+                              breaks up when the mother goes. Fifteen children he had. Birth every year almost. That's in their theology or the priest won't
+                              give the poor woman the confession, the absolution. Increase and multiply. Did you ever hear such an idea?
+                              				
+                           </div>
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e316');">
+                           				
+                           <div data-witness="sb g" class="reading sb g">
+                              					Eat you out of house and home.
+                              				
+                           </div>			
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e322');">
+                           				
+                           <div data-witness="all" class="reading all">
+                              					No families themselves to feed. Living on the fat of the land.
+                              				
+                           </div>			
+                           			
+                        </div>	
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e328');">
+                           				
+                           <div data-witness="g sb" class="reading g sb">
+                              					Their butteries and larders. I'd like to see them do the black fast Yom Kippur. Crossbuns. One meal and a collation for
+                              fear he'd collapse on the altar.
+                              				
+                           </div>						
+                           			
+                        </div>							
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e334');">
+                           				
+                           <div data-witness="g sb" class="reading g sb">
+                              					A housekeeper of one of those fellows if you could pick it out of her. Never pick it out of her.
+                              				
+                           </div>	
+                           				
+                           <div data-witness="lr" class="reading lr">
+                              					A housekeeper of one of those fellows if you could pick it out of her. Never pick it out of her:
+                              				
+                           </div>										
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e343');">
+                           				
+                           <div data-witness="g sb" class="reading g sb">
+                              					His reverence: mum's the word.
+                              				
+                           </div>	
+                           				
+                           <div data-witness="lr" class="reading lr">
+                              					his reverence: mum's the word. 
+                              				
+                           </div>										
+                           			
+                        </div>									
+                        		
+                     </div>
+                     
+                     		
+                     <div class="paragraph">
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e355');">
+                           				
+                           <div data-witness="lr" class="reading lr">
+                              					Good Lord that poor child's dress is in flitters.
+                              				
+                           </div>
+                           				
+                           <div data-witness="g" class="reading g">
+                              					Good lord, that poor child's dress is in flitters.
+                              				
+                           </div>
+                           				
+                           <div data-witness="sb" class="reading sb">
+                              					Good Lord, that poor child's dress is in flitters.
+                              				
+                           </div>
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e367');">
+                           				
+                           <div data-witness="sb g" class="reading sb g">
+                              					Underfed she looks too.
+                              				
+                           </div>
+                           				
+                           <div data-witness="lr" class="reading lr">
+                              					Under fed she looks too.
+                              				
+                           </div>
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e376');">
+                           				
+                           <div data-witness="g sb" class="reading g sb">
+                              					Potatoes and marge, marge and potatoes.
+                              				
+                           </div>
+                           			
+                        </div>	
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e382');">
+                           				
+                           <div data-witness="all" class="reading all">
+                              					It's after they feel it.
+                              				
+                           </div>
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e388');">
+                           				
+                           <div data-witness="g sb" class="reading g sb">
+                              					Proof of the pudding.
+                              				
+                           </div>
+                           			
+                        </div>	
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e394');">
+                           				
+                           <div data-witness="all" class="reading all">
+                              					Undermines the constitution. 
+                              				
+                           </div>
+                           			
+                        </div>												
+                        		
+                     </div>
+                     
+                     		
+                     <div class="paragraph">
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e403');">
+                           				
+                           <div data-witness="all" class="reading all">
+                              					As he set foot on O'Connell bridge a puffball of smoke plumed up from the parapet. Brewery barge with export stout. England.
+                              Sea air sours it, I heard. Be interesting some day get a pass through Hancock to see the brewery.
+                              				
+                           </div>
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e409');">
+                           				
+                           <div data-witness="sb g" class="reading sb g">
+                              					Regular world in itself.
+                              				
+                           </div>
+                           				
+                           <div data-witness="lr" class="reading lr">
+                              					Regular town in itself.
+                              				
+                           </div>				
+                           			
+                        </div>	
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e418');">
+                           				
+                           <div data-witness="sb" class="reading sb">
+                              					Vats of porter, wonderful.
+                              				
+                           </div>
+                           				
+                           <div data-witness="lr g" class="reading lr g">
+                              					Vats of porter wonderful.
+                              				
+                           </div>				
+                           			
+                        </div>	
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e427');">
+                           				
+                           <div data-witness="all" class="reading all">
+                              					Rats get in too. Drink themselves bloated as big as a collie floating. Dead drunk on the porter. Drink till they puke
+                              again like christians. Imagine drinking that! Rats : vats.
+                              				
+                           </div>				
+                           			
+                        </div>
+                        			
+                        <div class="apparatus" onclick="matchApp('app-d0e433');">
+                           				
+                           <div data-witness="lr sb" class="reading lr sb">
+                              					Well of course if we knew all the things. 
+                              				
+                           </div>	
+                           				
+                           <div data-witness="g" class="reading g">
+                              					Well, of course, if we knew all the things. 
+                              				
+                           </div>								
+                           			
+                        </div>												
+                        		
+                     </div>
+                     
+                     	
+                     	
+                  </div>
+                  
+                          
+                      
+               </div>
+            </div>
+         </div>
+         <div class="panel" id="notesPanel" style="display: none;">
+            <div class="panelBanner"><img class="closePanel" onclick="hideNotesPanel();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+               Textual Notes
+               
+            </div>
+            <div id="noNotesFound" class="noteContent">
+               Sorry, but there are no notes associated with
+               any currently displayed witness.
+               
+            </div>
+         </div><br class="clear"></br></div>
+      <div class="viewerRoot" id="panel_imageViewer">
+         <div title="Click to drag panel." class="viewerHandle" id="handle_imageViewer"><span class="viewerHandleLt" id="title_imageViewer">Image Viewer</span><img class="viewerHandleRt" onclick="return hidePanel('imageViewer');" alt="X" src="../vm-images/closePanel.gif"></img></div>
+         <div class="viewerContent" id="content_imageViewer"></div>
+      </div>
+   </body>
+</html>

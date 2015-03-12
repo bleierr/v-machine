@@ -1,0 +1,2180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="../src/vmachine.xsl"?>
+<?xml-model href="../schema/vmachine.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/vmachine.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>A CARAFE, THAT IS A BLIND GLASS</title>
+            <respStmt>
+               <resp>transcribed, encoded, and edited by</resp>
+               <persName>Daniel Carter</persName>
+            </respStmt>
+         </titleStmt>
+         
+         <editionStmt>
+            <edition n="1"/>
+            <respStmt>
+               <resp>Transcription, encoding, transformations, and notes</resp>
+               <persName>Daniel Carter</persName>
+               <orgName>The University of Texas at Austin</orgName>
+            </respStmt>
+         </editionStmt>
+
+         <publicationStmt>
+            <publisher>Daniel Carter</publisher>
+
+                <availability status="unknown">
+
+                    <p>The audio of Jackson Mac Low's reading is used here with permission from PennSound. The text of Mac Low's essay, "Reading a Selection from Tender Buttons," is used with permission from Charles Bernstein.</p>
+
+                </availability>
+                
+            </publicationStmt>
+
+
+
+         <notesStmt>
+            <note type="critIntro">
+               <p>This edition combines "A CARAFE THAT IS A BLIND GLASS," the first section of Gertrude Stein's Tender Buttons, originally published in 1914, with an essay on the section by Jackson Mac Low, published in Language No. 6 and audio of Mac Low reading the poem in Charles Bernstein's poetry seminar in 1990. It is intended as a demonstration of the Versioning Machine 5.0's audio alignment features.</p>
+            </note>
+         </notesStmt>
+
+         
+
+         <sourceDesc>
+            <listBibl>
+               <msDesc>
+                  <msIdentifier>
+                     <repository>"A CARAFE, THAT IS A BLIND GLASS" is transcribed from the 1914 Marie Claire edition of Tender Buttons. "Reading a Selection from Tender Buttons" is transcribed from Language no. 6, and the audio of Jackson Mac Low is housed by and used with permission from <ref target="http://writing.upenn.edu/pennsound/x/Mac-Low.php">PennSound</ref>.</repository>
+                  </msIdentifier>
+               </msDesc>
+            </listBibl>
+         </sourceDesc>
+      </fileDesc>
+
+      <encodingDesc>
+         <projectDesc>
+           <p></p>
+         </projectDesc>
+         <p>Transcriptions are encoded in TEI(P5)-conformant XML using a schema created for the Versioning Machine 5.0.</p>
+         <samplingDecl>
+           <p></p>
+         </samplingDecl>
+         <editorialDecl>
+            <p></p>
+         </editorialDecl>
+
+
+   
+
+      </encodingDesc>
+
+   </teiHeader>
+
+
+   <text>
+      <front>
+         <div>
+            
+            <listWit>
+               <witness xml:id="poem">A CARAFE, THAT IS A BLIND GLASS</witness>
+               <witness xml:id="essay">Reading a Selection from Tender Buttons</witness>
+               <witness xml:id="reading_poem">Mac Low Reading, 1990</witness>
+            </listWit>
+            
+            <witDetail wit="#reading_poem" target="#reading_poem">
+               <media mimeType="audio/mp3" url="audio/mac_low_poem.mp3" />
+               <media mimeType="audio/ogg" url="audio/mac_low_poem.ogg" />
+            </witDetail>
+            
+            <witDetail wit="#reading_essay" target="#reading_essay">
+               <media mimeType="audio/mp3" url="audio/mac_low_essay.mp3" />
+               <media mimeType="audio/ogg" url="audio/mac_low_essay.ogg" />
+            </witDetail>
+
+         </div>
+      </front>
+      <body>
+   
+
+         <!--Tender Buttons-->     
+         <!--Tender Buttons-->     
+         <!--Tender Buttons-->     
+         <div type="poem">
+         <head>
+            <app loc="carafe">
+               <rdg wit="#poem">
+                  A CARAFE,
+               </rdg>
+            </app>
+            <app>
+               <rdg wit="#poem">
+                  THAT IS A
+               </rdg>
+            </app>
+            <app loc="blind">
+               <rdg wit="#poem">
+                  BLIND GLASS
+               </rdg>
+            </app>         
+         </head>
+         <p>
+            <app loc="kind">
+               <rdg wit="#poem"> 
+                  A kind 
+               </rdg>
+            </app>
+            
+            <app loc="glass">
+               <rdg wit="#poem"> 
+                  in glass and  
+               </rdg>
+            </app>   
+
+            <app loc="cousin">
+               <rdg wit="#poem"> 
+                  a cousin, 
+               </rdg>
+            </app> 
+
+            <app loc="spectacle">
+               <rdg wit="#poem"> 
+                  a spectacle 
+               </rdg>
+            </app>
+
+            <app loc="strange">
+               <rdg wit="#poem"> 
+                  and nothing strange 
+               </rdg>
+            </app>
+
+            <app loc="color">
+               <rdg wit="#poem"> 
+                  a single hurt color 
+               </rdg>
+            </app>
+
+            <app loc="arrangement">
+               <rdg wit="#poem"> 
+                  and an arrangement 
+               </rdg>
+            </app>
+
+            <app loc="system">
+               <rdg wit="#poem"> 
+                  in a system 
+               </rdg>
+            </app>
+
+            <app loc="pointing">
+               <rdg wit="#poem"> 
+                  to pointing. 
+               </rdg>
+            </app>
+
+            <app loc="this">
+               <rdg wit="#poem"> 
+                  All this and  
+               </rdg>
+            </app>
+
+            <app loc="ordinary">
+               <rdg wit="#poem"> 
+                  not ordinary, 
+               </rdg>
+            </app>
+
+            <app loc="unordered">
+               <rdg wit="#poem"> 
+                  not unordered 
+               </rdg>
+            </app>
+
+            <app loc="resembling">
+               <rdg wit="#poem"> 
+                  in not resembling. 
+               </rdg>
+            </app>
+
+            <app loc="difference">
+               <rdg wit="#poem"> 
+                  The difference  
+               </rdg>
+            </app>
+
+            <app loc="spreading">
+               <rdg wit="#poem"> 
+                  is spreading.
+               </rdg>
+            </app>         
+         </p>
+         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <!--Mac Low Reading Poem-->     
+         <!--Mac Low Reading Poem-->     
+         <!--Mac Low Reading Poem--> 
+
+         <div>
+         <u>
+            <app loc="carafe">
+               <rdg wit="#reading_poem">
+                  <timeline xml:id="mlrp" origin="#mlrp_1" unit="s" >
+                     <when xml:id="mlrp_1" />
+                     <when since="#mlrp_1" interval="2.25" xml:id="mlrp_2" />
+                  </timeline> 
+                  A carafe. A carafe
+               </rdg>
+            </app>
+            <app>
+               <rdg wit="#reading_poem">
+                  <timeline unit="s" >
+                     <when since="#mlrp_2" interval="1.25" xml:id="mlrp_3" />
+                  </timeline>  
+                  that is a
+               </rdg>
+            </app>
+            <app loc="blind">
+               <rdg wit="#reading_poem">
+                  <timeline unit="s" >
+                     <when since="#mlrp_3" interval="3" xml:id="mlrp_4" />
+                  </timeline> 
+                  blind glass.
+               </rdg>
+            </app>         
+
+            <app loc="kind">
+               <rdg wit="#reading_poem"> 
+                  <timeline unit="s" >
+                     <when since="#mlrp_4" interval="1" xml:id="mlrp_5" />
+                  </timeline>
+                  A kind 
+               </rdg>
+            </app>
+            
+            <app loc="glass">
+               <rdg wit="#reading_poem"> 
+                  <timeline unit="s" >
+                     <when since="#mlrp_5" interval="1" xml:id="mlrp_6" />
+                  </timeline>
+                  in glass  
+               </rdg>
+            </app>   
+
+            <app loc="cousin">
+               <rdg wit="#reading_poem"> 
+                  <timeline unit="s" >
+                     <when since="#mlrp_6" interval="2" xml:id="mlrp_7" />
+                  </timeline>
+                  and a cousin, 
+               </rdg>
+            </app> 
+
+            <app loc="spectacle">
+               <rdg wit="#reading_poem"> 
+                  <timeline unit="s" >
+                     <when since="#mlrp_7" interval="1.25" xml:id="mlrp_8" />
+                  </timeline>
+                  a spectacle 
+               </rdg>
+            </app>
+
+            <app loc="strange">
+               <rdg wit="#reading_poem"> 
+                  <timeline unit="s" >
+                     <when since="#mlrp_8" interval="1.25" xml:id="mlrp_9" />
+                  </timeline>
+                  and nothing strange 
+               </rdg>
+            </app>
+
+            <app loc="color">
+               <rdg wit="#reading_poem"> 
+                  <timeline unit="s" >
+                     <when since="#mlrp_9" interval="1.5" xml:id="mlrp_10" />
+                  </timeline>
+                  a single hurt color 
+               </rdg>
+            </app>
+
+            <app loc="arrangement">
+               <rdg wit="#reading_poem"> 
+                  <timeline unit="s" >
+                     <when since="#mlrp_10" interval="1.25" xml:id="mlrp_11" />
+                  </timeline>
+                  and an arrangement 
+               </rdg>
+            </app>
+
+            <app loc="system">
+               <rdg wit="#reading_poem"> 
+                  <timeline unit="s" >
+                     <when since="#mlrp_11" interval=".75" xml:id="mlrp_12" />
+                  </timeline>
+                  in a system 
+               </rdg>
+            </app>
+
+            <app loc="pointing">
+               <rdg wit="#reading_poem"> 
+                  <timeline unit="s" >
+                     <when since="#mlrp_12" interval="1.5" xml:id="mlrp_13" />
+                  </timeline>
+                  to pointing. 
+               </rdg>
+            </app>
+
+            <app loc="this">
+               <rdg wit="#reading_poem"> 
+                  <timeline unit="s" >
+                     <when since="#mlrp_13" interval="1.25" xml:id="mlrp_14" />
+                  </timeline>
+                  All this and 
+               </rdg>
+            </app>
+
+            <app loc="ordinary">
+               <rdg wit="#reading_poem"> 
+                  <timeline unit="s" >
+                     <when since="#mlrp_14" interval="1" xml:id="mlrp_15" />
+                  </timeline>
+                  not ordinary, 
+               </rdg>
+            </app>
+
+            <app loc="unordered">
+               <rdg wit="#reading_poem"> 
+                  <timeline unit="s" >
+                     <when since="#mlrp_15" interval="1.25" xml:id="mlrp_16" />
+                  </timeline>
+                  not unordered 
+               </rdg>
+            </app>
+
+            <app loc="resembling">
+               <rdg wit="#reading_poem"> 
+                  <timeline unit="s" >
+                     <when since="#mlrp_16" interval="1.5" xml:id="mlrp_17" />
+                  </timeline> 
+                  in not resembling. 
+               </rdg>
+            </app>
+
+            <app loc="difference">
+               <rdg wit="#reading_poem"> 
+                  <timeline unit="s" >
+                     <when since="#mlrp_17" interval="1.75" xml:id="mlrp_18" />
+                  </timeline>
+                  The difference  
+               </rdg>
+            </app>
+
+            <app loc="spreading">
+               <rdg wit="#reading_poem"> 
+                  <timeline unit="s" >
+                     <when since="#mlrp_18" interval="1.5" xml:id="mlrp_19" />
+                  </timeline> 
+                  is spreading.
+               </rdg>
+            </app>         
+         </u>
+         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <!--Mac Low Reading Essay-->     
+         <!--Mac Low Reading Essay-->     
+         <!--Mac Low Reading Essay-->  
+         <div>        
+         
+         <u>
+            <app loc="reading_a_selection">
+               <rdg wit="#reading_essay">
+                  <timeline xml:id="mlree" origin="#mlre_1" unit="s" >
+                     <when xml:id="mlre_1" />
+                     <when since="#mlre_1" interval="2.25" xml:id="mlre_2" />
+                  </timeline> 
+                  Anyway, reading a selection from Tender Buttons.
+               </rdg>
+            </app> 
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_2" interval="1.25" xml:id="mlre_3" />
+                  </timeline> 
+                  I start reading 
+               </rdg>
+             </app>
+            
+            <app loc="carafe">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_3" interval="1.25" xml:id="mlre_4" />
+                  </timeline> 
+                  "A CARAFE
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_4" interval="1.25" xml:id="mlre_5" />
+                  </timeline> 
+                  THAT IS
+               </rdg>
+            </app>
+
+            <app loc="blind">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_5" interval="1.25" xml:id="mlre_6" />
+                  </timeline> 
+                  A BLIND GLASS." 
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_6" interval="1.25" xml:id="mlre_7" />
+                  </timeline> 
+                  I go from word to word, seeing the shapes of the printed words, hearing the sounds inwardly, noting rhymes, assonances, alliterations. Where an image is suggested, I see it inwardly. 
+               </rdg>
+             </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_7" interval="1.25" xml:id="mlre_8" />
+                  </timeline> 
+                  I go from word to word, seeing the shapes of the printed words, hearing the sounds inwardly, noting rhymes, assonances, alliterations. Where an image is suggested, I see it inwardly. I hear the alliteration 
+               </rdg>
+            </app>
+
+            
+            <app loc="kind">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_8" interval="1.25" xml:id="mlre_9" />
+                  </timeline> 
+                  "kind," 
+                </rdg>
+            </app>
+            
+            <app loc="cousin">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_9" interval="1.25" xml:id="mlre_10" />
+                  </timeline> 
+                  "cousin," 
+               </rdg>
+            </app>
+            
+            <app loc="color">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_10" interval="1.25" xml:id="mlre_11" />
+                  </timeline> 
+                  "color,"  
+               </rdg>
+            </app>
+            
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_11" interval="1.25" xml:id="mlre_12" />
+                  </timeline> 
+                  with the near-alliteration 
+               </rdg>
+            </app>            
+            
+            <app loc="glass">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_12" interval="1.25" xml:id="mlre_13" />
+                  </timeline> 
+                  "glass."
+               </rdg>
+            </app>
+            
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_13" interval="1.25" xml:id="mlre_14" />
+                  </timeline> 
+                  The rhyme in  
+               </rdg>
+            </app>            
+            
+            <app loc="strange">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_14" interval="1.25" xml:id="mlre_15" />
+                  </timeline> 
+                  "strange" &amp;
+               </rdg>
+            </app>
+            
+            <app loc="arrangement">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_15" interval="1.25" xml:id="mlre_16" />
+                  </timeline> 
+                  "arrangement."
+               </rdg>
+            </app>
+            
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_16" interval="1.25" xml:id="mlre_17" />
+                  </timeline> 
+                  The alliteration of s's: 
+               </rdg>
+            </app>            
+            
+            <app loc="spectacle">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_17" interval="1.25" xml:id="mlre_18" />
+                  </timeline> 
+                  "spectacle," 
+               </rdg>
+            </app>
+            
+            <app loc="strange">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_18" interval="1.25" xml:id="mlre_19" />
+                  </timeline> 
+                  "strange,"  
+               </rdg>
+            </app>
+            
+            <app loc="single">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_19" interval="1.25" xml:id="mlre_20" />
+                  </timeline> 
+                  "single,"  
+               </rdg>
+            </app>
+
+            <app loc="system">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_20" interval="1.25" xml:id="mlre_21" />
+                  </timeline> 
+                  "system,"  
+               </rdg>
+            </app>
+
+            <app loc="spreading">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_21" interval="1.25" xml:id="mlre_22" />
+                  </timeline> 
+                  "spreading." 
+               </rdg>
+            </app>
+            
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_22" interval="1.25" xml:id="mlre_23" />
+                  </timeline> 
+                  The assonance of short i's that binds the three sentences   
+               </rdg>
+            </app>            
+
+            <app loc="system">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_23" interval="1.25" xml:id="mlre_24" />
+                  </timeline> 
+                  ("system,"   
+               </rdg>
+            </app>
+
+            <app loc="this">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_24" interval="1.25" xml:id="mlre_25" />
+                  </timeline> 
+                  "this,"   
+               </rdg>
+            </app>
+
+            <app loc="difference">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_25" interval="1.25" xml:id="mlre_26" />
+                  </timeline> 
+                  "difference")   
+               </rdg>
+            </app>
+            
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_26" interval="1.25" xml:id="mlre_27" />
+                  </timeline> 
+                  as does the ending of each sentence with an "ing" (which is reinforced by the short e's in   
+               </rdg>
+            </app>
+
+            <app loc="resembling">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_27" interval="1.25" xml:id="mlre_28" />
+                  </timeline> 
+                  "resembling"
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_28" interval="1.25" xml:id="mlre_29" />
+                  </timeline> 
+                  &amp;  
+               </rdg>
+            </app>
+
+            <app loc="spreading">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_29" interval="1.25" xml:id="mlre_30" />
+                  </timeline> 
+                  "spreading"). 
+               </rdg>
+            </app>
+            
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_30" interval="1.25" xml:id="mlre_31" />
+                  </timeline> 
+                  There are also the 2nd sentence's rhymes (
+               </rdg>
+            </app>
+
+            <app loc="ordinary">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_31" interval="1.25" xml:id="mlre_32" />
+                  </timeline> 
+                  "ordinary," 
+               </rdg>
+            </app>
+
+            <app loc="unordered">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_32" interval="1.25" xml:id="mlre_33" />
+                  </timeline> 
+                  "unordered")  
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_33" interval="1.25" xml:id="mlre_34" />
+                  </timeline> 
+                  &amp; the alliterative sequence  
+               </rdg>
+            </app>
+
+            <app loc="spectacle">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_34" interval="1.25" xml:id="mlre_35" />
+                  </timeline> 
+                  "spectacle," 
+               </rdg>
+            </app>
+
+            <app loc="pointing">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_35" interval="1.25" xml:id="mlre_36" />
+                  </timeline> 
+                  "pointing," 
+               </rdg>
+            </app>
+
+            <app loc="spreading">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_36" interval="1.25" xml:id="mlre_37" />
+                  </timeline> 
+                  "spreading."  
+               </rdg>
+            </app>
+ 
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_37" interval="1.25" xml:id="mlre_38" />
+                  </timeline> 
+                  The three sentences are a bound system of sounds. But can I specify anything beyond the sounds? To use a phrase I first heard from Spencer Holst, it gives "the sensation of meaning," but can I connect the meanings of the words as readily as I find their sounds connected? Beyond the obvious fact that the carafe is made of glass, I can see only certain connections of meanings:  
+               </rdg>
+            </app>
+ 
+            <app loc="blind">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_38" interval="1.25" xml:id="mlre_39" />
+                  </timeline> 
+                  "a blind glass,"  
+               </rdg>
+            </app>
+  
+            <app loc="kind">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_39" interval="1.25" xml:id="mlre_40" />
+                  </timeline> 
+                  "a kind 
+               </rdg>
+            </app>
+
+           <app loc="glass">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_40" interval="1.25" xml:id="mlre_41" />
+                  </timeline> 
+                  in glass"  
+               </rdg>
+            </app>
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_41" interval="1.25" xml:id="mlre_42" />
+                  </timeline> 
+                  (I didn't notice consciously the   
+               </rdg>
+            </app>
+  
+            <app loc="blind">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_42" interval="1.25" xml:id="mlre_43" />
+                  </timeline> 
+                  "blind"-  
+               </rdg>
+            </app>
+
+            <app loc="kind">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_43" interval="1.25" xml:id="mlre_44" />
+                  </timeline> 
+                  "kind"  
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_44" interval="1.25" xml:id="mlre_45" />
+                  </timeline> 
+                  rhyme before), &amp; then  
+               </rdg>
+            </app>
+
+            <app loc="spectacle">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_45" interval="1.25" xml:id="mlre_46" />
+                  </timeline> 
+                  "a spectacle" 
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_46" interval="1.25" xml:id="mlre_47" />
+                  </timeline> 
+                  (something seen or to be seen, but also 
+               </rdg>
+            </app>
+
+            <app loc="spectacles">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_47" interval="1.25" xml:id="mlre_48" />
+                  </timeline> 
+                  "spectacles" are 
+               </rdg>
+            </app>
+            
+            <app loc="glass">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_48" interval="1.25" xml:id="mlre_49" />
+                  </timeline> 
+                  "glasses"). 
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_49" interval="1.25" xml:id="mlre_50" />
+                  </timeline> 
+                  Then 
+               </rdg>
+            </app>
+
+            <app loc="nothing">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_50" interval="1.25" xml:id="mlre_51" />
+                  </timeline> 
+                  "nothing strange," 
+               </rdg>
+            </app>
+
+            <app loc="ordinary">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_51" interval="1.25" xml:id="mlre_52" />
+                  </timeline> 
+                  "not ordinary," 
+               </rdg>
+            </app>
+
+            <app loc="unordered">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_52" interval="1.25" xml:id="mlre_53" />
+                  </timeline> 
+                  "not unordered,"  
+               </rdg>
+            </app>
+  
+            <app loc="resembling">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_53" interval="1.25" xml:id="mlre_54" />
+                  </timeline> 
+                  "not resembling," 
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_54" interval="1.25" xml:id="mlre_55" />
+                  </timeline> 
+                  &amp;  
+               </rdg>
+            </app>
+   
+            <app loc="difference">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_55" interval="1.25" xml:id="mlre_56" />
+                  </timeline> 
+                  "difference"  
+               </rdg>
+            </app>
+  
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_56" interval="1.25" xml:id="mlre_57" />
+                  </timeline> 
+                  form a meaning sequence. Another sequence of meanings:  
+               </rdg>
+            </app>
+            
+            <app loc="blind">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_57" interval="1.25" xml:id="mlre_58" />
+                  </timeline> 
+                  "blind,"  
+               </rdg>
+            </app>   
+            
+            <app loc="spectacle">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_58" interval="1.25" xml:id="mlre_59" />
+                  </timeline> 
+                  "spectacle"
+               </rdg>
+            </app> 
+            
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_59" interval="1.25" xml:id="mlre_60" />
+                  </timeline> 
+                  (with the intervening  
+               </rdg>
+            </app>             
+            
+            <app loc="glass">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_60" interval="1.25" xml:id="mlre_61" />
+                  </timeline> 
+                  "glass"'s
+               </rdg>
+            </app>             
+ 
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_61" interval="1.25" xml:id="mlre_62" />
+                  </timeline> 
+                  causing the ambiguity of 
+               </rdg>
+            </app>
+            
+            <app loc="spectacle">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_62" interval="1.25" xml:id="mlre_63" />
+                  </timeline> 
+                  "spectacle" 
+               </rdg>
+            </app>           
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_63" interval="1.25" xml:id="mlre_64" />
+                  </timeline> 
+                  which might not have been as apparent without them), &amp;
+               </rdg>
+            </app> 
+
+            <app loc="color">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_64" interval="1.25" xml:id="mlre_65" />
+                  </timeline> 
+                  "color," 
+               </rdg>
+            </app>
+ 
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_65" interval="1.25" xml:id="mlre_66" />
+                  </timeline> 
+                  that seems to carry over to 
+               </rdg>
+            </app>
+            
+            <app loc="arrangement">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_66" interval="1.25" xml:id="mlre_67" />
+                  </timeline> 
+                  "arrangement," 
+               </rdg>
+            </app> 
+            
+            <app loc="pointing">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_67" interval="1.25" xml:id="mlre_68" />
+                  </timeline> 
+                  "pointing,"  
+               </rdg>
+            </app> 
+
+            <app loc="unordered">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_68" interval="1.25" xml:id="mlre_69" />
+                  </timeline> 
+                  "not unordered,"   
+               </rdg>
+            </app> 
+
+            <app loc="resembling">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_69" interval="1.25" xml:id="mlre_70" />
+                  </timeline> 
+                  "not resembling,"   
+               </rdg>
+            </app> 
+            
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_70" interval="1.25" xml:id="mlre_71" />
+                  </timeline> 
+                  &amp; even to    
+               </rdg>
+            </app> 
+            
+            <app loc="spreading">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_71" interval="1.25" xml:id="mlre_72" />
+                  </timeline> 
+                  "spreading."    
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_72" interval="1.25" xml:id="mlre_73" />
+                  </timeline> 
+                  The sequence    
+               </rdg>
+            </app>
+
+            <app loc="kind">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_73" interval="1.25" xml:id="mlre_74" />
+                  </timeline> 
+                  "kind"    
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_74" interval="1.25" xml:id="mlre_75" />
+                  </timeline> 
+                  (with its two meanings),    
+               </rdg>
+            </app>
+
+            <app loc="cousin">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_75" interval="1.25" xml:id="mlre_76" />
+                  </timeline> 
+                  "cousin,"  
+               </rdg>
+            </app>
+
+            <app loc="strange">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_76" interval="1.25" xml:id="mlre_77" />
+                  </timeline> 
+                  "nothing strange"  
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_77" interval="1.25" xml:id="mlre_78" />
+                  </timeline> 
+                  seems opposed to   
+               </rdg>
+            </app>
+ 
+            <app loc="ordinary">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_78" interval="1.25" xml:id="mlre_79" />
+                  </timeline> 
+                  "not ordinary,"  
+               </rdg>
+            </app>
+ 
+            <app loc="resembling">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_79" interval="1.25" xml:id="mlre_80" />
+                  </timeline> 
+                  "not resembling,"  
+               </rdg>
+            </app>
+ 
+             <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_80" interval="1.25" xml:id="mlre_81" />
+                  </timeline> 
+                  &amp;  
+               </rdg>
+            </app>
+
+            <app loc="difference">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_81" interval="1.25" xml:id="mlre_82" />
+                  </timeline> 
+                  "The difference
+               </rdg>
+            </app>
+
+            <app loc="spreading">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_82" interval="1.25" xml:id="mlre_83" />
+                  </timeline> 
+                  is spreading.":  
+               </rdg>
+            </app>
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_83" interval="1.25" xml:id="mlre_84" />
+                  </timeline> 
+                 a meaning movement from near-sameness to greater &amp; greater difference.  
+               </rdg>
+            </app>
+
+            <app loc="color">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_84" interval="1.25" xml:id="mlre_85" />
+                  </timeline> 
+                  "A single hurt color" 
+               </rdg>
+            </app>
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_85" interval="1.25" xml:id="mlre_86" />
+                  </timeline> 
+                  is the most emotional phrase, altho 
+               </rdg>
+            </app>
+            
+            <app loc="blind">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_86" interval="1.25" xml:id="mlre_87" />
+                  </timeline> 
+                  "blind glass" 
+               </rdg>
+            </app>
+            
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_87" interval="1.25" xml:id="mlre_88" />
+                  </timeline> 
+                  with its implied oxymoron (glass is usually transparent—at least we first think of transparency when we hear the word 
+               </rdg>
+            </app>
+
+            <app loc="glass">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_88" interval="1.25" xml:id="mlre_89" />
+                  </timeline> 
+                  "glass"
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_89" interval="1.25" xml:id="mlre_90" />
+                  </timeline> 
+                  —&amp;  
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_90" interval="1.25" xml:id="mlre_91" />
+                  </timeline> 
+                  when it is made into spectacle lenses, it helps people to see better) is perhaps even more so. Maybe the 
+               </rdg>
+            </app>
+
+            <app loc="color">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_91" interval="1.25" xml:id="mlre_92" />
+                  </timeline> 
+                  "single hurt color" 
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_92" interval="1.25" xml:id="mlre_93" />
+                  </timeline> 
+                  is the blackness of blindness. The whole poem suddenly seems to be about seeing!
+               </rdg>
+            </app>            
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_93" interval="1.25" xml:id="mlre_94" />
+                  </timeline> 
+                  But what of the 
+               </rdg>
+            </app> 
+
+            <app loc="carafe">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_94" interval="1.25" xml:id="mlre_95" />
+                  </timeline> 
+                  "carafe" 
+               </rdg>
+            </app>             
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_95" interval="1.25" xml:id="mlre_96" />
+                  </timeline> 
+                  that starts it all? Why is it 
+               </rdg>
+            </app>
+  
+            <app loc="blind">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_96" interval="1.25" xml:id="mlre_97" />
+                  </timeline> 
+                  "a blind glass"? 
+               </rdg>
+            </app>
+            
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_97" interval="1.25" xml:id="mlre_98" />
+                  </timeline> 
+                  Ordinarily a carafe is one of the least 
+               </rdg>
+            </app>
+
+            <app loc="blind">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_98" interval="1.25" xml:id="mlre_99" />
+                  </timeline> 
+                  "blind"
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_99" interval="1.25" xml:id="mlre_100" />
+                  </timeline> 
+                  —that is, the most transparent-of glass containers. It usually contains plain water. The OED defines it as "a glass water-bottle for the table, bedroom, etc." Its Romance forms (F. carafe, It. caraffa, Neapol. carrafa (a measure of liquids), Sp. &amp; Pg. garrafa, Sicil. carabba) are related by some authorities to the Pers. garabah, a large flagon, &amp; the Arabic gharafa, to draw or lift water.
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_100" interval="1.25" xml:id="mlre_101" />
+                  </timeline> 
+                  Why, then, is this carafe a blind glass?
+               </rdg>
+            </app>            
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_101" interval="1.25" xml:id="mlre_102" />
+                  </timeline> 
+                  Is the whole poem then a 
+               </rdg>
+            </app>
+
+            <app loc="pointing">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_102" interval="1.25" xml:id="mlre_103" />
+                  </timeline> 
+                  "pointing"
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_103" interval="1.25" xml:id="mlre_104" />
+                  </timeline> 
+                  from the ordinary transparent carafe 
+               </rdg>
+            </app>
+
+            <app loc="strange">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_104" interval="1.25" xml:id="mlre_105" />
+                  </timeline> 
+                  ("nothing strange") 
+               </rdg>
+            </app>
+  
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_105" interval="1.25" xml:id="mlre_106" />
+                  </timeline> 
+                  to one
+               </rdg>
+            </app>
+
+            <app loc="ordinary">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_106" interval="1.25" xml:id="mlre_107" />
+                  </timeline> 
+                  "not ordinary" 
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_107" interval="1.25" xml:id="mlre_108" />
+                  </timeline> 
+                  —one that is 
+               </rdg>
+            </app>
+
+            <app loc="blind">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_108" interval="1.25" xml:id="mlre_109" />
+                  </timeline> 
+                  "blind"
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_109" interval="1.25" xml:id="mlre_110" />
+                  </timeline> 
+                  —an orderly 
+               </rdg>
+            </app>
+
+            <app loc="unordered">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_110" interval="1.25" xml:id="mlre_111" />
+                  </timeline> 
+                  ("not unordered") 
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_111" interval="1.25" xml:id="mlre_112" />
+                  </timeline> 
+                  movement 
+               </rdg>
+            </app>
+
+            <app loc="spreading">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_112" interval="1.25" xml:id="mlre_113" />
+                  </timeline> 
+                  "spreading"  
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_113" interval="1.25" xml:id="mlre_114" />
+                  </timeline> 
+                  from transparency &amp; clarity thru the  
+               </rdg>
+            </app>
+
+            <app loc="color">
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_114" interval="1.25" xml:id="mlre_115" />
+                  </timeline> 
+                  "single hurt color" 
+               </rdg>
+            </app>
+  
+            <app>
+               <rdg wit="#reading_essay">
+                  <timeline unit="s" >
+                     <when since="#mlre_115" interval="1.25" xml:id="mlre_116" />
+                  </timeline> 
+                  to the implied darkness &amp; opacity of blindness, a movement condensed &amp; made explicit in the title?
+               </rdg>
+            </app>
+         </u>
+         </div>
+         
+
+
+
+
+
+
+
+
+
+         <!--Mac Low Essay-->
+         <!--Mac Low Essay-->
+         <!--Mac Low Essay-->
+         
+         <div>
+         <head>
+            <app loc="reading_a_selection">
+               <rdg wit="#essay">
+                  READING A SELECTION FROM TENDER BUTTONS
+               </rdg>
+            </app>         
+         </head>
+         
+         <p>
+            <app>
+               <rdg wit="#essay">
+                  I start reading 
+               </rdg>
+             </app>
+            
+            <app loc="carafe">
+               <rdg wit="#essay">
+                  "A CARAFE
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  THAT IS
+               </rdg>
+            </app>
+
+            <app loc="blind">
+               <rdg wit="#essay">
+                  A BLIND GLASS." 
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  I go from word to word, seeing the shapes of the printed words, hearing the sounds inwardly, noting rhymes, assonances, alliterations. Where an image is suggested, I see it inwardly. 
+               </rdg>
+             </app>
+
+            <app>
+               <rdg wit="#essay">
+                  I go from word to word, seeing the shapes of the printed words, hearing the sounds inwardly, noting rhymes, assonances, alliterations. Where an image is suggested, I see it inwardly. I hear the alliteration 
+               </rdg>
+            </app>
+
+            
+            <app loc="kind">
+               <rdg wit="#essay">
+                  "kind," 
+                </rdg>
+            </app>
+            
+            <app loc="cousin">
+               <rdg wit="#essay">
+                  "cousin," 
+               </rdg>
+            </app>
+            
+            <app loc="color">
+               <rdg wit="#essay">
+                  "color,"  
+               </rdg>
+            </app>
+            
+            <app>
+               <rdg wit="#essay">
+                  with the near-alliteration 
+               </rdg>
+            </app>            
+            
+            <app loc="glass">
+               <rdg wit="#essay">
+                  "glass."
+               </rdg>
+            </app>
+            
+            <app>
+               <rdg wit="#essay">
+                  The rhyme in  
+               </rdg>
+            </app>            
+            
+            <app loc="strange">
+               <rdg wit="#essay">
+                  "strange" &amp;
+               </rdg>
+            </app>
+            
+            <app loc="arrangement">
+               <rdg wit="#essay">
+                  "arrangement."
+               </rdg>
+            </app>
+            
+            <app>
+               <rdg wit="#essay">
+                  The alliteration of s's: 
+               </rdg>
+            </app>            
+            
+            <app loc="spectacle">
+               <rdg wit="#essay">
+                  "spectacle," 
+               </rdg>
+            </app>
+            
+            <app loc="strange">
+               <rdg wit="#essay">
+                  "strange,"  
+               </rdg>
+            </app>
+            
+            <app loc="single">
+               <rdg wit="#essay">
+                  "single,"  
+               </rdg>
+            </app>
+
+            <app loc="system">
+               <rdg wit="#essay">
+                  "system,"  
+               </rdg>
+            </app>
+
+            <app loc="spreading">
+               <rdg wit="#essay">
+                  "spreading." 
+               </rdg>
+            </app>
+            
+            <app>
+               <rdg wit="#essay">
+                  The assonance of short i's that binds the three sentences   
+               </rdg>
+            </app>            
+
+            <app loc="system">
+               <rdg wit="#essay">
+                  ("system,"   
+               </rdg>
+            </app>
+
+            <app loc="this">
+               <rdg wit="#essay">
+                  "this,"   
+               </rdg>
+            </app>
+
+            <app loc="difference">
+               <rdg wit="#essay">
+                  "difference")   
+               </rdg>
+            </app>
+            
+            <app>
+               <rdg wit="#essay">
+                  as does the ending of each sentence with an "ing" (which is reinforced by the short e's in   
+               </rdg>
+            </app>
+
+            <app loc="resembling">
+               <rdg wit="#essay">
+                  "resembling"
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  &amp;  
+               </rdg>
+            </app>
+
+            <app loc="spreading">
+               <rdg wit="#essay">
+                  "spreading"). 
+               </rdg>
+            </app>
+            
+            <app>
+               <rdg wit="#essay">
+                  There are also the 2nd sentence's rhymes (
+               </rdg>
+            </app>
+
+            <app loc="ordinary">
+               <rdg wit="#essay">
+                  "ordinary," 
+               </rdg>
+            </app>
+
+            <app loc="unordered">
+               <rdg wit="#essay">
+                  "unordered")  
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  &amp; the alliterative sequence  
+               </rdg>
+            </app>
+
+            <app loc="spectacle">
+               <rdg wit="#essay">
+                  "spectacle," 
+               </rdg>
+            </app>
+
+            <app loc="pointing">
+               <rdg wit="#essay">
+                  "pointing," 
+               </rdg>
+            </app>
+
+            <app loc="spreading">
+               <rdg wit="#essay">
+                  "spreading."  
+               </rdg>
+            </app>
+ 
+            <app>
+               <rdg wit="#essay">
+                  The three sentences are a bound system of sounds. But can I specify anything beyond the sounds? To use a phrase I first heard from Spencer Holst, it gives "the sensation of meaning," but can I connect the meanings of the words as readily as I find their sounds connected? Beyond the obvious fact that the carafe is made of glass, I can see only certain connections of meanings:  
+               </rdg>
+            </app>
+ 
+            <app loc="blind">
+               <rdg wit="#essay">
+                  "a blind glass,"  
+               </rdg>
+            </app>
+  
+            <app loc="kind">
+               <rdg wit="#essay">
+                  "a kind 
+               </rdg>
+            </app>
+
+           <app loc="glass">
+               <rdg wit="#essay">
+                  in glass"  
+               </rdg>
+            </app>
+            <app>
+               <rdg wit="#essay">
+                  (I didn't notice consciously the   
+               </rdg>
+            </app>
+  
+            <app loc="blind">
+               <rdg wit="#essay">
+                  "blind"-  
+               </rdg>
+            </app>
+
+            <app loc="kind">
+               <rdg wit="#essay">
+                  "kind"  
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  rhyme before), &amp; then  
+               </rdg>
+            </app>
+
+            <app loc="spectacle">
+               <rdg wit="#essay">
+                  "a spectacle" 
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  (something seen or to be seen, but also 
+               </rdg>
+            </app>
+
+            <app loc="spectacles">
+               <rdg wit="#essay">
+                  "spectacles" are 
+               </rdg>
+            </app>
+            
+            <app loc="glass">
+               <rdg wit="#essay">
+                  "glasses"). 
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  Then 
+               </rdg>
+            </app>
+
+            <app loc="nothing">
+               <rdg wit="#essay">
+                  "nothing strange," 
+               </rdg>
+            </app>
+
+            <app loc="ordinary">
+               <rdg wit="#essay">
+                  "not ordinary," 
+               </rdg>
+            </app>
+
+            <app loc="unordered">
+               <rdg wit="#essay">
+                  "not unordered,"  
+               </rdg>
+            </app>
+  
+            <app loc="resembling">
+               <rdg wit="#essay">
+                  "not resembling," 
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  &amp;  
+               </rdg>
+            </app>
+   
+            <app loc="difference">
+               <rdg wit="#essay">
+                  "difference"  
+               </rdg>
+            </app>
+  
+            <app>
+               <rdg wit="#essay">
+                  form a meaning sequence. Another sequence of meanings:  
+               </rdg>
+            </app>
+            
+            <app loc="blind">
+               <rdg wit="#essay">
+                  "blind,"  
+               </rdg>
+            </app>   
+            
+            <app loc="spectacle">
+               <rdg wit="#essay">
+                  "spectacle"
+               </rdg>
+            </app> 
+            
+            <app>
+               <rdg wit="#essay">
+                  (with the intervening  
+               </rdg>
+            </app>             
+            
+            <app loc="glass">
+               <rdg wit="#essay">
+                  "glass"'s
+               </rdg>
+            </app>             
+ 
+            <app>
+               <rdg wit="#essay">
+                  causing the ambiguity of 
+               </rdg>
+            </app>
+            
+            <app loc="spectacle">
+               <rdg wit="#essay">
+                  "spectacle" 
+               </rdg>
+            </app>           
+
+            <app>
+               <rdg wit="#essay">
+                  which might not have been as apparent without them), &amp;
+               </rdg>
+            </app> 
+
+            <app loc="color">
+               <rdg wit="#essay">
+                  "color," 
+               </rdg>
+            </app>
+ 
+            <app>
+               <rdg wit="#essay">
+                  that seems to carry over to 
+               </rdg>
+            </app>
+            
+            <app loc="arrangement">
+               <rdg wit="#essay">
+                  "arrangement," 
+               </rdg>
+            </app> 
+            
+            <app loc="pointing">
+               <rdg wit="#essay">
+                  "pointing,"  
+               </rdg>
+            </app> 
+
+            <app loc="unordered">
+               <rdg wit="#essay">
+                  "not unordered,"   
+               </rdg>
+            </app> 
+
+            <app loc="resembling">
+               <rdg wit="#essay">
+                  "not resembling,"   
+               </rdg>
+            </app> 
+            
+            <app>
+               <rdg wit="#essay">
+                  &amp; even to    
+               </rdg>
+            </app> 
+            
+            <app loc="spreading">
+               <rdg wit="#essay">
+                  "spreading."    
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  The sequence    
+               </rdg>
+            </app>
+
+            <app loc="kind">
+               <rdg wit="#essay">
+                  "kind"    
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  (with its two meanings),    
+               </rdg>
+            </app>
+
+            <app loc="cousin">
+               <rdg wit="#essay">
+                  "cousin,"  
+               </rdg>
+            </app>
+
+            <app loc="strange">
+               <rdg wit="#essay">
+                  "nothing strange"  
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  seems opposed to   
+               </rdg>
+            </app>
+ 
+            <app loc="ordinary">
+               <rdg wit="#essay">
+                  "not ordinary,"  
+               </rdg>
+            </app>
+ 
+            <app loc="resembling">
+               <rdg wit="#essay">
+                  "not resembling,"  
+               </rdg>
+            </app>
+ 
+             <app>
+               <rdg wit="#essay">
+                  &amp;  
+               </rdg>
+            </app>
+
+            <app loc="difference">
+               <rdg wit="#essay">
+                  "The difference
+               </rdg>
+            </app>
+
+            <app loc="spreading">
+               <rdg wit="#essay">
+                  is spreading.":  
+               </rdg>
+            </app>
+            <app>
+               <rdg wit="#essay">
+                 a meaning movement from near-sameness to greater &amp; greater difference.  
+               </rdg>
+            </app>
+         </p>
+         
+         <p>
+            <app loc="color">
+               <rdg wit="#essay">
+                  "A single hurt color" 
+               </rdg>
+            </app>
+            <app>
+               <rdg wit="#essay">
+                  is the most emotional phrase, altho 
+               </rdg>
+            </app>
+            
+            <app loc="blind">
+               <rdg wit="#essay">
+                  "blind glass" 
+               </rdg>
+            </app>
+            
+            <app>
+               <rdg wit="#essay">
+                  with its implied oxymoron (glass is usually transparent—at least we first think of transparency when we hear the word 
+               </rdg>
+            </app>
+
+            <app loc="glass">
+               <rdg wit="#essay">
+                  "glass"
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  —&amp;  
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  when it is made into spectacle lenses, it helps people to see better) is perhaps even more so. Maybe the 
+               </rdg>
+            </app>
+
+            <app loc="color">
+               <rdg wit="#essay">
+                  "single hurt color" 
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  is the blackness of blindness. The whole poem suddenly seems to be about seeing!
+               </rdg>
+            </app>            
+         </p>
+         
+         <p>
+
+            <app>
+               <rdg wit="#essay">
+                  But what of the 
+               </rdg>
+            </app> 
+
+            <app loc="carafe">
+               <rdg wit="#essay">
+                  "carafe" 
+               </rdg>
+            </app>             
+
+            <app>
+               <rdg wit="#essay">
+                  that starts it all? Why is it 
+               </rdg>
+            </app>
+  
+            <app loc="blind">
+               <rdg wit="#essay">
+                  "a blind glass"? 
+               </rdg>
+            </app>
+            
+            <app>
+               <rdg wit="#essay">
+                  Ordinarily a carafe is one of the least 
+               </rdg>
+            </app>
+
+            <app loc="blind">
+               <rdg wit="#essay">
+                  "blind"
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  —that is, the most transparent-of glass containers. It usually contains plain water. The OED defines it as "a glass water-bottle for the table, bedroom, etc." Its Romance forms (F. carafe, It. caraffa, Neapol. carrafa (a measure of liquids), Sp. &amp; Pg. garrafa, Sicil. carabba) are related by some authorities to the Pers. garabah, a large flagon, &amp; the Arabic gharafa, to draw or lift water.
+               </rdg>
+            </app>
+         </p>
+         
+         <p>
+            <app>
+               <rdg wit="#essay">
+                  Why, then, is this carafe a blind glass?
+               </rdg>
+            </app>            
+         </p>
+         
+         <p>
+            <app>
+               <rdg wit="#essay">
+                  Is the whole poem then a 
+               </rdg>
+            </app>
+
+            <app loc="pointing">
+               <rdg wit="#essay">
+                  "pointing"
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  from the ordinary transparent carafe 
+               </rdg>
+            </app>
+
+            <app loc="strange">
+               <rdg wit="#essay">
+                  ("nothing strange") 
+               </rdg>
+            </app>
+  
+            <app>
+               <rdg wit="#essay">
+                  to one
+               </rdg>
+            </app>
+
+            <app loc="ordinary">
+               <rdg wit="#essay">
+                  "not ordinary" 
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  —one that is 
+               </rdg>
+            </app>
+
+            <app loc="blind">
+               <rdg wit="#essay">
+                  "blind"
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  —an orderly 
+               </rdg>
+            </app>
+
+            <app loc="unordered">
+               <rdg wit="#essay">
+                  ("not unordered") 
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  movement 
+               </rdg>
+            </app>
+
+            <app loc="spreading">
+               <rdg wit="#essay">
+                  "spreading"  
+               </rdg>
+            </app>
+
+            <app>
+               <rdg wit="#essay">
+                  from transparency &amp; clarity thru the  
+               </rdg>
+            </app>
+
+            <app loc="color">
+               <rdg wit="#essay">
+                  "single hurt color" 
+               </rdg>
+            </app>
+  
+            <app>
+               <rdg wit="#essay">
+                  to the implied darkness &amp; opacity of blindness, a movement condensed &amp; made explicit in the title?
+               </rdg>
+            </app>
+         </p>
+         </div>
+        
+
+      </body>
+   </text>
+
+</TEI>

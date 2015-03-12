@@ -1,5 +1,3 @@
-/*main css starts here/
-
 body{
     width:100%;
     margin:0;
@@ -33,7 +31,7 @@ h6{
     font-size:13px;
 }
 
-#mainBanner{
+div#mainBanner{
     position:relative;
     top:0;
     left:0;
@@ -42,7 +40,7 @@ h6{
     height:5.34em;
     min-height:70px;
 }
-#mainBanner #brandingLogo{
+div#mainBanner div#brandingLogo{
     position:absolute;
     top:0;
     left:0;
@@ -51,14 +49,14 @@ h6{
     min-height:70px;
     background:#6699CC;
 }
-#mainBanner #brandingLogo img{
+div#mainBanner div#brandingLogo img{
     width:8.38em;
     height:2.9em;
     border:none;
     padding:0;
     margin:1.22em auto 0 auto;
 }
-#mainBanner #headline{
+div#mainBanner div#headline{
     position:absolute;
     top:0;
     left:8.38em;
@@ -75,7 +73,7 @@ h6{
     margin:0;
     color:#CC0000;
 }
-#mainBanner #headline h1{
+div#mainBanner div#headline h1{
     float:left;
     font-size:1.22em;
     font-weight:800;
@@ -85,11 +83,11 @@ h6{
     margin:0 0.53em 0 0;
     padding:0;
 }
-#mainBanner #headline span.versionCount{
+div#mainBanner div#headline span.versionCount{
     font-size:1.07em;
     font-style:italic;
 }
-#mainBanner img#topEdge{
+div#mainBanner img#topEdge{
     position:absolute;
     top:0;
     right:0;
@@ -101,7 +99,7 @@ h6{
     padding:0;
     margin:0;
 }
-#mainBanner #mainControls{
+div#mainBanner div#mainControls{
     position:absolute;
     top:2.21em;
     left:8.38em;
@@ -116,18 +114,18 @@ h6{
     padding:0.455em;
     white-space:nowrap;
 }
-#mssArea{
+div#mssArea{
     width:100%;
     margin:0;
     padding:0;
 }
-#mssArea #manuscripts{
+div#mssArea div#manuscripts{
     float:left;
     border:0;
     margin:0;
     padding:0;
 }
-#mssArea .panel{
+div#mssArea div.panel{
     float:left;
     border:1px solid black;
     min-height:250px;
@@ -135,15 +133,15 @@ h6{
     padding:0;
 }
 
-#mssArea #bibPanel,
-#mssArea #critPanel,
-#mssArea #notesPanel,
-#mssArea .panel .panelBanner,
-#mainBanner #headline,
+div#mssArea div#bibPanel,
+div#mssArea div#critPanel,
+div#mssArea div#notesPanel,
+div#mssArea div.panel div.panelBanner,
+div#mainBanner div#headline,
 .viewerHandle{
     background:#6699CC;
 }
-#mssArea .panel .panelBanner{
+div#mssArea div.panel div.panelBanner{
     height:1.6em;
     line-height:1.6em;
     margin:0;
@@ -153,47 +151,47 @@ h6{
     font-weight:800;
 }
 
-#mssArea .panel .panelBanner select.witnessMenu{
+div#mssArea div.panel div.panelBanner select.witnessMenu{
     width:160px;
 }
-#mssArea .mssPanel{
+div#mssArea div.mssPanel{
     background:white;
     /* padding-bottom: 5em; */
 }
-#mssArea .mssPanel .panelBanner{
+div#mssArea div.mssPanel div.panelBanner{
     border-bottom:1px solid black;
 }
-#mssArea .panel .panelBanner img.closePanel{
+div#mssArea div.panel div.panelBanner img.closePanel{
     float:right;
     cursor:pointer;
     width:1.4em;
     height:1.4em;
 }
 
-#mssArea .panel .mssContent{
+div#mssArea div.panel div.mssContent{
     margin:10px;
     padding:0;
     line-height:20px;
 }
-#mssArea .panel .mssContent .mssImages{
+div#mssArea div.panel div.mssContent div.mssImages{
     float:right;
     width:24px;
     height:24px;
     margin:0;
 }
-#mssArea .panel .mssContent img.imageLink{
+div#mssArea div.panel div.mssContent img.imageLink{
     float:left;
-    /*width:24px;
-    height:24px;*/
+    width:24px;
+    height:24px;
     margin:0;
     cursor:pointer;
 }
 .facs-images{
     float:right;
 }
-#mssArea .panel .bibContent,
-#mssArea .panel .critContent,
-#mssArea .panel .noteContent{
+div#mssArea div.panel div.bibContent,
+div#mssArea div.panel div.critContent,
+div#mssArea div.panel div.noteContent{
     font-family:sans-serif;
     margin:0 10px 10px 10px;
     line-height:16px;
@@ -201,62 +199,62 @@ h6{
     border:thin solid black;
     background:white;
 }
-#mssArea .panel .bibContent{
+div#mssArea div.panel div.bibContent{
     padding:10px;
 }
-#mssArea .panel .noteContent{
+div#mssArea div.panel div.noteContent{
     padding:10px 10px 10px 20px;
 }
-#mssArea .panel #noNotesFound{
+div#mssArea div.panel div#noNotesFound{
     display:none;
     font-weight:800;
 }
-#mssArea .panel .noteContent .witnesses{
+div#mssArea div.panel div.noteContent div.witnesses{
     float:right;
     margin-left:0.5em;
     color:#990000;
     font-style:italic;
 }
-#mssArea .panel .noteContent .position{
+div#mssArea div.panel div.noteContent div.position{
     color:#000066;
     text-decoration:underline;
     cursor:pointer;
     margin-left:-10px;
 }
-#mssArea .panel .bibContent,
-#mssArea .panel .critContent{
+div#mssArea div.panel div.bibContent,
+div#mssArea div.panel div.critContent{
     padding:10px;
 }
 
-.head,
-.line,
-.paragraph{
+div.head,
+div.line,
+div.paragraph{
     clear:both;
 }
-.line{
+div.line{
     margin:0 4em 0 2.5em;
     padding:0;
     cursor:pointer;
 }
-.line .linenumber,
-.line .emptynumber{
+div.line div.linenumber,
+div.line div.emptynumber{
     float:left;
     margin-left:-2.5em;
     width:2em;
     background:white;
 }
-.line .linenumber{
+div.line div.linenumber{
     text-align:right;
     color:#003366;
     text-decoration:underline;
     cursor:pointer;
 }
-.head{
+div.head{
     font-size:115%;
     color:#003366;
 }
 
-.epigraph{
+div.epigraph{
     text-align:center;
     margin:4px 25px;
     font-size:85%;
@@ -267,14 +265,14 @@ table.mssTable{
 table.mssTable td{
     padding:0 7px;
 }
-.noteicon,
-.choice,
-.rdgGrp{
+div.noteicon,
+div.choice,
+div.rdgGrp{
     cursor:pointer;
     position:relative;
     z-index:24;
 }
-.noteicon{
+div.noteicon{
     bottom:7px;
     margin-left:6px;
     margin-right:6px;
@@ -284,31 +282,33 @@ table.mssTable td{
     border-bottom:1px solid #000066;
     display:inline
 }
-.choice,
-.rdgGrp{
+div.choice,
+div.rdgGrp{
     border-bottom:thin dashed #666;
 }
-
-.head .noteicon{
+div.choice{
+display:inline;
+}
+div.head div.noteicon{
     font-size:74% !important;
 }
-.noteicon .note,
-.choice .corr,
-.rdgGrp .altRdg{
+div.noteicon div.note,
+div.choice div.corr,
+div.rdgGrp div.altRdg{
     display:none;
 }
-.noteicon .note{
+div.noteicon div.note{
     text-decoration:none !important;
 }
 
-.noteicon:hover,
-.choice:hover,
-.rdgGrp:hover{
+div.noteicon:hover,
+div.choice:hover,
+div.rdgGrp:hover{
     z-index:25 !important;
 }
-.noteicon:hover .note,
-.choice:hover .corr,
-.rdgGrp:hover span.altRdg{
+div.noteicon:hover div.note,
+div.choice:hover div.corr,
+div.rdgGrp:hover span.altRdg{
     display:block;
     position:absolute;
     top:14px;
@@ -327,24 +327,23 @@ div.noteicon:hover div.note{
     max-width:500px;
     background:white;
 }
-.choice:hover .corr,
-.rdgGrp:hover span.altRdg{
+div.choice:hover div.corr,
+div.rdgGrp:hover span.altRdg{
     left:0;
     min-width:175px;
     max-width:350px;
     background:white;
     font-size:90%;
 }
-
-.paragraph{
+div.paragraph{
     padding:0;
     margin:0;
 }
-.mssContent .paragraph .reading{
+div.mssContent div.paragraph div.reading{
     margin:6px 0;
 }
 
-.apparatus{
+div.apparatus{
     display:inline;
 }
 
@@ -393,7 +392,9 @@ span.unclear{
     line-height:0;
 }
 
-br.stanzabreak,
+div.stanzabreak{
+	height:25px;
+}
 div.type-stanza{
     margin-bottom:25px;
 }

@@ -179,7 +179,7 @@ function changeWitness(witness,panel) {
     var lines = getElementsByClass("line",panel,"div");
     var rdgTags = getElementsByClass("reading",panel,"div");
     var rdgGroups = getElementsByClass("rdgGrp",panel,"span");
-    var images = getElementsByClass("imageLink",panel,"div");
+    var images = getElementsByClass("imageLink",panel,"img");
     var audioPanels = getElementsByClass("audioPlayer",panel,"div");
     var stanzas = getElementsByClass("stanzabreak",panel,"br");
     var pagebreaks = getElementsByClass("pagebreak",panel,"hr");
@@ -1066,15 +1066,3 @@ function isHidden(el) {
     return false;
 }
 
-
-
-/**RB edits**/
-$(document).ready(function(){
-	$(".mssPanel").each(function(index){
-		if(index>1){
-			$(this).hide();
-		};
-	});
-
-
-});

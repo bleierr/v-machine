@@ -1,0 +1,367 @@
+<?xml-stylesheet type="text/xsl" href="../src/vmachine.xsl"?>
+
+<?xml-model href="../schema/vmachine.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/vmachine.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Lestrygonians</title>
+        <author>James Joyce</author>
+        <respStmt>
+          <resp>Text Encoding by </resp>
+          <name>Daniel Carter</name>
+        </respStmt>
+      </titleStmt>
+     <publicationStmt>
+       <p>[Publication statement required here.]</p>
+     </publicationStmt>
+      <notesStmt>
+      	<note>
+      		<p>This is an example to demonstrate the functionality of the ModVers prototype.</p>
+      	</note>
+      </notesStmt>
+      <sourceDesc>
+        <p>Excerpts from the "Lestrygonians" chapter of James Joyce's <title level="m">Ulysses</title> taken from <title level="j">The Little Review</title> vol. 5 no. 9 (1919), the Shakespeare and Company edition (1922) and Hans Walter Gabler's revised <title level="m">Ulysses: The corrected text</title> (1986).</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <variantEncoding location="internal" method="location-referenced"></variantEncoding>
+    </encodingDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <div>
+		<listWit>
+          <witness xml:id="lr">The Little Review</witness>
+          <witness xml:id="sb">Shakespeare and Company</witness>
+          <witness xml:id="g">Gabler</witness>
+        </listWit>
+      </div>
+    </front>
+    <body>
+
+    <div>
+
+    	<p>
+	    	<app xml:id="a_1">
+	    		<rdg wit="#sb #g">
+	    			Pineapple rock, lemon platt, butter scotch.
+	    		</rdg>
+	    		<rdg wit="#lr">
+	    			PINEAPPLE rock, lemon platt, butter-scotch.
+	    		</rdg>	    		
+	    	</app>
+	   	    
+	   	    <app xml:id="a_2">
+	    		<rdg wit="#all">
+	    			A sugarsticky girl shovelling scoopfuls of creams for a christian brother. Some school treat. Bad for their tummies. Lozenge and comfit manufacturer to His Majesty the King. God. Save. Our.
+	    		</rdg>
+	    	</app>
+
+	   	    <app xml:id="a_3">
+	    		<rdg wit="#g">
+	    			Sitting on his throne sucking red jujubes white. 
+	    		</rdg>
+	    		<rdg wit="#sb">
+	    			Sitting on his throne, sucking red jujubes white. 
+	    		</rdg>
+	    		<rdg wit="#lr">
+	    			Sitting on his throne, sucking jujubes. 
+	    		</rdg>	    			    		
+	    	</app>	    	
+	    </p>
+
+	    <p>
+	    	<app xml:id="a_4">
+	    		<rdg wit="#sb #g">
+	    			A sombre Y. M. C. A. young man, watchful among the warm sweet fumes of Graham Lemon's, placed a throwaway in a hand of Mr Bloom.
+	    		</rdg>
+	    		<rdg wit="#lr">
+	    			A sombre young man, watchful among the warm sweet fumes of Graham Lemon's, placed a throwaway in a hand of Mr. Bloom.
+	    		</rdg>	  	    		  		
+	    	</app>
+	    </p>
+
+	    <p>
+	    	<app xml:id="a_5">
+	    		<rdg wit="#sb #g">
+	    			Heart to heart talks.
+	    		</rdg>
+	    		<rdg wit="#lr">
+	    			Heart to heart talks. Bloo .... Me? No.
+	    		</rdg>	    			  	    		  		
+	    	</app>
+	    </p>
+
+	    <p>
+	    	<app xml:id="a_6">
+	    		<rdg wit="#sb">
+	    			Bloo... Me? No.
+	    		</rdg>	
+	    		<rdg wit="#g">
+	    			Bloo .... Me? No.
+	    		</rdg>		    		  	    		  		
+	    	</app>
+	    </p>
+
+	    <p>
+	    	<app xml:id="a_7">
+	    		<rdg wit="#g #sb">
+	    			Blood of the Lamb. 
+	    		</rdg>			    		  	    		  		
+	    	</app>
+	    </p>
+
+	    <p>
+	    	<app xml:id="a_8">
+	    		<rdg wit="#all">
+	    			His slow feet walked him riverward, reading. 
+	    		</rdg>
+	    	</app>
+	    	<app xml:id="a_8a">
+	    		<rdg wit="#lr">
+	    			All are washed in the blood of the lamb.
+	    		</rdg>
+	    		<rdg wit="#g #sb">
+	    			All are washed in the blood of the lamb. God wants blood victim. Birth, hymen, martyr, war, foundation of a building, sacrifice, kidney burntoffering, druids' altars.
+	    		</rdg>
+	    	</app>
+	    	<app xml:id="a_9">
+	    		<rdg wit="#lr">
+	    			Dr. John Alexander Dowie restorer of the church in Zion is coming. 
+	    		</rdg>
+	    		<rdg wit="#g">
+	    			Elijah is coming. Dr John Alexander Dowie restorer of the church in Zion is coming.
+	    		</rdg>
+	    		<rdg wit="#sb">
+	    			Elijah is coming. Dr John Alexander Dowie, restorer of the church in Zion, is coming.
+	    		</rdg>	    		
+	    	</app>	    		    	
+	    </p>
+
+	    <p>
+	    	<app xml:id="a_10">
+	    		<rdg wit="#all">
+	    			Is coming! Is coming!! Is coming!!! 
+	    		</rdg>
+	    	</app>
+	    </p>
+
+	    <p>
+	    	<app xml:id="a_11">
+	    		<rdg wit="#all">
+	    			All heartily welcome. 
+	    		</rdg>
+	    	</app>
+	    </p>
+
+	    <p>
+	    	<app xml:id="a_12">
+	    		<rdg wit="#all">
+	    			Paying game.
+	    		</rdg>
+	    	</app>
+	    	<app xml:id="a_13">
+	    		<rdg wit="#sb #g">
+	    			Torry and Alexander last year. Polygamy. His wife will put the stopper on that.
+	    		</rdg>  		
+	    	</app>
+	    	<app xml:id="a_14">
+	    		<rdg wit="#lr #sb">
+	    			Where was that ad some Birmingham firm the luminous crucifix? Our saviour.
+	    		</rdg>  
+	    		<rdg wit="#g">
+	    			Where was that ad some Birmingham firm the luminous crucifix. Our Saviour.
+	    		</rdg>  	    				
+	    	</app>	
+	    	<app xml:id="a_15">
+	    		<rdg wit="#all">
+	    			Wake up in the dead of night and see him on the wall, hanging. Pepper's ghost idea.
+	    		</rdg>  	    				
+	    	</app>	
+	    	<app xml:id="a_16">
+	    		<rdg wit="#g">
+	    			Iron Nails Ran In.
+	    		</rdg>  
+	    		<rdg wit="#sb #lr">
+	    			Iron nails ran in.
+	    		</rdg>   	    			    				
+	    	</app>		    		    	    		    	
+	    </p>
+
+	    <p>
+	    	<app xml:id="a_17">
+	    		<rdg wit="#lr #sb">
+	    			Phosphorous it must be done with.
+	    		</rdg>
+	    		<rdg wit="#g">
+	    			Phosphorus it must be done with.
+	    		</rdg>
+	    	</app>
+	    	<app xml:id="a_18">
+	    		<rdg wit="#all">
+	    			If you leave a bit of codfish for instance. I could see the bluey silver over it. Night I went down to the pantry in the kitchen.
+	    		</rdg>
+	    	</app>
+	    	<app xml:id="a_19">
+	    		<rdg wit="#g #sb">
+	    			Don't like all the smells in it waiting to rush out.
+	    		</rdg> 		
+	    	</app>	    	
+	    	<app xml:id="a_20">
+	    		<rdg wit="#all">
+	    			What was it she wanted? The Malaga raisins.
+	    		</rdg> 		
+	    	</app>
+	    	<app xml:id="a_21">
+	    		<rdg wit="#sb #g">
+	    			Thinking of Spain.
+	    		</rdg>    				
+	    	</app>	
+	    	<app xml:id="a_22">
+	    		<rdg wit="#all">
+	    			Before Rudy was born. The phosphorescence, that bluey greeny. Very good for the brain. 
+	    		</rdg>    				
+	    	</app>		    	    	
+		</p>
+
+		<p>
+			<app xml:id="a_23">
+				<rdg wit="#all">
+					From Butler's monument house corner he glanced along Bachelor's walk.
+				</rdg>
+			</app>
+			<app xml:id="a_24">
+				<rdg wit="#g #sb">
+					Dedalus' daughter there still outside Dillon's auctionrooms.
+				</rdg>
+				<rdg wit="#lr">
+					Dedalus' daughter there still outside Dillon's auction rooms.
+				</rdg>
+			</app>
+			<app xml:id="a_25">
+				<rdg wit="#all">
+					Must be selling off some old furniture. Knew her eyes at once from the father. Lobbing about waiting for him. Home always breaks up when the mother goes. Fifteen children he had. Birth every year almost. That's in their theology or the priest won't give the poor woman the confession, the absolution. Increase and multiply. Did you ever hear such an idea?
+				</rdg>
+			</app>
+			<app xml:id="a_26">
+				<rdg wit="#sb #g">
+					Eat you out of house and home.
+				</rdg>			
+			</app>
+			<app xml:id="a_27">
+				<rdg wit="#all">
+					No families themselves to feed. Living on the fat of the land.
+				</rdg>			
+			</app>	
+			<app xml:id="a_28">
+				<rdg wit="#g #sb">
+					Their butteries and larders. I'd like to see them do the black fast Yom Kippur. Crossbuns. One meal and a collation for fear he'd collapse on the altar.
+				</rdg>						
+			</app>							
+			<app xml:id="a_29">
+				<rdg wit="#g #sb">
+					A housekeeper of one of those fellows if you could pick it out of her. Never pick it out of her.
+				</rdg>	
+				<rdg wit="#lr">
+					A housekeeper of one of those fellows if you could pick it out of her. Never pick it out of her:
+				</rdg>										
+			</app>
+			<app xml:id="a_30">
+				<rdg wit="#g #sb">
+					His reverence: mum's the word.
+				</rdg>	
+				<rdg wit="#lr">
+					his reverence: mum's the word. 
+				</rdg>										
+			</app>									
+		</p>
+
+		<p>
+			<app xml:id="a_31">
+				<rdg wit="#lr">
+					Good Lord that poor child's dress is in flitters.
+				</rdg>
+				<rdg wit="g">
+					Good lord, that poor child's dress is in flitters.
+				</rdg>
+				<rdg wit="sb">
+					Good Lord, that poor child's dress is in flitters.
+				</rdg>
+			</app>
+			<app xml:id="a_32">
+				<rdg wit="#sb #g">
+					Underfed she looks too.
+				</rdg>
+				<rdg wit="#lr">
+					Under fed she looks too.
+				</rdg>
+			</app>
+			<app xml:id="a_33">
+				<rdg wit="#g #sb">
+					Potatoes and marge, marge and potatoes.
+				</rdg>
+			</app>	
+			<app xml:id="a_34">
+				<rdg wit="#all">
+					It's after they feel it.
+				</rdg>
+			</app>
+			<app xml:id="a_35">
+				<rdg wit="#g #sb">
+					Proof of the pudding.
+				</rdg>
+			</app>	
+			<app xml:id="a_36">
+				<rdg wit="#all">
+					Undermines the constitution. 
+				</rdg>
+			</app>												
+		</p>
+
+		<p>
+			<app xml:id="a_37">
+				<rdg wit="all">
+					As he set foot on O'Connell bridge a puffball of smoke plumed up from the parapet. Brewery barge with export stout. England. Sea air sours it, I heard. Be interesting some day get a pass through Hancock to see the brewery.
+				</rdg>
+			</app>
+			<app xml:id="a_38">
+				<rdg wit="#sb #g">
+					Regular world in itself.
+				</rdg>
+				<rdg wit="#lr">
+					Regular town in itself.
+				</rdg>				
+			</app>	
+			<app xml:id="a_39">
+				<rdg wit="#sb">
+					Vats of porter, wonderful.
+				</rdg>
+				<rdg wit="#lr #g">
+					Vats of porter wonderful.
+				</rdg>				
+			</app>	
+			<app xml:id="a_40">
+				<rdg wit="#all">
+					Rats get in too. Drink themselves bloated as big as a collie floating. Dead drunk on the porter. Drink till they puke again like christians. Imagine drinking that! Rats : vats.
+				</rdg>				
+			</app>
+			<app xml:id="a_41">
+				<rdg wit="#lr #sb">
+					Well of course if we knew all the things. 
+				</rdg>	
+				<rdg wit="#g">
+					Well, of course, if we knew all the things. 
+				</rdg>								
+			</app>												
+		</p>
+
+	
+	</div>
+
+        
+    </body>
+  </text>
+</TEI>
+            

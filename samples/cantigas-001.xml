@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../src/vmachine.xsl"?>
+<?xml-model href="../schema/vmachine.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/vmachine.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<teiHeader xmlns="http://www.tei-c.org/ns/1.0">
+<fileDesc>
+<titleStmt>
+<title>Cantigas de Santa Maria: an electronic critical edition (base text)</title>
+<sponsor>Centre for the Study of the Cantigas de Santa Maria</sponsor>
+<principal>Dr Stephen Parkinson</principal>
+<respStmt>
+<name>Alison Campbell</name>
+<resp>Preparation and mark-up of e-text.</resp></respStmt></titleStmt>
+<publicationStmt><p>Not for publication.</p></publicationStmt>
+<sourceDesc>
+<listWit>
+<head>Text from 1986-89 edition</head>
+<witness xml:id="M2">Walter Mettmann (Madrid: Castalia) [M2 hereafter]</witness>
+<witness xml:id="M1">Mettmann (1959-72) [M1]</witness>
+<witness xml:id="V">Valmar (1889) [V]</witness>
+<witness xml:id="RL">Lapa (1933) [RL]</witness>
+<witness xml:id="A">Angl&#xE9;s (1943-64) [A]</witness>
+<witness xml:id="C">Cunningham (2000) [C]</witness> 
+<witness xml:id="Fid">Fidalgo (2004) [Fid]</witness>
+<witness xml:id="Mo">Montoya 1998-99 [Mo]</witness>
+</listWit>
+</sourceDesc>
+</fileDesc>
+<encodingDesc>
+<p>Main text from M2 with variants from other editions as listed above. Line division as per lines or hemistichs of this edition; departures of structure in other editions noted in variants (V presents hemistichs as separate lines, so its division only remarked on when in conflict with M2). Any emendations of structure given by M2 noted in variants and indicated in main text by [[supplied text]]. C and A are musical editions, dependent for their text on M2 and V respectively; significant departures from respective source texts indicated, otherwise can be read as containing all variants listed for source text.</p>
+<p>As editions vary in treatment of archaic forms, linguistic focus etc. departures from M2 text only recorded where considered significant. Use of i/j/y, u/v not recorded; however use of m/n, differences in word division and capitalization all included.  Syllabification in musical editions is indicated by "_". Variation in refrain repeats: all departures from pattern of M2 are indicated; fluctuating forms in any of the sources are indicated, marked by "~", under the first refrain.</p>
+<p>All variants given within the text.</p>
+</encodingDesc>
+<revisionDesc>
+<change when="2011-01-24" who="SR">Make new P5 of whole lot</change>
+<change when="2007-03-12" who="LB">Make P5 version; add ids for the sigla</change>
+<change when="2006-10" who="AC">June 2006-October 2006: completed mark-up of XML version</change>
+<change when="2006-04" who="AC">October 2005-April 2006: Initial e-text completed.</change></revisionDesc></teiHeader>
+
+<?xml-stylesheet type="text/xsl" href="cantigas.xsl"?>
+<?oxygen RNGSchema="cantigas.rng" type="xml"?>
+
+<text xmlns="http://www.tei-c.org/ns/1.0" n="001" type="loor">
+<body>
+<lg n="1" type="stanza">
+<l n="1">Des oge mais quer' eu trobar</l>
+<l n="2">pola Sennor onrrada,
+<app>
+<rdg type="edition" wit="#Fid">sennor</rdg></app></l>
+<l n="3">en que Deus quis carne fillar</l>
+<l n="4">b&#x1EBD;eyta e sagrada,</l>
+<l n="5">por nos dar gran soldada</l>
+<l n="6">no seu reyno e nos erdar</l>
+<l n="7">por seus de sa masnada</l>
+<l n="8">de vida perlongada,</l>
+<l n="9">sen avermos pois a passar</l>
+<l n="10">per mort' outra vegada.</l></lg>
+<lg n="2" type="stanza">
+<l n="1">E poren quero come&#xE7;ar
+<app>
+<rdg type="edition" wit="#Fid">E por &#xE9;n</rdg></app></l>
+<l n="2">como foy saudada</l>
+<l n="3">de Gabriel, u lle chamar
+<app>
+<rdg type="edition" wit="#Fid">le</rdg></app></l>
+<l n="4">foy: "Benaventurada
+<app>
+<rdg type="edition" wit="#M1">foy: &#x201C;Ben aventurada</rdg>
+<rdg type="edition" wit="#RL">foy: &#x201C;Ben aventurada</rdg></app></l>
+<l n="5">Virgen, de Deus amada:
+<app>
+<rdg type="edition" wit="#Fid">virgen</rdg></app></l>
+<l n="6">do que o mund' &#xE1; de salvar</l>
+<l n="7">ficas ora prennada;</l>
+<l n="8">e demais ta cunnada</l>
+<l n="9">Elisabeth, que foi dultar,
+<app>
+<rdg type="edition" wit="#Fid">Elisabet</rdg></app></l>
+<l n="10">&#xE9; end' envergonnada".</l></lg>
+<lg n="3" type="stanza">
+<l n="1">E demais quero-ll' enmentar
+<app>
+<rdg type="edition" wit="#Fid">queroll&#x2019;</rdg></app></l>
+<l n="2">como chegou canssada</l>
+<l n="3">a Beleem e foy pousar
+<app>
+<rdg type="edition" wit="#V">a Belleem</rdg> 
+<rdg type="edition" wit="#RL">a Belleem</rdg> 
+<rdg type="edition" wit="#Fid">a Beleen</rdg></app></l>
+<l n="4">no portal da entrada,</l>
+<l n="5">u paryu sen tardada</l>
+<l n="6">Jesu-Crist', e foy-o deytar,
+<app>
+<rdg type="edition" wit="#Fid">foio</rdg></app></l>
+<l n="7">como moller menguada,</l>
+<l n="8">u deytan a cevada,</l>
+<l n="9">no presev' e apousentar</l>
+<l n="10">ontre bestias d'arada.
+<app>
+<rdg type="edition" wit="#Fid">entre</rdg></app></l></lg>
+<lg n="4" type="stanza">
+<l n="1">E non ar quero obridar</l>
+<l n="2">com' angeos cantada</l>
+<l n="3">loor a Deus foron cantar
+<app>
+<rdg type="edition" wit="#V">&#x201C;loor a Deus&#x201D;</rdg> 
+<rdg type="edition" wit="#C">&#x201C;Loor a Deus&#x201D;</rdg></app></l>
+<l n="4">e "paz en terra dada";
+<app>
+<rdg type="edition" wit="#Fid">e paz en terra dada</rdg></app></l>
+<l n="5">nen como a contrada
+<app>
+<rdg type="edition" wit="#V">acontrada</rdg></app></l>
+<l n="6">aos tres Reis en Ultramar
+<app>
+<rdg type="edition" wit="#V">Vltra-mar</rdg> 
+<rdg type="edition" wit="#C">reis en ultramar</rdg> 
+<rdg type="edition" wit="#Fid">reis en ultramar</rdg></app></l>
+<l n="7">ouv' a strela mostrada,</l>
+<l n="8">por que sen demorada</l>
+<l n="9">v&#x1EBD;eron sa offerta dar
+<app>
+<rdg type="edition" wit="#C">oferta dar</rdg> 
+<rdg type="edition" wit="#Fid">oferta dar</rdg></app></l>
+<l n="10">estranna e pre&#xE7;ada.</l></lg>
+<lg n="5" type="stanza">
+<l n="1">Outra razon quero contar</l>
+<l n="2">que ll' ouve pois contada</l>
+<l n="3">a Madalena: com' estar</l>
+<l n="4">vyu a pedr' entornada</l>
+<l n="5">do sepulcr' e guardada
+<app>
+<rdg type="edition" wit="#V">do Sepulcr&#x2019;</rdg> 
+<rdg type="edition" wit="#RL">do Sepulcr&#x2019;</rdg></app></l>
+<l n="6">do angeo, que lle falar
+<app>
+<rdg type="edition" wit="#Fid">le</rdg></app></l>
+<l n="7">foy e disse: "Coytada</l>
+<l n="8">moller, sey confortada,</l>
+<l n="9">ca Jesu, que v&#x1EBD;es buscar,</l>
+<l n="10">resurgiu madurgada."</l></lg>
+<lg n="6" type="stanza">
+<l n="1">E ar quero-vos demostrar
+<app>
+<rdg type="edition" wit="#Fid">querovos</rdg></app></l>
+<l n="2">gran ledi&#xE7;' aficada</l>
+<l n="3">que ouv' ela, u vyu al&#xE7;ar
+<app>
+<rdg type="edition" wit="#Fid">Ela</rdg></app></l>
+<l n="4">a nuv' enlum&#x1EBD;ada
+<app>
+<rdg type="edition" wit="#C">a nuven lumeada</rdg></app></l>
+<l n="5">seu Fill'; e poys al&#xE7;ada</l>
+<l n="6">foi, viron angeos andar</l>
+<l n="7">ontr' a gent' ass&#x169;ada,
+<app>
+<rdg type="edition" wit="#C">entr&#x2019;</rdg> 
+<rdg type="edition" wit="#Fid">entr&#x2019;</rdg></app></l>
+<l n="8">muy desaconsellada,</l>
+<l n="9">dizend': "Assi verr&#xE1; juygar,
+<app>
+<rdg type="edition" wit="#Fid">julgar</rdg></app></l>
+<l n="10">est' &#xE9; cousa provada."</l></lg>
+<lg n="7" type="stanza">
+<l n="1">Nen quero de dizer leixar</l>
+<l n="2">de como foy chegada</l>
+<l n="3">a gra&#xE7;a que Deus enviar</l>
+<l n="4">lle quis, atan gr&#xE3;ada,
+<app>
+<rdg type="edition" wit="#V">granada</rdg> 
+<rdg type="edition" wit="#Fid">le</rdg></app></l>
+<l n="5">que por el esfor&#xE7;ada
+<app>
+<rdg type="edition" wit="#Fid">El&#x2019;</rdg></app></l>
+<l n="6">foy a companna que juntar
+<app>
+<rdg type="edition" wit="#M1">compan[n]a</rdg> 
+<rdg type="edition" wit="#RL">compan[h]a</rdg></app></l>
+<l n="7">fez Deus, e enssinada
+<app>
+<rdg type="edition" wit="#V">enssinnada</rdg> 
+<rdg type="edition" wit="#C">ensinnada</rdg> 
+<rdg type="edition" wit="#Fid">ensinada</rdg></app></l>
+<l n="8">de Spirit' avondada,
+<app>
+<rdg type="edition" wit="#V">de sp&#xED;rit&#x2019;</rdg> 
+<rdg type="edition" wit="#RL">de spirit&#x2019;</rdg> 
+<rdg type="edition" wit="#C">d&#x2019; Esperit&#x2019;</rdg>
+<rdg type="edition" wit="#Fid">d&#x2019; espirit&#x2019;</rdg></app></l>
+<l n="9">por que souberon preegar</l>
+<l n="10">logo sen alongada.</l></lg>
+<lg n="8" type="stanza">
+<l n="1">E, par Deus, non &#xE9; de calar</l>
+<l n="2">como foy cor&#xF5;ada,</l>
+<l n="3">quando seu Fillo a levar</l>
+<l n="4">quis, des que foy passada
+<app>
+<rdg type="edition" wit="#V">desque</rdg></app></l>
+<l n="5">deste mund' e juntada</l>
+<l n="6">con el no ceo, par a par
+<app>
+<rdg type="edition" wit="#Fid">El</rdg></app></l>
+<l n="7">e Re&#x1EF9;a chamada,
+<app>
+<rdg type="edition" wit="#V">et Reynna</rdg> 
+<rdg type="edition" wit="#C">e Reinna</rdg> 
+<rdg type="edition" wit="#Fid">&#xE9; Reinna chamada</rdg></app></l>
+<l n="8">Filla, Madr' e Criada;
+<app>
+<rdg type="edition" wit="#V">criada</rdg></app></l>
+<l n="9">e poren nos dev' ajudar,
+<app>
+<rdg type="edition" wit="#Fid">e por &#xE9;n</rdg></app></l>
+<l n="10">ca x' &#xE9; noss' avogada.</l></lg>
+</body>
+</text>
+
+</TEI>

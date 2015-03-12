@@ -32,7 +32,8 @@
          <div id="headline">
             <h1 onclick="toggleBiblio();">"Faith is a fine invention"</h1><span class="versionCount"> has 7 versions</span></div><img id="topEdge" src="../vm-images/topedge.gif" alt="Top edge"></img><div id="mainControls"><input type="button" id="newPanel" value="New Version" onclick="openPanel();"></input>
             &#8226;
-            <input type="button" id="bibToggle" value="Bibliographic Info" onclick="toggleBiblio();"></input>
+            <input type="button" id="bibToggle" value="Bibliographic Info" onclick="toggleBiblio();"></input><input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" style="display: none;"></input>
+            
             
             &#8226;
             <label for="toggleLineNumbers">Line Numbers:</label><input type="checkbox" id="toggleLineNumbers" onclick="toggleLineNumbers(this.checked);" checked="checked"></input>
@@ -116,14 +117,16 @@
          <div id="manuscripts">
             <div class="panel mssPanel">
                <div class="panelBanner"><img class="closePanel" onclick="closePanel(this.parentNode.parentNode);" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness <select class="witnessMenu" onchange="changeWitness(this.value,this.parentNode.parentNode);">
-                     <option selected="selected" value="a660">1: A 660, verse embedded in letter to Samuel Bowles.</option>
-                     <option value="h201">2: H 201, fascicle version of poem.</option>
-                     <option value="h72">3: H 72, fascicle version of poem.</option>
-                     <option value="p1891">4: Published as poem XXX in the second volume of Todd and Higginson's Poems of Emily Dickinson.</option>
-                     <option value="l1894">5: Letter to Samuel Bowles published in Todd's edition of Dickinson's letters.</option>
-                     <option value="cp32">6: Published as poem LVI in Martha Dickinson Bianchi's Complete Poems of Emily Dickinson.</option>
-                     <option value="ll227">7: Letter to Samuel Bowles published in Bianchi's The Life and Letters of Emily Dickinson.</option></select></div>
-               <div class="mssContent"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink p1891" onclick="return showImgPanel(event, 'imageViewer','images/p1891.jpg','p1891','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink ll227" onclick="return showImgPanel(event, 'imageViewer','images/ll227.jpg','ll227','-250','0');"></img>
+                     <option selected="selected" value="a660">1: a660</option>
+                     <option value="h201">2: h201</option>
+                     <option value="h72">3: h72</option>
+                     <option value="p1891">4: p1891</option>
+                     <option value="l1894">5: l1894</option>
+                     <option value="cp32">6: cp32</option>
+                     <option value="ll227">7: ll227</option></select></div>
+               <div class="mssContent">
+                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink p1891" onclick="return showImgPanel(event, 'imageViewer','images/p1891.jpg','p1891','-250','0');"></img></div>
+                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink ll227" onclick="return showImgPanel(event, 'imageViewer','images/ll227.jpg','ll227','-250','0');"></img></div>
                   			
                   <div class="div1">
                      				
@@ -245,14 +248,16 @@
             </div>
             <div class="panel mssPanel">
                <div class="panelBanner"><img class="closePanel" onclick="closePanel(this.parentNode.parentNode);" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness <select class="witnessMenu" onchange="changeWitness(this.value,this.parentNode.parentNode);">
-                     <option value="a660">1: A 660, verse embedded in letter to Samuel Bowles.</option>
-                     <option selected="selected" value="h201">2: H 201, fascicle version of poem.</option>
-                     <option value="h72">3: H 72, fascicle version of poem.</option>
-                     <option value="p1891">4: Published as poem XXX in the second volume of Todd and Higginson's Poems of Emily Dickinson.</option>
-                     <option value="l1894">5: Letter to Samuel Bowles published in Todd's edition of Dickinson's letters.</option>
-                     <option value="cp32">6: Published as poem LVI in Martha Dickinson Bianchi's Complete Poems of Emily Dickinson.</option>
-                     <option value="ll227">7: Letter to Samuel Bowles published in Bianchi's The Life and Letters of Emily Dickinson.</option></select></div>
-               <div class="mssContent"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink p1891" onclick="return showImgPanel(event, 'imageViewer','images/p1891.jpg','p1891','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink ll227" onclick="return showImgPanel(event, 'imageViewer','images/ll227.jpg','ll227','-250','0');"></img>
+                     <option value="a660">1: a660</option>
+                     <option selected="selected" value="h201">2: h201</option>
+                     <option value="h72">3: h72</option>
+                     <option value="p1891">4: p1891</option>
+                     <option value="l1894">5: l1894</option>
+                     <option value="cp32">6: cp32</option>
+                     <option value="ll227">7: ll227</option></select></div>
+               <div class="mssContent">
+                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink p1891" onclick="return showImgPanel(event, 'imageViewer','images/p1891.jpg','p1891','-250','0');"></img></div>
+                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink ll227" onclick="return showImgPanel(event, 'imageViewer','images/ll227.jpg','ll227','-250','0');"></img></div>
                   			
                   <div class="div1">
                      				
