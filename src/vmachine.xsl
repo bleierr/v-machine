@@ -154,8 +154,6 @@
          <xsl:call-template name="brandingLogo" />
          <xsl:call-template name="headline" />
          <xsl:call-template name="mainControls" />
-         <!-- RB: version dropdown -->
-         <xsl:call-template name="versionDropdown"/>
       </div>
    </xsl:template>
    
@@ -167,116 +165,144 @@
    
    <xsl:template name="headline">
       <div id="headline">
-         <h1 onclick="toggleBiblio();">
+         <!-- <h1 onclick="toggleBiblio();">
+            <xsl:value-of select="$truncatedTitle" />
+         </h1> -->
+         <h1>
             <xsl:value-of select="$truncatedTitle" />
          </h1>
-         <span class="versionCount">
+         <!-- <span class="versionCount">
             <xsl:text> has </xsl:text>
             <xsl:value-of select="$numWitnesses" />
             <xsl:text> version</xsl:text>
             <xsl:if test="$numWitnesses &gt; 1">
                <xsl:text>s</xsl:text>
             </xsl:if>
-         </span>
+         </span> -->
       </div>
    </xsl:template>
    
    <xsl:template name="mainControls">
-      <div id="mainControls">
-         <!--  <input type="button" id="newPanel" value="New Version" onclick="openPanel();" />
+      <nav id="mainControls">
+         
+         <ul>
+            <li>
+               <button id="info" type="button" onclick="#" >INFO</button>
+            </li>
+            <!--  <input type="button" id="newPanel" value="New Version" onclick="openPanel();" />
          &#8226;-->
+            <!--  
          <input type="button" id="bibToggle" value="Bibliographic Info" onclick="toggleBiblio();" />
-
-         <input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" >
-            <!--This isn't working when $displayCritInfo is true but there's no relevant note. Copied the if statement from Martin below. -->
-            <xsl:if test="$displayCritInfo != 'true' or not(tei:notesStmt/tei:note[@type='critIntro'])">
-               <xsl:attribute name="style">
-                  <xsl:text>display: none;</xsl:text>
-               </xsl:attribute>
-            </xsl:if>            
-         </input>
-         
-         <!-- &#8226;
-         <input type="button" id="helpToggle" value="Help Viewer" onclick="toggleHelp();" /> -->
-         &#8226;
-         <label for="toggleLineNumbers">Line Numbers:</label>
-         <input type="checkbox" id="toggleLineNumbers" onclick="toggleLineNumbers(this.checked);">
-            <xsl:if test="$displayLineNumbers != 'false'">
-               <xsl:attribute name="checked">checked</xsl:attribute>
-            </xsl:if>
-         </input>
-         &#8226;
-         <select id="notesMenu">
-            <xsl:choose>
-               <xsl:when test="//tei:body//tei:note[not(@type='image')]">
-                  <xsl:attribute name="onchange">
-                     <xsl:text>notesFormat(this.value);</xsl:text>
+         -->
+                
+            <li>
+               <button>
+                  <xsl:attribute name="id">selectWitness</xsl:attribute>
+                  <xsl:value-of select="count($witnesses)"></xsl:value-of>
+                  <xsl:text> Total Versions</xsl:text>
+                  
+                  <span class="ui-icon ui-icon-carat-1-s" style="display:inline-block"></span>
+                  
+               </button>
+            </li>                
+            <!-- RB: version dropdown -->
+            <xsl:call-template name="versionDropdown"/>
+            <li>
+               <input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" >
+                  <!--This isn't working when $displayCritInfo is true but there's no relevant note. Copied the if statement from Martin below. -->
+                  <xsl:if test="$displayCritInfo != 'true' or not(tei:notesStmt/tei:note[@type='critIntro'])">
+                     <xsl:attribute name="style">
+                        <xsl:text>display: none;</xsl:text>
+                     </xsl:attribute>
+                  </xsl:if>            
+               </input>
+            </li>
+            <li>
+               <!-- &#8226;
+               <input type="button" id="helpToggle" value="Help Viewer" onclick="toggleHelp();" /> -->
+               
+               <label for="toggleLineNumbers">Line Numbers:</label>
+               <button>
+                  <xsl:attribute name="id">displayLines</xsl:attribute>
+                  <xsl:text>ON</xsl:text>
+               </button>
+               <!-- <input type="checkbox" id="toggleLineNumbers" onclick="toggleLineNumbers(this.checked);">
+                  <xsl:if test="$displayLineNumbers != 'false'">
+                     <xsl:attribute name="checked">checked</xsl:attribute>
+                  </xsl:if>
+               </input> -->
+              
+            </li>
+            <li>
+               <select id="notesMenu">
+                  <xsl:choose>
+                     <xsl:when test="//tei:body//tei:note[not(@type='image')]">
+                        <xsl:attribute name="onchange">
+                           <xsl:text>notesFormat(this.value);</xsl:text>
+                        </xsl:attribute>
+                        <option value="popup">
+                           <xsl:if test="$notesFormat = 'popup'">
+                              <xsl:attribute name="selected">selected</xsl:attribute>
+                           </xsl:if>
+                           <xsl:text>Popup notes</xsl:text>
+                        </option>
+                        <option value="inline">
+                           <xsl:if test="$notesFormat = 'inline'">
+                              <xsl:attribute name="selected">selected</xsl:attribute>
+                           </xsl:if>
+                           <xsl:text>Inline notes</xsl:text>
+                        </option>
+                        <option value="none">
+                           <xsl:if test="$notesFormat = 'none'">
+                              <xsl:attribute name="selected">selected</xsl:attribute>
+                           </xsl:if>
+                           Hide notes
+                        </option>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <xsl:attribute name="disabled">
+                           disabled
+                        </xsl:attribute>
+                        <option>No notes found</option>
+                     </xsl:otherwise>
+                  </xsl:choose>
+               </select>
+               <!-- &#8226;
+               <a>
+                  <xsl:attribute name="href">
+                     <xsl:value-of select="$indexPage" />
                   </xsl:attribute>
-                  <option value="popup">
-                     <xsl:if test="$notesFormat = 'popup'">
-                        <xsl:attribute name="selected">selected</xsl:attribute>
-                     </xsl:if>
-                     <xsl:text>Popup notes</xsl:text>
-                  </option>
-                  <option value="inline">
-                     <xsl:if test="$notesFormat = 'inline'">
-                        <xsl:attribute name="selected">selected</xsl:attribute>
-                     </xsl:if>
-                     <xsl:text>Inline notes</xsl:text>
-                  </option>
-                  <option value="none">
-                     <xsl:if test="$notesFormat = 'none'">
-                        <xsl:attribute name="selected">selected</xsl:attribute>
-                     </xsl:if>
-                     Hide notes
-                  </option>
-               </xsl:when>
-               <xsl:otherwise>
-                  <xsl:attribute name="disabled">
-                     disabled
-                  </xsl:attribute>
-                  <option>No notes found</option>
-               </xsl:otherwise>
-            </xsl:choose>
-         </select>
-         &#8226;
-         <a>
-            <xsl:attribute name="href">
-               <xsl:value-of select="$indexPage" />
-            </xsl:attribute>
-            <xsl:text>Index of texts</xsl:text>
-         </a>
+                  <xsl:text>Index of texts</xsl:text>
+               </a> -->
+            </li>
+         </ul>
          
          
-      </div>
+      </nav>
       
    </xsl:template>
    
    <xsl:template name="versionDropdown">
-         <div>
-            <xsl:attribute name="id">versionDropdown</xsl:attribute>
-            <div>
-               <xsl:attribute name="id">selectWitness</xsl:attribute>
-               Select Witness
-            </div>
-            <div id="witnessList">
-               <xsl:attribute name="id">witnessList</xsl:attribute>
-               <ul>
-                  <xsl:for-each select="$witnesses">
-                     <li>
-                        <a>
-                           <xsl:attribute name="href">#</xsl:attribute>
+     
+      <ul id="witnessList">
+            <xsl:for-each select="$witnesses">
+                 <li>
+                        <xsl:attribute name="class">
+                           <xsl:value-of select="@xml:id"></xsl:value-of>
+                        </xsl:attribute>
+                        <span>
                            <xsl:value-of select="."></xsl:value-of>
-                        </a>
-                        <div>
-                           <xsl:attribute name="class">panelOpener</xsl:attribute>
+                        </span>
+                        <button>
+                           <xsl:attribute name="class">panelVisible</xsl:attribute>
+                           <xsl:attribute name="type">button</xsl:attribute>
                            
-                        </div>
-                     </li>
-                  </xsl:for-each>
-               </ul>
-            </div>
-         </div>      
+                           OFF
+                        </button>
+                </li>
+           </xsl:for-each>
+       </ul>
+            
       
       
    </xsl:template>
@@ -304,9 +330,14 @@
       <xsl:param name="increment" />
       <xsl:param name="witID" />
       <!-- RB: added draggable resizeable -->
-      <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable">
+      <div>
+         <xsl:attribute name="class">
+            <xsl:text>panel mssPanel draggable resizable ui-widget-content ui-resizable </xsl:text>
+            <xsl:value-of select="$witID"></xsl:value-of>
+         </xsl:attribute>
          <div class="panelBanner">
-            <img class="closePanel" onclick="closePanel(this.parentNode.parentNode);" src="../vm-images/closePanel.gif" alt="X (Close panel)" />
+            <!-- <img class="closePanel" onclick="closePanel(this.parentNode.parentNode);" src="../vm-images/closePanel.gif" alt="X (Close panel)" /> -->
+            <img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)" />
             <xsl:text>Witness </xsl:text><xsl:value-of select="$witID"></xsl:value-of>
             <!-- <select class="witnessMenu" onchange="changeWitness(this.value,this.parentNode.parentNode);">
                <xsl:for-each select="//tei:witness">
@@ -336,7 +367,6 @@
                   <xsl:with-param name="witID" select="$witID"></xsl:with-param>
                </xsl:call-template>
             </xsl:if>
-            <xsl:value-of select="$witID"></xsl:value-of>
             <xsl:apply-templates select="//tei:body" >
                <xsl:with-param name="witID" select="$witID" tunnel="yes"></xsl:with-param>
             </xsl:apply-templates>

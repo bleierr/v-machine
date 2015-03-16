@@ -42,48 +42,55 @@ div#mainBanner{
 div#mainBanner div#brandingLogo{
     float:left;
     width:8.38em;
-    height:5.34em;
+    /*height:5.34em;*/
     min-height:70px;
     background:#6699CC;
 	
 }
 div#mainBanner div#brandingLogo img{
     width:8.38em;
-    height:2.9em;
+    /*height:2.9em;*/
     border:none;
     padding:0;
     margin:1.22em auto 0 auto;
 }
 div#mainBanner div#headline{
-    float:left;
+    /*float:left;
     width:46.7em;
     height:2.21em;
     font-family:sans-serif;
     line-height:2.21em;
     border-top:none;
-    /* border-left: 0.08em solid black; */
+    border-left: 0.08em solid black;
     border-left:none;
     border-right:none;
     border-bottom:0.08em solid black;
     padding:0 0 0 0.53em;
     margin:0;
-    color:#CC0000;
+    color:#CC0000;*/
 }
+/*added by RB*/
+div#mainBanner{
+	height: 8em;
+}
+
 div#mainBanner div#headline h1{
-    float:left;
+	margin:0;
+    /*float:left;
     font-size:1.22em;
     font-weight:800;
     color:black;
     text-decoration:underline;
     cursor:pointer;
     margin:0 0.53em 0 0;
-    padding:0;
+    padding:0;*/
 }
 div#mainBanner div#headline span.versionCount{
     font-size:1.07em;
     font-style:italic;
 }
 
+/*RB rewrite 
 div#mainBanner div#mainControls{
     position:absolute;
     top:2.21em;
@@ -98,7 +105,17 @@ div#mainBanner div#mainControls{
     margin:0;
     padding:0.455em;
     white-space:nowrap;
+}*/
+div#mainBanner nav#mainControls{
+    border-top:none;
+    border-right:none;
+    border-bottom:none;
+    border-left:0.08em solid black;
+    margin:0;
+    padding:0;
+    white-space:nowrap;
 }
+/*end RB rewrite*/
 div#mssArea{
     width:100%;
     margin:0;
@@ -444,49 +461,57 @@ span.viewerHandleLt{
     max-width:37.5em;
     max-height:37.5em;
 }
-/*RB edits*/
-#versionDropdown{
-	float:right;
+/*RB Code edit*/
+#mainControls ul{
+	padding: 0;
+	margin:0;
 }
+
+#mainControls>ul>li{
+	display: inline-block; 
+	/*float:left;*/
+	list-style-type: none;
+	padding: 5px;
+	position: relative;
+	}
+
 #witnessList, #selectWitness{
 	background: #efefef; 
 	background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
 	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
 	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
 	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
-	border-radius: 10px;
-	padding: 5px;
-	
 }
-#versionDropdown{
-	float:left;
-	
-}
+
 #selectWitness{
-	width:15em;
-	text-align:center;
-	font-size: 1.5em;
+	position:relative;
+	z-index:2;
 }
 #witnessList{
 	display:none;
+	position:relative;
+	z-index:2;
+	float:left;
 }
-#witnessList ul {
-		padding:0;
-	}
+
 #witnessList li {
-		float: none; 
-		list-style: none;
-		padding: 5px;
-		border-top: 1px solid #6b727c;
-		border-bottom: 1px solid #575f6a;
-		position: relative;
+	list-style-type: none;
 	}
-.panelOpener{
-	 display:inline-block; 
-	 background-color:red; 
-	 margin: 0 10px;
-	 width:20px;
-	 height:20px;
-	 border-radius:10px;
+.panelVisible{
+	background-color:#999; 
 
 }
+
+button.panelVisible{
+	width: 3em;
+}
+.mssPanel{
+display:none;
+position:relative;
+z-index:1;
+}
+button#displayLines{
+	width: 4em;
+}
+
+/*Code RB End*/

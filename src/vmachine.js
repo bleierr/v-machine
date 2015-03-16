@@ -1105,7 +1105,23 @@ $(document).ready(function(){
 		$("#witnessList").toggle();
 	});
 
-
+	$("#witnessList li").click(function(){
+		
+		var c = $(this).attr("class");
+		$(".mssPanel."+c).toggle();
+		var d = $(".mssPanel."+c).css("display");
+		if (d == 'none'){
+			var b = $(this).find("button");
+			b.css({ "background-color": "#999" });
+			b.html("OFF");
+		}
+		else{
+			var b = $(this).find("button");
+			b.css({ "background-color": "#ddd" });
+			b.html("ON");
+		}
+		
+	});
 
 
 });
