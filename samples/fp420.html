@@ -1,13 +1,14 @@
-
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
    <head>
       <title>"There are two Ripenings" -- The Versioning Machine 4.0</title>
+      <meta charset="utf-8"></meta>
       <link rel="stylesheet" type="text/css" href="../src/vmachine.css"></link>
       <!--[if IE 6]>
             <link rel="stylesheet" type="text/css" href="../src/vmachine_ie6.css">
-         <![endif]--><script type="text/javascript" src="../src/vmachine.js"></script><script type="text/javascript">
+         <![endif]-->
+      <link rel="stylesheet" type="text/css" href="../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><script type="text/javascript" src="../src/vmachine.js"></script><script type="text/javascript">
       var witnesses = new Array();
       
          witnesses["A456"] = "A456";
@@ -22,18 +23,34 @@
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/poweredby.gif"></img></div>
          <div id="headline">
-            <h1 onclick="toggleBiblio();">"There are two Ripenings"</h1><span class="versionCount"> has 3 versions</span></div><img id="topEdge" src="../vm-images/topedge.gif" alt="Top edge"></img><div id="mainControls"><input type="button" id="newPanel" value="New Version" onclick="openPanel();"></input>
-            &#8226;
-            <input type="button" id="bibToggle" value="Bibliographic Info" onclick="toggleBiblio();"></input><input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" style="display: none;"></input>
-            
-            
-            &#8226;
-            <label for="toggleLineNumbers">Line Numbers:</label><input type="checkbox" id="toggleLineNumbers" onclick="toggleLineNumbers(this.checked);" checked="checked"></input>
-            &#8226;
-            <select id="notesMenu" disabled="&#xA;                     disabled&#xA;                  ">
-               <option>No notes found</option></select>
-            &#8226;
-            <a href="../samples.html">Index of texts</a></div>
+            <h1>"There are two Ripenings"</h1>
+         </div>
+         <nav id="mainControls">
+            <ul>
+               <li><button id="info" type="button" onclick="#">INFO</button></li>
+               <li><button id="selectWitness">3 Total Versions<span class="ui-icon ui-icon-carat-1-s" style="display:inline-block"></span></button></li>
+               <ul id="witnessList">
+                  <li class="A456"><span>A 456, version sent to unknown
+                        				recipient.</span><button class="panelVisible" type="button">
+                        
+                        OFF
+                        </button></li>
+                  <li class="ATr60a"><span>A Tr60a, version transcribed by Todd and sent
+                        				to Anthon</span><button class="panelVisible" type="button">
+                        
+                        OFF
+                        </button></li>
+                  <li class="H47"><span>H 47, Fascicle 14</span><button class="panelVisible" type="button">
+                        
+                        OFF
+                        </button></li>
+               </ul>
+               <li><input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" style="display: none;"></input></li>
+               <li><label for="toggleLineNumbers">Line Numbers:</label><button id="displayLines">ON</button></li>
+               <li><select id="notesMenu" disabled="&#xA;                           disabled&#xA;                        ">
+                     <option>No notes found</option></select></li>
+            </ul>
+         </nav>
       </div>
       <div id="mssArea">
          <div class="panel" id="bibPanel">
@@ -70,9 +87,9 @@
                   <li>Edited and marked up by Lara Vetter. </li>
                </ul>
                <h5>Publication Details:</h5>
-                     
+               
                <p>Published by The Versioning Machine project.</p>
-                      
+                
                			 
                <p>This poem is available only for demonstration purposes. It was
                   				created as part of a research project to experiment with ways of displaying
@@ -102,563 +119,340 @@
             <div class="critContent"></div>
          </div>
          <div id="manuscripts">
-            <div class="panel mssPanel">
-               <div class="panelBanner"><img class="closePanel" onclick="closePanel(this.parentNode.parentNode);" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness <select class="witnessMenu" onchange="changeWitness(this.value,this.parentNode.parentNode);">
-                     <option selected="selected" value="A456">1: A456</option>
-                     <option value="ATr60a">2: ATr60a</option>
-                     <option value="H47">3: H47</option></select></div>
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable A456">
+               <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness A456
+               </div>
                <div class="mssContent"> 
                   		
                   <div class="div1"> 
                      		  
                      <div class="lg"> 
                         			 
-                        <div class="line lined0e87" onclick="matchLine('lined0e87');">
+                        <div class="line lined2e87" line-id="lined2e87" onclick="matchLine('lined2e87');">
                            <div class="linenumber">1</div>There are two Ripenings 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e89');"> 
-                              				  
-                              <div data-witness="A456 H47" class="reading A456 H47"> -</div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a"></div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e89');"> -</div>
                         </div> 
                         			 
-                        <div class="line lined0e97" onclick="matchLine('lined0e97');">
+                        <div class="line lined2e97" line-id="lined2e97" onclick="matchLine('lined2e97');">
                            <div class="linenumber">2</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e99');"> 
-                              				  
-                              <div data-witness="A456" class="reading A456">one -</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">One -</div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">one</div> 
-                              				
-                           </div> of 
+                           <div class="apparatus" onclick="matchApp('app-d2e99');">one -</div> of 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e111');"> 
-                              				  
-                              <div data-witness="A456" class="reading A456">sight -</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">Sight - whose Forces</div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">sight</div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e111');">sight -</div>
                         </div> 
                         			 
-                        <div class="line lined0e123" onclick="matchLine('lined0e123');">
+                        <div class="line lined2e123" line-id="lined2e123" onclick="matchLine('lined2e123');">
                            <div class="linenumber">3</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e125');"> 
-                              				  
-                              <div data-witness="A456 ATr60a" class="reading A456 ATr60a">Whose forces 
-                                 					 
-                                 <div class="apparatus" onclick="matchApp('app-d0e129');"> 
-                                    						
-                                    <div data-witness="A456" class="reading A456">Spheric</div> 
-                                    						
-                                    <div data-witness="ATr60a" class="reading ATr60a">spheric</div> 
-                                    					 
-                                 </div>
-                              </div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">spheric + round</div> 
-                              				
+                           <div class="apparatus" onclick="matchApp('app-d2e125');">Whose forces 
+                              					 
+                              <div class="apparatus" onclick="matchApp('app-d2e129');">Spheric</div>
                            </div>
                         </div> 
                         			 
-                        <div class="line lined0e142" onclick="matchLine('lined0e142');">
+                        <div class="line lined2e142" line-id="lined2e142" onclick="matchLine('lined2e142');">
                            <div class="linenumber">4</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e144');"> 
-                              				  
-                              <div data-witness="A456" class="reading A456">wind</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47"></div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">wind,</div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e144');">wind</div>
                         </div> 
                         			 
-                        <div class="line lined0e155" onclick="matchLine('lined0e155');">
+                        <div class="line lined2e155" line-id="lined2e155" onclick="matchLine('lined2e155');">
                            <div class="linenumber">5</div>Until the 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e157');"> 
-                              				  
-                              <div data-witness="A456 H47" class="reading A456 H47">Velvet</div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">velvet</div> 
-                              				
-                           </div> 
+                           <div class="apparatus" onclick="matchApp('app-d2e157');">Velvet</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e166');"> 
-                              				  
-                              <div data-witness="A456 ATr60a" class="reading A456 ATr60a">product</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">Product</div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e166');">product</div>
                         </div> 
                         			 
-                        <div class="line lined0e175" onclick="matchLine('lined0e175');">
+                        <div class="line lined2e176" line-id="lined2e176" onclick="matchLine('lined2e176');">
                            <div class="linenumber">6</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e177');"> 
-                              				  
-                              <div data-witness="A456" class="reading A456">Drops</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">Drop,</div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">Drop</div> 
-                              				
-                           </div> 
+                           <div class="apparatus" onclick="matchApp('app-d2e178');">Drops</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e189');"> 
-                              				  
-                              <div data-witness="A456 ATr60a" class="reading A456 ATr60a">spicy</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">spicy,</div> 
-                              				
-                           </div> to the 
+                           <div class="apparatus" onclick="matchApp('app-d2e190');">spicy</div> to the 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e198');"> 
-                              				  
-                              <div data-witness="A456 ATr60a" class="reading A456 ATr60a"></div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">Ground -
-                                 <div class="stanzabreak"></div>
-                              </div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e199');"></div>
                         </div> 
                         			 
-                        <div class="line lined0e207" onclick="matchLine('lined0e207');">
+                        <div class="line lined2e208" line-id="lined2e208" onclick="matchLine('lined2e208');">
                            <div class="linenumber">7</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e209');"> 
-                              				  
-                              <div data-witness="A456" class="reading A456">ground -</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47"></div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">Ground -</div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e210');">ground -</div>
                         </div> 
                         			 
-                        <div class="line lined0e220" onclick="matchLine('lined0e220');">
+                        <div class="line lined2e221" line-id="lined2e221" onclick="matchLine('lined2e221');">
                            <div class="linenumber">8</div>A 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e222');"> 
-                              				  
-                              <div data-witness="A456 ATr60a" class="reading A456 ATr60a">homelier</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">Homelier -</div> 
-                              				
-                           </div> maturing -
+                           <div class="apparatus" onclick="matchApp('app-d2e223');">homelier</div> maturing -
                         </div> 
                         			 
-                        <div class="line lined0e232" onclick="matchLine('lined0e232');">
+                        <div class="line lined2e233" line-id="lined2e233" onclick="matchLine('lined2e233');">
                            <div class="linenumber">9</div>A 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e234');"> 
-                              				  
-                              <div data-witness="A456 ATr60a" class="reading A456 ATr60a">process</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">Process</div> 
-                              				
-                           </div> in 
+                           <div class="apparatus" onclick="matchApp('app-d2e235');">process</div> in 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e243');"> 
-                              				  
-                              <div data-witness="A456 H47" class="reading A456 H47">the Bur -</div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">Bur.</div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e244');">the Bur -</div>
                         </div> 
                         			 
-                        <div class="line lined0e252" onclick="matchLine('lined0e252');">
+                        <div class="line lined2e253" line-id="lined2e253" onclick="matchLine('lined2e253');">
                            <div class="linenumber">10</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e254');"> 
-                              				  
-                              <div data-witness="A456 ATr60a" class="reading A456 ATr60a">That</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">+ Which</div> 
-                              				
-                           </div> 
+                           <div class="apparatus" onclick="matchApp('app-d2e255');">That</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e263');"> 
-                              				  
-                              <div data-witness="A456" class="reading A456">teeth</div> 
-                              				  
-                              <div data-witness="H47 ATr60a" class="reading H47 ATr60a">Teeth</div> 
-                              				
-                           </div> of 
+                           <div class="apparatus" onclick="matchApp('app-d2e264');">teeth</div> of 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e272');"> 
-                              				  
-                              <div data-witness="A456" class="reading A456">Frosts</div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">of</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">Frosts,</div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e273');">Frosts</div>
                         </div> 
                         			 
-                        <div class="line lined0e285" onclick="matchLine('lined0e285');">
+                        <div class="line lined2e286" line-id="lined2e286" onclick="matchLine('lined2e286');">
                            <div class="linenumber">11</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e287');"> 
-                              				  
-                              <div data-witness="A456 H47" class="reading A456 H47">alone</div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">Frosts alone</div> 
-                              				
-                           </div> 
+                           <div class="apparatus" onclick="matchApp('app-d2e288');">alone</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e296');"> 
-                              				  
-                              <div data-witness="A456 ATr60a" class="reading A456 ATr60a">disclose</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">disclose -</div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e297');">disclose</div>
                         </div> 
                         			 
-                        <div class="line lined0e305" onclick="matchLine('lined0e305');">
+                        <div class="line lined2e307" line-id="lined2e307" onclick="matchLine('lined2e307');">
                            <div class="linenumber">12</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e307');"> 
-                              				  
-                              <div data-witness="A456" class="reading A456">In</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">+ In</div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">On</div> 
-                              				
-                           </div> 
+                           <div class="apparatus" onclick="matchApp('app-d2e309');">In</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e319');"> 
-                              				  
-                              <div data-witness="A456 ATr60a" class="reading A456 ATr60a">far</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">+ still</div> 
-                              				
-                           </div> October 
+                           <div class="apparatus" onclick="matchApp('app-d2e321');">far</div> October 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e328');"> 
-                              				  
-                              <div data-witness="A456" class="reading A456">Air.</div> 
-                              				  
-                              <div data-witness="H47 ATr60a" class="reading H47 ATr60a">Air -</div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e330');">Air.</div>
                         </div> 
                         		  
                      </div> 
                      		   
                      			 
-                     <div class="apparatus" onclick="matchApp('app-d0e340');"> 
-                        				
-                        <div data-witness="A456 ATr60a" class="reading A456 ATr60a"></div> 
-                        				
-                        <div data-witness="H47" class="reading H47">
-                           <ins>+ far - </ins>
-                           <ins>+ that Teeth</ins>
-                           <ins>+ on
-                              				  far - 
-                           </ins>
-                        </div> 
-                        			 
-                     </div> 
+                     <div class="apparatus" onclick="matchApp('app-d2e342');"></div> 
                      		
                   </div> 
                   	 
                </div>
             </div>
-            <div class="panel mssPanel">
-               <div class="panelBanner"><img class="closePanel" onclick="closePanel(this.parentNode.parentNode);" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness <select class="witnessMenu" onchange="changeWitness(this.value,this.parentNode.parentNode);">
-                     <option value="A456">1: A456</option>
-                     <option selected="selected" value="ATr60a">2: ATr60a</option>
-                     <option value="H47">3: H47</option></select></div>
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable ATr60a">
+               <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness ATr60a
+               </div>
                <div class="mssContent"> 
                   		
                   <div class="div1"> 
                      		  
                      <div class="lg"> 
                         			 
-                        <div class="line lined0e87" onclick="matchLine('lined0e87');">
+                        <div class="line lined2e87" line-id="lined2e87" onclick="matchLine('lined2e87');">
                            <div class="linenumber">1</div>There are two Ripenings 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e89');"> 
-                              				  
-                              <div data-witness="A456 H47" class="reading A456 H47"> -</div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a"></div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e89');"></div>
                         </div> 
                         			 
-                        <div class="line lined0e97" onclick="matchLine('lined0e97');">
+                        <div class="line lined2e97" line-id="lined2e97" onclick="matchLine('lined2e97');">
                            <div class="linenumber">2</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e99');"> 
-                              				  
-                              <div data-witness="A456" class="reading A456">one -</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">One -</div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">one</div> 
-                              				
-                           </div> of 
+                           <div class="apparatus" onclick="matchApp('app-d2e99');">one</div> of 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e111');"> 
-                              				  
-                              <div data-witness="A456" class="reading A456">sight -</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">Sight - whose Forces</div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">sight</div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e111');">sight</div>
                         </div> 
                         			 
-                        <div class="line lined0e123" onclick="matchLine('lined0e123');">
+                        <div class="line lined2e123" line-id="lined2e123" onclick="matchLine('lined2e123');">
                            <div class="linenumber">3</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e125');"> 
-                              				  
-                              <div data-witness="A456 ATr60a" class="reading A456 ATr60a">Whose forces 
-                                 					 
-                                 <div class="apparatus" onclick="matchApp('app-d0e129');"> 
-                                    						
-                                    <div data-witness="A456" class="reading A456">Spheric</div> 
-                                    						
-                                    <div data-witness="ATr60a" class="reading ATr60a">spheric</div> 
-                                    					 
-                                 </div>
-                              </div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">spheric + round</div> 
-                              				
+                           <div class="apparatus" onclick="matchApp('app-d2e125');">Whose forces 
+                              					 
+                              <div class="apparatus" onclick="matchApp('app-d2e129');">spheric</div>
                            </div>
                         </div> 
                         			 
-                        <div class="line lined0e142" onclick="matchLine('lined0e142');">
+                        <div class="line lined2e142" line-id="lined2e142" onclick="matchLine('lined2e142');">
                            <div class="linenumber">4</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e144');"> 
-                              				  
-                              <div data-witness="A456" class="reading A456">wind</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47"></div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">wind,</div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e144');">wind,</div>
                         </div> 
                         			 
-                        <div class="line lined0e155" onclick="matchLine('lined0e155');">
+                        <div class="line lined2e155" line-id="lined2e155" onclick="matchLine('lined2e155');">
                            <div class="linenumber">5</div>Until the 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e157');"> 
-                              				  
-                              <div data-witness="A456 H47" class="reading A456 H47">Velvet</div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">velvet</div> 
-                              				
-                           </div> 
+                           <div class="apparatus" onclick="matchApp('app-d2e157');">velvet</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e166');"> 
-                              				  
-                              <div data-witness="A456 ATr60a" class="reading A456 ATr60a">product</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">Product</div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e166');">product</div>
                         </div> 
                         			 
-                        <div class="line lined0e175" onclick="matchLine('lined0e175');">
+                        <div class="line lined2e176" line-id="lined2e176" onclick="matchLine('lined2e176');">
                            <div class="linenumber">6</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e177');"> 
-                              				  
-                              <div data-witness="A456" class="reading A456">Drops</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">Drop,</div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">Drop</div> 
-                              				
-                           </div> 
+                           <div class="apparatus" onclick="matchApp('app-d2e178');">Drop</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e189');"> 
-                              				  
-                              <div data-witness="A456 ATr60a" class="reading A456 ATr60a">spicy</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">spicy,</div> 
-                              				
-                           </div> to the 
+                           <div class="apparatus" onclick="matchApp('app-d2e190');">spicy</div> to the 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e198');"> 
-                              				  
-                              <div data-witness="A456 ATr60a" class="reading A456 ATr60a"></div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">Ground -
-                                 <div class="stanzabreak"></div>
-                              </div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e199');"></div>
                         </div> 
                         			 
-                        <div class="line lined0e207" onclick="matchLine('lined0e207');">
+                        <div class="line lined2e208" line-id="lined2e208" onclick="matchLine('lined2e208');">
                            <div class="linenumber">7</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e209');"> 
-                              				  
-                              <div data-witness="A456" class="reading A456">ground -</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47"></div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">Ground -</div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e210');">Ground -</div>
                         </div> 
                         			 
-                        <div class="line lined0e220" onclick="matchLine('lined0e220');">
+                        <div class="line lined2e221" line-id="lined2e221" onclick="matchLine('lined2e221');">
                            <div class="linenumber">8</div>A 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e222');"> 
-                              				  
-                              <div data-witness="A456 ATr60a" class="reading A456 ATr60a">homelier</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">Homelier -</div> 
-                              				
-                           </div> maturing -
+                           <div class="apparatus" onclick="matchApp('app-d2e223');">homelier</div> maturing -
                         </div> 
                         			 
-                        <div class="line lined0e232" onclick="matchLine('lined0e232');">
+                        <div class="line lined2e233" line-id="lined2e233" onclick="matchLine('lined2e233');">
                            <div class="linenumber">9</div>A 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e234');"> 
-                              				  
-                              <div data-witness="A456 ATr60a" class="reading A456 ATr60a">process</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">Process</div> 
-                              				
-                           </div> in 
+                           <div class="apparatus" onclick="matchApp('app-d2e235');">process</div> in 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e243');"> 
-                              				  
-                              <div data-witness="A456 H47" class="reading A456 H47">the Bur -</div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">Bur.</div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e244');">Bur.</div>
                         </div> 
                         			 
-                        <div class="line lined0e252" onclick="matchLine('lined0e252');">
+                        <div class="line lined2e253" line-id="lined2e253" onclick="matchLine('lined2e253');">
                            <div class="linenumber">10</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e254');"> 
-                              				  
-                              <div data-witness="A456 ATr60a" class="reading A456 ATr60a">That</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">+ Which</div> 
-                              				
-                           </div> 
+                           <div class="apparatus" onclick="matchApp('app-d2e255');">That</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e263');"> 
-                              				  
-                              <div data-witness="A456" class="reading A456">teeth</div> 
-                              				  
-                              <div data-witness="H47 ATr60a" class="reading H47 ATr60a">Teeth</div> 
-                              				
-                           </div> of 
+                           <div class="apparatus" onclick="matchApp('app-d2e264');">Teeth</div> of 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e272');"> 
-                              				  
-                              <div data-witness="A456" class="reading A456">Frosts</div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">of</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">Frosts,</div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e273');">of</div>
                         </div> 
                         			 
-                        <div class="line lined0e285" onclick="matchLine('lined0e285');">
+                        <div class="line lined2e286" line-id="lined2e286" onclick="matchLine('lined2e286');">
                            <div class="linenumber">11</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e287');"> 
-                              				  
-                              <div data-witness="A456 H47" class="reading A456 H47">alone</div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">Frosts alone</div> 
-                              				
-                           </div> 
+                           <div class="apparatus" onclick="matchApp('app-d2e288');">Frosts alone</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e296');"> 
-                              				  
-                              <div data-witness="A456 ATr60a" class="reading A456 ATr60a">disclose</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">disclose -</div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e297');">disclose</div>
                         </div> 
                         			 
-                        <div class="line lined0e305" onclick="matchLine('lined0e305');">
+                        <div class="line lined2e307" line-id="lined2e307" onclick="matchLine('lined2e307');">
                            <div class="linenumber">12</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e307');"> 
-                              				  
-                              <div data-witness="A456" class="reading A456">In</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">+ In</div> 
-                              				  
-                              <div data-witness="ATr60a" class="reading ATr60a">On</div> 
-                              				
-                           </div> 
+                           <div class="apparatus" onclick="matchApp('app-d2e309');">On</div> 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e319');"> 
-                              				  
-                              <div data-witness="A456 ATr60a" class="reading A456 ATr60a">far</div> 
-                              				  
-                              <div data-witness="H47" class="reading H47">+ still</div> 
-                              				
-                           </div> October 
+                           <div class="apparatus" onclick="matchApp('app-d2e321');">far</div> October 
                            				
-                           <div class="apparatus" onclick="matchApp('app-d0e328');"> 
-                              				  
-                              <div data-witness="A456" class="reading A456">Air.</div> 
-                              				  
-                              <div data-witness="H47 ATr60a" class="reading H47 ATr60a">Air -</div> 
-                              				
-                           </div>
+                           <div class="apparatus" onclick="matchApp('app-d2e330');">Air -</div>
                         </div> 
                         		  
                      </div> 
                      		   
                      			 
-                     <div class="apparatus" onclick="matchApp('app-d0e340');"> 
-                        				
-                        <div data-witness="A456 ATr60a" class="reading A456 ATr60a"></div> 
-                        				
-                        <div data-witness="H47" class="reading H47">
-                           <ins>+ far - </ins>
-                           <ins>+ that Teeth</ins>
-                           <ins>+ on
-                              				  far - 
-                           </ins>
+                     <div class="apparatus" onclick="matchApp('app-d2e342');"></div> 
+                     		
+                  </div> 
+                  	 
+               </div>
+            </div>
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable H47">
+               <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness H47
+               </div>
+               <div class="mssContent"> 
+                  		
+                  <div class="div1"> 
+                     		  
+                     <div class="lg"> 
+                        			 
+                        <div class="line lined2e87" line-id="lined2e87" onclick="matchLine('lined2e87');">
+                           <div class="linenumber">1</div>There are two Ripenings 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e89');"> -</div>
                         </div> 
                         			 
+                        <div class="line lined2e97" line-id="lined2e97" onclick="matchLine('lined2e97');">
+                           <div class="linenumber">2</div> 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e99');">One -</div> of 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e111');">Sight - whose Forces</div>
+                        </div> 
+                        			 
+                        <div class="line lined2e123" line-id="lined2e123" onclick="matchLine('lined2e123');">
+                           <div class="linenumber">3</div> 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e125');">spheric + round</div>
+                        </div> 
+                        			 
+                        <div class="line lined2e142" line-id="lined2e142" onclick="matchLine('lined2e142');">
+                           <div class="linenumber">4</div> 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e144');"></div>
+                        </div> 
+                        			 
+                        <div class="line lined2e155" line-id="lined2e155" onclick="matchLine('lined2e155');">
+                           <div class="linenumber">5</div>Until the 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e157');">Velvet</div> 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e166');">Product</div>
+                        </div> 
+                        			 
+                        <div class="line lined2e176" line-id="lined2e176" onclick="matchLine('lined2e176');">
+                           <div class="linenumber">6</div> 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e178');">Drop,</div> 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e190');">spicy,</div> to the 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e199');">Ground -
+                              <div class="stanzabreak"></div>
+                           </div>
+                        </div> 
+                        			 
+                        <div class="line lined2e208" line-id="lined2e208" onclick="matchLine('lined2e208');">
+                           <div class="linenumber">7</div> 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e210');"></div>
+                        </div> 
+                        			 
+                        <div class="line lined2e221" line-id="lined2e221" onclick="matchLine('lined2e221');">
+                           <div class="linenumber">8</div>A 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e223');">Homelier -</div> maturing -
+                        </div> 
+                        			 
+                        <div class="line lined2e233" line-id="lined2e233" onclick="matchLine('lined2e233');">
+                           <div class="linenumber">9</div>A 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e235');">Process</div> in 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e244');">the Bur -</div>
+                        </div> 
+                        			 
+                        <div class="line lined2e253" line-id="lined2e253" onclick="matchLine('lined2e253');">
+                           <div class="linenumber">10</div> 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e255');">+ Which</div> 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e264');">Teeth</div> of 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e273');">Frosts,</div>
+                        </div> 
+                        			 
+                        <div class="line lined2e286" line-id="lined2e286" onclick="matchLine('lined2e286');">
+                           <div class="linenumber">11</div> 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e288');">alone</div> 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e297');">disclose -</div>
+                        </div> 
+                        			 
+                        <div class="line lined2e307" line-id="lined2e307" onclick="matchLine('lined2e307');">
+                           <div class="linenumber">12</div> 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e309');">+ In</div> 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e321');">+ still</div> October 
+                           				
+                           <div class="apparatus" onclick="matchApp('app-d2e330');">Air -</div>
+                        </div> 
+                        		  
                      </div> 
+                     		   
+                     			 
+                     <div class="apparatus" onclick="matchApp('app-d2e342');"><ins>+ far - </ins><ins>+ that Teeth</ins><ins>+ on
+                           				  far - </ins></div> 
                      		
                   </div> 
                   	 

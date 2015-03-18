@@ -1,13 +1,14 @@
-
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
    <head>
       <title>Nocturne -- The Versioning Machine 4.0</title>
+      <meta charset="utf-8"></meta>
       <link rel="stylesheet" type="text/css" href="../src/vmachine.css"></link>
       <!--[if IE 6]>
             <link rel="stylesheet" type="text/css" href="../src/vmachine_ie6.css">
-         <![endif]--><script type="text/javascript" src="../src/vmachine.js"></script><script type="text/javascript">
+         <![endif]-->
+      <link rel="stylesheet" type="text/css" href="../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><script type="text/javascript" src="../src/vmachine.js"></script><script type="text/javascript">
       var witnesses = new Array();
       
          witnesses["t7989-1-2"] = "t7989-1-2";
@@ -24,23 +25,45 @@
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/poweredby.gif"></img></div>
          <div id="headline">
-            <h1 onclick="toggleBiblio();">Nocturne</h1><span class="versionCount"> has 4 versions</span></div><img id="topEdge" src="../vm-images/topedge.gif" alt="Top edge"></img><div id="mainControls"><input type="button" id="newPanel" value="New Version" onclick="openPanel();"></input>
-            &#8226;
-            <input type="button" id="bibToggle" value="Bibliographic Info" onclick="toggleBiblio();"></input><input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" style="display: none;"></input>
-            
-            
-            &#8226;
-            <label for="toggleLineNumbers">Line Numbers:</label><input type="checkbox" id="toggleLineNumbers" onclick="toggleLineNumbers(this.checked);" checked="checked"></input>
-            &#8226;
-            <select id="notesMenu" onchange="notesFormat(this.value);">
-               <option value="popup" selected="selected">Popup notes</option>
-               <option value="inline">Inline notes</option>
-               <option value="none">
-                  Hide notes
-                  
-               </option></select>
-            &#8226;
-            <a href="../samples.html">Index of texts</a></div>
+            <h1>Nocturne</h1>
+         </div>
+         <nav id="mainControls">
+            <ul>
+               <li><button id="info" type="button" onclick="#">INFO</button></li>
+               <li><button id="selectWitness">4 Total Versions<span class="ui-icon ui-icon-carat-1-s" style="display:inline-block"></span></button></li>
+               <ul id="witnessList">
+                  <li class="t7989-1-2"><span>'Nocturne, Saint Eloi, 1918' (TCD
+                        7878/1/2)</span><button class="panelVisible" type="button">
+                        
+                        OFF
+                        </button></li>
+                  <li class="t7989-1-3"><span>'Nocturne of St. Eloi, 1918' (TCD MS
+                        7989/1/3)</span><button class="panelVisible" type="button">
+                        
+                        OFF
+                        </button></li>
+                  <li class="t7989-1-1"><span>'Nocturne, Saint Eloi' (TCD MS
+                        79891/1)</span><button class="panelVisible" type="button">
+                        
+                        OFF
+                        </button></li>
+                  <li class="nocturne_poems"><span>published in Poems as
+                        'Nocturne'</span><button class="panelVisible" type="button">
+                        
+                        OFF
+                        </button></li>
+               </ul>
+               <li><input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" style="display: none;"></input></li>
+               <li><label for="toggleLineNumbers">Line Numbers:</label><button id="displayLines">ON</button></li>
+               <li><select id="notesMenu" onchange="notesFormat(this.value);">
+                     <option value="popup" selected="selected">Popup notes</option>
+                     <option value="inline">Inline notes</option>
+                     <option value="none">
+                        Hide notes
+                        
+                     </option></select></li>
+            </ul>
+         </nav>
       </div>
       <div id="mssArea">
          <div class="panel" id="bibPanel">
@@ -54,44 +77,46 @@
                   by Thomas MacGreevy
                </h3>
                <h4>Original Source</h4> 
-                               
-                               
-               <p>Diplomatic editions of MacGreevy's poetry were created from Collected Poems of Thomas MacGreevy: An Annotated Edition, edited by Susan Schreibman  (Anna Livia Press and The Catholic University of America Press, 1991). Images of MacGreevy's
-                  published  poems were taken from MacGreevy's own copy of Poems (Heinemann, 1934). Manuscript copies are from MacGreevy's papers at Trinity College, Dublin (individual manuscript numbers
-                  appear in the witness list below).
+               
+               
+               <p>Diplomatic editions of MacGreevy's poetry were created from Collected Poems of Thomas MacGreevy: An Annotated Edition, edited by Susan Schreibman  (Anna Livia Press and The Catholic University of America
+                  Press, 1991). Images of MacGreevy's published  poems were taken from MacGreevy's own
+                  copy of Poems (Heinemann, 1934). Manuscript copies are from MacGreevy's papers at Trinity College,
+                  Dublin (individual manuscript numbers appear in the witness list below).
                </p>
-                               
-                               
-                           
+               
+               
+               
                <h4>Witness List</h4>
                <ul>
                   <li><strong>Witness t7989-1-2:</strong> 'Nocturne, Saint Eloi, 1918' (TCD
-                                             7878/1/2)
+                     7878/1/2)
                   </li>
                   <li><strong>Witness t7989-1-3:</strong> 'Nocturne of St. Eloi, 1918' (TCD MS
-                                             7989/1/3)
+                     7989/1/3)
                   </li>
                   <li><strong>Witness t7989-1-1:</strong> 'Nocturne, Saint Eloi' (TCD MS
-                                             79891/1)
+                     79891/1)
                   </li>
                   <li><strong>Witness nocturne_poems:</strong> published in Poems as
-                                             'Nocturne'
+                     'Nocturne'
                   </li>
                </ul>
                <h4>Textual Notes</h4>
                <div class="note"><em class="label">critical:</em> There are three TS versions of this poem entitled
-                                      'Nocturne, Saint Eloi, 1918'. It was nocturne_poemslished as 'Nocturne, Saint Eloi, 1929'
-                                      in The Irish Statesman, II:4 (28 September 1929) 69, under the pseudonym L.
-                                      Saint Senan (See 'Saint Senan's Well'). 'Nocturne' was written in late 1928 or
-                                      early 1929. To the editor's knowledge, it has not been reprinted.
+                  'Nocturne, Saint Eloi, 1918'. It was nocturne_poemslished as 'Nocturne, Saint Eloi,
+                  1929'
+                  in The Irish Statesman, II:4 (28 September 1929) 69, under the pseudonym L.
+                  Saint Senan (See 'Saint Senan's Well'). 'Nocturne' was written in late 1928 or
+                  early 1929. To the editor's knowledge, it has not been reprinted.
                   <hr></hr>
                </div>
                <div class="note"><em class="label">biographical:</em> During World War I, MacGreevy served for
-                                      twenty-two months as a second lieutenant in the Royal Field Artillery, spending
-                                      most of that time in the front line of the Somme (after the war he was promoted
-                                      to the rank of lieutenant). In France he was wounded twice, the second time
-                                      (September 1918) more seriously at Commines, where he received a shoulder
-                                      wound. 
+                  twenty-two months as a second lieutenant in the Royal Field Artillery, spending
+                  most of that time in the front line of the Somme (after the war he was promoted
+                  to the rank of lieutenant). In France he was wounded twice, the second time
+                  (September 1918) more seriously at Commines, where he received a shoulder
+                  wound. 
                   <hr></hr>
                </div>
                <div class="note"><em class="label">render:</em> Additions appear in a green, fixed-width font.
@@ -103,35 +128,39 @@
                   <li>Annotations by  Susan Schreibman</li>
                </ul>
                <h5>Publication Details:</h5>
-                               
+               
                <p>Published by Susan Schreibman.</p>
-                             
-                                
-                                   
-                                   
-               <p>Thomas MacGreevy's poetry is reprinted here with the kind permission of Margaret Farrington and the late Elizabeth Ryan.</p>
-                                   
-               <p>This poem is being made available for demonstration purposes only. It may not be reproduced without explicit permission from
-                  the copyright holder. For copyright information, please contact Susan Schreibman at susan.schreibman[AT]gmail.com
+               
+                
+               
+               
+               <p>Thomas MacGreevy's poetry is reprinted here with the kind permission of Margaret Farrington
+                  and the late Elizabeth Ryan.
                </p>
-                                   
-                                   
-                               
-                           
+               
+               <p>This poem is being made available for demonstration purposes only. It may not be reproduced
+                  without explicit permission from the copyright holder. For copyright information,
+                  please contact Susan Schreibman at susan.schreibman[AT]gmail.com
+               </p>
+               
+               
+               
+               
                <h4>Encoding Principles</h4> 
-                           
-                            
-                               
-                               
-               <p>This is a demonstration document created for the Versioning machine using TEIP5 parallel segmentation. 
-                                    
+               
+                
+               
+               
+               <p>This is a demonstration document created for the Versioning machine using TEIP5 parallel
+                  segmentation. 
+                  
                </p>
-                               
-                           
-                           
-                            
-                           
-                       
+               
+               
+               
+                
+               
+               
             </div>
          </div>
          <div class="panel" id="critPanel" style="display: none;">
@@ -142,526 +171,471 @@
             <div class="critContent"></div>
          </div>
          <div id="manuscripts">
-            <div class="panel mssPanel">
-               <div class="panelBanner"><img class="closePanel" onclick="closePanel(this.parentNode.parentNode);" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness <select class="witnessMenu" onchange="changeWitness(this.value,this.parentNode.parentNode);">
-                     <option selected="selected" value="t7989-1-2">1: t7989-1-2</option>
-                     <option value="t7989-1-3">2: t7989-1-3</option>
-                     <option value="t7989-1-1">3: t7989-1-1</option>
-                     <option value="nocturne_poems">4: nocturne_poems</option></select></div>
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable t7989-1-2">
+               <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness t7989-1-2
+               </div>
                <div class="mssContent"> 
-                              
-                              
+                  
+                  
                   <hr class="pagebreak t7989-1-2"></hr>
                   <div class="facs-images"></div>
-                              
-                  <hr class="pagebreak t7989-1-3"></hr>
-                  <div class="facs-images"></div>
-                              
-                  <hr class="pagebreak t7989-1-1"></hr>
-                  <div class="facs-images"></div>
-                              
-                  <hr class="pagebreak nocturne_poems"></hr>
-                  <div class="facs-images"></div>
-                              
+                  
+                  
+                  
+                  
                   <div class="div"> 
-                                     
-                                     
+                     
+                     
                      <div class="head"> 
-                                            
-                                      
-                                                
-                                                
-                        <div class="apparatus" onclick="matchApp('app-d0e146');"> 
-                                                       
-                                                       
-                           <div data-witness="t7989-1-2" class="reading t7989-1-2">Nocturne, St. Eloi, 1918.</div> 
-                                                       
-                                                       
-                           <div data-witness="t7989-1-1" class="reading t7989-1-1">NOCTURNE OF ST. ELOI, 1918</div> 
-                                                       
-                                                       
-                           <div data-witness="t7989-1-3" class="reading t7989-1-3"> 
-                                                              
-                              <del>Weeds of virtue</del>
-                                                          
-                           </div> 
-                                                       
-                                                       
-                           <div data-witness="t7989-1-3" class="reading t7989-1-3"> 
-                                                              
-                              <del>The</del> Widowed Virtue
-                           </div> 
-                                                       
-                                                       
-                           <div data-witness="t7989-1-3" class="reading t7989-1-3">NOCTURNE, SAINT ELOI</div> 
-                                                       
-                                                       
-                           <div data-witness="nocturne_poems" class="reading nocturne_poems">NOCTURNE</div> 
-                                                       
-                                                   
-                        </div> 
-                                     
-                                            
-                                            
+                        
+                        
+                        
+                        
+                        <div class="apparatus" onclick="matchApp('app-d2e146');">Nocturne, St. Eloi, 1918.</div> 
+                        
+                        
+                        
                         <div class="noteicon">c
                            <div class="note"><strong>Critical note:</strong>  
-                                                      
-                                                      
+                              
+                              
                               <p>Saint Eloi, one of the most popular Saints of the Middle Ages,
-                                                             founded a monastery near the present village of Mont St. Eloi, five miles
-                                                             northwest of the city of Arras in northern France. The ruins of the monastery
-                                                             remain, and in 1917-18 were close to the Western Front. There is also a British
-                                                             Military Cemetery nearby.
+                                 founded a monastery near the present village of Mont St. Eloi, five miles
+                                 northwest of the city of Arras in northern France. The ruins of the monastery
+                                 remain, and in 1917-18 were close to the Western Front. There is also a British
+                                 Military Cemetery nearby.
                               </p> 
-                                                      
-                                                      
+                              
+                              
                               <p>Eloi may also be a reference to the words of Christ on the
-                                                             cross: 'Eloi, Eloi, lamma sabacthani? . . . My God, my God, why hast thou
-                                                             forsaken me?' (Mark 15:34-5).
+                                 cross: 'Eloi, Eloi, lamma sabacthani? . . . My God, my God, why hast thou
+                                 forsaken me?' (Mark 15:34-5).
                               </p>
-                                                      
-                                                  
+                              
+                              
                            </div>
                         </div>
-                                        
+                        
                      </div> 
-                                     
-                                     
-                     <div class="div type-dedication"> 
-                                            
-                                            
-                        <div class="paragraph"> 
-                                                   
-                                                   
-                           <div class="apparatus" onclick="matchApp('app-d0e187');"> 
-                                                          
-                                                          
-                              <div data-witness="t7989-1-1" class="reading t7989-1-1">
-                                                                 <span class="hi rend-underline">To the memory of
-                                                                        
-                                    <del>[?]</del> Geoffrey
-                                    <div class="linebreak"></div> England Taylor, 2nd Lieutenant,
-                                                                        R.F.A.,
-                                    <div class="linebreak"></div> died of wounds received in action, in
-                                    <div class="linebreak"></div> France, September, 26,
-                                                                        1918.</span> 
-                                                                 
-                                                                 
-                                 <div class="noteicon">b
-                                    <div class="note"><strong>Biographical note:</strong>  
-                                                                           
-                                                                           
-                                       <p>Geoffrey England Taylor, a fellow cadet at the training
-                                                                                  academy at Bloomsbury in London, was MacGreevy's closest friend during the war.
-                                                                                  Both men were drafted to the same division in France. MacGreevy was assigned to
-                                                                                  guns, Taylor to trench mortars: 'the greatest misfortune that could befall a
-                                                                                  gunner-officer. Trench mortars were regarded with horror . . . [they were] a
-                                                                                  suicide club.' 
-                                       </p> 
-                                                                           
-                                                                           
-                                       <p>While MacGreevy was recovering from his shoulder wound in
-                                                                                  Manchester, he found Taylor's name in the Died of Wounds section of the
-                                                                                  Casualty List. The death of Geoffrey Taylor, 'one of the most sensitively
-                                                                                  gentle' of men, represented to MacGreevy the worst horror of war: the
-                                                                                  destruction of 'life's hopes and dreams'; 'intelligence and beauty'. 
-                                                                                  Memoirs, pp. 318-19. 
-                                       </p>
-                                                                           
-                                                                           
-                                                                       
-                                    </div>
-                                 </div>
-                                                             
-                              </div> 
-                                                          
-                                                          
-                              <div data-witness="nocturne_poems" class="reading nocturne_poems">
-                                                                 <span class="hi rend-italic">To Geoffrey England Taylor, 2nd
-                                                                        Lieutenant, R.F.A.,
-                                    <div class="linebreak"></div> "Died of wounds"</span>. 
-                                                                 
-                                 <div class="noteicon">b
-                                    <div class="note"><strong>Biographical note:</strong>  
-                                                                           
-                                                                           
-                                       <p>Geoffrey England Taylor, a fellow cadet at the training
-                                                                                  academy at Bloomsbury in London, was MacGreevy's closest friend during the war.
-                                                                                  Both men were drafted to the same division in France. MacGreevy was assigned to
-                                                                                  guns, Taylor to trench mortars: 'the greatest misfortune that could befall a
-                                                                                  gunner-officer. Trench mortars were regarded with horror . . . [they were] a
-                                                                                  suicide club.' 
-                                       </p> 
-                                                                           
-                                                                           
-                                       <p>While MacGreevy was recovering from his shoulder wound in
-                                                                                  Manchester, he found Taylor's name in the Died of Wounds section of the
-                                                                                  Casualty List. The death of Geoffrey Taylor, 'one of the most sensitively
-                                                                                  gentle' of men, represented to MacGreevy the worst horror of war: the
-                                                                                  destruction of 'life's hopes and dreams'; 'intelligence and beauty'. 
-                                                                                  Memoirs, pp. 318-19. 
-                                       </p>
-                                                                           
-                                                                           
-                                                                       
-                                    </div>
-                                 </div>
-                                                             
-                              </div> 
-                                                          
-                                                      
-                           </div> 
-                                               
-                        </div> 
-                                            
-                                        
-                     </div> 
-                                     
-                                     
+                     
+                      
+                     
+                     
                      <div class="div"> 
-                                            
-                                            
+                        
+                        
                         <div class="lg"> 
-                                                   
-                                                   
-                           <div class="line lined0e243" onclick="matchLine('lined0e243');">
-                              <div class="linenumber">1</div> I labour in a barren place,
-                           </div> 
-                                                   
-                                                   
-                           <div class="line lined0e246" onclick="matchLine('lined0e246');">
+                           
+                            
+                           
+                           
+                           <div class="line lined2e247" line-id="lined2e247" onclick="matchLine('lined2e247');">
                               <div class="linenumber">2</div> 
-                                                          
-                                                          
-                              <div class="apparatus" onclick="matchApp('app-d0e248');"> 
-                                                                 
-                                                                 
-                                 <div data-witness="t7989-1-2" class="reading t7989-1-2">Afraid, aware, 
-                                    <del>little</del>
-                                                                        
-                                                                        
-                                                                        
-                                    <ins class="rend-hand">blundering</ins>, lonely thing:
-                                 </div> 
-                                                                 
-                                                                 
-                                 <div data-witness="t7989-1-3 t7989-1-1 nocturne_poems" class="reading t7989-1-3 t7989-1-1 nocturne_poems">Alone, self-conscious, frightened,
-                                                                        blundering;
-                                 </div> 
-                                                                 
-                                                             
-                              </div> 
-                                                      
-                           </div> 
-                                                   
-                                                   
-                           <div class="line lined0e264" onclick="matchLine('lined0e264');">
-                              <div class="linenumber">3</div> 
-                                                          
-                                                          
-                              <div class="apparatus" onclick="matchApp('app-d0e266');"> 
-                                                                 
-                                                                 
-                                 <div data-witness="t7989-1-2" class="reading t7989-1-2">Far away, stars wheeling on through space.</div> 
-                                                                 
-                                                                 
-                                 <div data-witness="t7989-1-3" class="reading t7989-1-3"> 
-                                                                        
-                                    <del>Above me</del>,
-                                                                        
-                                    <ins class="rend-hand">Far away</ins> stars wheeling in space,
-                                 </div> 
-                                                                 
-                                                                 
-                                 <div data-witness="t7989-1-1" class="reading t7989-1-1">Far above, stars wheeling in space,</div> 
-                                                                 
-                                                                 
-                                 <div data-witness="nocturne_poems" class="reading nocturne_poems">Far away, stars wheeling in space,</div> 
-                                                                 
-                                                             
-                              </div> 
-                                                      
-                           </div> 
-                                                   
-                                                   
-                           <div class="line lined0e288" onclick="matchLine('lined0e288');">
-                              <div class="linenumber">4</div> About my feet, earth voices whispering.
-                                                          
-                                                          
-                                                      
-                           </div> 
-                                                   
-                                               
-                        </div> 
-                                            
-                                        
-                     </div> 
-                                     
-                                 
-                  </div> 
                               
-                          
+                              
+                              <div class="apparatus" onclick="matchApp('app-d2e249');">Afraid, aware, <del>little</del>
+                                 
+                                 
+                                 <ins class="rend-hand">blundering</ins>, lonely thing:
+                              </div> 
+                              
+                           </div> 
+                           
+                           
+                           <div class="line lined2e265" line-id="lined2e265" onclick="matchLine('lined2e265');">
+                              <div class="linenumber">3</div> 
+                              
+                              
+                              <div class="apparatus" onclick="matchApp('app-d2e267');">Far away, stars wheeling on through space.</div> 
+                              
+                           </div> 
+                           
+                            
+                           
+                           
+                        </div> 
+                        
+                        
+                     </div> 
+                     
+                     
+                  </div> 
+                  
+                  
                </div>
             </div>
-            <div class="panel mssPanel">
-               <div class="panelBanner"><img class="closePanel" onclick="closePanel(this.parentNode.parentNode);" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness <select class="witnessMenu" onchange="changeWitness(this.value,this.parentNode.parentNode);">
-                     <option value="t7989-1-2">1: t7989-1-2</option>
-                     <option selected="selected" value="t7989-1-3">2: t7989-1-3</option>
-                     <option value="t7989-1-1">3: t7989-1-1</option>
-                     <option value="nocturne_poems">4: nocturne_poems</option></select></div>
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable t7989-1-3">
+               <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness t7989-1-3
+               </div>
                <div class="mssContent"> 
-                              
-                              
-                  <hr class="pagebreak t7989-1-2"></hr>
-                  <div class="facs-images"></div>
-                              
+                  
+                  
+                  
                   <hr class="pagebreak t7989-1-3"></hr>
                   <div class="facs-images"></div>
-                              
-                  <hr class="pagebreak t7989-1-1"></hr>
-                  <div class="facs-images"></div>
-                              
-                  <hr class="pagebreak nocturne_poems"></hr>
-                  <div class="facs-images"></div>
-                              
+                  
+                  
+                  
                   <div class="div"> 
-                                     
-                                     
+                     
+                     
                      <div class="head"> 
-                                            
-                                      
-                                                
-                                                
-                        <div class="apparatus" onclick="matchApp('app-d0e146');"> 
-                                                       
-                                                       
-                           <div data-witness="t7989-1-2" class="reading t7989-1-2">Nocturne, St. Eloi, 1918.</div> 
-                                                       
-                                                       
-                           <div data-witness="t7989-1-1" class="reading t7989-1-1">NOCTURNE OF ST. ELOI, 1918</div> 
-                                                       
-                                                       
-                           <div data-witness="t7989-1-3" class="reading t7989-1-3"> 
-                                                              
-                              <del>Weeds of virtue</del>
-                                                          
-                           </div> 
-                                                       
-                                                       
-                           <div data-witness="t7989-1-3" class="reading t7989-1-3"> 
-                                                              
-                              <del>The</del> Widowed Virtue
-                           </div> 
-                                                       
-                                                       
-                           <div data-witness="t7989-1-3" class="reading t7989-1-3">NOCTURNE, SAINT ELOI</div> 
-                                                       
-                                                       
-                           <div data-witness="nocturne_poems" class="reading nocturne_poems">NOCTURNE</div> 
-                                                       
-                                                   
-                        </div> 
-                                     
-                                            
-                                            
+                        
+                        
+                        
+                        
+                        <div class="apparatus" onclick="matchApp('app-d2e146');"> 
+                           <del>Weeds of virtue</del>
+                           
+                        </div>
+                        <div class="apparatus" onclick="matchApp('app-d2e146');"> 
+                           <del>The</del> Widowed Virtue
+                        </div>
+                        <div class="apparatus" onclick="matchApp('app-d2e146');">NOCTURNE, SAINT ELOI</div> 
+                        
+                        
+                        
                         <div class="noteicon">c
                            <div class="note"><strong>Critical note:</strong>  
-                                                      
-                                                      
+                              
+                              
                               <p>Saint Eloi, one of the most popular Saints of the Middle Ages,
-                                                             founded a monastery near the present village of Mont St. Eloi, five miles
-                                                             northwest of the city of Arras in northern France. The ruins of the monastery
-                                                             remain, and in 1917-18 were close to the Western Front. There is also a British
-                                                             Military Cemetery nearby.
+                                 founded a monastery near the present village of Mont St. Eloi, five miles
+                                 northwest of the city of Arras in northern France. The ruins of the monastery
+                                 remain, and in 1917-18 were close to the Western Front. There is also a British
+                                 Military Cemetery nearby.
                               </p> 
-                                                      
-                                                      
+                              
+                              
                               <p>Eloi may also be a reference to the words of Christ on the
-                                                             cross: 'Eloi, Eloi, lamma sabacthani? . . . My God, my God, why hast thou
-                                                             forsaken me?' (Mark 15:34-5).
+                                 cross: 'Eloi, Eloi, lamma sabacthani? . . . My God, my God, why hast thou
+                                 forsaken me?' (Mark 15:34-5).
                               </p>
-                                                      
-                                                  
+                              
+                              
                            </div>
                         </div>
-                                        
+                        
                      </div> 
-                                     
-                                     
-                     <div class="div type-dedication"> 
-                                            
-                                            
-                        <div class="paragraph"> 
-                                                   
-                                                   
-                           <div class="apparatus" onclick="matchApp('app-d0e187');"> 
-                                                          
-                                                          
-                              <div data-witness="t7989-1-1" class="reading t7989-1-1">
-                                                                 <span class="hi rend-underline">To the memory of
-                                                                        
-                                    <del>[?]</del> Geoffrey
-                                    <div class="linebreak"></div> England Taylor, 2nd Lieutenant,
-                                                                        R.F.A.,
-                                    <div class="linebreak"></div> died of wounds received in action, in
-                                    <div class="linebreak"></div> France, September, 26,
-                                                                        1918.</span> 
-                                                                 
-                                                                 
-                                 <div class="noteicon">b
-                                    <div class="note"><strong>Biographical note:</strong>  
-                                                                           
-                                                                           
-                                       <p>Geoffrey England Taylor, a fellow cadet at the training
-                                                                                  academy at Bloomsbury in London, was MacGreevy's closest friend during the war.
-                                                                                  Both men were drafted to the same division in France. MacGreevy was assigned to
-                                                                                  guns, Taylor to trench mortars: 'the greatest misfortune that could befall a
-                                                                                  gunner-officer. Trench mortars were regarded with horror . . . [they were] a
-                                                                                  suicide club.' 
-                                       </p> 
-                                                                           
-                                                                           
-                                       <p>While MacGreevy was recovering from his shoulder wound in
-                                                                                  Manchester, he found Taylor's name in the Died of Wounds section of the
-                                                                                  Casualty List. The death of Geoffrey Taylor, 'one of the most sensitively
-                                                                                  gentle' of men, represented to MacGreevy the worst horror of war: the
-                                                                                  destruction of 'life's hopes and dreams'; 'intelligence and beauty'. 
-                                                                                  Memoirs, pp. 318-19. 
-                                       </p>
-                                                                           
-                                                                           
-                                                                       
-                                    </div>
-                                 </div>
-                                                             
-                              </div> 
-                                                          
-                                                          
-                              <div data-witness="nocturne_poems" class="reading nocturne_poems">
-                                                                 <span class="hi rend-italic">To Geoffrey England Taylor, 2nd
-                                                                        Lieutenant, R.F.A.,
-                                    <div class="linebreak"></div> "Died of wounds"</span>. 
-                                                                 
-                                 <div class="noteicon">b
-                                    <div class="note"><strong>Biographical note:</strong>  
-                                                                           
-                                                                           
-                                       <p>Geoffrey England Taylor, a fellow cadet at the training
-                                                                                  academy at Bloomsbury in London, was MacGreevy's closest friend during the war.
-                                                                                  Both men were drafted to the same division in France. MacGreevy was assigned to
-                                                                                  guns, Taylor to trench mortars: 'the greatest misfortune that could befall a
-                                                                                  gunner-officer. Trench mortars were regarded with horror . . . [they were] a
-                                                                                  suicide club.' 
-                                       </p> 
-                                                                           
-                                                                           
-                                       <p>While MacGreevy was recovering from his shoulder wound in
-                                                                                  Manchester, he found Taylor's name in the Died of Wounds section of the
-                                                                                  Casualty List. The death of Geoffrey Taylor, 'one of the most sensitively
-                                                                                  gentle' of men, represented to MacGreevy the worst horror of war: the
-                                                                                  destruction of 'life's hopes and dreams'; 'intelligence and beauty'. 
-                                                                                  Memoirs, pp. 318-19. 
-                                       </p>
-                                                                           
-                                                                           
-                                                                       
-                                    </div>
-                                 </div>
-                                                             
-                              </div> 
-                                                          
-                                                      
-                           </div> 
-                                               
-                        </div> 
-                                            
-                                        
-                     </div> 
-                                     
-                                     
+                     
+                      
+                     
+                     
                      <div class="div"> 
-                                            
-                                            
+                        
+                        
                         <div class="lg"> 
-                                                   
-                                                   
-                           <div class="line lined0e243" onclick="matchLine('lined0e243');">
-                              <div class="linenumber">1</div> I labour in a barren place,
-                           </div> 
-                                                   
-                                                   
-                           <div class="line lined0e246" onclick="matchLine('lined0e246');">
+                           
+                            
+                           
+                           
+                           <div class="line lined2e247" line-id="lined2e247" onclick="matchLine('lined2e247');">
                               <div class="linenumber">2</div> 
-                                                          
-                                                          
-                              <div class="apparatus" onclick="matchApp('app-d0e248');"> 
-                                                                 
-                                                                 
-                                 <div data-witness="t7989-1-2" class="reading t7989-1-2">Afraid, aware, 
-                                    <del>little</del>
-                                                                        
-                                                                        
-                                                                        
-                                    <ins class="rend-hand">blundering</ins>, lonely thing:
-                                 </div> 
-                                                                 
-                                                                 
-                                 <div data-witness="t7989-1-3 t7989-1-1 nocturne_poems" class="reading t7989-1-3 t7989-1-1 nocturne_poems">Alone, self-conscious, frightened,
-                                                                        blundering;
-                                 </div> 
-                                                                 
-                                                             
-                              </div> 
-                                                      
-                           </div> 
-                                                   
-                                                   
-                           <div class="line lined0e264" onclick="matchLine('lined0e264');">
-                              <div class="linenumber">3</div> 
-                                                          
-                                                          
-                              <div class="apparatus" onclick="matchApp('app-d0e266');"> 
-                                                                 
-                                                                 
-                                 <div data-witness="t7989-1-2" class="reading t7989-1-2">Far away, stars wheeling on through space.</div> 
-                                                                 
-                                                                 
-                                 <div data-witness="t7989-1-3" class="reading t7989-1-3"> 
-                                                                        
-                                    <del>Above me</del>,
-                                                                        
-                                    <ins class="rend-hand">Far away</ins> stars wheeling in space,
-                                 </div> 
-                                                                 
-                                                                 
-                                 <div data-witness="t7989-1-1" class="reading t7989-1-1">Far above, stars wheeling in space,</div> 
-                                                                 
-                                                                 
-                                 <div data-witness="nocturne_poems" class="reading nocturne_poems">Far away, stars wheeling in space,</div> 
-                                                                 
-                                                             
-                              </div> 
-                                                      
-                           </div> 
-                                                   
-                                                   
-                           <div class="line lined0e288" onclick="matchLine('lined0e288');">
-                              <div class="linenumber">4</div> About my feet, earth voices whispering.
-                                                          
-                                                          
-                                                      
-                           </div> 
-                                                   
-                                               
-                        </div> 
-                                            
-                                        
-                     </div> 
-                                     
-                                 
-                  </div> 
                               
-                          
+                              
+                              <div class="apparatus" onclick="matchApp('app-d2e249');">Alone, self-conscious, frightened,
+                                 blundering;
+                              </div> 
+                              
+                           </div> 
+                           
+                           
+                           <div class="line lined2e265" line-id="lined2e265" onclick="matchLine('lined2e265');">
+                              <div class="linenumber">3</div> 
+                              
+                              
+                              <div class="apparatus" onclick="matchApp('app-d2e267');"> 
+                                 <del>Above me</del>,
+                                 <ins class="rend-hand">Far away</ins> stars wheeling in space,
+                              </div> 
+                              
+                           </div> 
+                           
+                            
+                           
+                           
+                        </div> 
+                        
+                        
+                     </div> 
+                     
+                     
+                  </div> 
+                  
+                  
+               </div>
+            </div>
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable t7989-1-1">
+               <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness t7989-1-1
+               </div>
+               <div class="mssContent"> 
+                  
+                  
+                  
+                  
+                  <hr class="pagebreak t7989-1-1"></hr>
+                  <div class="facs-images"></div>
+                  
+                  
+                  <div class="div"> 
+                     
+                     
+                     <div class="head"> 
+                        
+                        
+                        
+                        
+                        <div class="apparatus" onclick="matchApp('app-d2e146');">NOCTURNE OF ST. ELOI, 1918</div> 
+                        
+                        
+                        
+                        <div class="noteicon">c
+                           <div class="note"><strong>Critical note:</strong>  
+                              
+                              
+                              <p>Saint Eloi, one of the most popular Saints of the Middle Ages,
+                                 founded a monastery near the present village of Mont St. Eloi, five miles
+                                 northwest of the city of Arras in northern France. The ruins of the monastery
+                                 remain, and in 1917-18 were close to the Western Front. There is also a British
+                                 Military Cemetery nearby.
+                              </p> 
+                              
+                              
+                              <p>Eloi may also be a reference to the words of Christ on the
+                                 cross: 'Eloi, Eloi, lamma sabacthani? . . . My God, my God, why hast thou
+                                 forsaken me?' (Mark 15:34-5).
+                              </p>
+                              
+                              
+                           </div>
+                        </div>
+                        
+                     </div> 
+                     
+                     
+                     <div class="div type-dedication"> 
+                        
+                        
+                        <div class="paragraph"> 
+                           
+                           
+                           <div class="apparatus" onclick="matchApp('app-d2e188');">
+                              <span class="hi rend-underline">To the memory of
+                                 <del>[?]</del> Geoffrey
+                                 <div class="linebreak"></div> England Taylor, 2nd Lieutenant,
+                                 R.F.A.,
+                                 <div class="linebreak"></div> died of wounds received in action, in
+                                 <div class="linebreak"></div> France, September, 26,
+                                 1918.</span> 
+                              
+                              
+                              <div class="noteicon">b
+                                 <div class="note"><strong>Biographical note:</strong>  
+                                    
+                                    
+                                    <p>Geoffrey England Taylor, a fellow cadet at the training
+                                       academy at Bloomsbury in London, was MacGreevy's closest friend during the war.
+                                       Both men were drafted to the same division in France. MacGreevy was assigned to
+                                       guns, Taylor to trench mortars: 'the greatest misfortune that could befall a
+                                       gunner-officer. Trench mortars were regarded with horror . . . [they were] a
+                                       suicide club.' 
+                                    </p> 
+                                    
+                                    
+                                    <p>While MacGreevy was recovering from his shoulder wound in
+                                       Manchester, he found Taylor's name in the Died of Wounds section of the
+                                       Casualty List. The death of Geoffrey Taylor, 'one of the most sensitively
+                                       gentle' of men, represented to MacGreevy the worst horror of war: the
+                                       destruction of 'life's hopes and dreams'; 'intelligence and beauty'. 
+                                       Memoirs, pp. 318-19. 
+                                    </p>
+                                    
+                                    
+                                    
+                                 </div>
+                              </div>
+                              
+                           </div> 
+                           
+                        </div> 
+                        
+                        
+                     </div> 
+                     
+                     
+                     <div class="div"> 
+                        
+                        
+                        <div class="lg"> 
+                           
+                            
+                           
+                           
+                           <div class="line lined2e247" line-id="lined2e247" onclick="matchLine('lined2e247');">
+                              <div class="linenumber">2</div> 
+                              
+                              
+                              <div class="apparatus" onclick="matchApp('app-d2e249');">Alone, self-conscious, frightened,
+                                 blundering;
+                              </div> 
+                              
+                           </div> 
+                           
+                           
+                           <div class="line lined2e265" line-id="lined2e265" onclick="matchLine('lined2e265');">
+                              <div class="linenumber">3</div> 
+                              
+                              
+                              <div class="apparatus" onclick="matchApp('app-d2e267');">Far above, stars wheeling in space,</div> 
+                              
+                           </div> 
+                           
+                            
+                           
+                           
+                        </div> 
+                        
+                        
+                     </div> 
+                     
+                     
+                  </div> 
+                  
+                  
+               </div>
+            </div>
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable nocturne_poems">
+               <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness nocturne_poems
+               </div>
+               <div class="mssContent"> 
+                  
+                  
+                  
+                  
+                  
+                  <hr class="pagebreak nocturne_poems"></hr>
+                  <div class="facs-images"></div>
+                  
+                  <div class="div"> 
+                     
+                     
+                     <div class="head"> 
+                        
+                        
+                        
+                        
+                        <div class="apparatus" onclick="matchApp('app-d2e146');">NOCTURNE</div> 
+                        
+                        
+                        
+                        <div class="noteicon">c
+                           <div class="note"><strong>Critical note:</strong>  
+                              
+                              
+                              <p>Saint Eloi, one of the most popular Saints of the Middle Ages,
+                                 founded a monastery near the present village of Mont St. Eloi, five miles
+                                 northwest of the city of Arras in northern France. The ruins of the monastery
+                                 remain, and in 1917-18 were close to the Western Front. There is also a British
+                                 Military Cemetery nearby.
+                              </p> 
+                              
+                              
+                              <p>Eloi may also be a reference to the words of Christ on the
+                                 cross: 'Eloi, Eloi, lamma sabacthani? . . . My God, my God, why hast thou
+                                 forsaken me?' (Mark 15:34-5).
+                              </p>
+                              
+                              
+                           </div>
+                        </div>
+                        
+                     </div> 
+                     
+                     
+                     <div class="div type-dedication"> 
+                        
+                        
+                        <div class="paragraph"> 
+                           
+                           
+                           <div class="apparatus" onclick="matchApp('app-d2e188');">
+                              <span class="hi rend-italic">To Geoffrey England Taylor, 2nd
+                                 Lieutenant, R.F.A.,
+                                 <div class="linebreak"></div> "Died of wounds"</span>. 
+                              
+                              <div class="noteicon">b
+                                 <div class="note"><strong>Biographical note:</strong>  
+                                    
+                                    
+                                    <p>Geoffrey England Taylor, a fellow cadet at the training
+                                       academy at Bloomsbury in London, was MacGreevy's closest friend during the war.
+                                       Both men were drafted to the same division in France. MacGreevy was assigned to
+                                       guns, Taylor to trench mortars: 'the greatest misfortune that could befall a
+                                       gunner-officer. Trench mortars were regarded with horror . . . [they were] a
+                                       suicide club.' 
+                                    </p> 
+                                    
+                                    
+                                    <p>While MacGreevy was recovering from his shoulder wound in
+                                       Manchester, he found Taylor's name in the Died of Wounds section of the
+                                       Casualty List. The death of Geoffrey Taylor, 'one of the most sensitively
+                                       gentle' of men, represented to MacGreevy the worst horror of war: the
+                                       destruction of 'life's hopes and dreams'; 'intelligence and beauty'. 
+                                       Memoirs, pp. 318-19. 
+                                    </p>
+                                    
+                                    
+                                    
+                                 </div>
+                              </div>
+                              
+                           </div> 
+                           
+                        </div> 
+                        
+                        
+                     </div> 
+                     
+                     
+                     <div class="div"> 
+                        
+                        
+                        <div class="lg"> 
+                           
+                            
+                           
+                           
+                           <div class="line lined2e247" line-id="lined2e247" onclick="matchLine('lined2e247');">
+                              <div class="linenumber">2</div> 
+                              
+                              
+                              <div class="apparatus" onclick="matchApp('app-d2e249');">Alone, self-conscious, frightened,
+                                 blundering;
+                              </div> 
+                              
+                           </div> 
+                           
+                           
+                           <div class="line lined2e265" line-id="lined2e265" onclick="matchLine('lined2e265');">
+                              <div class="linenumber">3</div> 
+                              
+                              
+                              <div class="apparatus" onclick="matchApp('app-d2e267');">Far away, stars wheeling in space,</div> 
+                              
+                           </div> 
+                           
+                            
+                           
+                           
+                        </div> 
+                        
+                        
+                     </div> 
+                     
+                     
+                  </div> 
+                  
+                  
                </div>
             </div>
          </div>
@@ -671,78 +645,78 @@
                
             </div>
             <div class="noteContent"><strong>Critical note: </strong> 
-                                       
-                                       
+               
+               
                <p>Saint Eloi, one of the most popular Saints of the Middle Ages,
-                                              founded a monastery near the present village of Mont St. Eloi, five miles
-                                              northwest of the city of Arras in northern France. The ruins of the monastery
-                                              remain, and in 1917-18 were close to the Western Front. There is also a British
-                                              Military Cemetery nearby.
+                  founded a monastery near the present village of Mont St. Eloi, five miles
+                  northwest of the city of Arras in northern France. The ruins of the monastery
+                  remain, and in 1917-18 were close to the Western Front. There is also a British
+                  Military Cemetery nearby.
                </p> 
-                                       
-                                       
+               
+               
                <p>Eloi may also be a reference to the words of Christ on the
-                                              cross: 'Eloi, Eloi, lamma sabacthani? . . . My God, my God, why hast thou
-                                              forsaken me?' (Mark 15:34-5).
+                  cross: 'Eloi, Eloi, lamma sabacthani? . . . My God, my God, why hast thou
+                  forsaken me?' (Mark 15:34-5).
                </p>
-                                       
-                                   
+               
+               
             </div>
             <div class="noteContent t7989-1-1">
                <div class="witnesses">t7989-1-1</div>
-               <div class="position" onclick="matchApp('app-d0e187');">
+               <div class="position" onclick="matchApp('app-d2e188');">
                   Highlight prose section
                   
                </div><strong>Biographical note: </strong> 
-                                                   
-                                                   
+               
+               
                <p>Geoffrey England Taylor, a fellow cadet at the training
-                                                          academy at Bloomsbury in London, was MacGreevy's closest friend during the war.
-                                                          Both men were drafted to the same division in France. MacGreevy was assigned to
-                                                          guns, Taylor to trench mortars: 'the greatest misfortune that could befall a
-                                                          gunner-officer. Trench mortars were regarded with horror . . . [they were] a
-                                                          suicide club.' 
+                  academy at Bloomsbury in London, was MacGreevy's closest friend during the war.
+                  Both men were drafted to the same division in France. MacGreevy was assigned to
+                  guns, Taylor to trench mortars: 'the greatest misfortune that could befall a
+                  gunner-officer. Trench mortars were regarded with horror . . . [they were] a
+                  suicide club.' 
                </p> 
-                                                   
-                                                   
+               
+               
                <p>While MacGreevy was recovering from his shoulder wound in
-                                                          Manchester, he found Taylor's name in the Died of Wounds section of the
-                                                          Casualty List. The death of Geoffrey Taylor, 'one of the most sensitively
-                                                          gentle' of men, represented to MacGreevy the worst horror of war: the
-                                                          destruction of 'life's hopes and dreams'; 'intelligence and beauty'. 
-                                                          Memoirs, pp. 318-19. 
+                  Manchester, he found Taylor's name in the Died of Wounds section of the
+                  Casualty List. The death of Geoffrey Taylor, 'one of the most sensitively
+                  gentle' of men, represented to MacGreevy the worst horror of war: the
+                  destruction of 'life's hopes and dreams'; 'intelligence and beauty'. 
+                  Memoirs, pp. 318-19. 
                </p>
-                                                   
-                                                   
-                                               
+               
+               
+               
             </div>
             <div class="noteContent nocturne_poems">
                <div class="witnesses">nocturne_poems</div>
-               <div class="position" onclick="matchApp('app-d0e187');">
+               <div class="position" onclick="matchApp('app-d2e188');">
                   Highlight prose section
                   
                </div><strong>Biographical note: </strong> 
-                                                   
-                                                   
+               
+               
                <p>Geoffrey England Taylor, a fellow cadet at the training
-                                                          academy at Bloomsbury in London, was MacGreevy's closest friend during the war.
-                                                          Both men were drafted to the same division in France. MacGreevy was assigned to
-                                                          guns, Taylor to trench mortars: 'the greatest misfortune that could befall a
-                                                          gunner-officer. Trench mortars were regarded with horror . . . [they were] a
-                                                          suicide club.' 
+                  academy at Bloomsbury in London, was MacGreevy's closest friend during the war.
+                  Both men were drafted to the same division in France. MacGreevy was assigned to
+                  guns, Taylor to trench mortars: 'the greatest misfortune that could befall a
+                  gunner-officer. Trench mortars were regarded with horror . . . [they were] a
+                  suicide club.' 
                </p> 
-                                                   
-                                                   
+               
+               
                <p>While MacGreevy was recovering from his shoulder wound in
-                                                          Manchester, he found Taylor's name in the Died of Wounds section of the
-                                                          Casualty List. The death of Geoffrey Taylor, 'one of the most sensitively
-                                                          gentle' of men, represented to MacGreevy the worst horror of war: the
-                                                          destruction of 'life's hopes and dreams'; 'intelligence and beauty'. 
-                                                          Memoirs, pp. 318-19. 
+                  Manchester, he found Taylor's name in the Died of Wounds section of the
+                  Casualty List. The death of Geoffrey Taylor, 'one of the most sensitively
+                  gentle' of men, represented to MacGreevy the worst horror of war: the
+                  destruction of 'life's hopes and dreams'; 'intelligence and beauty'. 
+                  Memoirs, pp. 318-19. 
                </p>
-                                                   
-                                                   
-                                               
+               
+               
+               
             </div>
             <div id="noNotesFound" class="noteContent">
                Sorry, but there are no notes associated with

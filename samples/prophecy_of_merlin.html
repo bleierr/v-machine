@@ -1,13 +1,14 @@
-
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
    <head>
       <title>Prophecy of Merlin -- The Versioning Machine 4.0</title>
+      <meta charset="utf-8"></meta>
       <link rel="stylesheet" type="text/css" href="../src/vmachine.css"></link>
       <!--[if IE 6]>
             <link rel="stylesheet" type="text/css" href="../src/vmachine_ie6.css">
-         <![endif]--><script type="text/javascript" src="../src/vmachine.js"></script><script type="text/javascript">
+         <![endif]-->
+      <link rel="stylesheet" type="text/css" href="../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><script type="text/javascript" src="../src/vmachine.js"></script><script type="text/javascript">
       var witnesses = new Array();
       
          witnesses["dublin"] = "dublin";
@@ -22,23 +23,37 @@
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/poweredby.gif"></img></div>
          <div id="headline">
-            <h1 onclick="toggleBiblio();">Prophecy of Merlin</h1><span class="versionCount"> has 3 versions</span></div><img id="topEdge" src="../vm-images/topedge.gif" alt="Top edge"></img><div id="mainControls"><input type="button" id="newPanel" value="New Version" onclick="openPanel();"></input>
-            &#8226;
-            <input type="button" id="bibToggle" value="Bibliographic Info" onclick="toggleBiblio();"></input><input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" style="display: none;"></input>
-            
-            
-            &#8226;
-            <label for="toggleLineNumbers">Line Numbers:</label><input type="checkbox" id="toggleLineNumbers" onclick="toggleLineNumbers(this.checked);" checked="checked"></input>
-            &#8226;
-            <select id="notesMenu" onchange="notesFormat(this.value);">
-               <option value="popup" selected="selected">Popup notes</option>
-               <option value="inline">Inline notes</option>
-               <option value="none">
-                  Hide notes
-                  
-               </option></select>
-            &#8226;
-            <a href="../samples.html">Index of texts</a></div>
+            <h1>Prophecy of Merlin</h1>
+         </div>
+         <nav id="mainControls">
+            <ul>
+               <li><button id="info" type="button" onclick="#">INFO</button></li>
+               <li><button id="selectWitness">3 Total Versions<span class="ui-icon ui-icon-carat-1-s" style="display:inline-block"></span></button></li>
+               <ul id="witnessList">
+                  <li class="dublin"><span>The Prophecy of Merlin</span><button class="panelVisible" type="button">
+                        
+                        OFF
+                        </button></li>
+                  <li class="oxford"><span>The Prophecy of Merlin</span><button class="panelVisible" type="button">
+                        
+                        OFF
+                        </button></li>
+                  <li class="cambridge"><span>The Prophecy of Merlin</span><button class="panelVisible" type="button">
+                        
+                        OFF
+                        </button></li>
+               </ul>
+               <li><input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" style="display: none;"></input></li>
+               <li><label for="toggleLineNumbers">Line Numbers:</label><button id="displayLines">ON</button></li>
+               <li><select id="notesMenu" onchange="notesFormat(this.value);">
+                     <option value="popup" selected="selected">Popup notes</option>
+                     <option value="inline">Inline notes</option>
+                     <option value="none">
+                        Hide notes
+                        
+                     </option></select></li>
+            </ul>
+         </nav>
       </div>
       <div id="mssArea">
          <div class="panel" id="bibPanel">
@@ -117,392 +132,118 @@
             <div class="critContent"></div>
          </div>
          <div id="manuscripts">
-            <div class="panel mssPanel">
-               <div class="panelBanner"><img class="closePanel" onclick="closePanel(this.parentNode.parentNode);" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness <select class="witnessMenu" onchange="changeWitness(this.value,this.parentNode.parentNode);">
-                     <option selected="selected" value="dublin">1: dublin</option>
-                     <option value="oxford">2: oxford</option>
-                     <option value="cambridge">3: cambridge</option></select></div>
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable dublin">
+               <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness dublin
+               </div>
                <div class="mssContent">
                   			
                   <div class="head">
                      				
                      					
-                     <div class="apparatus" onclick="matchApp('app-d0e106');">
-                        						
-                        <div data-witness="dublin oxford cambridge" class="reading dublin oxford cambridge">The Prophecy of Merlin</div>
-                        					
-                     </div>
+                     <div class="apparatus" onclick="matchApp('app-d2e106');">The Prophecy of Merlin</div>
                      				
                      			
                   </div>
                   			
                   <div class="lg lg-n1">
+                     				ZZZZ
                      				
-                     <div class="line lined0e116" onclick="matchLine('lined0e116');">
-                        <div class="linenumber">1</div>
-                        					
-                        <div class="apparatus" onclick="matchApp('app-d0e118');">
-                           						
-                           <div data-witness="cambridge" class="reading cambridge">When feythe fayleth in prestys sawys, 
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> With sharpened swords, and men ready to terrorize
-                                 </div>
-                              </div>
-                              							
-                              <div class="noteicon">c
-                                 <div class="note"><strong>Critical note:</strong> 
-                                    								
-                                    <p>sayings; When feythe fayleth. Versions of this lyric - identified
-                                       									as "Chaucer's Proverbs" - were regularly printed in earlier
-                                       									editions of Chaucer. Richard Morris's edition contains the
-                                       									following lyric:
-                                    </p>
-                                    								
-                                    <div class="lg">
-                                       									
-                                       <div class="line lined0e132" onclick="matchLine('lined0e132');">
-                                          <div class="emptynumber">&nbsp;</div>Qwan prestis faylin in her sawes, 
-                                       </div>
-                                       									
-                                       <div class="line lined0e135" onclick="matchLine('lined0e135');">
-                                          <div class="emptynumber">&nbsp;</div>And Lordis turnin Goddis lawes
-                                       </div>
-                                       									
-                                       <div class="line lined0e138" onclick="matchLine('lined0e138');">
-                                          <div class="emptynumber">&nbsp;</div>Ageynis ryght;
-                                       </div>
-                                       									
-                                       <div class="line lined0e141" onclick="matchLine('lined0e141');">
-                                          <div class="emptynumber">&nbsp;</div>And lecherie is holdin as privy solas,
-                                       </div>
-                                       									
-                                       <div class="line lined0e144" onclick="matchLine('lined0e144');">
-                                          <div class="emptynumber">&nbsp;</div>And robberie as fre purchas,
-                                       </div>
-                                       									
-                                       <div class="line lined0e147" onclick="matchLine('lined0e147');">
-                                          <div class="emptynumber">&nbsp;</div>Bewar than of ille!
-                                       </div>
-                                       									
-                                       <div class="line lined0e150" onclick="matchLine('lined0e150');">
-                                          <div class="emptynumber">&nbsp;</div>Than schall the Lond of Albion Turnin to confusion, 
-                                       </div>
-                                       									
-                                       <div class="line lined0e153" onclick="matchLine('lined0e153');">
-                                          <div class="emptynumber">&nbsp;</div> As sumtyme it befelle. 
-                                       </div>
-                                       								
-                                    </div>
-                                    								
-                                    <p>As printed in The Poetical Works of Geoffrey Chaucer, rev. ed.
-                                       									(London: Bell, 1875), vol. 6, p. 307. Skeat prints a similar
-                                       									version of this poem from Caxton's edition of Chaucer, as the
-                                       									first one of the "Sayings" (or proverbs) of Chaucer: 
-                                    </p>
-                                    								
-                                    <div class="lg">
-                                       									
-                                       <div class="line lined0e162" onclick="matchLine('lined0e162');">
-                                          <div class="emptynumber">&nbsp;</div>Whan feyth failleth in prestes sawes,
-                                       </div>
-                                       									
-                                       <div class="line lined0e165" onclick="matchLine('lined0e165');">
-                                          <div class="emptynumber">&nbsp;</div>And lordes hestes ar holden for lawes,
-                                       </div>
-                                       									
-                                       <div class="line lined0e168" onclick="matchLine('lined0e168');">
-                                          <div class="emptynumber">&nbsp;</div>And robbery is holden purchas,
-                                       </div>
-                                       									
-                                       <div class="line lined0e171" onclick="matchLine('lined0e171');">
-                                          <div class="emptynumber">&nbsp;</div>And lechery is holden solas,
-                                       </div>
-                                       									
-                                       <div class="line lined0e174" onclick="matchLine('lined0e174');">
-                                          <div class="emptynumber">&nbsp;</div>Then shal the lond of Albyon
-                                       </div>
-                                       									
-                                       <div class="line lined0e177" onclick="matchLine('lined0e177');">
-                                          <div class="emptynumber">&nbsp;</div>Be brought to grete confusioun.
-                                       </div>
-                                       								
-                                    </div>
-                                    								
-                                    <p>See Skeat's Complete Works of Geoffrey Chaucer, vol. 7 (Oxford:
-                                       									Clarendon, 1897), p. 450.
-                                    </p>
-                                    							
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           					
-                        </div>
-                        				
-                     </div>
-                     				
-                     <div class="line lined0e188" onclick="matchLine('lined0e188');">
+                     <div class="line lined2e190" line-id="lined2e190" onclick="matchLine('lined2e190');">
                         <div class="linenumber">2</div>
                         					
-                        <div class="apparatus" onclick="matchApp('app-d0e190');">
-                           						
-                           <div data-witness="dublin" class="reading dublin">When lordes wille is londes law, 
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> the
-                                    								law of the land
-                                 </div>
+                        <div class="apparatus" onclick="matchApp('app-d2e192');">When lordes wille is londes law, 
+                           <div class="noteicon">g
+                              <div class="note"><strong>Gloss note:</strong> the
+                                 								law of the land
                               </div>
-                              						
                            </div>
                            						
-                           <div data-witness="oxford" class="reading oxford">Whane lordis wol leefe theire olde lawes,
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> abandon
-                                 </div>
-                              </div>
-                              							
-                              <div class="noteicon">c
-                                 <div class="note"><strong>Critical note:</strong>  leefe. So Skeat
-                                    								and Gray. Robbins, Index and Supplement, &sect; 3986 transcribes
-                                    								leefe as leese. The MS can sustain either reading.
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           						
-                           <div data-witness="cambridge" class="reading cambridge">And lordys wyll be londys lawys,
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> law
-                                    								of the land 
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           					
                         </div>
                         				
                      </div>
                      				
-                     <div class="line lined0e215" onclick="matchLine('lined0e215');">
+                     <div class="line lined2e217" line-id="lined2e217" onclick="matchLine('lined2e217');">
                         <div class="linenumber">3</div>
                         					
-                        <div class="apparatus" onclick="matchApp('app-d0e217');">
-                           						
-                           <div data-witness="dublin" class="reading dublin">Prestes wylle trechery, and gyle hold soth saw,
-                              <div class="noteicon">c
-                                 <div class="note"><strong>Critical note:</strong> Priests intend treachery, and guile turns into
-                                    								figures of speech 
-                                 </div>
+                        <div class="apparatus" onclick="matchApp('app-d2e219');">Prestes wylle trechery, and gyle hold soth saw,
+                           <div class="noteicon">c
+                              <div class="note"><strong>Critical note:</strong> Priests intend treachery, and guile turns into
+                                 								figures of speech 
                               </div>
-                              						
                            </div>
                            						
-                           <div data-witness="oxford" class="reading oxford">And preestis beon varyinge in theire sawes, 
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> teachings;
-                                 </div>
-                              </div>
-                              							
-                              <div class="noteicon">c
-                                 <div class="note"><strong>Critical note:</strong> beon. So MS;
-                                    								Skeat, Gray been.
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           					
                         </div>
                         				
                      </div>
                      				
-                     <div class="line lined0e236" onclick="matchLine('lined0e236');">
+                     <div class="line lined2e238" line-id="lined2e238" onclick="matchLine('lined2e238');">
                         <div class="linenumber">4</div>
                         					
-                        <div class="apparatus" onclick="matchApp('app-d0e238');">
-                           						
-                           <div data-witness="dublin" class="reading dublin">Lechery callyd pryv&eacute; solace,
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> is called
-                                    								secret pleasure 
-                                 </div>
+                        <div class="apparatus" onclick="matchApp('app-d2e240');">Lechery callyd pryvé solace,
+                           <div class="noteicon">g
+                              <div class="note"><strong>Gloss note:</strong> is called
+                                 								secret pleasure 
                               </div>
-                              						
                            </div>
                            						
-                           <div data-witness="oxford" class="reading oxford">And leccherie is holden solace, 
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> lechery
-                                    								is considered to be 
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           						
-                           <div data-witness="cambridge" class="reading cambridge">And lechery is prevy solas,
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> secret
-                                    								comfort 
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           					
                         </div>
                         				
                      </div>
                      				
-                     <div class="line lined0e260" onclick="matchLine('lined0e260');">
+                     <div class="line lined2e262" line-id="lined2e262" onclick="matchLine('lined2e262');">
                         <div class="linenumber">5</div>
                         					
-                        <div class="apparatus" onclick="matchApp('app-d0e262');">
-                           						
-                           <div data-witness="dublin" class="reading dublin">And robbery is hold no trespace - 
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> held
-                                    								to be no crime 
-                                 </div>
+                        <div class="apparatus" onclick="matchApp('app-d2e264');">And robbery is hold no trespace - 
+                           <div class="noteicon">g
+                              <div class="note"><strong>Gloss note:</strong> held
+                                 								to be no crime 
                               </div>
-                              						
                            </div>
                            						
-                           <div data-witness="oxford" class="reading oxford">And oppressyon for truwe purchace; </div>
-                           						
-                           <div data-witness="cambridge" class="reading cambridge">And robbery ys goode purchas:
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> booty  
-                                 </div>
-                              </div>
-                              							
-                              <div class="noteicon">n
-                                 <div class="note"><strong>Note:</strong> purchas. Skeat glosses purchas as "bargain." It is
-                                    								that which is acquired.
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           					
                         </div>
                         				
                      </div>
+                     				ZZZZ
+                     				ZZZZ
                      				
-                     <div class="line lined0e284" onclick="matchLine('lined0e284');">
-                        <div class="linenumber">6</div>
-                        					
-                        <div class="apparatus" onclick="matchApp('app-d0e286');">
-                           						
-                           <div data-witness="oxford" class="reading oxford">And whan the moon is on David stall, 
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> 
-                                    								David's stable 
-                                 </div>
-                              </div>
-                              							
-                              <div class="noteicon">n
-                                 <div class="note"><strong>Note:</strong> David stall. David's stable, a reference to
-                                    								Christ's birth in Bethlehem (city of David). Of the apocalyptic
-                                    								element in this poem Gray comments: "On the more intellectual
-                                    								prophetic tradition, reflected in the Joachimite dream of a
-                                    								renovatio mundi, compare M. Reeves, The Influence of Prophecy in the
-                                    								Later Middle Ages (Oxford, 1969)." 
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           					
-                        </div>
-                        				
-                     </div>
-                     				
-                     <div class="line lined0e299" onclick="matchLine('lined0e299');">
-                        <div class="linenumber">7</div>
-                        					
-                        <div class="apparatus" onclick="matchApp('app-d0e301');">
-                           						
-                           <div data-witness="oxford" class="reading oxford">And the kynge passe Arthures hall, 
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> 
-                                    								by-passes 
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           					
-                        </div>
-                        				
-                     </div>
-                     				
-                     <div class="line lined0e311" onclick="matchLine('lined0e311');">
+                     <div class="line lined2e314" line-id="lined2e314" onclick="matchLine('lined2e314');">
                         <div class="linenumber">8</div>
                         					
-                        <div class="apparatus" onclick="matchApp('app-d0e313');">
-                           						
-                           <div data-witness="dublin" class="reading dublin">Then schal the lond of Albyon torne into confusioun! 
-                              <div class="noteicon">c
-                                 <div class="note"><strong>Critical note:</strong> Albyon. The legendary, antique name for Britain, as
-                                    								in Geoffrey of Monmouth's History of the Kings of Britain. The fool
-                                    								in King Lear quotes this or a related poem when he says: "Then shall
-                                    								the realm of Albion / Come to great confusion" (III.ii.85-86).
-                                    							
-                                 </div>
+                        <div class="apparatus" onclick="matchApp('app-d2e316');">Then schal the lond of Albyon torne into confusioun! 
+                           <div class="noteicon">c
+                              <div class="note"><strong>Critical note:</strong> Albyon. The legendary, antique name for Britain, as
+                                 								in Geoffrey of Monmouth's History of the Kings of Britain. The fool
+                                 								in King Lear quotes this or a related poem when he says: "Then shall
+                                 								the realm of Albion / Come to great confusion" (III.ii.85-86).
+                                 							
                               </div>
-                              						
                            </div>
                            						
-                           <div data-witness="oxford" class="reading oxford">Than is the lande of Albyoun 
-                              <div class="linebreak"></div>Nexst to his confusyoun 
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> Near;
-                                    							its
-                                 </div>
-                              </div>
-                              							
-                              <div class="noteicon">c
-                                 <div class="note"><strong>Critical note:</strong> Than is
-                                    								the. Skeat's correction of MS &THORN;at is is.
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           						
-                           <div data-witness="cambridge" class="reading cambridge">Than shall the londe of Albeon 
-                              <div class="linebreak"></div>Be turned into confusion. 
-                              <div class="noteicon">n
-                                 <div class="note"><strong>Note:</strong> Britain 
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           					
                         </div>
                         				
                      </div>
                      			
                      				
                      				
-                     <div class="line lined0e342" onclick="matchLine('lined0e342');">
+                     <div class="line lined2e345" line-id="lined2e345" onclick="matchLine('lined2e345');">
                         <div class="linenumber">9</div>
                         					
-                        <div class="apparatus" onclick="matchApp('app-d0e344');">
-                           						
-                           <div data-witness="dublin" class="reading dublin">A M CCCC lx and on, few lordes or ellys noone. 
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> In 1461 [there are]; 
-                                 </div>
+                        <div class="apparatus" onclick="matchApp('app-d2e347');">A M CCCC lx and on, few lordes or ellys noone. 
+                           <div class="noteicon">g
+                              <div class="note"><strong>Gloss note:</strong> In 1461 [there are]; 
                               </div>
-                              							
-                              <div class="noteicon">c
-                                 <div class="note"><strong>Critical note:</strong> A M
-                                    								CCCC lx and on. RHR does not print this part of the poem, nor does
-                                    								he include the material I have here numbered 7-10 as if it were
-                                    								subjoined to the above six lines. The lyrics are separate poems, yet
-                                    								the thought seems to be related. The dating 1461 should be compared
-                                    								with "When Rome Is Removed" lines 60-63. 
-                                 </div>
-                              </div>
-                              						
                            </div>
-                           					
-                           					
+                           							
+                           <div class="noteicon">c
+                              <div class="note"><strong>Critical note:</strong> A M
+                                 								CCCC lx and on. RHR does not print this part of the poem, nor does
+                                 								he include the material I have here numbered 7-10 as if it were
+                                 								subjoined to the above six lines. The lyrics are separate poems, yet
+                                 								the thought seems to be related. The dating 1461 should be compared
+                                 								with "When Rome Is Removed" lines 60-63. 
+                              </div>
+                           </div>
+                           						
                         </div>
                         				
                      </div>
@@ -513,395 +254,268 @@
                   		
                </div>
             </div>
-            <div class="panel mssPanel">
-               <div class="panelBanner"><img class="closePanel" onclick="closePanel(this.parentNode.parentNode);" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness <select class="witnessMenu" onchange="changeWitness(this.value,this.parentNode.parentNode);">
-                     <option value="dublin">1: dublin</option>
-                     <option selected="selected" value="oxford">2: oxford</option>
-                     <option value="cambridge">3: cambridge</option></select></div>
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable oxford">
+               <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness oxford
+               </div>
                <div class="mssContent">
                   			
                   <div class="head">
                      				
                      					
-                     <div class="apparatus" onclick="matchApp('app-d0e106');">
-                        						
-                        <div data-witness="dublin oxford cambridge" class="reading dublin oxford cambridge">The Prophecy of Merlin</div>
+                     <div class="apparatus" onclick="matchApp('app-d2e106');">The Prophecy of Merlin</div>
+                     				
+                     			
+                  </div>
+                  			
+                  <div class="lg lg-n1">
+                     				ZZZZ
+                     				
+                     <div class="line lined2e190" line-id="lined2e190" onclick="matchLine('lined2e190');">
+                        <div class="linenumber">2</div>
                         					
+                        <div class="apparatus" onclick="matchApp('app-d2e192');">Whane lordis wol leefe theire olde lawes,
+                           <div class="noteicon">g
+                              <div class="note"><strong>Gloss note:</strong> abandon
+                              </div>
+                           </div>
+                           							
+                           <div class="noteicon">c
+                              <div class="note"><strong>Critical note:</strong>  leefe. So Skeat
+                                 								and Gray. Robbins, Index and Supplement, § 3986 transcribes
+                                 								leefe as leese. The MS can sustain either reading.
+                              </div>
+                           </div>
+                           						
+                        </div>
+                        				
                      </div>
+                     				
+                     <div class="line lined2e217" line-id="lined2e217" onclick="matchLine('lined2e217');">
+                        <div class="linenumber">3</div>
+                        					
+                        <div class="apparatus" onclick="matchApp('app-d2e219');">And preestis beon varyinge in theire sawes, 
+                           <div class="noteicon">g
+                              <div class="note"><strong>Gloss note:</strong> teachings;
+                              </div>
+                           </div>
+                           							
+                           <div class="noteicon">c
+                              <div class="note"><strong>Critical note:</strong> beon. So MS;
+                                 								Skeat, Gray been.
+                              </div>
+                           </div>
+                           						
+                        </div>
+                        				
+                     </div>
+                     				
+                     <div class="line lined2e238" line-id="lined2e238" onclick="matchLine('lined2e238');">
+                        <div class="linenumber">4</div>
+                        					
+                        <div class="apparatus" onclick="matchApp('app-d2e240');">And leccherie is holden solace, 
+                           <div class="noteicon">g
+                              <div class="note"><strong>Gloss note:</strong> lechery
+                                 								is considered to be 
+                              </div>
+                           </div>
+                           						
+                        </div>
+                        				
+                     </div>
+                     				
+                     <div class="line lined2e262" line-id="lined2e262" onclick="matchLine('lined2e262');">
+                        <div class="linenumber">5</div>
+                        					
+                        <div class="apparatus" onclick="matchApp('app-d2e264');">And oppressyon for truwe purchace; </div>
+                        				
+                     </div>
+                     				
+                     <div class="line lined2e287" line-id="lined2e287" onclick="matchLine('lined2e287');">
+                        <div class="linenumber">6</div>
+                        					
+                        <div class="apparatus" onclick="matchApp('app-d2e289');">And whan the moon is on David stall, 
+                           <div class="noteicon">g
+                              <div class="note"><strong>Gloss note:</strong> 
+                                 								David's stable 
+                              </div>
+                           </div>
+                           							
+                           <div class="noteicon">n
+                              <div class="note"><strong>Note:</strong> David stall. David's stable, a reference to
+                                 								Christ's birth in Bethlehem (city of David). Of the apocalyptic
+                                 								element in this poem Gray comments: "On the more intellectual
+                                 								prophetic tradition, reflected in the Joachimite dream of a
+                                 								renovatio mundi, compare M. Reeves, The Influence of Prophecy in the
+                                 								Later Middle Ages (Oxford, 1969)." 
+                              </div>
+                           </div>
+                           						
+                        </div>
+                        				
+                     </div>
+                     				
+                     <div class="line lined2e302" line-id="lined2e302" onclick="matchLine('lined2e302');">
+                        <div class="linenumber">7</div>
+                        					
+                        <div class="apparatus" onclick="matchApp('app-d2e304');">And the kynge passe Arthures hall, 
+                           <div class="noteicon">g
+                              <div class="note"><strong>Gloss note:</strong> 
+                                 								by-passes 
+                              </div>
+                           </div>
+                           						
+                        </div>
+                        				
+                     </div>
+                     				
+                     <div class="line lined2e314" line-id="lined2e314" onclick="matchLine('lined2e314');">
+                        <div class="linenumber">8</div>
+                        					
+                        <div class="apparatus" onclick="matchApp('app-d2e316');">Than is the lande of Albyoun 
+                           <div class="linebreak"></div>Nexst to his confusyoun 
+                           <div class="noteicon">g
+                              <div class="note"><strong>Gloss note:</strong> Near;
+                                 							its
+                              </div>
+                           </div>
+                           							
+                           <div class="noteicon">c
+                              <div class="note"><strong>Critical note:</strong> Than is
+                                 								the. Skeat's correction of MS Þat is is.
+                              </div>
+                           </div>
+                           						
+                        </div>
+                        				
+                     </div>
+                     			
+                     				
+                     				ZZZZ
+                     			
+                  </div>
+                  			
+                  		
+                  		
+               </div>
+            </div>
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable cambridge">
+               <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness cambridge
+               </div>
+               <div class="mssContent">
+                  			
+                  <div class="head">
+                     				
+                     					
+                     <div class="apparatus" onclick="matchApp('app-d2e106');">The Prophecy of Merlin</div>
                      				
                      			
                   </div>
                   			
                   <div class="lg lg-n1">
                      				
-                     <div class="line lined0e116" onclick="matchLine('lined0e116');">
+                     <div class="line lined2e116" line-id="lined2e116" onclick="matchLine('lined2e116');">
                         <div class="linenumber">1</div>
                         					
-                        <div class="apparatus" onclick="matchApp('app-d0e118');">
-                           						
-                           <div data-witness="cambridge" class="reading cambridge">When feythe fayleth in prestys sawys, 
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> With sharpened swords, and men ready to terrorize
-                                 </div>
+                        <div class="apparatus" onclick="matchApp('app-d2e118');">When feythe fayleth in prestys sawys, 
+                           <div class="noteicon">g
+                              <div class="note"><strong>Gloss note:</strong> With sharpened swords, and men ready to terrorize
                               </div>
-                              							
-                              <div class="noteicon">c
-                                 <div class="note"><strong>Critical note:</strong> 
-                                    								
-                                    <p>sayings; When feythe fayleth. Versions of this lyric - identified
-                                       									as "Chaucer's Proverbs" - were regularly printed in earlier
-                                       									editions of Chaucer. Richard Morris's edition contains the
-                                       									following lyric:
-                                    </p>
-                                    								
-                                    <div class="lg">
-                                       									
-                                       <div class="line lined0e132" onclick="matchLine('lined0e132');">
-                                          <div class="emptynumber">&nbsp;</div>Qwan prestis faylin in her sawes, 
-                                       </div>
-                                       									
-                                       <div class="line lined0e135" onclick="matchLine('lined0e135');">
-                                          <div class="emptynumber">&nbsp;</div>And Lordis turnin Goddis lawes
-                                       </div>
-                                       									
-                                       <div class="line lined0e138" onclick="matchLine('lined0e138');">
-                                          <div class="emptynumber">&nbsp;</div>Ageynis ryght;
-                                       </div>
-                                       									
-                                       <div class="line lined0e141" onclick="matchLine('lined0e141');">
-                                          <div class="emptynumber">&nbsp;</div>And lecherie is holdin as privy solas,
-                                       </div>
-                                       									
-                                       <div class="line lined0e144" onclick="matchLine('lined0e144');">
-                                          <div class="emptynumber">&nbsp;</div>And robberie as fre purchas,
-                                       </div>
-                                       									
-                                       <div class="line lined0e147" onclick="matchLine('lined0e147');">
-                                          <div class="emptynumber">&nbsp;</div>Bewar than of ille!
-                                       </div>
-                                       									
-                                       <div class="line lined0e150" onclick="matchLine('lined0e150');">
-                                          <div class="emptynumber">&nbsp;</div>Than schall the Lond of Albion Turnin to confusion, 
-                                       </div>
-                                       									
-                                       <div class="line lined0e153" onclick="matchLine('lined0e153');">
-                                          <div class="emptynumber">&nbsp;</div> As sumtyme it befelle. 
-                                       </div>
-                                       								
-                                    </div>
-                                    								
-                                    <p>As printed in The Poetical Works of Geoffrey Chaucer, rev. ed.
-                                       									(London: Bell, 1875), vol. 6, p. 307. Skeat prints a similar
-                                       									version of this poem from Caxton's edition of Chaucer, as the
-                                       									first one of the "Sayings" (or proverbs) of Chaucer: 
-                                    </p>
-                                    								
-                                    <div class="lg">
-                                       									
-                                       <div class="line lined0e162" onclick="matchLine('lined0e162');">
-                                          <div class="emptynumber">&nbsp;</div>Whan feyth failleth in prestes sawes,
-                                       </div>
-                                       									
-                                       <div class="line lined0e165" onclick="matchLine('lined0e165');">
-                                          <div class="emptynumber">&nbsp;</div>And lordes hestes ar holden for lawes,
-                                       </div>
-                                       									
-                                       <div class="line lined0e168" onclick="matchLine('lined0e168');">
-                                          <div class="emptynumber">&nbsp;</div>And robbery is holden purchas,
-                                       </div>
-                                       									
-                                       <div class="line lined0e171" onclick="matchLine('lined0e171');">
-                                          <div class="emptynumber">&nbsp;</div>And lechery is holden solas,
-                                       </div>
-                                       									
-                                       <div class="line lined0e174" onclick="matchLine('lined0e174');">
-                                          <div class="emptynumber">&nbsp;</div>Then shal the lond of Albyon
-                                       </div>
-                                       									
-                                       <div class="line lined0e177" onclick="matchLine('lined0e177');">
-                                          <div class="emptynumber">&nbsp;</div>Be brought to grete confusioun.
-                                       </div>
-                                       								
-                                    </div>
-                                    								
-                                    <p>See Skeat's Complete Works of Geoffrey Chaucer, vol. 7 (Oxford:
-                                       									Clarendon, 1897), p. 450.
-                                    </p>
-                                    							
-                                 </div>
-                              </div>
-                              						
                            </div>
-                           					
+                           							
+                           <div class="noteicon">c
+                              <div class="note"><strong>Critical note:</strong> 
+                                 								
+                                 <p>sayings; When feythe fayleth. Versions of this lyric - identified
+                                    									as "Chaucer's Proverbs" - were regularly printed in earlier
+                                    									editions of Chaucer. Richard Morris's edition contains the
+                                    									following lyric:
+                                 </p>
+                                 								
+                                 								
+                                 <p>As printed in The Poetical Works of Geoffrey Chaucer, rev. ed.
+                                    									(London: Bell, 1875), vol. 6, p. 307. Skeat prints a similar
+                                    									version of this poem from Caxton's edition of Chaucer, as the
+                                    									first one of the "Sayings" (or proverbs) of Chaucer: 
+                                 </p>
+                                 								
+                                 								
+                                 <p>See Skeat's Complete Works of Geoffrey Chaucer, vol. 7 (Oxford:
+                                    									Clarendon, 1897), p. 450.
+                                 </p>
+                                 							
+                              </div>
+                           </div>
+                           						
                         </div>
                         				
                      </div>
                      				
-                     <div class="line lined0e188" onclick="matchLine('lined0e188');">
+                     <div class="line lined2e190" line-id="lined2e190" onclick="matchLine('lined2e190');">
                         <div class="linenumber">2</div>
                         					
-                        <div class="apparatus" onclick="matchApp('app-d0e190');">
-                           						
-                           <div data-witness="dublin" class="reading dublin">When lordes wille is londes law, 
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> the
-                                    								law of the land
-                                 </div>
+                        <div class="apparatus" onclick="matchApp('app-d2e192');">And lordys wyll be londys lawys,
+                           <div class="noteicon">g
+                              <div class="note"><strong>Gloss note:</strong> law
+                                 								of the land 
                               </div>
-                              						
                            </div>
                            						
-                           <div data-witness="oxford" class="reading oxford">Whane lordis wol leefe theire olde lawes,
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> abandon
-                                 </div>
-                              </div>
-                              							
-                              <div class="noteicon">c
-                                 <div class="note"><strong>Critical note:</strong>  leefe. So Skeat
-                                    								and Gray. Robbins, Index and Supplement, &sect; 3986 transcribes
-                                    								leefe as leese. The MS can sustain either reading.
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           						
-                           <div data-witness="cambridge" class="reading cambridge">And lordys wyll be londys lawys,
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> law
-                                    								of the land 
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           					
                         </div>
                         				
                      </div>
+                     				ZZZZ
                      				
-                     <div class="line lined0e215" onclick="matchLine('lined0e215');">
-                        <div class="linenumber">3</div>
-                        					
-                        <div class="apparatus" onclick="matchApp('app-d0e217');">
-                           						
-                           <div data-witness="dublin" class="reading dublin">Prestes wylle trechery, and gyle hold soth saw,
-                              <div class="noteicon">c
-                                 <div class="note"><strong>Critical note:</strong> Priests intend treachery, and guile turns into
-                                    								figures of speech 
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           						
-                           <div data-witness="oxford" class="reading oxford">And preestis beon varyinge in theire sawes, 
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> teachings;
-                                 </div>
-                              </div>
-                              							
-                              <div class="noteicon">c
-                                 <div class="note"><strong>Critical note:</strong> beon. So MS;
-                                    								Skeat, Gray been.
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           					
-                        </div>
-                        				
-                     </div>
-                     				
-                     <div class="line lined0e236" onclick="matchLine('lined0e236');">
+                     <div class="line lined2e238" line-id="lined2e238" onclick="matchLine('lined2e238');">
                         <div class="linenumber">4</div>
                         					
-                        <div class="apparatus" onclick="matchApp('app-d0e238');">
-                           						
-                           <div data-witness="dublin" class="reading dublin">Lechery callyd pryv&eacute; solace,
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> is called
-                                    								secret pleasure 
-                                 </div>
+                        <div class="apparatus" onclick="matchApp('app-d2e240');">And lechery is prevy solas,
+                           <div class="noteicon">g
+                              <div class="note"><strong>Gloss note:</strong> secret
+                                 								comfort 
                               </div>
-                              						
                            </div>
                            						
-                           <div data-witness="oxford" class="reading oxford">And leccherie is holden solace, 
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> lechery
-                                    								is considered to be 
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           						
-                           <div data-witness="cambridge" class="reading cambridge">And lechery is prevy solas,
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> secret
-                                    								comfort 
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           					
                         </div>
                         				
                      </div>
                      				
-                     <div class="line lined0e260" onclick="matchLine('lined0e260');">
+                     <div class="line lined2e262" line-id="lined2e262" onclick="matchLine('lined2e262');">
                         <div class="linenumber">5</div>
                         					
-                        <div class="apparatus" onclick="matchApp('app-d0e262');">
-                           						
-                           <div data-witness="dublin" class="reading dublin">And robbery is hold no trespace - 
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> held
-                                    								to be no crime 
-                                 </div>
+                        <div class="apparatus" onclick="matchApp('app-d2e264');">And robbery ys goode purchas:
+                           <div class="noteicon">g
+                              <div class="note"><strong>Gloss note:</strong> booty  
                               </div>
-                              						
+                           </div>
+                           							
+                           <div class="noteicon">n
+                              <div class="note"><strong>Note:</strong> purchas. Skeat glosses purchas as "bargain." It is
+                                 								that which is acquired.
+                              </div>
                            </div>
                            						
-                           <div data-witness="oxford" class="reading oxford">And oppressyon for truwe purchace; </div>
-                           						
-                           <div data-witness="cambridge" class="reading cambridge">And robbery ys goode purchas:
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> booty  
-                                 </div>
-                              </div>
-                              							
-                              <div class="noteicon">n
-                                 <div class="note"><strong>Note:</strong> purchas. Skeat glosses purchas as "bargain." It is
-                                    								that which is acquired.
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           					
                         </div>
                         				
                      </div>
+                     				ZZZZ
+                     				ZZZZ
                      				
-                     <div class="line lined0e284" onclick="matchLine('lined0e284');">
-                        <div class="linenumber">6</div>
-                        					
-                        <div class="apparatus" onclick="matchApp('app-d0e286');">
-                           						
-                           <div data-witness="oxford" class="reading oxford">And whan the moon is on David stall, 
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> 
-                                    								David's stable 
-                                 </div>
-                              </div>
-                              							
-                              <div class="noteicon">n
-                                 <div class="note"><strong>Note:</strong> David stall. David's stable, a reference to
-                                    								Christ's birth in Bethlehem (city of David). Of the apocalyptic
-                                    								element in this poem Gray comments: "On the more intellectual
-                                    								prophetic tradition, reflected in the Joachimite dream of a
-                                    								renovatio mundi, compare M. Reeves, The Influence of Prophecy in the
-                                    								Later Middle Ages (Oxford, 1969)." 
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           					
-                        </div>
-                        				
-                     </div>
-                     				
-                     <div class="line lined0e299" onclick="matchLine('lined0e299');">
-                        <div class="linenumber">7</div>
-                        					
-                        <div class="apparatus" onclick="matchApp('app-d0e301');">
-                           						
-                           <div data-witness="oxford" class="reading oxford">And the kynge passe Arthures hall, 
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> 
-                                    								by-passes 
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           					
-                        </div>
-                        				
-                     </div>
-                     				
-                     <div class="line lined0e311" onclick="matchLine('lined0e311');">
+                     <div class="line lined2e314" line-id="lined2e314" onclick="matchLine('lined2e314');">
                         <div class="linenumber">8</div>
                         					
-                        <div class="apparatus" onclick="matchApp('app-d0e313');">
-                           						
-                           <div data-witness="dublin" class="reading dublin">Then schal the lond of Albyon torne into confusioun! 
-                              <div class="noteicon">c
-                                 <div class="note"><strong>Critical note:</strong> Albyon. The legendary, antique name for Britain, as
-                                    								in Geoffrey of Monmouth's History of the Kings of Britain. The fool
-                                    								in King Lear quotes this or a related poem when he says: "Then shall
-                                    								the realm of Albion / Come to great confusion" (III.ii.85-86).
-                                    							
-                                 </div>
+                        <div class="apparatus" onclick="matchApp('app-d2e316');">Than shall the londe of Albeon 
+                           <div class="linebreak"></div>Be turned into confusion. 
+                           <div class="noteicon">n
+                              <div class="note"><strong>Note:</strong> Britain 
                               </div>
-                              						
                            </div>
                            						
-                           <div data-witness="oxford" class="reading oxford">Than is the lande of Albyoun 
-                              <div class="linebreak"></div>Nexst to his confusyoun 
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> Near;
-                                    							its
-                                 </div>
-                              </div>
-                              							
-                              <div class="noteicon">c
-                                 <div class="note"><strong>Critical note:</strong> Than is
-                                    								the. Skeat's correction of MS &THORN;at is is.
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           						
-                           <div data-witness="cambridge" class="reading cambridge">Than shall the londe of Albeon 
-                              <div class="linebreak"></div>Be turned into confusion. 
-                              <div class="noteicon">n
-                                 <div class="note"><strong>Note:</strong> Britain 
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           					
                         </div>
                         				
                      </div>
                      			
                      				
-                     				
-                     <div class="line lined0e342" onclick="matchLine('lined0e342');">
-                        <div class="linenumber">9</div>
-                        					
-                        <div class="apparatus" onclick="matchApp('app-d0e344');">
-                           						
-                           <div data-witness="dublin" class="reading dublin">A M CCCC lx and on, few lordes or ellys noone. 
-                              <div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> In 1461 [there are]; 
-                                 </div>
-                              </div>
-                              							
-                              <div class="noteicon">c
-                                 <div class="note"><strong>Critical note:</strong> A M
-                                    								CCCC lx and on. RHR does not print this part of the poem, nor does
-                                    								he include the material I have here numbered 7-10 as if it were
-                                    								subjoined to the above six lines. The lyrics are separate poems, yet
-                                    								the thought seems to be related. The dating 1461 should be compared
-                                    								with "When Rome Is Removed" lines 60-63. 
-                                 </div>
-                              </div>
-                              						
-                           </div>
-                           					
-                           					
-                        </div>
-                        				
-                     </div>
+                     				ZZZZ
                      			
                   </div>
                   			
@@ -917,11 +531,11 @@
             </div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined0e116');">Line number 1</div><strong>Gloss note: </strong>With sharpened swords, and men ready to terrorize
+               <div class="position" onclick="matchLine('lined2e116');">Line number 1</div><strong>Gloss note: </strong>With sharpened swords, and men ready to terrorize
             </div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined0e116');">Line number 1</div><strong>Critical note: </strong>
+               <div class="position" onclick="matchLine('lined2e116');">Line number 1</div><strong>Critical note: </strong>
                								
                <p>sayings; When feythe fayleth. Versions of this lyric - identified
                   									as "Chaucer's Proverbs" - were regularly printed in earlier
@@ -929,41 +543,6 @@
                   									following lyric:
                </p>
                								
-               <div class="lg">
-                  									
-                  <div class="line lined0e132" onclick="matchLine('lined0e132');">
-                     <div class="emptynumber">&nbsp;</div>Qwan prestis faylin in her sawes, 
-                  </div>
-                  									
-                  <div class="line lined0e135" onclick="matchLine('lined0e135');">
-                     <div class="emptynumber">&nbsp;</div>And Lordis turnin Goddis lawes
-                  </div>
-                  									
-                  <div class="line lined0e138" onclick="matchLine('lined0e138');">
-                     <div class="emptynumber">&nbsp;</div>Ageynis ryght;
-                  </div>
-                  									
-                  <div class="line lined0e141" onclick="matchLine('lined0e141');">
-                     <div class="emptynumber">&nbsp;</div>And lecherie is holdin as privy solas,
-                  </div>
-                  									
-                  <div class="line lined0e144" onclick="matchLine('lined0e144');">
-                     <div class="emptynumber">&nbsp;</div>And robberie as fre purchas,
-                  </div>
-                  									
-                  <div class="line lined0e147" onclick="matchLine('lined0e147');">
-                     <div class="emptynumber">&nbsp;</div>Bewar than of ille!
-                  </div>
-                  									
-                  <div class="line lined0e150" onclick="matchLine('lined0e150');">
-                     <div class="emptynumber">&nbsp;</div>Than schall the Lond of Albion Turnin to confusion, 
-                  </div>
-                  									
-                  <div class="line lined0e153" onclick="matchLine('lined0e153');">
-                     <div class="emptynumber">&nbsp;</div> As sumtyme it befelle. 
-                  </div>
-                  								
-               </div>
                								
                <p>As printed in The Poetical Works of Geoffrey Chaucer, rev. ed.
                   									(London: Bell, 1875), vol. 6, p. 307. Skeat prints a similar
@@ -971,33 +550,6 @@
                   									first one of the "Sayings" (or proverbs) of Chaucer: 
                </p>
                								
-               <div class="lg">
-                  									
-                  <div class="line lined0e162" onclick="matchLine('lined0e162');">
-                     <div class="emptynumber">&nbsp;</div>Whan feyth failleth in prestes sawes,
-                  </div>
-                  									
-                  <div class="line lined0e165" onclick="matchLine('lined0e165');">
-                     <div class="emptynumber">&nbsp;</div>And lordes hestes ar holden for lawes,
-                  </div>
-                  									
-                  <div class="line lined0e168" onclick="matchLine('lined0e168');">
-                     <div class="emptynumber">&nbsp;</div>And robbery is holden purchas,
-                  </div>
-                  									
-                  <div class="line lined0e171" onclick="matchLine('lined0e171');">
-                     <div class="emptynumber">&nbsp;</div>And lechery is holden solas,
-                  </div>
-                  									
-                  <div class="line lined0e174" onclick="matchLine('lined0e174');">
-                     <div class="emptynumber">&nbsp;</div>Then shal the lond of Albyon
-                  </div>
-                  									
-                  <div class="line lined0e177" onclick="matchLine('lined0e177');">
-                     <div class="emptynumber">&nbsp;</div>Be brought to grete confusioun.
-                  </div>
-                  								
-               </div>
                								
                <p>See Skeat's Complete Works of Geoffrey Chaucer, vol. 7 (Oxford:
                   									Clarendon, 1897), p. 450.
@@ -1006,75 +558,75 @@
             </div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined0e188');">Line number 2</div><strong>Gloss note: </strong>the
+               <div class="position" onclick="matchLine('lined2e190');">Line number 2</div><strong>Gloss note: </strong>the
                								law of the land
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined0e188');">Line number 2</div><strong>Gloss note: </strong>abandon
+               <div class="position" onclick="matchLine('lined2e190');">Line number 2</div><strong>Gloss note: </strong>abandon
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined0e188');">Line number 2</div><strong>Critical note: </strong> leefe. So Skeat
-               								and Gray. Robbins, Index and Supplement, &sect; 3986 transcribes
+               <div class="position" onclick="matchLine('lined2e190');">Line number 2</div><strong>Critical note: </strong> leefe. So Skeat
+               								and Gray. Robbins, Index and Supplement, § 3986 transcribes
                								leefe as leese. The MS can sustain either reading.
             </div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined0e188');">Line number 2</div><strong>Gloss note: </strong>law
+               <div class="position" onclick="matchLine('lined2e190');">Line number 2</div><strong>Gloss note: </strong>law
                								of the land 
             </div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined0e215');">Line number 3</div><strong>Critical note: </strong>Priests intend treachery, and guile turns into
+               <div class="position" onclick="matchLine('lined2e217');">Line number 3</div><strong>Critical note: </strong>Priests intend treachery, and guile turns into
                								figures of speech 
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined0e215');">Line number 3</div><strong>Gloss note: </strong>teachings;
+               <div class="position" onclick="matchLine('lined2e217');">Line number 3</div><strong>Gloss note: </strong>teachings;
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined0e215');">Line number 3</div><strong>Critical note: </strong>beon. So MS;
+               <div class="position" onclick="matchLine('lined2e217');">Line number 3</div><strong>Critical note: </strong>beon. So MS;
                								Skeat, Gray been.
             </div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined0e236');">Line number 4</div><strong>Gloss note: </strong>is called
+               <div class="position" onclick="matchLine('lined2e238');">Line number 4</div><strong>Gloss note: </strong>is called
                								secret pleasure 
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined0e236');">Line number 4</div><strong>Gloss note: </strong>lechery
+               <div class="position" onclick="matchLine('lined2e238');">Line number 4</div><strong>Gloss note: </strong>lechery
                								is considered to be 
             </div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined0e236');">Line number 4</div><strong>Gloss note: </strong>secret
+               <div class="position" onclick="matchLine('lined2e238');">Line number 4</div><strong>Gloss note: </strong>secret
                								comfort 
             </div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined0e260');">Line number 5</div><strong>Gloss note: </strong>held
+               <div class="position" onclick="matchLine('lined2e262');">Line number 5</div><strong>Gloss note: </strong>held
                								to be no crime 
             </div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined0e260');">Line number 5</div><strong>Gloss note: </strong>booty  
+               <div class="position" onclick="matchLine('lined2e262');">Line number 5</div><strong>Gloss note: </strong>booty  
             </div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined0e260');">Line number 5</div><strong>Note: </strong>purchas. Skeat glosses purchas as "bargain." It is
+               <div class="position" onclick="matchLine('lined2e262');">Line number 5</div><strong>Note: </strong>purchas. Skeat glosses purchas as "bargain." It is
                								that which is acquired.
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined0e284');">Line number 6</div><strong>Gloss note: </strong>
+               <div class="position" onclick="matchLine('lined2e287');">Line number 6</div><strong>Gloss note: </strong>
                								David's stable 
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined0e284');">Line number 6</div><strong>Note: </strong>David stall. David's stable, a reference to
+               <div class="position" onclick="matchLine('lined2e287');">Line number 6</div><strong>Note: </strong>David stall. David's stable, a reference to
                								Christ's birth in Bethlehem (city of David). Of the apocalyptic
                								element in this poem Gray comments: "On the more intellectual
                								prophetic tradition, reflected in the Joachimite dream of a
@@ -1083,12 +635,12 @@
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined0e299');">Line number 7</div><strong>Gloss note: </strong>
+               <div class="position" onclick="matchLine('lined2e302');">Line number 7</div><strong>Gloss note: </strong>
                								by-passes 
             </div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined0e311');">Line number 8</div><strong>Critical note: </strong>Albyon. The legendary, antique name for Britain, as
+               <div class="position" onclick="matchLine('lined2e314');">Line number 8</div><strong>Critical note: </strong>Albyon. The legendary, antique name for Britain, as
                								in Geoffrey of Monmouth's History of the Kings of Britain. The fool
                								in King Lear quotes this or a related poem when he says: "Then shall
                								the realm of Albion / Come to great confusion" (III.ii.85-86).
@@ -1096,25 +648,25 @@
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined0e311');">Line number 8</div><strong>Gloss note: </strong>Near;
+               <div class="position" onclick="matchLine('lined2e314');">Line number 8</div><strong>Gloss note: </strong>Near;
                							its
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined0e311');">Line number 8</div><strong>Critical note: </strong>Than is
-               								the. Skeat's correction of MS &THORN;at is is.
+               <div class="position" onclick="matchLine('lined2e314');">Line number 8</div><strong>Critical note: </strong>Than is
+               								the. Skeat's correction of MS Þat is is.
             </div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined0e311');">Line number 8</div><strong>Note: </strong>Britain 
+               <div class="position" onclick="matchLine('lined2e314');">Line number 8</div><strong>Note: </strong>Britain 
             </div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined0e342');">Line number 9</div><strong>Gloss note: </strong>In 1461 [there are]; 
+               <div class="position" onclick="matchLine('lined2e345');">Line number 9</div><strong>Gloss note: </strong>In 1461 [there are]; 
             </div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined0e342');">Line number 9</div><strong>Critical note: </strong>A M
+               <div class="position" onclick="matchLine('lined2e345');">Line number 9</div><strong>Critical note: </strong>A M
                								CCCC lx and on. RHR does not print this part of the poem, nor does
                								he include the material I have here numbered 7-10 as if it were
                								subjoined to the above six lines. The lyrics are separate poems, yet
