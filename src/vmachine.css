@@ -347,7 +347,7 @@ div.mssContent div.paragraph div.reading{
 }
 
 div.apparatus{
-    display:inline;
+    display:inline-block;
 }
 
 em.label{

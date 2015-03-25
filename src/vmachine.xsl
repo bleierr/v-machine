@@ -360,7 +360,9 @@
          </div>
          <div class="mssContent">
             <xsl:if test="//tei:witDetail[@target = concat('#',$witID) and tei:media[@url]]">
-               <xsl:call-template name="audioPlayer"></xsl:call-template>
+               <xsl:call-template name="audioPlayer">
+                  <xsl:with-param name="witID" select="$witID"></xsl:with-param>
+               </xsl:call-template>
             </xsl:if>
             <xsl:if test="//tei:note[@type='image']/tei:witDetail[@target = concat('#',$witID)]//tei:graphic[@url]">
                <xsl:call-template name="facs-images">
@@ -383,28 +385,39 @@
    <xsl:template name="audioPlayer">
       <xsl:param name="witID"></xsl:param>
       <!--foreach witness with media-->
+      <xsl:value-of select="$witID"></xsl:value-of>
       <xsl:for-each select="//tei:witDetail[@target = concat('#',$witID) and tei:media[@url]]">
          
          <div>
             <xsl:attribute name="class">audioPlayer <xsl:value-of select="translate(@wit, '#', '')" /></xsl:attribute>
             <xsl:attribute name="data-witness"><xsl:value-of select="translate(@wit, '#', '')" /></xsl:attribute>
             <!--<audio controls="controls">-->
-            
+            <audio controls="controls">
             <!--foreach source-->
             <xsl:for-each select="//tei:witDetail[@target = concat('#',$witID) and tei:media[@url]]/tei:media">
                
                <!--<source>-->
                <!--<xsl:attribute name="src"><xsl:value-of select="@url" /></xsl:attribute>
                            <xsl:attribute name="type"><xsl:value-of select="@mimeType" /></xsl:attribute>-->
-               <span>
+               <!--  <span>
                   <xsl:attribute name="class">audioSource</xsl:attribute>
                   <xsl:attribute name="data-src"><xsl:value-of select="@url" /></xsl:attribute>
                   <xsl:attribute name="data-type"><xsl:value-of select="@mimeType" /></xsl:attribute>
-               </span>
+                  -->
+               <source>
+                  <xsl:attribute name="class">audiosource</xsl:attribute>
+                  <xsl:attribute name="src"><xsl:value-of select="@url" /></xsl:attribute>
+                  <xsl:attribute name="type"><xsl:value-of select="@mimeType" /></xsl:attribute>
+               </source>
+                           
+                  
+                  
+                  <!-- </span>-->
                <!--</source>-->
                
             </xsl:for-each><!--foreach source-->
-            
+               <xsl:text>Your browser does not support the audio element.</xsl:text>
+            </audio>
             <!--</audio>-->
          </div>
          
@@ -772,7 +785,12 @@
    
    <xsl:template match="tei:l">
       <xsl:param name="witID" tunnel="yes" />
-      <xsl:variable name="uniqueID" select="generate-id(.)" />
+      <xsl:variable name="uniqueID">
+         <xsl:choose>
+            <xsl:when test="@n"><xsl:value-of select="@n"/></xsl:when>
+            <xsl:otherwise><xsl:number></xsl:number></xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
       
       <!-- ??? rdg display problem RB not solved yet -->
       <xsl:choose>
@@ -792,15 +810,13 @@
                </xsl:attribute>
                
                <!--DC-->
-               <xsl:if test="not(@loc) and not(descendant::*/@loc)">
-                  <!--/DC-->
-                  <xsl:attribute name="onclick">
+               <!-- <xsl:if test="not(@loc) and not(descendant::*/@loc)">
+                 <xsl:attribute name="onclick">
                      <xsl:text>matchLine('line</xsl:text>
                      <xsl:value-of select="$uniqueID" />
                      <xsl:text>');</xsl:text>
                   </xsl:attribute>
-                  <!--DC-->
-               </xsl:if>
+                  </xsl:if> -->
                <!--/DC-->
                
                <div>
@@ -1155,32 +1171,52 @@
 
    <xsl:template match="tei:app">
       <xsl:param name="witID" tunnel="yes"></xsl:param>
-      <xsl:variable name="uniqueID" select="generate-id()" />
+      <!-- RB del <xsl:variable name="uniqueID" select="generate-id()" />  -->
+      <xsl:variable name="uniqueID">
+         <xsl:choose>
+            <xsl:when test="@loc">
+               <xsl:value-of select="@loc"/>
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:value-of select="name(.)"></xsl:value-of>
+               <xsl:text>_</xsl:text>
+               <xsl:value-of select="position()"></xsl:value-of>
+               <xsl:text>_</xsl:text>
+               <xsl:value-of select="name(parent::node())"></xsl:value-of>
+               <xsl:if test="parent::node()[@n]">
+                  <xsl:text>_</xsl:text><xsl:value-of select="parent::node()/@n"></xsl:value-of><xsl:text>_</xsl:text>
+               </xsl:if>
+               <xsl:value-of select="parent::node()/position()"></xsl:value-of>
+            </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <xsl:variable name="refID">#<xsl:value-of select="$witID"/></xsl:variable>
       
-      <xsl:for-each select="tei:rdg">
-      <xsl:if test="contains(@wit, concat('#',$witID))">
+      <!-- tei:rdg[contains(@wit, $refID)] -->
+         <!-- <xsl:if test="contains(@wit, concat('#',$witID))"> -->
       
       <div>
-         <xsl:if test="tei:rdg/tei:timeline/tei:when"><!-- has to change ??? -->
-            <xsl:for-each select="tei:rdg/tei:timeline/tei:when">
+         <xsl:if test="tei:rdg[contains(@wit, $refID)]/tei:timeline/tei:when"><!-- has to change ??? -->
+            <xsl:for-each select="tei:rdg[contains(@wit, $refID)]/tei:timeline/tei:when">
 <!--  MDH: Change to the way we deal with @absolute: it may not even be there.            -->
 <!--              <xsl:if test="not(@absolute)">-->
                <xsl:if test="@since">
                   <xsl:attribute name="data-timeline">
                      <xsl:value-of select="translate(@since,'#','')" />
                   </xsl:attribute> 
-               </xsl:if>           
+               </xsl:if>  
             </xsl:for-each>
          </xsl:if>
          <xsl:attribute name="class">
             <xsl:text>apparatus</xsl:text>
-           
+            <xsl:text> </xsl:text>
+            <xsl:value-of select="$uniqueID"></xsl:value-of>
           <!--  <xsl:if test="@type">
                <xsl:text> type-</xsl:text>
                <xsl:value-of select="@type" />
             </xsl:if>-->
             <xsl:if test="parent::tei:app/@loc">
-               <xsl:text> loc-</xsl:text>
+               <xsl:text> app-</xsl:text>
                <xsl:value-of select="parent::tei:app/@loc" />
             </xsl:if>
             <!--<xsl:if test="count(ancestor::tei:l) = 0">
@@ -1192,22 +1228,28 @@
          <!--DC
          <xsl:if test="count(ancestor::tei:l) = 0">
          -->   
+         
+         <xsl:attribute name="onclick">
+            <xsl:text>matchApp('</xsl:text>
+            <xsl:value-of select="$uniqueID" />
+            <xsl:text>');</xsl:text> 
+         </xsl:attribute>
 
             <!--DC-->
-            <xsl:choose>
+            <!-- RB  <xsl:choose>
                <xsl:when test="parent::tei:app/@loc"> 
                   <xsl:attribute name="onclick">
-                     <xsl:text>matchLine(this.className);</xsl:text><!-- matchApp -->
+                     <xsl:text>matchLine(this.className);</xsl:text>
                   </xsl:attribute>
-               </xsl:when> 
-               <xsl:otherwise><!-- ??? not sure if otherwise is necessary -->
+                  </xsl:when> -->
+         <!--<xsl:otherwise> ??? not sure if otherwise is necessary 
                   <xsl:attribute name="onclick">
                      <xsl:text>matchApp('app-</xsl:text>
                         <xsl:value-of select="$uniqueID" />
                         <xsl:text>');</xsl:text> 
                   </xsl:attribute>
                </xsl:otherwise>
-            </xsl:choose>
+            </xsl:choose>-->
             <!--/DC-->
    
          <!--DC
@@ -1218,8 +1260,8 @@
             <xsl:with-param name="witID" tunnel="yes" select="$witID"></xsl:with-param>
          </xsl:apply-templates>
       </div>
-      </xsl:if>
-      </xsl:for-each>
+         <!-- </xsl:if> -->
+      
    </xsl:template>
    
    <xsl:template match="tei:rdg|tei:lem">

@@ -3,11 +3,15 @@
 function init() {
    var mssArea = document.getElementById("mssArea");
    var mssPanels = getElementsByClass("mssPanel",mssArea,"div");
+   var audioPlayer = getElementsByClass("audioPlayer",mssArea,"div");
    for (i = 0; i < mssPanels.length; i++) {
       var currentPanel = mssPanels[i];
-      //var witnessMenu = getElementsByClass("witnessMenu",currentPanel,"select")[0];
+	  //var witnessMenu = getElementsByClass("witnessMenu",currentPanel,"select")[0];
       //var witness = witnessMenu.value;
       //changeWitness(witness,currentPanel);
+	  if (audioPlayer){
+		addAudioPlayer(currentPanel);
+	  }
    }
    //resizePanels();
 
@@ -234,33 +238,8 @@ function changeWitness(witness,panel) {
       }//foreach player
     }//foreach panel
 
-
-    // Add audio players if needed
-    for (p = 0; p < audioPanels.length; p++) {
-       if (audioPanels[p].className != "audioPlayer") {
-          audioPanels[p].style.display = "none";
-          for (q = 0; q < matching.length; q++) {
-             var pattern = new RegExp('(^|\\s)' + matching[q] + '(\\s|$)');
-             if (pattern.test(audioPanels[p].className)) {
-                audioPanels[p].style.display = "block";
-                var newAudio = document.createElement('audio');
-                newAudio.setAttribute('controls','controls');
-                audioPanels[p].appendChild(newAudio);
-                
-                var audioSources = getElementsByClass("audioSource",audioPanels[p],"span");
-                for (r = 0; r < audioSources.length; r++) {
-                  var newSource = document.createElement('source');
-                  newSource.setAttribute('src', audioSources[r].getAttribute('data-src') + "?i=" + Date.now());
-                  newSource.setAttribute('type', audioSources[r].getAttribute('data-type'));
-                  newAudio.appendChild(newSource);
-                }//foreach source
-
-             }
-          }
-       }
-    }   
-
-    for (r = 0; r < stanzas.length; r++) {
+	
+	 for (r = 0; r < stanzas.length; r++) {
        stanzas[r].style.display = "none";
        for (s = 0; s < matching.length; s++) {
           var pattern = new RegExp('(^|\\s)' + matching[s] + '(\\s|$)');
@@ -290,6 +269,46 @@ function changeWitness(witness,panel) {
     }
 
     presentInlineNotes();
+}
+
+//to add an audioplayer element is not necessary it is now done via xslt
+function addAudioPlayer(panel){	
+	//var audioPanels = getElementsByClass("audioPlayer",panel,"div");
+	
+	var sourceElements = getElementsByClass("audiosource",panel,"source");
+	
+	for (p = 0; p < sourceElements.length; p++) {
+		var src = sourceElements[p].getAttribute('src');
+		sourceElements[p].setAttribute('src', src + "?i=" + Date.now());
+	}
+	/**
+    // Add audio players if needed
+    for (p = 0; p < audioPanels.length; p++) {
+       if (audioPanels[p].className != "audioPlayer") {
+	   alert("Inside audio");
+          //audioPanels[p].style.display = "none";
+          for (q = 0; q < matching.length; q++) {
+             var pattern = new RegExp('(^|\\s)' + matching[q] + '(\\s|$)');
+             if (pattern.test(audioPanels[p].className)) {
+                audioPanels[p].style.display = "block";
+                var newAudio = document.createElement('audio');
+                newAudio.setAttribute('controls','controls');
+                audioPanels[p].appendChild(newAudio);
+                
+                var audioSources = getElementsByClass("audioSource",audioPanels[p],"span");
+                for (r = 0; r < audioSources.length; r++) {
+                  var newSource = document.createElement('source');
+                  newSource.setAttribute('src', audioSources[r].getAttribute('data-src') + "?i=" + Date.now());
+                  newSource.setAttribute('type', audioSources[r].getAttribute('data-type'));
+                  newAudio.appendChild(newSource);
+                }//foreach source
+
+             }
+          }
+       }
+    } **/  
+
+   
  }
 
 
@@ -317,7 +336,7 @@ function matchApp(matchClass) {
 
       //Logic for audio
       var timeline = matchingApps[p].getAttribute("data-timeline");
-      var witness = getElementsByClass("reading", matchingApps[p], "div")[0].getAttribute("data-witness");
+      //RB var witness = getElementsByClass("reading", matchingApps[p], "div")[0].getAttribute("data-witness");
       var audioHolders = getElementsByClass("audioPlayer",mssArea,"div");
       var audioPlayers = getElementsByClass("audioPlayer");
       if (timeline != null) {
@@ -359,6 +378,7 @@ function pausePlayer (evt) {
   }
 }//pausePlayer
 
+/*
 function matchLine(matchClass) {
    var mssArea = document.getElementById("mssArea");
    var matchingLines = getElementsByClass(matchClass,mssArea,"div");
@@ -369,8 +389,8 @@ function matchLine(matchClass) {
       } else {
          matchingLines[q].className = matchingLines[q].className + " highlighted";
       }
-   }
-}
+   } 
+}*/
 function toggleLineNumbers(state) {
    var mssArea = document.getElementById("mssArea");
    var linenumbers = getElementsByClass("linenumber",mssArea,"div");
@@ -1105,6 +1125,7 @@ $(document).ready(function(){
 		$("#witnessList").toggle();
 	});
 
+	
 	$("#witnessList li").click(function(){
 		
 		var c = $(this).attr("class");
