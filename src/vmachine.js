@@ -1121,28 +1121,97 @@ $(document).ready(function(){
 //select witnesses
 
 $(document).ready(function(){
-	$("#selectWitness").click(function(){
-		$("#witnessList").toggle();
-	});
-
+	var witnesses = [];
+		$("#witnessList li").each(function(){
+			witnesses.push($(this).attr("class"));
+		});
 	
-	$("#witnessList li").click(function(){
-		
-		var c = $(this).attr("class");
-		$(".mssPanel."+c).toggle();
-		var d = $(".mssPanel."+c).css("display");
-		if (d == 'none'){
-			var b = $(this).find("button");
-			b.css({ "background-color": "#999" });
-			b.html("OFF");
+	$(".dropdownButton").click(function(e){
+		e.stopPropagation();
+		var visibility = $(this).next('ul').css('visibility');
+		if ( visibility === 'hidden'){
+			$(this).next('ul').css('visibility', 'visible');
 		}
 		else{
-			var b = $(this).find("button");
-			b.css({ "background-color": "#ddd" });
-			b.html("ON");
+			$(this).next('ul').css('visibility', 'hidden');
 		}
+	
+	
+		$('html').click(function (e) {
+			//e.stopPropagation();
+			var container = $(".dropdown");
+
+			//check if the clicked area is dropDown or not
+			if (container.has(e.target).length === 0) {
+				$(".dropdown").css('visibility', 'hidden');
+			}
+		});
+	});
+	
+	
+	$(".dropdown li").click(function(e){
+		e.stopPropagation();
+		/* toggle visible of ms panels*/
+		var c = $(this).attr("class").split(" ");
+		$(".mssPanel."+c[0]).toggle();
+		$(this).find("img").toggleClass("invisible");
 		
 	});
+	
+	/* highlight witness list and witness panels */
+	$(".dropdown li").hover(function(){
+		/*mouse enter event*/
+		var c = $(this).attr("class");
+		
+		$(this).addClass("highlight");
+		$(".mssPanel."+c).addClass("highlight");
+	}, function(){
+		/*mouse leave event*/
+		var c = $(this).attr("class").split(" ");
+		
+		$(this).removeClass("highlight");
+		$(".mssPanel."+c[1]).removeClass("highlight");
+	});
+	
+	
 
+	$(".mssPanel").hover(function(){
+		
+		
+		$(this).addClass("highlight");
 
+		var c = $(this).attr("class").split(" ");
+		
+		for (var i=0; i < c.length; i++){
+		
+			for (var j=0; j < witnesses.length; j++){
+			
+				if (c[i] === witnesses[j]){
+					$("#witnessList li."+witnesses[j]).addClass("highlight");
+				}
+			}
+		}
+		
+	
+	}, function(){
+			
+		
+		$(this).removeClass("highlight");
+		
+		var c = $(this).attr("class").split(" ");
+		
+		for (var i=0; i < c.length; i++){
+		
+			for (var j=0; j < witnesses.length; j++){
+			
+				if (c[i] === witnesses[j]){
+					$("#witnessList li."+witnesses[j]).removeClass("highlight");
+				}
+			}
+		}
+	
+	});
+	
+	
+	
 });

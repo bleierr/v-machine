@@ -38,41 +38,57 @@
          <nav id="mainControls">
             <ul>
                <li><button id="info" type="button" onclick="#">INFO</button></li>
-               <li><button id="selectWitness">8 Total Versions<span class="ui-icon ui-icon-carat-1-s" style="display:inline-block"></span></button></li>
-               <ul id="witnessList">
-                  <li class="M2"><span>Walter Mettmann (Madrid: Castalia) [M2 hereafter]</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-                  <li class="M1"><span>Mettmann (1959-72) [M1]</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-                  <li class="V"><span>Valmar (1889) [V]</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-                  <li class="RL"><span>Lapa (1933) [RL]</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-                  <li class="A"><span>Anglés (1943-64) [A]</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-                  <li class="C"><span>Cunningham (2000) [C]</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-                  <li class="Fid"><span>Fidalgo (2004) [Fid]</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-                  <li class="Mo"><span>Montoya 1998-99 [Mo]</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-               </ul>
+               <li><span id="selectWitness" class="dropdownButton">8 Total Witnesses</span><ul id="witnessList" class="dropdown">
+                     <li class="M2">
+                        <div class="listText">
+                           <p>Walter Mettmann (Madrid: Castalia) [M2 hereafter]</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li class="M1">
+                        <div class="listText">
+                           <p>Mettmann (1959-72) [M1]</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li class="V">
+                        <div class="listText">
+                           <p>Valmar (1889) [V]</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li class="RL">
+                        <div class="listText">
+                           <p>Lapa (1933) [RL]</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li class="A">
+                        <div class="listText">
+                           <p>Anglés (1943-64) [A]</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li class="C">
+                        <div class="listText">
+                           <p>Cunningham (2000) [C]</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li class="Fid">
+                        <div class="listText">
+                           <p>Fidalgo (2004) [Fid]</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li class="Mo">
+                        <div class="listText">
+                           <p>Montoya 1998-99 [Mo]</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
                <li><input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" style="display: none;"></input></li>
                <li><label for="toggleLineNumbers">Line Numbers:</label><button id="displayLines">ON</button></li>
                <li><select id="notesMenu" disabled="&#xA;                           disabled&#xA;                        ">
@@ -186,10 +202,14 @@
                      
                      ZZZZ
                      
-                     <div class="line lined2e158" line-id="lined2e158" onclick="matchLine('lined2e158');">
+                     <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>foy: "Benaventurada
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e160');">foy: “Ben aventurada</div>
+                        <div class="apparatus app_2_l_4_1" onclick="matchApp('app_2_l_4_1');">
+                           
+                           <div data-witness="M1" class="reading M1">foy: “Ben aventurada</div>
+                           
+                        </div>
                      </div>
                      ZZZZ
                      
@@ -210,10 +230,14 @@
                      ZZZZ
                      ZZZZ
                      
-                     <div class="line lined2e445" line-id="lined2e445" onclick="matchLine('lined2e445');">
+                     <div class="line line6" line-id="line6">
                         <div class="linenumber">6</div>foy a companna que juntar
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e447');">compan[n]a</div>
+                        <div class="apparatus app_2_l_6_1" onclick="matchApp('app_2_l_6_1');">
+                           
+                           <div data-witness="M1" class="reading M1">compan[n]a</div> 
+                           
+                        </div>
                      </div>
                      ZZZZ
                      ZZZZ
@@ -235,10 +259,15 @@
                      ZZZZ
                      
                      
-                     <div class="line lined2e207" line-id="lined2e207" onclick="matchLine('lined2e207');">
+                     <div class="line line3" line-id="line3">
                         <div class="linenumber">3</div>a Beleem e foy pousar
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e209');">a Belleem</div>
+                        <div class="apparatus app_2_l_3_1" onclick="matchApp('app_2_l_3_1');">
+                           
+                           <div data-witness="V" class="reading V">a Belleem</div> 
+                            
+                           
+                        </div>
                      </div>
                      
                      
@@ -253,23 +282,35 @@
                      
                      
                      
-                     <div class="line lined2e258" line-id="lined2e258" onclick="matchLine('lined2e258');">
+                     <div class="line line3" line-id="line3">
                         <div class="linenumber">3</div>loor a Deus foron cantar
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e260');">“loor a Deus”</div>
+                        <div class="apparatus app_2_l_3_1" onclick="matchApp('app_2_l_3_1');">
+                           
+                           <div data-witness="V" class="reading V">“loor a Deus”</div> 
+                           
+                        </div>
                      </div>
                      ZZZZ
                      
-                     <div class="line lined2e275" line-id="lined2e275" onclick="matchLine('lined2e275');">
+                     <div class="line line5" line-id="line5">
                         <div class="linenumber">5</div>nen como a contrada
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e277');">acontrada</div>
+                        <div class="apparatus app_2_l_5_1" onclick="matchApp('app_2_l_5_1');">
+                           
+                           <div data-witness="V" class="reading V">acontrada</div>
+                        </div>
                      </div>
                      
-                     <div class="line lined2e283" line-id="lined2e283" onclick="matchLine('lined2e283');">
+                     <div class="line line6" line-id="line6">
                         <div class="linenumber">6</div>aos tres Reis en Ultramar
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e285');">Vltra-mar</div>
+                        <div class="apparatus app_2_l_6_1" onclick="matchApp('app_2_l_6_1');">
+                           
+                           <div data-witness="V" class="reading V">Vltra-mar</div> 
+                            
+                           
+                        </div>
                      </div>
                      
                      
@@ -283,10 +324,14 @@
                      
                      
                      
-                     <div class="line lined2e329" line-id="lined2e329" onclick="matchLine('lined2e329');">
+                     <div class="line line5" line-id="line5">
                         <div class="linenumber">5</div>do sepulcr' e guardada
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e331');">do Sepulcr’</div>
+                        <div class="apparatus app_2_l_5_1" onclick="matchApp('app_2_l_5_1');">
+                           
+                           <div data-witness="V" class="reading V">do Sepulcr’</div> 
+                           
+                        </div>
                      </div>
                      ZZZZ
                      
@@ -301,24 +346,39 @@
                      
                      
                      
-                     <div class="line lined2e427" line-id="lined2e427" onclick="matchLine('lined2e427');">
+                     <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>lle quis, atan grãada,
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e429');">granada</div>
+                        <div class="apparatus app_2_l_4_1" onclick="matchApp('app_2_l_4_1');">
+                           
+                           <div data-witness="V" class="reading V">granada</div> 
+                           
+                        </div>
                      </div>
                      ZZZZ
                      ZZZZ
                      
-                     <div class="line lined2e455" line-id="lined2e455" onclick="matchLine('lined2e455');">
+                     <div class="line line7" line-id="line7">
                         <div class="linenumber">7</div>fez Deus, e enssinada
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e457');">enssinnada</div>
+                        <div class="apparatus app_2_l_7_1" onclick="matchApp('app_2_l_7_1');">
+                           
+                           <div data-witness="V" class="reading V">enssinnada</div> 
+                            
+                           
+                        </div>
                      </div>
                      
-                     <div class="line lined2e468" line-id="lined2e468" onclick="matchLine('lined2e468');">
+                     <div class="line line8" line-id="line8">
                         <div class="linenumber">8</div>de Spirit' avondada,
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e470');">de spírit’</div>
+                        <div class="apparatus app_2_l_8_1" onclick="matchApp('app_2_l_8_1');">
+                           
+                           <div data-witness="V" class="reading V">de spírit’</div> 
+                            
+                           
+                           
+                        </div>
                      </div>
                      
                      
@@ -329,24 +389,35 @@
                      
                      
                      
-                     <div class="line lined2e501" line-id="lined2e501" onclick="matchLine('lined2e501');">
+                     <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>quis, des que foy passada
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e503');">desque</div>
+                        <div class="apparatus app_2_l_4_1" onclick="matchApp('app_2_l_4_1');">
+                           
+                           <div data-witness="V" class="reading V">desque</div>
+                        </div>
                      </div>
                      
                      ZZZZ
                      
-                     <div class="line lined2e519" line-id="lined2e519" onclick="matchLine('lined2e519');">
+                     <div class="line line7" line-id="line7">
                         <div class="linenumber">7</div>e Reỹa chamada,
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e521');">et Reynna</div>
+                        <div class="apparatus app_2_l_7_1" onclick="matchApp('app_2_l_7_1');">
+                           
+                           <div data-witness="V" class="reading V">et Reynna</div> 
+                            
+                           
+                        </div>
                      </div>
                      
-                     <div class="line lined2e532" line-id="lined2e532" onclick="matchLine('lined2e532');">
+                     <div class="line line8" line-id="line8">
                         <div class="linenumber">8</div>Filla, Madr' e Criada;
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e534');">criada</div>
+                        <div class="apparatus app_2_l_8_1" onclick="matchApp('app_2_l_8_1');">
+                           
+                           <div data-witness="V" class="reading V">criada</div>
+                        </div>
                      </div>
                      ZZZZ
                      
@@ -365,10 +436,14 @@
                      
                      ZZZZ
                      
-                     <div class="line lined2e158" line-id="lined2e158" onclick="matchLine('lined2e158');">
+                     <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>foy: "Benaventurada
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e160');">foy: “Ben aventurada</div>
+                        <div class="apparatus app_2_l_4_1" onclick="matchApp('app_2_l_4_1');">
+                           
+                           
+                           <div data-witness="RL" class="reading RL">foy: “Ben aventurada</div>
+                        </div>
                      </div>
                      ZZZZ
                      
@@ -382,10 +457,15 @@
                      ZZZZ
                      
                      
-                     <div class="line lined2e207" line-id="lined2e207" onclick="matchLine('lined2e207');">
+                     <div class="line line3" line-id="line3">
                         <div class="linenumber">3</div>a Beleem e foy pousar
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e209');">a Belleem</div>
+                        <div class="apparatus app_2_l_3_1" onclick="matchApp('app_2_l_3_1');">
+                            
+                           
+                           <div data-witness="RL" class="reading RL">a Belleem</div> 
+                           
+                        </div>
                      </div>
                      
                      
@@ -403,10 +483,14 @@
                      
                      
                      
-                     <div class="line lined2e329" line-id="lined2e329" onclick="matchLine('lined2e329');">
+                     <div class="line line5" line-id="line5">
                         <div class="linenumber">5</div>do sepulcr' e guardada
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e331');">do Sepulcr’</div>
+                        <div class="apparatus app_2_l_5_1" onclick="matchApp('app_2_l_5_1');">
+                            
+                           
+                           <div data-witness="RL" class="reading RL">do Sepulcr’</div>
+                        </div>
                      </div>
                      ZZZZ
                      
@@ -423,17 +507,27 @@
                      ZZZZ
                      ZZZZ
                      
-                     <div class="line lined2e445" line-id="lined2e445" onclick="matchLine('lined2e445');">
+                     <div class="line line6" line-id="line6">
                         <div class="linenumber">6</div>foy a companna que juntar
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e447');">compan[h]a</div>
+                        <div class="apparatus app_2_l_6_1" onclick="matchApp('app_2_l_6_1');">
+                            
+                           
+                           <div data-witness="RL" class="reading RL">compan[h]a</div>
+                        </div>
                      </div>
                      ZZZZ
                      
-                     <div class="line lined2e468" line-id="lined2e468" onclick="matchLine('lined2e468');">
+                     <div class="line line8" line-id="line8">
                         <div class="linenumber">8</div>de Spirit' avondada,
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e470');">de spirit’</div>
+                        <div class="apparatus app_2_l_8_1" onclick="matchApp('app_2_l_8_1');">
+                            
+                           
+                           <div data-witness="RL" class="reading RL">de spirit’</div> 
+                           
+                           
+                        </div>
                      </div>
                      
                      
@@ -469,26 +563,39 @@
                      
                      
                      
-                     <div class="line lined2e258" line-id="lined2e258" onclick="matchLine('lined2e258');">
+                     <div class="line line3" line-id="line3">
                         <div class="linenumber">3</div>loor a Deus foron cantar
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e260');">“Loor a Deus”</div>
+                        <div class="apparatus app_2_l_3_1" onclick="matchApp('app_2_l_3_1');">
+                            
+                           
+                           <div data-witness="C" class="reading C">“Loor a Deus”</div>
+                        </div>
                      </div>
                      ZZZZ
                      ZZZZ
                      
-                     <div class="line lined2e283" line-id="lined2e283" onclick="matchLine('lined2e283');">
+                     <div class="line line6" line-id="line6">
                         <div class="linenumber">6</div>aos tres Reis en Ultramar
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e285');">reis en ultramar</div>
+                        <div class="apparatus app_2_l_6_1" onclick="matchApp('app_2_l_6_1');">
+                            
+                           
+                           <div data-witness="C" class="reading C">reis en ultramar</div> 
+                           
+                        </div>
                      </div>
                      
                      
                      
-                     <div class="line lined2e302" line-id="lined2e302" onclick="matchLine('lined2e302');">
+                     <div class="line line9" line-id="line9">
                         <div class="linenumber">9</div>vẽeron sa offerta dar
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e304');">oferta dar</div>
+                        <div class="apparatus app_2_l_9_1" onclick="matchApp('app_2_l_9_1');">
+                           
+                           <div data-witness="C" class="reading C">oferta dar</div> 
+                           
+                        </div>
                      </div>
                      
                   </div>
@@ -499,18 +606,25 @@
                      
                      ZZZZ
                      
-                     <div class="line lined2e379" line-id="lined2e379" onclick="matchLine('lined2e379');">
+                     <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>a nuv' enlumẽada
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e381');">a nuven lumeada</div>
+                        <div class="apparatus app_2_l_4_1" onclick="matchApp('app_2_l_4_1');">
+                           
+                           <div data-witness="C" class="reading C">a nuven lumeada</div>
+                        </div>
                      </div>
                      
                      
                      
-                     <div class="line lined2e393" line-id="lined2e393" onclick="matchLine('lined2e393');">
+                     <div class="line line7" line-id="line7">
                         <div class="linenumber">7</div>ontr' a gent' assũada,
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e395');">entr’</div>
+                        <div class="apparatus app_2_l_7_1" onclick="matchApp('app_2_l_7_1');">
+                           
+                           <div data-witness="C" class="reading C">entr’</div> 
+                           
+                        </div>
                      </div>
                      
                      ZZZZ
@@ -525,16 +639,27 @@
                      ZZZZ
                      ZZZZ
                      
-                     <div class="line lined2e455" line-id="lined2e455" onclick="matchLine('lined2e455');">
+                     <div class="line line7" line-id="line7">
                         <div class="linenumber">7</div>fez Deus, e enssinada
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e457');">ensinnada</div>
+                        <div class="apparatus app_2_l_7_1" onclick="matchApp('app_2_l_7_1');">
+                            
+                           
+                           <div data-witness="C" class="reading C">ensinnada</div> 
+                           
+                        </div>
                      </div>
                      
-                     <div class="line lined2e468" line-id="lined2e468" onclick="matchLine('lined2e468');">
+                     <div class="line line8" line-id="line8">
                         <div class="linenumber">8</div>de Spirit' avondada,
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e470');">d’ Esperit’</div>
+                        <div class="apparatus app_2_l_8_1" onclick="matchApp('app_2_l_8_1');">
+                            
+                            
+                           
+                           <div data-witness="C" class="reading C">d’ Esperit’</div>
+                           
+                        </div>
                      </div>
                      
                      
@@ -548,10 +673,15 @@
                      
                      ZZZZ
                      
-                     <div class="line lined2e519" line-id="lined2e519" onclick="matchLine('lined2e519');">
+                     <div class="line line7" line-id="line7">
                         <div class="linenumber">7</div>e Reỹa chamada,
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e521');">e Reinna</div>
+                        <div class="apparatus app_2_l_7_1" onclick="matchApp('app_2_l_7_1');">
+                            
+                           
+                           <div data-witness="C" class="reading C">e Reinna</div> 
+                           
+                        </div>
                      </div>
                      ZZZZ
                      ZZZZ
@@ -568,10 +698,13 @@
                   <div class="lg lg-n1 type-stanza">
                      
                      
-                     <div class="line lined2e107" line-id="lined2e107" onclick="matchLine('lined2e107');">
+                     <div class="line line2" line-id="line2">
                         <div class="linenumber">2</div>pola Sennor onrrada,
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e109');">sennor</div>
+                        <div class="apparatus app_2_l_2_1" onclick="matchApp('app_2_l_2_1');">
+                           
+                           <div data-witness="Fid" class="reading Fid">sennor</div>
+                        </div>
                      </div>
                      
                      
@@ -585,67 +718,93 @@
                   
                   <div class="lg lg-n2 type-stanza">
                      
-                     <div class="line lined2e141" line-id="lined2e141" onclick="matchLine('lined2e141');">
+                     <div class="line line1" line-id="line1">
                         <div class="linenumber">1</div>E poren quero começar
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e143');">E por én</div>
+                        <div class="apparatus app_2_l_1_1" onclick="matchApp('app_2_l_1_1');">
+                           
+                           <div data-witness="Fid" class="reading Fid">E por én</div>
+                        </div>
                      </div>
                      
                      
-                     <div class="line lined2e151" line-id="lined2e151" onclick="matchLine('lined2e151');">
+                     <div class="line line3" line-id="line3">
                         <div class="linenumber">3</div>de Gabriel, u lle chamar
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e153');">le</div>
+                        <div class="apparatus app_2_l_3_1" onclick="matchApp('app_2_l_3_1');">
+                           
+                           <div data-witness="Fid" class="reading Fid">le</div>
+                        </div>
                      </div>
                      ZZZZ
                      
-                     <div class="line lined2e168" line-id="lined2e168" onclick="matchLine('lined2e168');">
+                     <div class="line line5" line-id="line5">
                         <div class="linenumber">5</div>Virgen, de Deus amada:
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e170');">virgen</div>
+                        <div class="apparatus app_2_l_5_1" onclick="matchApp('app_2_l_5_1');">
+                           
+                           <div data-witness="Fid" class="reading Fid">virgen</div>
+                        </div>
                      </div>
                      
                      
                      
                      
-                     <div class="line lined2e185" line-id="lined2e185" onclick="matchLine('lined2e185');">
+                     <div class="line line9" line-id="line9">
                         <div class="linenumber">9</div>Elisabeth, que foi dultar,
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e187');">Elisabet</div>
+                        <div class="apparatus app_2_l_9_1" onclick="matchApp('app_2_l_9_1');">
+                           
+                           <div data-witness="Fid" class="reading Fid">Elisabet</div>
+                        </div>
                      </div>
                      
                   </div>
                   
                   <div class="lg lg-n3 type-stanza">
                      
-                     <div class="line lined2e197" line-id="lined2e197" onclick="matchLine('lined2e197');">
+                     <div class="line line1" line-id="line1">
                         <div class="linenumber">1</div>E demais quero-ll' enmentar
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e199');">queroll’</div>
+                        <div class="apparatus app_2_l_1_1" onclick="matchApp('app_2_l_1_1');">
+                           
+                           <div data-witness="Fid" class="reading Fid">queroll’</div>
+                        </div>
                      </div>
                      
                      
-                     <div class="line lined2e207" line-id="lined2e207" onclick="matchLine('lined2e207');">
+                     <div class="line line3" line-id="line3">
                         <div class="linenumber">3</div>a Beleem e foy pousar
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e209');">a Beleen</div>
+                        <div class="apparatus app_2_l_3_1" onclick="matchApp('app_2_l_3_1');">
+                            
+                            
+                           
+                           <div data-witness="Fid" class="reading Fid">a Beleen</div>
+                        </div>
                      </div>
                      
                      
                      
-                     <div class="line lined2e227" line-id="lined2e227" onclick="matchLine('lined2e227');">
+                     <div class="line line6" line-id="line6">
                         <div class="linenumber">6</div>Jesu-Crist', e foy-o deytar,
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e229');">foio</div>
+                        <div class="apparatus app_2_l_6_1" onclick="matchApp('app_2_l_6_1');">
+                           
+                           <div data-witness="Fid" class="reading Fid">foio</div>
+                        </div>
                      </div>
                      
                      
                      
                      
-                     <div class="line lined2e243" line-id="lined2e243" onclick="matchLine('lined2e243');">
+                     <div class="line line10" line-id="line10">
                         <div class="linenumber">10</div>ontre bestias d'arada.
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e245');">entre</div>
+                        <div class="apparatus app_2_l_10_1" onclick="matchApp('app_2_l_10_1');">
+                           
+                           <div data-witness="Fid" class="reading Fid">entre</div>
+                        </div>
                      </div>
                   </div>
                   
@@ -654,25 +813,37 @@
                      
                      ZZZZ
                      
-                     <div class="line lined2e268" line-id="lined2e268" onclick="matchLine('lined2e268');">
+                     <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>e "paz en terra dada";
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e270');">e paz en terra dada</div>
+                        <div class="apparatus app_2_l_4_1" onclick="matchApp('app_2_l_4_1');">
+                           
+                           <div data-witness="Fid" class="reading Fid">e paz en terra dada</div>
+                        </div>
                      </div>
                      ZZZZ
                      
-                     <div class="line lined2e283" line-id="lined2e283" onclick="matchLine('lined2e283');">
+                     <div class="line line6" line-id="line6">
                         <div class="linenumber">6</div>aos tres Reis en Ultramar
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e285');">reis en ultramar</div>
+                        <div class="apparatus app_2_l_6_1" onclick="matchApp('app_2_l_6_1');">
+                            
+                            
+                           
+                           <div data-witness="Fid" class="reading Fid">reis en ultramar</div>
+                        </div>
                      </div>
                      
                      
                      
-                     <div class="line lined2e302" line-id="lined2e302" onclick="matchLine('lined2e302');">
+                     <div class="line line9" line-id="line9">
                         <div class="linenumber">9</div>vẽeron sa offerta dar
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e304');">oferta dar</div>
+                        <div class="apparatus app_2_l_9_1" onclick="matchApp('app_2_l_9_1');">
+                            
+                           
+                           <div data-witness="Fid" class="reading Fid">oferta dar</div>
+                        </div>
                      </div>
                      
                   </div>
@@ -684,10 +855,13 @@
                      
                      ZZZZ
                      
-                     <div class="line lined2e340" line-id="lined2e340" onclick="matchLine('lined2e340');">
+                     <div class="line line6" line-id="line6">
                         <div class="linenumber">6</div>do angeo, que lle falar
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e342');">le</div>
+                        <div class="apparatus app_2_l_6_1" onclick="matchApp('app_2_l_6_1');">
+                           
+                           <div data-witness="Fid" class="reading Fid">le</div>
+                        </div>
                      </div>
                      
                      
@@ -697,33 +871,46 @@
                   
                   <div class="lg lg-n6 type-stanza">
                      
-                     <div class="line lined2e362" line-id="lined2e362" onclick="matchLine('lined2e362');">
+                     <div class="line line1" line-id="line1">
                         <div class="linenumber">1</div>E ar quero-vos demostrar
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e364');">querovos</div>
+                        <div class="apparatus app_2_l_1_1" onclick="matchApp('app_2_l_1_1');">
+                           
+                           <div data-witness="Fid" class="reading Fid">querovos</div>
+                        </div>
                      </div>
                      
                      
-                     <div class="line lined2e372" line-id="lined2e372" onclick="matchLine('lined2e372');">
+                     <div class="line line3" line-id="line3">
                         <div class="linenumber">3</div>que ouv' ela, u vyu alçar
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e374');">Ela</div>
+                        <div class="apparatus app_2_l_3_1" onclick="matchApp('app_2_l_3_1');">
+                           
+                           <div data-witness="Fid" class="reading Fid">Ela</div>
+                        </div>
                      </div>
                      ZZZZ
                      
                      
                      
-                     <div class="line lined2e393" line-id="lined2e393" onclick="matchLine('lined2e393');">
+                     <div class="line line7" line-id="line7">
                         <div class="linenumber">7</div>ontr' a gent' assũada,
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e395');">entr’</div>
+                        <div class="apparatus app_2_l_7_1" onclick="matchApp('app_2_l_7_1');">
+                            
+                           
+                           <div data-witness="Fid" class="reading Fid">entr’</div>
+                        </div>
                      </div>
                      
                      
-                     <div class="line lined2e406" line-id="lined2e406" onclick="matchLine('lined2e406');">
+                     <div class="line line9" line-id="line9">
                         <div class="linenumber">9</div>dizend': "Assi verrá juygar,
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e408');">julgar</div>
+                        <div class="apparatus app_2_l_9_1" onclick="matchApp('app_2_l_9_1');">
+                           
+                           <div data-witness="Fid" class="reading Fid">julgar</div>
+                        </div>
                      </div>
                      
                   </div>
@@ -733,29 +920,47 @@
                      
                      
                      
-                     <div class="line lined2e427" line-id="lined2e427" onclick="matchLine('lined2e427');">
+                     <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>lle quis, atan grãada,
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e429');">le</div>
+                        <div class="apparatus app_2_l_4_1" onclick="matchApp('app_2_l_4_1');">
+                            
+                           
+                           <div data-witness="Fid" class="reading Fid">le</div>
+                        </div>
                      </div>
                      
-                     <div class="line lined2e437" line-id="lined2e437" onclick="matchLine('lined2e437');">
+                     <div class="line line5" line-id="line5">
                         <div class="linenumber">5</div>que por el esforçada
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e439');">El’</div>
+                        <div class="apparatus app_2_l_5_1" onclick="matchApp('app_2_l_5_1');">
+                           
+                           <div data-witness="Fid" class="reading Fid">El’</div>
+                        </div>
                      </div>
                      ZZZZ
                      
-                     <div class="line lined2e455" line-id="lined2e455" onclick="matchLine('lined2e455');">
+                     <div class="line line7" line-id="line7">
                         <div class="linenumber">7</div>fez Deus, e enssinada
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e457');">ensinada</div>
+                        <div class="apparatus app_2_l_7_1" onclick="matchApp('app_2_l_7_1');">
+                            
+                            
+                           
+                           <div data-witness="Fid" class="reading Fid">ensinada</div>
+                        </div>
                      </div>
                      
-                     <div class="line lined2e468" line-id="lined2e468" onclick="matchLine('lined2e468');">
+                     <div class="line line8" line-id="line8">
                         <div class="linenumber">8</div>de Spirit' avondada,
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e470');">d’ espirit’</div>
+                        <div class="apparatus app_2_l_8_1" onclick="matchApp('app_2_l_8_1');">
+                            
+                            
+                           
+                           
+                           <div data-witness="Fid" class="reading Fid">d’ espirit’</div>
+                        </div>
                      </div>
                      
                      
@@ -768,23 +973,34 @@
                      ZZZZ
                      
                      
-                     <div class="line lined2e512" line-id="lined2e512" onclick="matchLine('lined2e512');">
+                     <div class="line line6" line-id="line6">
                         <div class="linenumber">6</div>con el no ceo, par a par
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e514');">El</div>
+                        <div class="apparatus app_2_l_6_1" onclick="matchApp('app_2_l_6_1');">
+                           
+                           <div data-witness="Fid" class="reading Fid">El</div>
+                        </div>
                      </div>
                      
-                     <div class="line lined2e519" line-id="lined2e519" onclick="matchLine('lined2e519');">
+                     <div class="line line7" line-id="line7">
                         <div class="linenumber">7</div>e Reỹa chamada,
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e521');">é Reinna chamada</div>
+                        <div class="apparatus app_2_l_7_1" onclick="matchApp('app_2_l_7_1');">
+                            
+                            
+                           
+                           <div data-witness="Fid" class="reading Fid">é Reinna chamada</div>
+                        </div>
                      </div>
                      ZZZZ
                      
-                     <div class="line lined2e539" line-id="lined2e539" onclick="matchLine('lined2e539');">
+                     <div class="line line9" line-id="line9">
                         <div class="linenumber">9</div>e poren nos dev' ajudar,
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e541');">e por én</div>
+                        <div class="apparatus app_2_l_9_1" onclick="matchApp('app_2_l_9_1');">
+                           
+                           <div data-witness="Fid" class="reading Fid">e por én</div>
+                        </div>
                      </div>
                      
                   </div>

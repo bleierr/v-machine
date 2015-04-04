@@ -113,7 +113,7 @@ div#mainBanner nav#mainControls{
     border-left:0.08em solid black;
     margin:0;
     padding:0;
-    white-space:nowrap;
+    
 }
 /*end RB rewrite*/
 div#mssArea{
@@ -462,49 +462,93 @@ span.viewerHandleLt{
     max-height:37.5em;
 }
 /*RB Code edit*/
+
+/* nav/controls list for dropdown*/
 #mainControls ul{
 	padding: 0;
 	margin:0;
 }
-
 #mainControls>ul>li{
 	display: inline-block; 
-	/*float:left;*/
 	list-style-type: none;
 	padding: 5px;
 	position: relative;
+	font-size: 1.2em;
+	font-weight: 600;
 	}
-
-#witnessList, #selectWitness{
-	background: #efefef; 
-	background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
-	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
-	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
-	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
-}
-
-#selectWitness{
-	position:relative;
-	z-index:2;
-}
-#witnessList{
-	display:none;
-	position:relative;
-	z-index:2;
-	float:left;
-}
-
-#witnessList li {
-	list-style-type: none;
-	}
-.panelVisible{
+/* style dropdown button */
+#mainControls>ul>li .dropdownButton { 
+	display:block; 
 	background-color:#999; 
-
+	padding: 0.5em 2em; 
+	margin:0; 
+	border-bottom: 1px solid #333; 
+	border-left: 1px solid #333; 
+	border-top: 1px solid #fff; 
+	border-right: 1px solid #fff; 
+	color:#111;
+	cursor: pointer;
+}	
+	
+#mainControls>ul>li .dropdownButton:hover { 
+	background-color:#333; 
 }
 
-button.panelVisible{
-	width: 3em;
+/*style for dropdown list*/ 
+#mainControls>ul>li ul { 
+	position:absolute; 
+	visibility:hidden; 
+	border-top:1px solid #fff; 
+	margin:0; 
+	padding:0;
+	z-index:2;
+} 
+#mainControls>ul>li ul li { 
+	display:block;
+	float:none;
+	padding: 2px; 
+	min-width:300px;
+	clear:both;
+	background-color:#fff;
+} 
+
+#mainControls>ul>li ul li:hover { 
+	width:auto;
+	font-weight: 800;
+	background-color:#333;
 }
+
+div.listText{
+	display:table;
+}
+
+div.listText p{
+	width:80%;
+	display:table-cell;
+	vertical-align: middle;
+}
+
+    .image-container {
+        text-align: center;
+		width: 15%;
+        vertical-align: middle;
+        display: table-cell;
+		height: 100%;
+		
+    }
+
+    .image-container img {
+        width: 100%;  
+				
+    }
+	
+	.image-container .invisible{
+		display:none;
+	}
+
+/* end style dropdown list */
+
+
 .mssPanel{
 display:none;
 position:relative;
@@ -514,4 +558,7 @@ button#displayLines{
 	width: 4em;
 }
 
+div#manuscripts div.highlight, #witnessList .highlight{
+	border: 2px solid red;
+}
 /*Code RB End*/

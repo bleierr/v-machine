@@ -196,17 +196,17 @@
          -->
                 
             <li>
-               <button>
+               <span>
                   <xsl:attribute name="id">selectWitness</xsl:attribute>
+                  <xsl:attribute name="class">dropdownButton</xsl:attribute>
                   <xsl:value-of select="count($witnesses)"></xsl:value-of>
-                  <xsl:text> Total Versions</xsl:text>
+                  <xsl:text> Total Witnesses</xsl:text>
                   
-                  <span class="ui-icon ui-icon-carat-1-s" style="display:inline-block"></span>
-                  
-               </button>
+               </span>
+               <!-- RB: version dropdown -->
+               <xsl:call-template name="versionDropdown"/>
             </li>                
-            <!-- RB: version dropdown -->
-            <xsl:call-template name="versionDropdown"/>
+            
             <li>
                <input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" >
                   <!--This isn't working when $displayCritInfo is true but there's no relevant note. Copied the if statement from Martin below. -->
@@ -284,21 +284,26 @@
    
    <xsl:template name="versionDropdown">
      
-      <ul id="witnessList">
+      <ul>
+         <xsl:attribute name="id">witnessList</xsl:attribute>
+         <xsl:attribute name="class">dropdown</xsl:attribute>
             <xsl:for-each select="$witnesses">
                  <li>
                         <xsl:attribute name="class">
                            <xsl:value-of select="@xml:id"></xsl:value-of>
                         </xsl:attribute>
-                        <span>
-                           <xsl:value-of select="."></xsl:value-of>
-                        </span>
-                        <button>
-                           <xsl:attribute name="class">panelVisible</xsl:attribute>
-                           <xsl:attribute name="type">button</xsl:attribute>
-                           
-                           OFF
-                        </button>
+                   <div>
+                      <xsl:attribute name="class">listText</xsl:attribute>
+                      
+                   <p>
+                         <xsl:value-of select="."></xsl:value-of>
+                   </p> 
+                   
+                    <div class="image-container">
+                      <img class="invisible" src="../vm-images/symbol-visible.png" alt=""/>
+                      <img src="../vm-images/symbol-not-visible.png" alt=""/>
+                    </div>
+                   </div>
                 </li>
            </xsl:for-each>
        </ul>

@@ -28,22 +28,29 @@
          <nav id="mainControls">
             <ul>
                <li><button id="info" type="button" onclick="#">INFO</button></li>
-               <li><button id="selectWitness">3 Total Versions<span class="ui-icon ui-icon-carat-1-s" style="display:inline-block"></span></button></li>
-               <ul id="witnessList">
-                  <li class="w"><span>Williams MS. Jones B62</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-                  <li class="b"><span>Bodleian MS. Tanner 307</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-                  <li class="p"><span>The Temple: Sacred Poems and Private Ejaculations, first edition
-                        (Cambridge, 1633)</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-               </ul>
+               <li><span id="selectWitness" class="dropdownButton">3 Total Witnesses</span><ul id="witnessList" class="dropdown">
+                     <li class="w">
+                        <div class="listText">
+                           <p>Williams MS. Jones B62</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li class="b">
+                        <div class="listText">
+                           <p>Bodleian MS. Tanner 307</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li class="p">
+                        <div class="listText">
+                           <p>The Temple: Sacred Poems and Private Ejaculations, first edition
+                              (Cambridge, 1633)
+                           </p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
                <li><input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" style="display: none;"></input></li>
                <li><label for="toggleLineNumbers">Line Numbers:</label><button id="displayLines">ON</button></li>
                <li><select id="notesMenu" onchange="notesFormat(this.value);">
@@ -198,7 +205,13 @@
                      
                      <div class="head rend-center">
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e305');"><span class="hi rend-underline">The Altar</span>.
+                        <div class="apparatus app_2_head1" onclick="matchApp('app_2_head1');">
+                           
+                           <div data-witness="w" class="reading w"><span class="hi rend-underline">The Altar</span>.
+                           </div>
+                           
+                           
+                           
                         </div>
                         
                         <div class="noteicon">n
@@ -247,334 +260,492 @@
                      
                      <div class="lg lg-n1 type-stanza">
                         
-                        <div class="line lined2e379" line-id="lined2e379" onclick="matchLine('lined2e379');">
+                        <div class="line line1" line-id="line1">
                            <div class="linenumber">1</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e381');">A broken Altar lord thy servant 
+                           <div class="apparatus app_2_l_1_1" onclick="matchApp('app_2_l_1_1');">
                               
-                              <div class="choice">reares
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> rears
+                              <div data-witness="w" class="reading w">A broken Altar lord thy servant 
+                                 
+                                 <div class="choice">reares
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> rears
+                                       </div>
                                     </div>
                                  </div>
+                                 
+                                 
                               </div>
                               
+                              
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">reares</span>: brings into existence by constructing (<span class="hi rend-italic">OED</span> 9), a meaning at odds with <span class="hi rend-italic">broken</span> only if it is assumed that the speaker could have anything
+                                    more to offer than a broken heart. The word also connotes raising the dead
+                                    (<span class="hi rend-italic">OED</span> 3.a), by extension the Resurrection, itself a
+                                    triumph in which the broken body of Christ is raised to be a glorified
+                                    body.
+                                 </div>
+                              </div>
                               
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e459" line-id="lined2e459" onclick="matchLine('lined2e459');">
+                        <div class="line line2" line-id="line2">
                            <div class="linenumber">2</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e461');">Made of a 
+                           <div class="apparatus app_2_l_2_1" onclick="matchApp('app_2_l_2_1');">
                               
-                              <div class="choice">Hart
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> Heart
+                              <div data-witness="w" class="reading w">Made of a 
+                                 
+                                 <div class="choice">Hart
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> Heart
+                                       </div>
                                     </div>
                                  </div>
-                              </div>
-                               and 
-                              
-                              <div class="choice">cimented
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> cemented
+                                  and 
+                                 
+                                 <div class="choice">cimented
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> cemented
+                                       </div>
                                     </div>
                                  </div>
-                              </div>
-                              
-                              
-                              
-                              <div class="choice">w<span class="hi rend-superscript">th</span><div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> with
+                                 
+                                 
+                                 
+                                 <div class="choice">w<span class="hi rend-superscript">th</span><div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> with
+                                       </div>
                                     </div>
                                  </div>
-                              </div>
-                              
-                              
-                              
-                              <div class="choice">teares
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> tears
+                                 
+                                 
+                                 
+                                 <div class="choice">teares
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> tears
+                                       </div>
                                     </div>
                                  </div>
+                                 .
                               </div>
-                              .
+                              
+                              
+                              
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e572" line-id="lined2e572" onclick="matchLine('lined2e572');">
+                        <div class="line line3" line-id="line3">
                            <div class="linenumber">3</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e574');">Whose parts are as thy hand did frame</div>
+                           <div class="apparatus app_2_l_3_1" onclick="matchApp('app_2_l_3_1');">
+                              
+                              <div data-witness="w" class="reading w">Whose parts are as thy hand did frame</div>
+                              
+                              
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">frame</span>: prepare, as a carpenter, for use in
+                                    building (<span class="hi rend-italic">OED</span> 4). Jesus was a carpenter (Mark 6:3)
+                                    and is "a son over his own house; whose house are we," for "he that built
+                                    all things is God" (Hebrews 3:4-6).
+                                 </div>
+                              </div>
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="line lined2e607" line-id="lined2e607" onclick="matchLine('lined2e607');">
+                        <div class="line line4" line-id="line4">
                            <div class="linenumber">4</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e609');">No 
+                           <div class="apparatus app_2_l_4_1" onclick="matchApp('app_2_l_4_1');">
                               
-                              <div class="choice">workmans
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> workman's
+                              <div data-witness="w" class="reading w">No 
+                                 
+                                 <div class="choice">workmans
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> workman's
+                                       </div>
                                     </div>
                                  </div>
+                                 
+                                 
+                                 
+                                 <div class="choice">toole
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> tool
+                                       </div>
+                                    </div>
+                                 </div>
+                                  hath touch'd
+                                 
+                                 
+                                 <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> the
+                                       </div>
+                                    </div>
+                                 </div>
+                                  same
                               </div>
                               
                               
                               
-                              <div class="choice">toole
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> tool
-                                    </div>
-                                 </div>
-                              </div>
-                               hath touch'd
-                              
-                              
-                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> the
-                                    </div>
-                                 </div>
-                              </div>
-                               same
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e731" line-id="lined2e731" onclick="matchLine('lined2e731');">
+                        <div class="line line5" line-id="line5">
                            <div class="linenumber">5</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e733');">A 
+                           <div class="apparatus app_2_l_5_1" onclick="matchApp('app_2_l_5_1');">
                               
-                              <div class="choice">Hart
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> Heart
+                              <div data-witness="w" class="reading w">A 
+                                 
+                                 <div class="choice">Hart
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> Heart
+                                       </div>
                                     </div>
                                  </div>
+                                  alone
                               </div>
-                               alone
+                              
+                              
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">alone</span>: only.
+                                 </div>
+                              </div>
+                              
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e767" line-id="lined2e767" onclick="matchLine('lined2e767');">
+                        <div class="line line6" line-id="line6">
                            <div class="linenumber">6</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e769');">Is such a stone</div>
+                           <div class="apparatus app_2_l_6_1" onclick="matchApp('app_2_l_6_1');">
+                              
+                              <div data-witness="w" class="reading w">Is such a stone</div>
+                              
+                              
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="line lined2e806" line-id="lined2e806" onclick="matchLine('lined2e806');">
+                        <div class="line line7" line-id="line7">
                            <div class="linenumber">7</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e808');">As nothing but</div>
+                           <div class="apparatus app_2_l_7_1" onclick="matchApp('app_2_l_7_1');">
+                              
+                              <div data-witness="w" class="reading w">As nothing but</div>
+                              
+                              
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="line lined2e821" line-id="lined2e821" onclick="matchLine('lined2e821');">
+                        <div class="line line8" line-id="line8">
                            <div class="linenumber">8</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e823');">Thy 
+                           <div class="apparatus app_2_l_8_1" onclick="matchApp('app_2_l_8_1');">
                               
-                              <div class="choice">powre
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> power
+                              <div data-witness="w" class="reading w">Thy 
+                                 
+                                 <div class="choice">powre
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> power
+                                       </div>
                                     </div>
                                  </div>
-                              </div>
-                               doth 
-                              
-                              <div class="choice">cutt
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> cut
+                                  doth 
+                                 
+                                 <div class="choice">cutt
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> cut
+                                       </div>
                                     </div>
                                  </div>
+                                 .
                               </div>
-                              .
+                              
+                              
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">Lines 5-8</span>: "Only a heart is so hard as that God's
+                                    power alone is able to penetrate it."
+                                 </div>
+                              </div>
+                              
                            </div>
                            
                         </div>
                         
                         
                         
-                        <div class="line lined2e868" line-id="lined2e868" onclick="matchLine('lined2e868');">
+                        <div class="line line9" line-id="line9">
                            <div class="linenumber">9</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e870');">Wherefore each part</div>
+                           <div class="apparatus app_2_l_9_1" onclick="matchApp('app_2_l_9_1');">
+                              
+                              <div data-witness="w" class="reading w">Wherefore each part</div>
+                              
+                              
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="line lined2e894" line-id="lined2e894" onclick="matchLine('lined2e894');">
+                        <div class="line line10" line-id="line10">
                            <div class="linenumber">10</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e896');">
+                           <div class="apparatus app_2_l_10_1" onclick="matchApp('app_2_l_10_1');">
                               
-                              
-                              <div class="choice">Øf
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> Of
+                              <div data-witness="w" class="reading w">
+                                 
+                                 
+                                 <div class="choice">Øf
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> Of
+                                       </div>
                                     </div>
                                  </div>
-                              </div>
-                               my hard 
-                              
-                              <div class="choice">hart
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> heart
+                                  my hard 
+                                 
+                                 <div class="choice">hart
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> heart
+                                       </div>
                                     </div>
                                  </div>
+                                 
+                                 
                               </div>
+                              
                               
                               
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e933" line-id="lined2e933" onclick="matchLine('lined2e933');">
+                        <div class="line line11" line-id="line11">
                            <div class="linenumber">11</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e935');">Meets in this frame</div>
+                           <div class="apparatus app_2_l_11_1" onclick="matchApp('app_2_l_11_1');">
+                              
+                              <div data-witness="w" class="reading w">Meets in this frame</div>
+                              
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">frame</span>: i.e., the poem; the stone altar of
+                                    sacrifice; the speaker's body which houses his <span class="hi rend-italic">hart/heart</span>—"My body is the frame wherein 'tis held"
+                                    (Shakespeare, Sonnet 24, line 3)— and is "the temple of God" (1
+                                    Corinthians 3:16).
+                                 </div>
+                              </div>
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="line lined2e954" line-id="lined2e954" onclick="matchLine('lined2e954');">
+                        <div class="line line12" line-id="line12">
                            <div class="linenumber">12</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e956');">To 
+                           <div class="apparatus app_2_l_12_1" onclick="matchApp('app_2_l_12_1');">
                               
-                              <div class="choice">praiſe
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> praise
+                              <div data-witness="w" class="reading w">To 
+                                 
+                                 <div class="choice">praiſe
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> praise
+                                       </div>
                                     </div>
                                  </div>
+                                  thy name
                               </div>
-                               thy name
+                              
+                              
+                              
                            </div>
                            
                         </div>
                         
                         
                         
-                        <div class="line lined2e993" line-id="lined2e993" onclick="matchLine('lined2e993');">
+                        <div class="line line13" line-id="line13">
                            <div class="linenumber">13</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e995');">That If I chance to hold my peace</div>
+                           <div class="apparatus app_2_l_13_1" onclick="matchApp('app_2_l_13_1');">
+                              
+                              <div data-witness="w" class="reading w">That If I chance to hold my peace</div>
+                              
+                              
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="line lined2e1008" line-id="lined2e1008" onclick="matchLine('lined2e1008');">
+                        <div class="line line14" line-id="line14">
                            <div class="linenumber">14</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e1010');">
+                           <div class="apparatus app_2_l_14_1" onclick="matchApp('app_2_l_14_1');">
                               
-                              
-                              <div class="choice">Theſe
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> These
+                              <div data-witness="w" class="reading w">
+                                 
+                                 
+                                 <div class="choice">Theſe
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> These
+                                       </div>
                                     </div>
                                  </div>
-                              </div>
-                               stones to 
-                              
-                              <div class="choice">praiſe
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> praise
+                                  stones to 
+                                 
+                                 <div class="choice">praiſe
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> praise
+                                       </div>
                                     </div>
                                  </div>
-                              </div>
-                               thee may not 
-                              
-                              <div class="choice">ceaſe
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> cease
+                                  thee may not 
+                                 
+                                 <div class="choice">ceaſe
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> cease
+                                       </div>
                                     </div>
                                  </div>
+                                 
+                                 
                               </div>
                               
+                              
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">Lines 13-14</span>: "And some of the Pharisees from among
+                                    the multitude said unto him, Master, rebuke thy disciples. And he answered
+                                    and said unto them, I tell you that, if these should hold their peace, the
+                                    stones would immediately cry out" (Luke 19:39-40).
+                                 </div>
+                              </div>
                               
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e1112" line-id="lined2e1112" onclick="matchLine('lined2e1112');">
+                        <div class="line line15" line-id="line15">
                            <div class="linenumber">15</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e1114');">
+                           <div class="apparatus app_2_l_15_1" onclick="matchApp('app_2_l_15_1');">
                               
-                              
-                              <div class="choice">Ø
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> O
-                                    </div>
-                                 </div>
-                              </div>
-                              
-                              
-                              
-                              <div class="choice">lett
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> let
-                                    </div>
-                                 </div>
-                              </div>
-                               thy 
-                              
-                              <div class="choice">
-                                 <del class=" rend-strike">onely</del>
+                              <div data-witness="w" class="reading w">
                                  
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> only
-                                    </div>
-                                 </div>
-                              </div>
-                              
-                              
-                              
-                              <div class="choice">
-                                 <ins class="rend-supralinear">bleſsed</ins>
                                  
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> blessed
+                                 <div class="choice">Ø
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> O
+                                       </div>
                                     </div>
                                  </div>
+                                 
+                                 
+                                 
+                                 <div class="choice">lett
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> let
+                                       </div>
+                                    </div>
+                                 </div>
+                                  thy 
+                                 
+                                 <div class="choice">
+                                    <del class=" rend-strike">onely</del>
+                                    
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> only
+                                       </div>
+                                    </div>
+                                 </div>
+                                 
+                                 
+                                 
+                                 <div class="choice">
+                                    <ins class="rend-supralinear">bleſsed</ins>
+                                    
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> blessed
+                                       </div>
+                                    </div>
+                                 </div>
+                                  sacrifice 
+                                 
+                                 <div class="choice">bee
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> be
+                                       </div>
+                                    </div>
+                                 </div>
+                                  mine,
                               </div>
-                               sacrifice 
                               
-                              <div class="choice">bee
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> be
-                                    </div>
+                              
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> See headnote for the significance of the #w emendation.
                                  </div>
                               </div>
-                               mine,
+                              
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e1226" line-id="lined2e1226" onclick="matchLine('lined2e1226');">
+                        <div class="line line16" line-id="line16">
                            <div class="linenumber">16</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e1228');">And 
+                           <div class="apparatus app_2_l_16_1" onclick="matchApp('app_2_l_16_1');">
                               
-                              <div class="choice">sanctifie
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> sanctify
+                              <div data-witness="w" class="reading w">And 
+                                 
+                                 <div class="choice">sanctifie
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> sanctify
+                                       </div>
                                     </div>
                                  </div>
-                              </div>
-                               this Altar to 
-                              
-                              <div class="choice">bee
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> be
+                                  this Altar to 
+                                 
+                                 <div class="choice">bee
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> be
+                                       </div>
                                     </div>
                                  </div>
+                                  thine.
                               </div>
-                               thine.
+                              
+                              
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">Lines 15-16</span>: For the multiple significations of
+                                    <span class="hi rend-italic">Altar/ALTAR</span>, see headnote and the note for line
+                                    11. Though the placement of <span class="hi rend-italic">SACRIFICE</span> over <span class="hi rend-italic">ALTAR</span> in #p is fortuitous and perhaps deliberate (as
+                                    is the "broken" spacing of the words in these as well as lines 1 and 5), the
+                                    layout in both manuscripts is unremarkable. But for <span class="hi rend-italic">Altar</span> having a majuscule initial, neither word there is
+                                    distinguished in any way. Had Herbert intended to highlight them in #w (the
+                                    only source in which he is known to have had a hand), he might have
+                                    specified an italic script, as indeed he does elsewhere in #w—for
+                                    example, in the final line of "Poetry" (entitled "The Quiddity" in
+                                    #b/#p).
+                                 </div>
+                              </div>
+                              
                            </div>
                            
                         </div>
@@ -611,8 +782,14 @@
                      
                      <div class="head rend-center">
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e305');">
-                           <span class="hi rend-underline">The Altar</span>
+                        <div class="apparatus app_2_head1" onclick="matchApp('app_2_head1');">
+                           
+                           
+                           <div data-witness="b" class="reading b">
+                              <span class="hi rend-underline">The Altar</span>
+                              
+                           </div>
+                           
                            
                         </div>
                         
@@ -662,199 +839,357 @@
                      
                      <div class="lg lg-n1 type-stanza">
                         
-                        <div class="line lined2e379" line-id="lined2e379" onclick="matchLine('lined2e379');">
+                        <div class="line line1" line-id="line1">
                            <div class="linenumber">1</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e381');">A broken Altar, Lord, thy servant 
+                           <div class="apparatus app_2_l_1_1" onclick="matchApp('app_2_l_1_1');">
                               
-                              <div class="choice">reares
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> rears
+                              
+                              <div data-witness="b" class="reading b">A broken Altar, Lord, thy servant 
+                                 
+                                 <div class="choice">reares
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> rears
+                                       </div>
                                     </div>
                                  </div>
+                                 
+                                 
                               </div>
                               
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">reares</span>: brings into existence by constructing (<span class="hi rend-italic">OED</span> 9), a meaning at odds with <span class="hi rend-italic">broken</span> only if it is assumed that the speaker could have anything
+                                    more to offer than a broken heart. The word also connotes raising the dead
+                                    (<span class="hi rend-italic">OED</span> 3.a), by extension the Resurrection, itself a
+                                    triumph in which the broken body of Christ is raised to be a glorified
+                                    body.
+                                 </div>
+                              </div>
                               
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e459" line-id="lined2e459" onclick="matchLine('lined2e459');">
+                        <div class="line line2" line-id="line2">
                            <div class="linenumber">2</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e461');">Made of a heart, 
+                           <div class="apparatus app_2_l_2_1" onclick="matchApp('app_2_l_2_1');">
                               
-                              <div class="choice">&amp;
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> and
+                              
+                              <div data-witness="b" class="reading b">Made of a heart, 
+                                 
+                                 <div class="choice">&amp;
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> and
+                                       </div>
                                     </div>
                                  </div>
+                                 
+                                 
+                                 
+                                 <div class="choice">cimented
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> cemented
+                                       </div>
+                                    </div>
+                                 </div>
+                                  with 
+                                 
+                                 <div class="choice">teares
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> tears
+                                       </div>
+                                    </div>
+                                 </div>
+                                 .
                               </div>
                               
                               
-                              
-                              <div class="choice">cimented
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> cemented
-                                    </div>
-                                 </div>
-                              </div>
-                               with 
-                              
-                              <div class="choice">teares
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> tears
-                                    </div>
-                                 </div>
-                              </div>
-                              .
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e572" line-id="lined2e572" onclick="matchLine('lined2e572');">
+                        <div class="line line3" line-id="line3">
                            <div class="linenumber">3</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e574');">Whose parts are, as thy hand did frame;</div>
+                           <div class="apparatus app_2_l_3_1" onclick="matchApp('app_2_l_3_1');">
+                              
+                              
+                              <div data-witness="b" class="reading b">Whose parts are, as thy hand did frame;</div>
+                              
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">frame</span>: prepare, as a carpenter, for use in
+                                    building (<span class="hi rend-italic">OED</span> 4). Jesus was a carpenter (Mark 6:3)
+                                    and is "a son over his own house; whose house are we," for "he that built
+                                    all things is God" (Hebrews 3:4-6).
+                                 </div>
+                              </div>
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="line lined2e607" line-id="lined2e607" onclick="matchLine('lined2e607');">
+                        <div class="line line4" line-id="line4">
                            <div class="linenumber">4</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e609');">No 
+                           <div class="apparatus app_2_l_4_1" onclick="matchApp('app_2_l_4_1');">
                               
-                              <div class="choice">workemans
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> workman's
+                              
+                              <div data-witness="b" class="reading b">No 
+                                 
+                                 <div class="choice">workemans
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> workman's
+                                       </div>
                                     </div>
                                  </div>
+                                 
+                                 
+                                 
+                                 <div class="choice">toole
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> tool
+                                       </div>
+                                    </div>
+                                 </div>
+                                  hath touch'd
+                                 
+                                 
+                                 <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> the
+                                       </div>
+                                    </div>
+                                 </div>
+                                  same.
                               </div>
                               
                               
-                              
-                              <div class="choice">toole
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> tool
-                                    </div>
-                                 </div>
-                              </div>
-                               hath touch'd
-                              
-                              
-                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> the
-                                    </div>
-                                 </div>
-                              </div>
-                               same.
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e731" line-id="lined2e731" onclick="matchLine('lined2e731');">
+                        <div class="line line5" line-id="line5">
                            <div class="linenumber">5</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e733');">A heart alone</div>
+                           <div class="apparatus app_2_l_5_1" onclick="matchApp('app_2_l_5_1');">
+                              
+                              
+                              <div data-witness="b" class="reading b">A heart alone</div>
+                              
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">alone</span>: only.
+                                 </div>
+                              </div>
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="line lined2e767" line-id="lined2e767" onclick="matchLine('lined2e767');">
+                        <div class="line line6" line-id="line6">
                            <div class="linenumber">6</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e769');">Is such a stone,</div>
+                           <div class="apparatus app_2_l_6_1" onclick="matchApp('app_2_l_6_1');">
+                              
+                              
+                              <div data-witness="b" class="reading b">Is such a stone,</div>
+                              
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="line lined2e806" line-id="lined2e806" onclick="matchLine('lined2e806');">
+                        <div class="line line7" line-id="line7">
                            <div class="linenumber">7</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e808');">As nothing but</div>
+                           <div class="apparatus app_2_l_7_1" onclick="matchApp('app_2_l_7_1');">
+                              
+                              
+                              <div data-witness="b" class="reading b">As nothing but</div>
+                              
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="line lined2e821" line-id="lined2e821" onclick="matchLine('lined2e821');">
+                        <div class="line line8" line-id="line8">
                            <div class="linenumber">8</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e823');">Thy power doth cut.</div>
+                           <div class="apparatus app_2_l_8_1" onclick="matchApp('app_2_l_8_1');">
+                              
+                              
+                              <div data-witness="b" class="reading b">Thy power doth cut.</div>
+                              
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">Lines 5-8</span>: "Only a heart is so hard as that God's
+                                    power alone is able to penetrate it."
+                                 </div>
+                              </div>
+                              
+                           </div>
                            
                         </div>
                         
                         
                         
-                        <div class="line lined2e868" line-id="lined2e868" onclick="matchLine('lined2e868');">
+                        <div class="line line9" line-id="line9">
                            <div class="linenumber">9</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e870');">
+                           <div class="apparatus app_2_l_9_1" onclick="matchApp('app_2_l_9_1');">
                               
-                              <div class="choice">Wherefor
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> Wherefore
+                              
+                              <div data-witness="b" class="reading b">
+                                 
+                                 <div class="choice">Wherefor
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> Wherefore
+                                       </div>
                                     </div>
                                  </div>
+                                  each part
                               </div>
-                               each part
+                              
+                              
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e894" line-id="lined2e894" onclick="matchLine('lined2e894');">
+                        <div class="line line10" line-id="line10">
                            <div class="linenumber">10</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e896');">Of my hard heart</div>
-                           
-                        </div>
-                        
-                        <div class="line lined2e933" line-id="lined2e933" onclick="matchLine('lined2e933');">
-                           <div class="linenumber">11</div>
-                           
-                           <div class="apparatus" onclick="matchApp('app-d2e935');">Meets in this frame,</div>
-                           
-                        </div>
-                        
-                        <div class="line lined2e954" line-id="lined2e954" onclick="matchLine('lined2e954');">
-                           <div class="linenumber">12</div>
-                           
-                           <div class="apparatus" onclick="matchApp('app-d2e956');">To praise thy Name.</div>
-                           
-                        </div>
-                        
-                        
-                        
-                        <div class="line lined2e993" line-id="lined2e993" onclick="matchLine('lined2e993');">
-                           <div class="linenumber">13</div>
-                           
-                           <div class="apparatus" onclick="matchApp('app-d2e995');">That, if I chance to hold my peace,</div>
-                           
-                        </div>
-                        
-                        <div class="line lined2e1008" line-id="lined2e1008" onclick="matchLine('lined2e1008');">
-                           <div class="linenumber">14</div>
-                           
-                           <div class="apparatus" onclick="matchApp('app-d2e1010');">These stones to praise thee may not cease.</div>
-                           
-                        </div>
-                        
-                        <div class="line lined2e1112" line-id="lined2e1112" onclick="matchLine('lined2e1112');">
-                           <div class="linenumber">15</div>
-                           
-                           <div class="apparatus" onclick="matchApp('app-d2e1114');">O 
+                           <div class="apparatus app_2_l_10_1" onclick="matchApp('app_2_l_10_1');">
                               
-                              <div class="choice">lett
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> let
-                                    </div>
-                                 </div>
-                              </div>
-                               thy blessed sacrifice be mine,
+                              
+                              <div data-witness="b" class="reading b">Of my hard heart</div>
+                              
+                              
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e1226" line-id="lined2e1226" onclick="matchLine('lined2e1226');">
+                        <div class="line line11" line-id="line11">
+                           <div class="linenumber">11</div>
+                           
+                           <div class="apparatus app_2_l_11_1" onclick="matchApp('app_2_l_11_1');">
+                              
+                              
+                              <div data-witness="b p" class="reading b p">Meets in this frame,</div>
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">frame</span>: i.e., the poem; the stone altar of
+                                    sacrifice; the speaker's body which houses his <span class="hi rend-italic">hart/heart</span>—"My body is the frame wherein 'tis held"
+                                    (Shakespeare, Sonnet 24, line 3)— and is "the temple of God" (1
+                                    Corinthians 3:16).
+                                 </div>
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="line line12" line-id="line12">
+                           <div class="linenumber">12</div>
+                           
+                           <div class="apparatus app_2_l_12_1" onclick="matchApp('app_2_l_12_1');">
+                              
+                              
+                              <div data-witness="b" class="reading b">To praise thy Name.</div>
+                              
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        
+                        
+                        <div class="line line13" line-id="line13">
+                           <div class="linenumber">13</div>
+                           
+                           <div class="apparatus app_2_l_13_1" onclick="matchApp('app_2_l_13_1');">
+                              
+                              
+                              <div data-witness="b" class="reading b">That, if I chance to hold my peace,</div>
+                              
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="line line14" line-id="line14">
+                           <div class="linenumber">14</div>
+                           
+                           <div class="apparatus app_2_l_14_1" onclick="matchApp('app_2_l_14_1');">
+                              
+                              
+                              <div data-witness="b" class="reading b">These stones to praise thee may not cease.</div>
+                              
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">Lines 13-14</span>: "And some of the Pharisees from among
+                                    the multitude said unto him, Master, rebuke thy disciples. And he answered
+                                    and said unto them, I tell you that, if these should hold their peace, the
+                                    stones would immediately cry out" (Luke 19:39-40).
+                                 </div>
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="line line15" line-id="line15">
+                           <div class="linenumber">15</div>
+                           
+                           <div class="apparatus app_2_l_15_1" onclick="matchApp('app_2_l_15_1');">
+                              
+                              
+                              <div data-witness="b" class="reading b">O 
+                                 
+                                 <div class="choice">lett
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> let
+                                       </div>
+                                    </div>
+                                 </div>
+                                  thy blessed sacrifice be mine,
+                              </div>
+                              
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> See headnote for the significance of the #w emendation.
+                                 </div>
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="line line16" line-id="line16">
                            <div class="linenumber">16</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e1228');">And sanctify this Altar to be thine.</div>
+                           <div class="apparatus app_2_l_16_1" onclick="matchApp('app_2_l_16_1');">
+                              
+                              
+                              <div data-witness="b" class="reading b">And sanctify this Altar to be thine.</div>
+                              
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">Lines 15-16</span>: For the multiple significations of
+                                    <span class="hi rend-italic">Altar/ALTAR</span>, see headnote and the note for line
+                                    11. Though the placement of <span class="hi rend-italic">SACRIFICE</span> over <span class="hi rend-italic">ALTAR</span> in #p is fortuitous and perhaps deliberate (as
+                                    is the "broken" spacing of the words in these as well as lines 1 and 5), the
+                                    layout in both manuscripts is unremarkable. But for <span class="hi rend-italic">Altar</span> having a majuscule initial, neither word there is
+                                    distinguished in any way. Had Herbert intended to highlight them in #w (the
+                                    only source in which he is known to have had a hand), he might have
+                                    specified an italic script, as indeed he does elsewhere in #w—for
+                                    example, in the final line of "Poetry" (entitled "The Quiddity" in
+                                    #b/#p).
+                                 </div>
+                              </div>
+                              
+                           </div>
                            
                         </div>
                         
@@ -890,7 +1225,13 @@
                      
                      <div class="head rend-center">
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e305');">The Altar.</div>
+                        <div class="apparatus app_2_head1" onclick="matchApp('app_2_head1');">
+                           
+                           
+                           
+                           <div data-witness="p" class="reading p">The Altar.</div>
+                           
+                        </div>
                         
                         <div class="noteicon">n
                            <div class="note"><strong>Note:</strong> See Wilcox (89) for the poem's debt to the pattern and <span class="hi rend-italic">schola
@@ -938,252 +1279,410 @@
                      
                      <div class="lg lg-n1 type-stanza">
                         
-                        <div class="line lined2e379" line-id="lined2e379" onclick="matchLine('lined2e379');">
+                        <div class="line line1" line-id="line1">
                            <div class="linenumber">1</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e381');">A broken A L T A R, Lord, thy 
+                           <div class="apparatus app_2_l_1_1" onclick="matchApp('app_2_l_1_1');">
                               
-                              <div class="choice">ſervant
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> servant
+                              
+                              
+                              <div data-witness="p" class="reading p">A broken A L T A R, Lord, thy 
+                                 
+                                 <div class="choice">ſervant
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> servant
+                                       </div>
                                     </div>
+                                 </div>
+                                 
+                                 
+                                 
+                                 <div class="choice">reares
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> rears
+                                       </div>
+                                    </div>
+                                 </div>
+                                 ,
+                              </div>
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">reares</span>: brings into existence by constructing (<span class="hi rend-italic">OED</span> 9), a meaning at odds with <span class="hi rend-italic">broken</span> only if it is assumed that the speaker could have anything
+                                    more to offer than a broken heart. The word also connotes raising the dead
+                                    (<span class="hi rend-italic">OED</span> 3.a), by extension the Resurrection, itself a
+                                    triumph in which the broken body of Christ is raised to be a glorified
+                                    body.
                                  </div>
                               </div>
                               
-                              
-                              
-                              <div class="choice">reares
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> rears
-                                    </div>
-                                 </div>
-                              </div>
-                              ,
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e459" line-id="lined2e459" onclick="matchLine('lined2e459');">
+                        <div class="line line2" line-id="line2">
                            <div class="linenumber">2</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e461');">Made of a heart, and cemented with 
+                           <div class="apparatus app_2_l_2_1" onclick="matchApp('app_2_l_2_1');">
                               
-                              <div class="choice">teares
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> tears
+                              
+                              
+                              <div data-witness="p" class="reading p">Made of a heart, and cemented with 
+                                 
+                                 <div class="choice">teares
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> tears
+                                       </div>
                                     </div>
                                  </div>
+                                 :
                               </div>
-                              :
+                              
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e572" line-id="lined2e572" onclick="matchLine('lined2e572');">
+                        <div class="line line3" line-id="line3">
                            <div class="linenumber">3</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e574');">
+                           <div class="apparatus app_2_l_3_1" onclick="matchApp('app_2_l_3_1');">
                               
                               
-                              <div class="choice">Whoſe
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> Whose
+                              
+                              <div data-witness="p" class="reading p">
+                                 
+                                 
+                                 <div class="choice">Whoſe
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> Whose
+                                       </div>
                                     </div>
                                  </div>
+                                  parts are as thy hand did frame;
                               </div>
-                               parts are as thy hand did frame;
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">frame</span>: prepare, as a carpenter, for use in
+                                    building (<span class="hi rend-italic">OED</span> 4). Jesus was a carpenter (Mark 6:3)
+                                    and is "a son over his own house; whose house are we," for "he that built
+                                    all things is God" (Hebrews 3:4-6).
+                                 </div>
+                              </div>
+                              
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e607" line-id="lined2e607" onclick="matchLine('lined2e607');">
+                        <div class="line line4" line-id="line4">
                            <div class="linenumber">4</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e609');">No 
+                           <div class="apparatus app_2_l_4_1" onclick="matchApp('app_2_l_4_1');">
                               
-                              <div class="choice">workmans
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> workman's
+                              
+                              
+                              <div data-witness="p" class="reading p">No 
+                                 
+                                 <div class="choice">workmans
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> workman's
+                                       </div>
                                     </div>
                                  </div>
-                              </div>
-                               tool hath touch'd the 
-                              
-                              <div class="choice">ſame
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> same
+                                  tool hath touch'd the 
+                                 
+                                 <div class="choice">ſame
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> same
+                                       </div>
                                     </div>
                                  </div>
+                                 .
                               </div>
-                              .
+                              
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e731" line-id="lined2e731" onclick="matchLine('lined2e731');">
+                        <div class="line line5" line-id="line5">
                            <div class="linenumber">5</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e733');">A H E A R T alone</div>
+                           <div class="apparatus app_2_l_5_1" onclick="matchApp('app_2_l_5_1');">
+                              
+                              
+                              
+                              <div data-witness="p" class="reading p">A H E A R T alone</div>
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">alone</span>: only.
+                                 </div>
+                              </div>
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="line lined2e767" line-id="lined2e767" onclick="matchLine('lined2e767');">
+                        <div class="line line6" line-id="line6">
                            <div class="linenumber">6</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e769');">Is 
+                           <div class="apparatus app_2_l_6_1" onclick="matchApp('app_2_l_6_1');">
                               
-                              <div class="choice">ſuch
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> such
+                              
+                              
+                              <div data-witness="p" class="reading p">Is 
+                                 
+                                 <div class="choice">ſuch
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> such
+                                       </div>
                                     </div>
                                  </div>
-                              </div>
-                               a 
-                              
-                              <div class="choice">ﬅone
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> stone
+                                  a 
+                                 
+                                 <div class="choice">ﬅone
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> stone
+                                       </div>
                                     </div>
                                  </div>
+                                 ,
                               </div>
-                              ,
+                              
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e806" line-id="lined2e806" onclick="matchLine('lined2e806');">
+                        <div class="line line7" line-id="line7">
                            <div class="linenumber">7</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e808');">As nothing but</div>
+                           <div class="apparatus app_2_l_7_1" onclick="matchApp('app_2_l_7_1');">
+                              
+                              
+                              
+                              <div data-witness="p" class="reading p">As nothing but</div>
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="line lined2e821" line-id="lined2e821" onclick="matchLine('lined2e821');">
+                        <div class="line line8" line-id="line8">
                            <div class="linenumber">8</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e823');">Thy pow'r doth cut.</div>
+                           <div class="apparatus app_2_l_8_1" onclick="matchApp('app_2_l_8_1');">
+                              
+                              
+                              
+                              <div data-witness="p" class="reading p">Thy pow'r doth cut.</div>
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">Lines 5-8</span>: "Only a heart is so hard as that God's
+                                    power alone is able to penetrate it."
+                                 </div>
+                              </div>
+                              
+                           </div>
                            
                         </div>
                         
                         
                         
-                        <div class="line lined2e868" line-id="lined2e868" onclick="matchLine('lined2e868');">
+                        <div class="line line9" line-id="line9">
                            <div class="linenumber">9</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e870');">Wherefore each part</div>
+                           <div class="apparatus app_2_l_9_1" onclick="matchApp('app_2_l_9_1');">
+                              
+                              
+                              
+                              <div data-witness="p" class="reading p">Wherefore each part</div>
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="line lined2e894" line-id="lined2e894" onclick="matchLine('lined2e894');">
+                        <div class="line line10" line-id="line10">
                            <div class="linenumber">10</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e896');">Of my hard heart</div>
+                           <div class="apparatus app_2_l_10_1" onclick="matchApp('app_2_l_10_1');">
+                              
+                              
+                              
+                              <div data-witness="p" class="reading p">Of my hard heart</div>
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="line lined2e933" line-id="lined2e933" onclick="matchLine('lined2e933');">
+                        <div class="line line11" line-id="line11">
                            <div class="linenumber">11</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e935');">Meets in this frame,</div>
+                           <div class="apparatus app_2_l_11_1" onclick="matchApp('app_2_l_11_1');">
+                              
+                              
+                              <div data-witness="b p" class="reading b p">Meets in this frame,</div>
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">frame</span>: i.e., the poem; the stone altar of
+                                    sacrifice; the speaker's body which houses his <span class="hi rend-italic">hart/heart</span>—"My body is the frame wherein 'tis held"
+                                    (Shakespeare, Sonnet 24, line 3)— and is "the temple of God" (1
+                                    Corinthians 3:16).
+                                 </div>
+                              </div>
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="line lined2e954" line-id="lined2e954" onclick="matchLine('lined2e954');">
+                        <div class="line line12" line-id="line12">
                            <div class="linenumber">12</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e956');">To 
+                           <div class="apparatus app_2_l_12_1" onclick="matchApp('app_2_l_12_1');">
                               
-                              <div class="choice">praiſe
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> praise
+                              
+                              
+                              <div data-witness="p" class="reading p">To 
+                                 
+                                 <div class="choice">praiſe
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> praise
+                                       </div>
                                     </div>
                                  </div>
+                                  thy name.
                               </div>
-                               thy name.
+                              
                            </div>
                            
                         </div>
                         
                         
                         
-                        <div class="line lined2e993" line-id="lined2e993" onclick="matchLine('lined2e993');">
+                        <div class="line line13" line-id="line13">
                            <div class="linenumber">13</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e995');">That if I chance to hold my peace,</div>
+                           <div class="apparatus app_2_l_13_1" onclick="matchApp('app_2_l_13_1');">
+                              
+                              
+                              
+                              <div data-witness="p" class="reading p">That if I chance to hold my peace,</div>
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="line lined2e1008" line-id="lined2e1008" onclick="matchLine('lined2e1008');">
+                        <div class="line line14" line-id="line14">
                            <div class="linenumber">14</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e1010');">
+                           <div class="apparatus app_2_l_14_1" onclick="matchApp('app_2_l_14_1');">
                               
                               
-                              <div class="choice">Theſe
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> These
+                              
+                              <div data-witness="p" class="reading p">
+                                 
+                                 
+                                 <div class="choice">Theſe
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> These
+                                       </div>
                                     </div>
+                                 </div>
+                                 
+                                 
+                                 
+                                 <div class="choice">ﬅones
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> stones
+                                       </div>
+                                    </div>
+                                 </div>
+                                  to 
+                                 
+                                 <div class="choice">praiſe
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> praise
+                                       </div>
+                                    </div>
+                                 </div>
+                                  thee may not 
+                                 
+                                 <div class="choice">ceaſe
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> cease
+                                       </div>
+                                    </div>
+                                 </div>
+                                 .
+                              </div>
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">Lines 13-14</span>: "And some of the Pharisees from among
+                                    the multitude said unto him, Master, rebuke thy disciples. And he answered
+                                    and said unto them, I tell you that, if these should hold their peace, the
+                                    stones would immediately cry out" (Luke 19:39-40).
                                  </div>
                               </div>
                               
-                              
-                              
-                              <div class="choice">ﬅones
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> stones
-                                    </div>
-                                 </div>
-                              </div>
-                               to 
-                              
-                              <div class="choice">praiſe
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> praise
-                                    </div>
-                                 </div>
-                              </div>
-                               thee may not 
-                              
-                              <div class="choice">ceaſe
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> cease
-                                    </div>
-                                 </div>
-                              </div>
-                              .
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e1112" line-id="lined2e1112" onclick="matchLine('lined2e1112');">
+                        <div class="line line15" line-id="line15">
                            <div class="linenumber">15</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e1114');">O let thy 
+                           <div class="apparatus app_2_l_15_1" onclick="matchApp('app_2_l_15_1');">
                               
-                              <div class="choice">bleſſed
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> blessed
+                              
+                              
+                              <div data-witness="p" class="reading p">O let thy 
+                                 
+                                 <div class="choice">bleſſed
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> blessed
+                                       </div>
                                     </div>
+                                 </div>
+                                 
+                                 S A C R I F I C E be mine,
+                              </div>
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> See headnote for the significance of the #w emendation.
                                  </div>
                               </div>
                               
-                              S A C R I F I C E be mine,
                            </div>
                            
                         </div>
                         
-                        <div class="line lined2e1226" line-id="lined2e1226" onclick="matchLine('lined2e1226');">
+                        <div class="line line16" line-id="line16">
                            <div class="linenumber">16</div>
                            
-                           <div class="apparatus" onclick="matchApp('app-d2e1228');">And 
+                           <div class="apparatus app_2_l_16_1" onclick="matchApp('app_2_l_16_1');">
                               
-                              <div class="choice">ſanctiﬁe
-                                 <div class="corr">
-                                    <div class="interior"><strong>Regularized form:</strong> sanctify
+                              
+                              
+                              <div data-witness="p" class="reading p">And 
+                                 
+                                 <div class="choice">ſanctiﬁe
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> sanctify
+                                       </div>
                                     </div>
                                  </div>
+                                  this A L T A R to be thine.
                               </div>
-                               this A L T A R to be thine.
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">Lines 15-16</span>: For the multiple significations of
+                                    <span class="hi rend-italic">Altar/ALTAR</span>, see headnote and the note for line
+                                    11. Though the placement of <span class="hi rend-italic">SACRIFICE</span> over <span class="hi rend-italic">ALTAR</span> in #p is fortuitous and perhaps deliberate (as
+                                    is the "broken" spacing of the words in these as well as lines 1 and 5), the
+                                    layout in both manuscripts is unremarkable. But for <span class="hi rend-italic">Altar</span> having a majuscule initial, neither word there is
+                                    distinguished in any way. Had Herbert intended to highlight them in #w (the
+                                    only source in which he is known to have had a hand), he might have
+                                    specified an italic script, as indeed he does elsewhere in #w—for
+                                    example, in the final line of "Poetry" (entitled "The Quiddity" in
+                                    #b/#p).
+                                 </div>
+                              </div>
+                              
                            </div>
                            
                         </div>
@@ -1241,42 +1740,42 @@
                and more decidedly Protestant assertion.
             </div>
             <div class="noteContent">
-               <div class="position" onclick="matchLine('lined2e379');">Line number 1</div><strong>Note: </strong><span class="hi rend-italic">reares</span>: brings into existence by constructing (<span class="hi rend-italic">OED</span> 9), a meaning at odds with <span class="hi rend-italic">broken</span> only if it is assumed that the speaker could have anything
+               <div class="position" onclick="matchLine('lined1e379');">Line number 1</div><strong>Note: </strong><span class="hi rend-italic">reares</span>: brings into existence by constructing (<span class="hi rend-italic">OED</span> 9), a meaning at odds with <span class="hi rend-italic">broken</span> only if it is assumed that the speaker could have anything
                more to offer than a broken heart. The word also connotes raising the dead
                (<span class="hi rend-italic">OED</span> 3.a), by extension the Resurrection, itself a
                triumph in which the broken body of Christ is raised to be a glorified
                body.
             </div>
             <div class="noteContent">
-               <div class="position" onclick="matchLine('lined2e572');">Line number 3</div><strong>Note: </strong><span class="hi rend-italic">frame</span>: prepare, as a carpenter, for use in
+               <div class="position" onclick="matchLine('lined1e572');">Line number 3</div><strong>Note: </strong><span class="hi rend-italic">frame</span>: prepare, as a carpenter, for use in
                building (<span class="hi rend-italic">OED</span> 4). Jesus was a carpenter (Mark 6:3)
                and is "a son over his own house; whose house are we," for "he that built
                all things is God" (Hebrews 3:4-6).
             </div>
             <div class="noteContent">
-               <div class="position" onclick="matchLine('lined2e731');">Line number 5</div><strong>Note: </strong><span class="hi rend-italic">alone</span>: only.
+               <div class="position" onclick="matchLine('lined1e731');">Line number 5</div><strong>Note: </strong><span class="hi rend-italic">alone</span>: only.
             </div>
             <div class="noteContent">
-               <div class="position" onclick="matchLine('lined2e821');">Line number 8</div><strong>Note: </strong><span class="hi rend-italic">Lines 5-8</span>: "Only a heart is so hard as that God's
+               <div class="position" onclick="matchLine('lined1e821');">Line number 8</div><strong>Note: </strong><span class="hi rend-italic">Lines 5-8</span>: "Only a heart is so hard as that God's
                power alone is able to penetrate it."
             </div>
             <div class="noteContent">
-               <div class="position" onclick="matchLine('lined2e933');">Line number 11</div><strong>Note: </strong><span class="hi rend-italic">frame</span>: i.e., the poem; the stone altar of
+               <div class="position" onclick="matchLine('lined1e933');">Line number 11</div><strong>Note: </strong><span class="hi rend-italic">frame</span>: i.e., the poem; the stone altar of
                sacrifice; the speaker's body which houses his <span class="hi rend-italic">hart/heart</span>—"My body is the frame wherein 'tis held"
                (Shakespeare, Sonnet 24, line 3)— and is "the temple of God" (1
                Corinthians 3:16).
             </div>
             <div class="noteContent">
-               <div class="position" onclick="matchLine('lined2e1008');">Line number 14</div><strong>Note: </strong><span class="hi rend-italic">Lines 13-14</span>: "And some of the Pharisees from among
+               <div class="position" onclick="matchLine('lined1e1008');">Line number 14</div><strong>Note: </strong><span class="hi rend-italic">Lines 13-14</span>: "And some of the Pharisees from among
                the multitude said unto him, Master, rebuke thy disciples. And he answered
                and said unto them, I tell you that, if these should hold their peace, the
                stones would immediately cry out" (Luke 19:39-40).
             </div>
             <div class="noteContent">
-               <div class="position" onclick="matchLine('lined2e1112');">Line number 15</div><strong>Note: </strong>See headnote for the significance of the #w emendation.
+               <div class="position" onclick="matchLine('lined1e1112');">Line number 15</div><strong>Note: </strong>See headnote for the significance of the #w emendation.
             </div>
             <div class="noteContent">
-               <div class="position" onclick="matchLine('lined2e1226');">Line number 16</div><strong>Note: </strong><span class="hi rend-italic">Lines 15-16</span>: For the multiple significations of
+               <div class="position" onclick="matchLine('lined1e1226');">Line number 16</div><strong>Note: </strong><span class="hi rend-italic">Lines 15-16</span>: For the multiple significations of
                <span class="hi rend-italic">Altar/ALTAR</span>, see headnote and the note for line
                11. Though the placement of <span class="hi rend-italic">SACRIFICE</span> over <span class="hi rend-italic">ALTAR</span> in #p is fortuitous and perhaps deliberate (as
                is the "broken" spacing of the words in these as well as lines 1 and 5), the

@@ -32,32 +32,45 @@
          <nav id="mainControls">
             <ul>
                <li><button id="info" type="button" onclick="#">INFO</button></li>
-               <li><button id="selectWitness">5 Total Versions<span class="ui-icon ui-icon-carat-1-s" style="display:inline-block"></span></button></li>
-               <ul id="witnessList">
-                  <li class="t7989-1-10"><span>'A Short History of Our Own Time' (TCD MS
-                        7989/1/10)</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-                  <li class="t7989-1-8"><span>'Civil War', which was deleted and replaced with
-                        'Ireland, Autumn 1922' (TCD MS 7989/1/8)</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-                  <li class="t7989-1-7"><span>'Ireland Autumn, 1922' (TCD MS 7989/1/7)</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-                  <li class="t7989-1-9"><span>'Ireland, Autumn, 1922 (TCD MS 7989/1/9)</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-                  <li class="pub"><span>published in Poems under the title
-                        'Autumn, 1922'</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-               </ul>
+               <li><span id="selectWitness" class="dropdownButton">5 Total Witnesses</span><ul id="witnessList" class="dropdown">
+                     <li class="t7989-1-10">
+                        <div class="listText">
+                           <p>'A Short History of Our Own Time' (TCD MS
+                              7989/1/10)
+                           </p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li class="t7989-1-8">
+                        <div class="listText">
+                           <p>'Civil War', which was deleted and replaced with
+                              'Ireland, Autumn 1922' (TCD MS 7989/1/8)
+                           </p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li class="t7989-1-7">
+                        <div class="listText">
+                           <p>'Ireland Autumn, 1922' (TCD MS 7989/1/7)</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li class="t7989-1-9">
+                        <div class="listText">
+                           <p>'Ireland, Autumn, 1922 (TCD MS 7989/1/9)</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li class="pub">
+                        <div class="listText">
+                           <p>published in Poems under the title
+                              'Autumn, 1922'
+                           </p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
                <li><input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" style="display: none;"></input></li>
                <li><label for="toggleLineNumbers">Line Numbers:</label><button id="displayLines">ON</button></li>
                <li><select id="notesMenu" onchange="notesFormat(this.value);">

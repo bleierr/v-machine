@@ -298,21 +298,27 @@ timelineDurations['mlre_115']=1.25;</script></head>
          <nav id="mainControls">
             <ul>
                <li><button id="info" type="button" onclick="#">INFO</button></li>
-               <li><button id="selectWitness">3 Total Versions<span class="ui-icon ui-icon-carat-1-s" style="display:inline-block"></span></button></li>
-               <ul id="witnessList">
-                  <li class="poem"><span>A CARAFE, THAT IS A BLIND GLASS</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-                  <li class="essay"><span>Reading a Selection from Tender Buttons</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-                  <li class="reading_poem"><span>Mac Low Reading, 1990</span><button class="panelVisible" type="button">
-                        
-                        OFF
-                        </button></li>
-               </ul>
+               <li><span id="selectWitness" class="dropdownButton">3 Total Witnesses</span><ul id="witnessList" class="dropdown">
+                     <li class="poem">
+                        <div class="listText">
+                           <p>A CARAFE, THAT IS A BLIND GLASS</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li class="essay">
+                        <div class="listText">
+                           <p>Reading a Selection from Tender Buttons</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li class="reading_poem">
+                        <div class="listText">
+                           <p>Mac Low Reading, 1990</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
                <li><input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" style="display: none;"></input></li>
                <li><label for="toggleLineNumbers">Line Numbers:</label><button id="displayLines">ON</button></li>
                <li><select id="notesMenu" disabled="&#xA;                           disabled&#xA;                        ">
@@ -423,18 +429,30 @@ timelineDurations['mlre_115']=1.25;</script></head>
                      
                      <div class="head">
                         
-                        <div class="apparatus loc-carafe" onclick="matchLine(this.className);">
-                           A CARAFE,
+                        <div class="apparatus carafe" onclick="matchApp('carafe');">
+                           
+                           <div data-witness="poem" class="reading poem">
+                              A CARAFE,
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e156');">
-                           THAT IS A
+                        <div class="apparatus app_4_head1" onclick="matchApp('app_4_head1');">
+                           
+                           <div data-witness="poem" class="reading poem">
+                              THAT IS A
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="apparatus loc-blind" onclick="matchLine(this.className);">
-                           BLIND GLASS
+                        <div class="apparatus blind" onclick="matchApp('blind');">
+                           
+                           <div data-witness="poem" class="reading poem">
+                              BLIND GLASS
+                              
+                           </div>
                            
                         </div>         
                         
@@ -442,92 +460,152 @@ timelineDurations['mlre_115']=1.25;</script></head>
                      
                      <div class="paragraph">
                         
-                        <div class="apparatus loc-kind" onclick="matchLine(this.className);"> 
-                           A kind 
+                        <div class="apparatus kind" onclick="matchApp('kind');">
+                           
+                           <div data-witness="poem" class="reading poem"> 
+                              A kind 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-glass" onclick="matchLine(this.className);"> 
-                           in glass and  
+                        <div class="apparatus glass" onclick="matchApp('glass');">
+                           
+                           <div data-witness="poem" class="reading poem"> 
+                              in glass and  
+                              
+                           </div>
                            
                         </div>   
                         
                         
-                        <div class="apparatus loc-cousin" onclick="matchLine(this.className);"> 
-                           a cousin, 
+                        <div class="apparatus cousin" onclick="matchApp('cousin');">
+                           
+                           <div data-witness="poem" class="reading poem"> 
+                              a cousin, 
+                              
+                           </div>
                            
                         </div> 
                         
                         
-                        <div class="apparatus loc-spectacle" onclick="matchLine(this.className);"> 
-                           a spectacle 
+                        <div class="apparatus spectacle" onclick="matchApp('spectacle');">
+                           
+                           <div data-witness="poem" class="reading poem"> 
+                              a spectacle 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-strange" onclick="matchLine(this.className);"> 
-                           and nothing strange 
+                        <div class="apparatus strange" onclick="matchApp('strange');">
+                           
+                           <div data-witness="poem" class="reading poem"> 
+                              and nothing strange 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-color" onclick="matchLine(this.className);"> 
-                           a single hurt color 
+                        <div class="apparatus color" onclick="matchApp('color');">
+                           
+                           <div data-witness="poem" class="reading poem"> 
+                              a single hurt color 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-arrangement" onclick="matchLine(this.className);"> 
-                           and an arrangement 
+                        <div class="apparatus arrangement" onclick="matchApp('arrangement');">
+                           
+                           <div data-witness="poem" class="reading poem"> 
+                              and an arrangement 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-system" onclick="matchLine(this.className);"> 
-                           in a system 
+                        <div class="apparatus system" onclick="matchApp('system');">
+                           
+                           <div data-witness="poem" class="reading poem"> 
+                              in a system 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-pointing" onclick="matchLine(this.className);"> 
-                           to pointing. 
+                        <div class="apparatus pointing" onclick="matchApp('pointing');">
+                           
+                           <div data-witness="poem" class="reading poem"> 
+                              to pointing. 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-this" onclick="matchLine(this.className);"> 
-                           All this and  
+                        <div class="apparatus this" onclick="matchApp('this');">
+                           
+                           <div data-witness="poem" class="reading poem"> 
+                              All this and  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-ordinary" onclick="matchLine(this.className);"> 
-                           not ordinary, 
+                        <div class="apparatus ordinary" onclick="matchApp('ordinary');">
+                           
+                           <div data-witness="poem" class="reading poem"> 
+                              not ordinary, 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-unordered" onclick="matchLine(this.className);"> 
-                           not unordered 
+                        <div class="apparatus unordered" onclick="matchApp('unordered');">
+                           
+                           <div data-witness="poem" class="reading poem"> 
+                              not unordered 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-resembling" onclick="matchLine(this.className);"> 
-                           in not resembling. 
+                        <div class="apparatus resembling" onclick="matchApp('resembling');">
+                           
+                           <div data-witness="poem" class="reading poem"> 
+                              in not resembling. 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-difference" onclick="matchLine(this.className);"> 
-                           The difference  
+                        <div class="apparatus difference" onclick="matchApp('difference');">
+                           
+                           <div data-witness="poem" class="reading poem"> 
+                              The difference  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-spreading" onclick="matchLine(this.className);"> 
-                           is spreading.
+                        <div class="apparatus spreading" onclick="matchApp('spreading');">
+                           
+                           <div data-witness="poem" class="reading poem"> 
+                              is spreading.
+                              
+                           </div>
                            
                         </div>         
                         
@@ -669,8 +747,12 @@ timelineDurations['mlre_115']=1.25;</script></head>
                      
                      <div class="head">
                         
-                        <div class="apparatus loc-reading_a_selection" onclick="matchLine(this.className);">
-                           READING A SELECTION FROM TENDER BUTTONS
+                        <div class="apparatus reading_a_selection" onclick="matchApp('reading_a_selection');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              READING A SELECTION FROM TENDER BUTTONS
+                              
+                           </div>
                            
                         </div>         
                         
@@ -679,502 +761,830 @@ timelineDurations['mlre_115']=1.25;</script></head>
                      
                      <div class="paragraph">
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e1799');">
-                           I start reading 
+                        <div class="apparatus app_2_p1" onclick="matchApp('app_2_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              I start reading 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-carafe" onclick="matchLine(this.className);">
-                           "A CARAFE
+                        <div class="apparatus carafe" onclick="matchApp('carafe');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "A CARAFE
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e1811');">
-                           THAT IS
+                        <div class="apparatus app_6_p1" onclick="matchApp('app_6_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              THAT IS
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-blind" onclick="matchLine(this.className);">
-                           A BLIND GLASS." 
+                        <div class="apparatus blind" onclick="matchApp('blind');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              A BLIND GLASS." 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e1823');">
-                           I go from word to word, seeing the shapes of the printed words, hearing the sounds
-                           inwardly, noting rhymes, assonances, alliterations. Where an image is suggested, I
-                           see it inwardly. 
+                        <div class="apparatus app_10_p1" onclick="matchApp('app_10_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              I go from word to word, seeing the shapes of the printed words, hearing the sounds
+                              inwardly, noting rhymes, assonances, alliterations. Where an image is suggested, I
+                              see it inwardly. 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e1830');">
-                           I go from word to word, seeing the shapes of the printed words, hearing the sounds
-                           inwardly, noting rhymes, assonances, alliterations. Where an image is suggested, I
-                           see it inwardly. I hear the alliteration 
+                        <div class="apparatus app_12_p1" onclick="matchApp('app_12_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              I go from word to word, seeing the shapes of the printed words, hearing the sounds
+                              inwardly, noting rhymes, assonances, alliterations. Where an image is suggested, I
+                              see it inwardly. I hear the alliteration 
+                              
+                           </div>
                            
                         </div>
                         
                         
                         
-                        <div class="apparatus loc-kind" onclick="matchLine(this.className);">
-                           "kind," 
+                        <div class="apparatus kind" onclick="matchApp('kind');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "kind," 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-cousin" onclick="matchLine(this.className);">
-                           "cousin," 
+                        <div class="apparatus cousin" onclick="matchApp('cousin');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "cousin," 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-color" onclick="matchLine(this.className);">
-                           "color,"  
+                        <div class="apparatus color" onclick="matchApp('color');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "color,"  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e1854');">
-                           with the near-alliteration 
+                        <div class="apparatus app_20_p1" onclick="matchApp('app_20_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              with the near-alliteration 
+                              
+                           </div>
                            
                         </div>            
                         
                         
-                        <div class="apparatus loc-glass" onclick="matchLine(this.className);">
-                           "glass."
+                        <div class="apparatus glass" onclick="matchApp('glass');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "glass."
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e1867');">
-                           The rhyme in  
+                        <div class="apparatus app_24_p1" onclick="matchApp('app_24_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              The rhyme in  
+                              
+                           </div>
                            
                         </div>            
                         
                         
-                        <div class="apparatus loc-strange" onclick="matchLine(this.className);">
-                           "strange" &amp;
+                        <div class="apparatus strange" onclick="matchApp('strange');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "strange" &amp;
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-arrangement" onclick="matchLine(this.className);">
-                           "arrangement."
+                        <div class="apparatus arrangement" onclick="matchApp('arrangement');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "arrangement."
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e1885');">
-                           The alliteration of s's: 
+                        <div class="apparatus app_30_p1" onclick="matchApp('app_30_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              The alliteration of s's: 
+                              
+                           </div>
                            
                         </div>            
                         
                         
-                        <div class="apparatus loc-spectacle" onclick="matchLine(this.className);">
-                           "spectacle," 
+                        <div class="apparatus spectacle" onclick="matchApp('spectacle');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "spectacle," 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-strange" onclick="matchLine(this.className);">
-                           "strange,"  
+                        <div class="apparatus strange" onclick="matchApp('strange');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "strange,"  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-single" onclick="matchLine(this.className);">
-                           "single,"  
+                        <div class="apparatus single" onclick="matchApp('single');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "single,"  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-system" onclick="matchLine(this.className);">
-                           "system,"  
+                        <div class="apparatus system" onclick="matchApp('system');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "system,"  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-spreading" onclick="matchLine(this.className);">
-                           "spreading." 
+                        <div class="apparatus spreading" onclick="matchApp('spreading');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "spreading." 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e1922');">
-                           The assonance of short i's that binds the three sentences   
+                        <div class="apparatus app_42_p1" onclick="matchApp('app_42_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              The assonance of short i's that binds the three sentences   
+                              
+                           </div>
                            
                         </div>            
                         
                         
-                        <div class="apparatus loc-system" onclick="matchLine(this.className);">
-                           ("system,"   
+                        <div class="apparatus system" onclick="matchApp('system');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              ("system,"   
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-this" onclick="matchLine(this.className);">
-                           "this,"   
+                        <div class="apparatus this" onclick="matchApp('this');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "this,"   
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-difference" onclick="matchLine(this.className);">
-                           "difference")   
+                        <div class="apparatus difference" onclick="matchApp('difference');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "difference")   
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e1947');">
-                           as does the ending of each sentence with an "ing" (which is reinforced by the short
-                           e's in   
+                        <div class="apparatus app_50_p1" onclick="matchApp('app_50_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              as does the ending of each sentence with an "ing" (which is reinforced by the short
+                              e's in   
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-resembling" onclick="matchLine(this.className);">
-                           "resembling"
+                        <div class="apparatus resembling" onclick="matchApp('resembling');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "resembling"
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e1959');">
-                           &amp;  
+                        <div class="apparatus app_54_p1" onclick="matchApp('app_54_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              &amp;  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-spreading" onclick="matchLine(this.className);">
-                           "spreading"). 
+                        <div class="apparatus spreading" onclick="matchApp('spreading');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "spreading"). 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e1971');">
-                           There are also the 2nd sentence's rhymes (
+                        <div class="apparatus app_58_p1" onclick="matchApp('app_58_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              There are also the 2nd sentence's rhymes (
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-ordinary" onclick="matchLine(this.className);">
-                           "ordinary," 
+                        <div class="apparatus ordinary" onclick="matchApp('ordinary');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "ordinary," 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-unordered" onclick="matchLine(this.className);">
-                           "unordered")  
+                        <div class="apparatus unordered" onclick="matchApp('unordered');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "unordered")  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e1990');">
-                           &amp; the alliterative sequence  
+                        <div class="apparatus app_64_p1" onclick="matchApp('app_64_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              &amp; the alliterative sequence  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-spectacle" onclick="matchLine(this.className);">
-                           "spectacle," 
+                        <div class="apparatus spectacle" onclick="matchApp('spectacle');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "spectacle," 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-pointing" onclick="matchLine(this.className);">
-                           "pointing," 
+                        <div class="apparatus pointing" onclick="matchApp('pointing');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "pointing," 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-spreading" onclick="matchLine(this.className);">
-                           "spreading."  
+                        <div class="apparatus spreading" onclick="matchApp('spreading');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "spreading."  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2015');">
-                           The three sentences are a bound system of sounds. But can I specify anything beyond
-                           the sounds? To use a phrase I first heard from Spencer Holst, it gives "the sensation
-                           of meaning," but can I connect the meanings of the words as readily as I find their
-                           sounds connected? Beyond the obvious fact that the carafe is made of glass, I can
-                           see only certain connections of meanings:  
+                        <div class="apparatus app_72_p1" onclick="matchApp('app_72_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              The three sentences are a bound system of sounds. But can I specify anything beyond
+                              the sounds? To use a phrase I first heard from Spencer Holst, it gives "the sensation
+                              of meaning," but can I connect the meanings of the words as readily as I find their
+                              sounds connected? Beyond the obvious fact that the carafe is made of glass, I can
+                              see only certain connections of meanings:  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-blind" onclick="matchLine(this.className);">
-                           "a blind glass,"  
+                        <div class="apparatus blind" onclick="matchApp('blind');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "a blind glass,"  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-kind" onclick="matchLine(this.className);">
-                           "a kind 
+                        <div class="apparatus kind" onclick="matchApp('kind');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "a kind 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-glass" onclick="matchLine(this.className);">
-                           in glass"  
+                        <div class="apparatus glass" onclick="matchApp('glass');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              in glass"  
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2039');">
-                           (I didn't notice consciously the   
+                        <div class="apparatus app_80_p1" onclick="matchApp('app_80_p1');">
                            
-                        </div>
-                        
-                        
-                        <div class="apparatus loc-blind" onclick="matchLine(this.className);">
-                           "blind"-  
-                           
-                        </div>
-                        
-                        
-                        <div class="apparatus loc-kind" onclick="matchLine(this.className);">
-                           "kind"  
+                           <div data-witness="essay" class="reading essay">
+                              (I didn't notice consciously the   
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2058');">
-                           rhyme before), &amp; then  
+                        <div class="apparatus blind" onclick="matchApp('blind');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "blind"-  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-spectacle" onclick="matchLine(this.className);">
-                           "a spectacle" 
+                        <div class="apparatus kind" onclick="matchApp('kind');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "kind"  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2070');">
-                           (something seen or to be seen, but also 
+                        <div class="apparatus app_86_p1" onclick="matchApp('app_86_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              rhyme before), &amp; then  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-spectacles" onclick="matchLine(this.className);">
-                           "spectacles" are 
+                        <div class="apparatus spectacle" onclick="matchApp('spectacle');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "a spectacle" 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-glass" onclick="matchLine(this.className);">
-                           "glasses"). 
+                        <div class="apparatus app_90_p1" onclick="matchApp('app_90_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              (something seen or to be seen, but also 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2089');">
-                           Then 
+                        <div class="apparatus spectacles" onclick="matchApp('spectacles');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "spectacles" are 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-nothing" onclick="matchLine(this.className);">
-                           "nothing strange," 
+                        <div class="apparatus glass" onclick="matchApp('glass');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "glasses"). 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-ordinary" onclick="matchLine(this.className);">
-                           "not ordinary," 
+                        <div class="apparatus app_96_p1" onclick="matchApp('app_96_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              Then 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-unordered" onclick="matchLine(this.className);">
-                           "not unordered,"  
+                        <div class="apparatus nothing" onclick="matchApp('nothing');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "nothing strange," 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-resembling" onclick="matchLine(this.className);">
-                           "not resembling," 
+                        <div class="apparatus ordinary" onclick="matchApp('ordinary');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "not ordinary," 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2119');">
-                           &amp;  
+                        <div class="apparatus unordered" onclick="matchApp('unordered');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "not unordered,"  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-difference" onclick="matchLine(this.className);">
-                           "difference"  
+                        <div class="apparatus resembling" onclick="matchApp('resembling');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "not resembling," 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2132');">
-                           form a meaning sequence. Another sequence of meanings:  
+                        <div class="apparatus app_106_p1" onclick="matchApp('app_106_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              &amp;  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-blind" onclick="matchLine(this.className);">
-                           "blind,"  
+                        <div class="apparatus difference" onclick="matchApp('difference');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "difference"  
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        
+                        <div class="apparatus app_110_p1" onclick="matchApp('app_110_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              form a meaning sequence. Another sequence of meanings:  
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        
+                        <div class="apparatus blind" onclick="matchApp('blind');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "blind,"  
+                              
+                           </div>
                            
                         </div>   
                         
                         
-                        <div class="apparatus loc-spectacle" onclick="matchLine(this.className);">
-                           "spectacle"
+                        <div class="apparatus spectacle" onclick="matchApp('spectacle');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "spectacle"
+                              
+                           </div>
                            
                         </div> 
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2150');">
-                           (with the intervening  
+                        <div class="apparatus app_116_p1" onclick="matchApp('app_116_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              (with the intervening  
+                              
+                           </div>
                            
                         </div>             
                         
                         
-                        <div class="apparatus loc-glass" onclick="matchLine(this.className);">
-                           "glass"'s
+                        <div class="apparatus glass" onclick="matchApp('glass');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "glass"'s
+                              
+                           </div>
                            
                         </div>             
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2163');">
-                           causing the ambiguity of 
+                        <div class="apparatus app_120_p1" onclick="matchApp('app_120_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              causing the ambiguity of 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-spectacle" onclick="matchLine(this.className);">
-                           "spectacle" 
+                        <div class="apparatus spectacle" onclick="matchApp('spectacle');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "spectacle" 
+                              
+                           </div>
                            
                         </div>           
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2175');">
-                           which might not have been as apparent without them), &amp;
+                        <div class="apparatus app_124_p1" onclick="matchApp('app_124_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              which might not have been as apparent without them), &amp;
+                              
+                           </div>
                            
                         </div> 
                         
                         
-                        <div class="apparatus loc-color" onclick="matchLine(this.className);">
-                           "color," 
+                        <div class="apparatus color" onclick="matchApp('color');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "color," 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2187');">
-                           that seems to carry over to 
+                        <div class="apparatus app_128_p1" onclick="matchApp('app_128_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              that seems to carry over to 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-arrangement" onclick="matchLine(this.className);">
-                           "arrangement," 
+                        <div class="apparatus arrangement" onclick="matchApp('arrangement');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "arrangement," 
+                              
+                           </div>
                            
                         </div> 
                         
                         
-                        <div class="apparatus loc-pointing" onclick="matchLine(this.className);">
-                           "pointing,"  
+                        <div class="apparatus pointing" onclick="matchApp('pointing');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "pointing,"  
+                              
+                           </div>
                            
                         </div> 
                         
                         
-                        <div class="apparatus loc-unordered" onclick="matchLine(this.className);">
-                           "not unordered,"   
+                        <div class="apparatus unordered" onclick="matchApp('unordered');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "not unordered,"   
+                              
+                           </div>
                            
                         </div> 
                         
                         
-                        <div class="apparatus loc-resembling" onclick="matchLine(this.className);">
-                           "not resembling,"   
+                        <div class="apparatus resembling" onclick="matchApp('resembling');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "not resembling,"   
+                              
+                           </div>
                            
                         </div> 
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2218');">
-                           &amp; even to    
+                        <div class="apparatus app_138_p1" onclick="matchApp('app_138_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              &amp; even to    
+                              
+                           </div>
                            
                         </div> 
                         
                         
-                        <div class="apparatus loc-spreading" onclick="matchLine(this.className);">
-                           "spreading."    
+                        <div class="apparatus spreading" onclick="matchApp('spreading');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "spreading."    
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2230');">
-                           The sequence    
+                        <div class="apparatus app_142_p1" onclick="matchApp('app_142_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              The sequence    
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-kind" onclick="matchLine(this.className);">
-                           "kind"    
+                        <div class="apparatus kind" onclick="matchApp('kind');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "kind"    
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2243');">
-                           (with its two meanings),    
+                        <div class="apparatus app_146_p1" onclick="matchApp('app_146_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              (with its two meanings),    
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-cousin" onclick="matchLine(this.className);">
-                           "cousin,"  
+                        <div class="apparatus cousin" onclick="matchApp('cousin');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "cousin,"  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-strange" onclick="matchLine(this.className);">
-                           "nothing strange"  
+                        <div class="apparatus strange" onclick="matchApp('strange');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "nothing strange"  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2261');">
-                           seems opposed to   
+                        <div class="apparatus app_152_p1" onclick="matchApp('app_152_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              seems opposed to   
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-ordinary" onclick="matchLine(this.className);">
-                           "not ordinary,"  
+                        <div class="apparatus ordinary" onclick="matchApp('ordinary');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "not ordinary,"  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-resembling" onclick="matchLine(this.className);">
-                           "not resembling,"  
+                        <div class="apparatus resembling" onclick="matchApp('resembling');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "not resembling,"  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2280');">
-                           &amp;  
+                        <div class="apparatus app_158_p1" onclick="matchApp('app_158_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              &amp;  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-difference" onclick="matchLine(this.className);">
-                           "The difference
+                        <div class="apparatus difference" onclick="matchApp('difference');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "The difference
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-spreading" onclick="matchLine(this.className);">
-                           is spreading.":  
+                        <div class="apparatus spreading" onclick="matchApp('spreading');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              is spreading.":  
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2298');">
-                           a meaning movement from near-sameness to greater &amp; greater difference.  
+                        <div class="apparatus app_164_p1" onclick="matchApp('app_164_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              a meaning movement from near-sameness to greater &amp; greater difference.  
+                              
+                           </div>
                            
                         </div>
                         
@@ -1183,57 +1593,93 @@ timelineDurations['mlre_115']=1.25;</script></head>
                      
                      <div class="paragraph">
                         
-                        <div class="apparatus loc-color" onclick="matchLine(this.className);">
-                           "A single hurt color" 
+                        <div class="apparatus color" onclick="matchApp('color');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "A single hurt color" 
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2313');">
-                           is the most emotional phrase, altho 
+                        <div class="apparatus app_4_p1" onclick="matchApp('app_4_p1');">
                            
-                        </div>
-                        
-                        
-                        <div class="apparatus loc-blind" onclick="matchLine(this.className);">
-                           "blind glass" 
-                           
-                        </div>
-                        
-                        
-                        <div class="apparatus" onclick="matchApp('app-d2e2325');">
-                           with its implied oxymoron (glass is usually transparent—at least we first think of
-                           transparency when we hear the word 
+                           <div data-witness="essay" class="reading essay">
+                              is the most emotional phrase, altho 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-glass" onclick="matchLine(this.className);">
-                           "glass"
+                        <div class="apparatus blind" onclick="matchApp('blind');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "blind glass" 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2338');">
-                           —&amp;  
+                        <div class="apparatus app_8_p1" onclick="matchApp('app_8_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              with its implied oxymoron (glass is usually transparent—at least we first think of
+                              transparency when we hear the word 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2344');">
-                           when it is made into spectacle lenses, it helps people to see better) is perhaps even
-                           more so. Maybe the 
+                        <div class="apparatus glass" onclick="matchApp('glass');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "glass"
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-color" onclick="matchLine(this.className);">
-                           "single hurt color" 
+                        <div class="apparatus app_12_p1" onclick="matchApp('app_12_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              —&amp;  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2356');">
-                           is the blackness of blindness. The whole poem suddenly seems to be about seeing!
+                        <div class="apparatus app_14_p1" onclick="matchApp('app_14_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              when it is made into spectacle lenses, it helps people to see better) is perhaps even
+                              more so. Maybe the 
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        
+                        <div class="apparatus color" onclick="matchApp('color');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "single hurt color" 
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        
+                        <div class="apparatus app_18_p1" onclick="matchApp('app_18_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              is the blackness of blindness. The whole poem suddenly seems to be about seeing!
+                              
+                           </div>
                            
                         </div>            
                         
@@ -1243,48 +1689,76 @@ timelineDurations['mlre_115']=1.25;</script></head>
                      <div class="paragraph">
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2365');">
-                           But what of the 
+                        <div class="apparatus app_2_p1" onclick="matchApp('app_2_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              But what of the 
+                              
+                           </div>
                            
                         </div> 
                         
                         
-                        <div class="apparatus loc-carafe" onclick="matchLine(this.className);">
-                           "carafe" 
+                        <div class="apparatus carafe" onclick="matchApp('carafe');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "carafe" 
+                              
+                           </div>
                            
                         </div>             
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2377');">
-                           that starts it all? Why is it 
+                        <div class="apparatus app_6_p1" onclick="matchApp('app_6_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              that starts it all? Why is it 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-blind" onclick="matchLine(this.className);">
-                           "a blind glass"? 
+                        <div class="apparatus blind" onclick="matchApp('blind');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "a blind glass"? 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2389');">
-                           Ordinarily a carafe is one of the least 
+                        <div class="apparatus app_10_p1" onclick="matchApp('app_10_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              Ordinarily a carafe is one of the least 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-blind" onclick="matchLine(this.className);">
-                           "blind"
+                        <div class="apparatus blind" onclick="matchApp('blind');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "blind"
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2402');">
-                           —that is, the most transparent-of glass containers. It usually contains plain water.
-                           The OED defines it as "a glass water-bottle for the table, bedroom, etc." Its Romance
-                           forms (F. carafe, It. caraffa, Neapol. carrafa (a measure of liquids), Sp. &amp; Pg. garrafa,
-                           Sicil. carabba) are related by some authorities to the Pers. garabah, a large flagon,
-                           &amp; the Arabic gharafa, to draw or lift water.
+                        <div class="apparatus app_14_p1" onclick="matchApp('app_14_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              —that is, the most transparent-of glass containers. It usually contains plain water.
+                              The OED defines it as "a glass water-bottle for the table, bedroom, etc." Its Romance
+                              forms (F. carafe, It. caraffa, Neapol. carrafa (a measure of liquids), Sp. &amp; Pg. garrafa,
+                              Sicil. carabba) are related by some authorities to the Pers. garabah, a large flagon,
+                              &amp; the Arabic gharafa, to draw or lift water.
+                              
+                           </div>
                            
                         </div>
                         
@@ -1293,8 +1767,12 @@ timelineDurations['mlre_115']=1.25;</script></head>
                      
                      <div class="paragraph">
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2411');">
-                           Why, then, is this carafe a blind glass?
+                        <div class="apparatus app_2_p1" onclick="matchApp('app_2_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              Why, then, is this carafe a blind glass?
+                              
+                           </div>
                            
                         </div>            
                         
@@ -1303,93 +1781,153 @@ timelineDurations['mlre_115']=1.25;</script></head>
                      
                      <div class="paragraph">
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2421');">
-                           Is the whole poem then a 
+                        <div class="apparatus app_2_p1" onclick="matchApp('app_2_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              Is the whole poem then a 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-pointing" onclick="matchLine(this.className);">
-                           "pointing"
+                        <div class="apparatus pointing" onclick="matchApp('pointing');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "pointing"
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2433');">
-                           from the ordinary transparent carafe 
+                        <div class="apparatus app_6_p1" onclick="matchApp('app_6_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              from the ordinary transparent carafe 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-strange" onclick="matchLine(this.className);">
-                           ("nothing strange") 
+                        <div class="apparatus strange" onclick="matchApp('strange');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              ("nothing strange") 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2445');">
-                           to one
+                        <div class="apparatus app_10_p1" onclick="matchApp('app_10_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              to one
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-ordinary" onclick="matchLine(this.className);">
-                           "not ordinary" 
+                        <div class="apparatus ordinary" onclick="matchApp('ordinary');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "not ordinary" 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2458');">
-                           —one that is 
+                        <div class="apparatus app_14_p1" onclick="matchApp('app_14_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              —one that is 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-blind" onclick="matchLine(this.className);">
-                           "blind"
+                        <div class="apparatus blind" onclick="matchApp('blind');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "blind"
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2470');">
-                           —an orderly 
+                        <div class="apparatus app_18_p1" onclick="matchApp('app_18_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              —an orderly 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-unordered" onclick="matchLine(this.className);">
-                           ("not unordered") 
+                        <div class="apparatus unordered" onclick="matchApp('unordered');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              ("not unordered") 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2482');">
-                           movement 
+                        <div class="apparatus app_22_p1" onclick="matchApp('app_22_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              movement 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-spreading" onclick="matchLine(this.className);">
-                           "spreading"  
+                        <div class="apparatus spreading" onclick="matchApp('spreading');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "spreading"  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2495');">
-                           from transparency &amp; clarity thru the  
+                        <div class="apparatus app_26_p1" onclick="matchApp('app_26_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              from transparency &amp; clarity thru the  
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-color" onclick="matchLine(this.className);">
-                           "single hurt color" 
+                        <div class="apparatus color" onclick="matchApp('color');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              "single hurt color" 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus" onclick="matchApp('app-d2e2507');">
-                           to the implied darkness &amp; opacity of blindness, a movement condensed &amp; made explicit
-                           in the title?
+                        <div class="apparatus app_30_p1" onclick="matchApp('app_30_p1');">
+                           
+                           <div data-witness="essay" class="reading essay">
+                              to the implied darkness &amp; opacity of blindness, a movement condensed &amp; made explicit
+                              in the title?
+                              
+                           </div>
                            
                         </div>
                         
@@ -1404,7 +1942,13 @@ timelineDurations['mlre_115']=1.25;</script></head>
             <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable reading_poem">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness reading_poem
                </div>
-               <div class="mssContent">
+               <div class="mssContent">reading_poem
+                  <div class="audioPlayer reading_poem" data-witness="reading_poem">
+                     <audio controls="controls">
+                        <source class="audiosource" src="audio/mac_low_poem.mp3" type="audio/mp3"></source>
+                        <source class="audiosource" src="audio/mac_low_poem.ogg" type="audio/ogg"></source>Your browser does not support the audio element.
+                     </audio>
+                  </div>
                   
                   
                        
@@ -1436,163 +1980,235 @@ timelineDurations['mlre_115']=1.25;</script></head>
                      
                      <div class="paragraph">
                         
-                        <div class="apparatus loc-carafe" onclick="matchLine(this.className);">
+                        <div data-timeline="mlrp_1" class="apparatus carafe" onclick="matchApp('carafe');">
                            
-                           
-                           
-                            
-                           A carafe. A carafe
-                           
-                        </div>
-                        
-                        <div class="apparatus" onclick="matchApp('app-d2e289');">
-                           
-                           
-                             
-                           that is a
+                           <div data-witness="reading_poem" class="reading reading_poem">
+                              
+                              
+                              
+                               
+                              A carafe. A carafe
+                              
+                           </div>
                            
                         </div>
                         
-                        <div class="apparatus loc-blind" onclick="matchLine(this.className);">
+                        <div data-timeline="mlrp_2" class="apparatus app_4_u1" onclick="matchApp('app_4_u1');">
                            
+                           <div data-witness="reading_poem" class="reading reading_poem">
+                              
+                              
+                                
+                              that is a
+                              
+                           </div>
                            
-                            
-                           blind glass.
+                        </div>
+                        
+                        <div data-timeline="mlrp_3" class="apparatus blind" onclick="matchApp('blind');">
+                           
+                           <div data-witness="reading_poem" class="reading reading_poem">
+                              
+                              
+                               
+                              blind glass.
+                              
+                           </div>
                            
                         </div>         
                         
                         
-                        <div class="apparatus loc-kind" onclick="matchLine(this.className);"> 
+                        <div data-timeline="mlrp_4" class="apparatus kind" onclick="matchApp('kind');">
                            
-                           
-                           
-                           A kind 
+                           <div data-witness="reading_poem" class="reading reading_poem"> 
+                              
+                              
+                              
+                              A kind 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-glass" onclick="matchLine(this.className);"> 
+                        <div data-timeline="mlrp_5" class="apparatus glass" onclick="matchApp('glass');">
                            
-                           
-                           
-                           in glass  
+                           <div data-witness="reading_poem" class="reading reading_poem"> 
+                              
+                              
+                              
+                              in glass  
+                              
+                           </div>
                            
                         </div>   
                         
                         
-                        <div class="apparatus loc-cousin" onclick="matchLine(this.className);"> 
+                        <div data-timeline="mlrp_6" class="apparatus cousin" onclick="matchApp('cousin');">
                            
-                           
-                           
-                           and a cousin, 
+                           <div data-witness="reading_poem" class="reading reading_poem"> 
+                              
+                              
+                              
+                              and a cousin, 
+                              
+                           </div>
                            
                         </div> 
                         
                         
-                        <div class="apparatus loc-spectacle" onclick="matchLine(this.className);"> 
+                        <div data-timeline="mlrp_7" class="apparatus spectacle" onclick="matchApp('spectacle');">
                            
-                           
-                           
-                           a spectacle 
-                           
-                        </div>
-                        
-                        
-                        <div class="apparatus loc-strange" onclick="matchLine(this.className);"> 
-                           
-                           
-                           
-                           and nothing strange 
+                           <div data-witness="reading_poem" class="reading reading_poem"> 
+                              
+                              
+                              
+                              a spectacle 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-color" onclick="matchLine(this.className);"> 
+                        <div data-timeline="mlrp_8" class="apparatus strange" onclick="matchApp('strange');">
                            
-                           
-                           
-                           a single hurt color 
-                           
-                        </div>
-                        
-                        
-                        <div class="apparatus loc-arrangement" onclick="matchLine(this.className);"> 
-                           
-                           
-                           
-                           and an arrangement 
+                           <div data-witness="reading_poem" class="reading reading_poem"> 
+                              
+                              
+                              
+                              and nothing strange 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-system" onclick="matchLine(this.className);"> 
+                        <div data-timeline="mlrp_9" class="apparatus color" onclick="matchApp('color');">
                            
-                           
-                           
-                           in a system 
-                           
-                        </div>
-                        
-                        
-                        <div class="apparatus loc-pointing" onclick="matchLine(this.className);"> 
-                           
-                           
-                           
-                           to pointing. 
+                           <div data-witness="reading_poem" class="reading reading_poem"> 
+                              
+                              
+                              
+                              a single hurt color 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-this" onclick="matchLine(this.className);"> 
+                        <div data-timeline="mlrp_10" class="apparatus arrangement" onclick="matchApp('arrangement');">
                            
-                           
-                           
-                           All this and 
-                           
-                        </div>
-                        
-                        
-                        <div class="apparatus loc-ordinary" onclick="matchLine(this.className);"> 
-                           
-                           
-                           
-                           not ordinary, 
+                           <div data-witness="reading_poem" class="reading reading_poem"> 
+                              
+                              
+                              
+                              and an arrangement 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-unordered" onclick="matchLine(this.className);"> 
+                        <div data-timeline="mlrp_11" class="apparatus system" onclick="matchApp('system');">
                            
-                           
-                           
-                           not unordered 
-                           
-                        </div>
-                        
-                        
-                        <div class="apparatus loc-resembling" onclick="matchLine(this.className);"> 
-                           
-                           
-                            
-                           in not resembling. 
+                           <div data-witness="reading_poem" class="reading reading_poem"> 
+                              
+                              
+                              
+                              in a system 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-difference" onclick="matchLine(this.className);"> 
+                        <div data-timeline="mlrp_12" class="apparatus pointing" onclick="matchApp('pointing');">
                            
-                           
-                           
-                           The difference  
+                           <div data-witness="reading_poem" class="reading reading_poem"> 
+                              
+                              
+                              
+                              to pointing. 
+                              
+                           </div>
                            
                         </div>
                         
                         
-                        <div class="apparatus loc-spreading" onclick="matchLine(this.className);"> 
+                        <div data-timeline="mlrp_13" class="apparatus this" onclick="matchApp('this');">
                            
+                           <div data-witness="reading_poem" class="reading reading_poem"> 
+                              
+                              
+                              
+                              All this and 
+                              
+                           </div>
                            
-                            
-                           is spreading.
+                        </div>
+                        
+                        
+                        <div data-timeline="mlrp_14" class="apparatus ordinary" onclick="matchApp('ordinary');">
+                           
+                           <div data-witness="reading_poem" class="reading reading_poem"> 
+                              
+                              
+                              
+                              not ordinary, 
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        
+                        <div data-timeline="mlrp_15" class="apparatus unordered" onclick="matchApp('unordered');">
+                           
+                           <div data-witness="reading_poem" class="reading reading_poem"> 
+                              
+                              
+                              
+                              not unordered 
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        
+                        <div data-timeline="mlrp_16" class="apparatus resembling" onclick="matchApp('resembling');">
+                           
+                           <div data-witness="reading_poem" class="reading reading_poem"> 
+                              
+                              
+                               
+                              in not resembling. 
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        
+                        <div data-timeline="mlrp_17" class="apparatus difference" onclick="matchApp('difference');">
+                           
+                           <div data-witness="reading_poem" class="reading reading_poem"> 
+                              
+                              
+                              
+                              The difference  
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        
+                        <div data-timeline="mlrp_18" class="apparatus spreading" onclick="matchApp('spreading');">
+                           
+                           <div data-witness="reading_poem" class="reading reading_poem"> 
+                              
+                              
+                               
+                              is spreading.
+                              
+                           </div>
                            
                         </div>         
                         
