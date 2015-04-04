@@ -456,6 +456,24 @@ function notesFormat(format) {
    }
    //resizePanels();
 }
+
+$(document).ready(function(){
+	$("#notesMenu").click(function(){
+
+		$("#mssArea .noteicon").toggle();
+
+	});
+});
+
+$(document).ready(function(){
+	$("#toggleLineNumbers").click(function(){
+		
+		$("div.linenumber").toggleClass("notVisible");
+
+	});
+});
+
+
 function toggleBiblio() {
    var bibPanel = document.getElementById("bibPanel");
    var bibToggle = document.getElementById("bibToggle");
@@ -1128,6 +1146,9 @@ $(document).ready(function(){
 	
 	$(".dropdownButton").click(function(e){
 		e.stopPropagation();
+		
+		$(".dropdownButton").not(this).next(".dropdown").css('visibility', 'hidden');
+		
 		var visibility = $(this).next('ul').css('visibility');
 		if ( visibility === 'hidden'){
 			$(this).next('ul').css('visibility', 'visible');
@@ -1148,18 +1169,21 @@ $(document).ready(function(){
 		});
 	});
 	
-	
 	$(".dropdown li").click(function(e){
+		e.stopPropagation();
+		$(this).find("img").toggleClass("invisible");
+	});
+	
+	$("#witnessList.dropdown li").click(function(e){
 		e.stopPropagation();
 		/* toggle visible of ms panels*/
 		var c = $(this).attr("class").split(" ");
 		$(".mssPanel."+c[0]).toggle();
-		$(this).find("img").toggleClass("invisible");
 		
 	});
 	
 	/* highlight witness list and witness panels */
-	$(".dropdown li").hover(function(){
+	$("#witnessList.dropdown li").hover(function(){
 		/*mouse enter event*/
 		var c = $(this).attr("class");
 		

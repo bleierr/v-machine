@@ -545,6 +545,9 @@ div.listText p{
 	.image-container .invisible{
 		display:none;
 	}
+	.notVisible{
+		visibility:hidden;
+	}
 
 /* end style dropdown list */
 

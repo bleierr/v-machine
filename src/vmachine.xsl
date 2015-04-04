@@ -186,10 +186,11 @@
       <nav id="mainControls">
          
          <ul>
+            <!--  
             <li>
                <button id="info" type="button" onclick="#" >INFO</button>
             </li>
-            <!--  <input type="button" id="newPanel" value="New Version" onclick="openPanel();" />
+            <input type="button" id="newPanel" value="New Version" onclick="openPanel();" />
          &#8226;-->
             <!--  
          <input type="button" id="bibToggle" value="Bibliographic Info" onclick="toggleBiblio();" />
@@ -205,34 +206,47 @@
                </span>
                <!-- RB: version dropdown -->
                <xsl:call-template name="versionDropdown"/>
-            </li>                
-            
+            </li>
             <li>
-               <input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" >
+               <span>
+                  <xsl:attribute name="id">controlDropdown</xsl:attribute>
+                  <xsl:attribute name="class">dropdownButton</xsl:attribute>
+                  <xsl:text>Control dropdown</xsl:text>
+                  
+               </span>
+               <!-- RB: control dropdown -->
+               <xsl:call-template name="controlDropdown"/>
+            </li>  
+            
+            
+            
+            <!--
+            <li>
+               <input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" >-->
                   <!--This isn't working when $displayCritInfo is true but there's no relevant note. Copied the if statement from Martin below. -->
-                  <xsl:if test="$displayCritInfo != 'true' or not(tei:notesStmt/tei:note[@type='critIntro'])">
+                  <!-- <xsl:if test="$displayCritInfo != 'true' or not(tei:notesStmt/tei:note[@type='critIntro'])">
                      <xsl:attribute name="style">
                         <xsl:text>display: none;</xsl:text>
                      </xsl:attribute>
                   </xsl:if>            
                </input>
             </li>
-            <li>
+            <li>  -->
                <!-- &#8226;
                <input type="button" id="helpToggle" value="Help Viewer" onclick="toggleHelp();" /> -->
-               
+               <!-- 
                <label for="toggleLineNumbers">Line Numbers:</label>
                <button>
                   <xsl:attribute name="id">displayLines</xsl:attribute>
                   <xsl:text>ON</xsl:text>
-               </button>
+               </button> -->
                <!-- <input type="checkbox" id="toggleLineNumbers" onclick="toggleLineNumbers(this.checked);">
                   <xsl:if test="$displayLineNumbers != 'false'">
                      <xsl:attribute name="checked">checked</xsl:attribute>
                   </xsl:if>
                </input> -->
               
-            </li>
+            <!--</li>
             <li>
                <select id="notesMenu">
                   <xsl:choose>
@@ -266,15 +280,15 @@
                         <option>No notes found</option>
                      </xsl:otherwise>
                   </xsl:choose>
-               </select>
+               </select> -->
                <!-- &#8226;
                <a>
                   <xsl:attribute name="href">
                      <xsl:value-of select="$indexPage" />
                   </xsl:attribute>
                   <xsl:text>Index of texts</xsl:text>
-               </a> -->
-            </li>
+               </a> 
+            </li>-->
          </ul>
          
          
@@ -311,6 +325,77 @@
       
       
    </xsl:template>
+   
+   
+   <xsl:template name="controlDropdown">
+      <ul>
+         <xsl:attribute name="id">controlList</xsl:attribute>
+         <xsl:attribute name="class">dropdown</xsl:attribute>
+          
+         <li id="bibToggle" onclick="toggleBiblio();">
+            <div>
+               <xsl:attribute name="class">listText</xsl:attribute>
+               
+               <p>
+                  <xsl:text>Bibliographic panel</xsl:text>
+               </p> 
+               
+               <div class="image-container">
+                  <img class="invisible" src="../vm-images/symbol-visible.png" alt=""/>
+                  <img src="../vm-images/symbol-not-visible.png" alt=""/>
+               </div>
+            </div>
+            </li>
+         <li> <!--  onclick="toggleLineNumbers(false);" -->
+            <xsl:attribute name="id">toggleLineNumbers</xsl:attribute>
+            <div>
+               <xsl:attribute name="class">listText</xsl:attribute>
+               <p>
+                  <xsl:text>Line numbers</xsl:text>
+               </p> 
+               
+               <div class="image-container">
+                  <img class="invisible" src="../vm-images/symbol-visible.png" alt=""/>
+                  <img src="../vm-images/symbol-not-visible.png" alt=""/>
+               </div>
+            </div>
+         </li>
+         <li> <!-- onclick="notesFormat('popup');" -->
+            <xsl:attribute name="id">notesMenu</xsl:attribute>
+            <div>
+               <xsl:attribute name="class">listText</xsl:attribute>
+               <p>
+                  <xsl:text>Display notes</xsl:text>
+               </p> 
+               
+               <div class="image-container">
+                  <img class="invisible" src="../vm-images/symbol-visible.png" alt=""/>
+                  <img src="../vm-images/symbol-not-visible.png" alt=""/>
+               </div>
+            </div>
+         </li>
+         <li onclick="toggleCrit();">
+            <xsl:attribute name="id">criticalNotes</xsl:attribute>
+            <!-- not present everywhere -->
+            <div>
+               <xsl:attribute name="class">listText</xsl:attribute>
+               
+               <p>
+                  <xsl:text>Critical notes</xsl:text>
+               </p> 
+               
+               <div class="image-container">
+                  <img class="invisible" src="../vm-images/symbol-visible.png" alt=""/>
+                  <img src="../vm-images/symbol-not-visible.png" alt=""/>
+               </div>
+            </div>
+         </li>
+      </ul>
+   </xsl:template>
+   
+   
+   
+   
    
    <xsl:template name="manuscriptArea">
       <div id="mssArea">
