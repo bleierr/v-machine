@@ -19,8 +19,9 @@
    <xsl:variable name="cssInclude">../src/vmachine.css</xsl:variable>
    
    <xsl:variable name="cssJQuery-UI">../src/js/jquery-ui-1.11.3/jquery-ui.min.css</xsl:variable>
-      
-   <!-- The JavaScript include file. Keep in mind that, as of April 1, 2008,
+   
+   
+     <!-- The JavaScript include file. Keep in mind that, as of April 1, 2008,
    the current beta version of Firefox 3.0 has instituted strong JavaScript
    security policies that prevent the inclusion of any JS files from outside
    of the current directory when loading a document from the local filesystem
@@ -84,7 +85,13 @@
          <body onload="init();">
             <xsl:call-template name="mainBanner" />
             <xsl:call-template name="manuscriptArea" />
-            <xsl:call-template name="imageViewer" />
+            <xsl:for-each select="//tei:facsimile/tei:graphic">
+               <xsl:call-template name="imageViewer" >
+                  <xsl:with-param name="imgUrl" select="@url"></xsl:with-param>
+                  <xsl:with-param name="imgId" select="@xml:id"></xsl:with-param>
+               </xsl:call-template>
+            </xsl:for-each>
+            <!--<xsl:call-template name="imageViewer" />-->
             <!-- <p>There are <xsl:value-of select="count($witnesses)" /> witnesses.</p> -->
          </body>
       </html>
@@ -133,6 +140,13 @@
             <xsl:call-template name="createTimelinePoints" />
             <xsl:call-template name="createTimelineDurations" />
          </script>
+         <!-- RB: JS and CSS files for the zoom and pan effect -->
+         <!-- RB: jquery.panzoom plugin from https://github.com/timmywil/jquery.panzoom -->
+         <link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link>
+         <script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script>
+         
+         
+         
       </head>
    </xsl:template>
    
@@ -303,7 +317,7 @@
          <xsl:attribute name="class">dropdown</xsl:attribute>
             <xsl:for-each select="$witnesses">
                  <li>
-                        <xsl:attribute name="class">
+                    <xsl:attribute name="data-panelid">
                            <xsl:value-of select="@xml:id"></xsl:value-of>
                         </xsl:attribute>
                    <div>
@@ -332,7 +346,7 @@
          <xsl:attribute name="id">controlList</xsl:attribute>
          <xsl:attribute name="class">dropdown</xsl:attribute>
           
-         <li id="bibToggle" onclick="toggleBiblio();">
+         <li data-panelid="bibPanel">
             <div>
                <xsl:attribute name="class">listText</xsl:attribute>
                
@@ -346,8 +360,7 @@
                </div>
             </div>
             </li>
-         <li> <!--  onclick="toggleLineNumbers(false);" -->
-            <xsl:attribute name="id">toggleLineNumbers</xsl:attribute>
+         <li data-panelid="lineNumbers"> <!--  onclick="toggleLineNumbers(false);" -->
             <div>
                <xsl:attribute name="class">listText</xsl:attribute>
                <p>
@@ -360,8 +373,7 @@
                </div>
             </div>
          </li>
-         <li> <!-- onclick="notesFormat('popup');" -->
-            <xsl:attribute name="id">notesMenu</xsl:attribute>
+         <li data-panelid="notesPanel"> <!-- onclick="notesFormat('popup');" -->
             <div>
                <xsl:attribute name="class">listText</xsl:attribute>
                <p>
@@ -374,9 +386,7 @@
                </div>
             </div>
          </li>
-         <li onclick="toggleCrit();">
-            <xsl:attribute name="id">criticalNotes</xsl:attribute>
-            <!-- not present everywhere -->
+         <li data-panelid="critPanel">
             <div>
                <xsl:attribute name="class">listText</xsl:attribute>
                
@@ -422,7 +432,9 @@
       <!-- RB: added draggable resizeable -->
       <div>
          <xsl:attribute name="class">
-            <xsl:text>panel mssPanel draggable resizable ui-widget-content ui-resizable </xsl:text>
+            <xsl:text>panel mssPanel draggable resizable ui-widget-content ui-resizable</xsl:text>
+         </xsl:attribute>
+         <xsl:attribute name="id">
             <xsl:value-of select="$witID"></xsl:value-of>
          </xsl:attribute>
          <div class="panelBanner">
@@ -522,7 +534,7 @@
                <xsl:for-each select="//tei:note[@type='image']/tei:witDetail[@target = concat('#',$witID)]//tei:graphic[@url]">
                   <xsl:call-template name="imageLink">
                      <xsl:with-param name="imageURL" select="@url" />
-                     <xsl:with-param name="witID" select="$witID"></xsl:with-param>
+                     <xsl:with-param name="imgID" select="@xml:id"></xsl:with-param>
                      <xsl:with-param name="witness" select="translate(ancestor::tei:witDetail/@wit,'#','')" />
                   </xsl:call-template>
                </xsl:for-each>
@@ -546,7 +558,7 @@
             </xsl:attribute>
          </xsl:if>
          <div class="panelBanner">
-            <img class="closePanel" onclick="toggleBiblio();" alt="X (Close panel)" src="../vm-images/closePanel.gif" />
+            <img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif" />
             Bibliographic Information
          </div>
          <div class="bibContent">
@@ -677,7 +689,7 @@
             </xsl:if>
         
             <div class="panelBanner">
-               <img class="closePanel" onclick="toggleCrit();" alt="X (Close panel)" src="../vm-images/closePanel.gif" />
+               <img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif" />
                Critical Introduction
             </div>
             <div class="critContent">
@@ -740,7 +752,7 @@
             </xsl:attribute>
          </xsl:if>
          <div class="panelBanner">
-            <img class="closePanel" onclick="hideNotesPanel();" alt="X (Close panel)" src="../vm-images/closePanel.gif" />
+            <img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif" />
             Textual Notes
          </div>
          <xsl:for-each select="//tei:body//tei:note[not(@type='image')]">
@@ -850,7 +862,7 @@
    <xsl:template name="imageLink">
       <xsl:param name="imageURL" />
       <xsl:param name="witness" />
-      <xsl:param name="witID" />
+      <xsl:param name="imgID"/>
       <xsl:if test="$imageURL != ''">
          <img src="../vm-images/image.gif" alt="Facsimile Image Placeholder">
             <xsl:attribute name="class">
@@ -860,16 +872,92 @@
                   <xsl:value-of select="$witness" />
                </xsl:if>
             </xsl:attribute>
-            <xsl:attribute name="onclick">
+            <xsl:attribute name="data-witness-id">
+               <xsl:if test="$witness != ''">
+                  <xsl:value-of select="$witness" />
+               </xsl:if>
+            </xsl:attribute>
+            <xsl:attribute name="data-img-url">
+               <xsl:value-of select="$imageURL" />
+            </xsl:attribute>
+            <xsl:attribute name="data-img-id">
+               <xsl:value-of select="$imgID" />
+            </xsl:attribute>
+            <!-- <xsl:attribute name="onclick">
                <xsl:text>return showImgPanel(event, 'imageViewer','</xsl:text>
                <xsl:value-of select="$imageURL" />
                <xsl:text>','</xsl:text>
                <xsl:value-of select="$witness" />
                <xsl:text>','-250','0');</xsl:text>
-            </xsl:attribute>
+            </xsl:attribute> -->
          </img>
       </xsl:if>
    </xsl:template>
+   
+  <!--  <xsl:template name="imageLink">
+      <xsl:param name="imageURL" />
+      <xsl:param name="witness" />
+      <xsl:param name="witID" />
+      <xsl:variable name="pos">
+         <xsl:number value="position()" format="1" />
+      </xsl:variable>
+      <xsl:if test="$imageURL != ''">
+         <div class="illgrp" id="item-image">
+            <xsl:attribute name="class">
+               <xsl:text>imageLink</xsl:text>
+               <xsl:if test="$witness != ''">
+                  <xsl:text> </xsl:text>
+                  <xsl:value-of select="$witness" />
+               </xsl:if>
+            </xsl:attribute>--> 
+            <!-- RB: jquery.panzoom plugin from https://github.com/timmywil/jquery.panzoom The links to the JS and CSS files are in the facsimile template-->
+            
+            <!--<xsl:variable name="img-container-id">panzoom<xsl:value-of select="$pos"/></xsl:variable>
+            <xsl:element name="div">
+               <xsl:attribute name="class">section</xsl:attribute>
+               <xsl:attribute name="id"><xsl:value-of select="$img-container-id"/></xsl:attribute>
+               
+               
+               <div class="panzoom-parent">--> 
+                  <!-- zoom control -->
+                  <!--<div class="buttons">
+                     <button class="zoom-in">+</button>
+                     <button class="zoom-out">-</button>
+                     <input type="range" class="zoom-range"/>
+                     <button class="reset">Reset</button>
+                  </div>--> 
+                  <!-- panzoom image -->
+                  <!--<div class="panzoom">
+                     <img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image">
+                        <xsl:attribute name="src">
+                           <xsl:value-of select="$imageURL" />
+                        </xsl:attribute>
+                        
+                     </img>
+                  </div>
+               </div>
+               
+               <script  type="text/javascript">
+                  (function() {
+                  var $section = $(<xsl:text>'div#</xsl:text><xsl:value-of select="$img-container-id"/><xsl:text>'</xsl:text>);
+                  $section.find('.panzoom').panzoom({
+                  $zoomIn: $section.find(".zoom-in"),
+                  $zoomOut: $section.find(".zoom-out"),
+                  $zoomRange: $section.find(".zoom-range"),
+                  $reset: $section.find(".reset")
+                  });
+                  })();
+               </script>
+               
+            </xsl:element>--> 
+            <!-- End implementation of jquery.panzoom -->
+         <!--</div>
+         
+      </xsl:if>
+   </xsl:template>--> 
+   
+   
+   
    
    <xsl:template match="tei:fw" />
    
@@ -1055,6 +1143,7 @@
          <xsl:if test="not(ancestor::tei:l) and @facs">
             <div class="facs-images">
             <xsl:call-template name="imageLink">
+               <xsl:with-param name="imgID" select="substring-after(@facs,'#')"></xsl:with-param>
                <xsl:with-param name="imageURL">
                   <xsl:choose>
                      <xsl:when test="contains(@facs,'#')">
@@ -1438,12 +1527,62 @@
    </xsl:template>
    
    <xsl:template name="imageViewer">
-      <div class="viewerRoot" id="panel_imageViewer">
+      <xsl:param name="imgId"></xsl:param>
+      <xsl:param name="imgUrl"></xsl:param>
+      <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="{$imgId}">
+         
          <div title="Click to drag panel." class="viewerHandle" id="handle_imageViewer">
-            <span class="viewerHandleLt" id="title_imageViewer">Image Viewer</span>
-            <img class="viewerHandleRt" onclick="return hidePanel('imageViewer');" alt="X" src="../vm-images/closePanel.gif" />
+            <span class="viewerHandleLt" id="title_imageViewer">
+            <xsl:value-of select="$imgUrl"></xsl:value-of>
+            </span>
+            <img class="viewerHandleRt closePanel" alt="X" src="../vm-images/closePanel.gif" />
          </div>
-         <div class="viewerContent" id="content_imageViewer"></div>
+         <div class="viewerContent" id="content_imageViewer">
+            <!-- RB: jquery.panzoom plugin from https://github.com/timmywil/jquery.panzoom The links to the JS and CSS files are in the facsimile template-->
+            
+            <xsl:variable name="img-container-id">panzoom<xsl:value-of select="$imgId"/></xsl:variable>
+            <xsl:element name="div">
+               <xsl:attribute name="class">section</xsl:attribute>
+               <xsl:attribute name="id"><xsl:value-of select="$img-container-id"/></xsl:attribute>
+               
+               
+               <div class="panzoom-parent">
+            <!-- zoom control -->
+            <div class="buttons">
+                     <button class="zoom-in">+</button>
+                     <button class="zoom-out">-</button>
+                     <input type="range" class="zoom-range"/>
+                     <button class="reset">Reset</button>
+                  </div>
+            <!-- panzoom image -->
+            <div class="panzoom">
+                     <img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image">
+                        <xsl:attribute name="src">
+                           <xsl:value-of select="$imgUrl" />
+                        </xsl:attribute>
+                        
+                     </img>
+                  </div>
+               </div>
+               
+               <script  type="text/javascript">
+                  (function() {
+                  var $section = $(<xsl:text>'div#</xsl:text><xsl:value-of select="$img-container-id"/><xsl:text>'</xsl:text>);
+                  $section.find('.panzoom').panzoom({
+                  $zoomIn: $section.find(".zoom-in"),
+                  $zoomOut: $section.find(".zoom-out"),
+                  $zoomRange: $section.find(".zoom-range"),
+                  $reset: $section.find(".reset")
+                  });
+                  })();
+               </script>
+               
+            </xsl:element>
+            <!-- End implementation of jquery.panzoom -->
+         </div>
+         <div class="panelFooter" height="25px">
+            
+         </div>
       </div>
    </xsl:template>
    

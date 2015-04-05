@@ -127,7 +127,7 @@ div#mssArea div#manuscripts{
     margin:0;
     padding:0;
 }
-div#mssArea div.panel{
+div.panel{
     float:left;
     border:1px solid black;
     min-height:250px;
@@ -416,17 +416,22 @@ div.type-stanza{
 
 
 
-.viewerRoot{
-    position:absolute;
-    width:38.11em;
+/*.viewerRoot{
+	
+   cursor:move;
     background-color:white;
     border:0.08em solid black;
     font-family:sans-serif;
-    visibility:hidden;
-    cursor:move;
+	width:38.11em;
+	z-index: 2;
+	position:absolute;
     z-index:999;
-}
+	 position:absolute;
+    visibility:hidden;
+    
+}*/
 .viewerHandle{
+	cursor:move;
     clear:both;
     margin:0;
     padding:0.32em;
@@ -438,6 +443,7 @@ div.type-stanza{
     overflow:hidden;
 }
 span.viewerHandleLt{
+	font-size:1em;
     float:left;
     text-align:left;
 }
@@ -561,7 +567,7 @@ button#displayLines{
 	width: 4em;
 }
 
-div#manuscripts div.highlight, #witnessList .highlight{
+div.panel.highlight, .dropdown .highlight{
 	border: 2px solid red;
 }
 /*Code RB End*/

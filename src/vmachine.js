@@ -163,6 +163,7 @@ function openPanel() {
       //changeWitness(newMenu.value,newPanel);
    }
 }
+/*
 function closePanel(panel) {
    var mssArea = document.getElementById("mssArea");
    var manuscriptsDiv = document.getElementById("manuscripts");
@@ -180,6 +181,9 @@ function closePanel(panel) {
       }
    }
 }
+*/
+
+
 
 function changeWitness(witness,panel) {
 
@@ -390,7 +394,7 @@ function matchLine(matchClass) {
          matchingLines[q].className = matchingLines[q].className + " highlighted";
       }
    } 
-}*/
+}
 function toggleLineNumbers(state) {
    var mssArea = document.getElementById("mssArea");
    var linenumbers = getElementsByClass("linenumber",mssArea,"div");
@@ -401,7 +405,7 @@ function toggleLineNumbers(state) {
          linenumbers[r].style.visibility = "visible";
       }
    }
-}
+}*/
 function presentInlineNotes() {
    var mssArea = document.getElementById("mssArea");
    var notesPanel = document.getElementById("notesPanel");
@@ -457,21 +461,6 @@ function notesFormat(format) {
    //resizePanels();
 }
 
-$(document).ready(function(){
-	$("#notesMenu").click(function(){
-
-		$("#mssArea .noteicon").toggle();
-
-	});
-});
-
-$(document).ready(function(){
-	$("#toggleLineNumbers").click(function(){
-		
-		$("div.linenumber").toggleClass("notVisible");
-
-	});
-});
 
 
 function toggleBiblio() {
@@ -563,6 +552,7 @@ var panels = [];
  Params: 
  theInstance - the unique id of the panel to hide (i.e. 70r_screen, 'panel_')
 *************************************************************************/
+/*
 function hidePanel(theInstance) { 
    if (!document.getElementById) {
    return null;
@@ -571,7 +561,7 @@ function hidePanel(theInstance) {
 document.getElementById("panel" + "_" + theInstance).style.visibility = "hidden";
   
 }
-       
+*/       
    
  /*************************************************************************
   Name: showPanel
@@ -615,7 +605,7 @@ function showPanel(e, theInstance, x, y) {
      y           - vertical offset (in pixels) for new panel 
     *************************************************************************/
    
-   
+   /*
    function showImgPanel(e, theInstance, theImgSrc, theWitness, x, y) {
    
      var offx = (x)? x-0 : 20;
@@ -628,13 +618,13 @@ function showPanel(e, theInstance, x, y) {
      var theImg = "<img title='Page image' alt='Page image' src='"+ theImgSrc + "'>";
    
       
-    Drag.init(theRoot, theRoot);
+    Drag.init(theRoot, theRoot);*/
     /* theRoot.onDragStart=makePanelTop; */
-    theRoot.onDrag=pStyleDrag;
+    /*theRoot.onDrag=pStyleDrag;
     theRoot.onDragEnd=pStyleDragEnd;
-     panels[panels.length]=theRoot;
+     panels[panels.length]=theRoot;*/
      /* panels[panels.length-1].style.zIndex = panels.length - 1; */
-     positionPanel(e,theRoot,offx,offy);
+     /*positionPanel(e,theRoot,offx,offy);
     
      theContent.innerHTML = theImg;
      if (theWitness != '') {
@@ -645,7 +635,9 @@ function showPanel(e, theInstance, x, y) {
      theRoot.style.visibility = "visible";
    
    }
+   */
    
+
     /*************************************************************************
      Name: swapImgPanel
      Desc: Wrapper function, used to bundle operations on the switch between
@@ -659,11 +651,11 @@ function showPanel(e, theInstance, x, y) {
      y           - vertical offset (in pixels) for new panel 
     *************************************************************************/
    
-    function swapImgPanel(e, theInstance, theImgSrc, toHide, x, y) {
+    /*function swapImgPanel(e, theInstance, theImgSrc, toHide, x, y) {
           
        showImgPanel(e, theInstance,theImgSrc, x,y); 
        hidePanel(toHide);
-   }
+   }*/
    
     /*************************************************************************
      Name: positionPanel
@@ -678,7 +670,7 @@ function showPanel(e, theInstance, x, y) {
      offy        - vertical offset (in pixels) for new panel 
     *************************************************************************/
    
-   
+/*
 function positionPanel(e, o, offX, offY) {
   var x=0, y=0; viewport.getAll();
   x = e.pageX? e.pageX: e.clientX + viewport.scrollX;
@@ -695,7 +687,7 @@ function positionPanel(e, o, offX, offY) {
   o.style.left = x + "px"; o.style.top = y + "px";
  
   }
-
+*/
   /*************************************************************************
      Name: toggleDiv
      Desc: This is used to selectively show or hide divs.    
@@ -705,6 +697,8 @@ function positionPanel(e, o, offX, offY) {
      Params: 
      action      - the action to perform (show | hide)
   *************************************************************************/
+  
+ /*
 function toggleDiv(action) {
  
 if (!document.getElementById) {
@@ -727,7 +721,7 @@ if (!document.getElementById) {
         }
       }
  }
-} 
+} */
 
 
 
@@ -1138,11 +1132,15 @@ $(document).ready(function(){
   
 //select witnesses
 
+
 $(document).ready(function(){
 	var witnesses = [];
 		$("#witnessList li").each(function(){
-			witnesses.push($(this).attr("class"));
+			witnesses.push($(this).attr("data-panelid"));
 		});
+		
+	var dropdownMenus = "#witnessList.dropdown li, #controlList.dropdown li"	
+	
 	
 	$(".dropdownButton").click(function(e){
 		e.stopPropagation();
@@ -1174,68 +1172,105 @@ $(document).ready(function(){
 		$(this).find("img").toggleClass("invisible");
 	});
 	
-	$("#witnessList.dropdown li").click(function(e){
+	$(dropdownMenus).click(function(e){
 		e.stopPropagation();
 		/* toggle visible of ms panels*/
-		var c = $(this).attr("class").split(" ");
-		$(".mssPanel."+c[0]).toggle();
+		var p = $(this).attr("data-panelid");
+		$("#"+p).toggle();
 		
 	});
 	
 	/* highlight witness list and witness panels */
-	$("#witnessList.dropdown li").hover(function(){
+	$(dropdownMenus).hover(function(){
 		/*mouse enter event*/
-		var c = $(this).attr("class");
-		
+		var p = $(this).attr("data-panelid");
 		$(this).addClass("highlight");
-		$(".mssPanel."+c).addClass("highlight");
+		$("#"+p).addClass("highlight");
 	}, function(){
 		/*mouse leave event*/
-		var c = $(this).attr("class").split(" ");
+		var p = $(this).attr("data-panelid");
 		
 		$(this).removeClass("highlight");
-		$(".mssPanel."+c[1]).removeClass("highlight");
+		$("#"+p).removeClass("highlight");
 	});
 	
 	
 
-	$(".mssPanel").hover(function(){
-		
-		
+	$(".panel").hover(function(){
 		$(this).addClass("highlight");
 
-		var c = $(this).attr("class").split(" ");
+		var p = $(this).attr("id");
 		
-		for (var i=0; i < c.length; i++){
+		$(".dropdown li[data-panelid='"+p+"']").addClass("highlight");
 		
-			for (var j=0; j < witnesses.length; j++){
-			
-				if (c[i] === witnesses[j]){
-					$("#witnessList li."+witnesses[j]).addClass("highlight");
-				}
-			}
-		}
-		
-	
 	}, function(){
 			
 		
 		$(this).removeClass("highlight");
 		
-		var c = $(this).attr("class").split(" ");
+		var p = $(this).attr("id");
+		$(".dropdown li[data-panelid='"+p+"']").removeClass("highlight");
 		
-		for (var i=0; i < c.length; i++){
-		
-			for (var j=0; j < witnesses.length; j++){
-			
-				if (c[i] === witnesses[j]){
-					$("#witnessList li."+witnesses[j]).removeClass("highlight");
-				}
-			}
-		}
-	
 	});
 	
 	
 	
 });
+
+
+/********IMAGE PANEL REWRITE wit JQUERY*********/
+
+$(document).ready(function(){
+	
+	
+	
+	$(".imageLink").click(function(e){
+		//var offset = $(this).offset();
+		//alert(e.pageX);
+		//alert(e.pageY);
+		var imgId = $(this).attr("data-img-id");
+		//alert(imgId);
+		
+		$("#"+imgId).css({
+			"position": "absolute",
+			"top": e.pageY,
+			"left": e.pageX,
+		}).toggle();
+		
+	
+	});
+
+});
+   
+$(document).ready(function(){
+	
+	$(".closePanel").click(function(){
+		var w = $(this).closest(".panel").attr("id");
+		
+		$(this).closest(".panel").hide();
+		
+		$(".dropdown li[data-panelid='"+w+"'] img").toggleClass("invisible");
+		
+	});
+});  
+   
+   
+$(document).ready(function(){
+	$("li[data-panelid='notesPanel']").click(function(){
+
+		$("#mssArea .noteicon").toggle();
+
+	});
+});
+
+$(document).ready(function(){
+	$("li[data-panelid='lineNumbers']").click(function(){
+		
+		$("div.linenumber").toggleClass("notVisible");
+
+	});
+});
+
+
+
+
