@@ -22,8 +22,8 @@
          witnesses["pub"] = "pub";
       
       var maxPanels = 5;
-   var timelinePoints = new Array();var timelineDurations = new Array();</script></head>
-   <body onload="init();">
+   var timelinePoints = new Array();var timelineDurations = new Array();</script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script></head>
+   <body>
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/poweredby.gif"></img></div>
          <div id="headline">
@@ -31,9 +31,8 @@
          </div>
          <nav id="mainControls">
             <ul>
-               <li><button id="info" type="button" onclick="#">INFO</button></li>
                <li><span id="selectWitness" class="dropdownButton">5 Total Witnesses</span><ul id="witnessList" class="dropdown">
-                     <li class="t7989-1-10">
+                     <li data-panelid="t7989-1-10">
                         <div class="listText">
                            <p>'A Short History of Our Own Time' (TCD MS
                               7989/1/10)
@@ -41,7 +40,7 @@
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="t7989-1-8">
+                     <li data-panelid="t7989-1-8">
                         <div class="listText">
                            <p>'Civil War', which was deleted and replaced with
                               'Ireland, Autumn 1922' (TCD MS 7989/1/8)
@@ -49,19 +48,19 @@
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="t7989-1-7">
+                     <li data-panelid="t7989-1-7">
                         <div class="listText">
                            <p>'Ireland Autumn, 1922' (TCD MS 7989/1/7)</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="t7989-1-9">
+                     <li data-panelid="t7989-1-9">
                         <div class="listText">
                            <p>'Ireland, Autumn, 1922 (TCD MS 7989/1/9)</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="pub">
+                     <li data-panelid="pub">
                         <div class="listText">
                            <p>published in Poems under the title
                               'Autumn, 1922'
@@ -71,21 +70,39 @@
                      </li>
                   </ul>
                </li>
-               <li><input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" style="display: none;"></input></li>
-               <li><label for="toggleLineNumbers">Line Numbers:</label><button id="displayLines">ON</button></li>
-               <li><select id="notesMenu" onchange="notesFormat(this.value);">
-                     <option value="popup" selected="selected">Popup notes</option>
-                     <option value="inline">Inline notes</option>
-                     <option value="none">
-                        Hide notes
-                        
-                     </option></select></li>
+               <li><span id="controlDropdown" class="dropdownButton">Control dropdown</span><ul id="controlList" class="dropdown">
+                     <li data-panelid="bibPanel">
+                        <div class="listText">
+                           <p>Bibliographic panel</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="lineNumbers">
+                        <div class="listText">
+                           <p>Line numbers</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="notesPanel">
+                        <div class="listText">
+                           <p>Notes Panel</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="critPanel">
+                        <div class="listText">
+                           <p>Critical notes</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
             </ul>
          </nav>
       </div>
       <div id="mssArea">
          <div class="panel" id="bibPanel">
-            <div class="panelBanner"><img class="closePanel" onclick="toggleBiblio();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Bibliographic Information
                
             </div>
@@ -167,21 +184,21 @@
             </div>
          </div>
          <div class="panel" id="critPanel" style="display: none;">
-            <div class="panelBanner"><img class="closePanel" onclick="toggleCrit();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Critical Introduction
                
             </div>
             <div class="critContent"></div>
          </div>
          <div id="manuscripts">
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable t7989-1-10">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="t7989-1-10">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness t7989-1-10
                </div>
                <div class="mssContent">
                   
                   
                   <hr class="pagebreak t7989-1-10"></hr>
-                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink t7989-1-10" onclick="return showImgPanel(event, 'imageViewer','images/autumn_7989-1-10.jpg','t7989-1-10','-250','0');"></img></div>
+                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink t7989-1-10" data-witness-id="t7989-1-10" data-img-url="images/autumn_7989-1-10.jpg" data-img-id="i7989-1-10"></img></div>
                   
                   
                   
@@ -227,6 +244,9 @@
                   
                   <div class="lg lg-n1">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div> The sun burns out, 
+                     </div>
                      
                      <div class="line line2" line-id="line2">
                         <div class="linenumber">2</div>
@@ -286,7 +306,7 @@
                         </div>
                         
                      </div>
-                     ZZZZ
+                     
                      
                   </div>
                   
@@ -319,7 +339,7 @@
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable t7989-1-8">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="t7989-1-8">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness t7989-1-8
                </div>
                <div class="mssContent">
@@ -327,7 +347,7 @@
                   
                   
                   <hr class="pagebreak t7989-1-8"></hr>
-                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink t7989-1-8" onclick="return showImgPanel(event, 'imageViewer','images/autumn_7989-1-8.jpg','t7989-1-8','-250','0');"></img></div>
+                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink t7989-1-8" data-witness-id="t7989-1-8" data-img-url="images/autumn_7989-1-8.jpg" data-img-id="i7989-1-8"></img></div>
                   
                   
                   
@@ -376,6 +396,9 @@
                   
                   <div class="lg lg-n1">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div> The sun burns out, 
+                     </div>
                      
                      <div class="line line2" line-id="line2">
                         <div class="linenumber">2</div>
@@ -384,15 +407,14 @@
                            
                            
                            
-                           <div data-witness="t7989-1-8 pub" class="reading t7989-1-8 pub">The world withers
-                              <div class="stanzabreak"></div>
+                           <div data-witness="t7989-1-8 pub" class="reading t7989-1-8 pub">The world withers<br class="stanzabreak"></br>
                               
                            </div>
                            
                         </div>
                         
                      </div>
-                     ZZZZ
+                     
                      
                      <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>
@@ -428,7 +450,7 @@
                         </div>
                         
                      </div>
-                     ZZZZ
+                     
                      
                   </div>
                   
@@ -444,7 +466,7 @@
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable t7989-1-7">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="t7989-1-7">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness t7989-1-7
                </div>
                <div class="mssContent">
@@ -453,7 +475,7 @@
                   
                   
                   <hr class="pagebreak t7989-1-7"></hr>
-                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink t7989-1-7" onclick="return showImgPanel(event, 'imageViewer','images/autumn_7989-1-7.jpg','t7989-1-7','-250','0');"></img></div>
+                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink t7989-1-7" data-witness-id="t7989-1-7" data-img-url="images/autumn_7989-1-7.jpg" data-img-id="i7989-1-7"></img></div>
                   
                   
                   
@@ -497,6 +519,9 @@
                   
                   <div class="lg lg-n1">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div> The sun burns out, 
+                     </div>
                      
                      <div class="line line2" line-id="line2">
                         <div class="linenumber">2</div>
@@ -504,8 +529,7 @@
                         <div class="apparatus app_2_l_2_1" onclick="matchApp('app_2_l_2_1');">
                            
                            
-                           <div data-witness="t7989-1-7 t7989-1-9" class="reading t7989-1-7 t7989-1-9">The world withers,
-                              <div class="stanzabreak"></div>
+                           <div data-witness="t7989-1-7 t7989-1-9" class="reading t7989-1-7 t7989-1-9">The world withers,<br class="stanzabreak"></br>
                               
                            </div>
                            
@@ -513,7 +537,7 @@
                         </div>
                         
                      </div>
-                     ZZZZ
+                     
                      
                      <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>
@@ -566,7 +590,7 @@
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable t7989-1-9">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="t7989-1-9">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness t7989-1-9
                </div>
                <div class="mssContent">
@@ -576,7 +600,7 @@
                   
                   
                   <hr class="pagebreak t7989-1-9"></hr>
-                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink t7989-1-9" onclick="return showImgPanel(event, 'imageViewer','images/autumn_7989-1-9.jpg','t7989-1-9','-250','0');"></img></div>
+                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink t7989-1-9" data-witness-id="t7989-1-9" data-img-url="images/autumn_7989-1-9.jpg" data-img-id="i7989-1-9"></img></div>
                   
                   
                   <div class="head">
@@ -619,6 +643,9 @@
                   
                   <div class="lg lg-n1">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div> The sun burns out, 
+                     </div>
                      
                      <div class="line line2" line-id="line2">
                         <div class="linenumber">2</div>
@@ -626,8 +653,7 @@
                         <div class="apparatus app_2_l_2_1" onclick="matchApp('app_2_l_2_1');">
                            
                            
-                           <div data-witness="t7989-1-7 t7989-1-9" class="reading t7989-1-7 t7989-1-9">The world withers,
-                              <div class="stanzabreak"></div>
+                           <div data-witness="t7989-1-7 t7989-1-9" class="reading t7989-1-7 t7989-1-9">The world withers,<br class="stanzabreak"></br>
                               
                            </div>
                            
@@ -635,7 +661,7 @@
                         </div>
                         
                      </div>
-                     ZZZZ
+                     
                      
                      <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>
@@ -671,7 +697,7 @@
                         </div>
                         
                      </div>
-                     ZZZZ
+                     
                      
                   </div>
                   
@@ -713,7 +739,7 @@
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable pub">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="pub">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness pub
                </div>
                <div class="mssContent">
@@ -724,7 +750,7 @@
                   
                   
                   <hr class="pagebreak pub"></hr>
-                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink pub" onclick="return showImgPanel(event, 'imageViewer','images/autumn_pub.jpg','pub','-250','0');"></img></div>
+                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink pub" data-witness-id="pub" data-img-url="images/autumn_pub.jpg" data-img-id="autumn-pub"></img></div>
                   
                   <div class="head">
                      
@@ -768,6 +794,9 @@
                   
                   <div class="lg lg-n1">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div> The sun burns out, 
+                     </div>
                      
                      <div class="line line2" line-id="line2">
                         <div class="linenumber">2</div>
@@ -776,15 +805,14 @@
                            
                            
                            
-                           <div data-witness="t7989-1-8 pub" class="reading t7989-1-8 pub">The world withers
-                              <div class="stanzabreak"></div>
+                           <div data-witness="t7989-1-8 pub" class="reading t7989-1-8 pub">The world withers<br class="stanzabreak"></br>
                               
                            </div>
                            
                         </div>
                         
                      </div>
-                     ZZZZ
+                     
                      
                      <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>
@@ -820,7 +848,7 @@
                         </div>
                         
                      </div>
-                     ZZZZ
+                     
                      
                   </div>
                   
@@ -838,7 +866,7 @@
             </div>
          </div>
          <div class="panel" id="notesPanel" style="display: none;">
-            <div class="panelBanner"><img class="closePanel" onclick="hideNotesPanel();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Textual Notes
                
             </div>
@@ -906,9 +934,110 @@
                
             </div>
          </div><br class="clear"></br></div>
-      <div class="viewerRoot" id="panel_imageViewer">
-         <div title="Click to drag panel." class="viewerHandle" id="handle_imageViewer"><span class="viewerHandleLt" id="title_imageViewer">Image Viewer</span><img class="viewerHandleRt" onclick="return hidePanel('imageViewer');" alt="X" src="../vm-images/closePanel.gif"></img></div>
-         <div class="viewerContent" id="content_imageViewer"></div>
+      <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="i7989-1-10">
+         <div title="Click to drag panel." class="viewerHandle" id="handle_imageViewer"><span class="viewerHandleLt" id="title_imageViewer">images/autumn_7989-1-10.jpg</span><img class="viewerHandleRt closePanel" alt="X" src="../vm-images/closePanel.gif"></img></div>
+         <div class="viewerContent" id="content_imageViewer">
+            <div class="section" id="panzoomi7989-1-10">
+               <div class="panzoom-parent">
+                  <div class="buttons"><button class="zoom-in">+</button><button class="zoom-out">-</button><input type="range" class="zoom-range"></input><button class="reset">Reset</button></div>
+                  <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/autumn_7989-1-10.jpg"></img></div>
+               </div><script type="text/javascript">
+                  (function() {
+                  var $section = $('div#panzoomi7989-1-10');
+                  $section.find('.panzoom').panzoom({
+                  $zoomIn: $section.find(".zoom-in"),
+                  $zoomOut: $section.find(".zoom-out"),
+                  $zoomRange: $section.find(".zoom-range"),
+                  $reset: $section.find(".reset")
+                  });
+                  })();
+               </script></div>
+         </div>
+         <div class="panelFooter" height="25px"></div>
+      </div>
+      <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="i7989-1-8">
+         <div title="Click to drag panel." class="viewerHandle" id="handle_imageViewer"><span class="viewerHandleLt" id="title_imageViewer">images/autumn_7989-1-8.jpg</span><img class="viewerHandleRt closePanel" alt="X" src="../vm-images/closePanel.gif"></img></div>
+         <div class="viewerContent" id="content_imageViewer">
+            <div class="section" id="panzoomi7989-1-8">
+               <div class="panzoom-parent">
+                  <div class="buttons"><button class="zoom-in">+</button><button class="zoom-out">-</button><input type="range" class="zoom-range"></input><button class="reset">Reset</button></div>
+                  <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/autumn_7989-1-8.jpg"></img></div>
+               </div><script type="text/javascript">
+                  (function() {
+                  var $section = $('div#panzoomi7989-1-8');
+                  $section.find('.panzoom').panzoom({
+                  $zoomIn: $section.find(".zoom-in"),
+                  $zoomOut: $section.find(".zoom-out"),
+                  $zoomRange: $section.find(".zoom-range"),
+                  $reset: $section.find(".reset")
+                  });
+                  })();
+               </script></div>
+         </div>
+         <div class="panelFooter" height="25px"></div>
+      </div>
+      <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="i7989-1-7">
+         <div title="Click to drag panel." class="viewerHandle" id="handle_imageViewer"><span class="viewerHandleLt" id="title_imageViewer">images/autumn_7989-1-7.jpg</span><img class="viewerHandleRt closePanel" alt="X" src="../vm-images/closePanel.gif"></img></div>
+         <div class="viewerContent" id="content_imageViewer">
+            <div class="section" id="panzoomi7989-1-7">
+               <div class="panzoom-parent">
+                  <div class="buttons"><button class="zoom-in">+</button><button class="zoom-out">-</button><input type="range" class="zoom-range"></input><button class="reset">Reset</button></div>
+                  <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/autumn_7989-1-7.jpg"></img></div>
+               </div><script type="text/javascript">
+                  (function() {
+                  var $section = $('div#panzoomi7989-1-7');
+                  $section.find('.panzoom').panzoom({
+                  $zoomIn: $section.find(".zoom-in"),
+                  $zoomOut: $section.find(".zoom-out"),
+                  $zoomRange: $section.find(".zoom-range"),
+                  $reset: $section.find(".reset")
+                  });
+                  })();
+               </script></div>
+         </div>
+         <div class="panelFooter" height="25px"></div>
+      </div>
+      <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="i7989-1-9">
+         <div title="Click to drag panel." class="viewerHandle" id="handle_imageViewer"><span class="viewerHandleLt" id="title_imageViewer">images/autumn_7989-1-9.jpg</span><img class="viewerHandleRt closePanel" alt="X" src="../vm-images/closePanel.gif"></img></div>
+         <div class="viewerContent" id="content_imageViewer">
+            <div class="section" id="panzoomi7989-1-9">
+               <div class="panzoom-parent">
+                  <div class="buttons"><button class="zoom-in">+</button><button class="zoom-out">-</button><input type="range" class="zoom-range"></input><button class="reset">Reset</button></div>
+                  <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/autumn_7989-1-9.jpg"></img></div>
+               </div><script type="text/javascript">
+                  (function() {
+                  var $section = $('div#panzoomi7989-1-9');
+                  $section.find('.panzoom').panzoom({
+                  $zoomIn: $section.find(".zoom-in"),
+                  $zoomOut: $section.find(".zoom-out"),
+                  $zoomRange: $section.find(".zoom-range"),
+                  $reset: $section.find(".reset")
+                  });
+                  })();
+               </script></div>
+         </div>
+         <div class="panelFooter" height="25px"></div>
+      </div>
+      <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="autumn-pub">
+         <div title="Click to drag panel." class="viewerHandle" id="handle_imageViewer"><span class="viewerHandleLt" id="title_imageViewer">images/autumn_pub.jpg</span><img class="viewerHandleRt closePanel" alt="X" src="../vm-images/closePanel.gif"></img></div>
+         <div class="viewerContent" id="content_imageViewer">
+            <div class="section" id="panzoomautumn-pub">
+               <div class="panzoom-parent">
+                  <div class="buttons"><button class="zoom-in">+</button><button class="zoom-out">-</button><input type="range" class="zoom-range"></input><button class="reset">Reset</button></div>
+                  <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/autumn_pub.jpg"></img></div>
+               </div><script type="text/javascript">
+                  (function() {
+                  var $section = $('div#panzoomautumn-pub');
+                  $section.find('.panzoom').panzoom({
+                  $zoomIn: $section.find(".zoom-in"),
+                  $zoomOut: $section.find(".zoom-out"),
+                  $zoomRange: $section.find(".zoom-range"),
+                  $reset: $section.find(".reset")
+                  });
+                  })();
+               </script></div>
+         </div>
+         <div class="panelFooter" height="25px"></div>
       </div>
    </body>
 </html>

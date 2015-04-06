@@ -395,8 +395,8 @@ span.unclear{
     line-height:0;
 }
 
-div.stanzabreak{
-	height:25px;
+.stanzabreak{
+	display:none;
 }
 div.type-stanza{
     margin-bottom:25px;

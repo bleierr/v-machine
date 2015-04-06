@@ -20,8 +20,8 @@
          witnesses["va4"] = "all;va4";
       
       var maxPanels = 4;
-   var timelinePoints = new Array();var timelineDurations = new Array();</script></head>
-   <body onload="init();">
+   var timelinePoints = new Array();var timelineDurations = new Array();</script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script></head>
+   <body>
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/poweredby.gif"></img></div>
          <div id="headline">
@@ -29,9 +29,8 @@
          </div>
          <nav id="mainControls">
             <ul>
-               <li><button id="info" type="button" onclick="#">INFO</button></li>
                <li><span id="selectWitness" class="dropdownButton">4 Total Witnesses</span><ul id="witnessList" class="dropdown">
-                     <li class="va1">
+                     <li data-panelid="va1">
                         <div class="listText">
                            <p>First 
                               
@@ -40,7 +39,7 @@
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="va2">
+                     <li data-panelid="va2">
                         <div class="listText">
                            <p>Second 
                               
@@ -49,7 +48,7 @@
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="va3">
+                     <li data-panelid="va3">
                         <div class="listText">
                            <p>Third 
                               
@@ -57,7 +56,7 @@
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="va4">
+                     <li data-panelid="va4">
                         <div class="listText">
                            <p>Fourth </p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
@@ -65,16 +64,39 @@
                      </li>
                   </ul>
                </li>
-               <li><input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" style="display: none;"></input></li>
-               <li><label for="toggleLineNumbers">Line Numbers:</label><button id="displayLines">ON</button></li>
-               <li><select id="notesMenu" disabled="&#xA;                           disabled&#xA;                        ">
-                     <option>No notes found</option></select></li>
+               <li><span id="controlDropdown" class="dropdownButton">Control dropdown</span><ul id="controlList" class="dropdown">
+                     <li data-panelid="bibPanel">
+                        <div class="listText">
+                           <p>Bibliographic panel</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="lineNumbers">
+                        <div class="listText">
+                           <p>Line numbers</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="notesPanel">
+                        <div class="listText">
+                           <p>Notes Panel</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="critPanel">
+                        <div class="listText">
+                           <p>Critical notes</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
             </ul>
          </nav>
       </div>
       <div id="mssArea">
          <div class="panel" id="bibPanel">
-            <div class="panelBanner"><img class="closePanel" onclick="toggleBiblio();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Bibliographic Information
                
             </div>
@@ -171,7 +193,7 @@
             </div>
          </div>
          <div class="panel" id="critPanel">
-            <div class="panelBanner"><img class="closePanel" onclick="toggleCrit();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Critical Introduction
                
             </div>
@@ -184,11 +206,11 @@
             </div>
          </div>
          <div id="manuscripts">
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable va1">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="va1">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness va1
                </div>
                <div class="mssContent">
-                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink va1" onclick="return showImgPanel(event, 'imageViewer','images/litmss-003272-0001.jpg','va1','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink va1" onclick="return showImgPanel(event, 'imageViewer','images/litmss-003274-0001.jpg','va1','-250','0');"></img></div>
+                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink va1" data-witness-id="va1" data-img-url="images/litmss-003272-0001.jpg" data-img-id=""></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink va1" data-witness-id="va1" data-img-url="images/litmss-003274-0001.jpg" data-img-id=""></img></div>
                   
                   <div class="div1">
                      
@@ -206,7 +228,7 @@
                      
                      <div class="lg">
                         
-                        ZZZZ
+                        
                         
                         <div class="line line2" line-id="line2">
                            <div class="linenumber">2</div>
@@ -218,7 +240,7 @@
                            </div>
                            
                         </div>
-                        ZZZZ
+                        
                         
                         <div class="line line4" line-id="line4">
                            <div class="linenumber">4</div>
@@ -243,15 +265,13 @@
                               
                               <div data-witness="va1 va3 va4" class="reading va1 va3 va4">SNOBS</div>
                               
-                              <div data-witness="va1 va2" class="reading va1 va2"> . 
-                                 <div class="stanzabreak"></div>
-                              </div>
+                              <div data-witness="va1 va2" class="reading va1 va2"> . <br class="stanzabreak"></br></div>
                               
                            </div>
                         </div>
                         
                         
-                        ZZZZ
+                        
                         
                         
                         <div class="line line7" line-id="line7">
@@ -324,9 +344,7 @@
                            
                            <div class="apparatus a12a" onclick="matchApp('a12a');">
                               
-                              <div data-witness="va1" class="reading va1">FACE.            
-                                 <div class="stanzabreak"></div>
-                              </div>
+                              <div data-witness="va1" class="reading va1">FACE.            <br class="stanzabreak"></br></div>
                               
                            </div>
                            
@@ -473,16 +491,14 @@
                            
                            <div class="apparatus a19b" onclick="matchApp('a19b');">
                               
-                              <div data-witness="va1" class="reading va1">EARTHRUBBISH.            
-                                 <div class="stanzabreak"></div>
-                              </div>
+                              <div data-witness="va1" class="reading va1">EARTHRUBBISH.            <br class="stanzabreak"></br></div>
                               
                            </div>
                            
                         </div>
                         
                         
-                        ZZZZ
+                        
                         
                         
                         <div class="line line24" line-id="line24">
@@ -598,9 +614,7 @@
                            
                            <div class="apparatus a31" onclick="matchApp('a31');">
                               
-                              <div data-witness="va1" class="reading va1">BURNING.       
-                                 <div class="stanzabreak"></div>
-                              </div>
+                              <div data-witness="va1" class="reading va1">BURNING.       <br class="stanzabreak"></br></div>
                               
                            </div>
                            
@@ -619,15 +633,13 @@
                               </div>
                               
                               
-                              <div data-witness="va1" class="reading va1">
-                                 <div class="stanzabreak"></div>
-                              </div>
+                              <div data-witness="va1" class="reading va1"><br class="stanzabreak"></br></div>
                               
                            </div>
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         <div class="line line35" line-id="line35">
                            <div class="linenumber">35</div>
@@ -700,9 +712,7 @@
                            
                            <div class="apparatus a42a" onclick="matchApp('a42a');">
                               
-                              <div data-witness="va1" class="reading va1">RESULT:           
-                                 <div class="stanzabreak"></div>
-                              </div>
+                              <div data-witness="va1" class="reading va1">RESULT:           <br class="stanzabreak"></br></div>
                               
                            </div>
                            
@@ -810,15 +820,13 @@
                               
                               <div data-witness="va1 va2 va3" class="reading va1 va2 va3">SPIKED </div>
                               
-                              <div data-witness="va1" class="reading va1">     
-                                 <div class="stanzabreak"></div>
-                              </div>
+                              <div data-witness="va1" class="reading va1">     <br class="stanzabreak"></br></div>
                               
                            </div>
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         <div class="line line49" line-id="line49">
                            <div class="linenumber">49</div>
@@ -842,9 +850,7 @@
                               
                               <div data-witness="va1 va2 va3" class="reading va1 va2 va3">IS </div>
                               
-                              <div data-witness="va1" class="reading va1">      
-                                 <div class="stanzabreak"></div>
-                              </div>
+                              <div data-witness="va1" class="reading va1">      <br class="stanzabreak"></br></div>
                               
                            </div>
                            
@@ -857,13 +863,11 @@
                               
                               
                               
-                              <div data-witness="va1" class="reading va1">    
-                                 <div class="stanzabreak"></div>
-                              </div>
+                              <div data-witness="va1" class="reading va1">    <br class="stanzabreak"></br></div>
                            </div> 
                         </div>
                         
-                        ZZZZ
+                        
                         
                         <div class="line line53" line-id="line53">
                            <div class="linenumber">53</div>
@@ -884,9 +888,7 @@
                               <div data-witness="va1 va2" class="reading va1 va2">BARE </div>
                               
                               
-                              <div data-witness="va1" class="reading va1">        
-                                 <div class="stanzabreak"></div>
-                              </div>
+                              <div data-witness="va1" class="reading va1">        <br class="stanzabreak"></br></div>
                               
                            </div>
                            
@@ -903,9 +905,7 @@
                               
                               <div data-witness="va1 va2 va3" class="reading va1 va2 va3">EARD </div>
                               
-                              <div data-witness="va1" class="reading va1">     
-                                 <div class="stanzabreak"></div>
-                              </div>
+                              <div data-witness="va1" class="reading va1">     <br class="stanzabreak"></br></div>
                               
                            </div>
                            
@@ -950,7 +950,7 @@
                            </div>
                            
                         </div>
-                        ZZZZ
+                        
                         
                         <div class="line line60" line-id="line60">
                            <div class="linenumber">60</div>
@@ -989,9 +989,7 @@
                            
                            <div class="apparatus a69" onclick="matchApp('a69');">
                               
-                              <div data-witness="va1" class="reading va1">GREENERY      
-                                 <div class="stanzabreak"></div>
-                              </div>
+                              <div data-witness="va1" class="reading va1">GREENERY      <br class="stanzabreak"></br></div>
                               
                            </div>
                            
@@ -1027,9 +1025,7 @@
                            
                            <div class="apparatus a67a" onclick="matchApp('a67a');">
                               
-                              <div data-witness="va1" class="reading va1">LORE      
-                                 <div class="stanzabreak"></div>
-                              </div>
+                              <div data-witness="va1" class="reading va1">LORE      <br class="stanzabreak"></br></div>
                               
                            </div>
                            
@@ -1080,9 +1076,7 @@
                            
                            <div class="apparatus a80" onclick="matchApp('a80');"> 
                               
-                              <div data-witness="va1" class="reading va1">     
-                                 <div class="stanzabreak"></div>
-                              </div>
+                              <div data-witness="va1" class="reading va1">     <br class="stanzabreak"></br></div>
                               
                            </div>
                            
@@ -1107,18 +1101,17 @@
                            
                         </div>
                         
+                        <br class="stanzabreak"></br>
                         
-                        <div class="stanzabreak"></div>
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -1147,11 +1140,11 @@
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable va2">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="va2">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness va2
                </div>
                <div class="mssContent">
-                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink va2" onclick="return showImgPanel(event, 'imageViewer','images/litmss-003275-0001.jpg','va2','-250','0');"></img></div>
+                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink va2" data-witness-id="va2" data-img-url="images/litmss-003275-0001.jpg" data-img-id=""></img></div>
                   
                   <div class="div1">
                      
@@ -1189,7 +1182,7 @@
                               
                            </div>
                         </div>
-                        ZZZZ
+                        
                         
                         <div class="line line3" line-id="line3">
                            <div class="linenumber">3</div>
@@ -1204,7 +1197,7 @@
                               
                            </div>
                         </div>
-                        ZZZZ
+                        
                         
                         <div class="line line5" line-id="line5">
                            <div class="linenumber">5</div>
@@ -1221,9 +1214,7 @@
                               </div>
                               
                               
-                              <div data-witness="va1 va2" class="reading va1 va2"> . 
-                                 <div class="stanzabreak"></div>
-                              </div>
+                              <div data-witness="va1 va2" class="reading va1 va2"> . <br class="stanzabreak"></br></div>
                               
                            </div>
                         </div>
@@ -1289,17 +1280,15 @@
                            <div class="apparatus a12a" onclick="matchApp('a12a');">
                               
                               
-                              <div data-witness="va2" class="reading va2">FACE .  
-                                 <div class="stanzabreak"></div>
-                              </div>
+                              <div data-witness="va2" class="reading va2">FACE .  <br class="stanzabreak"></br></div>
                               
                            </div>
                            
                         </div>
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -1361,23 +1350,21 @@
                               
                               <div data-witness="va2 va3" class="reading va2 va3">EARTHRUBBISH. </div>
                               
-                              <div data-witness="va2" class="reading va2">  
-                                 <div class="stanzabreak"></div>
-                              </div>
+                              <div data-witness="va2" class="reading va2">  <br class="stanzabreak"></br></div>
                               
                               
                            </div>
                            
                         </div>
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -1456,12 +1443,12 @@
                            </div>
                            
                         </div>
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                         <div class="line line33" line-id="line33">
@@ -1497,7 +1484,7 @@
                               
                            </div>
                         </div>
-                        ZZZZ
+                        
                         
                         <div class="line line36" line-id="line36">
                            <div class="linenumber">36</div>
@@ -1543,8 +1530,8 @@
                            </div>
                            
                         </div>
-                        ZZZZ
-                        ZZZZ
+                        
+                        
                         
                         
                         <div class="line line40" line-id="line40">
@@ -1646,7 +1633,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         <div class="line line49" line-id="line49">
                            <div class="linenumber">49</div>
@@ -1676,9 +1663,9 @@
                            
                         </div>
                         
-                        ZZZZ
                         
-                        ZZZZ
+                        
+                        
                         
                         <div class="line line53" line-id="line53">
                            <div class="linenumber">53</div>
@@ -1751,7 +1738,7 @@
                            </div>
                            
                         </div>
-                        ZZZZ
+                        
                         
                         <div class="line line59" line-id="line59">
                            <div class="linenumber">59</div>
@@ -1769,7 +1756,7 @@
                            </div>
                            
                         </div>
-                        ZZZZ
+                        
                         
                         <div class="line line61" line-id="line61">
                            <div class="linenumber">61</div>
@@ -1788,7 +1775,7 @@
                            </div>
                            
                         </div>
-                        ZZZZ
+                        
                         
                         
                         <div class="line line63" line-id="line63">
@@ -1804,8 +1791,8 @@
                            </div>
                            
                         </div>
-                        ZZZZ
-                        ZZZZ
+                        
+                        
                         
                         
                         <div class="line line66" line-id="line66">
@@ -1873,18 +1860,17 @@
                            
                         </div>
                         
+                        <br class="stanzabreak"></br>
                         
-                        <div class="stanzabreak"></div>
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -1910,11 +1896,11 @@
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable va3">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="va3">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness va3
                </div>
                <div class="mssContent">
-                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink va3" onclick="return showImgPanel(event, 'imageViewer','images/litmss-003276-0001.jpg','va3','-250','0');"></img></div>
+                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink va3" data-witness-id="va3" data-img-url="images/litmss-003276-0001.jpg" data-img-id=""></img></div>
                   
                   <div class="div1">
                      
@@ -1932,8 +1918,8 @@
                      
                      <div class="lg">
                         
-                        ZZZZ
-                        ZZZZ
+                        
+                        
                         
                         <div class="line line3" line-id="line3">
                            <div class="linenumber">3</div>
@@ -1948,7 +1934,7 @@
                               
                            </div>
                         </div>
-                        ZZZZ
+                        
                         
                         <div class="line line5" line-id="line5">
                            <div class="linenumber">5</div>
@@ -2027,11 +2013,11 @@
                            
                         </div>
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -2099,14 +2085,14 @@
                            
                         </div>
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -2159,7 +2145,7 @@
                         </div>
                         		  
                         
-                        ZZZZ
+                        
                         
                         <div class="line line26" line-id="line26">
                            <div class="linenumber">26</div>
@@ -2177,12 +2163,12 @@
                            </div>
                            
                         </div>
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                         <div class="line line33" line-id="line33">
@@ -2223,8 +2209,8 @@
                               
                            </div>
                         </div>
-                        ZZZZ
-                        ZZZZ
+                        
+                        
                         
                         <div class="line line37" line-id="line37">
                            <div class="linenumber">37</div>
@@ -2259,8 +2245,8 @@
                            </div>
                            
                         </div>
-                        ZZZZ
-                        ZZZZ
+                        
+                        
                         
                         
                         <div class="line line40" line-id="line40">
@@ -2342,7 +2328,7 @@
                            </div>
                            
                         </div>
-                        ZZZZ
+                        
                         
                         <div class="line line47" line-id="line47">
                            <div class="linenumber">47</div>
@@ -2393,7 +2379,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         
                         <div class="line line52" line-id="line52">
@@ -2407,8 +2393,8 @@
                               
                            </div>
                         </div>
-                        ZZZZ
-                        ZZZZ
+                        
+                        
                         
                         
                         <div class="line line55" line-id="line55">
@@ -2446,8 +2432,8 @@
                            
                         </div>
                         
-                        ZZZZ
-                        ZZZZ
+                        
+                        
                         
                         <div class="line line59" line-id="line59">
                            <div class="linenumber">59</div>
@@ -2469,7 +2455,7 @@
                            </div>
                            
                         </div>
-                        ZZZZ
+                        
                         
                         <div class="line line61" line-id="line61">
                            <div class="linenumber">61</div>
@@ -2488,7 +2474,7 @@
                            </div>
                            
                         </div>
-                        ZZZZ
+                        
                         
                         
                         <div class="line line63" line-id="line63">
@@ -2507,8 +2493,8 @@
                            </div>
                            
                         </div>
-                        ZZZZ
-                        ZZZZ
+                        
+                        
                         
                         
                         <div class="line line66" line-id="line66">
@@ -2566,20 +2552,19 @@
                            
                         </div>
                         
-                        ZZZZ
                         
                         
-                        <div class="stanzabreak"></div>
+                        <br class="stanzabreak"></br>
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -2605,11 +2590,11 @@
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable va4">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="va4">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness va4
                </div>
                <div class="mssContent">
-                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink va4" onclick="return showImgPanel(event, 'imageViewer','images/litmss-003277-0001.jpg','va4','-250','0');"></img></div>
+                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink va4" data-witness-id="va4" data-img-url="images/litmss-003277-0001.jpg" data-img-id=""></img></div>
                   
                   <div class="div1">
                      
@@ -2651,9 +2636,9 @@
                               
                            </div>
                         </div>
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
                         
                         <div class="line line5" line-id="line5">
                            <div class="linenumber">5</div>
@@ -2733,11 +2718,11 @@
                            
                         </div>
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -2829,13 +2814,13 @@
                            <div class="apparatus a18" onclick="matchApp('a18');"> </div>
                            
                         </div>
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -2886,7 +2871,7 @@
                         </div>
                         		  
                         
-                        ZZZZ
+                        
                         
                         <div class="line line26" line-id="line26">
                            <div class="linenumber">26</div>
@@ -2908,12 +2893,12 @@
                            </div>
                            
                         </div>
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                         <div class="line line33" line-id="line33">
@@ -2952,8 +2937,8 @@
                               
                            </div>
                         </div>
-                        ZZZZ
-                        ZZZZ
+                        
+                        
                         
                         <div class="line line37" line-id="line37">
                            <div class="linenumber">37</div>
@@ -3000,17 +2985,17 @@
                            </div>
                            
                         </div>
-                        ZZZZ
-                        ZZZZ
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                         <div class="line line48" line-id="line48">
@@ -3049,7 +3034,7 @@
                               
                            </div>
                         </div>
-                        ZZZZ
+                        
                         
                         
                         <div class="line line51" line-id="line51">
@@ -3075,10 +3060,10 @@
                               
                            </div>
                         </div>
-                        ZZZZ
-                        ZZZZ
                         
-                        ZZZZ
+                        
+                        
+                        
                         
                         
                         <div class="line line56" line-id="line56">
@@ -3116,7 +3101,7 @@
                            </div>
                            
                         </div>
-                        ZZZZ
+                        
                         
                         <div class="line line59" line-id="line59">
                            <div class="linenumber">59</div>
@@ -3180,11 +3165,11 @@
                            </div>
                            
                         </div>
-                        ZZZZ
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
                         
                         
                         <div class="line line66" line-id="line66">
@@ -3248,10 +3233,9 @@
                            
                         </div>
                         
-                        ZZZZ
                         
                         
-                        <div class="stanzabreak"></div>
+                        <br class="stanzabreak"></br>
                         
                         
                         <div class="line line70" line-id="line70">
@@ -3397,7 +3381,7 @@
             </div>
          </div>
          <div class="panel" id="notesPanel" style="display: none;">
-            <div class="panelBanner"><img class="closePanel" onclick="hideNotesPanel();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Textual Notes
                
             </div>
@@ -3407,9 +3391,5 @@
                
             </div>
          </div><br class="clear"></br></div>
-      <div class="viewerRoot" id="panel_imageViewer">
-         <div title="Click to drag panel." class="viewerHandle" id="handle_imageViewer"><span class="viewerHandleLt" id="title_imageViewer">Image Viewer</span><img class="viewerHandleRt" onclick="return hidePanel('imageViewer');" alt="X" src="../vm-images/closePanel.gif"></img></div>
-         <div class="viewerContent" id="content_imageViewer"></div>
-      </div>
    </body>
 </html>

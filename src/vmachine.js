@@ -1142,6 +1142,23 @@ $(document).ready(function(){
 	var dropdownMenus = "#witnessList.dropdown li, #controlList.dropdown li"	
 	
 	
+	/*open the first two witnesses*/
+	var initialWitnesses = 2;
+	for(var i=0; i < initialWitnesses; i++){
+		if ( i < initialWitnesses){
+			$("#"+witnesses[i]).show();
+			$("#witnessList li[data-panelid='"+witnesses[i]+"'] img").toggleClass("invisible");
+		}
+	}
+	
+	/*show biblio panel*/
+	$("#bibPanel").show();
+	$("#controlList li[data-panelid='bibPanel'] img").toggleClass("invisible");
+	
+	/*show line numbers*/
+	$("#controlList li[data-panelid='lineNumbers'] img").toggleClass("invisible");
+	
+	
 	$(".dropdownButton").click(function(e){
 		e.stopPropagation();
 		
@@ -1262,7 +1279,7 @@ $(document).ready(function(){
 
 	});
 });
-
+ 
 $(document).ready(function(){
 	$("li[data-panelid='lineNumbers']").click(function(){
 		

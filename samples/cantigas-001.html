@@ -28,8 +28,8 @@
          witnesses["Mo"] = "Mo";
       
       var maxPanels = 8;
-   var timelinePoints = new Array();var timelineDurations = new Array();</script></head>
-   <body onload="init();">
+   var timelinePoints = new Array();var timelineDurations = new Array();</script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script></head>
+   <body>
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/poweredby.gif"></img></div>
          <div id="headline">
@@ -37,51 +37,50 @@
          </div>
          <nav id="mainControls">
             <ul>
-               <li><button id="info" type="button" onclick="#">INFO</button></li>
                <li><span id="selectWitness" class="dropdownButton">8 Total Witnesses</span><ul id="witnessList" class="dropdown">
-                     <li class="M2">
+                     <li data-panelid="M2">
                         <div class="listText">
                            <p>Walter Mettmann (Madrid: Castalia) [M2 hereafter]</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="M1">
+                     <li data-panelid="M1">
                         <div class="listText">
                            <p>Mettmann (1959-72) [M1]</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="V">
+                     <li data-panelid="V">
                         <div class="listText">
                            <p>Valmar (1889) [V]</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="RL">
+                     <li data-panelid="RL">
                         <div class="listText">
                            <p>Lapa (1933) [RL]</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="A">
+                     <li data-panelid="A">
                         <div class="listText">
                            <p>Anglés (1943-64) [A]</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="C">
+                     <li data-panelid="C">
                         <div class="listText">
                            <p>Cunningham (2000) [C]</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="Fid">
+                     <li data-panelid="Fid">
                         <div class="listText">
                            <p>Fidalgo (2004) [Fid]</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="Mo">
+                     <li data-panelid="Mo">
                         <div class="listText">
                            <p>Montoya 1998-99 [Mo]</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
@@ -89,16 +88,39 @@
                      </li>
                   </ul>
                </li>
-               <li><input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" style="display: none;"></input></li>
-               <li><label for="toggleLineNumbers">Line Numbers:</label><button id="displayLines">ON</button></li>
-               <li><select id="notesMenu" disabled="&#xA;                           disabled&#xA;                        ">
-                     <option>No notes found</option></select></li>
+               <li><span id="controlDropdown" class="dropdownButton">Control dropdown</span><ul id="controlList" class="dropdown">
+                     <li data-panelid="bibPanel">
+                        <div class="listText">
+                           <p>Bibliographic panel</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="lineNumbers">
+                        <div class="listText">
+                           <p>Line numbers</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="notesPanel">
+                        <div class="listText">
+                           <p>Notes Panel</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="critPanel">
+                        <div class="listText">
+                           <p>Critical notes</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
             </ul>
          </nav>
       </div>
       <div id="mssArea">
          <div class="panel" id="bibPanel">
-            <div class="panelBanner"><img class="closePanel" onclick="toggleBiblio();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Bibliographic Information
                
             </div>
@@ -169,14 +191,14 @@
             </div>
          </div>
          <div class="panel" id="critPanel" style="display: none;">
-            <div class="panelBanner"><img class="closePanel" onclick="toggleCrit();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Critical Introduction
                
             </div>
             <div class="critContent"></div>
          </div>
          <div id="manuscripts">
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable M2">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="M2">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness M2
                </div>
                <div class="mssContent">
@@ -191,16 +213,19 @@
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable M1">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="M1">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness M1
                </div>
                <div class="mssContent">
                   
                   
                   <div class="lg lg-n2 type-stanza">
-                     ZZZZ
                      
-                     ZZZZ
+                     
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>como foy saudada
+                     </div>
+                     
                      
                      <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>foy: "Benaventurada
@@ -211,12 +236,24 @@
                            
                         </div>
                      </div>
-                     ZZZZ
                      
                      
+                     <div class="line line6" line-id="line6">
+                        <div class="linenumber">6</div>do que o mund' á de salvar
+                     </div>
                      
-                     ZZZZ
+                     <div class="line line7" line-id="line7">
+                        <div class="linenumber">7</div>ficas ora prennada;
+                     </div>
                      
+                     <div class="line line8" line-id="line8">
+                        <div class="linenumber">8</div>e demais ta cunnada
+                     </div>
+                     
+                     
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>é end' envergonnada".
+                     </div>
                   </div>
                   
                   
@@ -225,10 +262,19 @@
                   
                   <div class="lg lg-n7 type-stanza">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div>Nen quero de dizer leixar
+                     </div>
+                     
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>de como foy chegada
+                     </div>
+                     
+                     <div class="line line3" line-id="line3">
+                        <div class="linenumber">3</div>a graça que Deus enviar
+                     </div>
                      
                      
-                     ZZZZ
-                     ZZZZ
                      
                      <div class="line line6" line-id="line6">
                         <div class="linenumber">6</div>foy a companna que juntar
@@ -239,16 +285,22 @@
                            
                         </div>
                      </div>
-                     ZZZZ
-                     ZZZZ
                      
                      
+                     
+                     <div class="line line9" line-id="line9">
+                        <div class="linenumber">9</div>por que souberon preegar
+                     </div>
+                     
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>logo sen alongada.
+                     </div>
                   </div>
                   
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable V">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="V">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness V
                </div>
                <div class="mssContent">
@@ -256,8 +308,11 @@
                   
                   
                   <div class="lg lg-n3 type-stanza">
-                     ZZZZ
                      
+                     
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>como chegou canssada
+                     </div>
                      
                      <div class="line line3" line-id="line3">
                         <div class="linenumber">3</div>a Beleem e foy pousar
@@ -270,17 +325,38 @@
                         </div>
                      </div>
                      
+                     <div class="line line4" line-id="line4">
+                        <div class="linenumber">4</div>no portal da entrada,
+                     </div>
                      
-                     ZZZZ
+                     <div class="line line5" line-id="line5">
+                        <div class="linenumber">5</div>u paryu sen tardada
+                     </div>
                      
                      
+                     <div class="line line7" line-id="line7">
+                        <div class="linenumber">7</div>como moller menguada,
+                     </div>
                      
-                     ZZZZ
+                     <div class="line line8" line-id="line8">
+                        <div class="linenumber">8</div>u deytan a cevada,
+                     </div>
+                     
+                     <div class="line line9" line-id="line9">
+                        <div class="linenumber">9</div>no presev' e apousentar
+                     </div>
+                     
                   </div>
                   
                   <div class="lg lg-n4 type-stanza">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div>E non ar quero obridar
+                     </div>
                      
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>com' angeos cantada
+                     </div>
                      
                      <div class="line line3" line-id="line3">
                         <div class="linenumber">3</div>loor a Deus foron cantar
@@ -291,7 +367,7 @@
                            
                         </div>
                      </div>
-                     ZZZZ
+                     
                      
                      <div class="line line5" line-id="line5">
                         <div class="linenumber">5</div>nen como a contrada
@@ -313,16 +389,37 @@
                         </div>
                      </div>
                      
+                     <div class="line line7" line-id="line7">
+                        <div class="linenumber">7</div>ouv' a strela mostrada,
+                     </div>
                      
-                     ZZZZ
+                     <div class="line line8" line-id="line8">
+                        <div class="linenumber">8</div>por que sen demorada
+                     </div>
                      
+                     
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>estranna e preçada.
+                     </div>
                   </div>
                   
                   <div class="lg lg-n5 type-stanza">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div>Outra razon quero contar
+                     </div>
                      
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>que ll' ouve pois contada
+                     </div>
                      
+                     <div class="line line3" line-id="line3">
+                        <div class="linenumber">3</div>a Madalena: com' estar
+                     </div>
                      
+                     <div class="line line4" line-id="line4">
+                        <div class="linenumber">4</div>vyu a pedr' entornada
+                     </div>
                      
                      <div class="line line5" line-id="line5">
                         <div class="linenumber">5</div>do sepulcr' e guardada
@@ -333,18 +430,39 @@
                            
                         </div>
                      </div>
-                     ZZZZ
                      
                      
+                     <div class="line line7" line-id="line7">
+                        <div class="linenumber">7</div>foy e disse: "Coytada
+                     </div>
                      
+                     <div class="line line8" line-id="line8">
+                        <div class="linenumber">8</div>moller, sey confortada,
+                     </div>
                      
+                     <div class="line line9" line-id="line9">
+                        <div class="linenumber">9</div>ca Jesu, que vẽes buscar,
+                     </div>
+                     
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>resurgiu madurgada."
+                     </div>
                   </div>
                   
                   
                   <div class="lg lg-n7 type-stanza">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div>Nen quero de dizer leixar
+                     </div>
                      
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>de como foy chegada
+                     </div>
                      
+                     <div class="line line3" line-id="line3">
+                        <div class="linenumber">3</div>a graça que Deus enviar
+                     </div>
                      
                      <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>lle quis, atan grãada,
@@ -355,8 +473,8 @@
                            
                         </div>
                      </div>
-                     ZZZZ
-                     ZZZZ
+                     
+                     
                      
                      <div class="line line7" line-id="line7">
                         <div class="linenumber">7</div>fez Deus, e enssinada
@@ -381,13 +499,28 @@
                         </div>
                      </div>
                      
+                     <div class="line line9" line-id="line9">
+                        <div class="linenumber">9</div>por que souberon preegar
+                     </div>
                      
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>logo sen alongada.
+                     </div>
                   </div>
                   
                   <div class="lg lg-n8 type-stanza">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div>E, par Deus, non é de calar
+                     </div>
                      
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>como foy corõada,
+                     </div>
                      
+                     <div class="line line3" line-id="line3">
+                        <div class="linenumber">3</div>quando seu Fillo a levar
+                     </div>
                      
                      <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>quis, des que foy passada
@@ -398,7 +531,10 @@
                         </div>
                      </div>
                      
-                     ZZZZ
+                     <div class="line line5" line-id="line5">
+                        <div class="linenumber">5</div>deste mund' e juntada
+                     </div>
+                     
                      
                      <div class="line line7" line-id="line7">
                         <div class="linenumber">7</div>e Reỹa chamada,
@@ -419,22 +555,28 @@
                            <div data-witness="V" class="reading V">criada</div>
                         </div>
                      </div>
-                     ZZZZ
                      
+                     
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>ca x' é noss' avogada.
+                     </div>
                   </div>
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable RL">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="RL">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness RL
                </div>
                <div class="mssContent">
                   
                   
                   <div class="lg lg-n2 type-stanza">
-                     ZZZZ
                      
-                     ZZZZ
+                     
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>como foy saudada
+                     </div>
+                     
                      
                      <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>foy: "Benaventurada
@@ -445,17 +587,32 @@
                            <div data-witness="RL" class="reading RL">foy: “Ben aventurada</div>
                         </div>
                      </div>
-                     ZZZZ
                      
                      
+                     <div class="line line6" line-id="line6">
+                        <div class="linenumber">6</div>do que o mund' á de salvar
+                     </div>
                      
-                     ZZZZ
+                     <div class="line line7" line-id="line7">
+                        <div class="linenumber">7</div>ficas ora prennada;
+                     </div>
                      
+                     <div class="line line8" line-id="line8">
+                        <div class="linenumber">8</div>e demais ta cunnada
+                     </div>
+                     
+                     
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>é end' envergonnada".
+                     </div>
                   </div>
                   
                   <div class="lg lg-n3 type-stanza">
-                     ZZZZ
                      
+                     
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>como chegou canssada
+                     </div>
                      
                      <div class="line line3" line-id="line3">
                         <div class="linenumber">3</div>a Beleem e foy pousar
@@ -468,20 +625,47 @@
                         </div>
                      </div>
                      
+                     <div class="line line4" line-id="line4">
+                        <div class="linenumber">4</div>no portal da entrada,
+                     </div>
                      
-                     ZZZZ
+                     <div class="line line5" line-id="line5">
+                        <div class="linenumber">5</div>u paryu sen tardada
+                     </div>
                      
                      
+                     <div class="line line7" line-id="line7">
+                        <div class="linenumber">7</div>como moller menguada,
+                     </div>
                      
-                     ZZZZ
+                     <div class="line line8" line-id="line8">
+                        <div class="linenumber">8</div>u deytan a cevada,
+                     </div>
+                     
+                     <div class="line line9" line-id="line9">
+                        <div class="linenumber">9</div>no presev' e apousentar
+                     </div>
+                     
                   </div>
                   
                   
                   <div class="lg lg-n5 type-stanza">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div>Outra razon quero contar
+                     </div>
                      
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>que ll' ouve pois contada
+                     </div>
                      
+                     <div class="line line3" line-id="line3">
+                        <div class="linenumber">3</div>a Madalena: com' estar
+                     </div>
                      
+                     <div class="line line4" line-id="line4">
+                        <div class="linenumber">4</div>vyu a pedr' entornada
+                     </div>
                      
                      <div class="line line5" line-id="line5">
                         <div class="linenumber">5</div>do sepulcr' e guardada
@@ -492,20 +676,41 @@
                            <div data-witness="RL" class="reading RL">do Sepulcr’</div>
                         </div>
                      </div>
-                     ZZZZ
                      
                      
+                     <div class="line line7" line-id="line7">
+                        <div class="linenumber">7</div>foy e disse: "Coytada
+                     </div>
                      
+                     <div class="line line8" line-id="line8">
+                        <div class="linenumber">8</div>moller, sey confortada,
+                     </div>
                      
+                     <div class="line line9" line-id="line9">
+                        <div class="linenumber">9</div>ca Jesu, que vẽes buscar,
+                     </div>
+                     
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>resurgiu madurgada."
+                     </div>
                   </div>
                   
                   
                   <div class="lg lg-n7 type-stanza">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div>Nen quero de dizer leixar
+                     </div>
+                     
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>de como foy chegada
+                     </div>
+                     
+                     <div class="line line3" line-id="line3">
+                        <div class="linenumber">3</div>a graça que Deus enviar
+                     </div>
                      
                      
-                     ZZZZ
-                     ZZZZ
                      
                      <div class="line line6" line-id="line6">
                         <div class="linenumber">6</div>foy a companna que juntar
@@ -516,7 +721,7 @@
                            <div data-witness="RL" class="reading RL">compan[h]a</div>
                         </div>
                      </div>
-                     ZZZZ
+                     
                      
                      <div class="line line8" line-id="line8">
                         <div class="linenumber">8</div>de Spirit' avondada,
@@ -530,13 +735,19 @@
                         </div>
                      </div>
                      
+                     <div class="line line9" line-id="line9">
+                        <div class="linenumber">9</div>por que souberon preegar
+                     </div>
                      
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>logo sen alongada.
+                     </div>
                   </div>
                   
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable A">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="A">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness A
                </div>
                <div class="mssContent">
@@ -551,7 +762,7 @@
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable C">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="C">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness C
                </div>
                <div class="mssContent">
@@ -561,7 +772,13 @@
                   
                   <div class="lg lg-n4 type-stanza">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div>E non ar quero obridar
+                     </div>
                      
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>com' angeos cantada
+                     </div>
                      
                      <div class="line line3" line-id="line3">
                         <div class="linenumber">3</div>loor a Deus foron cantar
@@ -572,8 +789,8 @@
                            <div data-witness="C" class="reading C">“Loor a Deus”</div>
                         </div>
                      </div>
-                     ZZZZ
-                     ZZZZ
+                     
+                     
                      
                      <div class="line line6" line-id="line6">
                         <div class="linenumber">6</div>aos tres Reis en Ultramar
@@ -586,7 +803,13 @@
                         </div>
                      </div>
                      
+                     <div class="line line7" line-id="line7">
+                        <div class="linenumber">7</div>ouv' a strela mostrada,
+                     </div>
                      
+                     <div class="line line8" line-id="line8">
+                        <div class="linenumber">8</div>por que sen demorada
+                     </div>
                      
                      <div class="line line9" line-id="line9">
                         <div class="linenumber">9</div>vẽeron sa offerta dar
@@ -598,13 +821,19 @@
                         </div>
                      </div>
                      
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>estranna e preçada.
+                     </div>
                   </div>
                   
                   
                   <div class="lg lg-n6 type-stanza">
-                     ZZZZ
                      
-                     ZZZZ
+                     
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>gran lediç' aficada
+                     </div>
+                     
                      
                      <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>a nuv' enlumẽada
@@ -615,7 +844,13 @@
                         </div>
                      </div>
                      
+                     <div class="line line5" line-id="line5">
+                        <div class="linenumber">5</div>seu Fill'; e poys alçada
+                     </div>
                      
+                     <div class="line line6" line-id="line6">
+                        <div class="linenumber">6</div>foi, viron angeos andar
+                     </div>
                      
                      <div class="line line7" line-id="line7">
                         <div class="linenumber">7</div>ontr' a gent' assũada,
@@ -627,17 +862,32 @@
                         </div>
                      </div>
                      
-                     ZZZZ
+                     <div class="line line8" line-id="line8">
+                        <div class="linenumber">8</div>muy desaconsellada,
+                     </div>
                      
+                     
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>est' é cousa provada."
+                     </div>
                   </div>
                   
                   <div class="lg lg-n7 type-stanza">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div>Nen quero de dizer leixar
+                     </div>
+                     
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>de como foy chegada
+                     </div>
+                     
+                     <div class="line line3" line-id="line3">
+                        <div class="linenumber">3</div>a graça que Deus enviar
+                     </div>
                      
                      
-                     ZZZZ
-                     ZZZZ
-                     ZZZZ
+                     
                      
                      <div class="line line7" line-id="line7">
                         <div class="linenumber">7</div>fez Deus, e enssinada
@@ -662,16 +912,34 @@
                         </div>
                      </div>
                      
+                     <div class="line line9" line-id="line9">
+                        <div class="linenumber">9</div>por que souberon preegar
+                     </div>
                      
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>logo sen alongada.
+                     </div>
                   </div>
                   
                   <div class="lg lg-n8 type-stanza">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div>E, par Deus, non é de calar
+                     </div>
+                     
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>como foy corõada,
+                     </div>
+                     
+                     <div class="line line3" line-id="line3">
+                        <div class="linenumber">3</div>quando seu Fillo a levar
+                     </div>
                      
                      
-                     ZZZZ
+                     <div class="line line5" line-id="line5">
+                        <div class="linenumber">5</div>deste mund' e juntada
+                     </div>
                      
-                     ZZZZ
                      
                      <div class="line line7" line-id="line7">
                         <div class="linenumber">7</div>e Reỹa chamada,
@@ -683,20 +951,26 @@
                            
                         </div>
                      </div>
-                     ZZZZ
-                     ZZZZ
                      
+                     
+                     
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>ca x' é noss' avogada.
+                     </div>
                   </div>
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable Fid">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="Fid">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness Fid
                </div>
                <div class="mssContent">
                   
                   <div class="lg lg-n1 type-stanza">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div>Des oge mais quer' eu trobar
+                     </div>
                      
                      <div class="line line2" line-id="line2">
                         <div class="linenumber">2</div>pola Sennor onrrada,
@@ -707,13 +981,37 @@
                         </div>
                      </div>
                      
+                     <div class="line line3" line-id="line3">
+                        <div class="linenumber">3</div>en que Deus quis carne fillar
+                     </div>
                      
+                     <div class="line line4" line-id="line4">
+                        <div class="linenumber">4</div>bẽeyta e sagrada,
+                     </div>
                      
+                     <div class="line line5" line-id="line5">
+                        <div class="linenumber">5</div>por nos dar gran soldada
+                     </div>
                      
+                     <div class="line line6" line-id="line6">
+                        <div class="linenumber">6</div>no seu reyno e nos erdar
+                     </div>
                      
+                     <div class="line line7" line-id="line7">
+                        <div class="linenumber">7</div>por seus de sa masnada
+                     </div>
                      
+                     <div class="line line8" line-id="line8">
+                        <div class="linenumber">8</div>de vida perlongada,
+                     </div>
                      
+                     <div class="line line9" line-id="line9">
+                        <div class="linenumber">9</div>sen avermos pois a passar
+                     </div>
                      
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>per mort' outra vegada.
+                     </div>
                   </div>
                   
                   <div class="lg lg-n2 type-stanza">
@@ -727,6 +1025,9 @@
                         </div>
                      </div>
                      
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>como foy saudada
+                     </div>
                      
                      <div class="line line3" line-id="line3">
                         <div class="linenumber">3</div>de Gabriel, u lle chamar
@@ -736,7 +1037,7 @@
                            <div data-witness="Fid" class="reading Fid">le</div>
                         </div>
                      </div>
-                     ZZZZ
+                     
                      
                      <div class="line line5" line-id="line5">
                         <div class="linenumber">5</div>Virgen, de Deus amada:
@@ -747,8 +1048,17 @@
                         </div>
                      </div>
                      
+                     <div class="line line6" line-id="line6">
+                        <div class="linenumber">6</div>do que o mund' á de salvar
+                     </div>
                      
+                     <div class="line line7" line-id="line7">
+                        <div class="linenumber">7</div>ficas ora prennada;
+                     </div>
                      
+                     <div class="line line8" line-id="line8">
+                        <div class="linenumber">8</div>e demais ta cunnada
+                     </div>
                      
                      <div class="line line9" line-id="line9">
                         <div class="linenumber">9</div>Elisabeth, que foi dultar,
@@ -759,6 +1069,9 @@
                         </div>
                      </div>
                      
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>é end' envergonnada".
+                     </div>
                   </div>
                   
                   <div class="lg lg-n3 type-stanza">
@@ -772,6 +1085,9 @@
                         </div>
                      </div>
                      
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>como chegou canssada
+                     </div>
                      
                      <div class="line line3" line-id="line3">
                         <div class="linenumber">3</div>a Beleem e foy pousar
@@ -784,7 +1100,13 @@
                         </div>
                      </div>
                      
+                     <div class="line line4" line-id="line4">
+                        <div class="linenumber">4</div>no portal da entrada,
+                     </div>
                      
+                     <div class="line line5" line-id="line5">
+                        <div class="linenumber">5</div>u paryu sen tardada
+                     </div>
                      
                      <div class="line line6" line-id="line6">
                         <div class="linenumber">6</div>Jesu-Crist', e foy-o deytar,
@@ -795,8 +1117,17 @@
                         </div>
                      </div>
                      
+                     <div class="line line7" line-id="line7">
+                        <div class="linenumber">7</div>como moller menguada,
+                     </div>
                      
+                     <div class="line line8" line-id="line8">
+                        <div class="linenumber">8</div>u deytan a cevada,
+                     </div>
                      
+                     <div class="line line9" line-id="line9">
+                        <div class="linenumber">9</div>no presev' e apousentar
+                     </div>
                      
                      <div class="line line10" line-id="line10">
                         <div class="linenumber">10</div>ontre bestias d'arada.
@@ -810,8 +1141,14 @@
                   
                   <div class="lg lg-n4 type-stanza">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div>E non ar quero obridar
+                     </div>
                      
-                     ZZZZ
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>com' angeos cantada
+                     </div>
+                     
                      
                      <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>e "paz en terra dada";
@@ -821,7 +1158,7 @@
                            <div data-witness="Fid" class="reading Fid">e paz en terra dada</div>
                         </div>
                      </div>
-                     ZZZZ
+                     
                      
                      <div class="line line6" line-id="line6">
                         <div class="linenumber">6</div>aos tres Reis en Ultramar
@@ -834,7 +1171,13 @@
                         </div>
                      </div>
                      
+                     <div class="line line7" line-id="line7">
+                        <div class="linenumber">7</div>ouv' a strela mostrada,
+                     </div>
                      
+                     <div class="line line8" line-id="line8">
+                        <div class="linenumber">8</div>por que sen demorada
+                     </div>
                      
                      <div class="line line9" line-id="line9">
                         <div class="linenumber">9</div>vẽeron sa offerta dar
@@ -846,14 +1189,29 @@
                         </div>
                      </div>
                      
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>estranna e preçada.
+                     </div>
                   </div>
                   
                   <div class="lg lg-n5 type-stanza">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div>Outra razon quero contar
+                     </div>
                      
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>que ll' ouve pois contada
+                     </div>
                      
+                     <div class="line line3" line-id="line3">
+                        <div class="linenumber">3</div>a Madalena: com' estar
+                     </div>
                      
-                     ZZZZ
+                     <div class="line line4" line-id="line4">
+                        <div class="linenumber">4</div>vyu a pedr' entornada
+                     </div>
+                     
                      
                      <div class="line line6" line-id="line6">
                         <div class="linenumber">6</div>do angeo, que lle falar
@@ -864,9 +1222,21 @@
                         </div>
                      </div>
                      
+                     <div class="line line7" line-id="line7">
+                        <div class="linenumber">7</div>foy e disse: "Coytada
+                     </div>
                      
+                     <div class="line line8" line-id="line8">
+                        <div class="linenumber">8</div>moller, sey confortada,
+                     </div>
                      
+                     <div class="line line9" line-id="line9">
+                        <div class="linenumber">9</div>ca Jesu, que vẽes buscar,
+                     </div>
                      
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>resurgiu madurgada."
+                     </div>
                   </div>
                   
                   <div class="lg lg-n6 type-stanza">
@@ -880,6 +1250,9 @@
                         </div>
                      </div>
                      
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>gran lediç' aficada
+                     </div>
                      
                      <div class="line line3" line-id="line3">
                         <div class="linenumber">3</div>que ouv' ela, u vyu alçar
@@ -889,9 +1262,15 @@
                            <div data-witness="Fid" class="reading Fid">Ela</div>
                         </div>
                      </div>
-                     ZZZZ
                      
                      
+                     <div class="line line5" line-id="line5">
+                        <div class="linenumber">5</div>seu Fill'; e poys alçada
+                     </div>
+                     
+                     <div class="line line6" line-id="line6">
+                        <div class="linenumber">6</div>foi, viron angeos andar
+                     </div>
                      
                      <div class="line line7" line-id="line7">
                         <div class="linenumber">7</div>ontr' a gent' assũada,
@@ -903,6 +1282,9 @@
                         </div>
                      </div>
                      
+                     <div class="line line8" line-id="line8">
+                        <div class="linenumber">8</div>muy desaconsellada,
+                     </div>
                      
                      <div class="line line9" line-id="line9">
                         <div class="linenumber">9</div>dizend': "Assi verrá juygar,
@@ -913,12 +1295,24 @@
                         </div>
                      </div>
                      
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>est' é cousa provada."
+                     </div>
                   </div>
                   
                   <div class="lg lg-n7 type-stanza">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div>Nen quero de dizer leixar
+                     </div>
                      
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>de como foy chegada
+                     </div>
                      
+                     <div class="line line3" line-id="line3">
+                        <div class="linenumber">3</div>a graça que Deus enviar
+                     </div>
                      
                      <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>lle quis, atan grãada,
@@ -938,7 +1332,7 @@
                            <div data-witness="Fid" class="reading Fid">El’</div>
                         </div>
                      </div>
-                     ZZZZ
+                     
                      
                      <div class="line line7" line-id="line7">
                         <div class="linenumber">7</div>fez Deus, e enssinada
@@ -963,15 +1357,33 @@
                         </div>
                      </div>
                      
+                     <div class="line line9" line-id="line9">
+                        <div class="linenumber">9</div>por que souberon preegar
+                     </div>
                      
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>logo sen alongada.
+                     </div>
                   </div>
                   
                   <div class="lg lg-n8 type-stanza">
                      
+                     <div class="line line1" line-id="line1">
+                        <div class="linenumber">1</div>E, par Deus, non é de calar
+                     </div>
+                     
+                     <div class="line line2" line-id="line2">
+                        <div class="linenumber">2</div>como foy corõada,
+                     </div>
+                     
+                     <div class="line line3" line-id="line3">
+                        <div class="linenumber">3</div>quando seu Fillo a levar
+                     </div>
                      
                      
-                     ZZZZ
-                     
+                     <div class="line line5" line-id="line5">
+                        <div class="linenumber">5</div>deste mund' e juntada
+                     </div>
                      
                      <div class="line line6" line-id="line6">
                         <div class="linenumber">6</div>con el no ceo, par a par
@@ -992,7 +1404,7 @@
                            <div data-witness="Fid" class="reading Fid">é Reinna chamada</div>
                         </div>
                      </div>
-                     ZZZZ
+                     
                      
                      <div class="line line9" line-id="line9">
                         <div class="linenumber">9</div>e poren nos dev' ajudar,
@@ -1003,11 +1415,14 @@
                         </div>
                      </div>
                      
+                     <div class="line line10" line-id="line10">
+                        <div class="linenumber">10</div>ca x' é noss' avogada.
+                     </div>
                   </div>
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable Mo">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="Mo">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness Mo
                </div>
                <div class="mssContent">
@@ -1024,7 +1439,7 @@
             </div>
          </div>
          <div class="panel" id="notesPanel" style="display: none;">
-            <div class="panelBanner"><img class="closePanel" onclick="hideNotesPanel();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Textual Notes
                
             </div>
@@ -1034,9 +1449,5 @@
                
             </div>
          </div><br class="clear"></br></div>
-      <div class="viewerRoot" id="panel_imageViewer">
-         <div title="Click to drag panel." class="viewerHandle" id="handle_imageViewer"><span class="viewerHandleLt" id="title_imageViewer">Image Viewer</span><img class="viewerHandleRt" onclick="return hidePanel('imageViewer');" alt="X" src="../vm-images/closePanel.gif"></img></div>
-         <div class="viewerContent" id="content_imageViewer"></div>
-      </div>
    </body>
 </html>

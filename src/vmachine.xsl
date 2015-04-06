@@ -82,7 +82,7 @@
    <xsl:template match="/">
      <html lang="en">
          <xsl:call-template name="htmlHead" />
-         <body onload="init();">
+        <body> <!--  onload="init();" -->
             <xsl:call-template name="mainBanner" />
             <xsl:call-template name="manuscriptArea" />
             <xsl:for-each select="//tei:facsimile/tei:graphic">
@@ -377,7 +377,7 @@
             <div>
                <xsl:attribute name="class">listText</xsl:attribute>
                <p>
-                  <xsl:text>Display notes</xsl:text>
+                  <xsl:text>Notes Panel</xsl:text>
                </p> 
                
                <div class="image-container">
@@ -970,11 +970,13 @@
          </xsl:choose>
       </xsl:variable>
       
-      <!-- ??? rdg display problem RB not solved yet -->
+      <!-- ??? rdg display problem RB not solved yet 
       <xsl:choose>
          <xsl:when test="descendant::tei:lem[contains(@wit, concat('#',$witID))]
             or descendant::tei:rdg[contains(@wit, concat('#',$witID))]">
-            
+            -->
+      <xsl:if test="not(descendant::tei:rdg) or descendant::tei:lem[contains(@wit, concat('#',$witID))]
+         or descendant::tei:rdg[contains(@wit, concat('#',$witID))]">
             <div>
                <xsl:attribute name="class">
                   <xsl:text>line</xsl:text>
@@ -1023,6 +1025,7 @@
                   <xsl:with-param name="witID" tunnel="yes" select="$witID"></xsl:with-param>
                </xsl:apply-templates>
             </div>
+      </xsl:if>
             <!--<xsl:for-each select=".//*[@facs]">
             <xsl:call-template name="imageLink">
                <xsl:with-param name="imageURL">
@@ -1052,10 +1055,10 @@
          </xsl:for-each>-->
             
             
-            
+           <!--  
          </xsl:when>
          <xsl:when test="descendant::tei:rdg">ZZZZ</xsl:when>
-      </xsl:choose>
+      </xsl:choose>--> 
       
    </xsl:template>
    
@@ -1192,7 +1195,7 @@
       </xsl:choose>
    </xsl:template>
    
-   <!--DC
+   <!--DC-->
    <xsl:template match="tei:milestone[@unit = 'stanza']">
       <br>
          <xsl:attribute name="class">
@@ -1204,18 +1207,7 @@
          </xsl:attribute>
       </br>
    </xsl:template>
-   -->
-   <xsl:template match="tei:milestone[@unit = 'stanza']">
-      <div>
-         <xsl:attribute name="class"><xsl:text>stanzabreak</xsl:text>
-            <xsl:if test="@ed">
-               <xsl:text> </xsl:text>
-               <xsl:value-of select="translate(@ed,'#','')" />
-            </xsl:if>
-         </xsl:attribute>
-      </div>
-   </xsl:template>
-
+   
    <xsl:template match="tei:table">
       <table class="mssTable">
          <xsl:apply-templates />

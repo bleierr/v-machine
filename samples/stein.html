@@ -288,8 +288,8 @@ timelineDurations['mlre_111']=1.25;
 timelineDurations['mlre_112']=1.25;
 timelineDurations['mlre_113']=1.25;
 timelineDurations['mlre_114']=1.25;
-timelineDurations['mlre_115']=1.25;</script></head>
-   <body onload="init();">
+timelineDurations['mlre_115']=1.25;</script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script></head>
+   <body>
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/poweredby.gif"></img></div>
          <div id="headline">
@@ -297,21 +297,20 @@ timelineDurations['mlre_115']=1.25;</script></head>
          </div>
          <nav id="mainControls">
             <ul>
-               <li><button id="info" type="button" onclick="#">INFO</button></li>
                <li><span id="selectWitness" class="dropdownButton">3 Total Witnesses</span><ul id="witnessList" class="dropdown">
-                     <li class="poem">
+                     <li data-panelid="poem">
                         <div class="listText">
                            <p>A CARAFE, THAT IS A BLIND GLASS</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="essay">
+                     <li data-panelid="essay">
                         <div class="listText">
                            <p>Reading a Selection from Tender Buttons</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="reading_poem">
+                     <li data-panelid="reading_poem">
                         <div class="listText">
                            <p>Mac Low Reading, 1990</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
@@ -319,16 +318,39 @@ timelineDurations['mlre_115']=1.25;</script></head>
                      </li>
                   </ul>
                </li>
-               <li><input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" style="display: none;"></input></li>
-               <li><label for="toggleLineNumbers">Line Numbers:</label><button id="displayLines">ON</button></li>
-               <li><select id="notesMenu" disabled="&#xA;                           disabled&#xA;                        ">
-                     <option>No notes found</option></select></li>
+               <li><span id="controlDropdown" class="dropdownButton">Control dropdown</span><ul id="controlList" class="dropdown">
+                     <li data-panelid="bibPanel">
+                        <div class="listText">
+                           <p>Bibliographic panel</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="lineNumbers">
+                        <div class="listText">
+                           <p>Line numbers</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="notesPanel">
+                        <div class="listText">
+                           <p>Notes Panel</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="critPanel">
+                        <div class="listText">
+                           <p>Critical notes</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
             </ul>
          </nav>
       </div>
       <div id="mssArea">
          <div class="panel" id="bibPanel">
-            <div class="panelBanner"><img class="closePanel" onclick="toggleBiblio();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Bibliographic Information
                
             </div>
@@ -400,7 +422,7 @@ timelineDurations['mlre_115']=1.25;</script></head>
             </div>
          </div>
          <div class="panel" id="critPanel">
-            <div class="panelBanner"><img class="closePanel" onclick="toggleCrit();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Critical Introduction
                
             </div>
@@ -415,7 +437,7 @@ timelineDurations['mlre_115']=1.25;</script></head>
             </div>
          </div>
          <div id="manuscripts">
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable poem">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="poem">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness poem
                </div>
                <div class="mssContent">
@@ -675,7 +697,7 @@ timelineDurations['mlre_115']=1.25;</script></head>
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable essay">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="essay">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness essay
                </div>
                <div class="mssContent">
@@ -1939,7 +1961,7 @@ timelineDurations['mlre_115']=1.25;</script></head>
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable reading_poem">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="reading_poem">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness reading_poem
                </div>
                <div class="mssContent">reading_poem
@@ -2259,7 +2281,7 @@ timelineDurations['mlre_115']=1.25;</script></head>
             </div>
          </div>
          <div class="panel" id="notesPanel" style="display: none;">
-            <div class="panelBanner"><img class="closePanel" onclick="hideNotesPanel();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Textual Notes
                
             </div>
@@ -2269,9 +2291,5 @@ timelineDurations['mlre_115']=1.25;</script></head>
                
             </div>
          </div><br class="clear"></br></div>
-      <div class="viewerRoot" id="panel_imageViewer">
-         <div title="Click to drag panel." class="viewerHandle" id="handle_imageViewer"><span class="viewerHandleLt" id="title_imageViewer">Image Viewer</span><img class="viewerHandleRt" onclick="return hidePanel('imageViewer');" alt="X" src="../vm-images/closePanel.gif"></img></div>
-         <div class="viewerContent" id="content_imageViewer"></div>
-      </div>
    </body>
 </html>

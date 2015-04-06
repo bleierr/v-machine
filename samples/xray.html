@@ -32,8 +32,8 @@
          witnesses["va1"] = "all;va1";
       
       var maxPanels = 10;
-   var timelinePoints = new Array();var timelineDurations = new Array();</script></head>
-   <body onload="init();">
+   var timelinePoints = new Array();var timelineDurations = new Array();</script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script></head>
+   <body>
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/poweredby.gif"></img></div>
          <div id="headline">
@@ -41,63 +41,62 @@
          </div>
          <nav id="mainControls">
             <ul>
-               <li><button id="info" type="button" onclick="#">INFO</button></li>
                <li><span id="selectWitness" class="dropdownButton">10 Total Witnesses</span><ul id="witnessList" class="dropdown">
-                     <li class="pub1927">
+                     <li data-panelid="pub1927">
                         <div class="listText">
                            <p>First</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="va9">
+                     <li data-panelid="va9">
                         <div class="listText">
                            <p>Second </p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="va8">
+                     <li data-panelid="va8">
                         <div class="listText">
                            <p>Third </p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="va7">
+                     <li data-panelid="va7">
                         <div class="listText">
                            <p>Fourth </p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="va6">
+                     <li data-panelid="va6">
                         <div class="listText">
                            <p>Fifth </p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="va5">
+                     <li data-panelid="va5">
                         <div class="listText">
                            <p>Sixth </p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="va4">
+                     <li data-panelid="va4">
                         <div class="listText">
                            <p>Seventh </p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="va3">
+                     <li data-panelid="va3">
                         <div class="listText">
                            <p>Eighth </p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="va2">
+                     <li data-panelid="va2">
                         <div class="listText">
                            <p>Ninth </p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="va1">
+                     <li data-panelid="va1">
                         <div class="listText">
                            <p>Tenth </p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
@@ -105,21 +104,39 @@
                      </li>
                   </ul>
                </li>
-               <li><input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" style="display: none;"></input></li>
-               <li><label for="toggleLineNumbers">Line Numbers:</label><button id="displayLines">ON</button></li>
-               <li><select id="notesMenu" onchange="notesFormat(this.value);">
-                     <option value="popup" selected="selected">Popup notes</option>
-                     <option value="inline">Inline notes</option>
-                     <option value="none">
-                        Hide notes
-                        
-                     </option></select></li>
+               <li><span id="controlDropdown" class="dropdownButton">Control dropdown</span><ul id="controlList" class="dropdown">
+                     <li data-panelid="bibPanel">
+                        <div class="listText">
+                           <p>Bibliographic panel</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="lineNumbers">
+                        <div class="listText">
+                           <p>Line numbers</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="notesPanel">
+                        <div class="listText">
+                           <p>Notes Panel</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="critPanel">
+                        <div class="listText">
+                           <p>Critical notes</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
             </ul>
          </nav>
       </div>
       <div id="mssArea">
          <div class="panel" id="bibPanel">
-            <div class="panelBanner"><img class="closePanel" onclick="toggleBiblio();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Bibliographic Information
                
             </div>
@@ -225,7 +242,7 @@
             </div>
          </div>
          <div class="panel" id="critPanel">
-            <div class="panelBanner"><img class="closePanel" onclick="toggleCrit();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Critical Introduction
                
             </div>
@@ -241,7 +258,7 @@
             </div>
          </div>
          <div id="manuscripts">
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable pub1927">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="pub1927">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness pub1927
                </div>
                <div class="mssContent">
@@ -336,7 +353,7 @@
                         </div>
                         
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -367,18 +384,18 @@
                         
                         
                         
-                        ZZZZ
-                        
-                        ZZZZ
                         
                         
-                        ZZZZ
-                        
-                        ZZZZ
                         
                         
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -404,13 +421,13 @@
                            
                         </div>
                         
-                        ZZZZ
                         
                         
-                        ZZZZ
                         
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
                         
                         <div class="line line5" line-id="line5">
                            <div class="linenumber">5</div>  
@@ -458,9 +475,9 @@
                            
                         </div>
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
                         
                         <div class="line line9" line-id="line9">
                            <div class="linenumber">9</div>
@@ -530,10 +547,10 @@
                         </div>
                         
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -621,7 +638,7 @@
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable va9">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="va9">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness va9
                </div>
                <div class="mssContent">
@@ -728,7 +745,7 @@
                         </div>
                         
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -783,7 +800,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -812,11 +829,11 @@
                            
                         </div>
                         
-                        ZZZZ
                         
                         
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
                         
                         
                         
@@ -842,12 +859,12 @@
                            
                         </div>
                         
-                        ZZZZ
                         
                         
-                        ZZZZ
                         
-                        ZZZZ
+                        
+                        
+                        
                         
                         <div class="line line15" line-id="line15">
                            <div class="emptynumber">&nbsp;</div>
@@ -905,9 +922,9 @@
                            </div>
                            
                         </div>
-                        ZZZZ
                         
-                        ZZZZ
+                        
+                        
                         
                         
                         
@@ -940,9 +957,9 @@
                            
                         </div>
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
                         
                         <div class="line line9" line-id="line9">
                            <div class="linenumber">9</div>
@@ -1019,10 +1036,10 @@
                         </div>
                         
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -1116,7 +1133,7 @@
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable va8">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="va8">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness va8
                </div>
                <div class="mssContent">
@@ -1332,7 +1349,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -1358,21 +1375,21 @@
                            
                         </div>
                         
-                        ZZZZ
                         
                         
-                        ZZZZ
-                        ZZZZ
                         
                         
-                        ZZZZ
-                        
-                        ZZZZ
                         
                         
-                        ZZZZ
                         
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         <div class="line line15" line-id="line15">
                            <div class="emptynumber">&nbsp;</div>
@@ -1434,7 +1451,7 @@
                            </div>
                            
                         </div>
-                        ZZZZ
+                        
                         
                         
                         <div class="line line6" line-id="line6">
@@ -1477,9 +1494,9 @@
                            
                         </div>
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
                         
                         <div class="line line9" line-id="line9">
                            <div class="linenumber">9</div>
@@ -1552,10 +1569,10 @@
                         </div>
                         
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -1595,7 +1612,7 @@
                         
                         
                         
-                        ZZZZ
+                        
                         
                      </div>
                      
@@ -1618,7 +1635,7 @@
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable va7">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="va7">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness va7
                </div>
                <div class="mssContent">
@@ -1746,7 +1763,7 @@
                         </div>
                         
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -1811,7 +1828,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -1837,7 +1854,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -1890,7 +1907,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -1918,7 +1935,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         <div class="line line15" line-id="line15">
                            <div class="emptynumber">&nbsp;</div>
@@ -1969,7 +1986,7 @@
                            </div>
                            
                         </div>
-                        ZZZZ
+                        
                         
                         
                         <div class="line line6" line-id="line6">
@@ -2012,9 +2029,9 @@
                            
                         </div>
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
                         
                         <div class="line line9" line-id="line9">
                            <div class="linenumber">9</div>
@@ -2090,10 +2107,10 @@
                         </div>
                         
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -2182,7 +2199,7 @@
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable va6">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="va6">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness va6
                </div>
                <div class="mssContent">
@@ -2305,7 +2322,7 @@
                         </div>
                         
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -2364,7 +2381,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -2391,11 +2408,11 @@
                            
                         </div>
                         
-                        ZZZZ
                         
                         
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
                         
                         
                         
@@ -2426,7 +2443,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -2455,7 +2472,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         <div class="line line15" line-id="line15">
                            <div class="emptynumber">&nbsp;</div>
@@ -2507,7 +2524,7 @@
                            </div>
                            
                         </div>
-                        ZZZZ
+                        
                         
                         
                         <div class="line line6" line-id="line6">
@@ -2548,9 +2565,9 @@
                            
                         </div>
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
                         
                         <div class="line line9" line-id="line9">
                            <div class="linenumber">9</div>
@@ -2628,10 +2645,10 @@
                         </div>
                         
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -2676,7 +2693,7 @@
                         
                         
                         
-                        ZZZZ
+                        
                         
                      </div>
                      
@@ -2699,7 +2716,7 @@
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable va5">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="va5">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness va5
                </div>
                <div class="mssContent">
@@ -2807,7 +2824,7 @@
                         </div>
                         
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -2867,7 +2884,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -2906,8 +2923,8 @@
                         </div>
                         
                         
-                        ZZZZ
-                        ZZZZ
+                        
+                        
                         
                         
                         
@@ -2937,7 +2954,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -3031,7 +3048,7 @@
                            </div>
                            
                         </div>
-                        ZZZZ
+                        
                         
                         
                         <div class="line line6" line-id="line6">
@@ -3089,9 +3106,9 @@
                            </div>
                            
                         </div>
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
                         
                         
                         <div class="line line10" line-id="line10">
@@ -3237,7 +3254,7 @@
                         
                         
                         
-                        ZZZZ
+                        
                         
                      </div>
                      
@@ -3260,7 +3277,7 @@
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable va4">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="va4">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness va4
                </div>
                <div class="mssContent">
@@ -3473,7 +3490,7 @@
                         </div>
                         
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -3507,18 +3524,18 @@
                         
                         
                         
-                        ZZZZ
-                        
-                        ZZZZ
                         
                         
-                        ZZZZ
-                        
-                        ZZZZ
                         
                         
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -3552,7 +3569,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -3581,7 +3598,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         <div class="line line15" line-id="line15">
                            <div class="emptynumber">&nbsp;</div>
@@ -3645,9 +3662,9 @@
                            </div>
                            
                         </div>
-                        ZZZZ
                         
-                        ZZZZ
+                        
+                        
                         
                         
                         
@@ -3692,9 +3709,9 @@
                            </div>
                            
                         </div>
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
                         
                         
                         <div class="line line10" line-id="line10">
@@ -3742,10 +3759,10 @@
                         </div>
                         
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -3833,7 +3850,7 @@
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable va3">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="va3">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness va3
                </div>
                <div class="mssContent">
@@ -3944,7 +3961,7 @@
                         </div>
                         
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -4005,16 +4022,16 @@
                            
                         </div>
                         
-                        ZZZZ
                         
                         
-                        ZZZZ
-                        
-                        ZZZZ
                         
                         
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -4044,7 +4061,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -4070,7 +4087,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         <div class="line line15" line-id="line15">
                            <div class="emptynumber">&nbsp;</div>
@@ -4131,9 +4148,9 @@
                            </div>
                            
                         </div>
-                        ZZZZ
                         
-                        ZZZZ
+                        
+                        
                         
                         
                         
@@ -4190,17 +4207,17 @@
                            </div>
                            
                         </div>
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        
-                        ZZZZ
                         
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -4239,7 +4256,7 @@
                         
                         
                         
-                        ZZZZ
+                        
                         
                      </div>
                      
@@ -4266,7 +4283,7 @@
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable va2">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="va2">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness va2
                </div>
                <div class="mssContent">
@@ -4378,7 +4395,7 @@
                         </div>
                         
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -4441,7 +4458,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -4468,11 +4485,11 @@
                            
                         </div>
                         
-                        ZZZZ
                         
                         
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
                         
                         
                         
@@ -4501,7 +4518,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -4527,7 +4544,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         <div class="line line15" line-id="line15">
                            <div class="emptynumber">&nbsp;</div>
@@ -4588,9 +4605,9 @@
                            </div>
                            
                         </div>
-                        ZZZZ
                         
-                        ZZZZ
+                        
+                        
                         
                         
                         
@@ -4748,10 +4765,10 @@
                         </div>
                         
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -4791,7 +4808,7 @@
                         
                         
                         
-                        ZZZZ
+                        
                         
                      </div>
                      
@@ -4982,7 +4999,7 @@
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable va1">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="va1">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness va1
                </div>
                <div class="mssContent">
@@ -5116,7 +5133,7 @@
                         </div>
                         
                         
-                        ZZZZ
+                        
                         
                         
                         
@@ -5200,13 +5217,13 @@
                         </div>
                         
                         
-                        ZZZZ
-                        
-                        ZZZZ
                         
                         
-                        ZZZZ
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
                         
                         
                         
@@ -5282,7 +5299,7 @@
                            
                         </div>
                         
-                        ZZZZ
+                        
                         
                         <div class="line line15" line-id="line15">
                            <div class="emptynumber">&nbsp;</div>
@@ -5342,9 +5359,9 @@
                            </div>
                            
                         </div>
-                        ZZZZ
                         
-                        ZZZZ
+                        
+                        
                         
                         
                         
@@ -5520,17 +5537,17 @@
                         </div>
                         
                         
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        ZZZZ
-                        
-                        
-                        ZZZZ
                         
                         
                         
-                        ZZZZ
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         
                      </div>
                      
@@ -5555,7 +5572,7 @@
             </div>
          </div>
          <div class="panel" id="notesPanel" style="display: none;">
-            <div class="panelBanner"><img class="closePanel" onclick="hideNotesPanel();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Textual Notes
                
             </div>
@@ -5582,9 +5599,5 @@
                
             </div>
          </div><br class="clear"></br></div>
-      <div class="viewerRoot" id="panel_imageViewer">
-         <div title="Click to drag panel." class="viewerHandle" id="handle_imageViewer"><span class="viewerHandleLt" id="title_imageViewer">Image Viewer</span><img class="viewerHandleRt" onclick="return hidePanel('imageViewer');" alt="X" src="../vm-images/closePanel.gif"></img></div>
-         <div class="viewerContent" id="content_imageViewer"></div>
-      </div>
    </body>
 </html>

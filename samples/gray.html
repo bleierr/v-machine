@@ -140,8 +140,8 @@ timelineDurations['tl_1984_25']=13;
 timelineDurations['tl_1984_26']=57;
 timelineDurations['tl_1984_27']=49;
 timelineDurations['tl_1984_27b']=39;
-timelineDurations['tl_1984_28']=23;</script></head>
-   <body onload="init();">
+timelineDurations['tl_1984_28']=23;</script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script></head>
+   <body>
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/poweredby.gif"></img></div>
          <div id="headline">
@@ -149,51 +149,50 @@ timelineDurations['tl_1984_28']=23;</script></head>
          </div>
          <nav id="mainControls">
             <ul>
-               <li><button id="info" type="button" onclick="#">INFO</button></li>
                <li><span id="selectWitness" class="dropdownButton">8 Total Witnesses</span><ul id="witnessList" class="dropdown">
-                     <li class="nb1">
+                     <li data-panelid="nb1">
                         <div class="listText">
                            <p>Notebook 1</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="nb3a">
+                     <li data-panelid="nb3a">
                         <div class="listText">
                            <p>Notebook 3a</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="nb3b">
+                     <li data-panelid="nb3b">
                         <div class="listText">
                            <p>Notebook 3b</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="nb4">
+                     <li data-panelid="nb4">
                         <div class="listText">
                            <p>Notebook 4</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="nb5">
+                     <li data-panelid="nb5">
                         <div class="listText">
                            <p>Notebook 5</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="book">
+                     <li data-panelid="book">
                         <div class="listText">
                            <p>Book Version</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="v1983">
+                     <li data-panelid="v1983">
                         <div class="listText">
                            <p>1983 Version</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="v1984">
+                     <li data-panelid="v1984">
                         <div class="listText">
                            <p>1984 Version</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
@@ -201,16 +200,39 @@ timelineDurations['tl_1984_28']=23;</script></head>
                      </li>
                   </ul>
                </li>
-               <li><input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" style="display: none;"></input></li>
-               <li><label for="toggleLineNumbers">Line Numbers:</label><button id="displayLines">ON</button></li>
-               <li><select id="notesMenu" disabled="&#xA;                           disabled&#xA;                        ">
-                     <option>No notes found</option></select></li>
+               <li><span id="controlDropdown" class="dropdownButton">Control dropdown</span><ul id="controlList" class="dropdown">
+                     <li data-panelid="bibPanel">
+                        <div class="listText">
+                           <p>Bibliographic panel</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="lineNumbers">
+                        <div class="listText">
+                           <p>Line numbers</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="notesPanel">
+                        <div class="listText">
+                           <p>Notes Panel</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="critPanel">
+                        <div class="listText">
+                           <p>Critical notes</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
             </ul>
          </nav>
       </div>
       <div id="mssArea">
          <div class="panel" id="bibPanel">
-            <div class="panelBanner"><img class="closePanel" onclick="toggleBiblio();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Bibliographic Information
                
             </div>
@@ -285,18 +307,18 @@ timelineDurations['tl_1984_28']=23;</script></head>
             </div>
          </div>
          <div class="panel" id="critPanel" style="display: none;">
-            <div class="panelBanner"><img class="closePanel" onclick="toggleCrit();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Critical Introduction
                
             </div>
             <div class="critContent"></div>
          </div>
          <div id="manuscripts">
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable nb1">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="nb1">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness nb1
                </div>
                <div class="mssContent">
-                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb1" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook1-1of3-p6.jpg','nb1','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb1" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook1-2of3-p7.jpg','nb1','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb1" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook1-3of3-loosesheet.jpg','nb1','-250','0');"></img></div>
+                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb1" data-witness-id="nb1" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook1-1of3-p6.jpg" data-img-id=""></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb1" data-witness-id="nb1" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook1-2of3-p7.jpg" data-img-id=""></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb1" data-witness-id="nb1" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook1-3of3-loosesheet.jpg" data-img-id=""></img></div>
                   
                   
                   
@@ -2553,11 +2575,11 @@ timelineDurations['tl_1984_28']=23;</script></head>
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable nb3a">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="nb3a">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness nb3a
                </div>
                <div class="mssContent">
-                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb3a" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook3a-1of3-p15.jpg','nb3a','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb3a" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook3a-2of3-p16.jpg','nb3a','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb3a" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook3a-3of3-p17.jpg','nb3a','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb3a" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook3a-3of3-loosesheet.jpg','nb3a','-250','0');"></img></div>
+                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb3a" data-witness-id="nb3a" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook3a-1of3-p15.jpg" data-img-id=""></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb3a" data-witness-id="nb3a" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook3a-2of3-p16.jpg" data-img-id=""></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb3a" data-witness-id="nb3a" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook3a-3of3-p17.jpg" data-img-id=""></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb3a" data-witness-id="nb3a" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook3a-3of3-loosesheet.jpg" data-img-id=""></img></div>
                   
                   
                   
@@ -4837,11 +4859,11 @@ timelineDurations['tl_1984_28']=23;</script></head>
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable nb3b">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="nb3b">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness nb3b
                </div>
                <div class="mssContent">
-                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb3b" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook3b-1of3-p40.jpg','nb3b','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb3b" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook3b-2of3-p41.jpg','nb3b','-250','0');"></img></div>
+                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb3b" data-witness-id="nb3b" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook3b-1of3-p40.jpg" data-img-id=""></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb3b" data-witness-id="nb3b" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook3b-2of3-p41.jpg" data-img-id=""></img></div>
                   
                   
                   
@@ -7107,11 +7129,11 @@ timelineDurations['tl_1984_28']=23;</script></head>
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable nb4">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="nb4">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness nb4
                </div>
                <div class="mssContent">
-                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb4" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook4-1of9-p33.jpg','nb4','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb4" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook4-2of9-p34.jpg','nb4','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb4" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook4-3of9-p35.jpg','nb4','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb4" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook4-4of9-p36.jpg','nb4','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb4" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook4-5of9-p36a.jpg','nb4','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb4" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook4-6of9-p37.jpg','nb4','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb4" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook4-7of9-p38.jpg','nb4','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb4" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook4-8of9-p39.jpg','nb4','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb4" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook4-9of9-p40.jpg','nb4','-250','0');"></img></div>
+                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb4" data-witness-id="nb4" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook4-1of9-p33.jpg" data-img-id=""></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb4" data-witness-id="nb4" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook4-2of9-p34.jpg" data-img-id=""></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb4" data-witness-id="nb4" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook4-3of9-p35.jpg" data-img-id=""></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb4" data-witness-id="nb4" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook4-4of9-p36.jpg" data-img-id=""></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb4" data-witness-id="nb4" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook4-5of9-p36a.jpg" data-img-id=""></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb4" data-witness-id="nb4" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook4-6of9-p37.jpg" data-img-id=""></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb4" data-witness-id="nb4" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook4-7of9-p38.jpg" data-img-id=""></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb4" data-witness-id="nb4" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook4-8of9-p39.jpg" data-img-id=""></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb4" data-witness-id="nb4" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook4-9of9-p40.jpg" data-img-id=""></img></div>
                   
                   
                   
@@ -9539,11 +9561,11 @@ timelineDurations['tl_1984_28']=23;</script></head>
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable nb5">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="nb5">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness nb5
                </div>
                <div class="mssContent">
-                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb5" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook5-1of4-p16.jpg','nb5','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb5" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook5-2of4-p17.jpg','nb5','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb5" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook5-3of4-p17a.jpg','nb5','-250','0');"></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb5" onclick="return showImgPanel(event, 'imageViewer','images/SpaldingGray-NeakLuongsample-Notebook5-4of4-p18.jpg','nb5','-250','0');"></img></div>
+                  <div class="facs-images"><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb5" data-witness-id="nb5" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook5-1of4-p16.jpg" data-img-id=""></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb5" data-witness-id="nb5" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook5-2of4-p17.jpg" data-img-id=""></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb5" data-witness-id="nb5" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook5-3of4-p17a.jpg" data-img-id=""></img><img src="../vm-images/image.gif" alt="Facsimile Image Placeholder" class="imageLink nb5" data-witness-id="nb5" data-img-url="images/SpaldingGray-NeakLuongsample-Notebook5-4of4-p18.jpg" data-img-id=""></img></div>
                   
                   
                   
@@ -11887,7 +11909,7 @@ timelineDurations['tl_1984_28']=23;</script></head>
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable book">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="book">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness book
                </div>
                <div class="mssContent">
@@ -14269,7 +14291,7 @@ timelineDurations['tl_1984_28']=23;</script></head>
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable v1983">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="v1983">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness v1983
                </div>
                <div class="mssContent">v1983
@@ -16759,7 +16781,7 @@ timelineDurations['tl_1984_28']=23;</script></head>
                   
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable v1984">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="v1984">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness v1984
                </div>
                <div class="mssContent">v1984
@@ -19248,7 +19270,7 @@ timelineDurations['tl_1984_28']=23;</script></head>
             </div>
          </div>
          <div class="panel" id="notesPanel" style="display: none;">
-            <div class="panelBanner"><img class="closePanel" onclick="hideNotesPanel();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Textual Notes
                
             </div>
@@ -19258,9 +19280,5 @@ timelineDurations['tl_1984_28']=23;</script></head>
                
             </div>
          </div><br class="clear"></br></div>
-      <div class="viewerRoot" id="panel_imageViewer">
-         <div title="Click to drag panel." class="viewerHandle" id="handle_imageViewer"><span class="viewerHandleLt" id="title_imageViewer">Image Viewer</span><img class="viewerHandleRt" onclick="return hidePanel('imageViewer');" alt="X" src="../vm-images/closePanel.gif"></img></div>
-         <div class="viewerContent" id="content_imageViewer"></div>
-      </div>
    </body>
 </html>

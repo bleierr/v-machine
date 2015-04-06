@@ -18,8 +18,8 @@
          witnesses["cambridge"] = "cambridge";
       
       var maxPanels = 3;
-   var timelinePoints = new Array();var timelineDurations = new Array();</script></head>
-   <body onload="init();">
+   var timelinePoints = new Array();var timelineDurations = new Array();</script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script></head>
+   <body>
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/poweredby.gif"></img></div>
          <div id="headline">
@@ -27,21 +27,20 @@
          </div>
          <nav id="mainControls">
             <ul>
-               <li><button id="info" type="button" onclick="#">INFO</button></li>
                <li><span id="selectWitness" class="dropdownButton">3 Total Witnesses</span><ul id="witnessList" class="dropdown">
-                     <li class="dublin">
+                     <li data-panelid="dublin">
                         <div class="listText">
                            <p>The Prophecy of Merlin</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="oxford">
+                     <li data-panelid="oxford">
                         <div class="listText">
                            <p>The Prophecy of Merlin</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
                         </div>
                      </li>
-                     <li class="cambridge">
+                     <li data-panelid="cambridge">
                         <div class="listText">
                            <p>The Prophecy of Merlin</p>
                            <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
@@ -49,21 +48,39 @@
                      </li>
                   </ul>
                </li>
-               <li><input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" style="display: none;"></input></li>
-               <li><label for="toggleLineNumbers">Line Numbers:</label><button id="displayLines">ON</button></li>
-               <li><select id="notesMenu" onchange="notesFormat(this.value);">
-                     <option value="popup" selected="selected">Popup notes</option>
-                     <option value="inline">Inline notes</option>
-                     <option value="none">
-                        Hide notes
-                        
-                     </option></select></li>
+               <li><span id="controlDropdown" class="dropdownButton">Control dropdown</span><ul id="controlList" class="dropdown">
+                     <li data-panelid="bibPanel">
+                        <div class="listText">
+                           <p>Bibliographic panel</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="lineNumbers">
+                        <div class="listText">
+                           <p>Line numbers</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="notesPanel">
+                        <div class="listText">
+                           <p>Notes Panel</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                     <li data-panelid="critPanel">
+                        <div class="listText">
+                           <p>Critical notes</p>
+                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
             </ul>
          </nav>
       </div>
       <div id="mssArea">
          <div class="panel" id="bibPanel">
-            <div class="panelBanner"><img class="closePanel" onclick="toggleBiblio();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Bibliographic Information
                
             </div>
@@ -131,14 +148,14 @@
             </div>
          </div>
          <div class="panel" id="critPanel" style="display: none;">
-            <div class="panelBanner"><img class="closePanel" onclick="toggleCrit();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Critical Introduction
                
             </div>
             <div class="critContent"></div>
          </div>
          <div id="manuscripts">
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable dublin">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="dublin">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness dublin
                </div>
                <div class="mssContent">
@@ -156,7 +173,7 @@
                   </div>
                   			
                   <div class="lg lg-n1">
-                     				ZZZZ
+                     				
                      				
                      <div class="line line2" line-id="line2">
                         <div class="linenumber">2</div>
@@ -236,8 +253,8 @@
                         </div>
                         				
                      </div>
-                     				ZZZZ
-                     				ZZZZ
+                     				
+                     				
                      				
                      <div class="line line8" line-id="line8">
                         <div class="linenumber">8</div>
@@ -298,7 +315,7 @@
                   		
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable oxford">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="oxford">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness oxford
                </div>
                <div class="mssContent">
@@ -316,7 +333,7 @@
                   </div>
                   			
                   <div class="lg lg-n1">
-                     				ZZZZ
+                     				
                      				
                      <div class="line line2" line-id="line2">
                         <div class="linenumber">2</div>
@@ -475,7 +492,7 @@
                      </div>
                      			
                      				
-                     				ZZZZ
+                     				
                      			
                   </div>
                   			
@@ -483,7 +500,7 @@
                   		
                </div>
             </div>
-            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable cambridge">
+            <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="cambridge">
                <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)"></img>Witness cambridge
                </div>
                <div class="mssContent">
@@ -562,7 +579,7 @@
                         </div>
                         				
                      </div>
-                     				ZZZZ
+                     				
                      				
                      <div class="line line4" line-id="line4">
                         <div class="linenumber">4</div>
@@ -608,8 +625,8 @@
                         </div>
                         				
                      </div>
-                     				ZZZZ
-                     				ZZZZ
+                     				
+                     				
                      				
                      <div class="line line8" line-id="line8">
                         <div class="linenumber">8</div>
@@ -632,7 +649,7 @@
                      </div>
                      			
                      				
-                     				ZZZZ
+                     				
                      			
                   </div>
                   			
@@ -642,7 +659,7 @@
             </div>
          </div>
          <div class="panel" id="notesPanel" style="display: none;">
-            <div class="panelBanner"><img class="closePanel" onclick="hideNotesPanel();" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
+            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif"></img>
                Textual Notes
                
             </div>
@@ -796,9 +813,5 @@
                
             </div>
          </div><br class="clear"></br></div>
-      <div class="viewerRoot" id="panel_imageViewer">
-         <div title="Click to drag panel." class="viewerHandle" id="handle_imageViewer"><span class="viewerHandleLt" id="title_imageViewer">Image Viewer</span><img class="viewerHandleRt" onclick="return hidePanel('imageViewer');" alt="X" src="../vm-images/closePanel.gif"></img></div>
-         <div class="viewerContent" id="content_imageViewer"></div>
-      </div>
    </body>
 </html>
