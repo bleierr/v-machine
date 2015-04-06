@@ -1302,3 +1302,7 @@ $(document).ready(function(){
 	
 });
 
+$(document).ready(function(){
+	//this is overwriting some js code in pan-zoom not a good solution
+	$(".panzoom-parent").css("overflow","visible");
+});

@@ -1521,31 +1521,24 @@
    <xsl:template name="imageViewer">
       <xsl:param name="imgId"></xsl:param>
       <xsl:param name="imgUrl"></xsl:param>
-      <div class="panel imgPanel draggable resizable ui-widget-content ui-resizable" id="{$imgId}">
-         
+      <div class="draggable resizable ui-resizable panel imgPanel" id="{$imgId}">
          <div title="Click to drag panel." class="viewerHandle" id="handle_imageViewer">
             <span class="viewerHandleLt" id="title_imageViewer">
-            <xsl:value-of select="$imgUrl"></xsl:value-of>
+               <xsl:value-of select="$imgUrl"></xsl:value-of>
             </span>
             <img class="viewerHandleRt closePanel" alt="X" src="../vm-images/closePanel.gif" />
          </div>
          <div class="viewerContent" id="content_imageViewer">
+             
             <!-- RB: jquery.panzoom plugin from https://github.com/timmywil/jquery.panzoom The links to the JS and CSS files are in the facsimile template-->
             
-            <xsl:variable name="img-container-id">panzoom<xsl:value-of select="$imgId"/></xsl:variable>
+           <!-- <xsl:variable name="img-container-id">panzoom<xsl:value-of select="$imgId"/></xsl:variable>
             <xsl:element name="div">
                <xsl:attribute name="class">section</xsl:attribute>
                <xsl:attribute name="id"><xsl:value-of select="$img-container-id"/></xsl:attribute>
+               -->
                
-               
-               <div class="panzoom-parent">
-            <!-- zoom control -->
-            <div class="buttons">
-                     <button class="zoom-in">+</button>
-                     <button class="zoom-out">-</button>
-                     <input type="range" class="zoom-range"/>
-                     <button class="reset">Reset</button>
-                  </div>
+               <div class="panzoom-parent" style="overflow:visible">
             <!-- panzoom image -->
             <div class="panzoom">
                      <img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image">
@@ -1555,26 +1548,37 @@
                         
                      </img>
                   </div>
-               </div>
                
-               <script  type="text/javascript">
-                  (function() {
-                  var $section = $(<xsl:text>'div#</xsl:text><xsl:value-of select="$img-container-id"/><xsl:text>'</xsl:text>);
-                  $section.find('.panzoom').panzoom({
-                  $zoomIn: $section.find(".zoom-in"),
-                  $zoomOut: $section.find(".zoom-out"),
-                  $zoomRange: $section.find(".zoom-range"),
-                  $reset: $section.find(".reset")
-                  });
-                  })();
-               </script>
                
-            </xsl:element>
+           <!-- </xsl:element>-->
+           
+                  
+               </div><!-- zoom parent end -->
+            <!-- zoom control -->
+            <div class="buttons">
+               <!--  <button class="zoom-in">+</button>
+               <button class="zoom-out">-</button>-->
+               <input type="range" min="0" max="100" class="zoom-range"/>
+               <!-- <button class="reset">Reset</button> -->
+            </div>
+            
+            
+            <script  type="text/javascript">
+               (function() {
+               var $section = $(<xsl:text>'div#</xsl:text><xsl:value-of select="$imgId"/><xsl:text>.imgPanel'</xsl:text>);
+               $section.find('.panzoom').panzoom({
+               <!-- $zoomIn: $section.find(".zoom-in"),
+               $zoomOut: $section.find(".zoom-out"), -->
+               $zoomRange: $section.find(".zoom-range")
+              <!-- $reset: $section.find(".reset")-->
+               });
+               })();
+            </script>
+            
+            
             <!-- End implementation of jquery.panzoom -->
          </div>
-         <div class="panelFooter" height="25px">
-            
-         </div>
+         
       </div>
    </xsl:template>
    

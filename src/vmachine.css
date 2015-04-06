@@ -441,6 +441,11 @@ div.type-stanza{
     font-weight:800;
     font-family:sans-serif;
     overflow:hidden;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	z-index:10;
 }
 span.viewerHandleLt{
 	font-size:1em;
@@ -453,12 +458,13 @@ span.viewerHandleLt{
     cursor:pointer;
     height:1.22em;
     width:1.22em;
-    margin:0;
+    margin:0 10px;
+	
 }
 .viewerContent{
     margin:0 0.16em 0.16em 0.16em;
     padding:0 0.16em 0.16em 0.16em;
-    overflow:hidden;
+    overflow:visible;
 }
 .viewerContent img{
     display:block;
@@ -562,6 +568,10 @@ div.listText p{
 display:none;
 position:relative;
 z-index:1;
+}
+.imgPanel{
+	overflow:hidden;
+	background-color:#000;
 }
 button#displayLines{
 	width: 4em;
