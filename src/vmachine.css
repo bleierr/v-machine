@@ -157,11 +157,11 @@ div#mssArea div.panel div.panelBanner{
 div#mssArea div.panel div.panelBanner select.witnessMenu{
     width:160px;
 }
-div#mssArea div.mssPanel{
+div#mssArea div.mssPanel, div#mssArea div.imgPanel{
     background:white;
     /* padding-bottom: 5em; */
 }
-div#mssArea div.mssPanel div.panelBanner{
+div#mssArea div.mssPanel div.panelBanner, div#mssArea div.imgPanel div.panelBanner{
     border-bottom:1px solid black;
 }
 div#mssArea div.panel div.panelBanner img.closePanel{
@@ -558,7 +558,7 @@ div.listText p{
 /* end style dropdown list */
 
 
-.mssPanel{
+.mssPanel, .imgPanel{
 display:none;
 position:relative;
 z-index:1;
@@ -567,7 +567,7 @@ button#displayLines{
 	width: 4em;
 }
 
-div.panel.highlight, .dropdown .highlight{
+div.panel.highlight, .dropdown .highlight, img.highlight{
 	border: 2px solid red;
 }
 /*Code RB End*/

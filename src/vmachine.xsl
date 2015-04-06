@@ -1521,7 +1521,7 @@
    <xsl:template name="imageViewer">
       <xsl:param name="imgId"></xsl:param>
       <xsl:param name="imgUrl"></xsl:param>
-      <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="{$imgId}">
+      <div class="panel imgPanel draggable resizable ui-widget-content ui-resizable" id="{$imgId}">
          
          <div title="Click to drag panel." class="viewerHandle" id="handle_imageViewer">
             <span class="viewerHandleLt" id="title_imageViewer">

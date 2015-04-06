@@ -1289,5 +1289,16 @@ $(document).ready(function(){
 });
 
 
-
+$(document).ready(function(){
+	$(".imgPanel").hover(function(){
+		var panelId = $(this).attr("id");
+		$(".imageLink[data-img-id='" + panelId + "']").toggleClass("highlight");
+	});
+	
+	$(".imageLink").hover(function(){
+		var panelId = $(this).attr("data-img-id");
+		$(".imgPanel[id='" + panelId + "']").toggleClass("highlight");
+	});
+	
+});
 
