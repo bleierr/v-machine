@@ -14,7 +14,7 @@
    
    <xsl:variable name="indexPage">../samples.html</xsl:variable>
    
-   <xsl:variable name="vmLogo">../vm-images/poweredby.gif</xsl:variable>
+   <xsl:variable name="vmLogo">../vm-images/LogoSilver.svg</xsl:variable>
    
    <xsl:variable name="cssInclude">../src/vmachine.css</xsl:variable>
    
@@ -200,15 +200,15 @@
       <nav id="mainControls">
          
          <ul>
-            <!--  
-            <li>
-               <button id="info" type="button" onclick="#" >INFO</button>
+           <li>
+               <span>
+                  <xsl:attribute name="id">BibliographicInfo</xsl:attribute>
+                  <input type="image" src="../vm-images/helpButton.svg" alt="" id="bibToggle" value="Bibliographic Info" /> 
+                  
+               </span>
+               
+               
             </li>
-            <input type="button" id="newPanel" value="New Version" onclick="openPanel();" />
-         &#8226;-->
-            <!--  
-         <input type="button" id="bibToggle" value="Bibliographic Info" onclick="toggleBiblio();" />
-         -->
                 
             <li>
                <span>
@@ -231,79 +231,7 @@
                <!-- RB: control dropdown -->
                <xsl:call-template name="controlDropdown"/>
             </li>  
-            
-            
-            
-            <!--
-            <li>
-               <input type="button" id="critToggle" value="Critical Introduction" onclick="toggleCrit();" >-->
-                  <!--This isn't working when $displayCritInfo is true but there's no relevant note. Copied the if statement from Martin below. -->
-                  <!-- <xsl:if test="$displayCritInfo != 'true' or not(tei:notesStmt/tei:note[@type='critIntro'])">
-                     <xsl:attribute name="style">
-                        <xsl:text>display: none;</xsl:text>
-                     </xsl:attribute>
-                  </xsl:if>            
-               </input>
-            </li>
-            <li>  -->
-               <!-- &#8226;
-               <input type="button" id="helpToggle" value="Help Viewer" onclick="toggleHelp();" /> -->
-               <!-- 
-               <label for="toggleLineNumbers">Line Numbers:</label>
-               <button>
-                  <xsl:attribute name="id">displayLines</xsl:attribute>
-                  <xsl:text>ON</xsl:text>
-               </button> -->
-               <!-- <input type="checkbox" id="toggleLineNumbers" onclick="toggleLineNumbers(this.checked);">
-                  <xsl:if test="$displayLineNumbers != 'false'">
-                     <xsl:attribute name="checked">checked</xsl:attribute>
-                  </xsl:if>
-               </input> -->
-              
-            <!--</li>
-            <li>
-               <select id="notesMenu">
-                  <xsl:choose>
-                     <xsl:when test="//tei:body//tei:note[not(@type='image')]">
-                        <xsl:attribute name="onchange">
-                           <xsl:text>notesFormat(this.value);</xsl:text>
-                        </xsl:attribute>
-                        <option value="popup">
-                           <xsl:if test="$notesFormat = 'popup'">
-                              <xsl:attribute name="selected">selected</xsl:attribute>
-                           </xsl:if>
-                           <xsl:text>Popup notes</xsl:text>
-                        </option>
-                        <option value="inline">
-                           <xsl:if test="$notesFormat = 'inline'">
-                              <xsl:attribute name="selected">selected</xsl:attribute>
-                           </xsl:if>
-                           <xsl:text>Inline notes</xsl:text>
-                        </option>
-                        <option value="none">
-                           <xsl:if test="$notesFormat = 'none'">
-                              <xsl:attribute name="selected">selected</xsl:attribute>
-                           </xsl:if>
-                           Hide notes
-                        </option>
-                     </xsl:when>
-                     <xsl:otherwise>
-                        <xsl:attribute name="disabled">
-                           disabled
-                        </xsl:attribute>
-                        <option>No notes found</option>
-                     </xsl:otherwise>
-                  </xsl:choose>
-               </select> -->
-               <!-- &#8226;
-               <a>
-                  <xsl:attribute name="href">
-                     <xsl:value-of select="$indexPage" />
-                  </xsl:attribute>
-                  <xsl:text>Index of texts</xsl:text>
-               </a> 
-            </li>-->
-         </ul>
+     </ul>
          
          
       </nav>
@@ -360,7 +288,8 @@
                </div>
             </div>
             </li>
-         <li data-panelid="lineNumbers"> <!--  onclick="toggleLineNumbers(false);" -->
+         <li data-panelid="lineNumbers">
+            <!-- create a button to toggle line numbers visible and invisible -->
             <div>
                <xsl:attribute name="class">listText</xsl:attribute>
                <p>
@@ -402,11 +331,7 @@
          </li>
       </ul>
    </xsl:template>
-   
-   
-   
-   
-   
+    
    <xsl:template name="manuscriptArea">
       <div id="mssArea">
          <xsl:apply-templates select="/tei:TEI/tei:teiHeader/tei:fileDesc" />
@@ -438,27 +363,12 @@
             <xsl:value-of select="$witID"></xsl:value-of>
          </xsl:attribute>
          <div class="panelBanner">
-            <!-- <img class="closePanel" onclick="closePanel(this.parentNode.parentNode);" src="../vm-images/closePanel.gif" alt="X (Close panel)" /> -->
-            <img class="closePanel" src="../vm-images/closePanel.gif" alt="X (Close panel)" />
+            <img class="closePanel" src="../vm-images/closePanel.svg" alt="X (Close panel)" />
             <xsl:text>Witness </xsl:text><xsl:value-of select="$witID"></xsl:value-of>
-            <!-- <select class="witnessMenu" onchange="changeWitness(this.value,this.parentNode.parentNode);">
-               <xsl:for-each select="//tei:witness">
-                  <option>
-                     <xsl:if test="position() = number($increment)">
-                        <xsl:attribute name="selected">selected</xsl:attribute>
-                     </xsl:if>
-                     <xsl:attribute name="value">
-                        <xsl:value-of select="@xml:id" />
-                     </xsl:attribute>
-                     <xsl:value-of select="position()" />
-                     <xsl:text>: </xsl:text>
-                     <xsl:value-of select="@xml:id" />
-                  </option>
-               </xsl:for-each>
-            </select>
-            -->
-            <!-- RB added static banner name -->
-            
+            <!-- Alex added -->
+            <xsl:text>Version</xsl:text><xsl:value-of select="count($witnesses)"></xsl:value-of>
+            <xsl:text>of</xsl:text>
+            <!-- End Alex -->
          </div>
          <div class="mssContent">
             <xsl:if test="//tei:witDetail[@target = concat('#',$witID) and tei:media[@url]]">
@@ -548,17 +458,18 @@
       </xsl:apply-templates>
    </xsl:template>
    
-   
-   
    <xsl:template match="/tei:TEI/tei:teiHeader/tei:fileDesc">
-      <div class="panel" id="bibPanel">
+      <div id="bibPanel">
+         <xsl:attribute name="class">
+            <xsl:text>panel mssPanel draggable resizable ui-widget-content ui-resizable</xsl:text>
+         </xsl:attribute>
          <xsl:if test="$displayBibInfo != 'true'">
             <xsl:attribute name="style">
                <xsl:text>display: none;</xsl:text>
             </xsl:attribute>
          </xsl:if>
          <div class="panelBanner">
-            <img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif" />
+            <img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.svg" />
             Bibliographic Information
          </div>
          <div class="bibContent">
@@ -681,15 +592,19 @@
             <xsl:apply-templates select="/tei:TEI/tei:teiHeader/tei:encodingDesc" />
          </div>
       </div>
-      <div class="panel" id="critPanel">
+      <div id="critPanel">
+         <xsl:attribute name="class">
+            <xsl:text>panel mssPanel draggable resizable ui-widget-content ui-resizable</xsl:text>
+         </xsl:attribute>
         <xsl:if test="$displayCritInfo != 'true' or not(tei:notesStmt/tei:note[@type='critIntro'])">
                <xsl:attribute name="style">
                   <xsl:text>display: none;</xsl:text>
                </xsl:attribute>
             </xsl:if>
         
+        <!-- second image panel ??? -->
             <div class="panelBanner">
-               <img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif" />
+               <img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.svg" />
                Critical Introduction
             </div>
             <div class="critContent">
@@ -745,14 +660,17 @@
    <xsl:template match="//tei:encodingDesc/tei:charDecl"></xsl:template>
    
    <xsl:template name="notesPanel">
-      <div class="panel" id="notesPanel">
+      <div id="notesPanel">
+         <xsl:attribute name="class">
+            <xsl:text>panel mssPanel draggable resizable ui-widget-content ui-resizable</xsl:text>
+         </xsl:attribute>
          <xsl:if test="$notesFormat != 'inline'">
             <xsl:attribute name="style">
                <xsl:text>display: none;</xsl:text>
             </xsl:attribute>
          </xsl:if>
          <div class="panelBanner">
-            <img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.gif" />
+            <img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.svg" />
             Textual Notes
          </div>
          <xsl:for-each select="//tei:body//tei:note[not(@type='image')]">
@@ -864,7 +782,7 @@
       <xsl:param name="witness" />
       <xsl:param name="imgID"/>
       <xsl:if test="$imageURL != ''">
-         <img src="../vm-images/image.gif" alt="Facsimile Image Placeholder">
+         <img src="../vm-images/image.svg" alt="Facsimile Image Placeholder">
             <xsl:attribute name="class">
                <xsl:text>imageLink</xsl:text>
                <xsl:if test="$witness != ''">
@@ -883,82 +801,10 @@
             <xsl:attribute name="data-img-id">
                <xsl:value-of select="$imgID" />
             </xsl:attribute>
-            <!-- <xsl:attribute name="onclick">
-               <xsl:text>return showImgPanel(event, 'imageViewer','</xsl:text>
-               <xsl:value-of select="$imageURL" />
-               <xsl:text>','</xsl:text>
-               <xsl:value-of select="$witness" />
-               <xsl:text>','-250','0');</xsl:text>
-            </xsl:attribute> -->
          </img>
       </xsl:if>
    </xsl:template>
-   
-  <!--  <xsl:template name="imageLink">
-      <xsl:param name="imageURL" />
-      <xsl:param name="witness" />
-      <xsl:param name="witID" />
-      <xsl:variable name="pos">
-         <xsl:number value="position()" format="1" />
-      </xsl:variable>
-      <xsl:if test="$imageURL != ''">
-         <div class="illgrp" id="item-image">
-            <xsl:attribute name="class">
-               <xsl:text>imageLink</xsl:text>
-               <xsl:if test="$witness != ''">
-                  <xsl:text> </xsl:text>
-                  <xsl:value-of select="$witness" />
-               </xsl:if>
-            </xsl:attribute>--> 
-            <!-- RB: jquery.panzoom plugin from https://github.com/timmywil/jquery.panzoom The links to the JS and CSS files are in the facsimile template-->
-            
-            <!--<xsl:variable name="img-container-id">panzoom<xsl:value-of select="$pos"/></xsl:variable>
-            <xsl:element name="div">
-               <xsl:attribute name="class">section</xsl:attribute>
-               <xsl:attribute name="id"><xsl:value-of select="$img-container-id"/></xsl:attribute>
-               
-               
-               <div class="panzoom-parent">--> 
-                  <!-- zoom control -->
-                  <!--<div class="buttons">
-                     <button class="zoom-in">+</button>
-                     <button class="zoom-out">-</button>
-                     <input type="range" class="zoom-range"/>
-                     <button class="reset">Reset</button>
-                  </div>--> 
-                  <!-- panzoom image -->
-                  <!--<div class="panzoom">
-                     <img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image">
-                        <xsl:attribute name="src">
-                           <xsl:value-of select="$imageURL" />
-                        </xsl:attribute>
-                        
-                     </img>
-                  </div>
-               </div>
-               
-               <script  type="text/javascript">
-                  (function() {
-                  var $section = $(<xsl:text>'div#</xsl:text><xsl:value-of select="$img-container-id"/><xsl:text>'</xsl:text>);
-                  $section.find('.panzoom').panzoom({
-                  $zoomIn: $section.find(".zoom-in"),
-                  $zoomOut: $section.find(".zoom-out"),
-                  $zoomRange: $section.find(".zoom-range"),
-                  $reset: $section.find(".reset")
-                  });
-                  })();
-               </script>
-               
-            </xsl:element>--> 
-            <!-- End implementation of jquery.panzoom -->
-         <!--</div>
-         
-      </xsl:if>
-   </xsl:template>--> 
-   
-   
-   
-   
+
    <xsl:template match="tei:fw" />
    
    <xsl:template match="tei:l">
@@ -1055,11 +901,7 @@
          </xsl:for-each>-->
             
             
-           <!--  
-         </xsl:when>
-         <xsl:when test="descendant::tei:rdg">ZZZZ</xsl:when>
-      </xsl:choose>--> 
-      
+          
    </xsl:template>
    
    
@@ -1526,7 +1368,7 @@
             <span class="viewerHandleLt" id="title_imageViewer">
                <xsl:value-of select="$imgUrl"></xsl:value-of>
             </span>
-            <img class="viewerHandleRt closePanel" alt="X" src="../vm-images/closePanel.gif" />
+            <img class="viewerHandleRt closePanel" alt="X" src="../vm-images/closePanel.svg" />
          </div>
          <div class="viewerContent" id="content_imageViewer">
              
@@ -1556,9 +1398,9 @@
                </div><!-- zoom parent end -->
             <!-- zoom control -->
             <div class="buttons">
-               <!--  <button class="zoom-in">+</button>
-               <button class="zoom-out">-</button>-->
+               <button class="zoom-out">-</button>
                <input type="range" min="0" max="100" class="zoom-range"/>
+               <button class="zoom-in">+</button>
                <!-- <button class="reset">Reset</button> -->
             </div>
             
@@ -1567,8 +1409,8 @@
                (function() {
                var $section = $(<xsl:text>'div#</xsl:text><xsl:value-of select="$imgId"/><xsl:text>.imgPanel'</xsl:text>);
                $section.find('.panzoom').panzoom({
-               <!-- $zoomIn: $section.find(".zoom-in"),
-               $zoomOut: $section.find(".zoom-out"), -->
+               $zoomIn: $section.find(".zoom-in"),
+               $zoomOut: $section.find(".zoom-out"),
                $zoomRange: $section.find(".zoom-range")
               <!-- $reset: $section.find(".reset")-->
                });
