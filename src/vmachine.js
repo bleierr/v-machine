@@ -1159,10 +1159,10 @@ $(document).ready(function(){
 	$("#controlList li[data-panelid='lineNumbers'] img").toggleClass("invisible");
 	
 	
-	$(".dropdownButton").click(function(e){
+	$("#selectWitness, #controlDropdown").click(function(e){
 		e.stopPropagation();
 		
-		$(".dropdownButton").not(this).next(".dropdown").css('visibility', 'hidden');
+		$("#selectWitness, #controlDropdown").not(this).next(".dropdown").css('visibility', 'hidden');
 		
 		var visibility = $(this).next('ul').css('visibility');
 		if ( visibility === 'hidden'){
@@ -1305,4 +1305,23 @@ $(document).ready(function(){
 $(document).ready(function(){
 	//this is overwriting some js code in pan-zoom not a good solution
 	$(".panzoom-parent").css("overflow","visible");
+});
+
+$(document).ready(function(){
+	$("<div id='showNote'>test note</div>").appendTo("body");
+	
+	//this is overwriting some js code in pan-zoom not a good solution "div.noteicon div.note, div.choice div.corr, div.rdgGrp span.altRdg"
+	$("div.noteicon, div.choice, div.rdgGrp").hover(function(e){
+		
+		var noteContent = $(this).find("div.note, div.corr, span.altRdg").html();
+		$("#showNote").html(noteContent);
+		$("#showNote").css({
+			"position": "absolute",
+			"top": e.pageY + 5,
+			"left": e.pageX + 5,
+		}).show();
+	
+	}, function(e){
+		$("#showNote").hide();
+	});
 });

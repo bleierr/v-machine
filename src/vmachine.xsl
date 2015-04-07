@@ -202,8 +202,9 @@
          <ul>
            <li>
                <span>
-                  <xsl:attribute name="id">BibliographicInfo</xsl:attribute>
-                  <input type="image" src="../vm-images/helpButton.svg" alt="" id="bibToggle" value="Bibliographic Info" /> 
+                  <xsl:attribute name="id">helpButton</xsl:attribute>
+                  <xsl:attribute name="class">topMenuButton</xsl:attribute>
+                  <input type="image" src="../vm-images/helpButton.svg" alt="" id="helpButton" value="Help Button" /> 
                   
                </span>
                
@@ -213,7 +214,7 @@
             <li>
                <span>
                   <xsl:attribute name="id">selectWitness</xsl:attribute>
-                  <xsl:attribute name="class">dropdownButton</xsl:attribute>
+                  <xsl:attribute name="class">topMenuButton</xsl:attribute>
                   <xsl:value-of select="count($witnesses)"></xsl:value-of>
                   <xsl:text> Total Witnesses</xsl:text>
                   
@@ -224,7 +225,7 @@
             <li>
                <span>
                   <xsl:attribute name="id">controlDropdown</xsl:attribute>
-                  <xsl:attribute name="class">dropdownButton</xsl:attribute>
+                  <xsl:attribute name="class">topMenuButton</xsl:attribute>
                   <xsl:text>Control dropdown</xsl:text>
                   
                </span>

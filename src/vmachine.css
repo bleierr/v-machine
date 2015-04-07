@@ -37,19 +37,24 @@ div#mainBanner{
     min-width:770px;
     min-height:70px;
     height: 8em;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:3;
 }
 div#mainBanner div#brandingLogo{
     float:left;
     width:8.38em;
     /*height:5.34em;*/
     min-height:70px;
-    background:#6699CC;
+    /*background:#6699CC;*/
 
 }
 div#mainBanner div#brandingLogo img{
-    width:8.38em;
-    /*height:2.9em;*/
-    border:none;
+    /*width:8.38em;
+    height:2.9em;*/
+	height: 7.5em;
+	border:none;
     padding:0;
     /*Alex margin:1.22em auto 0 auto;*/
 }
@@ -113,14 +118,14 @@ div#mainBanner nav#mainControls{
     border-bottom:none;
     border-left:0.08em solid black;
     margin:0;
-    padding:0;
+    padding:20px 0;
 
 }
 /*end RB rewrite*/
 div#mssArea{
     float:left;
     width:100%;
-    margin:0;
+    margin:8em 0 0;
     padding:0;
     overflow:hidden;
 }
@@ -278,7 +283,7 @@ div.choice,
 div.rdgGrp{
     cursor:pointer;
     position:relative;
-    z-index:24;
+    /*z-index:24;*/
 }
 div.noteicon{
     bottom:7px;
@@ -312,9 +317,9 @@ div.noteicon div.note{
 div.noteicon:hover,
 div.choice:hover,
 div.rdgGrp:hover{
-    z-index:25 !important;
+    /*z-index:25 !important;*/
 }
-div.noteicon:hover div.note,
+/*div.noteicon:hover div.note,
 div.choice:hover div.corr,
 div.rdgGrp:hover span.altRdg{
     display:block;
@@ -328,7 +333,8 @@ div.rdgGrp:hover span.altRdg{
     border:thick solid #003366;
     background:white;
     font-weight:400 !important;
-}
+	z-index:3;
+}*/
 div.noteicon:hover div.note{
     left:-125px;
     min-width:250px;
@@ -476,9 +482,10 @@ span.viewerHandleLt{
     position:relative;
     font-size:1.2em;
     font-weight:600;
+	float:left;
 }
 /* style dropdown button */
-#mainControls > ul > li .dropdownButton{
+#mainControls > ul > li .topMenuButton{
     font-family: "Segoe UI";
     font-weight: 300;
 	display:block;
@@ -493,32 +500,33 @@ span.viewerHandleLt{
     cursor:pointer;
 }
 
-#mainControls > ul > li .dropdownButton:hover{
+#mainControls > ul > li .topMenuButton:hover{
     background-color:#6699cc;
 }
 
 /*style for dropdown list*/
-#mainControls > ul > li ul{
+#mainControls > ul > li ul.dropdown{
     position:absolute;
     visibility:hidden;
-    border-top:1px solid #fff;
+    border:1px solid #2c577f;
     margin:0;
     padding:0;
-    z-index:2;
+    z-index:3;
 }
-#mainControls > ul > li ul li{
+#mainControls > ul > li ul.dropdown li{
     display:block;
     float:none;
     padding:2px;
     min-width:300px;
     clear:both;
     background-color:#fff;
+	cursor:pointer;
 }
 
 #mainControls > ul > li ul li:hover{
     width:auto;
     font-weight:800;
-    background-color:#333;
+    /*background-color:#333;*/
 }
 
 div.listText{
@@ -559,7 +567,7 @@ div.listText p{
 .imgPanel{
     display:none;
     position:relative;
-    z-index:1;
+    z-index:2;
 }
 .imgPanel{
     overflow:hidden;
@@ -572,10 +580,25 @@ button#displayLines{
 div.panel.highlight,
 .dropdown .highlight,
 img.highlight{
-   -webkit-box-shadow: -1px 1px 10px 3px rgba(217,4,22,1);
-    -moz-box-shadow: -1px 1px 10px 3px rgba(217,4,22,1);
-    box-shadow: -1px 1px 10px 3px rgba(217,4,22,1);
+	border: 1px solid red;
 }
+
+#mainControls>ul>li>span#helpButton{
+	padding:1px;
+}
+
+#showNote{
+	display:none;
+    padding:7px 20px;
+    font-size:105%;
+    color:black;
+    text-align:left;
+    border:thick solid #003366;
+    background:white;
+    font-weight:400 !important;
+	z-index:3;
+}
+
 /*Code RB End*/
 
 /*Code Alex Start*/
