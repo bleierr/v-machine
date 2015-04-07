@@ -204,7 +204,7 @@
               <button>
                   <xsl:attribute name="class">topMenuButton</xsl:attribute>
                   <xsl:attribute name="id">biblioInfoButton</xsl:attribute>
-                  <input type="image" src="../vm-images/helpButton.svg" alt="" value="Help Button" /> 
+                  <input type="image" src="../vm-images/toggleBiblioButton.svg" alt="" value="Button to toggle bibliographic panel" /> 
                   
                </button>
                
@@ -216,8 +216,9 @@
                   <xsl:attribute name="class">topMenuButton</xsl:attribute>
                   <xsl:attribute name="id">selectWitness</xsl:attribute>
                   <xsl:value-of select="count($witnesses)"></xsl:value-of>
-                  <xsl:text> TOTAL WITNESSES</xsl:text>
-                  
+                  <xsl:text> Total Witnesses</xsl:text>
+                  <img class="invisible" src="../vm-images/arrowup.png" alt=""/>
+                  <img src="../vm-images/arrowdown.png" alt=""/>
                </button>
                <!-- RB: version dropdown -->
                <xsl:call-template name="versionDropdown"/>
@@ -229,17 +230,18 @@
                <div>
                   <xsl:attribute name="class">listText</xsl:attribute>
                   <p>
-                     <button>
-                        <xsl:attribute name="class">topMenuButton</xsl:attribute>
-                        <xsl:attribute name="id">toggleLineNumbersButton</xsl:attribute>
+                     
                         
-                        <xsl:text>LINE NUMBERS</xsl:text>
-                     </button>
+                        <xsl:text>Line numbers:</xsl:text>
                   </p> 
                   
                   <div class="image-container">
+                     <button>
+                        <xsl:attribute name="class">topMenuButton</xsl:attribute>
+                        <xsl:attribute name="id">toggleLineNumbersButton</xsl:attribute>
                      <img class="invisible" src="../vm-images/symbol-visible.png" alt=""/>
                      <img src="../vm-images/symbol-not-visible.png" alt=""/>
+                     </button>
                   </div>
                </div>
             </li>
@@ -248,14 +250,14 @@
                   <xsl:attribute name="class">topMenuButton listText</xsl:attribute>
                   <xsl:attribute name="id">toggleNotePanelButton</xsl:attribute>
                   
-                  <xsl:text>NOTES PANEL</xsl:text>
+                  <xsl:text>Notes panel</xsl:text>
                </button>
             </li>
             <li data-panelid="critPanel">
                <button>
                   <xsl:attribute name="class">topMenuButton listText</xsl:attribute>
                   <xsl:attribute name="id">toggleCritPanelButton</xsl:attribute>
-                  <xsl:text>CRITICAL INTRODUCTION</xsl:text>
+                  <xsl:text>Critical introduction</xsl:text>
                </button>
             </li>
      </ul>

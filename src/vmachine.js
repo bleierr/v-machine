@@ -1164,6 +1164,8 @@ $(document).ready(function(){
 		
 		$("#selectWitness").not(this).next(".dropdown").css('visibility', 'hidden');
 		
+		$("#selectWitness>img").toggleClass("invisible");
+		
 		var visibility = $(this).next('ul').css('visibility');
 		if ( visibility === 'hidden'){
 			$(this).next('ul').css('visibility', 'visible');

@@ -479,8 +479,8 @@ span.viewerHandleLt{
     display:inline-block;
     list-style-type:none;
     padding:5px;
+    font-size: 1.2em;
     position:relative;
-    font-size:1.2em;
     float:left;
 }
 /* style dropdown button */
@@ -489,9 +489,9 @@ span.viewerHandleLt{
     font-weight: 300;
 	display:block;
     background-color:#2c577f;
-	padding:0.5em 2em;
+	font-size: 1.5em;
     margin:0;
-    border-bottom:1px solid #333;
+	border-bottom:1px solid #333;
     border-left:1px solid #333;
     border-top:1px solid #fff;
     border-right:1px solid #fff;
@@ -555,7 +555,7 @@ div.listText>p{
 
 }
 
-.image-container .invisible{
+.invisible{
     display:none;
 }
 .notVisible{
@@ -563,14 +563,15 @@ div.listText>p{
 }
 
 #mainControls > ul > li#toggleLineNumbers .image-container{
-	width:3em;
+	width:4em;
 }
 #mainControls > ul > li#toggleLineNumbers .image-container img{
-	width:3em;
+	width:100%;
 }
 #mainControls > ul > li#toggleLineNumbers>div.listText>p{
-	width:10em;
+	width:7em;
 }
+
 
 
 /* end style dropdown list */
