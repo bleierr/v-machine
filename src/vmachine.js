@@ -1138,8 +1138,9 @@ $(document).ready(function(){
 		$("#witnessList li").each(function(){
 			witnesses.push($(this).attr("data-panelid"));
 		});
-		
-	var dropdownMenus = "#witnessList.dropdown li, #controlList.dropdown li"	
+			
+	
+	var panelActionButton = "#witnessList.dropdown li, #biblioInfoButton, #toggleNotePanelButton, #toggleCritPanelButton";
 	
 	
 	/*open the first two witnesses*/
@@ -1153,16 +1154,15 @@ $(document).ready(function(){
 	
 	/*show biblio panel*/
 	$("#bibPanel").show();
-	$("#controlList li[data-panelid='bibPanel'] img").toggleClass("invisible");
 	
 	/*show line numbers*/
-	$("#controlList li[data-panelid='lineNumbers'] img").toggleClass("invisible");
+	$("#mainControls li[data-panelid='lineNumbers'] img").toggleClass("invisible");
 	
 	
-	$("#selectWitness, #controlDropdown").click(function(e){
+	$("#selectWitness").click(function(e){
 		e.stopPropagation();
 		
-		$("#selectWitness, #controlDropdown").not(this).next(".dropdown").css('visibility', 'hidden');
+		$("#selectWitness").not(this).next(".dropdown").css('visibility', 'hidden');
 		
 		var visibility = $(this).next('ul').css('visibility');
 		if ( visibility === 'hidden'){
@@ -1184,21 +1184,21 @@ $(document).ready(function(){
 		});
 	});
 	
-	$(".dropdown li").click(function(e){
+	$(".dropdown li, #mainControls li[data-panelid='lineNumbers'] button").click(function(e){
 		e.stopPropagation();
-		$(this).find("img").toggleClass("invisible");
+		$(this).closest("li[data-panelid]").find("img").toggleClass("invisible");
 	});
 	
-	$(dropdownMenus).click(function(e){
+	$(panelActionButton).click(function(e){
 		e.stopPropagation();
 		/* toggle visible of ms panels*/
-		var p = $(this).attr("data-panelid");
+		var p = $(this).closest("[data-panelid]").attr("data-panelid");
 		$("#"+p).toggle();
 		
 	});
 	
 	/* highlight witness list and witness panels */
-	$(dropdownMenus).hover(function(){
+	$(panelActionButton).hover(function(){
 		/*mouse enter event*/
 		var p = $(this).attr("data-panelid");
 		$(this).addClass("highlight");
@@ -1281,7 +1281,7 @@ $(document).ready(function(){
 });
  
 $(document).ready(function(){
-	$("li[data-panelid='lineNumbers']").click(function(){
+	$("button#toggleLineNumbersButton").click(function(){
 		
 		$("div.linenumber").toggleClass("notVisible");
 
@@ -1310,7 +1310,6 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$("<div id='showNote'>test note</div>").appendTo("body");
 	
-	//this is overwriting some js code in pan-zoom not a good solution "div.noteicon div.note, div.choice div.corr, div.rdgGrp span.altRdg"
 	$("div.noteicon, div.choice, div.rdgGrp").hover(function(e){
 		
 		var noteContent = $(this).find("div.note, div.corr, span.altRdg").html();

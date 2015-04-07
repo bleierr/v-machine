@@ -31,8 +31,8 @@
          </div>
          <nav id="mainControls">
             <ul>
-               <li><span id="helpButton" class="topMenuButton"><input type="image" src="../vm-images/helpButton.svg" alt="" id="helpButton" value="Help Button"></input></span></li>
-               <li><span id="selectWitness" class="topMenuButton">5 Total Witnesses</span><ul id="witnessList" class="dropdown">
+               <li data-panelid="bibPanel"><button class="topMenuButton" id="biblioInfoButton"><input type="image" src="../vm-images/helpButton.svg" alt="" value="Help Button"></input></button></li>
+               <li><button class="topMenuButton" id="selectWitness">5 TOTAL WITNESSES</button><ul id="witnessList" class="dropdown">
                      <li data-panelid="t7989-1-10">
                         <div class="listText">
                            <p>'A Short History of Our Own Time' (TCD MS
@@ -71,33 +71,14 @@
                      </li>
                   </ul>
                </li>
-               <li><span id="controlDropdown" class="topMenuButton">Control dropdown</span><ul id="controlList" class="dropdown">
-                     <li data-panelid="bibPanel">
-                        <div class="listText">
-                           <p>Bibliographic panel</p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
-                        </div>
-                     </li>
-                     <li data-panelid="lineNumbers">
-                        <div class="listText">
-                           <p>Line numbers</p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
-                        </div>
-                     </li>
-                     <li data-panelid="notesPanel">
-                        <div class="listText">
-                           <p>Notes Panel</p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
-                        </div>
-                     </li>
-                     <li data-panelid="critPanel">
-                        <div class="listText">
-                           <p>Critical notes</p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
-                        </div>
-                     </li>
-                  </ul>
+               <li data-panelid="lineNumbers" id="toggleLineNumbers">
+                  <div class="listText">
+                     <p><button class="topMenuButton" id="toggleLineNumbersButton">LINE NUMBERS</button></p>
+                     <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                  </div>
                </li>
+               <li data-panelid="notesPanel"><button class="topMenuButton listText" id="toggleNotePanelButton">NOTES PANEL</button></li>
+               <li data-panelid="critPanel"><button class="topMenuButton listText" id="toggleCritPanelButton">CRITICAL INTRODUCTION</button></li>
             </ul>
          </nav>
       </div>

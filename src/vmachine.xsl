@@ -200,41 +200,66 @@
       <nav id="mainControls">
          
          <ul>
-           <li>
-               <span>
-                  <xsl:attribute name="id">helpButton</xsl:attribute>
+            <li data-panelid="bibPanel">
+              <button>
                   <xsl:attribute name="class">topMenuButton</xsl:attribute>
-                  <input type="image" src="../vm-images/helpButton.svg" alt="" id="helpButton" value="Help Button" /> 
+                  <xsl:attribute name="id">biblioInfoButton</xsl:attribute>
+                  <input type="image" src="../vm-images/helpButton.svg" alt="" value="Help Button" /> 
                   
-               </span>
+               </button>
                
                
             </li>
                 
             <li>
-               <span>
-                  <xsl:attribute name="id">selectWitness</xsl:attribute>
+               <button>
                   <xsl:attribute name="class">topMenuButton</xsl:attribute>
+                  <xsl:attribute name="id">selectWitness</xsl:attribute>
                   <xsl:value-of select="count($witnesses)"></xsl:value-of>
-                  <xsl:text> Total Witnesses</xsl:text>
+                  <xsl:text> TOTAL WITNESSES</xsl:text>
                   
-               </span>
+               </button>
                <!-- RB: version dropdown -->
                <xsl:call-template name="versionDropdown"/>
             </li>
-            <li>
-               <span>
-                  <xsl:attribute name="id">controlDropdown</xsl:attribute>
-                  <xsl:attribute name="class">topMenuButton</xsl:attribute>
-                  <xsl:text>Control dropdown</xsl:text>
+            
+            <li data-panelid="lineNumbers">
+               <xsl:attribute name="id">toggleLineNumbers</xsl:attribute>
+               <!-- create a button to toggle line numbers visible and invisible -->
+               <div>
+                  <xsl:attribute name="class">listText</xsl:attribute>
+                  <p>
+                     <button>
+                        <xsl:attribute name="class">topMenuButton</xsl:attribute>
+                        <xsl:attribute name="id">toggleLineNumbersButton</xsl:attribute>
+                        
+                        <xsl:text>LINE NUMBERS</xsl:text>
+                     </button>
+                  </p> 
                   
-               </span>
-               <!-- RB: control dropdown -->
-               <xsl:call-template name="controlDropdown"/>
-            </li>  
+                  <div class="image-container">
+                     <img class="invisible" src="../vm-images/symbol-visible.png" alt=""/>
+                     <img src="../vm-images/symbol-not-visible.png" alt=""/>
+                  </div>
+               </div>
+            </li>
+            <li data-panelid="notesPanel"> 
+               <button>
+                  <xsl:attribute name="class">topMenuButton listText</xsl:attribute>
+                  <xsl:attribute name="id">toggleNotePanelButton</xsl:attribute>
+                  
+                  <xsl:text>NOTES PANEL</xsl:text>
+               </button>
+            </li>
+            <li data-panelid="critPanel">
+               <button>
+                  <xsl:attribute name="class">topMenuButton listText</xsl:attribute>
+                  <xsl:attribute name="id">toggleCritPanelButton</xsl:attribute>
+                  <xsl:text>CRITICAL INTRODUCTION</xsl:text>
+               </button>
+            </li>
      </ul>
-         
-         
+          
       </nav>
       
    </xsl:template>
@@ -270,69 +295,7 @@
    </xsl:template>
    
    
-   <xsl:template name="controlDropdown">
-      <ul>
-         <xsl:attribute name="id">controlList</xsl:attribute>
-         <xsl:attribute name="class">dropdown</xsl:attribute>
-          
-         <li data-panelid="bibPanel">
-            <div>
-               <xsl:attribute name="class">listText</xsl:attribute>
-               
-               <p>
-                  <xsl:text>Bibliographic panel</xsl:text>
-               </p> 
-               
-               <div class="image-container">
-                  <img class="invisible" src="../vm-images/symbol-visible.png" alt=""/>
-                  <img src="../vm-images/symbol-not-visible.png" alt=""/>
-               </div>
-            </div>
-            </li>
-         <li data-panelid="lineNumbers">
-            <!-- create a button to toggle line numbers visible and invisible -->
-            <div>
-               <xsl:attribute name="class">listText</xsl:attribute>
-               <p>
-                  <xsl:text>Line numbers</xsl:text>
-               </p> 
-               
-               <div class="image-container">
-                  <img class="invisible" src="../vm-images/symbol-visible.png" alt=""/>
-                  <img src="../vm-images/symbol-not-visible.png" alt=""/>
-               </div>
-            </div>
-         </li>
-         <li data-panelid="notesPanel"> <!-- onclick="notesFormat('popup');" -->
-            <div>
-               <xsl:attribute name="class">listText</xsl:attribute>
-               <p>
-                  <xsl:text>Notes Panel</xsl:text>
-               </p> 
-               
-               <div class="image-container">
-                  <img class="invisible" src="../vm-images/symbol-visible.png" alt=""/>
-                  <img src="../vm-images/symbol-not-visible.png" alt=""/>
-               </div>
-            </div>
-         </li>
-         <li data-panelid="critPanel">
-            <div>
-               <xsl:attribute name="class">listText</xsl:attribute>
-               
-               <p>
-                  <xsl:text>Critical notes</xsl:text>
-               </p> 
-               
-               <div class="image-container">
-                  <img class="invisible" src="../vm-images/symbol-visible.png" alt=""/>
-                  <img src="../vm-images/symbol-not-visible.png" alt=""/>
-               </div>
-            </div>
-         </li>
-      </ul>
-   </xsl:template>
-    
+   
    <xsl:template name="manuscriptArea">
       <div id="mssArea">
          <xsl:apply-templates select="/tei:TEI/tei:teiHeader/tei:fileDesc" />

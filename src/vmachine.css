@@ -481,8 +481,7 @@ span.viewerHandleLt{
     padding:5px;
     position:relative;
     font-size:1.2em;
-    font-weight:600;
-	float:left;
+    float:left;
 }
 /* style dropdown button */
 #mainControls > ul > li .topMenuButton{
@@ -490,7 +489,7 @@ span.viewerHandleLt{
     font-weight: 300;
 	display:block;
     background-color:#2c577f;
-    padding:0.5em 2em;
+	padding:0.5em 2em;
     margin:0;
     border-bottom:1px solid #333;
     border-left:1px solid #333;
@@ -503,6 +502,7 @@ span.viewerHandleLt{
 #mainControls > ul > li .topMenuButton:hover{
     background-color:#6699cc;
 }
+
 
 /*style for dropdown list*/
 #mainControls > ul > li ul.dropdown{
@@ -533,11 +533,13 @@ div.listText{
     display:table;
 }
 
-div.listText p{
-    width:80%;
+div.listText>p{
+    width:75%; 
+	padding-right:5px;
     display:table-cell;
     vertical-align:middle;
 }
+
 
 .image-container{
     text-align:center;
@@ -559,6 +561,17 @@ div.listText p{
 .notVisible{
     visibility:hidden;
 }
+
+#mainControls > ul > li#toggleLineNumbers .image-container{
+	width:3em;
+}
+#mainControls > ul > li#toggleLineNumbers .image-container img{
+	width:3em;
+}
+#mainControls > ul > li#toggleLineNumbers>div.listText>p{
+	width:10em;
+}
+
 
 /* end style dropdown list */
 
@@ -583,7 +596,7 @@ img.highlight{
 	border: 1px solid red;
 }
 
-#mainControls>ul>li>span#helpButton{
+#mainControls>ul>li>#biblioInfoButton{
 	padding:1px;
 }
 
