@@ -129,12 +129,7 @@ div#mssArea{
     padding:0;
     overflow:hidden;
 }
-div#mssArea div#manuscripts{
-    float:left;
-    border:0;
-    margin:0;
-    padding:0;
-}
+
 div.panel{
     float:left;
     border:1px solid black;

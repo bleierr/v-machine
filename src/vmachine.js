@@ -1197,6 +1197,8 @@ $(document).ready(function(){
 		var p = $(this).closest("[data-panelid]").attr("data-panelid");
 		$("#"+p).toggle();
 		
+		$(this).workspaceResize();
+		
 	});
 	
 	/* highlight witness list and witness panels */
@@ -1211,6 +1213,7 @@ $(document).ready(function(){
 		
 		$(this).removeClass("highlight");
 		$("#"+p).removeClass("highlight");
+		
 	});
 	
 	
@@ -1270,6 +1273,8 @@ $(document).ready(function(){
 		
 		$(".dropdown li[data-panelid='"+w+"'] img").toggleClass("invisible");
 		
+		$(this).workspaceResize();
+		
 	});
 });  
    
@@ -1326,3 +1331,49 @@ $(document).ready(function(){
 		$("#showNote").hide();
 	});
 });
+
+
+
+jQuery.fn.make_me_red = function() {
+    return this.each(function() {
+        this.style.color = 'red';
+    });
+};
+
+jQuery.fn.workspaceResize = function(){
+
+            var mssAreaWidth = $('#mssArea').width();
+            
+            var totalPanelWidth = 0;
+            
+            $(".panel").each(function(){
+                var display = $(this).css("display");
+                if(display !== "none"){
+                    totalPanelWidth += $(this).width();
+                }
+            });
+            
+            var windowWidth = $(window).width();
+            
+            if( windowWidth > totalPanelWidth){
+                $('#mssArea').width(windowWidth);
+            }
+            else{
+                $('#mssArea').width(totalPanelWidth+100);
+            }
+            
+            
+}
+
+
+$(document).ready(function() {
+    
+    $(window).resize(function(){
+        $(this).workspaceResize();
+    });
+    
+    
+    
+});
+
+

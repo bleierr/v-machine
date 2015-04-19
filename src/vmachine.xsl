@@ -301,14 +301,12 @@
    <xsl:template name="manuscriptArea">
       <div id="mssArea">
          <xsl:apply-templates select="/tei:TEI/tei:teiHeader/tei:fileDesc" />
-         <div id="manuscripts">
-            <xsl:for-each select="$witnesses">
+         <xsl:for-each select="$witnesses">
                <xsl:call-template name="manuscriptPanel">
                   <xsl:with-param name="increment" select="'1'" />
                   <xsl:with-param name="witID" select="@xml:id" />
                </xsl:call-template>
             </xsl:for-each>
-         </div>
          <xsl:call-template name="notesPanel" />
          <br class="clear" />
          <!--  <div id="contentData" style="display:none;">
