@@ -200,23 +200,13 @@
       <nav id="mainControls">
          
          <ul>
-            <li data-panelid="bibPanel">
-              <button>
-                  <xsl:attribute name="class">topMenuButton</xsl:attribute>
-                  <xsl:attribute name="id">biblioInfoButton</xsl:attribute>
-                  <input type="image" src="../vm-images/toggleBiblioButton.svg" alt="" value="Button to toggle bibliographic panel" /> 
-                  
-               </button>
-               
-               
-            </li>
-                
+              
             <li>
                <button>
                   <xsl:attribute name="class">topMenuButton</xsl:attribute>
                   <xsl:attribute name="id">selectWitness</xsl:attribute>
                   <xsl:value-of select="count($witnesses)"></xsl:value-of>
-                  <xsl:text> Total Witnesses</xsl:text>
+                  <xsl:text> Total Versions</xsl:text>
                   <img class="invisible" src="../vm-images/arrowup.png" alt=""/>
                   <img src="../vm-images/arrowdown.png" alt=""/>
                </button>
@@ -239,12 +229,22 @@
                      <button>
                         <xsl:attribute name="class">topMenuButton</xsl:attribute>
                         <xsl:attribute name="id">toggleLineNumbersButton</xsl:attribute>
-                     <img class="invisible" src="../vm-images/symbol-visible.png" alt=""/>
-                     <img src="../vm-images/symbol-not-visible.png" alt=""/>
+                     <xsl:text>ON</xsl:text>
                      </button>
                   </div>
                </div>
             </li>
+            <li data-panelid="bibPanel">
+               <button>
+                  <xsl:attribute name="class">topMenuButton</xsl:attribute>
+                  <xsl:attribute name="id">biblioInfoButton</xsl:attribute>
+                  Bibliographic panel
+                  
+               </button>
+               
+               
+            </li>
+            
             <li data-panelid="notesPanel"> 
                <button>
                   <xsl:attribute name="class">topMenuButton listText</xsl:attribute>
@@ -329,10 +329,6 @@
          <div class="panelBanner">
             <img class="closePanel" src="../vm-images/closePanel.svg" alt="X (Close panel)" />
             <xsl:text>Witness </xsl:text><xsl:value-of select="$witID"></xsl:value-of>
-            <!-- Alex added -->
-            <xsl:text>Version</xsl:text><xsl:value-of select="count($witnesses)"></xsl:value-of>
-            <xsl:text>of</xsl:text>
-            <!-- End Alex -->
          </div>
          <div class="mssContent">
             <xsl:if test="//tei:witDetail[@target = concat('#',$witID) and tei:media[@url]]">

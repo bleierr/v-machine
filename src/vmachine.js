@@ -1289,7 +1289,12 @@ $(document).ready(function(){
  
 $(document).ready(function(){
 	$("button#toggleLineNumbersButton").click(function(){
-		
+		var content = $(this).html();
+		if (content === "ON"){
+		    $(this).html("OFF");
+		}else{
+		    $(this).html("ON");
+		}
 		$("div.linenumber").toggleClass("notVisible");
 
 	});
