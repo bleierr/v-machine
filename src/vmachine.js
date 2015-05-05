@@ -1,5 +1,8 @@
 //window.onresize = resizePanels;
 
+//Global settings variables
+
+
 function init() {
    var mssArea = document.getElementById("mssArea");
    var mssPanels = getElementsByClass("mssPanel",mssArea,"div");
@@ -1105,13 +1108,17 @@ function isHidden(el) {
 //RB code
 
 $(function() {
-    $( ".draggable" ).draggable();
+    $( ".draggable" ).draggable({
+		containment: "parent",
+		zIndex: 5
+	});
   });
 $(function() {
 $( ".resizable" ).resizable();
 });
  
 $(document).ready(function(){
+	
 	$("#manuscripts>.mssPanel").each(function(){
 		var value = $(this).find(".witnessMenu>option[selected]").attr("value");
 		
@@ -1195,6 +1202,9 @@ $(document).ready(function(){
 		e.stopPropagation();
 		/* toggle visible of ms panels*/
 		var p = $(this).closest("[data-panelid]").attr("data-panelid");
+		
+		$("#"+p).prependTo("#mssArea");
+		
 		$("#"+p).toggle();
 		
 		$(this).workspaceResize();
@@ -1366,8 +1376,19 @@ jQuery.fn.workspaceResize = function(){
             else{
                 $('#mssArea').width(totalPanelWidth+100);
             }
-            
-            
+			
+			/*height of workspace*/
+			var panelHeight = 0;
+			$(".panel").each(function(idx, element){
+				var h = $(element).height();
+				if(panelHeight < h){
+					panelHeight = h;
+				}
+			});
+			$("#mssArea").css({"height":panelHeight+100});
+			//var doc = $(document).height();
+			//$("#mssArea").height(doc);
+         
 }
 
 

@@ -85,12 +85,7 @@
         <body> <!--  onload="init();" -->
             <xsl:call-template name="mainBanner" />
             <xsl:call-template name="manuscriptArea" />
-            <xsl:for-each select="//tei:facsimile/tei:graphic">
-               <xsl:call-template name="imageViewer" >
-                  <xsl:with-param name="imgUrl" select="@url"></xsl:with-param>
-                  <xsl:with-param name="imgId" select="@xml:id"></xsl:with-param>
-               </xsl:call-template>
-            </xsl:for-each>
+            
             <!--<xsl:call-template name="imageViewer" />-->
             <!-- <p>There are <xsl:value-of select="count($witnesses)" /> witnesses.</p> -->
          </body>
@@ -308,10 +303,16 @@
                </xsl:call-template>
             </xsl:for-each>
          <xsl:call-template name="notesPanel" />
-         <br class="clear" />
+         <!-- <br class="clear" /> -->
          <!--  <div id="contentData" style="display:none;">
          <xsl:call-template name="contentData"></xsl:call-template>
          </div>-->
+         <xsl:for-each select="//tei:facsimile/tei:graphic">
+            <xsl:call-template name="imageViewer" >
+               <xsl:with-param name="imgUrl" select="@url"></xsl:with-param>
+               <xsl:with-param name="imgId" select="@xml:id"></xsl:with-param>
+            </xsl:call-template>
+         </xsl:for-each>
       </div>
    </xsl:template>
    
@@ -1324,8 +1325,8 @@
       <xsl:param name="imgId"></xsl:param>
       <xsl:param name="imgUrl"></xsl:param>
       <div class="draggable resizable ui-resizable panel imgPanel" id="{$imgId}">
-         <div title="Click to drag panel." class="viewerHandle" id="handle_imageViewer">
-            <span class="viewerHandleLt" id="title_imageViewer">
+         <div title="Click to drag panel." class="viewerHandle handle_imageViewer">
+            <span class="viewerHandleLt title_imageViewer">
                <xsl:value-of select="$imgUrl"></xsl:value-of>
             </span>
             <img class="viewerHandleRt closePanel" alt="X" src="../vm-images/closePanel.svg" />
