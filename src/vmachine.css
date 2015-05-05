@@ -161,8 +161,7 @@ div#mssArea div.panel div.panelBanner{
 div#mssArea div.panel div.panelBanner select.witnessMenu{
     width:160px;
 }
-div#mssArea div.mssPanel,
-div#mssArea div.imgPanel{
+div#mssArea div.mssPanel{
     background:white;
     overflow:hidden;
     min-width:300px;

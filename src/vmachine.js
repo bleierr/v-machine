@@ -1203,7 +1203,7 @@ $(document).ready(function(){
 		/* toggle visible of ms panels*/
 		var p = $(this).closest("[data-panelid]").attr("data-panelid");
 		
-		$("#"+p).prependTo("#mssArea");
+		$("#"+p).appendTo("#mssArea");
 		
 		$("#"+p).toggle();
 		
