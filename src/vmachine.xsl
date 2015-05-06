@@ -2,7 +2,7 @@
 <xsl:stylesheet version="2.0" exclude-result-prefixes="tei"
    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
    xmlns:tei="http://www.tei-c.org/ns/1.0"
-   xmlns="http://www.w3.org/1999/xhtml">
+   xmlns="http://www.w3.org/1999/xhtml" xmlns:util="customfunction">
    
    <!--Old doctype declaration-->
    <!--<xsl:output method="html" version="4.01" encoding="utf-8" indent="yes" doctype-system="http://www.w3.org/TR/html4/strict.dtd" doctype-public="-//W3C//DTD HTML 4.01//EN" />-->
@@ -308,6 +308,7 @@
          <xsl:call-template name="contentData"></xsl:call-template>
          </div>-->
          <xsl:for-each select="//tei:facsimile/tei:graphic">
+            
             <xsl:call-template name="imageViewer" >
                <xsl:with-param name="imgUrl" select="@url"></xsl:with-param>
                <xsl:with-param name="imgId" select="@xml:id"></xsl:with-param>
@@ -731,6 +732,10 @@
                   <xsl:value-of select="@rend" />
                </xsl:if>
             </xsl:attribute>
+            <xsl:attribute name="data-line-id">
+               <xsl:value-of select="name(.)" /><xsl:value-of select="@n" />
+               
+            </xsl:attribute>
             <xsl:apply-templates>
                <xsl:with-param name="witID" select="$witID" tunnel="yes"></xsl:with-param>
             </xsl:apply-templates>
@@ -768,115 +773,114 @@
 
    <xsl:template match="tei:fw" />
    
-   <xsl:template match="tei:l">
+   
+   
+   <xsl:template match="tei:l[@n][descendant::tei:rdg]">
       <xsl:param name="witID" tunnel="yes" />
-      <xsl:variable name="uniqueID">
-         <xsl:choose>
-            <xsl:when test="@n"><xsl:value-of select="@n"/></xsl:when>
-            <xsl:otherwise><xsl:number></xsl:number></xsl:otherwise>
-         </xsl:choose>
-      </xsl:variable>
       
-      <!-- ??? rdg display problem RB not solved yet 
-      <xsl:choose>
-         <xsl:when test="descendant::tei:lem[contains(@wit, concat('#',$witID))]
-            or descendant::tei:rdg[contains(@wit, concat('#',$witID))]">
-            -->
-      <xsl:if test="not(descendant::tei:rdg) or descendant::tei:lem[contains(@wit, concat('#',$witID))]
-         or descendant::tei:rdg[contains(@wit, concat('#',$witID))]">
+      <xsl:if test="descendant::tei:rdg[contains(@wit,$witID)]">
+         <div>
+            <xsl:attribute name="class">
+               <xsl:text>line</xsl:text>
+            </xsl:attribute>
+            
             <div>
                <xsl:attribute name="class">
-                  <xsl:text>line</xsl:text>
-                  <xsl:text> line</xsl:text>
-                  <xsl:value-of select="$uniqueID" />
+                  <xsl:text>linenumber</xsl:text>
                </xsl:attribute>
-               
-               <xsl:attribute name="line-id">
-                  <xsl:text>line</xsl:text>
-                  <xsl:value-of select="$uniqueID" />
-               </xsl:attribute>
-               
-               <!--DC-->
-               <!-- <xsl:if test="not(@loc) and not(descendant::*/@loc)">
-                 <xsl:attribute name="onclick">
-                     <xsl:text>matchLine('line</xsl:text>
-                     <xsl:value-of select="$uniqueID" />
-                     <xsl:text>');</xsl:text>
+               <xsl:if test="$displayLineNumbers = 'false'">
+                  <xsl:attribute name="style">
+                     <xsl:text>visibility: hidden;</xsl:text>
                   </xsl:attribute>
-                  </xsl:if> -->
-               <!--/DC-->
-               
-               <div>
-                  <xsl:choose>
-                     <xsl:when test="@n">
-                        <xsl:attribute name="class">
-                           <xsl:text>linenumber</xsl:text>
-                        </xsl:attribute>
-                        <xsl:if test="$displayLineNumbers = 'false'">
-                           <xsl:attribute name="style">
-                              <xsl:text>visibility: hidden;</xsl:text>
-                           </xsl:attribute>
-                        </xsl:if>
-                        <xsl:value-of select="@n" />
-                     </xsl:when>
-                     <xsl:otherwise>
-                        <xsl:attribute name="class">
-                           <xsl:text>emptynumber</xsl:text>
-                        </xsl:attribute>
-                        <xsl:text>&#160;</xsl:text>
-                     </xsl:otherwise>
-                  </xsl:choose>
-               </div>
-               
-               <xsl:apply-templates>
-                  <xsl:with-param name="witID" tunnel="yes" select="$witID"></xsl:with-param>
-               </xsl:apply-templates>
+               </xsl:if>
+               <xsl:value-of select="@n" />
             </div>
+            <xsl:apply-templates>
+               <xsl:with-param name="witID" tunnel="yes" select="$witID"></xsl:with-param>
+            </xsl:apply-templates>
+         </div>
+         
       </xsl:if>
-            <!--<xsl:for-each select=".//*[@facs]">
-            <xsl:call-template name="imageLink">
-               <xsl:with-param name="imageURL">
-                  <xsl:choose>
-                     <xsl:when test="contains(@facs,'#')">
-                        <xsl:variable name="facsID" select="translate(@facs,'#','')" />
-                        <xsl:if test="//tei:facsimile//tei:graphic[@xml:id = $facsID]/@url">
-                           <xsl:value-of select="//tei:facsimile//tei:graphic[@xml:id = $facsID]/@url" />
-                        </xsl:if>
-                     </xsl:when>
-                     <xsl:otherwise>
-                        <xsl:value-of select="@facs" />
-                     </xsl:otherwise>
-                  </xsl:choose>
-               </xsl:with-param>
-               <xsl:with-param name="witness">
-                  <xsl:choose>
-                     <xsl:when test="@ed">
-                        <xsl:value-of select="translate(@ed,'#','')" />
-                     </xsl:when>
-                     <xsl:when test="ancestor::*/@wit">
-                        <xsl:value-of select="translate(ancestor::*/@wit,'#','')" />
-                     </xsl:when>
-                  </xsl:choose>
-               </xsl:with-param>
-            </xsl:call-template>
-         </xsl:for-each>-->
-            
-            
-          
-   </xsl:template>
-   
-   
-   <!--  there is a rule for rdg further below about Line 1206
-   <xsl:template match="tei:rdg">
-      <div>
-         <xsl:attribute name="class">
-            line
-         </xsl:attribute>
-         <xsl:apply-templates />
-      </div>
-   </xsl:template>
-   -->
       
+   </xsl:template>
+   
+   <xsl:template match="tei:l[not(@n)]">
+      <xsl:param name="witID" tunnel="yes" />
+      
+      <xsl:if test="descendant::tei:rdg[contains(@wit,$witID)]">
+      <div>
+               <xsl:attribute name="class">
+                  <xsl:text>line</xsl:text>
+               </xsl:attribute>
+               
+               <xsl:choose>
+                  <xsl:when test="tei:app">
+                           <xsl:apply-templates>
+                              <xsl:with-param name="witID" tunnel="yes" select="$witID"></xsl:with-param>
+                           </xsl:apply-templates>
+                  </xsl:when>
+                  <xsl:when test="tei:rdg">
+                     <xsl:apply-templates>
+                        <xsl:with-param name="witID" tunnel="yes" select="$witID"></xsl:with-param>
+                     </xsl:apply-templates>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     
+                     <div>
+                        <xsl:attribute name="data-witness">
+                           <xsl:value-of select="translate(@wit,'#','')" />
+                        </xsl:attribute>
+                        <xsl:attribute name="class">
+                           <xsl:text>reading </xsl:text>
+                           <xsl:value-of select="translate(@wit,'#','')" />
+                        </xsl:attribute>
+                        <xsl:apply-templates />
+                     </div>
+                  </xsl:otherwise>
+               </xsl:choose>
+          </div>
+      </xsl:if>
+   </xsl:template>
+   
+   <xsl:template match="tei:l[not(descendant::tei:rdg)]">
+      <xsl:param name="witID" tunnel="yes" />
+
+      <div>
+            <xsl:attribute name="class">
+               <xsl:text>line</xsl:text>
+            </xsl:attribute>
+            
+            <div>
+               <xsl:attribute name="class">
+                  <xsl:text>linenumber</xsl:text>
+               </xsl:attribute>
+               <xsl:if test="$displayLineNumbers = 'false'">
+                  <xsl:attribute name="style">
+                     <xsl:text>visibility: hidden;</xsl:text>
+                  </xsl:attribute>
+               </xsl:if>
+               <xsl:value-of select="@n" />
+            </div>
+                  <div>
+                     <xsl:attribute name="data-witness">
+                        <xsl:value-of select="translate(@wit,'#','')" />
+                     </xsl:attribute>
+                     <xsl:attribute name="class">
+                        <xsl:text>apparatus </xsl:text>
+                        <xsl:text>app-all-</xsl:text><xsl:number></xsl:number>
+                     </xsl:attribute>
+                     <xsl:attribute name="data-app-id">
+                        <xsl:text>app-all-</xsl:text><xsl:number></xsl:number>
+                     </xsl:attribute>
+                     <xsl:apply-templates />
+                  </div>
+              
+         </div>
+         
+      
+   </xsl:template>
+   
+   
    <xsl:template match="tei:hi">
       <span>
          <xsl:attribute name="class">
@@ -1000,7 +1004,7 @@
    
    <!--DC-->
    <xsl:template match="tei:milestone[@unit = 'stanza']">
-      <br>
+      <div>
          <xsl:attribute name="class">
             <xsl:text>stanzabreak</xsl:text>
             <xsl:if test="@ed">
@@ -1008,7 +1012,7 @@
                <xsl:value-of select="translate(@ed,'#','')" />
             </xsl:if>
          </xsl:attribute>
-      </br>
+      </div>
    </xsl:template>
    
    <xsl:template match="tei:table">
@@ -1142,15 +1146,14 @@
    </xsl:template>
    
    <xsl:template match="tei:figure"></xsl:template>
-
+   
+  
    <xsl:template match="tei:app">
       <xsl:param name="witID" tunnel="yes"></xsl:param>
-      <!-- RB del <xsl:variable name="uniqueID" select="generate-id()" />  -->
+      
       <xsl:variable name="uniqueID">
          <xsl:choose>
-            <xsl:when test="@loc">
-               <xsl:value-of select="@loc"/>
-            </xsl:when>
+            <xsl:when test="@loc"><xsl:value-of select="@loc"/></xsl:when>
             <xsl:otherwise>
                <xsl:value-of select="name(.)"></xsl:value-of>
                <xsl:text>_</xsl:text>
@@ -1158,7 +1161,7 @@
                <xsl:text>_</xsl:text>
                <xsl:value-of select="name(parent::node())"></xsl:value-of>
                <xsl:if test="parent::node()[@n]">
-                  <xsl:text>_</xsl:text><xsl:value-of select="parent::node()/@n"></xsl:value-of><xsl:text>_</xsl:text>
+                   <xsl:text>_</xsl:text><xsl:value-of select="parent::node()/@n"></xsl:value-of><xsl:text>_</xsl:text>
                </xsl:if>
                <xsl:value-of select="parent::node()/position()"></xsl:value-of>
             </xsl:otherwise>
@@ -1166,107 +1169,75 @@
       </xsl:variable>
       <xsl:variable name="refID">#<xsl:value-of select="$witID"/></xsl:variable>
       
-      <!-- tei:rdg[contains(@wit, $refID)] -->
-         <!-- <xsl:if test="contains(@wit, concat('#',$witID))"> -->
+      <xsl:for-each select="tei:rdg">
+         <xsl:variable name="wit" select="@wit"></xsl:variable>
+         <xsl:if test="contains($wit, $witID) or contains($wit, 'all')">
+            <div>
+               <xsl:if test="tei:rdg[contains(@wit, $refID)]/tei:timeline/tei:when">
+                  <xsl:for-each select="tei:rdg[contains(@wit, $refID)]/tei:timeline/tei:when">
       
-      <div>
-         <xsl:if test="tei:rdg[contains(@wit, $refID)]/tei:timeline/tei:when"><!-- has to change ??? -->
-            <xsl:for-each select="tei:rdg[contains(@wit, $refID)]/tei:timeline/tei:when">
-<!--  MDH: Change to the way we deal with @absolute: it may not even be there.            -->
-<!--              <xsl:if test="not(@absolute)">-->
-               <xsl:if test="@since">
-                  <xsl:attribute name="data-timeline">
-                     <xsl:value-of select="translate(@since,'#','')" />
-                  </xsl:attribute> 
-               </xsl:if>  
-            </xsl:for-each>
+                     <xsl:if test="@since">
+                        <xsl:attribute name="data-timeline">
+                           <xsl:value-of select="translate(@since,'#','')" />
+                        </xsl:attribute> 
+                     </xsl:if>  
+                  </xsl:for-each>
+               </xsl:if>
+               <xsl:attribute name="class">
+                  <xsl:text>apparatus </xsl:text>
+                  <xsl:value-of select="$uniqueID"></xsl:value-of>
+                  <xsl:if test="@loc">
+                     <xsl:text> app-</xsl:text>
+                     <xsl:value-of select="@loc" />
+                  </xsl:if>
+               </xsl:attribute>
+               <!-- ID for apparatus: important for highlighting of text lines and location based referencing -->
+               <xsl:attribute name="data-app-id">
+                  <xsl:value-of select="$uniqueID"></xsl:value-of>
+               </xsl:attribute>
+               
+               
+                     <xsl:choose>
+                        <xsl:when test="not(ancestor::tei:rdgGrp)">
+                           <div>
+                              <xsl:attribute name="data-witness">
+                                 <xsl:value-of select="translate(@wit,'#','')" />
+                              </xsl:attribute>
+                              <xsl:attribute name="class">
+                                 <xsl:text>reading </xsl:text>
+                                 <xsl:value-of select="translate(@wit,'#','')" />
+                              </xsl:attribute>
+                              <xsl:apply-templates>
+                                 <xsl:with-param name="witID" tunnel="yes" select="$witID"></xsl:with-param>
+                              </xsl:apply-templates>
+                           </div>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <div>
+                              <xsl:attribute name="class">rdg</xsl:attribute>
+                              <xsl:attribute name="data-line-id"><xsl:value-of select="@wit"/></xsl:attribute>
+                              <xsl:apply-templates>
+                                 <xsl:with-param name="witID" tunnel="yes" select="$witID"></xsl:with-param>
+                              </xsl:apply-templates>
+                           </div>
+                        </xsl:otherwise>
+                     </xsl:choose>
+               
+            </div>
          </xsl:if>
-         <xsl:attribute name="class">
-            <xsl:text>apparatus</xsl:text>
-            <xsl:text> </xsl:text>
-            <xsl:value-of select="$uniqueID"></xsl:value-of>
-          <!--  <xsl:if test="@type">
-               <xsl:text> type-</xsl:text>
-               <xsl:value-of select="@type" />
-            </xsl:if>-->
-            <xsl:if test="parent::tei:app/@loc">
-               <xsl:text> app-</xsl:text>
-               <xsl:value-of select="parent::tei:app/@loc" />
-            </xsl:if>
-            <!--<xsl:if test="count(ancestor::tei:l) = 0">
-               <xsl:text> app-</xsl:text>
-               <xsl:value-of select="$uniqueID" />
-               <xsl:text> clickable</xsl:text>
-            </xsl:if>-->
-         </xsl:attribute>
-         <!--DC
-         <xsl:if test="count(ancestor::tei:l) = 0">
-         -->   
-         
-         <xsl:attribute name="onclick">
-            <xsl:text>matchApp('</xsl:text>
-            <xsl:value-of select="$uniqueID" />
-            <xsl:text>');</xsl:text> 
-         </xsl:attribute>
-
-            <!--DC-->
-            <!-- RB  <xsl:choose>
-               <xsl:when test="parent::tei:app/@loc"> 
-                  <xsl:attribute name="onclick">
-                     <xsl:text>matchLine(this.className);</xsl:text>
-                  </xsl:attribute>
-                  </xsl:when> -->
-         <!--<xsl:otherwise> ??? not sure if otherwise is necessary 
-                  <xsl:attribute name="onclick">
-                     <xsl:text>matchApp('app-</xsl:text>
-                        <xsl:value-of select="$uniqueID" />
-                        <xsl:text>');</xsl:text> 
-                  </xsl:attribute>
-               </xsl:otherwise>
-            </xsl:choose>-->
-            <!--/DC-->
-   
-         <!--DC
-         </xsl:if>
-         -->
-
-         <xsl:apply-templates>
-            <xsl:with-param name="witID" tunnel="yes" select="$witID"></xsl:with-param>
-         </xsl:apply-templates>
-      </div>
-         <!-- </xsl:if> -->
-      
+      </xsl:for-each>
    </xsl:template>
    
    <xsl:template match="tei:rdg|tei:lem">
       <xsl:param name="witID" tunnel="yes"></xsl:param>
-      
       <xsl:if test="contains(@wit, concat('#',$witID))">
-         <xsl:choose>
-            <xsl:when test="not(ancestor::tei:rdgGrp)">
-               <div>
-                  <xsl:attribute name="data-witness">
-                     <xsl:value-of select="translate(@wit,'#','')" />
-                  </xsl:attribute>
-                  <xsl:attribute name="class">
-                     <xsl:text>reading </xsl:text>
-                     <xsl:value-of select="translate(@wit,'#','')" />
-                  </xsl:attribute>
-                  <xsl:apply-templates />
-               </div>
-            </xsl:when>
-            <xsl:otherwise>
-               <div>
-                  <xsl:attribute name="class">rdg</xsl:attribute>
-                  <xsl:attribute name="line-id"><xsl:value-of select="@wit"/></xsl:attribute>
-                  <xsl:apply-templates />
-               </div>
-            </xsl:otherwise>
-      </xsl:choose>
+         <xsl:apply-templates>
+            <xsl:with-param name="witID" tunnel="yes" select="$witID"></xsl:with-param>
+         </xsl:apply-templates>
       </xsl:if>
       
    </xsl:template>
-   
+ 
    <xsl:template match="tei:choice">
       <xsl:choose>
          <xsl:when test="tei:sic and tei:corr">

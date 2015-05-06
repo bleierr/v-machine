@@ -245,6 +245,9 @@ div.line{
     padding:0;
     cursor:pointer;
 }
+div.line{
+	cursor:pointer;
+}
 div.line div.linenumber,
 div.line div.emptynumber{
     float:left;
@@ -403,7 +406,9 @@ span.unclear{
 }
 
 .stanzabreak{
-    display:none;
+    /*display:none;*/
+	display:block;
+	height: 1em;
 }
 div.type-stanza{
     margin-bottom:25px;
@@ -611,6 +616,11 @@ img.highlight{
     background:white;
     font-weight:400 !important;
 	z-index:3;
+}
+
+/*line highlight if matched*/
+.match_hi{
+	background-color: yellow;
 }
 
 /*Code RB End*/

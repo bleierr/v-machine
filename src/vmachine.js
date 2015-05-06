@@ -1391,15 +1391,34 @@ jQuery.fn.workspaceResize = function(){
          
 }
 
+$.fn.match_lines = function() {
+		this.click(function(){
+			var line_id = $(this).attr("data-line-id");
+			//add or remove attr match_hi
+			$("."+line_id).toggleClass("match_hi");
+		});
+};
 
-$(document).ready(function() {
-    
+$.fn.match_app = function() {
+		this.click(function(){
+			var app = $(this).attr("data-app-id");
+			//add or remove attr match_hi
+			$("."+app).toggleClass("match_hi");
+		});
+};
+
+$(document).ready(function() {  
+    $(".apparatus").match_app();
+	//$(".head").match_app();
+});
+
+
+
+$(document).ready(function() {  
     $(window).resize(function(){
         $(this).workspaceResize();
     });
-    
-    
-    
+ 
 });
 
 
