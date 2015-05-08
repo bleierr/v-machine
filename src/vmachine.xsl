@@ -16,6 +16,8 @@
    
    <xsl:variable name="vmLogo">../vm-images/LogoSilver.svg</xsl:variable>
    
+   <xsl:variable name="menuIcon">../vm-images/menuicon.png</xsl:variable>
+   
    <xsl:variable name="cssInclude">../src/vmachine.css</xsl:variable>
    
    <xsl:variable name="cssJQuery-UI">../src/js/jquery-ui-1.11.3/jquery-ui.min.css</xsl:variable>
@@ -193,12 +195,10 @@
    
    <xsl:template name="mainControls">
       <nav id="mainControls">
-         
          <ul>
-              
             <li>
                <button>
-                  <xsl:attribute name="class">topMenuButton</xsl:attribute>
+                  <xsl:attribute name="class">topMenuButton dropdownButton</xsl:attribute>
                   <xsl:attribute name="id">selectWitness</xsl:attribute>
                   <xsl:value-of select="count($witnesses)"></xsl:value-of>
                   <xsl:text> Total Versions</xsl:text>
@@ -206,71 +206,39 @@
                   <img src="../vm-images/arrowdown.png" alt=""/>
                </button>
                <!-- RB: version dropdown -->
-               <xsl:call-template name="versionDropdown"/>
+               <ul>
+                  <xsl:attribute name="id">witnessList</xsl:attribute>
+                  <xsl:attribute name="class">dropdown</xsl:attribute>
+                  <xsl:call-template name="versionDropdown"/>
+               </ul>
             </li>
-            
-            <li data-panelid="lineNumbers">
-               <xsl:attribute name="id">toggleLineNumbers</xsl:attribute>
-               <!-- create a button to toggle line numbers visible and invisible -->
-               <div>
-                  <xsl:attribute name="class">listText</xsl:attribute>
-                  <p>
-                     
-                        
-                        <xsl:text>Line numbers:</xsl:text>
-                  </p> 
-                  
-                  <div class="image-container">
-                     <button>
-                        <xsl:attribute name="class">topMenuButton</xsl:attribute>
-                        <xsl:attribute name="id">toggleLineNumbersButton</xsl:attribute>
-                     <xsl:text>ON</xsl:text>
-                     </button>
-                  </div>
-               </div>
-            </li>
-            <li data-panelid="bibPanel">
+            <li>
+               <xsl:attribute name="class">smallScreenDropdown</xsl:attribute>
                <button>
-                  <xsl:attribute name="class">topMenuButton</xsl:attribute>
-                  <xsl:attribute name="id">biblioInfoButton</xsl:attribute>
-                  Bibliographic panel
-                  
+                  <xsl:attribute name="class">topMenuButton dropdownButton</xsl:attribute>
+                  <img class="invisible menuicon" src="../vm-images/menuicon.png" alt=""/>
+                  <img class="menuicon" src="../vm-images/menuicon.png" alt=""/>
                </button>
-               
-               
+               <ul>
+                  <xsl:attribute name="class">dropdown</xsl:attribute>
+                  <xsl:call-template name="smallScreenDropdown"/>
+               </ul>
             </li>
-            
-            <li data-panelid="notesPanel"> 
-               <button>
-                  <xsl:attribute name="class">topMenuButton listText</xsl:attribute>
-                  <xsl:attribute name="id">toggleNotePanelButton</xsl:attribute>
-                  
-                  <xsl:text>Notes panel</xsl:text>
-               </button>
-            </li>
-            <li data-panelid="critPanel">
-               <button>
-                  <xsl:attribute name="class">topMenuButton listText</xsl:attribute>
-                  <xsl:attribute name="id">toggleCritPanelButton</xsl:attribute>
-                  <xsl:text>Critical introduction</xsl:text>
-               </button>
-            </li>
-     </ul>
-          
-      </nav>
+         </ul>
+         <ul>
+            <xsl:attribute name="class">largeScreenTopMenu</xsl:attribute>
+            <xsl:call-template name="largeScreenTopMenu"/>
+         </ul>
+     </nav>
       
    </xsl:template>
    
    <xsl:template name="versionDropdown">
-     
-      <ul>
-         <xsl:attribute name="id">witnessList</xsl:attribute>
-         <xsl:attribute name="class">dropdown</xsl:attribute>
-            <xsl:for-each select="$witnesses">
+     <xsl:for-each select="$witnesses">
                  <li>
                     <xsl:attribute name="data-panelid">
-                           <xsl:value-of select="@xml:id"></xsl:value-of>
-                        </xsl:attribute>
+                       <xsl:value-of select="@xml:id"></xsl:value-of>
+                    </xsl:attribute>
                    <div>
                       <xsl:attribute name="class">listText</xsl:attribute>
                       
@@ -279,16 +247,118 @@
                    </p> 
                    
                     <div class="image-container">
-                      <img class="invisible" src="../vm-images/symbol-visible.png" alt=""/>
-                      <img src="../vm-images/symbol-not-visible.png" alt=""/>
+                       <button>
+                          <xsl:text>OFF</xsl:text>
+                       </button>
                     </div>
                    </div>
                 </li>
            </xsl:for-each>
-       </ul>
+  </xsl:template>
+   
+   <xsl:template name="smallScreenDropdown">
+      <li>
+         <xsl:attribute name="data-panelid">linenumbers</xsl:attribute>
+         <div>
+            <xsl:attribute name="class">listText</xsl:attribute>
             
+            <p>
+               <xsl:text>Line numbers</xsl:text> 
+            </p> 
+            
+            <div class="image-container">
+               <button>
+                  <xsl:text>OFF</xsl:text>
+               </button>
+            </div>
+         </div>
+      </li>
+      <li>
+         <xsl:attribute name="data-panelid">bibPanel</xsl:attribute>
+         <div>
+            <xsl:attribute name="class">listText</xsl:attribute>
+            <p>
+               <xsl:text>Bibliographic panel</xsl:text>               
+            </p> 
+            
+            <div class="image-container">
+               <button>
+                  <xsl:text>OFF</xsl:text>
+               </button>
+            </div>
+         </div>
+      </li>
+      <li>
+         <xsl:attribute name="data-panelid">notesPanel</xsl:attribute>
+         <div>
+            <xsl:attribute name="class">listText</xsl:attribute>
+            <p>
+               <xsl:text>Notes panel</xsl:text>
+            </p> 
+            
+            <div class="image-container">
+               <button>
+                  <xsl:text>OFF</xsl:text>
+               </button>
+            </div>
+         </div>
+      </li>
       
-      
+      <xsl:if test="//tei:notesStmt/tei:note[@type='critIntro']">
+         <li>
+            <xsl:attribute name="data-panelid">critPanel</xsl:attribute>
+            <div>
+               <xsl:attribute name="class">listText</xsl:attribute>
+               <p>
+                  <xsl:text>Critical introduction</xsl:text>
+               </p> 
+               
+               <div class="image-container">
+                  <button>
+                     <xsl:text>OFF</xsl:text>
+                  </button>
+               </div>
+            </div>
+         </li>
+      </xsl:if>
+   </xsl:template>
+   
+   
+   <xsl:template name="largeScreenTopMenu">
+         <li>
+            <xsl:attribute name="data-panelid">linenumbers</xsl:attribute>
+            <xsl:attribute name="title">Clicking this button turns the line numbers on or off.</xsl:attribute>
+            <button><xsl:attribute name="class">topMenuButton</xsl:attribute>
+                <xsl:text>Line numbers</xsl:text>
+            </button>
+               
+         </li>
+         <li>
+            <xsl:attribute name="data-panelid">bibPanel</xsl:attribute>
+            <xsl:attribute name="title">Clicking this button triggers the bibliographic panel to appear or disappear.</xsl:attribute>
+            <button>
+               <xsl:attribute name="class">topMenuButton</xsl:attribute>
+               <xsl:text>Bibliographic panel</xsl:text>
+            </button>
+         </li>
+         <li>
+            <xsl:attribute name="data-panelid">notesPanel</xsl:attribute>
+            <xsl:attribute name="title">Clicking this button triggers the notes panel to appear or disappear.</xsl:attribute>
+            <button>
+               <xsl:attribute name="class">topMenuButton listText</xsl:attribute>
+               <xsl:text>Notes panel</xsl:text>
+            </button>
+         </li>
+         <xsl:if test="//tei:notesStmt/tei:note[@type='critIntro']">
+            <li>
+               <xsl:attribute name="data-panelid">critPanel</xsl:attribute>
+               <button>
+                  <xsl:attribute name="class">topMenuButton listText</xsl:attribute>
+                  <xsl:attribute name="title">Clicking this button triggers the critical introduction panel to appear or disappear.</xsl:attribute>
+                  <xsl:text>Critical introduction</xsl:text>
+               </button>
+            </li>
+         </xsl:if>
    </xsl:template>
    
    
@@ -323,13 +393,13 @@
       <!-- RB: added draggable resizeable -->
       <div>
          <xsl:attribute name="class">
-            <xsl:text>panel mssPanel draggable resizable ui-widget-content ui-resizable</xsl:text>
+            <xsl:text>panel mssPanel invisible ui-widget-content ui-resizable</xsl:text>
          </xsl:attribute>
          <xsl:attribute name="id">
             <xsl:value-of select="$witID"></xsl:value-of>
          </xsl:attribute>
          <div class="panelBanner">
-            <img class="closePanel" src="../vm-images/closePanel.svg" alt="X (Close panel)" />
+            <img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)" />
             <xsl:text>Witness </xsl:text><xsl:value-of select="$witID"></xsl:value-of>
          </div>
          <div class="mssContent">
@@ -423,15 +493,16 @@
    <xsl:template match="/tei:TEI/tei:teiHeader/tei:fileDesc">
       <div id="bibPanel">
          <xsl:attribute name="class">
-            <xsl:text>panel mssPanel draggable resizable ui-widget-content ui-resizable</xsl:text>
+            <xsl:text>panel mssPanel invisible ui-widget-content ui-resizable</xsl:text>
          </xsl:attribute>
          <xsl:if test="$displayBibInfo != 'true'">
             <xsl:attribute name="style">
                <xsl:text>display: none;</xsl:text>
             </xsl:attribute>
          </xsl:if>
+         
          <div class="panelBanner">
-            <img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.svg" />
+            <img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg" />
             Bibliographic Information
          </div>
          <div class="bibContent">
@@ -552,11 +623,12 @@
                <xsl:apply-templates select="tei:encodingDesc/tei:editorialDecl" />
             </xsl:if>
             <xsl:apply-templates select="/tei:TEI/tei:teiHeader/tei:encodingDesc" />
+         
          </div>
       </div>
       <div id="critPanel">
          <xsl:attribute name="class">
-            <xsl:text>panel mssPanel draggable resizable ui-widget-content ui-resizable</xsl:text>
+            <xsl:text>panel mssPanel invisible ui-widget-content ui-resizable</xsl:text>
          </xsl:attribute>
         <xsl:if test="$displayCritInfo != 'true' or not(tei:notesStmt/tei:note[@type='critIntro'])">
                <xsl:attribute name="style">
@@ -566,7 +638,7 @@
         
         <!-- second image panel ??? -->
             <div class="panelBanner">
-               <img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.svg" />
+               <img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg" />
                Critical Introduction
             </div>
             <div class="critContent">
@@ -574,16 +646,8 @@
                   <h4>Critical Introduction</h4>
                   <xsl:for-each select="tei:notesStmt/tei:note[@type='critIntro']/tei:p | tei:notesStmt/tei:note[@type='critIntro']/tei:lg">
                      <xsl:apply-templates select="." />
-                </xsl:for-each>
-                  
-                  
-                  
-                  
-              <!--    
-                  <xsl:for-each select="tei:notesStmt/tei:note[@type='critIntro']/tei:p">
-                     <p>        <xsl:apply-templates /></p>
                   </xsl:for-each>
-                -->
+                  
                </xsl:if>
             </div>
          </div>
@@ -624,7 +688,7 @@
    <xsl:template name="notesPanel">
       <div id="notesPanel">
          <xsl:attribute name="class">
-            <xsl:text>panel mssPanel draggable resizable ui-widget-content ui-resizable</xsl:text>
+            <xsl:text>panel mssPanel invisible ui-widget-content ui-resizable</xsl:text>
          </xsl:attribute>
          <xsl:if test="$notesFormat != 'inline'">
             <xsl:attribute name="style">
@@ -632,7 +696,7 @@
             </xsl:attribute>
          </xsl:if>
          <div class="panelBanner">
-            <img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.svg" />
+            <img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg" />
             Textual Notes
          </div>
          <xsl:for-each select="//tei:body//tei:note[not(@type='image')]">
@@ -748,7 +812,7 @@
       <xsl:param name="witness" />
       <xsl:param name="imgID"/>
       <xsl:if test="$imageURL != ''">
-         <img src="../vm-images/image.svg" alt="Facsimile Image Placeholder">
+         <img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer">
             <xsl:attribute name="class">
                <xsl:text>imageLink</xsl:text>
                <xsl:if test="$witness != ''">
@@ -1295,12 +1359,12 @@
    <xsl:template name="imageViewer">
       <xsl:param name="imgId"></xsl:param>
       <xsl:param name="imgUrl"></xsl:param>
-      <div class="draggable resizable ui-resizable panel imgPanel" id="{$imgId}">
+      <div class="draggable resizable ui-resizable panel imgPanel invisible" id="{$imgId}">
          <div title="Click to drag panel." class="viewerHandle handle_imageViewer">
             <span class="viewerHandleLt title_imageViewer">
                <xsl:value-of select="$imgUrl"></xsl:value-of>
             </span>
-            <img class="viewerHandleRt closePanel" alt="X" src="../vm-images/closePanel.svg" />
+            <img class="viewerHandleRt closePanel" title="Close panel" alt="X" src="../vm-images/closePanel.svg" />
          </div>
          <div class="viewerContent" id="content_imageViewer">
              

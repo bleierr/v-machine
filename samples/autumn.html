@@ -31,13 +31,13 @@
          </div>
          <nav id="mainControls">
             <ul>
-               <li><button class="topMenuButton" id="selectWitness">5 Total Versions<img class="invisible" src="../vm-images/arrowup.png" alt=""></img><img src="../vm-images/arrowdown.png" alt=""></img></button><ul id="witnessList" class="dropdown">
+               <li><button class="topMenuButton dropdownButton" id="selectWitness">5 Total Versions<img class="invisible" src="../vm-images/arrowup.png" alt=""></img><img src="../vm-images/arrowdown.png" alt=""></img></button><ul id="witnessList" class="dropdown">
                      <li data-panelid="t7989-1-10">
                         <div class="listText">
                            <p>'A Short History of Our Own Time' (TCD MS
                               7989/1/10)
                            </p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                           <div class="image-container"><button>OFF</button></div>
                         </div>
                      </li>
                      <li data-panelid="t7989-1-8">
@@ -45,19 +45,19 @@
                            <p>'Civil War', which was deleted and replaced with
                               'Ireland, Autumn 1922' (TCD MS 7989/1/8)
                            </p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                           <div class="image-container"><button>OFF</button></div>
                         </div>
                      </li>
                      <li data-panelid="t7989-1-7">
                         <div class="listText">
                            <p>'Ireland Autumn, 1922' (TCD MS 7989/1/7)</p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                           <div class="image-container"><button>OFF</button></div>
                         </div>
                      </li>
                      <li data-panelid="t7989-1-9">
                         <div class="listText">
                            <p>'Ireland, Autumn, 1922 (TCD MS 7989/1/9)</p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                           <div class="image-container"><button>OFF</button></div>
                         </div>
                      </li>
                      <li data-panelid="pub">
@@ -65,29 +65,43 @@
                            <p>published in Poems under the title
                               'Autumn, 1922'
                            </p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                           <div class="image-container"><button>OFF</button></div>
                         </div>
                      </li>
                   </ul>
                </li>
-               <li data-panelid="lineNumbers" id="toggleLineNumbers">
-                  <div class="listText">
-                     <p>Line numbers:</p>
-                     <div class="image-container"><button class="topMenuButton" id="toggleLineNumbersButton">ON</button></div>
-                  </div>
+               <li class="smallScreenDropdown"><button class="topMenuButton dropdownButton"><img class="invisible menuicon" src="../vm-images/menuicon.png" alt=""></img><img class="menuicon" src="../vm-images/menuicon.png" alt=""></img></button><ul class="dropdown">
+                     <li data-panelid="linenumbers">
+                        <div class="listText">
+                           <p>Line numbers</p>
+                           <div class="image-container"><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="bibPanel">
+                        <div class="listText">
+                           <p>Bibliographic panel</p>
+                           <div class="image-container"><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="notesPanel">
+                        <div class="listText">
+                           <p>Notes panel</p>
+                           <div class="image-container"><button>OFF</button></div>
+                        </div>
+                     </li>
+                  </ul>
                </li>
-               <li data-panelid="bibPanel"><button class="topMenuButton" id="biblioInfoButton">
-                     Bibliographic panel
-                     
-                     </button></li>
-               <li data-panelid="notesPanel"><button class="topMenuButton listText" id="toggleNotePanelButton">Notes panel</button></li>
-               <li data-panelid="critPanel"><button class="topMenuButton listText" id="toggleCritPanelButton">Critical introduction</button></li>
+            </ul>
+            <ul class="largeScreenTopMenu">
+               <li data-panelid="linenumbers" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
+               <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
+               <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
             </ul>
          </nav>
       </div>
       <div id="mssArea">
-         <div id="bibPanel" class="panel mssPanel draggable resizable ui-widget-content ui-resizable">
-            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
+         <div id="bibPanel" class="panel mssPanel invisible ui-widget-content ui-resizable">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Bibliographic Information
                
             </div>
@@ -168,21 +182,21 @@
                
             </div>
          </div>
-         <div id="critPanel" class="panel mssPanel draggable resizable ui-widget-content ui-resizable" style="display: none;">
-            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
+         <div id="critPanel" class="panel mssPanel invisible ui-widget-content ui-resizable" style="display: none;">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Critical Introduction
                
             </div>
             <div class="critContent"></div>
          </div>
-         <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="t7989-1-10">
-            <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness t7989-1-10
+         <div class="panel mssPanel invisible ui-widget-content ui-resizable" id="t7989-1-10">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness t7989-1-10
             </div>
             <div class="mssContent">
                
                
                <hr class="pagebreak t7989-1-10"></hr>
-               <div class="facs-images"><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" class="imageLink t7989-1-10" data-witness-id="t7989-1-10" data-img-url="images/autumn_7989-1-10.jpg" data-img-id="i7989-1-10"></img></div>
+               <div class="facs-images"><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink t7989-1-10" data-witness-id="t7989-1-10" data-img-url="images/autumn_7989-1-10.jpg" data-img-id="i7989-1-10"></img></div>
                
                
                
@@ -305,15 +319,15 @@
                
             </div>
          </div>
-         <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="t7989-1-8">
-            <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness t7989-1-8
+         <div class="panel mssPanel invisible ui-widget-content ui-resizable" id="t7989-1-8">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness t7989-1-8
             </div>
             <div class="mssContent">
                
                
                
                <hr class="pagebreak t7989-1-8"></hr>
-               <div class="facs-images"><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" class="imageLink t7989-1-8" data-witness-id="t7989-1-8" data-img-url="images/autumn_7989-1-8.jpg" data-img-id="i7989-1-8"></img></div>
+               <div class="facs-images"><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink t7989-1-8" data-witness-id="t7989-1-8" data-img-url="images/autumn_7989-1-8.jpg" data-img-id="i7989-1-8"></img></div>
                
                
                
@@ -415,8 +429,8 @@
                
             </div>
          </div>
-         <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="t7989-1-7">
-            <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness t7989-1-7
+         <div class="panel mssPanel invisible ui-widget-content ui-resizable" id="t7989-1-7">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness t7989-1-7
             </div>
             <div class="mssContent">
                
@@ -424,7 +438,7 @@
                
                
                <hr class="pagebreak t7989-1-7"></hr>
-               <div class="facs-images"><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" class="imageLink t7989-1-7" data-witness-id="t7989-1-7" data-img-url="images/autumn_7989-1-7.jpg" data-img-id="i7989-1-7"></img></div>
+               <div class="facs-images"><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink t7989-1-7" data-witness-id="t7989-1-7" data-img-url="images/autumn_7989-1-7.jpg" data-img-id="i7989-1-7"></img></div>
                
                
                
@@ -520,8 +534,8 @@
                
             </div>
          </div>
-         <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="t7989-1-9">
-            <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness t7989-1-9
+         <div class="panel mssPanel invisible ui-widget-content ui-resizable" id="t7989-1-9">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness t7989-1-9
             </div>
             <div class="mssContent">
                
@@ -530,7 +544,7 @@
                
                
                <hr class="pagebreak t7989-1-9"></hr>
-               <div class="facs-images"><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" class="imageLink t7989-1-9" data-witness-id="t7989-1-9" data-img-url="images/autumn_7989-1-9.jpg" data-img-id="i7989-1-9"></img></div>
+               <div class="facs-images"><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink t7989-1-9" data-witness-id="t7989-1-9" data-img-url="images/autumn_7989-1-9.jpg" data-img-id="i7989-1-9"></img></div>
                
                
                <div class="head" data-line-id="head">
@@ -654,8 +668,8 @@
                
             </div>
          </div>
-         <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="pub">
-            <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness pub
+         <div class="panel mssPanel invisible ui-widget-content ui-resizable" id="pub">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness pub
             </div>
             <div class="mssContent">
                
@@ -665,7 +679,7 @@
                
                
                <hr class="pagebreak pub"></hr>
-               <div class="facs-images"><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" class="imageLink pub" data-witness-id="pub" data-img-url="images/autumn_pub.jpg" data-img-id="autumn-pub"></img></div>
+               <div class="facs-images"><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink pub" data-witness-id="pub" data-img-url="images/autumn_pub.jpg" data-img-id="autumn-pub"></img></div>
                
                <div class="head" data-line-id="head">
                   
@@ -762,8 +776,8 @@
                
             </div>
          </div>
-         <div id="notesPanel" class="panel mssPanel draggable resizable ui-widget-content ui-resizable" style="display: none;">
-            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
+         <div id="notesPanel" class="panel mssPanel invisible ui-widget-content ui-resizable" style="display: none;">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Textual Notes
                
             </div>
@@ -831,8 +845,8 @@
                
             </div>
          </div>
-         <div class="draggable resizable ui-resizable panel imgPanel" id="i7989-1-10">
-            <div title="Click to drag panel." class="viewerHandle handle_imageViewer"><span class="viewerHandleLt title_imageViewer">images/autumn_7989-1-10.jpg</span><img class="viewerHandleRt closePanel" alt="X" src="../vm-images/closePanel.svg"></img></div>
+         <div class="draggable resizable ui-resizable panel imgPanel invisible" id="i7989-1-10">
+            <div title="Click to drag panel." class="viewerHandle handle_imageViewer"><span class="viewerHandleLt title_imageViewer">images/autumn_7989-1-10.jpg</span><img class="viewerHandleRt closePanel" title="Close panel" alt="X" src="../vm-images/closePanel.svg"></img></div>
             <div class="viewerContent" id="content_imageViewer">
                <div class="panzoom-parent" style="overflow:visible">
                   <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/autumn_7989-1-10.jpg"></img></div>
@@ -849,8 +863,8 @@
                })();
             </script></div>
          </div>
-         <div class="draggable resizable ui-resizable panel imgPanel" id="i7989-1-8">
-            <div title="Click to drag panel." class="viewerHandle handle_imageViewer"><span class="viewerHandleLt title_imageViewer">images/autumn_7989-1-8.jpg</span><img class="viewerHandleRt closePanel" alt="X" src="../vm-images/closePanel.svg"></img></div>
+         <div class="draggable resizable ui-resizable panel imgPanel invisible" id="i7989-1-8">
+            <div title="Click to drag panel." class="viewerHandle handle_imageViewer"><span class="viewerHandleLt title_imageViewer">images/autumn_7989-1-8.jpg</span><img class="viewerHandleRt closePanel" title="Close panel" alt="X" src="../vm-images/closePanel.svg"></img></div>
             <div class="viewerContent" id="content_imageViewer">
                <div class="panzoom-parent" style="overflow:visible">
                   <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/autumn_7989-1-8.jpg"></img></div>
@@ -867,8 +881,8 @@
                })();
             </script></div>
          </div>
-         <div class="draggable resizable ui-resizable panel imgPanel" id="i7989-1-7">
-            <div title="Click to drag panel." class="viewerHandle handle_imageViewer"><span class="viewerHandleLt title_imageViewer">images/autumn_7989-1-7.jpg</span><img class="viewerHandleRt closePanel" alt="X" src="../vm-images/closePanel.svg"></img></div>
+         <div class="draggable resizable ui-resizable panel imgPanel invisible" id="i7989-1-7">
+            <div title="Click to drag panel." class="viewerHandle handle_imageViewer"><span class="viewerHandleLt title_imageViewer">images/autumn_7989-1-7.jpg</span><img class="viewerHandleRt closePanel" title="Close panel" alt="X" src="../vm-images/closePanel.svg"></img></div>
             <div class="viewerContent" id="content_imageViewer">
                <div class="panzoom-parent" style="overflow:visible">
                   <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/autumn_7989-1-7.jpg"></img></div>
@@ -885,8 +899,8 @@
                })();
             </script></div>
          </div>
-         <div class="draggable resizable ui-resizable panel imgPanel" id="i7989-1-9">
-            <div title="Click to drag panel." class="viewerHandle handle_imageViewer"><span class="viewerHandleLt title_imageViewer">images/autumn_7989-1-9.jpg</span><img class="viewerHandleRt closePanel" alt="X" src="../vm-images/closePanel.svg"></img></div>
+         <div class="draggable resizable ui-resizable panel imgPanel invisible" id="i7989-1-9">
+            <div title="Click to drag panel." class="viewerHandle handle_imageViewer"><span class="viewerHandleLt title_imageViewer">images/autumn_7989-1-9.jpg</span><img class="viewerHandleRt closePanel" title="Close panel" alt="X" src="../vm-images/closePanel.svg"></img></div>
             <div class="viewerContent" id="content_imageViewer">
                <div class="panzoom-parent" style="overflow:visible">
                   <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/autumn_7989-1-9.jpg"></img></div>
@@ -903,8 +917,8 @@
                })();
             </script></div>
          </div>
-         <div class="draggable resizable ui-resizable panel imgPanel" id="autumn-pub">
-            <div title="Click to drag panel." class="viewerHandle handle_imageViewer"><span class="viewerHandleLt title_imageViewer">images/autumn_pub.jpg</span><img class="viewerHandleRt closePanel" alt="X" src="../vm-images/closePanel.svg"></img></div>
+         <div class="draggable resizable ui-resizable panel imgPanel invisible" id="autumn-pub">
+            <div title="Click to drag panel." class="viewerHandle handle_imageViewer"><span class="viewerHandleLt title_imageViewer">images/autumn_pub.jpg</span><img class="viewerHandleRt closePanel" title="Close panel" alt="X" src="../vm-images/closePanel.svg"></img></div>
             <div class="viewerContent" id="content_imageViewer">
                <div class="panzoom-parent" style="overflow:visible">
                   <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/autumn_pub.jpg"></img></div>

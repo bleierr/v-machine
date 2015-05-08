@@ -29,51 +29,72 @@
          </div>
          <nav id="mainControls">
             <ul>
-               <li><button class="topMenuButton" id="selectWitness">4 Total Versions<img class="invisible" src="../vm-images/arrowup.png" alt=""></img><img src="../vm-images/arrowdown.png" alt=""></img></button><ul id="witnessList" class="dropdown">
+               <li><button class="topMenuButton dropdownButton" id="selectWitness">4 Total Versions<img class="invisible" src="../vm-images/arrowup.png" alt=""></img><img src="../vm-images/arrowdown.png" alt=""></img></button><ul id="witnessList" class="dropdown">
                      <li data-panelid="va1">
                         <div class="listText">
                            <p>First </p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                           <div class="image-container"><button>OFF</button></div>
                         </div>
                      </li>
                      <li data-panelid="va2">
                         <div class="listText">
                            <p>Second </p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                           <div class="image-container"><button>OFF</button></div>
                         </div>
                      </li>
                      <li data-panelid="va3">
                         <div class="listText">
                            <p>Third </p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                           <div class="image-container"><button>OFF</button></div>
                         </div>
                      </li>
                      <li data-panelid="va4">
                         <div class="listText">
                            <p>Fourth </p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                           <div class="image-container"><button>OFF</button></div>
                         </div>
                      </li>
                   </ul>
                </li>
-               <li data-panelid="lineNumbers" id="toggleLineNumbers">
-                  <div class="listText">
-                     <p>Line numbers:</p>
-                     <div class="image-container"><button class="topMenuButton" id="toggleLineNumbersButton">ON</button></div>
-                  </div>
+               <li class="smallScreenDropdown"><button class="topMenuButton dropdownButton"><img class="invisible menuicon" src="../vm-images/menuicon.png" alt=""></img><img class="menuicon" src="../vm-images/menuicon.png" alt=""></img></button><ul class="dropdown">
+                     <li data-panelid="linenumbers">
+                        <div class="listText">
+                           <p>Line numbers</p>
+                           <div class="image-container"><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="bibPanel">
+                        <div class="listText">
+                           <p>Bibliographic panel</p>
+                           <div class="image-container"><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="notesPanel">
+                        <div class="listText">
+                           <p>Notes panel</p>
+                           <div class="image-container"><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="critPanel">
+                        <div class="listText">
+                           <p>Critical introduction</p>
+                           <div class="image-container"><button>OFF</button></div>
+                        </div>
+                     </li>
+                  </ul>
                </li>
-               <li data-panelid="bibPanel"><button class="topMenuButton" id="biblioInfoButton">
-                     Bibliographic panel
-                     
-                     </button></li>
-               <li data-panelid="notesPanel"><button class="topMenuButton listText" id="toggleNotePanelButton">Notes panel</button></li>
-               <li data-panelid="critPanel"><button class="topMenuButton listText" id="toggleCritPanelButton">Critical introduction</button></li>
+            </ul>
+            <ul class="largeScreenTopMenu">
+               <li data-panelid="linenumbers" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
+               <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
+               <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
+               <li data-panelid="critPanel"><button class="topMenuButton listText" title="Clicking this button triggers the critical introduction panel to appear or disappear.">Critical introduction</button></li>
             </ul>
          </nav>
       </div>
       <div id="mssArea">
-         <div id="bibPanel" class="panel mssPanel draggable resizable ui-widget-content ui-resizable">
-            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
+         <div id="bibPanel" class="panel mssPanel invisible ui-widget-content ui-resizable">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Bibliographic Information
                
             </div>
@@ -168,8 +189,8 @@
                
             </div>
          </div>
-         <div id="critPanel" class="panel mssPanel draggable resizable ui-widget-content ui-resizable">
-            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
+         <div id="critPanel" class="panel mssPanel invisible ui-widget-content ui-resizable">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Critical Introduction
                
             </div>
@@ -181,11 +202,11 @@
                </p>
             </div>
          </div>
-         <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="va1">
-            <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness va1
+         <div class="panel mssPanel invisible ui-widget-content ui-resizable" id="va1">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness va1
             </div>
             <div class="mssContent">
-               <div class="facs-images"><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" class="imageLink va1" data-witness-id="va1" data-img-url="images/litmss-003272-0001.jpg" data-img-id=""></img><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" class="imageLink va1" data-witness-id="va1" data-img-url="images/litmss-003274-0001.jpg" data-img-id=""></img></div>
+               <div class="facs-images"><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink va1" data-witness-id="va1" data-img-url="images/litmss-003272-0001.jpg" data-img-id=""></img><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink va1" data-witness-id="va1" data-img-url="images/litmss-003274-0001.jpg" data-img-id=""></img></div>
                
                <div class="div1" data-line-id="div1">
                   
@@ -936,11 +957,11 @@
                
             </div>
          </div>
-         <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="va2">
-            <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness va2
+         <div class="panel mssPanel invisible ui-widget-content ui-resizable" id="va2">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness va2
             </div>
             <div class="mssContent">
-               <div class="facs-images"><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" class="imageLink va2" data-witness-id="va2" data-img-url="images/litmss-003275-0001.jpg" data-img-id=""></img></div>
+               <div class="facs-images"><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink va2" data-witness-id="va2" data-img-url="images/litmss-003275-0001.jpg" data-img-id=""></img></div>
                
                <div class="div1" data-line-id="div1">
                   
@@ -1568,11 +1589,11 @@
                
             </div>
          </div>
-         <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="va3">
-            <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness va3
+         <div class="panel mssPanel invisible ui-widget-content ui-resizable" id="va3">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness va3
             </div>
             <div class="mssContent">
-               <div class="facs-images"><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" class="imageLink va3" data-witness-id="va3" data-img-url="images/litmss-003276-0001.jpg" data-img-id=""></img></div>
+               <div class="facs-images"><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink va3" data-witness-id="va3" data-img-url="images/litmss-003276-0001.jpg" data-img-id=""></img></div>
                
                <div class="div1" data-line-id="div1">
                   
@@ -2165,11 +2186,11 @@
                
             </div>
          </div>
-         <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="va4">
-            <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness va4
+         <div class="panel mssPanel invisible ui-widget-content ui-resizable" id="va4">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness va4
             </div>
             <div class="mssContent">
-               <div class="facs-images"><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" class="imageLink va4" data-witness-id="va4" data-img-url="images/litmss-003277-0001.jpg" data-img-id=""></img></div>
+               <div class="facs-images"><img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink va4" data-witness-id="va4" data-img-url="images/litmss-003277-0001.jpg" data-img-id=""></img></div>
                
                <div class="div1" data-line-id="div1">
                   
@@ -2881,8 +2902,8 @@
                
             </div>
          </div>
-         <div id="notesPanel" class="panel mssPanel draggable resizable ui-widget-content ui-resizable" style="display: none;">
-            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
+         <div id="notesPanel" class="panel mssPanel invisible ui-widget-content ui-resizable" style="display: none;">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Textual Notes
                
             </div>
