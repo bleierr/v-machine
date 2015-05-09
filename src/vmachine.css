@@ -572,17 +572,16 @@ button{
 /*end OnOff button styling*/
 
 
-
-
-.mssPanel,
-.imgPanel{
-    position:relative;
-    
+/*position:absolute to prevent that adjacent panels get moved on resize*/
+div.mssPanel.ui-resizable,
+div.imgPanel.ui-resizable{
+    position:absolute;   
 }
+
 .imgPanel{
     overflow:hidden;
     background-color:#000;
-	z-index:3;
+	z-index:2;
 }
 .mssPanel{
 	z-index:2;
@@ -613,6 +612,13 @@ img.highlight{
 }
 
 .ui-resizable-helper { border: 2px dotted #2c577f; }
+
+
+.viewerContent .buttons button{
+	background-color: #ccc;
+}
+
+
 
 /*Code RB End*/
 

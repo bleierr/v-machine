@@ -2,7 +2,7 @@
 
 //Global settings variables
 
-
+/*
 function init() {
    var mssArea = document.getElementById("mssArea");
    var mssPanels = getElementsByClass("mssPanel",mssArea,"div");
@@ -166,7 +166,6 @@ function openPanel() {
       //changeWitness(newMenu.value,newPanel);
    }
 }
-/*
 function closePanel(panel) {
    var mssArea = document.getElementById("mssArea");
    var manuscriptsDiv = document.getElementById("manuscripts");
@@ -187,7 +186,7 @@ function closePanel(panel) {
 */
 
 
-
+/*
 function changeWitness(witness,panel) {
 
     var lines = getElementsByClass("line",panel,"div");
@@ -288,7 +287,6 @@ function addAudioPlayer(panel){
 		var src = sourceElements[p].getAttribute('src');
 		sourceElements[p].setAttribute('src', src + "?i=" + Date.now());
 	}
-	/**
     // Add audio players if needed
     for (p = 0; p < audioPanels.length; p++) {
        if (audioPanels[p].className != "audioPlayer") {
@@ -313,7 +311,7 @@ function addAudioPlayer(panel){
              }
           }
        }
-    } **/  
+    }  
 
    
  }
@@ -385,7 +383,6 @@ function pausePlayer (evt) {
   }
 }//pausePlayer
 
-/*
 function matchLine(matchClass) {
    var mssArea = document.getElementById("mssArea");
    var matchingLines = getElementsByClass(matchClass,mssArea,"div");
@@ -408,7 +405,7 @@ function toggleLineNumbers(state) {
          linenumbers[r].style.visibility = "visible";
       }
    }
-}*/
+}
 function presentInlineNotes() {
    var mssArea = document.getElementById("mssArea");
    var notesPanel = document.getElementById("notesPanel");
@@ -500,7 +497,7 @@ function hideNotesPanel(panel) {
    //resizePanels();
 }
 
-
+*/
 
 
 
@@ -525,10 +522,10 @@ It was originally a seperate file named "dw_tooltip.js" */
  Desc: These functions are keyed to events handled by the * dom-drag.js
       library, below.  They are called within the showImgPanel function.
 *************************************************************************/
-      
+   /*   
 var panels = [];
   
- /* makePanelTop = function(){
+  makePanelTop = function(){
  var start = this.style.zIndex;
  for(i=0;i<panels.length;i++){
    if( panels[i].style.zIndex > start ){
@@ -536,7 +533,7 @@ var panels = [];
    }
  }
     this.style.zIndex=panels.length - 1;
- } */
+ } 
   
     pStyleDrag = function() {
         this.style.opacity = '.70';
@@ -547,7 +544,7 @@ var panels = [];
        this.style.filter = "alpha(opacity=100)";
    
     }
-    
+    */
 /*************************************************************************
  Name: hidePanel
  Desc: Closes a panel. 
@@ -577,19 +574,18 @@ document.getElementById("panel" + "_" + theInstance).style.visibility = "hidden"
   y           - vertical offset (in pixels) for new panel 
  *************************************************************************/
    
-   
+   /*
 function showPanel(e, theInstance, x, y) {
     var offx = (x)? x - 0 : 20;
     var offy= (y)? y - 0 : 20;
       var theHandle = document.getElementById("handle" + "_" + theInstance);
      var theRoot   = document.getElementById("panel" + "_" + theInstance);
       
-    Drag.init(theHandle, theRoot);
-    /* theRoot.onDragStart=makePanelTop; */
+    Drag.init(theHandle, theRoot); //theRoot.onDragStart=makePanelTop; 
      theRoot.onDrag=pStyleDrag;
     theRoot.onDragEnd=pStyleDragEnd;
     panels[panels.length]=theRoot;
-     /* panels[panels.length-1].style.zIndex = panels.length-1; */
+     //panels[panels.length-1].style.zIndex = panels.length-1; 
      positionPanel(e,theRoot,offx,offy);
      theRoot.style.visibility = "visible";
    
@@ -738,7 +734,7 @@ This notice must be retained in the code as is!
 NOTE: This library has not been altered internally - tlcamero
 
 *************************************************************************/
-
+/*
 function doTooltip(e, msg) {
 if ( typeof Tooltip == "undefined" || !Tooltip.ready ) return;
 Tooltip.show(e, msg);
@@ -748,7 +744,7 @@ function hideTip() {
 if ( typeof Tooltip == "undefined" || !Tooltip.ready ) return;
 Tooltip.hide();
 }
-
+*/
 /*************************************************************************
   dw_tooltip.js   requires: dw_event.js and dw_viewport.js
   version date: May 21, 2005 moved init call to body onload
@@ -762,7 +758,7 @@ Tooltip.hide();
 *************************************************************************/
 
 /*  Readable code available for licensed users */
-
+/*
 var Tooltip = {
   followMouse: true,
   offX: 8,
@@ -879,7 +875,7 @@ var Tooltip = {
   }
   
   }
-
+*/
 /*************************************************************************
     dw_event.js (version date Feb 2004)
     
@@ -888,7 +884,7 @@ var Tooltip = {
     regarding conditions under which you may use this code.
     This notice must be retained in the code as is!
     *************************************************************************/
-    
+/*   
     var dw_event = {
     
     add: function(obj, etype, fp, cap) {
@@ -915,7 +911,7 @@ var Tooltip = {
     
     }
     
-    
+*/    
     /*************************************************************************
     
     dw_viewport.js
@@ -929,7 +925,7 @@ var Tooltip = {
     This notice must be retained in the code as is!
     
     *************************************************************************/  
-    
+/*    
     var viewport = {
     getWinWidth: function () {
     this.width = 0;
@@ -975,7 +971,7 @@ var Tooltip = {
     }
     
     }
-    
+*/    
  /**************************************************
  * dom-drag.js
  * 09.25.2001
@@ -984,7 +980,7 @@ var Tooltip = {
  * This library was borrowed from youngpup.net,
  * it has not been altered internally - tlcamero
  **************************************************/
-
+/*
 var Drag = {
 
    obj : null,
@@ -1103,75 +1099,25 @@ function isHidden(el) {
     }
     return false;
 }
-
+*/
 
 //RB code
 
 $(function() {
-    $( ".draggable" ).draggable({
+    $( ".panel" ).draggable({
 		containment: "parent",
-		zIndex: 5
-	});
+		zIndex: 6
+	}).resizable(
+	{helper: "ui-resizable-helper"}
+);
   });
-$(function() {
-$( ".resizable" ).resizable();
-});
- 
-$(document).ready(function(){
-	
-	$("#manuscripts>.mssPanel").each(function(){
-		var value = $(this).find(".witnessMenu>option[selected]").attr("value");
-		
-	
-		var mssContent = $(this).find(".mssContent");
-		var elementList = $("#contentData").find("."+value);
-		
-		$.each(elementList, function(idx, ele){
-			$(ele).parent().attr("line-id");
-			mssContent.append(ele);
-		});
-	
-	});
-	
 
-});
-  
-  
-//select witnesses
-
-
-$(document).ready(function(){
-	var witnesses = [];
-		$("#witnessList li").each(function(){
-			witnesses.push($(this).attr("data-panelid"));
-		});
-			
-	
-	var panelActionButton = "#witnessList.dropdown li, #biblioInfoButton, #toggleNotePanelButton, #toggleCritPanelButton";
-	
-	
-	/*open the first two witnesses*/
-	var initialWitnesses = 2;
-	for(var i=0; i < initialWitnesses; i++){
-		if ( i < initialWitnesses){
-			$("#"+witnesses[i]).show();
-			$("#witnessList li[data-panelid='"+witnesses[i]+"'] img").toggleClass("invisible");
-		}
-	}
-	
-	/*show biblio panel*/
-	$("#bibPanel").show();
-	
-	/*show line numbers*/
-	$("#mainControls li[data-panelid='lineNumbers'] img").toggleClass("invisible");
-	
-	
-	$("#selectWitness").click(function(e){
-		e.stopPropagation();
+$.fn.dropdownButtonClick = function() {
+    return this.click(function(e){
+        e.stopPropagation();
+		$(".dropdownButton").not(this).next(".dropdown").css('visibility', 'hidden');
 		
-		$("#selectWitness").not(this).next(".dropdown").css('visibility', 'hidden');
-		
-		$("#selectWitness>img").toggleClass("invisible");
+		$(this).find("img").toggleClass("invisible");
 		
 		var visibility = $(this).next('ul').css('visibility');
 		if ( visibility === 'hidden'){
@@ -1180,7 +1126,6 @@ $(document).ready(function(){
 		else{
 			$(this).next('ul').css('visibility', 'hidden');
 		}
-	
 	
 		$('html').click(function (e) {
 			//e.stopPropagation();
@@ -1191,28 +1136,44 @@ $(document).ready(function(){
 				$(".dropdown").css('visibility', 'hidden');
 			}
 		});
-	});
+    });
+};
+
+$.fn.changePanelVisibility = function(x,y) {
+	/*param x and y are the coordinates where the panel should be moved to*/
+	$(this).toggleClass("invisible");
 	
-	$(".dropdown li, #mainControls li[data-panelid='lineNumbers'] button").click(function(e){
-		e.stopPropagation();
-		$(this).closest("li[data-panelid]").find("img").toggleClass("invisible");
-	});
+	if(x){
+		$(this).css({"top":x});
+		}
+	if(y){
+		$(this).css({"left":y});
+	}
+
+}
+
+
+
+$.fn.panelActionClick = function() {
+    return this.click(function(){
+			var datapanelid = $(this).attr("data-panelid");
+			
+			if(datapanelid === "linenumbers"){
+				$(".linenumber").toggleClass("invisible");
+			}
+			else{
+			
+				$("#"+datapanelid).changePanelVisibility(150, 100);
+		
+				workspaceResize();
+			}
+			
+			$("*[data-panelid='"+datapanelid+"']").toggleOnOff();
+		});
+	};
 	
-	$(panelActionButton).click(function(e){
-		e.stopPropagation();
-		/* toggle visible of ms panels*/
-		var p = $(this).closest("[data-panelid]").attr("data-panelid");
-		
-		$("#"+p).appendTo("#mssArea");
-		
-		$("#"+p).toggle();
-		
-		$(this).workspaceResize();
-		
-	});
-	
-	/* highlight witness list and witness panels */
-	$(panelActionButton).hover(function(){
+$.fn.panelActionHover = function() {
+    return this.hover(function(){
 		/*mouse enter event*/
 		var p = $(this).attr("data-panelid");
 		$(this).addClass("highlight");
@@ -1224,117 +1185,78 @@ $(document).ready(function(){
 		$(this).removeClass("highlight");
 		$("#"+p).removeClass("highlight");
 		
-	});
+	});	
+};
 	
-	
+$.fn.mssPanel = function() {
+    return this.each(function(){
+		var $that = $(this);
+		$that.click(function(){
+			$(".activePanel").each(function(){
+				$(this).css({"z-index":2}).removeClass("activePanel");
+			});
+			$that.addClass("activePanel");
+		});
+		
+		$that.hover(function(){
+			$that.addClass("highlight");
 
-	$(".panel").hover(function(){
-		$(this).addClass("highlight");
+			var p = $that.attr("id");
+		
+			$(".dropdown li[data-panelid='"+p+"']").addClass("highlight");
+		
+		}, function(){
+			$that.removeClass("highlight");
+			var p = $(this).attr("id");
+			$(".dropdown li[data-panelid='"+p+"']").removeClass("highlight");
+		});
+	});	
+};
 
-		var p = $(this).attr("id");
+$.fn.imgPanel = function() {
+    return this.each(function(){
+		var $that = $(this);
+		$that.click(function(){
+			$(".activePanel").each(function(){
+				$(this).css({"z-index":2}).removeClass("activePanel");
+				$(this).removeClass("activePanel");
+			});
+			$that.addClass("activePanel");
+		});
 		
-		$(".dropdown li[data-panelid='"+p+"']").addClass("highlight");
 		
-	}, function(){
-			
-		
-		$(this).removeClass("highlight");
-		
-		var p = $(this).attr("id");
-		$(".dropdown li[data-panelid='"+p+"']").removeClass("highlight");
-		
-	});
+	});	
+};
 	
-	
-	
-});
-
 
 /********IMAGE PANEL REWRITE wit JQUERY*********/
 
-$(document).ready(function(){
-	
-	
-	
-	$(".imageLink").click(function(e){
-		//var offset = $(this).offset();
-		//alert(e.pageX);
-		//alert(e.pageY);
-		var imgId = $(this).attr("data-img-id");
-		//alert(imgId);
-		
-		$("#"+imgId).css({
-			"position": "absolute",
-			"top": e.pageY,
-			"left": e.pageX,
-		}).toggle();
-		
-	
-	});
-
-});
-   
-$(document).ready(function(){
-	
-	$(".closePanel").click(function(){
-		var w = $(this).closest(".panel").attr("id");
-		
-		$(this).closest(".panel").hide();
-		
-		$(".dropdown li[data-panelid='"+w+"'] img").toggleClass("invisible");
-		
-		$(this).workspaceResize();
-		
-	});
-});  
-   
-   
-$(document).ready(function(){
-	$("li[data-panelid='notesPanel']").click(function(){
-
-		$("#mssArea .noteicon").toggle();
-
-	});
-});
  
-$(document).ready(function(){
-	$("button#toggleLineNumbersButton").click(function(){
-		var content = $(this).html();
-		if (content === "ON"){
-		    $(this).html("OFF");
-		}else{
-		    $(this).html("ON");
-		}
-		$("div.linenumber").toggleClass("notVisible");
-
-	});
-});
-
-
-$(document).ready(function(){
-	$(".imgPanel").hover(function(){
-		var panelId = $(this).attr("id");
-		$(".imageLink[data-img-id='" + panelId + "']").toggleClass("highlight");
-	});
-	
-	$(".imageLink").hover(function(){
-		var panelId = $(this).attr("data-img-id");
-		$(".imgPanel[id='" + panelId + "']").toggleClass("highlight");
-	});
-	
-});
-
-$(document).ready(function(){
-	//this is overwriting some js code in pan-zoom not a good solution
-	$(".panzoom-parent").css("overflow","visible");
-});
-
-$(document).ready(function(){
-	$("<div id='showNote'>test note</div>").appendTo("body");
-	
-	$("div.noteicon, div.choice, div.rdgGrp").hover(function(e){
+$.fn.toggleOnOff = function() {
+	return $(this).each(function(){
+    var b = $(this).find("button");
+		var content = b.html();
 		
+		if (content === "ON"){
+		    b.html("OFF");
+		}
+		if (content === "OFF"){
+		    b.html("ON");
+		}
+		
+		b.toggleClass("buttonPressed");
+		});
+	}
+ 
+/*image panel functionality*/
+
+
+$.fn.hoverPopup = function() {
+	
+	return this.hover(function(e){
+		$("<div id='showNote'>empty note</div>").appendTo("body");
 		var noteContent = $(this).find("div.note, div.corr, span.altRdg").html();
+		
 		$("#showNote").html(noteContent);
 		$("#showNote").css({
 			"position": "absolute",
@@ -1345,26 +1267,20 @@ $(document).ready(function(){
 	}, function(e){
 		$("#showNote").hide();
 	});
-});
-
-
-
-jQuery.fn.make_me_red = function() {
-    return this.each(function() {
-        this.style.color = 'red';
-    });
 };
 
-jQuery.fn.workspaceResize = function(){
+
+function workspaceResize(){
 
             var mssAreaWidth = $('#mssArea').width();
             
             var totalPanelWidth = 0;
             
             $(".panel").each(function(){
-                var display = $(this).css("display");
+				var $panel = $(this);
+                var display = $panel.css("display");
                 if(display !== "none"){
-                    totalPanelWidth += $(this).width();
+                    totalPanelWidth += $panel.width();
                 }
             });
             
@@ -1386,10 +1302,24 @@ jQuery.fn.workspaceResize = function(){
 				}
 			});
 			$("#mssArea").css({"height":panelHeight+100});
-			//var doc = $(document).height();
-			//$("#mssArea").height(doc);
-         
 }
+
+$.fn.switchTopMenu = function(){
+	/*switches the top menu from wide screen view to three-line menu button*/
+	var windowWidth = $(window).width();
+            
+    if( windowWidth < 900){
+          $(".largeScreenTopMenu").hide();
+		  $(".smallScreenDropdown").show();
+		 
+       }
+       else{
+           $(".largeScreenTopMenu").show();
+			$(".smallScreenDropdown").hide();
+           }
+
+}
+
 
 $.fn.match_lines = function() {
 		this.click(function(){
@@ -1407,17 +1337,138 @@ $.fn.match_app = function() {
 		});
 };
 
-$(document).ready(function() {  
-    $(".apparatus").match_app();
-	//$(".head").match_app();
+$.fn.zoomPan = function() {
+		this.each(function(){
+			var imgId = $(this).attr("id");
+			var $section = $("div#" + imgId + ".imgPanel");
+            $section.find('.panzoom').panzoom({
+            $zoomIn: $section.find(".zoom-in"),
+            $zoomOut: $section.find(".zoom-out"),
+            $zoomRange: $section.find(".zoom-range")
+		});
 });
+};
 
+$.fn.imgLink = function() {
+		this.each(function(){
+			$(this).click(function(e){
+				
+				var imgId = $(this).attr("data-img-id");
+				$("#"+imgId).appendTo("#mssArea");
+				
+				$("#"+imgId).css({
+					"position": "absolute",
+					"top": e.pageY,
+					"left": e.pageX
+					}).toggleClass("invisible").addClass("activePanel");
+				
+				
+			});
+			
+			$(this).hover(function(){
+				var panelId = $(this).attr("data-img-id");
+				$(".imgPanel[id='" + panelId + "']").toggleClass("highlight");
+			});
+				
+		});
+		
+};
 
 
 $(document).ready(function() {  
-    $(window).resize(function(){
-        $(this).workspaceResize();
+	/*initial setup */
+	
+	var panelPos = 0;
+	
+	/*initial setup show biblio panel*/
+	if(DISPLAYBIBINFO){
+			$("#bibPanel").changePanelVisibility(0,panelPos);
+			$("nav *[data-panelid='bibPanel']").toggleOnOff();
+			panelPos += $("#bibPanel").width();
+		}
+		
+	/*open the witness/version panels*/
+	
+	$("#witnessList li").each(function(idx){
+		var wit = $(this).attr("data-panelid");
+		/*The INITIALVERSIONS global can be set in settings.xsl*/
+		if(idx < INITIALVERSIONS){
+			$("#"+wit).changePanelVisibility(0,panelPos);
+			$("*[data-panelid='"+wit+"']").toggleOnOff();
+			panelPos += $("#"+wit).width();
+		}	
+	});
+	
+	/*initial setup show critical intro panel*/
+	if(DISPLAYCRITINFO){
+			$("#critPanel").changePanelVisibility(0,panelPos);
+			$("nav *[data-panelid='critPanel']").toggleOnOff();
+			panelPos += $("#critPanel").width();
+		}
+	
+	/*initial setup show notes panel*/
+	if(DISPLAYNOTESPANEL){
+			$("#notesPanel").changePanelVisibility(0,panelPos);
+			$("nav *[data-panelid='notesPanel']").toggleOnOff();
+			panelPos += $("#notesPanel").width();
+		}
+		
+	/*initial setup show notes panel*/
+	if(DISPLAYLINENUMBERS){
+			$(".linenumber").toggleClass("invisible");
+			$("nav *[data-panelid='linenumbers']").toggleOnOff();
+		}
+	
+			
+	/*top menu*/
+	$(window).switchTopMenu();
+	
+	$(window).resize(function(){
+        workspaceResize();
+		$(this).switchTopMenu();
     });
+	
+	
+	workspaceResize();
+	
+	//initialises the dropdown functionality
+	$(".dropdownButton").dropdownButtonClick();
+	
+	$("li[data-panelid]").panelActionClick();
+	$("li[data-panelid!='linenumbers']").panelActionHover();
+	
+	/*create popup for note, choice, etc.*/
+	$("div.noteicon, div.choice, div.rdgGrp").hoverPopup();
+	
+	
+	/*close panel via X sign */
+	$(".closePanel").click(function(){
+		var w = $(this).closest(".panel").attr("id");
+		
+		$(this).closest(".panel").hide();
+		
+		$("*[data-panelid='"+w+"']").toggleOnOff();
+		
+		workspaceResize();
+		
+	});
+	
+	/*adds the match line or apparatus highlighting*/
+	$(".apparatus").match_app();
+
+    $("li[data-panelid='notesPanel']").click(function(){
+
+		$("#mssArea .noteicon").toggle();
+
+	});
+	$(".imgPanel").zoomPan();
+	$(".mssPanel").mssPanel();
+	$(".imgPanel").imgPanel();
+	$(".imageLink").imgLink();
+	
+	
+	
+	
  
 });
 

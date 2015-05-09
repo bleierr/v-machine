@@ -12,52 +12,7 @@
 
    <!-- <xsl:strip-space elements="*" /> -->
    
-   <xsl:variable name="indexPage">../samples.html</xsl:variable>
-   
-   <xsl:variable name="vmLogo">../vm-images/LogoSilver.svg</xsl:variable>
-   
-   <xsl:variable name="menuIcon">../vm-images/menuicon.png</xsl:variable>
-   
-   <xsl:variable name="cssInclude">../src/vmachine.css</xsl:variable>
-   
-   <xsl:variable name="cssJQuery-UI">../src/js/jquery-ui-1.11.3/jquery-ui.min.css</xsl:variable>
-   
-   
-     <!-- The JavaScript include file. Keep in mind that, as of April 1, 2008,
-   the current beta version of Firefox 3.0 has instituted strong JavaScript
-   security policies that prevent the inclusion of any JS files from outside
-   of the current directory when loading a document from the local filesystem
-   (i.e., anything on your local computer not beginning with "http://").
-   Because of this, if you want to use the VM offline, you will need to
-   move the JavaScript includes into the same directory as your TEI documents,
-   and modify the filename below (for example, "../src/vmachine.js" becomes
-   "vmachine.js") -->
-   <xsl:variable name="jsInclude">../src/vmachine.js</xsl:variable>
-   
-   <!-- JQuery include files -->
-   <xsl:variable name="jsJquery">../src/js/jquery-1.11.2.min.js</xsl:variable>
-   <xsl:variable name="jsJquery-UI">../src/js/jquery-ui-1.11.3/jquery-ui.min.js</xsl:variable>
-
-
-   <xsl:variable name="initialVersions">1</xsl:variable>
-   
-   <!-- To change the VM so that the bibliographic information page does not
-   appear at the initial load, change "true" to "false" below -->
-   <xsl:variable name="displayBibInfo">true</xsl:variable>
-   <xsl:variable name="displayCritInfo">true</xsl:variable>
-   
-  <!-- To change the VM so that line numbers are hidden by default, change
-  "true" to "false" below -->
-   <xsl:variable name="displayLineNumbers">true</xsl:variable>
-   
-   <!-- To change the VM's default method of displaying notes, modify the
-   following variable:
-      - popup: Popup footnote icons
-      - inline: Inline note viewer panel
-      - none: Hide notes
-   -->
-   <xsl:variable name="notesFormat">popup</xsl:variable>
-   
+   <xsl:include href="settings.xsl" />
    
    <xsl:variable name="fullTitle">
       <xsl:choose>
@@ -84,12 +39,10 @@
    <xsl:template match="/">
      <html lang="en">
          <xsl:call-template name="htmlHead" />
-        <body> <!--  onload="init();" -->
+        <body> 
             <xsl:call-template name="mainBanner" />
             <xsl:call-template name="manuscriptArea" />
             
-            <!--<xsl:call-template name="imageViewer" />-->
-            <!-- <p>There are <xsl:value-of select="count($witnesses)" /> witnesses.</p> -->
          </body>
       </html>
    </xsl:template>
@@ -98,7 +51,7 @@
       <head>
          <title>
             <xsl:value-of select="$truncatedTitle" />
-            <xsl:text> -- The Versioning Machine 4.0</xsl:text>
+            <xsl:text> -- The Versioning Machine 5.0</xsl:text>
          </title>
          <meta charset="utf-8"/>
          <link rel="stylesheet" type="text/css">
@@ -106,9 +59,7 @@
                <xsl:value-of select="$cssInclude" />
             </xsl:attribute>
          </link>
-         <xsl:comment><![CDATA[[if IE 6]>
-            <link rel="stylesheet" type="text/css" href="../src/vmachine_ie6.css">
-         <![endif]]]></xsl:comment>
+         
          
          <!-- RB: added JQuery and JQuery UI support -->
          <link rel="stylesheet" type="text/css">
@@ -127,6 +78,11 @@
                <xsl:value-of select="$jsJquery-UI" />
             </xsl:attribute>
          </script>
+         <!-- RB: JS and CSS files for the zoom and pan effect -->
+         <!-- RB: jquery.panzoom plugin from https://github.com/timmywil/jquery.panzoom -->
+         <link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link>
+         <script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script>
+         <!-- custom JS file -->
          <script type="text/javascript">
             <xsl:attribute name="src">
                <xsl:value-of select="$jsInclude" />
@@ -134,30 +90,32 @@
          </script>
          <script type="text/javascript">
             <xsl:call-template name="jsWitnessArray" />
+            <xsl:call-template name="jsGlobalSettings" />
             <xsl:call-template name="createTimelinePoints" />
             <xsl:call-template name="createTimelineDurations" />
          </script>
-         <!-- RB: JS and CSS files for the zoom and pan effect -->
-         <!-- RB: jquery.panzoom plugin from https://github.com/timmywil/jquery.panzoom -->
-         <link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link>
-         <script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script>
-         
-         
-         
       </head>
    </xsl:template>
    
    <xsl:template name="jsWitnessArray">
-      var witnesses = new Array();
+      var WITNESSES = new Array();
       <xsl:for-each select="$witnesses">
          <xsl:variable name="witID" select="@xml:id" />
-         witnesses["<xsl:value-of select="$witID" />"] = "<xsl:for-each select="ancestor::tei:listWit[@xml:id]">
+         WITNESSES["<xsl:value-of select="$witID" />"] = "<xsl:for-each select="ancestor::tei:listWit[@xml:id]">
             <xsl:value-of select="@xml:id" />
             <xsl:text>;</xsl:text>
          </xsl:for-each>
          <xsl:value-of select="$witID" />";
       </xsl:for-each>
-      var maxPanels = <xsl:value-of select="$numWitnesses" />;
+   </xsl:template>
+   
+   <xsl:template name="jsGlobalSettings">
+      <!-- The number of version/witness panels to be displayed initially -->
+      var INITIALVERSIONS = <xsl:value-of select="$initialVersions" />;
+      var DISPLAYBIBINFO = <xsl:value-of select="$displayBibInfo"></xsl:value-of>;
+      var DISPLAYCRITINFO = <xsl:value-of select="$displayCritInfo"></xsl:value-of>;
+      var DISPLAYLINENUMBERS = <xsl:value-of select="$displayLineNumbers"></xsl:value-of>;
+      var DISPLAYNOTESPANEL = <xsl:value-of select="$displayNotesPanel"></xsl:value-of>;
    </xsl:template>
    
    <xsl:template name="mainBanner">
@@ -176,20 +134,11 @@
    
    <xsl:template name="headline">
       <div id="headline">
-         <!-- <h1 onclick="toggleBiblio();">
-            <xsl:value-of select="$truncatedTitle" />
-         </h1> -->
+         
          <h1>
             <xsl:value-of select="$truncatedTitle" />
          </h1>
-         <!-- <span class="versionCount">
-            <xsl:text> has </xsl:text>
-            <xsl:value-of select="$numWitnesses" />
-            <xsl:text> version</xsl:text>
-            <xsl:if test="$numWitnesses &gt; 1">
-               <xsl:text>s</xsl:text>
-            </xsl:if>
-         </span> -->
+         
       </div>
    </xsl:template>
    
@@ -349,7 +298,7 @@
                <xsl:text>Notes panel</xsl:text>
             </button>
          </li>
-         <xsl:if test="//tei:notesStmt/tei:note[@type='critIntro']">
+      <xsl:if test="$displayCritInfo">
             <li>
                <xsl:attribute name="data-panelid">critPanel</xsl:attribute>
                <button>
@@ -368,15 +317,12 @@
          <xsl:apply-templates select="/tei:TEI/tei:teiHeader/tei:fileDesc" />
          <xsl:for-each select="$witnesses">
                <xsl:call-template name="manuscriptPanel">
-                  <xsl:with-param name="increment" select="'1'" />
                   <xsl:with-param name="witID" select="@xml:id" />
                </xsl:call-template>
             </xsl:for-each>
          <xsl:call-template name="notesPanel" />
-         <!-- <br class="clear" /> -->
-         <!--  <div id="contentData" style="display:none;">
-         <xsl:call-template name="contentData"></xsl:call-template>
-         </div>-->
+         
+         
          <xsl:for-each select="//tei:facsimile/tei:graphic">
             
             <xsl:call-template name="imageViewer" >
@@ -388,12 +334,12 @@
    </xsl:template>
    
    <xsl:template name="manuscriptPanel">
-      <xsl:param name="increment" />
+      
       <xsl:param name="witID" />
       <!-- RB: added draggable resizeable -->
       <div>
          <xsl:attribute name="class">
-            <xsl:text>panel mssPanel invisible ui-widget-content ui-resizable</xsl:text>
+            <xsl:text>ui-widget-content ui-resizable panel mssPanel invisible</xsl:text>
          </xsl:attribute>
          <xsl:attribute name="id">
             <xsl:value-of select="$witID"></xsl:value-of>
@@ -419,11 +365,7 @@
             
          </div>
       </div>
-      <xsl:if test="$increment &lt; $initialVersions">
-         <xsl:call-template name="manuscriptPanel">
-            <xsl:with-param name="increment" select="$increment + 1" />
-         </xsl:call-template>
-      </xsl:if>
+      
    </xsl:template>
    
    <xsl:template name="audioPlayer">
@@ -493,13 +435,9 @@
    <xsl:template match="/tei:TEI/tei:teiHeader/tei:fileDesc">
       <div id="bibPanel">
          <xsl:attribute name="class">
-            <xsl:text>panel mssPanel invisible ui-widget-content ui-resizable</xsl:text>
+            <xsl:text>ui-widget-content ui-resizable panel mssPanel invisible</xsl:text>
          </xsl:attribute>
-         <xsl:if test="$displayBibInfo != 'true'">
-            <xsl:attribute name="style">
-               <xsl:text>display: none;</xsl:text>
-            </xsl:attribute>
-         </xsl:if>
+         
          
          <div class="panelBanner">
             <img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg" />
@@ -628,13 +566,9 @@
       </div>
       <div id="critPanel">
          <xsl:attribute name="class">
-            <xsl:text>panel mssPanel invisible ui-widget-content ui-resizable</xsl:text>
+            <xsl:text>ui-widget-content ui-resizable panel mssPanel invisible</xsl:text>
          </xsl:attribute>
-        <xsl:if test="$displayCritInfo != 'true' or not(tei:notesStmt/tei:note[@type='critIntro'])">
-               <xsl:attribute name="style">
-                  <xsl:text>display: none;</xsl:text>
-               </xsl:attribute>
-            </xsl:if>
+        
         
         <!-- second image panel ??? -->
             <div class="panelBanner">
@@ -688,13 +622,9 @@
    <xsl:template name="notesPanel">
       <div id="notesPanel">
          <xsl:attribute name="class">
-            <xsl:text>panel mssPanel invisible ui-widget-content ui-resizable</xsl:text>
+            <xsl:text>ui-widget-content ui-resizable panel mssPanel invisible</xsl:text>
          </xsl:attribute>
-         <xsl:if test="$notesFormat != 'inline'">
-            <xsl:attribute name="style">
-               <xsl:text>display: none;</xsl:text>
-            </xsl:attribute>
-         </xsl:if>
+         
          <div class="panelBanner">
             <img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg" />
             Textual Notes
@@ -850,13 +780,8 @@
             
             <div>
                <xsl:attribute name="class">
-                  <xsl:text>linenumber</xsl:text>
+                  <xsl:text>linenumber invisible</xsl:text>
                </xsl:attribute>
-               <xsl:if test="$displayLineNumbers = 'false'">
-                  <xsl:attribute name="style">
-                     <xsl:text>visibility: hidden;</xsl:text>
-                  </xsl:attribute>
-               </xsl:if>
                <xsl:value-of select="@n" />
             </div>
             <xsl:apply-templates>
@@ -916,13 +841,8 @@
             
             <div>
                <xsl:attribute name="class">
-                  <xsl:text>linenumber</xsl:text>
+                  <xsl:text>linenumber invisible</xsl:text>
                </xsl:attribute>
-               <xsl:if test="$displayLineNumbers = 'false'">
-                  <xsl:attribute name="style">
-                     <xsl:text>visibility: hidden;</xsl:text>
-                  </xsl:attribute>
-               </xsl:if>
                <xsl:value-of select="@n" />
             </div>
                   <div>
@@ -1156,11 +1076,6 @@
    
    <xsl:template match="tei:note">
       <div class="noteicon">
-         <xsl:if test="$notesFormat != 'popup'">
-            <xsl:attribute name="style">
-               <xsl:text>display: none;</xsl:text>
-            </xsl:attribute>
-         </xsl:if>
          <xsl:choose>
             <xsl:when test="@type = 'critical'">
                <xsl:text>c</xsl:text>
@@ -1370,12 +1285,6 @@
              
             <!-- RB: jquery.panzoom plugin from https://github.com/timmywil/jquery.panzoom The links to the JS and CSS files are in the facsimile template-->
             
-           <!-- <xsl:variable name="img-container-id">panzoom<xsl:value-of select="$imgId"/></xsl:variable>
-            <xsl:element name="div">
-               <xsl:attribute name="class">section</xsl:attribute>
-               <xsl:attribute name="id"><xsl:value-of select="$img-container-id"/></xsl:attribute>
-               -->
-               
                <div class="panzoom-parent" style="overflow:visible">
             <!-- panzoom image -->
             <div class="panzoom">
@@ -1386,32 +1295,16 @@
                         
                      </img>
                   </div>
-               
-               
-           <!-- </xsl:element>-->
-           
-                  
+                 
                </div><!-- zoom parent end -->
             <!-- zoom control -->
             <div class="buttons">
                <button class="zoom-out">-</button>
                <input type="range" min="0" max="100" class="zoom-range"/>
                <button class="zoom-in">+</button>
-               <!-- <button class="reset">Reset</button> -->
+               
             </div>
             
-            
-            <script  type="text/javascript">
-               (function() {
-               var $section = $(<xsl:text>'div#</xsl:text><xsl:value-of select="$imgId"/><xsl:text>.imgPanel'</xsl:text>);
-               $section.find('.panzoom').panzoom({
-               $zoomIn: $section.find(".zoom-in"),
-               $zoomOut: $section.find(".zoom-out"),
-               $zoomRange: $section.find(".zoom-range")
-              <!-- $reset: $section.find(".reset")-->
-               });
-               })();
-            </script>
             
             
             <!-- End implementation of jquery.panzoom -->
