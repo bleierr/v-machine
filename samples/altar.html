@@ -2,23 +2,25 @@
   SYSTEM "about:legacy-compat">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:util="customfunction" lang="en">
    <head>
-      <title>The Altar -- The Versioning Machine 4.0</title>
+      <title>The Altar -- The Versioning Machine 5.0</title>
       <meta charset="utf-8"></meta>
       <link rel="stylesheet" type="text/css" href="../src/vmachine.css"></link>
-      <!--[if IE 6]>
-            <link rel="stylesheet" type="text/css" href="../src/vmachine_ie6.css">
-         <![endif]-->
-      <link rel="stylesheet" type="text/css" href="../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><script type="text/javascript" src="../src/vmachine.js"></script><script type="text/javascript">
-      var witnesses = new Array();
+      <link rel="stylesheet" type="text/css" href="../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script><script type="text/javascript" src="../src/vmachine.js"></script><script type="text/javascript">
+      var WITNESSES = new Array();
       
-         witnesses["w"] = "w";
+         WITNESSES["w"] = "w";
       
-         witnesses["b"] = "b";
+         WITNESSES["b"] = "b";
       
-         witnesses["p"] = "p";
+         WITNESSES["p"] = "p";
       
-      var maxPanels = 3;
-   var timelinePoints = new Array();var timelineDurations = new Array();</script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script></head>
+      
+      var INITIALVERSIONS = 3;
+      var DISPLAYBIBINFO = true;
+      var DISPLAYCRITINFO = false;
+      var DISPLAYLINENUMBERS = true;
+      var DISPLAYNOTESPANEL = false;
+   var timelinePoints = new Array();var timelineDurations = new Array();</script></head>
    <body>
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/LogoSilver.svg"></img></div>
@@ -27,17 +29,17 @@
          </div>
          <nav id="mainControls">
             <ul>
-               <li><button class="topMenuButton" id="selectWitness">3 Total Versions<img class="invisible" src="../vm-images/arrowup.png" alt=""></img><img src="../vm-images/arrowdown.png" alt=""></img></button><ul id="witnessList" class="dropdown">
+               <li><button class="topMenuButton dropdownButton" id="selectWitness">3 Total Versions<img class="invisible" src="../vm-images/arrowup.png" alt=""></img><img src="../vm-images/arrowdown.png" alt=""></img></button><ul id="witnessList" class="dropdown">
                      <li data-panelid="w">
                         <div class="listText">
                            <p>Williams MS. Jones B62</p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                           <div class="image-container"><button>OFF</button></div>
                         </div>
                      </li>
                      <li data-panelid="b">
                         <div class="listText">
                            <p>Bodleian MS. Tanner 307</p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                           <div class="image-container"><button>OFF</button></div>
                         </div>
                      </li>
                      <li data-panelid="p">
@@ -45,29 +47,50 @@
                            <p>The Temple: Sacred Poems and Private Ejaculations, first edition
                               (Cambridge, 1633)
                            </p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                           <div class="image-container"><button>OFF</button></div>
                         </div>
                      </li>
                   </ul>
                </li>
-               <li data-panelid="lineNumbers" id="toggleLineNumbers">
-                  <div class="listText">
-                     <p>Line numbers:</p>
-                     <div class="image-container"><button class="topMenuButton" id="toggleLineNumbersButton">ON</button></div>
-                  </div>
+               <li class="smallScreenDropdown"><button class="topMenuButton dropdownButton"><img class="invisible menuicon" src="../vm-images/menuicon.png" alt=""></img><img class="menuicon" src="../vm-images/menuicon.png" alt=""></img></button><ul class="dropdown">
+                     <li data-panelid="linenumbers">
+                        <div class="listText">
+                           <p>Line numbers</p>
+                           <div class="image-container"><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="bibPanel">
+                        <div class="listText">
+                           <p>Bibliographic panel</p>
+                           <div class="image-container"><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="notesPanel">
+                        <div class="listText">
+                           <p>Notes panel</p>
+                           <div class="image-container"><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="critPanel">
+                        <div class="listText">
+                           <p>Critical introduction</p>
+                           <div class="image-container"><button>OFF</button></div>
+                        </div>
+                     </li>
+                  </ul>
                </li>
-               <li data-panelid="bibPanel"><button class="topMenuButton" id="biblioInfoButton">
-                     Bibliographic panel
-                     
-                     </button></li>
-               <li data-panelid="notesPanel"><button class="topMenuButton listText" id="toggleNotePanelButton">Notes panel</button></li>
-               <li data-panelid="critPanel"><button class="topMenuButton listText" id="toggleCritPanelButton">Critical introduction</button></li>
+            </ul>
+            <ul class="largeScreenTopMenu">
+               <li data-panelid="linenumbers" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
+               <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
+               <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
+               <li data-panelid="critPanel"><button class="topMenuButton listText" title="Clicking this button triggers the critical introduction panel to appear or disappear.">Critical introduction</button></li>
             </ul>
          </nav>
       </div>
       <div id="mssArea">
-         <div id="bibPanel" class="panel mssPanel draggable resizable ui-widget-content ui-resizable">
-            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
+         <div id="bibPanel" class="ui-widget-content ui-resizable panel mssPanel invisible">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Bibliographic Information
                
             </div>
@@ -177,15 +200,15 @@
                
             </div>
          </div>
-         <div id="critPanel" class="panel mssPanel draggable resizable ui-widget-content ui-resizable" style="display: none;">
-            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
+         <div id="critPanel" class="ui-widget-content ui-resizable panel mssPanel invisible">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Critical Introduction
                
             </div>
             <div class="critContent"></div>
          </div>
-         <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="w">
-            <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness w
+         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="w">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness w
             </div>
             <div class="mssContent">
                
@@ -260,7 +283,7 @@
                   <div class="lg lg-n1 type-stanza" data-line-id="lg1">
                      
                      <div class="line">
-                        <div class="linenumber">1</div>
+                        <div class="linenumber invisible">1</div>
                         
                         <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
                            <div data-witness="w" class="reading w">A broken Altar lord thy servant 
@@ -279,7 +302,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">2</div>
+                        <div class="linenumber invisible">2</div>
                         
                         <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
                            <div data-witness="w" class="reading w">Made of a 
@@ -322,7 +345,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">3</div>
+                        <div class="linenumber invisible">3</div>
                         
                         <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
                            <div data-witness="w" class="reading w">Whose parts are as thy hand did frame</div>
@@ -331,7 +354,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">4</div>
+                        <div class="linenumber invisible">4</div>
                         
                         <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
                            <div data-witness="w" class="reading w">No 
@@ -366,7 +389,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">5</div>
+                        <div class="linenumber invisible">5</div>
                         
                         <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
                            <div data-witness="w" class="reading w">A 
@@ -384,7 +407,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">6</div>
+                        <div class="linenumber invisible">6</div>
                         
                         <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
                            <div data-witness="w" class="reading w">Is such a stone</div>
@@ -393,7 +416,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">7</div>
+                        <div class="linenumber invisible">7</div>
                         
                         <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
                            <div data-witness="w" class="reading w">As nothing but</div>
@@ -402,7 +425,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">8</div>
+                        <div class="linenumber invisible">8</div>
                         
                         <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
                            <div data-witness="w" class="reading w">Thy 
@@ -430,7 +453,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber">9</div>
+                        <div class="linenumber invisible">9</div>
                         
                         <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
                            <div data-witness="w" class="reading w">Wherefore each part</div>
@@ -439,7 +462,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">10</div>
+                        <div class="linenumber invisible">10</div>
                         
                         <div class="apparatus app_2_l_10_1" data-app-id="app_2_l_10_1">
                            <div data-witness="w" class="reading w">
@@ -467,7 +490,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">11</div>
+                        <div class="linenumber invisible">11</div>
                         
                         <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
                            <div data-witness="w" class="reading w">Meets in this frame</div>
@@ -476,7 +499,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">12</div>
+                        <div class="linenumber invisible">12</div>
                         
                         <div class="apparatus app_2_l_12_1" data-app-id="app_2_l_12_1">
                            <div data-witness="w" class="reading w">To 
@@ -496,7 +519,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber">13</div>
+                        <div class="linenumber invisible">13</div>
                         
                         <div class="apparatus app_2_l_13_1" data-app-id="app_2_l_13_1">
                            <div data-witness="w" class="reading w">That If I chance to hold my peace</div>
@@ -505,7 +528,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">14</div>
+                        <div class="linenumber invisible">14</div>
                         
                         <div class="apparatus app_2_l_14_1" data-app-id="app_2_l_14_1">
                            <div data-witness="w" class="reading w">
@@ -541,7 +564,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">15</div>
+                        <div class="linenumber invisible">15</div>
                         
                         <div class="apparatus app_2_l_15_1" data-app-id="app_2_l_15_1">
                            <div data-witness="w" class="reading w">
@@ -598,7 +621,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">16</div>
+                        <div class="linenumber invisible">16</div>
                         
                         <div class="apparatus app_2_l_16_1" data-app-id="app_2_l_16_1">
                            <div data-witness="w" class="reading w">And 
@@ -631,8 +654,8 @@
                
             </div>
          </div>
-         <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="b">
-            <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness b
+         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="b">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness b
             </div>
             <div class="mssContent">
                
@@ -709,7 +732,7 @@
                   <div class="lg lg-n1 type-stanza" data-line-id="lg1">
                      
                      <div class="line">
-                        <div class="linenumber">1</div>
+                        <div class="linenumber invisible">1</div>
                         
                         <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
                            <div data-witness="b" class="reading b">A broken Altar, Lord, thy servant 
@@ -728,7 +751,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">2</div>
+                        <div class="linenumber invisible">2</div>
                         
                         <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
                            <div data-witness="b" class="reading b">Made of a heart, 
@@ -763,7 +786,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">3</div>
+                        <div class="linenumber invisible">3</div>
                         
                         <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
                            <div data-witness="b" class="reading b">Whose parts are, as thy hand did frame;</div>
@@ -772,7 +795,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">4</div>
+                        <div class="linenumber invisible">4</div>
                         
                         <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
                            <div data-witness="b" class="reading b">No 
@@ -807,7 +830,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">5</div>
+                        <div class="linenumber invisible">5</div>
                         
                         <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
                            <div data-witness="b" class="reading b">A heart alone</div>
@@ -816,7 +839,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">6</div>
+                        <div class="linenumber invisible">6</div>
                         
                         <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
                            <div data-witness="b" class="reading b">Is such a stone,</div>
@@ -825,7 +848,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">7</div>
+                        <div class="linenumber invisible">7</div>
                         
                         <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
                            <div data-witness="b" class="reading b">As nothing but</div>
@@ -834,7 +857,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">8</div>
+                        <div class="linenumber invisible">8</div>
                         
                         <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
                            <div data-witness="b" class="reading b">Thy power doth cut.</div>
@@ -845,7 +868,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber">9</div>
+                        <div class="linenumber invisible">9</div>
                         
                         <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
                            <div data-witness="b" class="reading b">
@@ -863,7 +886,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">10</div>
+                        <div class="linenumber invisible">10</div>
                         
                         <div class="apparatus app_2_l_10_1" data-app-id="app_2_l_10_1">
                            <div data-witness="b" class="reading b">Of my hard heart</div>
@@ -872,7 +895,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">11</div>
+                        <div class="linenumber invisible">11</div>
                         
                         <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
                            <div data-witness="b p" class="reading b p">Meets in this frame,</div>
@@ -881,7 +904,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">12</div>
+                        <div class="linenumber invisible">12</div>
                         
                         <div class="apparatus app_2_l_12_1" data-app-id="app_2_l_12_1">
                            <div data-witness="b" class="reading b">To praise thy Name.</div>
@@ -892,7 +915,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber">13</div>
+                        <div class="linenumber invisible">13</div>
                         
                         <div class="apparatus app_2_l_13_1" data-app-id="app_2_l_13_1">
                            <div data-witness="b" class="reading b">That, if I chance to hold my peace,</div>
@@ -901,7 +924,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">14</div>
+                        <div class="linenumber invisible">14</div>
                         
                         <div class="apparatus app_2_l_14_1" data-app-id="app_2_l_14_1">
                            <div data-witness="b" class="reading b">These stones to praise thee may not cease.</div>
@@ -910,7 +933,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">15</div>
+                        <div class="linenumber invisible">15</div>
                         
                         <div class="apparatus app_2_l_15_1" data-app-id="app_2_l_15_1">
                            <div data-witness="b" class="reading b">O 
@@ -928,7 +951,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">16</div>
+                        <div class="linenumber invisible">16</div>
                         
                         <div class="apparatus app_2_l_16_1" data-app-id="app_2_l_16_1">
                            <div data-witness="b" class="reading b">And sanctify this Altar to be thine.</div>
@@ -944,8 +967,8 @@
                
             </div>
          </div>
-         <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="p">
-            <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness p
+         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="p">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness p
             </div>
             <div class="mssContent">
                
@@ -1019,7 +1042,7 @@
                   <div class="lg lg-n1 type-stanza" data-line-id="lg1">
                      
                      <div class="line">
-                        <div class="linenumber">1</div>
+                        <div class="linenumber invisible">1</div>
                         
                         <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
                            <div data-witness="p" class="reading p">A broken A L T A R, Lord, thy 
@@ -1046,7 +1069,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">2</div>
+                        <div class="linenumber invisible">2</div>
                         
                         <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
                            <div data-witness="p" class="reading p">Made of a heart, and cemented with 
@@ -1064,7 +1087,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">3</div>
+                        <div class="linenumber invisible">3</div>
                         
                         <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
                            <div data-witness="p" class="reading p">
@@ -1083,7 +1106,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">4</div>
+                        <div class="linenumber invisible">4</div>
                         
                         <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
                            <div data-witness="p" class="reading p">No 
@@ -1109,7 +1132,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">5</div>
+                        <div class="linenumber invisible">5</div>
                         
                         <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
                            <div data-witness="p" class="reading p">A H E A R T alone</div>
@@ -1118,7 +1141,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">6</div>
+                        <div class="linenumber invisible">6</div>
                         
                         <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
                            <div data-witness="p" class="reading p">Is 
@@ -1144,7 +1167,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">7</div>
+                        <div class="linenumber invisible">7</div>
                         
                         <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
                            <div data-witness="p" class="reading p">As nothing but</div>
@@ -1153,7 +1176,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">8</div>
+                        <div class="linenumber invisible">8</div>
                         
                         <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
                            <div data-witness="p" class="reading p">Thy pow'r doth cut.</div>
@@ -1164,7 +1187,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber">9</div>
+                        <div class="linenumber invisible">9</div>
                         
                         <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
                            <div data-witness="p" class="reading p">Wherefore each part</div>
@@ -1173,7 +1196,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">10</div>
+                        <div class="linenumber invisible">10</div>
                         
                         <div class="apparatus app_2_l_10_1" data-app-id="app_2_l_10_1">
                            <div data-witness="p" class="reading p">Of my hard heart</div>
@@ -1182,7 +1205,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">11</div>
+                        <div class="linenumber invisible">11</div>
                         
                         <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
                            <div data-witness="b p" class="reading b p">Meets in this frame,</div>
@@ -1191,7 +1214,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">12</div>
+                        <div class="linenumber invisible">12</div>
                         
                         <div class="apparatus app_2_l_12_1" data-app-id="app_2_l_12_1">
                            <div data-witness="p" class="reading p">To 
@@ -1211,7 +1234,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber">13</div>
+                        <div class="linenumber invisible">13</div>
                         
                         <div class="apparatus app_2_l_13_1" data-app-id="app_2_l_13_1">
                            <div data-witness="p" class="reading p">That if I chance to hold my peace,</div>
@@ -1220,7 +1243,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">14</div>
+                        <div class="linenumber invisible">14</div>
                         
                         <div class="apparatus app_2_l_14_1" data-app-id="app_2_l_14_1">
                            <div data-witness="p" class="reading p">
@@ -1264,7 +1287,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">15</div>
+                        <div class="linenumber invisible">15</div>
                         
                         <div class="apparatus app_2_l_15_1" data-app-id="app_2_l_15_1">
                            <div data-witness="p" class="reading p">O let thy 
@@ -1283,7 +1306,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber">16</div>
+                        <div class="linenumber invisible">16</div>
                         
                         <div class="apparatus app_2_l_16_1" data-app-id="app_2_l_16_1">
                            <div data-witness="p" class="reading p">And 
@@ -1308,8 +1331,8 @@
                
             </div>
          </div>
-         <div id="notesPanel" class="panel mssPanel draggable resizable ui-widget-content ui-resizable" style="display: none;">
-            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
+         <div id="notesPanel" class="ui-widget-content ui-resizable panel mssPanel invisible">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Textual Notes
                
             </div>
@@ -1352,42 +1375,42 @@
                more decidedly Protestant assertion.
             </div>
             <div class="noteContent">
-               <div class="position" onclick="matchLine('lined1e379');">Line number 1</div><strong>Note: </strong><span class="hi rend-italic">reares</span>: brings into existence by constructing (<span class="hi rend-italic">OED</span> 9), a meaning at odds with <span class="hi rend-italic">broken</span> only if it is assumed that the speaker could have anything
+               <div class="position" onclick="matchLine('lined2e379');">Line number 1</div><strong>Note: </strong><span class="hi rend-italic">reares</span>: brings into existence by constructing (<span class="hi rend-italic">OED</span> 9), a meaning at odds with <span class="hi rend-italic">broken</span> only if it is assumed that the speaker could have anything
                more to offer than a broken heart. The word also connotes raising the dead
                (<span class="hi rend-italic">OED</span> 3.a), by extension the Resurrection, itself a
                triumph in which the broken body of Christ is raised to be a glorified
                body.
             </div>
             <div class="noteContent">
-               <div class="position" onclick="matchLine('lined1e572');">Line number 3</div><strong>Note: </strong><span class="hi rend-italic">frame</span>: prepare, as a carpenter, for use in
+               <div class="position" onclick="matchLine('lined2e572');">Line number 3</div><strong>Note: </strong><span class="hi rend-italic">frame</span>: prepare, as a carpenter, for use in
                building (<span class="hi rend-italic">OED</span> 4). Jesus was a carpenter (Mark 6:3)
                and is "a son over his own house; whose house are we," for "he that built
                all things is God" (Hebrews 3:4-6).
             </div>
             <div class="noteContent">
-               <div class="position" onclick="matchLine('lined1e731');">Line number 5</div><strong>Note: </strong><span class="hi rend-italic">alone</span>: only.
+               <div class="position" onclick="matchLine('lined2e731');">Line number 5</div><strong>Note: </strong><span class="hi rend-italic">alone</span>: only.
             </div>
             <div class="noteContent">
-               <div class="position" onclick="matchLine('lined1e821');">Line number 8</div><strong>Note: </strong><span class="hi rend-italic">Lines 5-8</span>: "Only a heart is so hard as that God's
+               <div class="position" onclick="matchLine('lined2e821');">Line number 8</div><strong>Note: </strong><span class="hi rend-italic">Lines 5-8</span>: "Only a heart is so hard as that God's
                power alone is able to penetrate it."
             </div>
             <div class="noteContent">
-               <div class="position" onclick="matchLine('lined1e933');">Line number 11</div><strong>Note: </strong><span class="hi rend-italic">frame</span>: i.e., the poem; the stone altar of
+               <div class="position" onclick="matchLine('lined2e933');">Line number 11</div><strong>Note: </strong><span class="hi rend-italic">frame</span>: i.e., the poem; the stone altar of
                sacrifice; the speaker's body which houses his <span class="hi rend-italic">hart/heart</span>—"My body is the frame wherein 'tis held"
                (Shakespeare, Sonnet 24, line 3)— and is "the temple of God" (1
                Corinthians 3:16).
             </div>
             <div class="noteContent">
-               <div class="position" onclick="matchLine('lined1e1008');">Line number 14</div><strong>Note: </strong><span class="hi rend-italic">Lines 13-14</span>: "And some of the Pharisees from among
+               <div class="position" onclick="matchLine('lined2e1008');">Line number 14</div><strong>Note: </strong><span class="hi rend-italic">Lines 13-14</span>: "And some of the Pharisees from among
                the multitude said unto him, Master, rebuke thy disciples. And he answered
                and said unto them, I tell you that, if these should hold their peace, the
                stones would immediately cry out" (Luke 19:39-40).
             </div>
             <div class="noteContent">
-               <div class="position" onclick="matchLine('lined1e1112');">Line number 15</div><strong>Note: </strong>See headnote for the significance of the #w emendation.
+               <div class="position" onclick="matchLine('lined2e1112');">Line number 15</div><strong>Note: </strong>See headnote for the significance of the #w emendation.
             </div>
             <div class="noteContent">
-               <div class="position" onclick="matchLine('lined1e1226');">Line number 16</div><strong>Note: </strong><span class="hi rend-italic">Lines 15-16</span>: For the multiple significations of
+               <div class="position" onclick="matchLine('lined2e1226');">Line number 16</div><strong>Note: </strong><span class="hi rend-italic">Lines 15-16</span>: For the multiple significations of
                <span class="hi rend-italic">Altar/ALTAR</span>, see headnote and the note for line
                11. Though the placement of <span class="hi rend-italic">SACRIFICE</span> over <span class="hi rend-italic">ALTAR</span> in #p is fortuitous and perhaps deliberate (as
                is the "broken" spacing of the words in these as well as lines 1 and 5), the

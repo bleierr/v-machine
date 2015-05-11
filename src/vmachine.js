@@ -1162,9 +1162,13 @@ $.fn.panelActionClick = function() {
 				$(".linenumber").toggleClass("invisible");
 			}
 			else{
-			
-				$("#"+datapanelid).changePanelVisibility(150, 100);
-		
+					
+				$("#"+datapanelid).each(function(e){
+					var y = e.pageY;
+					var x = e.pageX;
+					$(this).changePanelVisibility(x, y);
+				});		
+					
 				workspaceResize();
 			}
 			
@@ -1445,7 +1449,7 @@ $(document).ready(function() {
 	$(".closePanel").click(function(){
 		var w = $(this).closest(".panel").attr("id");
 		
-		$(this).closest(".panel").hide();
+		$(this).closest(".panel").addClass("invisible");
 		
 		$("*[data-panelid='"+w+"']").toggleOnOff();
 		

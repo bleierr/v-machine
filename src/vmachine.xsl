@@ -253,7 +253,7 @@
          </div>
       </li>
       
-      <xsl:if test="//tei:notesStmt/tei:note[@type='critIntro']">
+      <xsl:if test="$displayCritInfo">
          <li>
             <xsl:attribute name="data-panelid">critPanel</xsl:attribute>
             <div>

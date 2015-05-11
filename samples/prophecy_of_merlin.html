@@ -2,23 +2,25 @@
   SYSTEM "about:legacy-compat">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:util="customfunction" lang="en">
    <head>
-      <title>Prophecy of Merlin -- The Versioning Machine 4.0</title>
+      <title>Prophecy of Merlin -- The Versioning Machine 5.0</title>
       <meta charset="utf-8"></meta>
       <link rel="stylesheet" type="text/css" href="../src/vmachine.css"></link>
-      <!--[if IE 6]>
-            <link rel="stylesheet" type="text/css" href="../src/vmachine_ie6.css">
-         <![endif]-->
-      <link rel="stylesheet" type="text/css" href="../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><script type="text/javascript" src="../src/vmachine.js"></script><script type="text/javascript">
-      var witnesses = new Array();
+      <link rel="stylesheet" type="text/css" href="../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script><script type="text/javascript" src="../src/vmachine.js"></script><script type="text/javascript">
+      var WITNESSES = new Array();
       
-         witnesses["dublin"] = "dublin";
+         WITNESSES["dublin"] = "dublin";
       
-         witnesses["oxford"] = "oxford";
+         WITNESSES["oxford"] = "oxford";
       
-         witnesses["cambridge"] = "cambridge";
+         WITNESSES["cambridge"] = "cambridge";
       
-      var maxPanels = 3;
-   var timelinePoints = new Array();var timelineDurations = new Array();</script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script></head>
+      
+      var INITIALVERSIONS = 3;
+      var DISPLAYBIBINFO = true;
+      var DISPLAYCRITINFO = false;
+      var DISPLAYLINENUMBERS = true;
+      var DISPLAYNOTESPANEL = false;
+   var timelinePoints = new Array();var timelineDurations = new Array();</script></head>
    <body>
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/LogoSilver.svg"></img></div>
@@ -27,45 +29,66 @@
          </div>
          <nav id="mainControls">
             <ul>
-               <li><button class="topMenuButton" id="selectWitness">3 Total Versions<img class="invisible" src="../vm-images/arrowup.png" alt=""></img><img src="../vm-images/arrowdown.png" alt=""></img></button><ul id="witnessList" class="dropdown">
+               <li><button class="topMenuButton dropdownButton" id="selectWitness">3 Total Versions<img class="invisible" src="../vm-images/arrowup.png" alt=""></img><img src="../vm-images/arrowdown.png" alt=""></img></button><ul id="witnessList" class="dropdown">
                      <li data-panelid="dublin">
                         <div class="listText">
                            <p>The Prophecy of Merlin</p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                           <div class="image-container"><button>OFF</button></div>
                         </div>
                      </li>
                      <li data-panelid="oxford">
                         <div class="listText">
                            <p>The Prophecy of Merlin</p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                           <div class="image-container"><button>OFF</button></div>
                         </div>
                      </li>
                      <li data-panelid="cambridge">
                         <div class="listText">
                            <p>The Prophecy of Merlin</p>
-                           <div class="image-container"><img class="invisible" src="../vm-images/symbol-visible.png" alt=""></img><img src="../vm-images/symbol-not-visible.png" alt=""></img></div>
+                           <div class="image-container"><button>OFF</button></div>
                         </div>
                      </li>
                   </ul>
                </li>
-               <li data-panelid="lineNumbers" id="toggleLineNumbers">
-                  <div class="listText">
-                     <p>Line numbers:</p>
-                     <div class="image-container"><button class="topMenuButton" id="toggleLineNumbersButton">ON</button></div>
-                  </div>
+               <li class="smallScreenDropdown"><button class="topMenuButton dropdownButton"><img class="invisible menuicon" src="../vm-images/menuicon.png" alt=""></img><img class="menuicon" src="../vm-images/menuicon.png" alt=""></img></button><ul class="dropdown">
+                     <li data-panelid="linenumbers">
+                        <div class="listText">
+                           <p>Line numbers</p>
+                           <div class="image-container"><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="bibPanel">
+                        <div class="listText">
+                           <p>Bibliographic panel</p>
+                           <div class="image-container"><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="notesPanel">
+                        <div class="listText">
+                           <p>Notes panel</p>
+                           <div class="image-container"><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="critPanel">
+                        <div class="listText">
+                           <p>Critical introduction</p>
+                           <div class="image-container"><button>OFF</button></div>
+                        </div>
+                     </li>
+                  </ul>
                </li>
-               <li data-panelid="bibPanel"><button class="topMenuButton" id="biblioInfoButton">
-                     Bibliographic panel
-                     
-                     </button></li>
-               <li data-panelid="notesPanel"><button class="topMenuButton listText" id="toggleNotePanelButton">Notes panel</button></li>
-               <li data-panelid="critPanel"><button class="topMenuButton listText" id="toggleCritPanelButton">Critical introduction</button></li>
+            </ul>
+            <ul class="largeScreenTopMenu">
+               <li data-panelid="linenumbers" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
+               <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
+               <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
+               <li data-panelid="critPanel"><button class="topMenuButton listText" title="Clicking this button triggers the critical introduction panel to appear or disappear.">Critical introduction</button></li>
             </ul>
          </nav>
       </div>
       <div id="mssArea">
-         <div id="bibPanel" class="panel mssPanel draggable resizable ui-widget-content ui-resizable">
-            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
+         <div id="bibPanel" class="ui-widget-content ui-resizable panel mssPanel invisible">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Bibliographic Information
                
             </div>
@@ -132,15 +155,15 @@
                		
             </div>
          </div>
-         <div id="critPanel" class="panel mssPanel draggable resizable ui-widget-content ui-resizable" style="display: none;">
-            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
+         <div id="critPanel" class="ui-widget-content ui-resizable panel mssPanel invisible">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Critical Introduction
                
             </div>
             <div class="critContent"></div>
          </div>
-         <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="dublin">
-            <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness dublin
+         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="dublin">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness dublin
             </div>
             <div class="mssContent">
                			
@@ -158,7 +181,7 @@
                   				
                   				
                   <div class="line">
-                     <div class="linenumber">2</div>
+                     <div class="linenumber invisible">2</div>
                      					
                      <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
                         <div data-witness="dublin" class="reading dublin">When lordes wille is londes law, 
@@ -174,7 +197,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber">3</div>
+                     <div class="linenumber invisible">3</div>
                      					
                      <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
                         <div data-witness="dublin" class="reading dublin">Prestes wylle trechery, and gyle hold soth saw,
@@ -190,7 +213,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber">4</div>
+                     <div class="linenumber invisible">4</div>
                      					
                      <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
                         <div data-witness="dublin" class="reading dublin">Lechery callyd pryvé solace,
@@ -206,7 +229,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber">5</div>
+                     <div class="linenumber invisible">5</div>
                      					
                      <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
                         <div data-witness="dublin" class="reading dublin">And robbery is hold no trespace - 
@@ -224,7 +247,7 @@
                   				
                   				
                   <div class="line">
-                     <div class="linenumber">8</div>
+                     <div class="linenumber invisible">8</div>
                      					
                      <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
                         <div data-witness="dublin" class="reading dublin">Then schal the lond of Albyon torne into confusioun! 
@@ -245,7 +268,7 @@
                   				
                   				
                   <div class="line">
-                     <div class="linenumber">9</div>
+                     <div class="linenumber invisible">9</div>
                      					
                      <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
                         <div data-witness="dublin" class="reading dublin">A M CCCC lx and on, few lordes or ellys noone. 
@@ -275,8 +298,8 @@
                		
             </div>
          </div>
-         <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="oxford">
-            <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness oxford
+         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="oxford">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness oxford
             </div>
             <div class="mssContent">
                			
@@ -294,7 +317,7 @@
                   				
                   				
                   <div class="line">
-                     <div class="linenumber">2</div>
+                     <div class="linenumber invisible">2</div>
                      					
                      <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
                         <div data-witness="oxford" class="reading oxford">Whane lordis wol leefe theire olde lawes,
@@ -316,7 +339,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber">3</div>
+                     <div class="linenumber invisible">3</div>
                      					
                      <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
                         <div data-witness="oxford" class="reading oxford">And preestis beon varyinge in theire sawes, 
@@ -337,7 +360,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber">4</div>
+                     <div class="linenumber invisible">4</div>
                      					
                      <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
                         <div data-witness="oxford" class="reading oxford">And leccherie is holden solace, 
@@ -353,7 +376,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber">5</div>
+                     <div class="linenumber invisible">5</div>
                      					
                      <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
                         <div data-witness="oxford" class="reading oxford">And oppressyon for truwe purchace; </div>
@@ -362,7 +385,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber">6</div>
+                     <div class="linenumber invisible">6</div>
                      					
                      <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
                         <div data-witness="oxford" class="reading oxford">And whan the moon is on David stall, 
@@ -388,7 +411,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber">7</div>
+                     <div class="linenumber invisible">7</div>
                      					
                      <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
                         <div data-witness="oxford" class="reading oxford">And the kynge passe Arthures hall, 
@@ -404,7 +427,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber">8</div>
+                     <div class="linenumber invisible">8</div>
                      					
                      <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
                         <div data-witness="oxford" class="reading oxford">Than is the lande of Albyoun 
@@ -435,8 +458,8 @@
                		
             </div>
          </div>
-         <div class="panel mssPanel draggable resizable ui-widget-content ui-resizable" id="cambridge">
-            <div class="panelBanner"><img class="closePanel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness cambridge
+         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="cambridge">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness cambridge
             </div>
             <div class="mssContent">
                			
@@ -453,7 +476,7 @@
                <div class="lg lg-n1" data-line-id="lg1">
                   				
                   <div class="line">
-                     <div class="linenumber">1</div>
+                     <div class="linenumber invisible">1</div>
                      					
                      <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
                         <div data-witness="cambridge" class="reading cambridge">When feythe fayleth in prestys sawys, 
@@ -492,7 +515,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber">2</div>
+                     <div class="linenumber invisible">2</div>
                      					
                      <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
                         <div data-witness="cambridge" class="reading cambridge">And lordys wyll be londys lawys,
@@ -509,7 +532,7 @@
                   				
                   				
                   <div class="line">
-                     <div class="linenumber">4</div>
+                     <div class="linenumber invisible">4</div>
                      					
                      <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
                         <div data-witness="cambridge" class="reading cambridge">And lechery is prevy solas,
@@ -525,7 +548,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber">5</div>
+                     <div class="linenumber invisible">5</div>
                      					
                      <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
                         <div data-witness="cambridge" class="reading cambridge">And robbery ys goode purchas:
@@ -548,7 +571,7 @@
                   				
                   				
                   <div class="line">
-                     <div class="linenumber">8</div>
+                     <div class="linenumber invisible">8</div>
                      					
                      <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
                         <div data-witness="cambridge" class="reading cambridge">Than shall the londe of Albeon 
@@ -572,18 +595,18 @@
                		
             </div>
          </div>
-         <div id="notesPanel" class="panel mssPanel draggable resizable ui-widget-content ui-resizable" style="display: none;">
-            <div class="panelBanner"><img class="closePanel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
+         <div id="notesPanel" class="ui-widget-content ui-resizable panel mssPanel invisible">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Textual Notes
                
             </div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined1e116');">Line number 1</div><strong>Gloss note: </strong>With sharpened swords, and men ready to terrorize
+               <div class="position" onclick="matchLine('lined2e116');">Line number 1</div><strong>Gloss note: </strong>With sharpened swords, and men ready to terrorize
             </div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined1e116');">Line number 1</div><strong>Critical note: </strong>
+               <div class="position" onclick="matchLine('lined2e116');">Line number 1</div><strong>Critical note: </strong>
                								
                <p>sayings; When feythe fayleth. Versions of this lyric - identified
                   									as "Chaucer's Proverbs" - were regularly printed in earlier
@@ -606,75 +629,75 @@
             </div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined1e190');">Line number 2</div><strong>Gloss note: </strong>the
+               <div class="position" onclick="matchLine('lined2e190');">Line number 2</div><strong>Gloss note: </strong>the
                								law of the land
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined1e190');">Line number 2</div><strong>Gloss note: </strong>abandon
+               <div class="position" onclick="matchLine('lined2e190');">Line number 2</div><strong>Gloss note: </strong>abandon
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined1e190');">Line number 2</div><strong>Critical note: </strong> leefe. So Skeat
+               <div class="position" onclick="matchLine('lined2e190');">Line number 2</div><strong>Critical note: </strong> leefe. So Skeat
                								and Gray. Robbins, Index and Supplement, § 3986 transcribes
                								leefe as leese. The MS can sustain either reading.
             </div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined1e190');">Line number 2</div><strong>Gloss note: </strong>law
+               <div class="position" onclick="matchLine('lined2e190');">Line number 2</div><strong>Gloss note: </strong>law
                								of the land 
             </div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined1e217');">Line number 3</div><strong>Critical note: </strong>Priests intend treachery, and guile turns into
+               <div class="position" onclick="matchLine('lined2e217');">Line number 3</div><strong>Critical note: </strong>Priests intend treachery, and guile turns into
                								figures of speech 
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined1e217');">Line number 3</div><strong>Gloss note: </strong>teachings;
+               <div class="position" onclick="matchLine('lined2e217');">Line number 3</div><strong>Gloss note: </strong>teachings;
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined1e217');">Line number 3</div><strong>Critical note: </strong>beon. So MS;
+               <div class="position" onclick="matchLine('lined2e217');">Line number 3</div><strong>Critical note: </strong>beon. So MS;
                								Skeat, Gray been.
             </div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined1e238');">Line number 4</div><strong>Gloss note: </strong>is called
+               <div class="position" onclick="matchLine('lined2e238');">Line number 4</div><strong>Gloss note: </strong>is called
                								secret pleasure 
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined1e238');">Line number 4</div><strong>Gloss note: </strong>lechery
+               <div class="position" onclick="matchLine('lined2e238');">Line number 4</div><strong>Gloss note: </strong>lechery
                								is considered to be 
             </div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined1e238');">Line number 4</div><strong>Gloss note: </strong>secret
+               <div class="position" onclick="matchLine('lined2e238');">Line number 4</div><strong>Gloss note: </strong>secret
                								comfort 
             </div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined1e262');">Line number 5</div><strong>Gloss note: </strong>held
+               <div class="position" onclick="matchLine('lined2e262');">Line number 5</div><strong>Gloss note: </strong>held
                								to be no crime 
             </div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined1e262');">Line number 5</div><strong>Gloss note: </strong>booty  
+               <div class="position" onclick="matchLine('lined2e262');">Line number 5</div><strong>Gloss note: </strong>booty  
             </div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined1e262');">Line number 5</div><strong>Note: </strong>purchas. Skeat glosses purchas as "bargain." It is
+               <div class="position" onclick="matchLine('lined2e262');">Line number 5</div><strong>Note: </strong>purchas. Skeat glosses purchas as "bargain." It is
                								that which is acquired.
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined1e287');">Line number 6</div><strong>Gloss note: </strong>
+               <div class="position" onclick="matchLine('lined2e287');">Line number 6</div><strong>Gloss note: </strong>
                								David's stable 
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined1e287');">Line number 6</div><strong>Note: </strong>David stall. David's stable, a reference to
+               <div class="position" onclick="matchLine('lined2e287');">Line number 6</div><strong>Note: </strong>David stall. David's stable, a reference to
                								Christ's birth in Bethlehem (city of David). Of the apocalyptic
                								element in this poem Gray comments: "On the more intellectual
                								prophetic tradition, reflected in the Joachimite dream of a
@@ -683,12 +706,12 @@
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined1e302');">Line number 7</div><strong>Gloss note: </strong>
+               <div class="position" onclick="matchLine('lined2e302');">Line number 7</div><strong>Gloss note: </strong>
                								by-passes 
             </div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined1e314');">Line number 8</div><strong>Critical note: </strong>Albyon. The legendary, antique name for Britain, as
+               <div class="position" onclick="matchLine('lined2e314');">Line number 8</div><strong>Critical note: </strong>Albyon. The legendary, antique name for Britain, as
                								in Geoffrey of Monmouth's History of the Kings of Britain. The fool
                								in King Lear quotes this or a related poem when he says: "Then shall
                								the realm of Albion / Come to great confusion" (III.ii.85-86).
@@ -696,25 +719,25 @@
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined1e314');">Line number 8</div><strong>Gloss note: </strong>Near;
+               <div class="position" onclick="matchLine('lined2e314');">Line number 8</div><strong>Gloss note: </strong>Near;
                							its
             </div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined1e314');">Line number 8</div><strong>Critical note: </strong>Than is
+               <div class="position" onclick="matchLine('lined2e314');">Line number 8</div><strong>Critical note: </strong>Than is
                								the. Skeat's correction of MS Þat is is.
             </div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined1e314');">Line number 8</div><strong>Note: </strong>Britain 
+               <div class="position" onclick="matchLine('lined2e314');">Line number 8</div><strong>Note: </strong>Britain 
             </div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined1e345');">Line number 9</div><strong>Gloss note: </strong>In 1461 [there are]; 
+               <div class="position" onclick="matchLine('lined2e345');">Line number 9</div><strong>Gloss note: </strong>In 1461 [there are]; 
             </div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined1e345');">Line number 9</div><strong>Critical note: </strong>A M
+               <div class="position" onclick="matchLine('lined2e345');">Line number 9</div><strong>Critical note: </strong>A M
                								CCCC lx and on. RHR does not print this part of the poem, nor does
                								he include the material I have here numbered 7-10 as if it were
                								subjoined to the above six lines. The lyrics are separate poems, yet
