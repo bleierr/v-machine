@@ -1333,11 +1333,31 @@ $.fn.match_lines = function() {
 		});
 };
 
+
+$.fn.audio_match = function() {
+		/**app to add **/
+		this.click(function(){
+			if($(this).hasClass("match_hi")){
+				var timeStart = $(this).attr("data-timeline-start");
+				var timeInterval = $(this).attr("data-timeline-interval");
+				
+				$(this).closest(".mssPanel").find("audio").each(function(){
+					var $audio = $(this);
+					$audio.prop("currentTime",timeStart);
+					$audio.trigger('play');
+					setTimeout(function(){$audio.trigger('pause')}, 1000 * timeInterval);
+					
+				});
+			}
+		});
+};
+
 $.fn.match_app = function() {
 		this.click(function(){
 			var app = $(this).attr("data-app-id");
 			//add or remove attr match_hi
 			$("."+app).toggleClass("match_hi");
+			
 		});
 };
 
@@ -1352,6 +1372,8 @@ $.fn.zoomPan = function() {
 		});
 });
 };
+
+
 
 $.fn.imgLink = function() {
 		this.each(function(){
@@ -1459,6 +1481,7 @@ $(document).ready(function() {
 	
 	/*adds the match line or apparatus highlighting*/
 	$(".apparatus").match_app();
+	$(".apparatus").audio_match();
 
     $("li[data-panelid='notesPanel']").click(function(){
 

@@ -378,7 +378,7 @@
             <xsl:attribute name="class">audioPlayer <xsl:value-of select="translate(@wit, '#', '')" /></xsl:attribute>
             <xsl:attribute name="data-witness"><xsl:value-of select="translate(@wit, '#', '')" /></xsl:attribute>
             <!--<audio controls="controls">-->
-            <audio controls="controls">
+            <audio controls="controls" preload="none">
             <!--foreach source-->
             <xsl:for-each select="//tei:witDetail[@target = concat('#',$witID) and tei:media[@url]]/tei:media">
                
@@ -1174,6 +1174,17 @@
                <xsl:attribute name="data-app-id">
                   <xsl:value-of select="$uniqueID"></xsl:value-of>
                </xsl:attribute>
+               <xsl:if test="tei:timeline[@unit='s']">
+                  <xsl:attribute name="data-timeline-start">
+                     <!--  sum(/*/Dev/Salary[number(.) = number(.)])-->
+                     
+                     <xsl:value-of select="sum(preceding::tei:rdg[contains(@wit, $refID)]/tei:timeline/tei:when/@interval)" />
+                  </xsl:attribute>
+                  
+                  <xsl:attribute name="data-timeline-interval">
+                     <xsl:value-of select="tei:timeline/tei:when/@interval" />
+                  </xsl:attribute>
+               </xsl:if>
                
                
                      <xsl:choose>
