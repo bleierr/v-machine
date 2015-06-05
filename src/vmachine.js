@@ -1,3 +1,7 @@
+var visiblePanels = {};
+
+
+
 
 $.fn.dropdownButtonClick = function() {
     return this.click(function(e){
@@ -29,16 +33,23 @@ $.fn.dropdownButtonClick = function() {
 $.fn.changePanelVisibility = function(x,y) {
 	/*param x and y are the coordinates where the panel should be moved to*/
 	$(this).toggleClass("invisible");
+	/*
+	console.log("changePanelVisibility plugin:");
+	console.log("param x: " + x);
+	console.log("param x: " + !isNaN(x));
+	console.log("param y: " + y);
+	console.log("param x: " + !isNaN(y));
+	*/
+	if(!(x===undefined || y===undefined)){
 	
-	if(x){
-		$(this).css({"top":x});
+		if(!isNaN(x) || x.substr(-2) === "em"){
+			$(this).css({"top":x});
+			}
+		if(!isNaN(y) || y.substr(-2) === "em"){
+			$(this).css({"left":y});
 		}
-	if(y){
-		$(this).css({"left":y});
 	}
-
 }
-
 
 
 $.fn.panelActionClick = function() {
@@ -54,6 +65,8 @@ $.fn.panelActionClick = function() {
 					var y = e.pageY;
 					var x = e.pageX;
 					$(this).changePanelVisibility(x, y);
+					$(this).appendTo("#mssArea");
+					
 				});		
 					
 				workspaceResize();
@@ -82,16 +95,17 @@ $.fn.panelActionHover = function() {
 $.fn.mssPanel = function() {
     return this.each(function(){
 		var $that = $(this);
-		$that.click(function(){
+		$that.mousedown(function(){
 			$(".activePanel").each(function(){
 				$(this).css({"z-index":2}).removeClass("activePanel");
 			});
-			$that.addClass("activePanel");
+			
+			$that.addClass("activePanel").css({"z-index":5});
+			$that.appendTo("#mssArea");
 		});
 		
 		$that.hover(function(){
 			$that.addClass("highlight");
-
 			var p = $that.attr("id");
 		
 			$(".dropdown li[data-panelid='"+p+"']").addClass("highlight");
@@ -107,12 +121,12 @@ $.fn.mssPanel = function() {
 $.fn.imgPanel = function() {
     return this.each(function(){
 		var $that = $(this);
-		$that.click(function(){
+		$that.mousedown(function(){
 			$(".activePanel").each(function(){
 				$(this).css({"z-index":2}).removeClass("activePanel");
-				$(this).removeClass("activePanel");
 			});
-			$that.addClass("activePanel");
+			$that.addClass("activePanel").css({"z-index":5});
+			$that.appendTo("#mssArea");
 		});
 		
 		
@@ -272,7 +286,8 @@ $.fn.imgLink = function() {
 				$("#"+imgId).css({
 					"position": "absolute",
 					"top": e.pageY,
-					"left": e.pageX
+					"left": e.pageX,
+					"z-index": "5"
 					}).toggleClass("invisible").addClass("activePanel");
 				
 				
@@ -293,10 +308,13 @@ $(document).ready(function() {
 
 	var panelPos = 0;
 	
+	var bannerHeight = "8em";
+	
 	/*initial setup show biblio panel*/
 	console.log("Show bibliographic panel: " + DISPLAYBIBINFO);
+	
 	if(DISPLAYBIBINFO){
-			$("#bibPanel").changePanelVisibility(0,panelPos);
+			$("#bibPanel").changePanelVisibility(bannerHeight,panelPos);
 			$("nav *[data-panelid='bibPanel']").toggleOnOff();
 			panelPos += $("#bibPanel").width();
 		}
@@ -305,24 +323,27 @@ $(document).ready(function() {
 	
 	$("#witnessList li").each(function(idx){
 		var wit = $(this).attr("data-panelid");
+		
 		/*The INITIALVERSIONS global can be set in settings.xsl*/
 		if(idx < INITIALVERSIONS){
-			$("#"+wit).changePanelVisibility(0,panelPos);
+			$("#"+wit).changePanelVisibility(bannerHeight,panelPos);
 			$("*[data-panelid='"+wit+"']").toggleOnOff();
 			panelPos += $("#"+wit).width();
 		}	
 	});
 	
 	/*initial setup show critical intro panel*/
+	
 	if(DISPLAYCRITINFO){
-			$("#critPanel").changePanelVisibility(0,panelPos);
+			$("#critPanel").changePanelVisibility(bannerHeight,panelPos);
 			$("nav *[data-panelid='critPanel']").toggleOnOff();
 			panelPos += $("#critPanel").width();
 		}
 	
 	/*initial setup show notes panel*/
+	
 	if(DISPLAYNOTESPANEL){
-			$("#notesPanel").changePanelVisibility(0,panelPos);
+			$("#notesPanel").changePanelVisibility(bannerHeight,panelPos);
 			$("nav *[data-panelid='notesPanel']").toggleOnOff();
 			panelPos += $("#notesPanel").width();
 		}
