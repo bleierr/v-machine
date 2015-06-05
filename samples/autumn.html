@@ -5,7 +5,7 @@
       <title>Autumn, 1922 -- The Versioning Machine 5.0</title>
       <meta charset="utf-8"></meta>
       <link rel="stylesheet" type="text/css" href="../src/vmachine.css"></link>
-      <link rel="stylesheet" type="text/css" href="../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script><script type="text/javascript" src="../src/vmachine.js"></script><script type="text/javascript">
+      <link rel="stylesheet" type="text/css" href="../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script><script type="text/javascript">
       var WITNESSES = new Array();
       
          WITNESSES["t7989-1-10"] = "t7989-1-10";
@@ -21,13 +21,13 @@
       
       var INITIALVERSIONS = 3;
       var DISPLAYBIBINFO = true;
-      var DISPLAYCRITINFO = false;
+      var DISPLAYCRITINFO = true;
       var DISPLAYLINENUMBERS = true;
       var DISPLAYNOTESPANEL = false;
-   var timelinePoints = new Array();var timelineDurations = new Array();</script></head>
+   var timelinePoints = new Array();var timelineDurations = new Array();</script><script type="text/javascript" src="../src/vmachine.js"></script></head>
    <body>
       <div id="mainBanner">
-         <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/LogoSilver.svg"></img></div>
+         <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/LogoSilver.png"></img></div>
          <div id="headline">
             <h1>Autumn, 1922</h1>
          </div>
@@ -91,12 +91,6 @@
                            <div class="image-container"><button>OFF</button></div>
                         </div>
                      </li>
-                     <li data-panelid="critPanel">
-                        <div class="listText">
-                           <p>Critical introduction</p>
-                           <div class="image-container"><button>OFF</button></div>
-                        </div>
-                     </li>
                   </ul>
                </li>
             </ul>
@@ -104,7 +98,6 @@
                <li data-panelid="linenumbers" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
                <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
                <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
-               <li data-panelid="critPanel"><button class="topMenuButton listText" title="Clicking this button triggers the critical introduction panel to appear or disappear.">Critical introduction</button></li>
             </ul>
          </nav>
       </div>
@@ -190,13 +183,6 @@
                
                
             </div>
-         </div>
-         <div id="critPanel" class="ui-widget-content ui-resizable panel mssPanel invisible">
-            <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
-               Critical Introduction
-               
-            </div>
-            <div class="critContent"></div>
          </div>
          <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="t7989-1-10">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness t7989-1-10

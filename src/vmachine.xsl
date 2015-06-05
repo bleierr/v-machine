@@ -82,17 +82,20 @@
          <!-- RB: jquery.panzoom plugin from https://github.com/timmywil/jquery.panzoom -->
          <link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link>
          <script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script>
-         <!-- custom JS file -->
+        
          <script type="text/javascript">
-            <xsl:attribute name="src">
-               <xsl:value-of select="$jsInclude" />
-            </xsl:attribute>
-         </script>
-         <script type="text/javascript">
+            <!-- JS to set up global variable -->
             <xsl:call-template name="jsWitnessArray" />
             <xsl:call-template name="jsGlobalSettings" />
             <xsl:call-template name="createTimelinePoints" />
             <xsl:call-template name="createTimelineDurations" />
+         </script>
+         
+         <script type="text/javascript">
+            <!-- custom JS file -->
+            <xsl:attribute name="src">
+               <xsl:value-of select="$jsInclude" />
+            </xsl:attribute>
          </script>
       </head>
    </xsl:template>
@@ -206,22 +209,24 @@
   </xsl:template>
    
    <xsl:template name="smallScreenDropdown">
-      <li>
-         <xsl:attribute name="data-panelid">linenumbers</xsl:attribute>
-         <div>
-            <xsl:attribute name="class">listText</xsl:attribute>
-            
-            <p>
-               <xsl:text>Line numbers</xsl:text> 
-            </p> 
-            
-            <div class="image-container">
-               <button>
-                  <xsl:text>OFF</xsl:text>
-               </button>
+      <xsl:if test="//tei:l[@n]">
+         <li>
+            <xsl:attribute name="data-panelid">linenumbers</xsl:attribute>
+            <div>
+               <xsl:attribute name="class">listText</xsl:attribute>
+               
+               <p>
+                  <xsl:text>Line numbers</xsl:text> 
+               </p> 
+               
+               <div class="image-container">
+                  <button>
+                     <xsl:text>OFF</xsl:text>
+                  </button>
+               </div>
             </div>
-         </div>
-      </li>
+         </li>
+      </xsl:if>
       <li>
          <xsl:attribute name="data-panelid">bibPanel</xsl:attribute>
          <div>
@@ -253,7 +258,7 @@
          </div>
       </li>
       
-      <xsl:if test="$displayCritInfo">
+      <xsl:if test="//tei:notesStmt/tei:note[@type='critIntro']">
          <li>
             <xsl:attribute name="data-panelid">critPanel</xsl:attribute>
             <div>
@@ -274,6 +279,7 @@
    
    
    <xsl:template name="largeScreenTopMenu">
+      <xsl:if test="//tei:l[@n]">
          <li>
             <xsl:attribute name="data-panelid">linenumbers</xsl:attribute>
             <xsl:attribute name="title">Clicking this button turns the line numbers on or off.</xsl:attribute>
@@ -282,6 +288,7 @@
             </button>
                
          </li>
+      </xsl:if>
          <li>
             <xsl:attribute name="data-panelid">bibPanel</xsl:attribute>
             <xsl:attribute name="title">Clicking this button triggers the bibliographic panel to appear or disappear.</xsl:attribute>
@@ -298,7 +305,7 @@
                <xsl:text>Notes panel</xsl:text>
             </button>
          </li>
-      <xsl:if test="$displayCritInfo">
+      <xsl:if test="//tei:notesStmt/tei:note[@type='critIntro']">
             <li>
                <xsl:attribute name="data-panelid">critPanel</xsl:attribute>
                <button>
@@ -564,27 +571,27 @@
          
          </div>
       </div>
-      <div id="critPanel">
-         <xsl:attribute name="class">
-            <xsl:text>ui-widget-content ui-resizable panel mssPanel invisible</xsl:text>
-         </xsl:attribute>
-        
-        
-        <!-- second image panel ??? -->
-            <div class="panelBanner">
-               <img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg" />
-               Critical Introduction
+      <xsl:if test="//tei:notesStmt/tei:note[@type='critIntro']">
+         <div id="critPanel">
+            <xsl:attribute name="class">
+               <xsl:text>ui-widget-content ui-resizable panel mssPanel invisible</xsl:text>
+            </xsl:attribute>
+           
+               <div class="panelBanner">
+                  <img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg" />
+                  Critical Introduction
+               </div>
+               <div class="critContent">
+                  <xsl:if test="tei:notesStmt/tei:note[@type='critIntro']">
+                     <h4>Critical Introduction</h4>
+                     <xsl:for-each select="tei:notesStmt/tei:note[@type='critIntro']/tei:p | tei:notesStmt/tei:note[@type='critIntro']/tei:lg">
+                        <xsl:apply-templates select="." />
+                     </xsl:for-each>
+                     
+                  </xsl:if>
+               </div>
             </div>
-            <div class="critContent">
-               <xsl:if test="tei:notesStmt/tei:note[@type='critIntro']">
-                  <h4>Critical Introduction</h4>
-                  <xsl:for-each select="tei:notesStmt/tei:note[@type='critIntro']/tei:p | tei:notesStmt/tei:note[@type='critIntro']/tei:lg">
-                     <xsl:apply-templates select="." />
-                  </xsl:for-each>
-                  
-               </xsl:if>
-            </div>
-         </div>
+      </xsl:if>
    </xsl:template>
    
    <xsl:template match="tei:publicationStmt">

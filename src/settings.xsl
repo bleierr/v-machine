@@ -6,7 +6,7 @@
     
     <xsl:variable name="indexPage">../samples.html</xsl:variable>
     
-    <xsl:variable name="vmLogo">../vm-images/LogoSilver.svg</xsl:variable>
+    <xsl:variable name="vmLogo">../vm-images/LogoSilver.png</xsl:variable>
     
     <xsl:variable name="menuIcon">../vm-images/menuicon.png</xsl:variable>
     
@@ -43,13 +43,14 @@
     <xsl:variable name="displayBibInfo">true</xsl:variable>
     
     <!-- critical information should be encoded as tei:notesStmt/tei:note[@type='critIntro'] in the TEI files -->
-    
-    <xsl:variable name="displayCritInfo">false</xsl:variable>
+  <!-- To change the VM so that the critical information page does not
+   appear at the initial load, change "true" to "false" below -->
+    <xsl:variable name="displayCritInfo">true</xsl:variable>
     
     <!-- To change the VM so that line numbers are hidden by default, change
   "true" to "false" below -->
     <xsl:variable name="displayLineNumbers">true</xsl:variable>
-    
+  
     
     <xsl:variable name="displayNotesPanel">false</xsl:variable>
     

@@ -5,7 +5,7 @@
       <title>Lestrygonians -- The Versioning Machine 5.0</title>
       <meta charset="utf-8"></meta>
       <link rel="stylesheet" type="text/css" href="../src/vmachine.css"></link>
-      <link rel="stylesheet" type="text/css" href="../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script><script type="text/javascript" src="../src/vmachine.js"></script><script type="text/javascript">
+      <link rel="stylesheet" type="text/css" href="../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script><script type="text/javascript">
       var WITNESSES = new Array();
       
          WITNESSES["lr"] = "lr";
@@ -17,13 +17,13 @@
       
       var INITIALVERSIONS = 3;
       var DISPLAYBIBINFO = true;
-      var DISPLAYCRITINFO = false;
+      var DISPLAYCRITINFO = true;
       var DISPLAYLINENUMBERS = true;
       var DISPLAYNOTESPANEL = false;
-   var timelinePoints = new Array();var timelineDurations = new Array();</script></head>
+   var timelinePoints = new Array();var timelineDurations = new Array();</script><script type="text/javascript" src="../src/vmachine.js"></script></head>
    <body>
       <div id="mainBanner">
-         <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/LogoSilver.svg"></img></div>
+         <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/LogoSilver.png"></img></div>
          <div id="headline">
             <h1>Lestrygonians</h1>
          </div>
@@ -51,12 +51,6 @@
                   </ul>
                </li>
                <li class="smallScreenDropdown"><button class="topMenuButton dropdownButton"><img class="invisible menuicon" src="../vm-images/menuicon.png" alt=""></img><img class="menuicon" src="../vm-images/menuicon.png" alt=""></img></button><ul class="dropdown">
-                     <li data-panelid="linenumbers">
-                        <div class="listText">
-                           <p>Line numbers</p>
-                           <div class="image-container"><button>OFF</button></div>
-                        </div>
-                     </li>
                      <li data-panelid="bibPanel">
                         <div class="listText">
                            <p>Bibliographic panel</p>
@@ -69,20 +63,12 @@
                            <div class="image-container"><button>OFF</button></div>
                         </div>
                      </li>
-                     <li data-panelid="critPanel">
-                        <div class="listText">
-                           <p>Critical introduction</p>
-                           <div class="image-container"><button>OFF</button></div>
-                        </div>
-                     </li>
                   </ul>
                </li>
             </ul>
             <ul class="largeScreenTopMenu">
-               <li data-panelid="linenumbers" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
                <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
                <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
-               <li data-panelid="critPanel"><button class="topMenuButton listText" title="Clicking this button triggers the critical introduction panel to appear or disappear.">Critical introduction</button></li>
             </ul>
          </nav>
       </div>
@@ -98,11 +84,13 @@
                   by James Joyce
                </h3>
                <h4>Original Source</h4>
-               
-               <p>Excerpts from the "Lestrygonians" chapter of James Joyce's Ulysses taken from The Little Review vol. 5 no. 9 (1919), the Shakespeare and Company edition (1922) and Hans Walter Gabler's
-                  revised Ulysses: The corrected text (1986).
+               				
+               <p>Excerpts from the "Lestrygonians" chapter of James Joyce's Ulysses taken from The Little Review vol.
+                  					5 no. 9 (1919), the Shakespeare and Company edition (1922) and Hans Walter
+                  					Gabler's revised Ulysses: The corrected text
+                  					(1986).
                </p>
-               
+               			
                <h4>Witness List</h4>
                <ul>
                   <li><strong>Witness lr:</strong> The Little Review
@@ -118,357 +106,273 @@
                   <li>Text Encoding by  Daniel Carter</li>
                </ul>
                <h5>Publication Details:</h5>
-               
+               				
                <p>[Publication statement required here.]</p>
-               
+               			
                <h4>Encoding Principles</h4>
-               
-               
+               			
+               		
             </div>
-         </div>
-         <div id="critPanel" class="ui-widget-content ui-resizable panel mssPanel invisible">
-            <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
-               Critical Introduction
-               
-            </div>
-            <div class="critContent"></div>
          </div>
          <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="lr">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness lr
             </div>
             <div class="mssContent">
                
-               
+               			
                <div class="div" data-line-id="div">
                   
-                  	
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="lr" class="reading lr">
-                           	    			PINEAPPLE rock, lemon platt, butter-scotch.
-                           	    		
-                        </div>
+                        <div data-witness="lr" class="reading lr"> PINEAPPLE rock, lemon platt, butter-scotch. </div>
                      </div>
-                     	   	    
-                     	   	    
+                     
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			A sugarsticky girl shovelling scoopfuls of creams for a christian brother.
-                           Some school treat. Bad for their tummies. Lozenge and comfit manufacturer to His Majesty
-                           the King. God. Save. Our.
-                           	    		
+                        <div data-witness="all" class="reading all"> A sugarsticky girl shovelling scoopfuls of creams for a
+                           							christian brother. Some school treat. Bad for their tummies. Lozenge and
+                           							comfit manufacturer to His Majesty the King. God. Save. Our. 
                         </div>
                      </div>
                      
-                     	   	    
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="lr" class="reading lr">
-                           	    			Sitting on his throne, sucking jujubes. 
-                           	    		
-                        </div>
-                     </div>	    	
-                     	    
+                        <div data-witness="lr" class="reading lr"> Sitting on his throne, sucking jujubes. </div>
+                     </div>
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="lr" class="reading lr">
-                           	    			A sombre young man, watchful among the warm sweet fumes of Graham Lemon's,
-                           placed a throwaway in a hand of Mr. Bloom.
-                           	    		
+                        <div data-witness="lr" class="reading lr"> A sombre young man, watchful among the warm sweet fumes of
+                           							Graham Lemon's, placed a throwaway in a hand of Mr. Bloom. 
                         </div>
                      </div>
-                     	    
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="lr" class="reading lr">
-                           	    			Heart to heart talks. Bloo .... Me? No.
-                           	    		
-                        </div>
+                        <div data-witness="lr" class="reading lr"> Heart to heart talks. Bloo .... Me? No. </div>
                      </div>
-                     	    
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
-                     	    
+                     					
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
-                     	    
+                     					
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			His slow feet walked him riverward, reading. 
-                           	    		
-                        </div>
+                        <div data-witness="all" class="reading all"> His slow feet walked him riverward, reading. </div>
                      </div>
-                     	    	
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="lr" class="reading lr">
-                           	    			All are washed in the blood of the lamb.
-                           	    		
-                        </div>
+                        <div data-witness="lr" class="reading lr"> All are washed in the blood of the lamb. </div>
                      </div>
-                     	    	
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="lr" class="reading lr">
-                           	    			Dr. John Alexander Dowie restorer of the church in Zion is coming. 
-                           	    		
-                        </div>
-                     </div>	    		    	
-                     	    
-                  </div>
-                  
-                  	    
-                  <div class="paragraph">
-                     	    	
-                     <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			Is coming! Is coming!! Is coming!!! 
-                           	    		
+                        <div data-witness="lr" class="reading lr"> Dr. John Alexander Dowie restorer of the church in Zion is
+                           							coming. 
                         </div>
                      </div>
-                     	    
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			All heartily welcome. 
-                           	    		
-                        </div>
+                        <div data-witness="all" class="reading all"> Is coming! Is coming!! Is coming!!! </div>
                      </div>
-                     	    
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			Paying game.
-                           	    		
-                        </div>
+                        <div data-witness="all" class="reading all"> All heartily welcome. </div>
                      </div>
-                     	    	
-                     	    	
+                     				
+                  </div>
+                  
+                  				
+                  <div class="paragraph">
+                     					
+                     <div class="apparatus app_2_p1" data-app-id="app_2_p1">
+                        <div data-witness="all" class="reading all"> Paying game. </div>
+                     </div>
+                     					
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="lr sb" class="reading lr sb">
-                           	    			Where was that ad some Birmingham firm the luminous crucifix? Our saviour.
-                           	    		
+                        <div data-witness="lr sb" class="reading lr sb"> Where was that ad some Birmingham firm the luminous
+                           							crucifix? Our saviour. 
                         </div>
-                     </div>	
-                     	    	
+                     </div>
+                     					
                      <div class="apparatus app_8_p1" data-app-id="app_8_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			Wake up in the dead of night and see him on the wall, hanging. Pepper's ghost
-                           idea.
-                           	    		
+                        <div data-witness="all" class="reading all"> Wake up in the dead of night and see him on the wall,
+                           							hanging. Pepper's ghost idea. 
                         </div>
-                     </div>	
-                     	    	
+                     </div>
+                     					
                      <div class="apparatus app_10_p1" data-app-id="app_10_p1">
-                        <div data-witness="sb lr" class="reading sb lr">
-                           	    			Iron nails ran in.
-                           	    		
-                        </div>
-                     </div>		    		    	    		    	
-                     	    
+                        <div data-witness="sb lr" class="reading sb lr"> Iron nails ran in. </div>
+                     </div>
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="lr sb" class="reading lr sb">
-                           	    			Phosphorous it must be done with.
-                           	    		
-                        </div>
+                        <div data-witness="lr sb" class="reading lr sb"> Phosphorous it must be done with. </div>
                      </div>
-                     	    	
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			If you leave a bit of codfish for instance. I could see the bluey silver over
-                           it. Night I went down to the pantry in the kitchen.
-                           	    		
+                        <div data-witness="all" class="reading all"> If you leave a bit of codfish for instance. I could see the
+                           							bluey silver over it. Night I went down to the pantry in the kitchen.
+                           						
                         </div>
                      </div>
-                     	    		    	
-                     	    	
+                     					
+                     					
                      <div class="apparatus app_8_p1" data-app-id="app_8_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			What was it she wanted? The Malaga raisins.
-                           	    		
-                        </div>
+                        <div data-witness="all" class="reading all"> What was it she wanted? The Malaga raisins. </div>
                      </div>
-                     	    		
-                     	    	
+                     					
+                     					
                      <div class="apparatus app_12_p1" data-app-id="app_12_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			Before Rudy was born. The phosphorescence, that bluey greeny. Very good for
-                           the brain. 
-                           	    		
+                        <div data-witness="all" class="reading all"> Before Rudy was born. The phosphorescence, that bluey
+                           							greeny. Very good for the brain. 
                         </div>
-                     </div>		    	    	
-                     		
+                     </div>
+                     				
                   </div>
                   
-                  		
+                  				
                   <div class="paragraph">
-                     			
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="all" class="reading all">
-                           					From Butler's monument house corner he glanced along Bachelor's walk.
-                           				
+                        <div data-witness="all" class="reading all"> From Butler's monument house corner he glanced along
+                           							Bachelor's walk. 
                         </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="lr" class="reading lr">
-                           					Dedalus' daughter there still outside Dillon's auction rooms.
-                           				
+                        <div data-witness="lr" class="reading lr"> Dedalus' daughter there still outside Dillon's auction
+                           							rooms. 
                         </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="all" class="reading all">
-                           					Must be selling off some old furniture. Knew her eyes at once from the father.
-                           Lobbing about waiting for him. Home always breaks up when the mother goes. Fifteen
-                           children he had. Birth every year almost. That's in their theology or the priest won't
-                           give the poor woman the confession, the absolution. Increase and multiply. Did you
-                           ever hear such an idea?
-                           				
+                        <div data-witness="all" class="reading all"> Must be selling off some old furniture. Knew her eyes at
+                           							once from the father. Lobbing about waiting for him. Home always breaks
+                           							up when the mother goes. Fifteen children he had. Birth every year
+                           							almost. That's in their theology or the priest won't give the poor woman
+                           							the confession, the absolution. Increase and multiply. Did you ever hear
+                           							such an idea? 
                         </div>
                      </div>
-                     			
-                     			
+                     					
+                     					
                      <div class="apparatus app_10_p1" data-app-id="app_10_p1">
-                        <div data-witness="all" class="reading all">
-                           					No families themselves to feed. Living on the fat of the land.
-                           				
+                        <div data-witness="all" class="reading all"> No families themselves to feed. Living on the fat of the
+                           							land. 
                         </div>
-                     </div>	
-                     										
-                     			
+                     </div>
+                     					
+                     					
                      <div class="apparatus app_14_p1" data-app-id="app_14_p1">
-                        <div data-witness="lr" class="reading lr">
-                           					A housekeeper of one of those fellows if you could pick it out of her. Never
-                           pick it out of her:
-                           				
+                        <div data-witness="lr" class="reading lr"> A housekeeper of one of those fellows if you could pick it
+                           							out of her. Never pick it out of her: 
                         </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_16_p1" data-app-id="app_16_p1">
-                        <div data-witness="lr" class="reading lr">
-                           					his reverence: mum's the word. 
-                           				
-                        </div>
-                     </div>									
-                     		
+                        <div data-witness="lr" class="reading lr"> his reverence: mum's the word. </div>
+                     </div>
+                     				
                   </div>
                   
-                  		
+                  				
                   <div class="paragraph">
-                     			
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="lr" class="reading lr">
-                           					Good Lord that poor child's dress is in flitters.
-                           				
-                        </div>
+                        <div data-witness="lr" class="reading lr"> Good Lord that poor child's dress is in flitters. </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="lr" class="reading lr">
-                           					Under fed she looks too.
-                           				
-                        </div>
+                        <div data-witness="lr" class="reading lr"> Under fed she looks too. </div>
                      </div>
-                     				
-                     			
+                     					
+                     					
                      <div class="apparatus app_8_p1" data-app-id="app_8_p1">
-                        <div data-witness="all" class="reading all">
-                           					It's after they feel it.
-                           				
-                        </div>
+                        <div data-witness="all" class="reading all"> It's after they feel it. </div>
                      </div>
-                     				
-                     			
+                     					
+                     					
                      <div class="apparatus app_12_p1" data-app-id="app_12_p1">
-                        <div data-witness="all" class="reading all">
-                           					Undermines the constitution. 
-                           				
-                        </div>
-                     </div>												
-                     		
+                        <div data-witness="all" class="reading all"> Undermines the constitution. </div>
+                     </div>
+                     				
                   </div>
                   
-                  		
+                  				
                   <div class="paragraph">
-                     			
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="all" class="reading all">
-                           					As he set foot on O'Connell bridge a puffball of smoke plumed up from the parapet.
-                           Brewery barge with export stout. England. Sea air sours it, I heard. Be interesting
-                           some day get a pass through Hancock to see the brewery.
-                           				
+                        <div data-witness="all" class="reading all"> As he set foot on O'Connell bridge a puffball of smoke
+                           							plumed up from the parapet. Brewery barge with export stout. England.
+                           							Sea air sours it, I heard. Be interesting some day get a pass through
+                           							Hancock to see the brewery. 
                         </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="lr" class="reading lr">
-                           					Regular town in itself.
-                           				
-                        </div>
-                     </div>	
-                     			
+                        <div data-witness="lr" class="reading lr"> Regular town in itself. </div>
+                     </div>
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="lr g" class="reading lr g">
-                           					Vats of porter wonderful.
-                           				
-                        </div>
-                     </div>	
-                     			
+                        <div data-witness="lr g" class="reading lr g"> Vats of porter wonderful. </div>
+                     </div>
+                     					
                      <div class="apparatus app_8_p1" data-app-id="app_8_p1">
-                        <div data-witness="all" class="reading all">
-                           					Rats get in too. Drink themselves bloated as big as a collie floating. Dead drunk
-                           on the porter. Drink till they puke again like christians. Imagine drinking that!
-                           Rats : vats.
-                           				
+                        <div data-witness="all" class="reading all"> Rats get in too. Drink themselves bloated as big as a
+                           							collie floating. Dead drunk on the porter. Drink till they puke again
+                           							like christians. Imagine drinking that! Rats : vats. 
                         </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_10_p1" data-app-id="app_10_p1">
-                        <div data-witness="lr sb" class="reading lr sb">
-                           					Well of course if we knew all the things. 
-                           				
-                        </div>
-                     </div>												
-                     		
+                        <div data-witness="lr sb" class="reading lr sb"> Well of course if we knew all the things. </div>
+                     </div>
+                     				
                   </div>
                   
-                  	
-                  	
+                  
+                  			
                </div>
                
                
-               
+               		
             </div>
          </div>
          <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="sb">
@@ -476,395 +380,297 @@
             </div>
             <div class="mssContent">
                
-               
+               			
                <div class="div" data-line-id="div">
                   
-                  	
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="sb g" class="reading sb g">
-                           	    			Pineapple rock, lemon platt, butter scotch.
-                           	    		
-                        </div>
+                        <div data-witness="sb g" class="reading sb g"> Pineapple rock, lemon platt, butter scotch. </div>
                      </div>
-                     	   	    
-                     	   	    
+                     
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			A sugarsticky girl shovelling scoopfuls of creams for a christian brother.
-                           Some school treat. Bad for their tummies. Lozenge and comfit manufacturer to His Majesty
-                           the King. God. Save. Our.
-                           	    		
+                        <div data-witness="all" class="reading all"> A sugarsticky girl shovelling scoopfuls of creams for a
+                           							christian brother. Some school treat. Bad for their tummies. Lozenge and
+                           							comfit manufacturer to His Majesty the King. God. Save. Our. 
                         </div>
                      </div>
                      
-                     	   	    
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="sb" class="reading sb">
-                           	    			Sitting on his throne, sucking red jujubes white. 
-                           	    		
-                        </div>
-                     </div>	    	
-                     	    
+                        <div data-witness="sb" class="reading sb"> Sitting on his throne, sucking red jujubes white. </div>
+                     </div>
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="sb g" class="reading sb g">
-                           	    			A sombre Y. M. C. A. young man, watchful among the warm sweet fumes of Graham
-                           Lemon's, placed a throwaway in a hand of Mr Bloom.
-                           	    		
+                        <div data-witness="sb g" class="reading sb g"> A sombre Y. M. C. A. young man, watchful among the warm
+                           							sweet fumes of Graham Lemon's, placed a throwaway in a hand of Mr Bloom. 
                         </div>
                      </div>
-                     	    
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="sb g" class="reading sb g">
-                           	    			Heart to heart talks.
-                           	    		
-                        </div>
+                        <div data-witness="sb g" class="reading sb g"> Heart to heart talks. </div>
                      </div>
-                     	    
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="sb" class="reading sb">
-                           	    			Bloo... Me? No.
-                           	    		
-                        </div>
+                        <div data-witness="sb" class="reading sb"> Bloo... Me? No. </div>
                      </div>
-                     	    
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="g sb" class="reading g sb">
-                           	    			Blood of the Lamb. 
-                           	    		
-                        </div>
+                        <div data-witness="g sb" class="reading g sb"> Blood of the Lamb. </div>
                      </div>
-                     	    
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			His slow feet walked him riverward, reading. 
-                           	    		
-                        </div>
+                        <div data-witness="all" class="reading all"> His slow feet walked him riverward, reading. </div>
                      </div>
-                     	    	
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="g sb" class="reading g sb">
-                           	    			All are washed in the blood of the lamb. God wants blood victim. Birth, hymen,
-                           martyr, war, foundation of a building, sacrifice, kidney burntoffering, druids' altars.
-                           	    		
+                        <div data-witness="g sb" class="reading g sb"> All are washed in the blood of the lamb. God wants blood
+                           							victim. Birth, hymen, martyr, war, foundation of a building, sacrifice,
+                           							kidney burntoffering, druids' altars. 
                         </div>
                      </div>
-                     	    	
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="sb" class="reading sb">
-                           	    			Elijah is coming. Dr John Alexander Dowie, restorer of the church in Zion,
-                           is coming.
-                           	    		
-                        </div>
-                     </div>	    		    	
-                     	    
-                  </div>
-                  
-                  	    
-                  <div class="paragraph">
-                     	    	
-                     <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			Is coming! Is coming!! Is coming!!! 
-                           	    		
+                        <div data-witness="sb" class="reading sb"> Elijah is coming. Dr John Alexander Dowie, restorer of the
+                           							church in Zion, is coming. 
                         </div>
                      </div>
-                     	    
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			All heartily welcome. 
-                           	    		
-                        </div>
+                        <div data-witness="all" class="reading all"> Is coming! Is coming!! Is coming!!! </div>
                      </div>
-                     	    
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			Paying game.
-                           	    		
-                        </div>
+                        <div data-witness="all" class="reading all"> All heartily welcome. </div>
                      </div>
-                     	    	
+                     				
+                  </div>
+                  
+                  				
+                  <div class="paragraph">
+                     					
+                     <div class="apparatus app_2_p1" data-app-id="app_2_p1">
+                        <div data-witness="all" class="reading all"> Paying game. </div>
+                     </div>
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="sb g" class="reading sb g">
-                           	    			Torry and Alexander last year. Polygamy. His wife will put the stopper on
-                           that.
-                           	    		
+                        <div data-witness="sb g" class="reading sb g"> Torry and Alexander last year. Polygamy. His wife will
+                           							put the stopper on that. 
                         </div>
                      </div>
-                     	    	
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="lr sb" class="reading lr sb">
-                           	    			Where was that ad some Birmingham firm the luminous crucifix? Our saviour.
-                           	    		
+                        <div data-witness="lr sb" class="reading lr sb"> Where was that ad some Birmingham firm the luminous
+                           							crucifix? Our saviour. 
                         </div>
-                     </div>	
-                     	    	
+                     </div>
+                     					
                      <div class="apparatus app_8_p1" data-app-id="app_8_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			Wake up in the dead of night and see him on the wall, hanging. Pepper's ghost
-                           idea.
-                           	    		
+                        <div data-witness="all" class="reading all"> Wake up in the dead of night and see him on the wall,
+                           							hanging. Pepper's ghost idea. 
                         </div>
-                     </div>	
-                     	    	
+                     </div>
+                     					
                      <div class="apparatus app_10_p1" data-app-id="app_10_p1">
-                        <div data-witness="sb lr" class="reading sb lr">
-                           	    			Iron nails ran in.
-                           	    		
-                        </div>
-                     </div>		    		    	    		    	
-                     	    
+                        <div data-witness="sb lr" class="reading sb lr"> Iron nails ran in. </div>
+                     </div>
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="lr sb" class="reading lr sb">
-                           	    			Phosphorous it must be done with.
-                           	    		
-                        </div>
+                        <div data-witness="lr sb" class="reading lr sb"> Phosphorous it must be done with. </div>
                      </div>
-                     	    	
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			If you leave a bit of codfish for instance. I could see the bluey silver over
-                           it. Night I went down to the pantry in the kitchen.
-                           	    		
+                        <div data-witness="all" class="reading all"> If you leave a bit of codfish for instance. I could see the
+                           							bluey silver over it. Night I went down to the pantry in the kitchen.
+                           						
                         </div>
                      </div>
-                     	    	
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="g sb" class="reading g sb">
-                           	    			Don't like all the smells in it waiting to rush out.
-                           	    		
-                        </div>
-                     </div>	    	
-                     	    	
-                     <div class="apparatus app_8_p1" data-app-id="app_8_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			What was it she wanted? The Malaga raisins.
-                           	    		
+                        <div data-witness="g sb" class="reading g sb"> Don't like all the smells in it waiting to rush out.
+                           						
                         </div>
                      </div>
-                     	    	
+                     					
+                     <div class="apparatus app_8_p1" data-app-id="app_8_p1">
+                        <div data-witness="all" class="reading all"> What was it she wanted? The Malaga raisins. </div>
+                     </div>
+                     					
                      <div class="apparatus app_10_p1" data-app-id="app_10_p1">
-                        <div data-witness="sb g" class="reading sb g">
-                           	    			Thinking of Spain.
-                           	    		
-                        </div>
-                     </div>	
-                     	    	
+                        <div data-witness="sb g" class="reading sb g"> Thinking of Spain. </div>
+                     </div>
+                     					
                      <div class="apparatus app_12_p1" data-app-id="app_12_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			Before Rudy was born. The phosphorescence, that bluey greeny. Very good for
-                           the brain. 
-                           	    		
+                        <div data-witness="all" class="reading all"> Before Rudy was born. The phosphorescence, that bluey
+                           							greeny. Very good for the brain. 
                         </div>
-                     </div>		    	    	
-                     		
+                     </div>
+                     				
                   </div>
                   
-                  		
+                  				
                   <div class="paragraph">
-                     			
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="all" class="reading all">
-                           					From Butler's monument house corner he glanced along Bachelor's walk.
-                           				
+                        <div data-witness="all" class="reading all"> From Butler's monument house corner he glanced along
+                           							Bachelor's walk. 
                         </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="g sb" class="reading g sb">
-                           					Dedalus' daughter there still outside Dillon's auctionrooms.
-                           				
+                        <div data-witness="g sb" class="reading g sb"> Dedalus' daughter there still outside Dillon's
+                           							auctionrooms. 
                         </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="all" class="reading all">
-                           					Must be selling off some old furniture. Knew her eyes at once from the father.
-                           Lobbing about waiting for him. Home always breaks up when the mother goes. Fifteen
-                           children he had. Birth every year almost. That's in their theology or the priest won't
-                           give the poor woman the confession, the absolution. Increase and multiply. Did you
-                           ever hear such an idea?
-                           				
+                        <div data-witness="all" class="reading all"> Must be selling off some old furniture. Knew her eyes at
+                           							once from the father. Lobbing about waiting for him. Home always breaks
+                           							up when the mother goes. Fifteen children he had. Birth every year
+                           							almost. That's in their theology or the priest won't give the poor woman
+                           							the confession, the absolution. Increase and multiply. Did you ever hear
+                           							such an idea? 
                         </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_8_p1" data-app-id="app_8_p1">
-                        <div data-witness="sb g" class="reading sb g">
-                           					Eat you out of house and home.
-                           				
+                        <div data-witness="sb g" class="reading sb g"> Eat you out of house and home. </div>
+                     </div>
+                     					
+                     <div class="apparatus app_10_p1" data-app-id="app_10_p1">
+                        <div data-witness="all" class="reading all"> No families themselves to feed. Living on the fat of the
+                           							land. 
                         </div>
                      </div>
-                     			
-                     <div class="apparatus app_10_p1" data-app-id="app_10_p1">
-                        <div data-witness="all" class="reading all">
-                           					No families themselves to feed. Living on the fat of the land.
-                           				
-                        </div>
-                     </div>	
-                     			
+                     					
                      <div class="apparatus app_12_p1" data-app-id="app_12_p1">
-                        <div data-witness="g sb" class="reading g sb">
-                           					Their butteries and larders. I'd like to see them do the black fast Yom Kippur.
-                           Crossbuns. One meal and a collation for fear he'd collapse on the altar.
-                           				
+                        <div data-witness="g sb" class="reading g sb"> Their butteries and larders. I'd like to see them do the
+                           							black fast Yom Kippur. Crossbuns. One meal and a collation for fear he'd
+                           							collapse on the altar. 
                         </div>
-                     </div>							
-                     			
+                     </div>
+                     					
                      <div class="apparatus app_14_p1" data-app-id="app_14_p1">
-                        <div data-witness="g sb" class="reading g sb">
-                           					A housekeeper of one of those fellows if you could pick it out of her. Never
-                           pick it out of her.
-                           				
+                        <div data-witness="g sb" class="reading g sb"> A housekeeper of one of those fellows if you could pick
+                           							it out of her. Never pick it out of her. 
                         </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_16_p1" data-app-id="app_16_p1">
-                        <div data-witness="g sb" class="reading g sb">
-                           					His reverence: mum's the word.
-                           				
-                        </div>
-                     </div>									
-                     		
+                        <div data-witness="g sb" class="reading g sb"> His reverence: mum's the word. </div>
+                     </div>
+                     				
                   </div>
                   
-                  		
+                  				
                   <div class="paragraph">
-                     			
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="sb" class="reading sb">
-                           					Good Lord, that poor child's dress is in flitters.
-                           				
-                        </div>
+                        <div data-witness="sb" class="reading sb"> Good Lord, that poor child's dress is in flitters. </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="sb g" class="reading sb g">
-                           					Underfed she looks too.
-                           				
-                        </div>
+                        <div data-witness="sb g" class="reading sb g"> Underfed she looks too. </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="g sb" class="reading g sb">
-                           					Potatoes and marge, marge and potatoes.
-                           				
-                        </div>
-                     </div>	
-                     			
-                     <div class="apparatus app_8_p1" data-app-id="app_8_p1">
-                        <div data-witness="all" class="reading all">
-                           					It's after they feel it.
-                           				
-                        </div>
+                        <div data-witness="g sb" class="reading g sb"> Potatoes and marge, marge and potatoes. </div>
                      </div>
-                     			
+                     					
+                     <div class="apparatus app_8_p1" data-app-id="app_8_p1">
+                        <div data-witness="all" class="reading all"> It's after they feel it. </div>
+                     </div>
+                     					
                      <div class="apparatus app_10_p1" data-app-id="app_10_p1">
-                        <div data-witness="g sb" class="reading g sb">
-                           					Proof of the pudding.
-                           				
-                        </div>
-                     </div>	
-                     			
+                        <div data-witness="g sb" class="reading g sb"> Proof of the pudding. </div>
+                     </div>
+                     					
                      <div class="apparatus app_12_p1" data-app-id="app_12_p1">
-                        <div data-witness="all" class="reading all">
-                           					Undermines the constitution. 
-                           				
-                        </div>
-                     </div>												
-                     		
+                        <div data-witness="all" class="reading all"> Undermines the constitution. </div>
+                     </div>
+                     				
                   </div>
                   
-                  		
+                  				
                   <div class="paragraph">
-                     			
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="all" class="reading all">
-                           					As he set foot on O'Connell bridge a puffball of smoke plumed up from the parapet.
-                           Brewery barge with export stout. England. Sea air sours it, I heard. Be interesting
-                           some day get a pass through Hancock to see the brewery.
-                           				
+                        <div data-witness="all" class="reading all"> As he set foot on O'Connell bridge a puffball of smoke
+                           							plumed up from the parapet. Brewery barge with export stout. England.
+                           							Sea air sours it, I heard. Be interesting some day get a pass through
+                           							Hancock to see the brewery. 
                         </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="sb g" class="reading sb g">
-                           					Regular world in itself.
-                           				
-                        </div>
-                     </div>	
-                     			
+                        <div data-witness="sb g" class="reading sb g"> Regular world in itself. </div>
+                     </div>
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="sb" class="reading sb">
-                           					Vats of porter, wonderful.
-                           				
-                        </div>
-                     </div>	
-                     			
+                        <div data-witness="sb" class="reading sb"> Vats of porter, wonderful. </div>
+                     </div>
+                     					
                      <div class="apparatus app_8_p1" data-app-id="app_8_p1">
-                        <div data-witness="all" class="reading all">
-                           					Rats get in too. Drink themselves bloated as big as a collie floating. Dead drunk
-                           on the porter. Drink till they puke again like christians. Imagine drinking that!
-                           Rats : vats.
-                           				
+                        <div data-witness="all" class="reading all"> Rats get in too. Drink themselves bloated as big as a
+                           							collie floating. Dead drunk on the porter. Drink till they puke again
+                           							like christians. Imagine drinking that! Rats : vats. 
                         </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_10_p1" data-app-id="app_10_p1">
-                        <div data-witness="lr sb" class="reading lr sb">
-                           					Well of course if we knew all the things. 
-                           				
-                        </div>
-                     </div>												
-                     		
+                        <div data-witness="lr sb" class="reading lr sb"> Well of course if we knew all the things. </div>
+                     </div>
+                     				
                   </div>
                   
-                  	
-                  	
+                  
+                  			
                </div>
                
                
-               
+               		
             </div>
          </div>
          <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="g">
@@ -872,395 +678,297 @@
             </div>
             <div class="mssContent">
                
-               
+               			
                <div class="div" data-line-id="div">
                   
-                  	
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="sb g" class="reading sb g">
-                           	    			Pineapple rock, lemon platt, butter scotch.
-                           	    		
-                        </div>
+                        <div data-witness="sb g" class="reading sb g"> Pineapple rock, lemon platt, butter scotch. </div>
                      </div>
-                     	   	    
-                     	   	    
+                     
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			A sugarsticky girl shovelling scoopfuls of creams for a christian brother.
-                           Some school treat. Bad for their tummies. Lozenge and comfit manufacturer to His Majesty
-                           the King. God. Save. Our.
-                           	    		
+                        <div data-witness="all" class="reading all"> A sugarsticky girl shovelling scoopfuls of creams for a
+                           							christian brother. Some school treat. Bad for their tummies. Lozenge and
+                           							comfit manufacturer to His Majesty the King. God. Save. Our. 
                         </div>
                      </div>
                      
-                     	   	    
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="g" class="reading g">
-                           	    			Sitting on his throne sucking red jujubes white. 
-                           	    		
-                        </div>
-                     </div>	    	
-                     	    
+                        <div data-witness="g" class="reading g"> Sitting on his throne sucking red jujubes white. </div>
+                     </div>
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="sb g" class="reading sb g">
-                           	    			A sombre Y. M. C. A. young man, watchful among the warm sweet fumes of Graham
-                           Lemon's, placed a throwaway in a hand of Mr Bloom.
-                           	    		
+                        <div data-witness="sb g" class="reading sb g"> A sombre Y. M. C. A. young man, watchful among the warm
+                           							sweet fumes of Graham Lemon's, placed a throwaway in a hand of Mr Bloom. 
                         </div>
                      </div>
-                     	    
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="sb g" class="reading sb g">
-                           	    			Heart to heart talks.
-                           	    		
-                        </div>
+                        <div data-witness="sb g" class="reading sb g"> Heart to heart talks. </div>
                      </div>
-                     	    
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="g" class="reading g">
-                           	    			Bloo .... Me? No.
-                           	    		
-                        </div>
+                        <div data-witness="g" class="reading g"> Bloo .... Me? No. </div>
                      </div>
-                     	    
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="g sb" class="reading g sb">
-                           	    			Blood of the Lamb. 
-                           	    		
-                        </div>
+                        <div data-witness="g sb" class="reading g sb"> Blood of the Lamb. </div>
                      </div>
-                     	    
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			His slow feet walked him riverward, reading. 
-                           	    		
-                        </div>
+                        <div data-witness="all" class="reading all"> His slow feet walked him riverward, reading. </div>
                      </div>
-                     	    	
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="g sb" class="reading g sb">
-                           	    			All are washed in the blood of the lamb. God wants blood victim. Birth, hymen,
-                           martyr, war, foundation of a building, sacrifice, kidney burntoffering, druids' altars.
-                           	    		
+                        <div data-witness="g sb" class="reading g sb"> All are washed in the blood of the lamb. God wants blood
+                           							victim. Birth, hymen, martyr, war, foundation of a building, sacrifice,
+                           							kidney burntoffering, druids' altars. 
                         </div>
                      </div>
-                     	    	
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="g" class="reading g">
-                           	    			Elijah is coming. Dr John Alexander Dowie restorer of the church in Zion is
-                           coming.
-                           	    		
-                        </div>
-                     </div>	    		    	
-                     	    
-                  </div>
-                  
-                  	    
-                  <div class="paragraph">
-                     	    	
-                     <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			Is coming! Is coming!! Is coming!!! 
-                           	    		
+                        <div data-witness="g" class="reading g"> Elijah is coming. Dr John Alexander Dowie restorer of the
+                           							church in Zion is coming. 
                         </div>
                      </div>
-                     	    
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			All heartily welcome. 
-                           	    		
-                        </div>
+                        <div data-witness="all" class="reading all"> Is coming! Is coming!! Is coming!!! </div>
                      </div>
-                     	    
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			Paying game.
-                           	    		
-                        </div>
+                        <div data-witness="all" class="reading all"> All heartily welcome. </div>
                      </div>
-                     	    	
+                     				
+                  </div>
+                  
+                  				
+                  <div class="paragraph">
+                     					
+                     <div class="apparatus app_2_p1" data-app-id="app_2_p1">
+                        <div data-witness="all" class="reading all"> Paying game. </div>
+                     </div>
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="sb g" class="reading sb g">
-                           	    			Torry and Alexander last year. Polygamy. His wife will put the stopper on
-                           that.
-                           	    		
+                        <div data-witness="sb g" class="reading sb g"> Torry and Alexander last year. Polygamy. His wife will
+                           							put the stopper on that. 
                         </div>
                      </div>
-                     	    	
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="g" class="reading g">
-                           	    			Where was that ad some Birmingham firm the luminous crucifix. Our Saviour.
-                           	    		
+                        <div data-witness="g" class="reading g"> Where was that ad some Birmingham firm the luminous crucifix.
+                           							Our Saviour. 
                         </div>
-                     </div>	
-                     	    	
+                     </div>
+                     					
                      <div class="apparatus app_8_p1" data-app-id="app_8_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			Wake up in the dead of night and see him on the wall, hanging. Pepper's ghost
-                           idea.
-                           	    		
+                        <div data-witness="all" class="reading all"> Wake up in the dead of night and see him on the wall,
+                           							hanging. Pepper's ghost idea. 
                         </div>
-                     </div>	
-                     	    	
+                     </div>
+                     					
                      <div class="apparatus app_10_p1" data-app-id="app_10_p1">
-                        <div data-witness="g" class="reading g">
-                           	    			Iron Nails Ran In.
-                           	    		
-                        </div>
-                     </div>		    		    	    		    	
-                     	    
+                        <div data-witness="g" class="reading g"> Iron Nails Ran In. </div>
+                     </div>
+                     				
                   </div>
                   
-                  	    
+                  				
                   <div class="paragraph">
-                     	    	
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="g" class="reading g">
-                           	    			Phosphorus it must be done with.
-                           	    		
-                        </div>
+                        <div data-witness="g" class="reading g"> Phosphorus it must be done with. </div>
                      </div>
-                     	    	
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			If you leave a bit of codfish for instance. I could see the bluey silver over
-                           it. Night I went down to the pantry in the kitchen.
-                           	    		
+                        <div data-witness="all" class="reading all"> If you leave a bit of codfish for instance. I could see the
+                           							bluey silver over it. Night I went down to the pantry in the kitchen.
+                           						
                         </div>
                      </div>
-                     	    	
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="g sb" class="reading g sb">
-                           	    			Don't like all the smells in it waiting to rush out.
-                           	    		
-                        </div>
-                     </div>	    	
-                     	    	
-                     <div class="apparatus app_8_p1" data-app-id="app_8_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			What was it she wanted? The Malaga raisins.
-                           	    		
+                        <div data-witness="g sb" class="reading g sb"> Don't like all the smells in it waiting to rush out.
+                           						
                         </div>
                      </div>
-                     	    	
+                     					
+                     <div class="apparatus app_8_p1" data-app-id="app_8_p1">
+                        <div data-witness="all" class="reading all"> What was it she wanted? The Malaga raisins. </div>
+                     </div>
+                     					
                      <div class="apparatus app_10_p1" data-app-id="app_10_p1">
-                        <div data-witness="sb g" class="reading sb g">
-                           	    			Thinking of Spain.
-                           	    		
-                        </div>
-                     </div>	
-                     	    	
+                        <div data-witness="sb g" class="reading sb g"> Thinking of Spain. </div>
+                     </div>
+                     					
                      <div class="apparatus app_12_p1" data-app-id="app_12_p1">
-                        <div data-witness="all" class="reading all">
-                           	    			Before Rudy was born. The phosphorescence, that bluey greeny. Very good for
-                           the brain. 
-                           	    		
+                        <div data-witness="all" class="reading all"> Before Rudy was born. The phosphorescence, that bluey
+                           							greeny. Very good for the brain. 
                         </div>
-                     </div>		    	    	
-                     		
+                     </div>
+                     				
                   </div>
                   
-                  		
+                  				
                   <div class="paragraph">
-                     			
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="all" class="reading all">
-                           					From Butler's monument house corner he glanced along Bachelor's walk.
-                           				
+                        <div data-witness="all" class="reading all"> From Butler's monument house corner he glanced along
+                           							Bachelor's walk. 
                         </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="g sb" class="reading g sb">
-                           					Dedalus' daughter there still outside Dillon's auctionrooms.
-                           				
+                        <div data-witness="g sb" class="reading g sb"> Dedalus' daughter there still outside Dillon's
+                           							auctionrooms. 
                         </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="all" class="reading all">
-                           					Must be selling off some old furniture. Knew her eyes at once from the father.
-                           Lobbing about waiting for him. Home always breaks up when the mother goes. Fifteen
-                           children he had. Birth every year almost. That's in their theology or the priest won't
-                           give the poor woman the confession, the absolution. Increase and multiply. Did you
-                           ever hear such an idea?
-                           				
+                        <div data-witness="all" class="reading all"> Must be selling off some old furniture. Knew her eyes at
+                           							once from the father. Lobbing about waiting for him. Home always breaks
+                           							up when the mother goes. Fifteen children he had. Birth every year
+                           							almost. That's in their theology or the priest won't give the poor woman
+                           							the confession, the absolution. Increase and multiply. Did you ever hear
+                           							such an idea? 
                         </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_8_p1" data-app-id="app_8_p1">
-                        <div data-witness="sb g" class="reading sb g">
-                           					Eat you out of house and home.
-                           				
+                        <div data-witness="sb g" class="reading sb g"> Eat you out of house and home. </div>
+                     </div>
+                     					
+                     <div class="apparatus app_10_p1" data-app-id="app_10_p1">
+                        <div data-witness="all" class="reading all"> No families themselves to feed. Living on the fat of the
+                           							land. 
                         </div>
                      </div>
-                     			
-                     <div class="apparatus app_10_p1" data-app-id="app_10_p1">
-                        <div data-witness="all" class="reading all">
-                           					No families themselves to feed. Living on the fat of the land.
-                           				
-                        </div>
-                     </div>	
-                     			
+                     					
                      <div class="apparatus app_12_p1" data-app-id="app_12_p1">
-                        <div data-witness="g sb" class="reading g sb">
-                           					Their butteries and larders. I'd like to see them do the black fast Yom Kippur.
-                           Crossbuns. One meal and a collation for fear he'd collapse on the altar.
-                           				
+                        <div data-witness="g sb" class="reading g sb"> Their butteries and larders. I'd like to see them do the
+                           							black fast Yom Kippur. Crossbuns. One meal and a collation for fear he'd
+                           							collapse on the altar. 
                         </div>
-                     </div>							
-                     			
+                     </div>
+                     					
                      <div class="apparatus app_14_p1" data-app-id="app_14_p1">
-                        <div data-witness="g sb" class="reading g sb">
-                           					A housekeeper of one of those fellows if you could pick it out of her. Never
-                           pick it out of her.
-                           				
+                        <div data-witness="g sb" class="reading g sb"> A housekeeper of one of those fellows if you could pick
+                           							it out of her. Never pick it out of her. 
                         </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_16_p1" data-app-id="app_16_p1">
-                        <div data-witness="g sb" class="reading g sb">
-                           					His reverence: mum's the word.
-                           				
-                        </div>
-                     </div>									
-                     		
+                        <div data-witness="g sb" class="reading g sb"> His reverence: mum's the word. </div>
+                     </div>
+                     				
                   </div>
                   
-                  		
+                  				
                   <div class="paragraph">
-                     			
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="g" class="reading g">
-                           					Good lord, that poor child's dress is in flitters.
-                           				
-                        </div>
+                        <div data-witness="g" class="reading g"> Good lord, that poor child's dress is in flitters. </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="sb g" class="reading sb g">
-                           					Underfed she looks too.
-                           				
-                        </div>
+                        <div data-witness="sb g" class="reading sb g"> Underfed she looks too. </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="g sb" class="reading g sb">
-                           					Potatoes and marge, marge and potatoes.
-                           				
-                        </div>
-                     </div>	
-                     			
-                     <div class="apparatus app_8_p1" data-app-id="app_8_p1">
-                        <div data-witness="all" class="reading all">
-                           					It's after they feel it.
-                           				
-                        </div>
+                        <div data-witness="g sb" class="reading g sb"> Potatoes and marge, marge and potatoes. </div>
                      </div>
-                     			
+                     					
+                     <div class="apparatus app_8_p1" data-app-id="app_8_p1">
+                        <div data-witness="all" class="reading all"> It's after they feel it. </div>
+                     </div>
+                     					
                      <div class="apparatus app_10_p1" data-app-id="app_10_p1">
-                        <div data-witness="g sb" class="reading g sb">
-                           					Proof of the pudding.
-                           				
-                        </div>
-                     </div>	
-                     			
+                        <div data-witness="g sb" class="reading g sb"> Proof of the pudding. </div>
+                     </div>
+                     					
                      <div class="apparatus app_12_p1" data-app-id="app_12_p1">
-                        <div data-witness="all" class="reading all">
-                           					Undermines the constitution. 
-                           				
-                        </div>
-                     </div>												
-                     		
+                        <div data-witness="all" class="reading all"> Undermines the constitution. </div>
+                     </div>
+                     				
                   </div>
                   
-                  		
+                  				
                   <div class="paragraph">
-                     			
+                     					
                      <div class="apparatus app_2_p1" data-app-id="app_2_p1">
-                        <div data-witness="all" class="reading all">
-                           					As he set foot on O'Connell bridge a puffball of smoke plumed up from the parapet.
-                           Brewery barge with export stout. England. Sea air sours it, I heard. Be interesting
-                           some day get a pass through Hancock to see the brewery.
-                           				
+                        <div data-witness="all" class="reading all"> As he set foot on O'Connell bridge a puffball of smoke
+                           							plumed up from the parapet. Brewery barge with export stout. England.
+                           							Sea air sours it, I heard. Be interesting some day get a pass through
+                           							Hancock to see the brewery. 
                         </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_4_p1" data-app-id="app_4_p1">
-                        <div data-witness="sb g" class="reading sb g">
-                           					Regular world in itself.
-                           				
-                        </div>
-                     </div>	
-                     			
+                        <div data-witness="sb g" class="reading sb g"> Regular world in itself. </div>
+                     </div>
+                     					
                      <div class="apparatus app_6_p1" data-app-id="app_6_p1">
-                        <div data-witness="lr g" class="reading lr g">
-                           					Vats of porter wonderful.
-                           				
-                        </div>
-                     </div>	
-                     			
+                        <div data-witness="lr g" class="reading lr g"> Vats of porter wonderful. </div>
+                     </div>
+                     					
                      <div class="apparatus app_8_p1" data-app-id="app_8_p1">
-                        <div data-witness="all" class="reading all">
-                           					Rats get in too. Drink themselves bloated as big as a collie floating. Dead drunk
-                           on the porter. Drink till they puke again like christians. Imagine drinking that!
-                           Rats : vats.
-                           				
+                        <div data-witness="all" class="reading all"> Rats get in too. Drink themselves bloated as big as a
+                           							collie floating. Dead drunk on the porter. Drink till they puke again
+                           							like christians. Imagine drinking that! Rats : vats. 
                         </div>
                      </div>
-                     			
+                     					
                      <div class="apparatus app_10_p1" data-app-id="app_10_p1">
-                        <div data-witness="g" class="reading g">
-                           					Well, of course, if we knew all the things. 
-                           				
-                        </div>
-                     </div>												
-                     		
+                        <div data-witness="g" class="reading g"> Well, of course, if we knew all the things. </div>
+                     </div>
+                     				
                   </div>
                   
-                  	
-                  	
+                  
+                  			
                </div>
                
                
-               
+               		
             </div>
          </div>
          <div id="notesPanel" class="ui-widget-content ui-resizable panel mssPanel invisible">
