@@ -145,7 +145,10 @@ $.fn.mssPanel = function() {
 
 $.fn.imgPanel = function() {
     return this.each(function(){
+	
 		var $that = $(this);
+		var imageId = $that.attr("id");
+		
 		$that.mousedown(function(){
 			$(".activePanel").each(function(){
 				$(this).css({"z-index":2}).removeClass("activePanel");
@@ -154,6 +157,14 @@ $.fn.imgPanel = function() {
 			$that.appendTo("#mssArea");
 		});
 		
+		$that.hover(function(){
+			$("img[data-img-id='" + imageId +"']").addClass("highlight");
+			$(this).addClass("highlight");
+		
+		}, function(){
+			$("img[data-img-id='" + imageId +"']").removeClass("highlight");
+			$(this).removeClass("highlight");
+		});
 		
 	});	
 };
@@ -312,7 +323,11 @@ $.fn.imgLink = function() {
 			
 			$(this).hover(function(){
 				var panelId = $(this).attr("data-img-id");
-				$(".imgPanel[id='" + panelId + "']").toggleClass("highlight");
+				$(".imgPanel[id='" + panelId + "']").addClass("highlight");
+			},function(){
+				var panelId = $(this).attr("data-img-id");
+				$(".imgPanel[id='" + panelId + "']").removeClass("highlight");
+			
 			});
 				
 		});

@@ -565,6 +565,10 @@ button{
 	background-color:#2c577f;
 	color: #fff;
 }
+.imgPanel button{
+	color: #000;
+}
+
 .buttonPressed{
 	background-color: #999;
 	border-color: #2c577f;
