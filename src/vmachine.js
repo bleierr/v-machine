@@ -1,5 +1,21 @@
-var visiblePanels = {};
 
+function totalPanelWidth(){
+	/*this function calculates and returns the total panel width of visible panels*/
+	
+	//console.log("inside totalPanelWidth");
+	var total_w = 0;
+	$("div.mssPanel:not(.invisible)").each(function(){
+		
+		var w = $(this).width();
+		var panel_id = $(this).attr("id");
+		//console.log("panel " + panel_id + ": " + w);
+		total_w += w;
+
+	});
+	
+	//console.log("Total width of visible panels: " + total_w);
+	return total_w;
+}
 
 
 
@@ -43,14 +59,13 @@ $.fn.changePanelVisibility = function(x,y) {
 	if(!(x===undefined || y===undefined)){
 	
 		if(!isNaN(x) || x.substr(-2) === "em"){
-			$(this).css({"top":x});
+			$(this).css({"left":x});
 			}
 		if(!isNaN(y) || y.substr(-2) === "em"){
-			$(this).css({"left":y});
+			$(this).css({"top":y});
 		}
 	}
 }
-
 
 $.fn.panelActionClick = function() {
     return this.click(function(){
@@ -61,9 +76,19 @@ $.fn.panelActionClick = function() {
 			}
 			else{
 					
-				$("#"+datapanelid).each(function(e){
-					var y = e.pageY;
-					var x = e.pageX;
+				$("#"+datapanelid).each(function(){
+				
+					var y = $(this).css("top");
+					var x = $(this).css("left");
+					
+					console.log("in panelActionClick plugin:");
+					console.log("value var x: " + x);
+					console.log("value var y: " + y);
+					
+					if(x === "auto"){
+						x = totalPanelWidth();
+					}
+					
 					$(this).changePanelVisibility(x, y);
 					$(this).appendTo("#mssArea");
 					
@@ -179,23 +204,15 @@ function workspaceResize(){
 
             var mssAreaWidth = $('#mssArea').width();
             
-            var totalPanelWidth = 0;
-            
-            $(".panel").each(function(){
-				var $panel = $(this);
-                var display = $panel.css("display");
-                if(display !== "none"){
-                    totalPanelWidth += $panel.width();
-                }
-            });
+            var w = totalPanelWidth();
             
             var windowWidth = $(window).width();
             
-            if( windowWidth > totalPanelWidth){
+            if( windowWidth > w){
                 $('#mssArea').width(windowWidth);
             }
             else{
-                $('#mssArea').width(totalPanelWidth+100);
+                $('#mssArea').width(w+100);
             }
 			
 			/*height of workspace*/
@@ -314,7 +331,7 @@ $(document).ready(function() {
 	console.log("Show bibliographic panel: " + DISPLAYBIBINFO);
 	
 	if(DISPLAYBIBINFO){
-			$("#bibPanel").changePanelVisibility(bannerHeight,panelPos);
+			$("#bibPanel").changePanelVisibility(panelPos,bannerHeight);
 			$("nav *[data-panelid='bibPanel']").toggleOnOff();
 			panelPos += $("#bibPanel").width();
 		}
@@ -326,7 +343,7 @@ $(document).ready(function() {
 		
 		/*The INITIALVERSIONS global can be set in settings.xsl*/
 		if(idx < INITIALVERSIONS){
-			$("#"+wit).changePanelVisibility(bannerHeight,panelPos);
+			$("#"+wit).changePanelVisibility(panelPos,bannerHeight);
 			$("*[data-panelid='"+wit+"']").toggleOnOff();
 			panelPos += $("#"+wit).width();
 		}	
@@ -335,7 +352,7 @@ $(document).ready(function() {
 	/*initial setup show critical intro panel*/
 	
 	if(DISPLAYCRITINFO){
-			$("#critPanel").changePanelVisibility(bannerHeight,panelPos);
+			$("#critPanel").changePanelVisibility(panelPos,bannerHeight);
 			$("nav *[data-panelid='critPanel']").toggleOnOff();
 			panelPos += $("#critPanel").width();
 		}
@@ -343,7 +360,7 @@ $(document).ready(function() {
 	/*initial setup show notes panel*/
 	
 	if(DISPLAYNOTESPANEL){
-			$("#notesPanel").changePanelVisibility(bannerHeight,panelPos);
+			$("#notesPanel").changePanelVisibility(panelPos,bannerHeight);
 			$("nav *[data-panelid='notesPanel']").toggleOnOff();
 			panelPos += $("#notesPanel").width();
 		}
@@ -411,10 +428,7 @@ $(document).ready(function() {
 	$(".imgPanel").imgPanel();
 	$(".imageLink").imgLink();
 	
-	
-	
-	
- 
+
 });
 
 
