@@ -81,7 +81,7 @@ $.fn.panelActionClick = function() {
     return this.click(function(){
 			var datapanelid = $(this).attr("data-panelid");
 			
-			if(datapanelid === "linenumbers"){
+			if(datapanelid === "linenumber"){
 				$(".linenumber").toggleClass("invisible");
 			}
 			else{
@@ -335,54 +335,43 @@ $.fn.imgLink = function() {
 $(document).ready(function() {  
 	/*initial setup */
 
-	var panelPos = 0;
+	var bannerHeight = $("#mainBanner").height();
 	
-	var bannerHeight = "8em";
-	
-	/*initial setup show biblio panel*/
-	console.log("Show bibliographic panel: " + DISPLAYBIBINFO);
-	
-	if(DISPLAYBIBINFO){
-			$("#bibPanel").changePanelVisibility(panelPos,bannerHeight);
-			$("nav *[data-panelid='bibPanel']").toggleOnOff();
-			panelPos += $("#bibPanel").width();
+	/*The initialVisibility global can be set in settings.xsl*/
+	for (item in initialVisibility){
+		if(item === "versions"){
+			
+			/*open the witness/version panels*/
+			$("#witnessList li").each(function(idx){
+				var panelPos = totalPanelWidth();
+				var wit = $(this).attr("data-panelid");
+				if(idx < initialVisibility[item]){
+					$("#"+wit).changePanelVisibility(panelPos,bannerHeight);
+					$("*[data-panelid='"+wit+"']").toggleOnOff();
+				}	
+			});
 		}
+		else{
+			var panelPos = totalPanelWidth();
+			
+			if(item === "linenumber"){
+				if(initialVisibility[item]){
+					$(".linenumber").toggleClass("invisible");
+					$("nav *[data-panelid='linenumber']").toggleOnOff();
+				}
+			}
+			else{
+				if(initialVisibility[item]){
+					$("#"+item).changePanelVisibility(panelPos,bannerHeight);
+					$("nav *[data-panelid='"+ item +"']").toggleOnOff();
+				}
+			}
 		
-	/*open the witness/version panels*/
-	
-	$("#witnessList li").each(function(idx){
-		var wit = $(this).attr("data-panelid");
-		
-		/*The INITIALVERSIONS global can be set in settings.xsl*/
-		if(idx < INITIALVERSIONS){
-			$("#"+wit).changePanelVisibility(panelPos,bannerHeight);
-			$("*[data-panelid='"+wit+"']").toggleOnOff();
-			panelPos += $("#"+wit).width();
-		}	
-	});
-	
-	/*initial setup show critical intro panel*/
-	
-	if(DISPLAYCRITINFO){
-			$("#critPanel").changePanelVisibility(panelPos,bannerHeight);
-			$("nav *[data-panelid='critPanel']").toggleOnOff();
-			panelPos += $("#critPanel").width();
 		}
+	}
 	
-	/*initial setup show notes panel*/
 	
-	if(DISPLAYNOTESPANEL){
-			$("#notesPanel").changePanelVisibility(panelPos,bannerHeight);
-			$("nav *[data-panelid='notesPanel']").toggleOnOff();
-			panelPos += $("#notesPanel").width();
-		}
-		
-	console.log("Display line numbers: " + DISPLAYLINENUMBERS);
-	/*initial setup show notes panel*/
-	if(DISPLAYLINENUMBERS){
-			$(".linenumber").toggleClass("invisible");
-			$("nav *[data-panelid='linenumbers']").toggleOnOff();
-		}
+	
 	
 		/*close panel via X sign */
 	$(".closePanel").click(function(){
@@ -402,7 +391,7 @@ $(document).ready(function() {
 	$(".dropdownButton").dropdownButtonClick();
 	
 	$("li[data-panelid]").panelActionClick();
-	$("li[data-panelid!='linenumbers']").panelActionHover();
+	$("li[data-panelid!='linenumber']").panelActionHover();
 	
 	/*create popup for note, choice, etc.*/
 	$("div.noteicon, div.choice, div.rdgGrp").hoverPopup();

@@ -85,7 +85,6 @@
         
          <script type="text/javascript">
             <!-- JS to set up global variable -->
-            <xsl:call-template name="jsWitnessArray" />
             <xsl:call-template name="jsGlobalSettings" />
             <xsl:call-template name="createTimelinePoints" />
             <xsl:call-template name="createTimelineDurations" />
@@ -100,25 +99,16 @@
       </head>
    </xsl:template>
    
-   <xsl:template name="jsWitnessArray">
-      var WITNESSES = new Array();
-      <xsl:for-each select="$witnesses">
-         <xsl:variable name="witID" select="@xml:id" />
-         WITNESSES["<xsl:value-of select="$witID" />"] = "<xsl:for-each select="ancestor::tei:listWit[@xml:id]">
-            <xsl:value-of select="@xml:id" />
-            <xsl:text>;</xsl:text>
-         </xsl:for-each>
-         <xsl:value-of select="$witID" />";
-      </xsl:for-each>
-   </xsl:template>
+   
    
    <xsl:template name="jsGlobalSettings">
       <!-- The number of version/witness panels to be displayed initially -->
-      var INITIALVERSIONS = <xsl:value-of select="$initialVersions" />;
-      var DISPLAYBIBINFO = <xsl:value-of select="$displayBibInfo"></xsl:value-of>;
-      var DISPLAYCRITINFO = <xsl:value-of select="$displayCritInfo"></xsl:value-of>;
-      var DISPLAYLINENUMBERS = <xsl:value-of select="$displayLineNumbers"></xsl:value-of>;
-      var DISPLAYNOTESPANEL = <xsl:value-of select="$displayNotesPanel"></xsl:value-of>;
+      var initialVisibility = {};
+      initialVisibility["bibPanel"] = <xsl:value-of select="$displayBibInfo"></xsl:value-of>;
+      initialVisibility["versions"] = <xsl:value-of select="$versionsVisible" />;
+      initialVisibility["critPanel"] = <xsl:value-of select="$displayCritInfo"></xsl:value-of>;
+      initialVisibility["linenumber"] = <xsl:value-of select="$displayLineNumber"></xsl:value-of>;
+      initialVisibility["notesPanel"] = <xsl:value-of select="$displayNotesPanel"></xsl:value-of>;
    </xsl:template>
    
    <xsl:template name="mainBanner">
@@ -197,7 +187,7 @@
    <xsl:template name="topMenu">
       <xsl:if test="//tei:l[@n]">
          <li>
-            <xsl:attribute name="data-panelid">linenumbers</xsl:attribute>
+            <xsl:attribute name="data-panelid">linenumber</xsl:attribute>
             <xsl:attribute name="title">Clicking this button turns the line numbers on or off.</xsl:attribute>
             <button><xsl:attribute name="class">topMenuButton</xsl:attribute>
                 <xsl:text>Line numbers</xsl:text>

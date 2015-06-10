@@ -31,12 +31,8 @@
     <xsl:variable name="jsJquery-UI">../src/js/jquery-ui-1.11.3/jquery-ui.min.js</xsl:variable>
     
     
-    
-    
-    
-    
     <!-- The number of version/witness panels to be displayed initially -->
-    <xsl:variable name="initialVersions">3</xsl:variable>
+  <xsl:variable name="versionsVisible">3</xsl:variable>
     
     <!-- To change the VM so that the bibliographic information page does not
    appear at the initial load, change "true" to "false" below -->
@@ -49,7 +45,7 @@
     
     <!-- To change the VM so that line numbers are hidden by default, change
   "true" to "false" below -->
-    <xsl:variable name="displayLineNumbers">true</xsl:variable>
+    <xsl:variable name="displayLineNumber">true</xsl:variable>
   
     
     <xsl:variable name="displayNotesPanel">false</xsl:variable>

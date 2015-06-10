@@ -6,26 +6,13 @@
       <meta charset="utf-8"></meta>
       <link rel="stylesheet" type="text/css" href="../src/vmachine.css"></link>
       <link rel="stylesheet" type="text/css" href="../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script><script type="text/javascript">
-      var WITNESSES = new Array();
       
-         WITNESSES["a1"] = "a1";
-      
-         WITNESSES["a2"] = "a2";
-      
-         WITNESSES["a3"] = "a3";
-      
-         WITNESSES["a4"] = "a4";
-      
-         WITNESSES["a5"] = "a5";
-      
-         WITNESSES["a6"] = "a6";
-      
-      
-      var INITIALVERSIONS = 3;
-      var DISPLAYBIBINFO = true;
-      var DISPLAYCRITINFO = true;
-      var DISPLAYLINENUMBERS = true;
-      var DISPLAYNOTESPANEL = false;
+      var initialVisibility = {};
+      initialVisibility["bibPanel"] = true;
+      initialVisibility["versions"] = 3;
+      initialVisibility["critPanel"] = true;
+      initialVisibility["linenumber"] = true;
+      initialVisibility["notesPanel"] = false;
    var timelinePoints = new Array();var timelineDurations = new Array();</script><script type="text/javascript" src="../src/vmachine.js"></script></head>
    <body>
       <div id="mainBanner">
@@ -38,68 +25,43 @@
                <li><button class="topMenuButton dropdownButton" id="selectWitness">6 Total Versions<img class="invisible" src="../vm-images/arrowup.png" alt=""></img><img src="../vm-images/arrowdown.png" alt=""></img></button><ul id="witnessList" class="dropdown">
                      <li data-panelid="a1">
                         <div class="listText">
-                           <p>Thitledownflight: Version 1 - Most-Finished version </p>
-                           <div class="image-container"><button>OFF</button></div>
+                           <div>Thitledownflight: Version 1 - Most-Finished version </div>
+                           <div><button>OFF</button></div>
                         </div>
                      </li>
                      <li data-panelid="a2">
                         <div class="listText">
-                           <p>Thistledownflight: Version 2 - Typed </p>
-                           <div class="image-container"><button>OFF</button></div>
+                           <div>Thistledownflight: Version 2 - Typed </div>
+                           <div><button>OFF</button></div>
                         </div>
                      </li>
                      <li data-panelid="a3">
                         <div class="listText">
-                           <p>Thistledownflight: Version 3</p>
-                           <div class="image-container"><button>OFF</button></div>
+                           <div>Thistledownflight: Version 3</div>
+                           <div><button>OFF</button></div>
                         </div>
                      </li>
                      <li data-panelid="a4">
                         <div class="listText">
-                           <p>Thistledownflight: Version 3 - Rewritten Second Half </p>
-                           <div class="image-container"><button>OFF</button></div>
+                           <div>Thistledownflight: Version 3 - Rewritten Second Half </div>
+                           <div><button>OFF</button></div>
                         </div>
                      </li>
                      <li data-panelid="a5">
                         <div class="listText">
-                           <p>Ghinga: Version 4 - Images Only</p>
-                           <div class="image-container"><button>OFF</button></div>
+                           <div>Ghinga: Version 4 - Images Only</div>
+                           <div><button>OFF</button></div>
                         </div>
                      </li>
                      <li data-panelid="a6">
                         <div class="listText">
-                           <p>Ginga: Version 5 - The Early Draft of Thistledownflight
-                              
-                           </p>
-                           <div class="image-container"><button>OFF</button></div>
+                           <div>Ginga: Version 5 - The Early Draft of Thistledownflight </div>
+                           <div><button>OFF</button></div>
                         </div>
                      </li>
                   </ul>
                </li>
-               <li class="smallScreenDropdown"><button class="topMenuButton dropdownButton"><img class="invisible menuicon" src="../vm-images/menuicon.png" alt=""></img><img class="menuicon" src="../vm-images/menuicon.png" alt=""></img></button><ul class="dropdown">
-                     <li data-panelid="linenumbers">
-                        <div class="listText">
-                           <p>Line numbers</p>
-                           <div class="image-container"><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="bibPanel">
-                        <div class="listText">
-                           <p>Bibliographic panel</p>
-                           <div class="image-container"><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="notesPanel">
-                        <div class="listText">
-                           <p>Notes panel</p>
-                           <div class="image-container"><button>OFF</button></div>
-                        </div>
-                     </li>
-                  </ul>
-               </li>
-            </ul>
-            <ul class="largeScreenTopMenu">
-               <li data-panelid="linenumbers" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
+               <li data-panelid="linenumber" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
                <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
                <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
             </ul>
@@ -120,21 +82,16 @@
                </h3>
                <h4>Original Source</h4>
                
-               <p>The Baroness' poems and papers are contained in the Archives and Manuscripts
-                  Department at the University of Maryland Libraries. Complete papers cover the period
-                  from 1917-1933 and consist of manuscripts, drafts, notes, correspondence, drawings
-                  and photographs.
+               <p>The Baroness' poems and papers are contained in the Archives and Manuscripts Department
+                  at the University of Maryland Libraries.  Complete papers cover the period from 1917-1933
+                  and consist of manuscripts, drafts, notes, correspondence, drawings and photographs.
                </p>
                
                <p>Textual transcription and analysis of the seven poems encoded here were undertaken
-                  in
-                  Fall 2003 by graduate students in William H. Sherman's English 601
-                  class, "Literary Research and Critical Contexts."
+                  in Fall 2003 by graduate students in William H. Sherman's English 601 class, "Literary Research and Critical Contexts."
                </p>
                
-               <p>Text editing of "Thistledownflight" was performed by Helen Lucille
-                  DeVinney.
-               </p>
+               <p>Text editing of "Thistledownflight" was performed by Helen Lucille DeVinney.</p>
                
                <h4>Witness List</h4>
                <ul>
@@ -148,47 +105,60 @@
                   </li>
                   <li><strong>Witness a5:</strong> Ghinga: Version 4 - Images Only
                   </li>
-                  <li><strong>Witness a6:</strong> Ginga: Version 5 - The Early Draft of Thistledownflight
-                     
+                  <li><strong>Witness a6:</strong> Ginga: Version 5 - The Early Draft of Thistledownflight 
                   </li>
                </ul>
                <h4>Textual Notes</h4>
-               <div class="note">There are five versions of "Thistledownflight," presented here in
-                  the following order: four handwritten versions and one typewritten version (Version
-                  2) by the Baroness (in the order of the "most-finished" version to the earliest
-                  draft, as determined by the editor). Since Baroness rewrtoe the sencond half of the
-                  version 3 and it to the version 3, the second half version is separately encoded as
-                  Witness a4. The version 4 (Witness 5) is available only as the images. Titles of the
-                  latest three versions are "Thistledownflight". "Ginga" is used as titles for the
-                  earlier two versions. The poem is unpublished.
+               <div class="note">There are five versions of "Thistledownflight," presented here in the following order:
+                  
+                  			four handwritten versions and one typewritten version (Version 2) by the Baroness
+                  (in the order of the "most-finished" version to the earliest draft, as determined
+                  
+                  			by the editor).  Since Baroness rewrtoe the sencond half of the version 3 and it
+                  to the version 3,
+                  			the second half version is separately encoded as Witness a4.  The version 4 (Witness
+                  5) is available only as the images.  
+                  			Titles of the latest three versions are "Thistledownflight".  "Ginga" is used as
+                  titles for the earlier two versions. 
+                  			The poem is unpublished.
                   <hr></hr>
                </div>
-               <div class="note">The following is an excerpt from Helen Lucille
-                  DeVinney's transcription rationale:
+               <div class="note">The following is an excerpt from Helen Lucille DeVinney's transcription rationale:
                   <hr></hr>
                </div>
                <div class="note">
                   
-                  <p>The handwriting is her typical use of majuscule letters, and the letters
-                     themselves are slightly larger than her standard print. It is presented as a
-                     visual poem; the Baroness has taken pains to add her own artistic decorations to
-                     the paper. Her use of the page is sparse, and the layout of the words themselves
-                     is artistic. The placement of the line groupings is irregular, and, in the case of
-                     the final word “Thistledownflight,” she arranges the word itself in an artistic
-                     way. Interestingly, the poem is unsigned, as are each of the subsequent
-                     drafts.
+                  <p>The handwriting is her typical use of majuscule letters, and the letters themselves
+                     
+                     				are slightly larger than her standard print. It is presented as a visual poem;
+                     
+                     				the Baroness has taken pains to add her own artistic decorations to the paper.
+                     Her use 
+                     				of the page is sparse, and the layout of the words themselves is artistic. The
+                     placement 
+                     				of the line groupings is irregular, and, in the case of the final word “Thistledownflight,”
+                     				she arranges the word itself in an artistic way. Interestingly, the poem is unsigned,
+                     
+                     				as are each of the subsequent drafts.
                   </p>
+                  					
                   
-                  
-                  <p>In some cases her handwriting seems to be slightly different in the corrections,
-                     but this alone is not enough to determine that the revisions occurred at another
-                     time. Her arrangement suggests that the poem was beginning to take shape: certain
-                     words or lines are clearly grouped and begin to suggest the arrangement of 2r/2v
-                     [Version 2]. She clearly leaves room for possibility....In 4r/4v [Version 4] we
-                     see the appearance of the later title "Thistle down flight," which are also the
-                     last lines of the poem. This version seems to precede 3r/3v [Version 3]; in 3r/3v
-                     we see the adoption of the title "Thistledownflight," as well as the arrangement
-                     and corrections of some of her revisions in 4r/4v. 
+                  <p>In some cases her handwriting seems to be slightly different in the corrections, 
+                     				but this alone is not enough to determine that the revisions occurred at another
+                     time. 
+                     				Her arrangement suggests that the poem was beginning to take shape: certain words
+                     or lines 
+                     				are clearly grouped and begin to suggest the arrangement of 2r/2v [Version 2].
+                     
+                     				She clearly leaves room for possibility....In 4r/4v [Version 4]  we see the appearance
+                     of 
+                     				the later title "Thistle down flight," which are also the last lines of the poem.
+                     
+                     				This version seems to precede 3r/3v [Version 3]; in 3r/3v we see the adoption
+                     of the title 
+                     				"Thistledownflight," as well as the arrangement and corrections of some of her
+                     
+                     				revisions in 4r/4v.  
                   </p>
                   
                   <hr></hr>
@@ -197,8 +167,8 @@
                   
                   <hr></hr>
                </div>
-               <div class="note">Additions appear in a green, fixed-width font. Deletions appear in
-                  a red, fixed-width font with strikethrough.
+               <div class="note">Additions appear in a green, fixed-width font. Deletions appear in a red, fixed-width
+                  font with strikethrough.
                </div>
                <h4>Electronic Edition Information:</h4>
                <h5>Responsibility Statement:</h5>
@@ -216,25 +186,21 @@
                2004
                
                
-               <p>Researchers can gain access to the Papers of Elsa von
-                  Freytag-Loringhoven in the Maryland Room, Hornbake Library, University
-                  of Maryland Libraries, College Park, MD 20742
+               <p>Researchers can gain access to the Papers of Elsa von Freytag-Loringhoven in the Maryland Room, Hornbake Library, University of Maryland Libraries, College
+                  Park, MD  20742
                </p>
                
-               <p>"Thistiledownflight" manuscripts located in Series III, Box four, Folder 11;
-                  microfiche id numbers 5/920-5/927, 5/969.
+               <p>"Thistiledownflight" manuscripts located in Series III, Box four, Folder 11; microfiche
+                  id numbers 5/920-5/927, 5/969.
                </p>
                
-               <p>Special Collections at the University of Maryland provides <a class="link" href="">more information about the
-                     microfilm edition of the papers</a>. 
+               <p>Special Collections at the University of Maryland provides <a class="link" href="">more information about the microfilm edition of the papers</a>. 
                </p>
                
                <p>Images and manuscripts drafts of this poem may not be reproduced or downloaded and
                   used on another site without the explicit permission of UMD Archives. They may not
-                  be reproduced or downloaded and used on another site without the explicit
-                  permission of UMD Archives. Though the intellectual property of Elsa von
-                  Freytag-Loringhoven is in the public domain, all annotations and
-                  editorial commentary are copyrighted.
+                  be reproduced or downloaded and used on another site without the explicit permission
+                  of UMD Archives. Though the intellectual property of Elsa von Freytag-Loringhoven is in the public domain, all annotations and editorial commentary are copyrighted.
                </p>
                
                
@@ -266,7 +232,7 @@
                   
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">1</div>
@@ -279,7 +245,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">2</div>
@@ -289,7 +255,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">3</div>
@@ -302,10 +268,10 @@
                   </div>
                   
                </div>
+               	
+               	
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">4</div>
@@ -315,7 +281,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">5</div>
@@ -326,7 +292,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">6</div>
@@ -341,7 +307,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">7</div>
@@ -351,9 +317,9 @@
                   </div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">8</div>
@@ -363,7 +329,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">9</div>
@@ -377,7 +343,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">10</div>
@@ -388,7 +354,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">11</div>
@@ -398,7 +364,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">13</div>
@@ -411,7 +377,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">14</div>
@@ -425,7 +391,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">15</div>
@@ -441,7 +407,7 @@
                   
                </div>
                
-               
+               			
                
                
                <div class="line">
@@ -452,7 +418,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">18</div>
@@ -462,7 +428,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">19</div>
@@ -472,7 +438,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">20</div>
@@ -487,7 +453,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">21</div>
@@ -498,7 +464,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">22</div>
@@ -508,7 +474,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">23</div>
@@ -518,9 +484,9 @@
                   </div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">24</div>
@@ -531,7 +497,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">25</div>
@@ -541,7 +507,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">26</div>
@@ -551,7 +517,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">27</div>
@@ -566,7 +532,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">28</div>
@@ -577,7 +543,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">29</div>
@@ -591,7 +557,7 @@
                   
                </div>
                
-               
+               			
                
                
                <div class="line">
@@ -602,7 +568,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">32</div>
@@ -612,7 +578,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">33</div>
@@ -625,7 +591,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">34</div>
@@ -638,10 +604,10 @@
                   </div>
                   
                </div>
+               			
                
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">36</div>
@@ -651,7 +617,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">37</div>
@@ -667,7 +633,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">38</div>
@@ -683,12 +649,12 @@
                   
                </div>
                
+               			
                
                
+               			
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">41</div>
@@ -701,7 +667,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                
                <div class="line">
@@ -712,7 +678,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">44</div>
@@ -723,7 +689,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">45</div>
@@ -733,7 +699,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">46</div>
@@ -748,9 +714,9 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               			
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">48</div>
@@ -760,9 +726,9 @@
                   </div>
                   
                </div>
+               			
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">50</div>
@@ -772,7 +738,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">51</div>
@@ -782,9 +748,9 @@
                   </div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">52</div>
@@ -794,7 +760,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">53</div>
@@ -809,11 +775,11 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               	
                
+               			
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">55</div>
@@ -823,9 +789,9 @@
                   </div>
                   
                </div>
+               			
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">57</div>
@@ -843,7 +809,7 @@
                
                
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">61</div>
@@ -856,7 +822,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">62</div>
@@ -869,7 +835,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">63</div>
@@ -882,7 +848,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">64</div>
@@ -892,7 +858,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">65</div>
@@ -905,7 +871,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">66</div>
@@ -915,7 +881,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">67</div>
@@ -925,11 +891,11 @@
                   </div>
                   
                </div>
+               			
                
+               			
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">70</div>
@@ -942,14 +908,14 @@
                   </div>
                   
                </div>
+               			
                
                
+               			
                
+               			
                
-               
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">75</div>
@@ -959,7 +925,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">76</div>
@@ -971,13 +937,13 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               			
+               
+               			
                
                
                
-               
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">79</div>
@@ -992,7 +958,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">80</div>
@@ -1011,7 +977,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">82</div>
@@ -1023,9 +989,9 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">83</div>
@@ -1040,7 +1006,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">84</div>
@@ -1055,9 +1021,9 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">85</div>
@@ -1068,8 +1034,9 @@
                   <div class="apparatus app_2_l_85_1" data-app-id="app_2_l_85_1">
                      <div data-witness="a1" class="reading a1">!
                         <div class="noteicon">n
-                           <div class="note"><strong>Note:</strong>  The original layout is diagonal (up-down-up);
-                              see the image. 
+                           <div class="note"><strong>Note:</strong> 
+                              		The original layout is diagonal (up-down-up); see the image.  
+                              		
                            </div>
                         </div>
                         
@@ -1079,7 +1046,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">86</div>
@@ -1089,14 +1056,14 @@
                   </div>
                   
                </div>
+               			
+               
+               			
+               
+               			
                
                
-               
-               
-               
-               
-               
-               
+               		
                
             </div>
          </div>
@@ -1117,7 +1084,7 @@
                   
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">1</div>
@@ -1130,7 +1097,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">2</div>
@@ -1140,7 +1107,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">3</div>
@@ -1153,10 +1120,10 @@
                   </div>
                   
                </div>
+               	
+               	
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">4</div>
@@ -1166,7 +1133,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">5</div>
@@ -1177,7 +1144,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">6</div>
@@ -1192,7 +1159,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">7</div>
@@ -1202,9 +1169,9 @@
                   </div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">8</div>
@@ -1214,7 +1181,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">9</div>
@@ -1228,7 +1195,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">10</div>
@@ -1239,7 +1206,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">11</div>
@@ -1249,7 +1216,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">13</div>
@@ -1262,7 +1229,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">14</div>
@@ -1276,7 +1243,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">15</div>
@@ -1292,7 +1259,7 @@
                   
                </div>
                
-               
+               			
                
                
                <div class="line">
@@ -1303,7 +1270,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">18</div>
@@ -1313,7 +1280,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">19</div>
@@ -1323,7 +1290,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">20</div>
@@ -1338,7 +1305,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">21</div>
@@ -1349,7 +1316,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">22</div>
@@ -1359,7 +1326,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">23</div>
@@ -1369,9 +1336,9 @@
                   </div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">24</div>
@@ -1382,7 +1349,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">25</div>
@@ -1392,7 +1359,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">26</div>
@@ -1402,7 +1369,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">27</div>
@@ -1417,7 +1384,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">28</div>
@@ -1428,7 +1395,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">29</div>
@@ -1442,7 +1409,7 @@
                   
                </div>
                
-               
+               			
                
                
                <div class="line">
@@ -1453,7 +1420,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">32</div>
@@ -1463,7 +1430,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">33</div>
@@ -1476,7 +1443,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">34</div>
@@ -1489,12 +1456,12 @@
                   </div>
                   
                </div>
+               			
                
                
+               			
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">37</div>
@@ -1513,7 +1480,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">38</div>
@@ -1529,12 +1496,12 @@
                   
                </div>
                
+               			
                
                
+               			
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">41</div>
@@ -1547,7 +1514,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                
                <div class="line">
@@ -1558,7 +1525,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">44</div>
@@ -1569,7 +1536,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">45</div>
@@ -1579,7 +1546,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">46</div>
@@ -1594,9 +1561,9 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               			
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">48</div>
@@ -1606,9 +1573,9 @@
                   </div>
                   
                </div>
+               			
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">50</div>
@@ -1620,7 +1587,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">51</div>
@@ -1630,9 +1597,9 @@
                   </div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">52</div>
@@ -1642,7 +1609,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">53</div>
@@ -1657,11 +1624,11 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               	
                
+               			
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">55</div>
@@ -1671,9 +1638,9 @@
                   </div>
                   
                </div>
+               			
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">57</div>
@@ -1691,7 +1658,7 @@
                
                
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">61</div>
@@ -1704,7 +1671,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">62</div>
@@ -1717,7 +1684,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">63</div>
@@ -1730,7 +1697,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">64</div>
@@ -1740,7 +1707,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">65</div>
@@ -1753,7 +1720,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">66</div>
@@ -1763,7 +1730,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">67</div>
@@ -1773,11 +1740,11 @@
                   </div>
                   
                </div>
+               			
                
+               			
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">70</div>
@@ -1790,14 +1757,14 @@
                   </div>
                   
                </div>
+               			
                
                
+               			
                
+               			
                
-               
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">75</div>
@@ -1813,7 +1780,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">76</div>
@@ -1825,9 +1792,9 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               			
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">78</div>
@@ -1842,7 +1809,7 @@
                </div>
                
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">79</div>
@@ -1857,7 +1824,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">80</div>
@@ -1876,7 +1843,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">82</div>
@@ -1888,9 +1855,9 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">83</div>
@@ -1905,7 +1872,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">84</div>
@@ -1920,9 +1887,9 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">85</div>
@@ -1933,8 +1900,9 @@
                   <div class="apparatus app_2_l_85_1" data-app-id="app_2_l_85_1">
                      <div data-witness="a2" class="reading a2">!
                         <div class="noteicon">n
-                           <div class="note"><strong>Note:</strong>  The original layout is diagonal; see the
-                              image. 
+                           <div class="note"><strong>Note:</strong> 
+                              		The original layout is diagonal; see the image.  
+                              		
                            </div>
                         </div>
                         
@@ -1944,16 +1912,16 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               			
+               
+               			
+               
+               			
+               
+               			
                
                
-               
-               
-               
-               
-               
-               
-               
-               
+               		
                
             </div>
          </div>
@@ -1974,7 +1942,7 @@
                   
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">1</div>
@@ -1990,7 +1958,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">2</div>
@@ -2000,7 +1968,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">3</div>
@@ -2010,10 +1978,10 @@
                   </div>
                   
                </div>
+               	
+               	
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">4</div>
@@ -2023,7 +1991,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">5</div>
@@ -2034,7 +2002,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">6</div>
@@ -2049,7 +2017,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">7</div>
@@ -2059,9 +2027,9 @@
                   </div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">8</div>
@@ -2071,7 +2039,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">9</div>
@@ -2085,7 +2053,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">10</div>
@@ -2096,7 +2064,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">11</div>
@@ -2106,7 +2074,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">13</div>
@@ -2116,7 +2084,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">14</div>
@@ -2130,7 +2098,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">15</div>
@@ -2143,7 +2111,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">16</div>
@@ -2165,7 +2133,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">18</div>
@@ -2175,7 +2143,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">19</div>
@@ -2185,7 +2153,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">20</div>
@@ -2197,7 +2165,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">21</div>
@@ -2208,7 +2176,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">22</div>
@@ -2218,7 +2186,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">23</div>
@@ -2228,9 +2196,9 @@
                   </div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">24</div>
@@ -2241,7 +2209,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">25</div>
@@ -2251,7 +2219,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">26</div>
@@ -2261,7 +2229,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">27</div>
@@ -2273,7 +2241,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">28</div>
@@ -2284,7 +2252,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">29</div>
@@ -2295,7 +2263,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">30</div>
@@ -2314,7 +2282,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">32</div>
@@ -2324,7 +2292,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">33</div>
@@ -2334,7 +2302,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">34</div>
@@ -2347,7 +2315,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">35</div>
@@ -2363,7 +2331,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">36</div>
@@ -2373,7 +2341,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">37</div>
@@ -2386,7 +2354,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">38</div>
@@ -2399,7 +2367,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">39</div>
@@ -2413,9 +2381,9 @@
                   
                </div>
                
+               			
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">41</div>
@@ -2431,7 +2399,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">42</div>
@@ -2452,7 +2420,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">44</div>
@@ -2466,7 +2434,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">45</div>
@@ -2476,7 +2444,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">46</div>
@@ -2497,7 +2465,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">47</div>
@@ -2507,15 +2475,20 @@
                            </ins>
                         
                         <div class="noteicon">n
-                           <div class="note"><strong>Note:</strong>  This paragraph was revised several times. As well as the
-                              other parts of the Version 3, all rewritten parts here are organized in a way
-                              of “a word in a line.” See the image of Version 3 in order to acquire the
-                              actual locations and layouts. In the far left of the first column, there is
-                              rewritten paragraph “YET IS SHE URGED D IN HEIR TO QUAKE ANEW VAGRANT FORLORAN
-                              SPILL” ("FORLORAN" is crossed out). Next this paragraph, there is another
-                              revised paragraph “YET WITHIN HEIR SHE QUAKES ANEW”("YET" is crossed out). Left
-                              side of the second column, there are another revisions. “YET IS SHE URGED TO,"
-                              “QUAKE ANEW IN HEIR,” “TOO VGRANT SPILL.” 
+                           <div class="note"><strong>Note:</strong> 
+                              	This paragraph was revised several times. As well as the other parts of the Version
+                              3, 
+                              	all rewritten parts here are organized in a way of “a word in a line.”  
+                              	See the image of Version 3 in order to acquire the actual locations and layouts.
+                              	In the far left of the first column, there is rewritten paragraph “YET IS SHE URGED
+                              
+                              	D IN HEIR TO QUAKE ANEW VAGRANT FORLORAN SPILL” ("FORLORAN" is crossed out).  Next
+                              this paragraph, 
+                              	there is another revised paragraph “YET WITHIN HEIR SHE QUAKES ANEW”("YET" is crossed
+                              out).  
+                              	Left side of the second column, there are another revisions.  
+                              	“YET IS SHE URGED TO," “QUAKE ANEW IN HEIR,” “TOO VGRANT SPILL.”
+                              
                            </div>
                         </div>
                         
@@ -2523,7 +2496,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">48</div>
@@ -2533,19 +2506,20 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">49</div>
                   
                   <div class="apparatus app_2_l_49_1" data-app-id="app_2_l_49_1">
                      <div data-witness="a3" class="reading a3">
-                        <del>F</del>URGED 
+                        <del>F</del>URGED
+                        	
                      </div>
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">50</div>
@@ -2558,11 +2532,11 @@
                   </div>
                   
                </div>
+               			
                
+               	
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">52</div>
@@ -2572,7 +2546,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">53</div>
@@ -2587,9 +2561,9 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">54</div>
@@ -2603,7 +2577,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">55</div>
@@ -2616,7 +2590,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">56</div>
@@ -2629,7 +2603,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">57</div>
@@ -2689,7 +2663,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">61</div>
@@ -2699,7 +2673,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">62</div>
@@ -2709,7 +2683,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">63</div>
@@ -2719,7 +2693,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">64</div>
@@ -2738,9 +2712,9 @@
                   </div>
                   
                </div>
+               			
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">66</div>
@@ -2750,7 +2724,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">67</div>
@@ -2760,7 +2734,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">68</div>
@@ -2773,7 +2747,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">69</div>
@@ -2786,7 +2760,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">70</div>
@@ -2799,7 +2773,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">71</div>
@@ -2814,13 +2788,13 @@
                   
                </div>
                
+               			
                
+               			
                
+               			
                
-               
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">76</div>
@@ -2843,7 +2817,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">77</div>
@@ -2856,7 +2830,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">78</div>
@@ -2871,7 +2845,7 @@
                </div>
                
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">79</div>
@@ -2880,8 +2854,8 @@
                      <div data-witness="a3" class="reading a3">NxWHERE?<ins class="rend-subscript">RIGHT</ins>
                         
                         <div class="noteicon">p
-                           <div class="note"><strong>Physical note:</strong> There is a gray oval from this line to the
-                              bottom of the page. See the image.
+                           <div class="note"><strong>Physical note:</strong> There is a gray oval from this line to the bottom of the page.  
+                              		See the image.
                            </div>
                         </div>
                         
@@ -2891,7 +2865,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">80</div>
@@ -2914,11 +2888,11 @@
                   </div>
                   
                </div>
+               			
                
+               	
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">83</div>
@@ -2940,7 +2914,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">84</div>
@@ -2952,9 +2926,9 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">85</div>
@@ -2966,16 +2940,16 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               			
+               
+               			
+               
+               			
+               
+               			
                
                
-               
-               
-               
-               
-               
-               
-               
-               
+               		
                
             </div>
          </div>
@@ -2990,10 +2964,11 @@
                   
                   <div class="apparatus app_2_title1" data-app-id="app_2_title1">
                      <div data-witness="a4" class="reading a4">Thistle down flight-Second half of Version 3 
+                        				
                         <div class="noteicon">n
-                           <div class="note"><strong>Note:</strong> Baroness rewrote the second half (second column) of Version 3. This part is
-                              separately encoded in order to enjoy advantages of the Versioning
-                              Machine.
+                           <div class="note"><strong>Note:</strong> Baroness rewrote the second half (second column) of Version 3.  
+                              				This part is separately encoded in order to enjoy advantages of 
+                              				the Versioning Machine.
                            </div>
                         </div>
                         
@@ -3004,103 +2979,103 @@
                   
                   
                </div>
+               			
                
+               			
                
+               			
                
+               	
+               	
                
+               			
                
+               			
                
                
+               			
                
+               			
                
+               	
                
+               			
                
+               			
                
                
+               			
                
                
+               			
                
+               			
                
+               			
                
                
+               			
                
                
+               			
                
                
+               			
                
+               			
                
+               			
                
+               			
                
                
+               			
                
+               			
                
+               	
                
+               			
                
                
+               			
                
+               			
                
+               			
                
+               			
                
                
+               			
                
                
+               			
                
                
+               			
                
+               			
                
+               			
                
+               			
                
                
+               			
                
+               			
                
                
+               			
                
                
+               			
                
                
+               			
                
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">41</div>
@@ -3110,7 +3085,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">42</div>
@@ -3132,7 +3107,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">44</div>
@@ -3144,7 +3119,7 @@
                   
                </div>
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">45</div>
@@ -3163,7 +3138,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">46</div>
@@ -3175,9 +3150,9 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               			
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">48</div>
@@ -3187,9 +3162,9 @@
                   </div>
                   
                </div>
+               			
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">50</div>
@@ -3199,7 +3174,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">51</div>
@@ -3209,9 +3184,9 @@
                   </div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">52</div>
@@ -3224,7 +3199,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">53</div>
@@ -3239,9 +3214,9 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">54</div>
@@ -3254,7 +3229,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">55</div>
@@ -3264,9 +3239,9 @@
                   </div>
                   
                </div>
+               			
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">57</div>
@@ -3281,7 +3256,7 @@
                
                
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">61</div>
@@ -3291,7 +3266,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">62</div>
@@ -3301,7 +3276,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">63</div>
@@ -3320,11 +3295,11 @@
                   </div>
                   
                </div>
+               			
                
+               			
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">66</div>
@@ -3334,7 +3309,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">67</div>
@@ -3344,11 +3319,11 @@
                   </div>
                   
                </div>
+               			
                
+               			
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">70</div>
@@ -3358,7 +3333,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">71</div>
@@ -3383,7 +3358,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">73</div>
@@ -3396,7 +3371,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">74</div>
@@ -3409,7 +3384,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">75</div>
@@ -3422,7 +3397,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">76</div>
@@ -3437,13 +3412,13 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               			
+               
+               			
                
                
                
-               
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">79</div>
@@ -3462,13 +3437,17 @@
                         <del>ILL WILL</del>
                         
                         <div class="noteicon">n
-                           <div class="note"><strong>Note:</strong>  There are three rewritten attempts about this part. In the
-                              space on the left hand side of the column, there is the rewriting, “SUN WILL
-                              EARTH BEARS" ("EARTH" and "BEARS" are crossed out). On the righthad side of the
-                              column, there are two revising attempts. One is “SH WE IS ARE NIL ILL" ("WE,"
-                              "ARE," and "NIL" are crossed out). Another is “SUN WILLED ILL MOTHER RIGHT
-                              BIRTH" (This part is actually closed out with the zigzag line). See the
-                              image.
+                           <div class="note"><strong>Note:</strong> 
+                              		There are three rewritten attempts about this part.  
+                              		In the space on the left hand side of the column, there is the rewriting, “SUN WILL
+                              
+                              		EARTH BEARS" ("EARTH" and "BEARS" are crossed out).  On the righthad side of the
+                              column, 
+                              		there are two revising attempts. One is “SH WE IS ARE
+                              		NIL ILL" ("WE," "ARE," and "NIL" are crossed out).
+                              		Another is “SUN WILLED ILL MOTHER RIGHT BIRTH" 
+                              		(This part is actually closed out with the zigzag line).  
+                              		See the image.
                            </div>
                         </div>
                         
@@ -3478,10 +3457,10 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               			
                
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">82</div>
@@ -3496,9 +3475,9 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">83</div>
@@ -3519,7 +3498,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">84</div>
@@ -3531,9 +3510,9 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">85</div>
@@ -3545,16 +3524,16 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               			
+               
+               			
+               
+               			
+               
+               			
                
                
-               
-               
-               
-               
-               
-               
-               
-               
+               		
                
             </div>
          </div>
@@ -3574,8 +3553,9 @@
                      <div data-witness="a5" class="reading a5">
                         
                         <div class="noteicon">n
-                           <div class="note"><strong>Note:</strong>  Version4 (Witness5) was not encoded since there are too
-                              many revisions (in this version) to apply parallel segmentation.
+                           <div class="note"><strong>Note:</strong> 
+                              				Version4 (Witness5) was not encoded since there are too many 
+                              				revisions (in this version) to apply parallel segmentation.
                            </div>
                         </div>
                         
@@ -3586,207 +3566,207 @@
                   
                   
                </div>
+               			
                
+               			
                
+               			
                
+               	
+               	
                
+               			
                
+               			
                
                
+               			
                
+               			
                
+               	
                
+               			
                
+               			
                
                
+               			
                
                
+               			
                
+               			
                
+               			
                
                
+               			
                
                
+               			
                
                
+               			
                
+               			
                
+               			
                
+               			
                
                
+               			
                
+               			
                
+               	
                
+               			
                
                
+               			
                
+               			
                
+               			
                
+               			
                
                
+               			
                
                
+               			
                
                
+               			
                
+               			
                
+               			
                
+               			
                
                
+               			
                
+               			
                
                
+               			
                
                
+               			
                
                
+               			
                
+               			
                
+               			
                
                
+               			
                
                
+               			
                
+               			
                
+               			
                
+               			
                
+               			
                
+               			
                
+               			
                
+               	
                
+               			
                
+               			
                
+               	
                
+               			
                
+               			
                
+               			
                
+               			
                
                
                
                
+               			
                
+               			
                
+               			
                
+               			
                
+               			
                
+               			
                
+               			
                
+               			
                
+               			
                
+               			
                
+               			
                
                
+               			
                
+               			
                
+               			
                
+               			
                
+               			
                
+               			
                
                
                
+               			
                
+               			
                
                
+               			
                
+               	
                
+               			
                
+               			
                
+               	
                
+               			
                
+               			
                
+               			
                
+               			
                
+               			
                
                
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
+               		
                
             </div>
          </div>
@@ -3807,7 +3787,7 @@
                   
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">1</div>
@@ -3817,9 +3797,9 @@
                   </div>
                   
                </div>
+               			
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">3</div>
@@ -3834,15 +3814,15 @@
                   </div>
                   
                </div>
+               	
+               	
+               
+               			
+               
+               			
                
                
-               
-               
-               
-               
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">6</div>
@@ -3860,11 +3840,11 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               			
                
+               	
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">8</div>
@@ -3880,13 +3860,13 @@
                   </div>
                   
                </div>
+               			
                
                
+               			
                
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">11</div>
@@ -3899,18 +3879,18 @@
                   </div>
                   
                </div>
+               			
+               
+               			
                
                
+               			
                
                
+               			
                
                
-               
-               
-               
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">18</div>
@@ -3927,11 +3907,11 @@
                   </div>
                   
                </div>
+               			
                
+               			
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">21</div>
@@ -3949,28 +3929,28 @@
                   
                </div>
                
+               			
+               
+               			
+               
+               	
+               
+               			
                
                
+               			
+               
+               			
+               
+               			
+               
+               			
                
                
+               			
                
                
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
+               			
                
                
                <div class="line">
@@ -3987,7 +3967,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">32</div>
@@ -3997,7 +3977,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">33</div>
@@ -4012,7 +3992,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">34</div>
@@ -4022,12 +4002,12 @@
                   </div>
                   
                </div>
+               			
                
                
+               			
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">37</div>
@@ -4043,13 +4023,13 @@
                   
                </div>
                
+               			
                
                
+               			
                
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">40</div>
@@ -4059,7 +4039,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">41</div>
@@ -4069,15 +4049,15 @@
                   </div>
                   
                </div>
+               			
                
                
+               			
                
                
+               			
                
-               
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">46</div>
@@ -4100,21 +4080,21 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               			
                
+               			
                
+               			
                
+               			
                
+               			
                
+               	
                
+               			
                
-               
-               
-               
-               
-               
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">53</div>
@@ -4137,9 +4117,9 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               	
                
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">54</div>
@@ -4153,11 +4133,11 @@
                   </div>
                   
                </div>
+               			
                
+               			
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">57</div>
@@ -4184,7 +4164,7 @@
                </div>
                
                
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">61</div>
@@ -4198,15 +4178,15 @@
                   </div>
                   
                </div>
+               			
                
+               			
                
+               			
                
+               			
                
-               
-               
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">66</div>
@@ -4222,32 +4202,32 @@
                   </div>
                   
                </div>
+               			
+               
+               			
+               
+               			
+               
+               			
+               
+               			
+               
+               
+               			
+               
+               			
+               
+               			
+               
+               			
+               
+               			
+               
+               			
                
                
                
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">79</div>
@@ -4269,14 +4249,14 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               			
                
                
+               			
                
+               	
                
-               
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">83</div>
@@ -4294,7 +4274,7 @@
                   <div class="stanzabreak"></div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">84</div>
@@ -4309,11 +4289,11 @@
                   <div class="stanzabreak"></div>
                   
                </div>
+               	
                
+               			
                
-               
-               
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">86</div>
@@ -4325,7 +4305,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">87</div>
@@ -4335,7 +4315,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">88</div>
@@ -4345,7 +4325,7 @@
                   </div>
                   
                </div>
-               
+               			
                
                <div class="line">
                   <div class="linenumber invisible">89</div>
@@ -4356,7 +4336,7 @@
                   
                </div>
                
-               
+               		
                
             </div>
          </div>
@@ -4366,50 +4346,62 @@
                
             </div>
             <div class="noteContent a4">
-               <div class="witnesses">a4</div><strong>Note: </strong>Baroness rewrote the second half (second column) of Version 3. This part is
-               separately encoded in order to enjoy advantages of the Versioning
-               Machine.
+               <div class="witnesses">a4</div><strong>Note: </strong>Baroness rewrote the second half (second column) of Version 3.  
+               				This part is separately encoded in order to enjoy advantages of 
+               				the Versioning Machine.
             </div>
             <div class="noteContent a5">
-               <div class="witnesses">a5</div><strong>Note: </strong> Version4 (Witness5) was not encoded since there are too
-               many revisions (in this version) to apply parallel segmentation.
+               <div class="witnesses">a5</div><strong>Note: </strong>
+               				Version4 (Witness5) was not encoded since there are too many 
+               				revisions (in this version) to apply parallel segmentation.
             </div>
             <div class="noteContent a3">
                <div class="witnesses">a3</div>
-               <div class="position" onclick="matchLine('lined2e960');">Line number 47</div><strong>Note: </strong> This paragraph was revised several times. As well as the
-               other parts of the Version 3, all rewritten parts here are organized in a way
-               of “a word in a line.” See the image of Version 3 in order to acquire the
-               actual locations and layouts. In the far left of the first column, there is
-               rewritten paragraph “YET IS SHE URGED D IN HEIR TO QUAKE ANEW VAGRANT FORLORAN
-               SPILL” ("FORLORAN" is crossed out). Next this paragraph, there is another
-               revised paragraph “YET WITHIN HEIR SHE QUAKES ANEW”("YET" is crossed out). Left
-               side of the second column, there are another revisions. “YET IS SHE URGED TO,"
-               “QUAKE ANEW IN HEIR,” “TOO VGRANT SPILL.” 
+               <div class="position" onclick="matchLine('lined2e960');">Line number 47</div><strong>Note: </strong>
+               	This paragraph was revised several times. As well as the other parts of the Version
+               3, 
+               	all rewritten parts here are organized in a way of “a word in a line.”  
+               	See the image of Version 3 in order to acquire the actual locations and layouts.
+               	In the far left of the first column, there is rewritten paragraph “YET IS SHE URGED
+               
+               	D IN HEIR TO QUAKE ANEW VAGRANT FORLORAN SPILL” ("FORLORAN" is crossed out).  Next
+               this paragraph, 
+               	there is another revised paragraph “YET WITHIN HEIR SHE QUAKES ANEW”("YET" is crossed
+               out).  
+               	Left side of the second column, there are another revisions.  
+               	“YET IS SHE URGED TO," “QUAKE ANEW IN HEIR,” “TOO VGRANT SPILL.”
+               
             </div>
             <div class="noteContent a3">
                <div class="witnesses">a3</div>
-               <div class="position" onclick="matchLine('lined2e1550');">Line number 79</div><strong>Physical note: </strong>There is a gray oval from this line to the
-               bottom of the page. See the image.
+               <div class="position" onclick="matchLine('lined2e1550');">Line number 79</div><strong>Physical note: </strong>There is a gray oval from this line to the bottom of the page.  
+               		See the image.
             </div>
             <div class="noteContent a4">
                <div class="witnesses">a4</div>
-               <div class="position" onclick="matchLine('lined2e1550');">Line number 79</div><strong>Note: </strong> There are three rewritten attempts about this part. In the
-               space on the left hand side of the column, there is the rewriting, “SUN WILL
-               EARTH BEARS" ("EARTH" and "BEARS" are crossed out). On the righthad side of the
-               column, there are two revising attempts. One is “SH WE IS ARE NIL ILL" ("WE,"
-               "ARE," and "NIL" are crossed out). Another is “SUN WILLED ILL MOTHER RIGHT
-               BIRTH" (This part is actually closed out with the zigzag line). See the
-               image.
+               <div class="position" onclick="matchLine('lined2e1550');">Line number 79</div><strong>Note: </strong>
+               		There are three rewritten attempts about this part.  
+               		In the space on the left hand side of the column, there is the rewriting, “SUN WILL
+               
+               		EARTH BEARS" ("EARTH" and "BEARS" are crossed out).  On the righthad side of the
+               column, 
+               		there are two revising attempts. One is “SH WE IS ARE
+               		NIL ILL" ("WE," "ARE," and "NIL" are crossed out).
+               		Another is “SUN WILLED ILL MOTHER RIGHT BIRTH" 
+               		(This part is actually closed out with the zigzag line).  
+               		See the image.
             </div>
             <div class="noteContent a1">
                <div class="witnesses">a1</div>
-               <div class="position" onclick="matchLine('lined2e1719');">Line number 85</div><strong>Note: </strong> The original layout is diagonal (up-down-up);
-               see the image. 
+               <div class="position" onclick="matchLine('lined2e1719');">Line number 85</div><strong>Note: </strong>
+               		The original layout is diagonal (up-down-up); see the image.  
+               		
             </div>
             <div class="noteContent a2">
                <div class="witnesses">a2</div>
-               <div class="position" onclick="matchLine('lined2e1719');">Line number 85</div><strong>Note: </strong> The original layout is diagonal; see the
-               image. 
+               <div class="position" onclick="matchLine('lined2e1719');">Line number 85</div><strong>Note: </strong>
+               		The original layout is diagonal; see the image.  
+               		
             </div>
             <div id="noNotesFound" class="noteContent">
                Sorry, but there are no notes associated with
