@@ -31,97 +31,104 @@ h6{
     font-size:13px;
 }
 
+/* BEGIN styles for main banner*/
 div#mainBanner{
     float:left;
     width:100%;
-    min-width:770px;
-    min-height:70px;
     height: 8em;
 	position:fixed;
 	top:0;
 	left:0;
 	z-index:10;
+	background-image: url("../vm-images/HeaderBackground.svg");
+	background-size: auto 8em;
+	repeat:no-repeat;
 }
 div#mainBanner div#brandingLogo{
     float:left;
-    width:8.38em;
-    /*height:5.34em;*/
-    min-height:70px;
-    /*background:#6699CC;*/
-
+	width: 8em;
 }
+
 div#mainBanner div#brandingLogo img{
-    /*width:8.38em;
-    height:2.9em;*/
-	height: 7.5em;
-	border:none;
-    padding:0;
-    /*Alex margin:1.22em auto 0 auto;*/
+    width: 80%;
+	margin:0 10%;
 }
-div#mainBanner div#headline{
-    /*float:left;
-    width:46.7em;
-    height:2.21em;
-    font-family:sans-serif;
-    line-height:2.21em;
-    border-top:none;
-    border-left: 0.08em solid black;
-    border-left:none;
-    border-right:none;
-    border-bottom:0.08em solid black;
-    padding:0 0 0 0.53em;
-    margin:0;
-    color:#CC0000;*/
-}
-/*added by RB*/
-div#mainBanner{
-    height:8em;
-    background-image: url("../vm-images/HeaderBackground.svg");
-	background-size:cover;
-}
-
+div#headline{
+	padding:1em;
+	}
 div#mainBanner div#headline h1{
     margin:0;
     color:black;
-    /*float:left;
-    font-size:1.22em;
-    font-weight:800;
-    text-decoration:underline;
-    cursor:pointer;
-    margin:0 0.53em 0 0;
-    padding:0;*/
 }
 div#mainBanner div#headline span.versionCount{
     font-size:1.07em;
     font-style:italic;
 }
 
-/*RB rewrite 
-div#mainBanner div#mainControls{
-    position:absolute;
-    top:2.21em;
-    left:8.38em;
-    min-height:30px;
-    height:2.21em;
-    line-height:2.21em;
-    border-top:none;
-    border-right:none;
-    border-bottom:none;
-    border-left:0.08em solid black;
-    margin:0;
-    padding:0.455em;
-    white-space:nowrap;
-}*/
+
+/* END styles for main banner*/
+
+/* BEGIN top navigation and dropdown menu*/
 div#mainBanner nav#mainControls{
     border-top:none;
     border-right:none;
     border-bottom:none;
     border-left:0.08em solid black;
     margin:0;
-    padding:20px 0;
+    padding:0;
 
 }
-/*end RB rewrite*/
+
+nav#mainControls button img{
+	height:1em;
+}
+
+
+/*styling of version dropdown list items*/
+#mainControls > ul > li ul.dropdown{
+    position:absolute;
+    visibility:hidden;
+    border:1px solid #2c577f;
+    margin:0;
+    padding:0;
+    z-index:10;
+}
+#mainControls > ul > li ul.dropdown li{
+    display:block;
+    float:none;
+    padding:2px;
+    min-width:12em;
+    clear:both;
+    background-color:#fff;
+	cursor:pointer;
+}
+#mainControls > ul > li ul li:hover{
+    width:auto;
+    font-weight:800;
+}
+div.listText{
+    display:table;
+}
+/*styling of div containing the names of individual witnesses in version dropdown*/
+div.listText div:first-child{
+    width:75%; 
+	padding-right:5px;
+    display:table-cell;
+    vertical-align:middle;
+}
+/*styling of div containing the on-off button in version dropdown*/
+div.listText div:last-child{
+    text-align:center;
+    width:15%;
+    vertical-align:middle;
+    display:table-cell;
+    height:100%;
+
+}
+
+
+/* END top navigation and dropdown menu*/
+
 div#mssArea{
     float:left;
     width:100%;
@@ -490,55 +497,6 @@ span.viewerHandleLt{
 }
 
 
-/*style for dropdown list*/
-#mainControls > ul > li ul.dropdown{
-    position:absolute;
-    visibility:hidden;
-    border:1px solid #2c577f;
-    margin:0;
-    padding:0;
-    z-index:10;
-}
-#mainControls > ul > li ul.dropdown li{
-    display:block;
-    float:none;
-    padding:2px;
-    min-width:300px;
-    clear:both;
-    background-color:#fff;
-	cursor:pointer;
-}
-
-#mainControls > ul > li ul li:hover{
-    width:auto;
-    font-weight:800;
-}
-
-div.listText{
-    display:table;
-}
-
-div.listText>p{
-    width:75%; 
-	padding-right:5px;
-    display:table-cell;
-    vertical-align:middle;
-}
-
-
-.image-container{
-    text-align:center;
-    width:15%;
-    vertical-align:middle;
-    display:table-cell;
-    height:100%;
-
-}
-
-.image-container img{
-    width:100%;
-
-}
 
 .invisible{
     display:none;
@@ -607,7 +565,7 @@ img.highlight{
     border:thick solid #003366;
     background:white;
     font-weight:400 !important;
-	z-index:3;
+	z-index:6;
 }
 
 /*line highlight if matched*/
@@ -623,27 +581,33 @@ img.highlight{
 }
 
 
+/* BEGIN responsive styles media queries*/
 
-/*Code RB End*/
+@media screen and (max-width: 1100px){
+	div#mainBanner{
+    height: 5em;
+	background-size: auto 5em;
+	}
+	body>div#mssArea{
+    margin: 5em 0 0;
+	}
+	div#mainBanner nav li button{
+	font-size:0.8em;
+	}
 
-/*Code Alex Start*/
-
-input[type="image"] {
-    width: 35px;
-    height: 30px;
-    position:relative;
-
-   }
-   
-  #headerBackground{
-      position:absolute;
-      
-      z-index: -1;
-
-  }
+	/*branding logo*/ 
+	div#mainBanner div#brandingLogo{
+		width:5em;
+	}
+	div#headline{
+	padding:0;
+	}
+	div#mainBanner nav li .dropdown li{
+	font-size:0.8em;
+	}
+}
 
 
-/*Code Alex End*/
-
+/*END responsive styles*/
 
 

@@ -56,14 +56,24 @@ $.fn.changePanelVisibility = function(x,y) {
 	console.log("param y: " + y);
 	console.log("param x: " + !isNaN(y));
 	*/
+	
 	if(!(x===undefined || y===undefined)){
 	
-		if(!isNaN(x) || x.substr(-2) === "em"){
-			$(this).css({"left":x});
+		if($.type(x) === "string"){
+			if((x.substr(-2) === "em") || (x.substr(-2) === "px")){
+			x = x.slice(0,-2)
 			}
-		if(!isNaN(y) || y.substr(-2) === "em"){
-			$(this).css({"top":y});
 		}
+		if($.type(y) === "string"){
+			if((y.substr(-2) === "em") || (y.substr(-2) === "px")){
+				y = y.slice(0,-2)
+			}
+		}
+		if(!isNaN(x) && !isNaN(y)){
+			$(this).css({"left":x});
+			$(this).css({"top":y});
+			}
+		
 	}
 }
 
@@ -85,10 +95,13 @@ $.fn.panelActionClick = function() {
 					console.log("value var x: " + x);
 					console.log("value var y: " + y);
 					
-					if(x === "auto"){
+					if(x === "auto" || x === "auto"){
 						x = totalPanelWidth();
+						y = $("#mainBanner").height();
 					}
 					
+					console.log("value var x: " + x);
+					console.log("value var y: " + y);
 					$(this).changePanelVisibility(x, y);
 					$(this).appendTo("#mssArea");
 					
@@ -126,7 +139,7 @@ $.fn.mssPanel = function() {
 			});
 			
 			$that.addClass("activePanel").css({"z-index":5});
-			$that.appendTo("#mssArea");
+			$that.nextAll().insertBefore($that);
 		});
 		
 		$that.hover(function(){
@@ -154,7 +167,7 @@ $.fn.imgPanel = function() {
 				$(this).css({"z-index":2}).removeClass("activePanel");
 			});
 			$that.addClass("activePanel").css({"z-index":5});
-			$that.appendTo("#mssArea");
+			$that.nextAll().insertBefore($that);
 		});
 		
 		$that.hover(function(){
@@ -235,22 +248,6 @@ function workspaceResize(){
 				}
 			});
 			$("#mssArea").css({"height":panelHeight+100});
-}
-
-$.fn.switchTopMenu = function(){
-	/*switches the top menu from wide screen view to three-line menu button*/
-	var windowWidth = $(window).width();
-            
-    if( windowWidth < 900){
-          $(".largeScreenTopMenu").hide();
-		  $(".smallScreenDropdown").show();
-		 
-       }
-       else{
-           $(".largeScreenTopMenu").show();
-			$(".smallScreenDropdown").hide();
-           }
-
 }
 
 
@@ -387,15 +384,17 @@ $(document).ready(function() {
 			$("nav *[data-panelid='linenumbers']").toggleOnOff();
 		}
 	
-			
-	/*top menu*/
-	$(window).switchTopMenu();
-	
-	$(window).resize(function(){
-        workspaceResize();
-		$(this).switchTopMenu();
-    });
-	
+		/*close panel via X sign */
+	$(".closePanel").click(function(){
+		var w = $(this).closest(".panel").attr("id");
+		
+		$(this).closest(".panel").addClass("invisible");
+		
+		$("*[data-panelid='"+w+"']").toggleOnOff();
+		
+		workspaceResize();
+		
+	});
 	
 	workspaceResize();
 	
@@ -407,19 +406,6 @@ $(document).ready(function() {
 	
 	/*create popup for note, choice, etc.*/
 	$("div.noteicon, div.choice, div.rdgGrp").hoverPopup();
-	
-	
-	/*close panel via X sign */
-	$(".closePanel").click(function(){
-		var w = $(this).closest(".panel").attr("id");
-		
-		$(this).closest(".panel").addClass("invisible");
-		
-		$("*[data-panelid='"+w+"']").toggleOnOff();
-		
-		workspaceResize();
-		
-	});
 	
 	/*adds the match line or apparatus highlighting*/
 	$(".apparatus").match_app();
@@ -438,10 +424,11 @@ $(document).ready(function() {
 	{helper: "ui-resizable-helper"}
 	);
 	
-	$(".imgPanel").zoomPan();
 	$(".mssPanel").mssPanel();
+	$(".imgPanel").zoomPan();
 	$(".imgPanel").imgPanel();
 	$(".imageLink").imgLink();
+	
 	
 
 });

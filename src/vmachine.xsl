@@ -164,22 +164,7 @@
                   <xsl:call-template name="versionDropdown"/>
                </ul>
             </li>
-            <li>
-               <xsl:attribute name="class">smallScreenDropdown</xsl:attribute>
-               <button>
-                  <xsl:attribute name="class">topMenuButton dropdownButton</xsl:attribute>
-                  <img class="invisible menuicon" src="../vm-images/menuicon.png" alt=""/>
-                  <img class="menuicon" src="../vm-images/menuicon.png" alt=""/>
-               </button>
-               <ul>
-                  <xsl:attribute name="class">dropdown</xsl:attribute>
-                  <xsl:call-template name="smallScreenDropdown"/>
-               </ul>
-            </li>
-         </ul>
-         <ul>
-            <xsl:attribute name="class">largeScreenTopMenu</xsl:attribute>
-            <xsl:call-template name="largeScreenTopMenu"/>
+            <xsl:call-template name="topMenu"/>
          </ul>
      </nav>
       
@@ -194,11 +179,11 @@
                    <div>
                       <xsl:attribute name="class">listText</xsl:attribute>
                       
-                   <p>
+                   <div>
                          <xsl:value-of select="."></xsl:value-of>
-                   </p> 
+                   </div> 
                    
-                    <div class="image-container">
+                    <div>
                        <button>
                           <xsl:text>OFF</xsl:text>
                        </button>
@@ -208,77 +193,8 @@
            </xsl:for-each>
   </xsl:template>
    
-   <xsl:template name="smallScreenDropdown">
-      <xsl:if test="//tei:l[@n]">
-         <li>
-            <xsl:attribute name="data-panelid">linenumbers</xsl:attribute>
-            <div>
-               <xsl:attribute name="class">listText</xsl:attribute>
-               
-               <p>
-                  <xsl:text>Line numbers</xsl:text> 
-               </p> 
-               
-               <div class="image-container">
-                  <button>
-                     <xsl:text>OFF</xsl:text>
-                  </button>
-               </div>
-            </div>
-         </li>
-      </xsl:if>
-      <li>
-         <xsl:attribute name="data-panelid">bibPanel</xsl:attribute>
-         <div>
-            <xsl:attribute name="class">listText</xsl:attribute>
-            <p>
-               <xsl:text>Bibliographic panel</xsl:text>               
-            </p> 
-            
-            <div class="image-container">
-               <button>
-                  <xsl:text>OFF</xsl:text>
-               </button>
-            </div>
-         </div>
-      </li>
-      <li>
-         <xsl:attribute name="data-panelid">notesPanel</xsl:attribute>
-         <div>
-            <xsl:attribute name="class">listText</xsl:attribute>
-            <p>
-               <xsl:text>Notes panel</xsl:text>
-            </p> 
-            
-            <div class="image-container">
-               <button>
-                  <xsl:text>OFF</xsl:text>
-               </button>
-            </div>
-         </div>
-      </li>
-      
-      <xsl:if test="//tei:notesStmt/tei:note[@type='critIntro']">
-         <li>
-            <xsl:attribute name="data-panelid">critPanel</xsl:attribute>
-            <div>
-               <xsl:attribute name="class">listText</xsl:attribute>
-               <p>
-                  <xsl:text>Critical introduction</xsl:text>
-               </p> 
-               
-               <div class="image-container">
-                  <button>
-                     <xsl:text>OFF</xsl:text>
-                  </button>
-               </div>
-            </div>
-         </li>
-      </xsl:if>
-   </xsl:template>
-   
-   
-   <xsl:template name="largeScreenTopMenu">
+  
+   <xsl:template name="topMenu">
       <xsl:if test="//tei:l[@n]">
          <li>
             <xsl:attribute name="data-panelid">linenumbers</xsl:attribute>
