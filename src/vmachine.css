@@ -159,7 +159,7 @@ div#mssArea div.panel div.panelBanner{
     margin:0;
     padding:3px 7px 3px 10px;
     font-family:sans-serif;
-    color:black;
+    color:white;/*changed from black to be easier to read*/
     font-weight:800;
 }
 
