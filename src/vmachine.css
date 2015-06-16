@@ -81,6 +81,7 @@ div#mainBanner nav#mainControls{
 
 nav#mainControls button img{
 	height:0.5em;/*changed from 1em*/
+	padding-left: 5px; /*added to create some space between the text and the arrow*/
 }
 
 
