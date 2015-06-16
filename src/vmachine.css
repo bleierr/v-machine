@@ -426,7 +426,7 @@ div.type-stanza{
     padding:0.32em;
     height:1.4em;
     line-height:1.4em;
-    color:black;
+    color:white;/*changed from black to be easier to read*/
     font-weight:800;
     font-family:sans-serif;
     overflow:hidden;
