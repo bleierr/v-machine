@@ -88,7 +88,7 @@ nav#mainControls button img{
 
 /*styling of version dropdown list items*/
 #mainControls > ul > li ul.dropdown{
-    /*position:absolute;*/
+    position:absolute;
     visibility:hidden;
     border:1px solid #2c577f;
     margin:0;
