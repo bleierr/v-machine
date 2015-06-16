@@ -474,7 +474,8 @@ span.viewerHandleLt{
     display:inline-block;
     list-style-type:none;
     padding: 5px 5px 5px 15px;; /* changed from 5px*/
-    font-size: 1.2em;
+    font-size: 1em; /*changed from 1.2em*/
+    font-family:sans-serif;/*added*/
     position:relative;
     float:left;
 }
