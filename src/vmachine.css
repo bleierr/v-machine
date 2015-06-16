@@ -160,7 +160,7 @@ div#mssArea div.panel div.panelBanner{
     padding:3px 7px 3px 10px;
     font-family:sans-serif;
     color:white;/*changed from black to be easier to read*/
-    font-weight:800;
+    font-weight:400;/*changed from 800 to be easier to read*/
 }
 
 div#mssArea div.panel div.panelBanner select.witnessMenu{
