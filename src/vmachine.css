@@ -80,7 +80,7 @@ div#mainBanner nav#mainControls{
 }
 
 nav#mainControls button img{
-	height:1em;
+	height:0.5em;/*changed from 1em*/
 }
 
 
