@@ -471,7 +471,7 @@ span.viewerHandleLt{
 #mainControls > ul > li{
     display:inline-block;
     list-style-type:none;
-    padding:10px; /* changed from 5px*/
+    padding: 5px 5px 5px 10px;; /* changed from 5px*/
     font-size: 1.2em;
     position:relative;
     float:left;
