@@ -58,8 +58,7 @@ div#headline{
 	}
 div#mainBanner div#headline h1{
     margin:0;
-    padding-left:20px;/*added to make the text clearer*/
-    color:black;
+    color:#2c577f;/*changed from black*/
     font-family: sans-serif; /*added to make the text clearer*/
 }
 div#mainBanner div#headline span.versionCount{
