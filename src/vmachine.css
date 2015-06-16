@@ -57,10 +57,9 @@ div#headline{
 	padding:1em;
 	}
 div#mainBanner div#headline h1{
-    margin:0;
+    margin-left:10px;/*changed from margin:0; to make the text clearer*/
     color:black;
     font-family: sans-serif; /*added to make the text clearer*/
-    padding-left:10px;/*added to make the text clearer*/
 }
 div#mainBanner div#headline span.versionCount{
     font-size:1.07em;
