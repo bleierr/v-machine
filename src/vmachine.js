@@ -1,4 +1,12 @@
-
+function moveToFront($that){
+	/*this function changes the stack order of a JQuery panel element and adds it to the front of all visible panels*/
+	$(".activePanel").each(function(){
+				$(this).css({"z-index":2}).removeClass("activePanel");
+			});			
+		$that.addClass("activePanel").css({"z-index":5});
+		$that.nextAll().insertBefore($that);
+}
+	
 function totalPanelWidth(){
 	/*this function calculates and returns the total panel width of visible panels*/
 	
@@ -17,6 +25,25 @@ function totalPanelWidth(){
 	return total_w;
 }
 
+
+function getPanelLocation(){
+	panelLocation = [];
+
+	$("div.mssPanel:not(.invisible)").each(function(){
+		
+		var w = $(this).width();
+		
+		var pos = $(this).position();
+		panelLocation.push({"top":pos.top, "left":pos.left, width:w})
+		//var panel_id = $(this).attr("id");
+		//console.log("panel " + panel_id + ": " + w);
+		//total_w += w;
+		console.log(panelLocation);
+
+	});
+	return panelLocation;
+
+}
 
 
 $.fn.dropdownButtonClick = function() {
@@ -91,26 +118,45 @@ $.fn.panelActionClick = function() {
 					var y = $(this).css("top");
 					var x = $(this).css("left");
 					
-					console.log("in panelActionClick plugin:");
-					console.log("value var x: " + x);
-					console.log("value var y: " + y);
+					//console.log("in panelActionClick plugin:");
+					//console.log("value var x: " + x);
+					//console.log("value var y: " + y);
 					
-					if(x === "auto" || x === "auto"){
-						x = totalPanelWidth();
-						y = $("#mainBanner").height();
+					if(x === "auto" || y === "auto"){
+						var num = true;
+						//if no panel is at coordinate left:0
+						lst = getPanelLocation();
+						for (var i=0; i < lst.length; i++){
+							top = lst[i].top;
+							left = lst[i].left;
+							if(left == 0){
+								num = false;
+							}
+						}
+						
+						console.log("value var num: " + num);
+						
+						if(num){
+							x = 0;
+						}
+						else{
+							x = totalPanelWidth();
+							y = $("#mainBanner").height();
+						}
 					}
 					
-					console.log("value var x: " + x);
-					console.log("value var y: " + y);
+					//console.log("value var x: " + x);
+					//console.log("value var y: " + y);
 					$(this).changePanelVisibility(x, y);
 					$(this).appendTo("#mssArea");
-					
+					moveToFront($(this));
+				
 				});		
-					
 				workspaceResize();
 			}
 			
 			$("*[data-panelid='"+datapanelid+"']").toggleOnOff();
+			
 		});
 	};
 	
@@ -129,17 +175,13 @@ $.fn.panelActionHover = function() {
 		
 	});	
 };
-	
+
+
 $.fn.mssPanel = function() {
     return this.each(function(){
 		var $that = $(this);
 		$that.mousedown(function(){
-			$(".activePanel").each(function(){
-				$(this).css({"z-index":2}).removeClass("activePanel");
-			});
-			
-			$that.addClass("activePanel").css({"z-index":5});
-			$that.nextAll().insertBefore($that);
+			moveToFront($that);
 		});
 		
 		$that.hover(function(){
