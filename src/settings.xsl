@@ -29,6 +29,7 @@
     <!-- JQuery include files -->
     <xsl:variable name="jsJquery">../src/js/jquery-1.11.2.min.js</xsl:variable>
     <xsl:variable name="jsJquery-UI">../src/js/jquery-ui-1.11.3/jquery-ui.min.js</xsl:variable>
+  <xsl:variable name="jsUnderscore">../src/js/underscore-min.js</xsl:variable>
     
     
     <!-- The number of version/witness panels to be displayed initially -->

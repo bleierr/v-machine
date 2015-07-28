@@ -61,7 +61,7 @@
          </link>
          
          
-         <!-- RB: added JQuery and JQuery UI support -->
+         <!-- JQuery and JQuery UI libraries references -->
          <link rel="stylesheet" type="text/css">
             <xsl:attribute name="href">
                <xsl:value-of select="$cssJQuery-UI" />
@@ -76,6 +76,13 @@
          <script type="text/javascript">
             <xsl:attribute name="src">
                <xsl:value-of select="$jsJquery-UI" />
+            </xsl:attribute>
+         </script>
+         
+         <!-- Underscore library reference -->
+         <script type="text/javascript">
+            <xsl:attribute name="src">
+               <xsl:value-of select="$jsUnderscore" />
             </xsl:attribute>
          </script>
          <!-- RB: JS and CSS files for the zoom and pan effect -->

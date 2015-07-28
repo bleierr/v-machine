@@ -1,9 +1,10 @@
+	
 function moveToFront($that){
 	/*this function changes the stack order of a JQuery panel element and adds it to the front of all visible panels*/
 	$(".activePanel").each(function(){
-				$(this).css({"z-index":2}).removeClass("activePanel");
+				$(this).css({"z-index":2, "opacity": 0.9}).removeClass("activePanel");
 			});			
-		$that.addClass("activePanel").css({"z-index":5});
+		$that.addClass("activePanel").css({"z-index":5, "opacity":1});
 		$that.nextAll().insertBefore($that);
 }
 	
@@ -25,25 +26,22 @@ function totalPanelWidth(){
 	return total_w;
 }
 
-
-function getPanelLocation(){
-	panelLocation = [];
-
-	$("div.mssPanel:not(.invisible)").each(function(){
-		
-		var w = $(this).width();
-		
-		var pos = $(this).position();
-		panelLocation.push({"top":pos.top, "left":pos.left, width:w})
-		//var panel_id = $(this).attr("id");
-		//console.log("panel " + panel_id + ": " + w);
-		//total_w += w;
-		console.log(panelLocation);
-
+function PanelInPosXY(selector, left, top){
+	panelPresent = false;
+	$(selector).each(function(){
+			console.log("left top " + left + " " + top );
+			var pos = $(this).position();
+			console.log("pos left top " + pos.left + " " + pos.top );
+			if(pos.left == left && pos.top == top){
+					panelPresent = true;
+			}
+			
 	});
-	return panelLocation;
-
+	return panelPresent;
 }
+
+
+
 
 
 $.fn.dropdownButtonClick = function() {
@@ -76,14 +74,7 @@ $.fn.dropdownButtonClick = function() {
 $.fn.changePanelVisibility = function(x,y) {
 	/*param x and y are the coordinates where the panel should be moved to*/
 	$(this).toggleClass("invisible");
-	/*
-	console.log("changePanelVisibility plugin:");
-	console.log("param x: " + x);
-	console.log("param x: " + !isNaN(x));
-	console.log("param y: " + y);
-	console.log("param x: " + !isNaN(y));
-	*/
-	
+	$(this).css({"opacity":0.9});
 	if(!(x===undefined || y===undefined)){
 	
 		if($.type(x) === "string"){
@@ -100,7 +91,6 @@ $.fn.changePanelVisibility = function(x,y) {
 			$(this).css({"left":x});
 			$(this).css({"top":y});
 			}
-		
 	}
 }
 
@@ -114,47 +104,26 @@ $.fn.panelActionClick = function() {
 			else{
 					
 				$("#"+datapanelid).each(function(){
-				
 					var y = $(this).css("top");
 					var x = $(this).css("left");
-					
-					//console.log("in panelActionClick plugin:");
-					//console.log("value var x: " + x);
-					//console.log("value var y: " + y);
-					
 					if(x === "auto" || y === "auto"){
-						var num = true;
 						//if no panel is at coordinate left:0
-						lst = getPanelLocation();
-						for (var i=0; i < lst.length; i++){
-							top = lst[i].top;
-							left = lst[i].left;
-							if(left == 0){
-								num = false;
-							}
-						}
-						
-						console.log("value var num: " + num);
-						
-						if(num){
-							x = 0;
-						}
-						else{
-							x = totalPanelWidth();
+						if(y == "auto"){
 							y = $("#mainBanner").height();
 						}
+						x = 0;
+						//"div.mssPanel:not(.invisible)"
+						while(PanelInPosXY("div.panel:not(.invisible)", x, y)){
+							x += 10;
+							y += 10;
+						}
 					}
-					
-					//console.log("value var x: " + x);
-					//console.log("value var y: " + y);
 					$(this).changePanelVisibility(x, y);
 					$(this).appendTo("#mssArea");
 					moveToFront($(this));
-				
 				});		
 				workspaceResize();
 			}
-			
 			$("*[data-panelid='"+datapanelid+"']").toggleOnOff();
 			
 		});
@@ -281,6 +250,17 @@ function workspaceResize(){
                 $('#mssArea').width(w+100);
             }
 			
+			/*move panel that is outside of workspace into workspace*/
+			$("div.mssPanel").each(function(idx, element){
+				$ele = $(element);
+				var l = $ele.position().left;
+				var t = $ele.position().top;
+				var w = $ele.width();
+				
+				if( (l + w) > windowWidth ){
+					$ele.offset({top:t, left:l});
+				}
+			});
 			/*height of workspace*/
 			var panelHeight = 0;
 			$(".panel").each(function(idx, element){
@@ -376,7 +356,7 @@ $.fn.imgLink = function() {
 
 $(document).ready(function() {  
 	/*initial setup */
-
+	
 	var bannerHeight = $("#mainBanner").height();
 	
 	/*The initialVisibility global can be set in settings.xsl*/
