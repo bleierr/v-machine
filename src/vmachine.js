@@ -329,7 +329,7 @@ $.fn.matchApp = function() {
 	/* plugin that adds a apparatus/line matching functionality */
 		this.click(function(){
 			var app = $(this).attr("data-app-id");
-			$("."+app).toggleClass("match_hi");
+			$("."+app).toggleClass("matchHi");
 		});
 };
 /***** END Functionality popup notes and apparatus/line matching *****/
@@ -337,7 +337,7 @@ $.fn.matchApp = function() {
 $.fn.audioMatch = function() {
 		/**app to add **/
 		this.click(function(){
-			if($(this).hasClass("match_hi")){
+			if($(this).hasClass("matchHi")){
 				var timeStart = $(this).attr("data-timeline-start");
 				var timeInterval = $(this).attr("data-timeline-interval");
 				

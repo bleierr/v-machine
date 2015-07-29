@@ -58,18 +58,16 @@ div#headline{
 	}
 div#mainBanner div#headline h1{
     margin:0;
-    color:#2c577f;/*changed from black*/
-    font-family: sans-serif; /*added to make the text clearer*/
+    color:#2c577f;
+    font-family: sans-serif;
 }
 div#mainBanner div#headline span.versionCount{
     font-size:1.07em;
     font-style:italic;
 }
-
-
 /* END styles for main banner*/
 
-/* BEGIN top navigation and dropdown menu*/
+/* BEGIN styles top navigation and dropdown menu*/
 div#mainBanner nav#mainControls{
     border-top:none;
     border-right:none;
@@ -77,15 +75,11 @@ div#mainBanner nav#mainControls{
     border-left:0.08em solid black;
     margin:0;
     padding:0;
-
 }
-
 nav#mainControls button img{
-	height:0.5em;/*changed from 1em*/
+	height:0.5em;/*controls the size of the arrow button in dropdown menu*/
 	padding-left: 5px; /*added to create some space between the text and the arrow*/
 }
-
-
 /*styling of version dropdown list items*/
 #mainControls > ul > li ul.dropdown{
     position:absolute;
@@ -126,14 +120,11 @@ div.listText div:last-child{
     height:100%;
 
 }
-
 /*following css controls the visibility of the version dropdown*/
 ul#witnessList.notVisible li{
 	visibility: hidden;
 }
-
-
-/* END top navigation and dropdown menu*/
+/* END styles top navigation and dropdown menu*/
 
 div#mssArea{
     float:left;
@@ -478,16 +469,12 @@ span.viewerHandleLt{
     background-color:#6699cc;
 }
 
-
-
 .noDisplay{
     display:none;
 }
 .notVisible{
     visibility:hidden;
 }
-
-
 
 /*img menuicon*/
 #mainControls img.menuicon{
@@ -550,9 +537,9 @@ img.highlight{
 	z-index:6;
 }
 
-/*line highlight if matched*/
-.match_hi{
-	background-color: yellow;
+/* change colour of match app/line highlight*/
+.matchHi{
+	background-color: #F0E68C;
 }
 
 .ui-resizable-helper { border: 2px dotted #2c577f; }
@@ -565,31 +552,31 @@ img.highlight{
 
 /* BEGIN responsive styles media queries*/
 
-@media screen and (max-width: 1100px){
-	div#mainBanner{
-    height: 5em;
-	background-size: auto 5em;
+@media screen and (max-width: 800px){
+	div#mainBanner nav li button{
+	font-size:0.9em;
 	}
-	body>div#mssArea{
-    margin: 5em 0 0;
+	div#mainBanner nav li .dropdown li{
+	font-size:0.9em;
 	}
+	#mainControls, h1{
+		min-width: 350px;
+	}
+	#mainControls > ul > li {
+		padding: 10px 5px 2px 5px;
+	}
+}
+@media screen and (max-width: 600px){
 	div#mainBanner nav li button{
 	font-size:0.8em;
-	}
-
-	/*branding logo*/ 
-	div#mainBanner div#brandingLogo{
-		width:5em;
-	}
-	div#headline{
-	padding:0;
 	}
 	div#mainBanner nav li .dropdown li{
 	font-size:0.8em;
 	}
+	#mainControls > ul > li {
+		padding: 0 5px 2px 5px;
+	}
 }
-
-
 /*END responsive styles*/
 
 
