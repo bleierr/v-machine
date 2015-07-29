@@ -1,32 +1,29 @@
 	
 function moveToFront($that){
-	/*this function changes the stack order of a JQuery panel element and adds it to the front of all visible panels*/
+	/*function to change the stack order of a JQuery panel element and adds it to the front of all visible panels*/
 	$(".activePanel").each(function(){
-				$(this).css({"z-index":2, "opacity": 0.9}).removeClass("activePanel");
+				$(this).css({"z-index":2}).removeClass("activePanel");
 			});			
 		$that.addClass("activePanel").css({"z-index":5, "opacity":1});
 		$that.nextAll().insertBefore($that);
 }
 	
 function totalPanelWidth(){
-	/*this function calculates and returns the total panel width of visible panels*/
-	
-	//console.log("inside totalPanelWidth");
-	var total_w = 0;
-	$("div.mssPanel:not(.invisible)").each(function(){
-		
-		var w = $(this).width();
-		var panel_id = $(this).attr("id");
-		//console.log("panel " + panel_id + ": " + w);
-		total_w += w;
-
+	/*function to calculate and return the total panel width of visible panels*/
+	var totalWidth = 0;
+	$("div.mssPanel:not(.noDisplay)").each(function(){
+		var wid = $(this).width();
+		totalWidth += wid;
 	});
-	
-	//console.log("Total width of visible panels: " + total_w);
-	return total_w;
+	return totalWidth;
 }
 
-function PanelInPosXY(selector, left, top){
+function PanelInPosXY(selector, top, left){
+	/* function to find if a panel/element is in the location left/top 
+	*param selector: JQuery selector ( for instance to select all panels, or all visibal panels)
+	*param left: the left coordinates of the panel/element 
+	*param top: the top coordinates of the panel/element
+	*/
 	panelPresent = false;
 	$(selector).each(function(){
 			console.log("left top " + left + " " + top );
@@ -40,96 +37,127 @@ function PanelInPosXY(selector, left, top){
 	return panelPresent;
 }
 
+function workspaceResize(){
+	/*plugin resizes the workspace depending on how many panels are visible, if panel is opened the workspace becomes larger, if a panel is closed it becomes smaller*/
+            var mssAreaWidth = $('#mssArea').width();
+            var w = totalPanelWidth();
+			var windowWidth = $(window).width();
+            if( windowWidth > w){
+                $('#mssArea').width(windowWidth);
+            }
+            else{
+                $('#mssArea').width(w+100);
+            }
+			/*move panel that is outside of workspace into workspace*/
+			$("div.panel").each(function(idx, element){
+				$ele = $(element);
+				var l = $ele.position().left;
+				var t = $ele.position().top;
+				var w = $ele.width();
+				
+				console.log("Left: "+l);
+				console.log("Top: "+t);
+				
+				if( (l + w) > windowWidth ){
+					$ele.offset({top:t, left:windowWidth-w});
+				}
+			});
+			/*height of workspace*/
+			var panelHeight = 0;
+			$(".panel").each(function(idx, element){
+				var h = $(element).height();
+				if(panelHeight < h){
+					panelHeight = h;
+				}
+			});
+			$("#mssArea").css({"height":panelHeight+100});
+}
 
+/***** Functionality of dropdown menu and top menu *****/
 
-
+$.fn.toggleOnOffButton = function() {
+	/*plugin toggles between ON and OFF status of a button of top menu and dropdown*/
+	return $(this).each(function(){
+    var b = $(this).find("button");
+		var content = b.html();
+		
+		if (content === "ON"){
+		    b.html("OFF");
+		}
+		if (content === "OFF"){
+		    b.html("ON");
+		}
+		b.toggleClass("buttonPressed");
+		});
+	}
 
 $.fn.dropdownButtonClick = function() {
+	/*plugin to add a click event to a dropdown button
+	on click the following list with class 'dropdown will be shown
+	*/
     return this.click(function(e){
         e.stopPropagation();
-		$(".dropdownButton").not(this).next(".dropdown").css('visibility', 'hidden');
-		
-		$(this).find("img").toggleClass("invisible");
-		
-		var visibility = $(this).next('ul').css('visibility');
-		if ( visibility === 'hidden'){
-			$(this).next('ul').css('visibility', 'visible');
-		}
-		else{
-			$(this).next('ul').css('visibility', 'hidden');
-		}
-	
+		/* change visibility of the dropdown list, 
+		statement 'ul#witnessList.notVisible li{visibility: hidden;}' in css necessary 
+		*/
+		$(".dropdownButton").next(".dropdown").toggleClass('notVisible');
+		/* change visibility of dropdown if click anywhere on the web page */
 		$('html').click(function (e) {
-			//e.stopPropagation();
 			var container = $(".dropdown");
-
 			//check if the clicked area is dropDown or not
 			if (container.has(e.target).length === 0) {
-				$(".dropdown").css('visibility', 'hidden');
+				$(".dropdown").addClass('notVisible');
 			}
 		});
     });
 };
 
-$.fn.changePanelVisibility = function(x,y) {
-	/*param x and y are the coordinates where the panel should be moved to*/
-	$(this).toggleClass("invisible");
-	$(this).css({"opacity":0.9});
-	if(!(x===undefined || y===undefined)){
-	
-		if($.type(x) === "string"){
-			if((x.substr(-2) === "em") || (x.substr(-2) === "px")){
-			x = x.slice(0,-2)
-			}
-		}
-		if($.type(y) === "string"){
-			if((y.substr(-2) === "em") || (y.substr(-2) === "px")){
-				y = y.slice(0,-2)
-			}
-		}
-		if(!isNaN(x) && !isNaN(y)){
-			$(this).css({"left":x});
-			$(this).css({"top":y});
-			}
-	}
+$.fn.linenumberOnOff = function() {
+	/*plugin to add a click event to linenumberOnOff button
+	on click the line numbers in the panels become invisible
+	*/
+    return this.click(function(){
+		$(".linenumber").toggleClass("noDisplay");
+		$("#linenumberOnOff").toggleOnOffButton();
+	});
 }
 
-$.fn.panelActionClick = function() {
+$.fn.panelButtonClick = function() {
     return this.click(function(){
-			var datapanelid = $(this).attr("data-panelid");
+			var dataPanelId = $(this).attr("data-panelid");
 			
-			if(datapanelid === "linenumber"){
-				$(".linenumber").toggleClass("invisible");
+			if(dataPanelId === "notesPanel"){
+				//toggle inline note icons in panels
+				$("#mssArea .noteicon").toggle();
 			}
-			else{
-					
-				$("#"+datapanelid).each(function(){
-					var y = $(this).css("top");
-					var x = $(this).css("left");
-					if(x === "auto" || y === "auto"){
-						//if no panel is at coordinate left:0
-						if(y == "auto"){
-							y = $("#mainBanner").height();
+			
+			$("#"+dataPanelId).each(function(){
+					var top = $(this).css("top");
+					var left = $(this).css("left");
+					if(left === "auto" || top === "auto"){
+						//if no panel is at default coordinate
+						if(top == "auto"){
+							top = $("#mainBanner").height();
 						}
-						x = 0;
-						//"div.mssPanel:not(.invisible)"
-						while(PanelInPosXY("div.panel:not(.invisible)", x, y)){
-							x += 10;
-							y += 10;
+						left = 0;
+						//check if there is already a panel in this location
+						while(PanelInPosXY("div.panel:not(.noDisplay)", top, left)){
+							top += 20;
+							left += 50;
 						}
 					}
-					$(this).changePanelVisibility(x, y);
-					$(this).appendTo("#mssArea");
+					console.log(top);
+					console.log(left);
+					$(this).changePanelVisibility(top, left);
 					moveToFront($(this));
 				});		
 				workspaceResize();
-			}
-			$("*[data-panelid='"+datapanelid+"']").toggleOnOff();
+		$("*[data-panelid='"+dataPanelId+"']").toggleOnOffButton();
 			
-		});
-	};
+	});
+};
 	
-$.fn.panelActionHover = function() {
+$.fn.panelButtonHover = function() {
     return this.hover(function(){
 		/*mouse enter event*/
 		var p = $(this).attr("data-panelid");
@@ -145,81 +173,143 @@ $.fn.panelActionHover = function() {
 	});	
 };
 
+/***** END Functionality of dropdown menu and top menu *****/
 
-$.fn.mssPanel = function() {
-    return this.each(function(){
-		var $that = $(this);
-		$that.mousedown(function(){
-			moveToFront($that);
+/***** Functionality and visibility of Witness, Biblio, and Note panels *****/
+
+$.fn.changePanelVisibility = function(top,left) {
+	/* plugin to change the visibility of a panel and move it to different location
+	param top and left are the coordinates where the panel should be moved to*/
+	$(this).toggleClass("noDisplay");
+	if(!(top===undefined || left===undefined)){
+	
+		if($.type(top) === "string"){
+			if((top.substr(-2) === "em") || (top.substr(-2) === "px")){
+			top = top.slice(0,-2)
+			}
+		}
+		if($.type(left) === "string"){
+			if((left.substr(-2) === "em") || (left.substr(-2) === "px")){
+				left = left.slice(0,-2)
+			}
+		}
+		if(!isNaN(top) && !isNaN(left)){
+			$(this).css({"left":left});
+			$(this).css({"top":top});
+			}
+	}
+}
+
+$.fn.mssPanelClick = function() {
+	/* plugin to add a mousedown event to manuscript panels
+	brings the panel to front
+	*/
+    return this.mousedown(function(){
+			moveToFront($(this));
 		});
-		
-		$that.hover(function(){
-			$that.addClass("highlight");
-			var p = $that.attr("id");
-		
-			$(".dropdown li[data-panelid='"+p+"']").addClass("highlight");
-		
-		}, function(){
-			$that.removeClass("highlight");
-			var p = $(this).attr("id");
-			$(".dropdown li[data-panelid='"+p+"']").removeClass("highlight");
-		});
-	});	
 };
 
-$.fn.imgPanel = function() {
-    return this.each(function(){
-	
-		var $that = $(this);
-		var imageId = $that.attr("id");
-		
-		$that.mousedown(function(){
-			$(".activePanel").each(function(){
-				$(this).css({"z-index":2}).removeClass("activePanel");
-			});
-			$that.addClass("activePanel").css({"z-index":5});
-			$that.nextAll().insertBefore($that);
+$.fn.mssPanelHover = function() {
+	/* plugin to add a hover event to manuscript panels
+	on hover the class 'highlight' is added or removed
+	*/
+    return this.hover(function(){
+			$(this).addClass("highlight");
+			var p = $(this).attr("id");
+			$(".dropdown li[data-panelid='"+p+"']").addClass("highlight");
+		}, function(){
+			$(this).removeClass("highlight");
+			var p = $(this).attr("id");
+			$(".dropdown li[data-panelid='"+p+"']").removeClass("highlight");
+	});
+};
+
+$.fn.closePanelClick = function() {
+	/* plugin to add a click event to the closing button ('X') of panels 
+	after a panel is closed the workspace has to be resized
+	*/
+    return this.click(function(){
+		var w = $(this).closest(".panel").attr("id");
+		$(this).closest(".panel").addClass("noDisplay");
+		$("*[data-panelid='"+w+"']").toggleOnOffButton();
+		workspaceResize();
+	});
+};
+
+/***** END Functionality and visibility of Witness, Biblio, and Note panels *****/
+
+/***** Functionality related to image panels *****/
+
+$.fn.zoomPan = function() {
+	/* plugin to use JQuery panzoom library for the image viewer
+	https://github.com/timmywil/jquery.panzoom
+	*/
+		this.each(function(){
+			var imgId = $(this).attr("id");
+			var $section = $("div#" + imgId + ".imgPanel");
+            $section.find('.panzoom').panzoom({
+            $zoomIn: $section.find(".zoom-in"),
+            $zoomOut: $section.find(".zoom-out"),
+            $zoomRange: $section.find(".zoom-range")
 		});
-		
-		$that.hover(function(){
+});
+};
+
+$.fn.imgLinkClick = function() {
+	/* plugin to add a click event to imgLinks (icons that open the image viewer on click) */
+		this.click(function(e){
+				var imgId = $(this).attr("data-img-id");
+				$("#"+imgId).appendTo("#mssArea");
+				$("#"+imgId).css({
+					"position": "absolute",
+					"top": e.pageY,
+					"left": e.pageX,
+					}).toggleClass("noDisplay").addClass("activePanel");
+				//move the image panel to the front of all visible panels
+				moveToFront($("#"+imgId))
+			});
+};
+$.fn.imgLinkHover = function() {
+	/* plugin to add a hover event to imgLinks (icons that open the image viewer on click) */
+		this.hover(function(){
+			/* current hover event add class 'highlight' on hover*/
+				$(this).addClass("highlight");
+				var panelId = $(this).attr("data-img-id");
+				$(".imgPanel[id='" + panelId + "']").addClass("highlight");
+			},function(){
+			/* on hover out remove 'highlight' class*/
+				$(this).removeClass("highlight");
+				var panelId = $(this).attr("data-img-id");
+				$(".imgPanel[id='" + panelId + "']").removeClass("highlight");
+			});		
+};
+$.fn.imgPanelMousedown = function() {
+	/* plugin to add a mousedown event to image panels */
+    return this.mousedown(function(){
+			moveToFront($(this));
+	});	
+};
+$.fn.imgPanelHover = function() {
+	/* plugin to add a hover event to the image panels*/
+    return this.hover(function(){
+			var imageId = $(this).attr("id");
 			$("img[data-img-id='" + imageId +"']").addClass("highlight");
 			$(this).addClass("highlight");
-		
 		}, function(){
+			var imageId = $(this).attr("id");
 			$("img[data-img-id='" + imageId +"']").removeClass("highlight");
 			$(this).removeClass("highlight");
 		});
-		
-	});	
 };
-	
+/***** END Functionality related to image panels *****/
 
-/********IMAGE PANEL REWRITE wit JQUERY*********/
+/***** Functionality popup notes and apparatus/line matching *****/
 
- 
-$.fn.toggleOnOff = function() {
-	return $(this).each(function(){
-    var b = $(this).find("button");
-		var content = b.html();
-		
-		if (content === "ON"){
-		    b.html("OFF");
-		}
-		if (content === "OFF"){
-		    b.html("ON");
-		}
-		
-		b.toggleClass("buttonPressed");
-		});
-	}
- 
-/*image panel functionality*/
-
-
-$.fn.hoverPopup = function() {
-	
+$.fn.hoverPopupNote = function() {
+	/* plugin to add a hover effect and popup note */
 	return this.hover(function(e){
 		$("<div id='showNote'>empty note</div>").appendTo("body");
+		//the location of the note content has to be added to the find method
 		var noteContent = $(this).find("div.note, div.corr, span.altRdg").html();
 		
 		$("#showNote").html(noteContent);
@@ -230,59 +320,21 @@ $.fn.hoverPopup = function() {
 		}).show();
 	
 	}, function(e){
+		/* on hover out hide the note */
 		$("#showNote").hide();
 	});
 };
 
-
-function workspaceResize(){
-
-            var mssAreaWidth = $('#mssArea').width();
-            
-            var w = totalPanelWidth();
-            
-            var windowWidth = $(window).width();
-            
-            if( windowWidth > w){
-                $('#mssArea').width(windowWidth);
-            }
-            else{
-                $('#mssArea').width(w+100);
-            }
-			
-			/*move panel that is outside of workspace into workspace*/
-			$("div.mssPanel").each(function(idx, element){
-				$ele = $(element);
-				var l = $ele.position().left;
-				var t = $ele.position().top;
-				var w = $ele.width();
-				
-				if( (l + w) > windowWidth ){
-					$ele.offset({top:t, left:l});
-				}
-			});
-			/*height of workspace*/
-			var panelHeight = 0;
-			$(".panel").each(function(idx, element){
-				var h = $(element).height();
-				if(panelHeight < h){
-					panelHeight = h;
-				}
-			});
-			$("#mssArea").css({"height":panelHeight+100});
-}
-
-
-$.fn.match_lines = function() {
+$.fn.matchApp = function() {
+	/* plugin that adds a apparatus/line matching functionality */
 		this.click(function(){
-			var line_id = $(this).attr("data-line-id");
-			//add or remove attr match_hi
-			$("."+line_id).toggleClass("match_hi");
+			var app = $(this).attr("data-app-id");
+			$("."+app).toggleClass("match_hi");
 		});
 };
+/***** END Functionality popup notes and apparatus/line matching *****/
 
-
-$.fn.audio_match = function() {
+$.fn.audioMatch = function() {
 		/**app to add **/
 		this.click(function(){
 			if($(this).hasClass("match_hi")){
@@ -300,76 +352,23 @@ $.fn.audio_match = function() {
 		});
 };
 
-$.fn.match_app = function() {
-		this.click(function(){
-			var app = $(this).attr("data-app-id");
-			//add or remove attr match_hi
-			$("."+app).toggleClass("match_hi");
-			
-		});
-};
-
-$.fn.zoomPan = function() {
-		this.each(function(){
-			var imgId = $(this).attr("id");
-			var $section = $("div#" + imgId + ".imgPanel");
-            $section.find('.panzoom').panzoom({
-            $zoomIn: $section.find(".zoom-in"),
-            $zoomOut: $section.find(".zoom-out"),
-            $zoomRange: $section.find(".zoom-range")
-		});
-});
-};
-
-
-
-$.fn.imgLink = function() {
-		this.each(function(){
-			$(this).click(function(e){
-				
-				var imgId = $(this).attr("data-img-id");
-				$("#"+imgId).appendTo("#mssArea");
-				
-				$("#"+imgId).css({
-					"position": "absolute",
-					"top": e.pageY,
-					"left": e.pageX,
-					"z-index": "5"
-					}).toggleClass("invisible").addClass("activePanel");
-				
-				
-			});
-			
-			$(this).hover(function(){
-				var panelId = $(this).attr("data-img-id");
-				$(".imgPanel[id='" + panelId + "']").addClass("highlight");
-			},function(){
-				var panelId = $(this).attr("data-img-id");
-				$(".imgPanel[id='" + panelId + "']").removeClass("highlight");
-			
-			});
-				
-		});
-		
-};
-
-
 $(document).ready(function() {  
-	/*initial setup */
+	
+	/*****initial panel and visibility setup *****/
 	
 	var bannerHeight = $("#mainBanner").height();
 	
-	/*The initialVisibility global can be set in settings.xsl*/
+	//The initialVisibility global can be set in settings.xsl
 	for (item in initialVisibility){
 		if(item === "versions"){
 			
-			/*open the witness/version panels*/
+			//open the witness/version panels
 			$("#witnessList li").each(function(idx){
 				var panelPos = totalPanelWidth();
 				var wit = $(this).attr("data-panelid");
 				if(idx < initialVisibility[item]){
-					$("#"+wit).changePanelVisibility(panelPos,bannerHeight);
-					$("*[data-panelid='"+wit+"']").toggleOnOff();
+					$("#"+wit).changePanelVisibility(bannerHeight, panelPos);
+					$("*[data-panelid='"+wit+"']").toggleOnOffButton();
 				}	
 			});
 		}
@@ -378,56 +377,47 @@ $(document).ready(function() {
 			
 			if(item === "linenumber"){
 				if(initialVisibility[item]){
-					$(".linenumber").toggleClass("invisible");
-					$("nav *[data-panelid='linenumber']").toggleOnOff();
+					$(".linenumber").toggleClass("noDisplay");
+					$("nav li#linenumberOnOff").toggleOnOffButton();
 				}
 			}
 			else{
 				if(initialVisibility[item]){
-					$("#"+item).changePanelVisibility(panelPos,bannerHeight);
-					$("nav *[data-panelid='"+ item +"']").toggleOnOff();
+					$("#"+item).changePanelVisibility(bannerHeight, panelPos);
+					$("nav *[data-panelid='"+ item +"']").toggleOnOffButton();
 				}
 			}
 		
 		}
 	}
 	
-	
-	
-	
-		/*close panel via X sign */
-	$(".closePanel").click(function(){
-		var w = $(this).closest(".panel").attr("id");
-		
-		$(this).closest(".panel").addClass("invisible");
-		
-		$("*[data-panelid='"+w+"']").toggleOnOff();
-		
-		workspaceResize();
-		
-	});
-	
+	//after the visibility of all necessary panels is changed the workspace has to be resized to fit panels
 	workspaceResize();
 	
-	//initialises the dropdown functionality
+	/*****END initial panel and visibility setup *****/
+	
+	/***** activate all plugins *****/
+	//close panel via X sign 
+	$(".closePanel").closePanelClick();
+	
+	//dropdown functionality
 	$(".dropdownButton").dropdownButtonClick();
 	
-	$("li[data-panelid]").panelActionClick();
-	$("li[data-panelid!='linenumber']").panelActionHover();
+	//click and hover event for panel buttons
+	$("li[data-panelid]").panelButtonClick();
+	$("li[data-panelid]").panelButtonHover();
 	
-	/*create popup for note, choice, etc.*/
-	$("div.noteicon, div.choice, div.rdgGrp").hoverPopup();
+	//click event to display and hide linen numbers
+	$("#linenumberOnOff").linenumberOnOff();
 	
-	/*adds the match line or apparatus highlighting*/
-	$(".apparatus").match_app();
-	$(".apparatus").audio_match();
-
-    $("li[data-panelid='notesPanel']").click(function(){
-
-		$("#mssArea .noteicon").toggle();
-
-	});
+	//create popup for note, choice, etc.
+	$("div.noteicon, div.choice, div.rdgGrp").hoverPopupNote();
 	
+	//adds the match line or apparatus highlighting
+	$(".apparatus").matchApp();
+	$(".apparatus").audioMatch();
+	
+	//add draggable and resizeable to all panels (img + mss)
 	$( ".panel" ).draggable({
 		containment: "parent",
 		zIndex: 6
@@ -435,13 +425,15 @@ $(document).ready(function() {
 	{helper: "ui-resizable-helper"}
 	);
 	
-	$(".mssPanel").mssPanel();
+	//add functionality to manuscript panels
+	$(".mssPanel").mssPanelClick();
+	$(".mssPanel").mssPanelHover();
+	
+	//add functionality to image panels
 	$(".imgPanel").zoomPan();
-	$(".imgPanel").imgPanel();
-	$(".imageLink").imgLink();
+	$(".imgPanel").imgPanelHover();
+	$(".imgPanel").imgPanelMousedown();
+	$(".imageLink").imgLinkClick();
+	$(".imageLink").imgLinkHover();
 	
-	
-
 });
-
-

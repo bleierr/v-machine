@@ -22,7 +22,7 @@
          </div>
          <nav id="mainControls">
             <ul>
-               <li><button class="topMenuButton dropdownButton" id="selectWitness">6 Total Versions<img class="invisible" src="../vm-images/arrowup.png" alt=""></img><img src="../vm-images/arrowdown.png" alt=""></img></button><ul id="witnessList" class="dropdown">
+               <li><button class="topMenuButton dropdownButton" id="selectWitness">6 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt=""></img><img src="../vm-images/arrowdown.png" alt=""></img></button><ul id="witnessList" class="dropdown notVisible">
                      <li data-panelid="a1">
                         <div class="listText">
                            <div>Thitledownflight: Version 1 - Most-Finished version </div>
@@ -61,14 +61,14 @@
                      </li>
                   </ul>
                </li>
-               <li data-panelid="linenumber" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
+               <li id="linenumberOnOff" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
                <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
                <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
             </ul>
          </nav>
       </div>
       <div id="mssArea">
-         <div id="bibPanel" class="ui-widget-content ui-resizable panel mssPanel invisible">
+         <div id="bibPanel" class="ui-widget-content ui-resizable panel mssPanel noDisplay">
             <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Bibliographic Information
                
@@ -215,7 +215,7 @@
                
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="a1">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="a1">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness a1
             </div>
             <div class="mssContent">
@@ -235,7 +235,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">1</div>
+                  <div class="linenumber noDisplay">1</div>
                   
                   <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">GHINGHA </div>
@@ -248,7 +248,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">2</div>
+                  <div class="linenumber noDisplay">2</div>
                   
                   <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">I</div>
@@ -258,7 +258,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">3</div>
+                  <div class="linenumber noDisplay">3</div>
                   
                   <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
                      <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">TREMBLE</div>
@@ -274,7 +274,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">4</div>
+                  <div class="linenumber noDisplay">4</div>
                   
                   <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">DO</div>
@@ -284,7 +284,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">5</div>
+                  <div class="linenumber noDisplay">5</div>
                   
                   <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">NOT</div>
@@ -295,7 +295,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">6</div>
+                  <div class="linenumber noDisplay">6</div>
                   
                   <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
                      <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">LAUGH</div>
@@ -310,7 +310,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">7</div>
+                  <div class="linenumber noDisplay">7</div>
                   
                   <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">BORN</div>
@@ -322,7 +322,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">8</div>
+                  <div class="linenumber noDisplay">8</div>
                   
                   <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
                      <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">FINE</div>
@@ -332,7 +332,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">9</div>
+                  <div class="linenumber noDisplay">9</div>
                   
                   <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">FLOWER</div>
@@ -346,7 +346,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">10</div>
+                  <div class="linenumber noDisplay">10</div>
                   
                   <div class="apparatus app_2_l_10_1" data-app-id="app_2_l_10_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">BY</div>
@@ -357,7 +357,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">11</div>
+                  <div class="linenumber noDisplay">11</div>
                   
                   <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
                      <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">ORCHID</div>
@@ -367,7 +367,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">13</div>
+                  <div class="linenumber noDisplay">13</div>
                   
                   <div class="apparatus app_2_l_13_1" data-app-id="app_2_l_13_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SPECKLED</div>
@@ -380,7 +380,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">14</div>
+                  <div class="linenumber noDisplay">14</div>
                   
                   <div class="apparatus app_2_l_14_1" data-app-id="app_2_l_14_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">DARK</div>
@@ -394,7 +394,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">15</div>
+                  <div class="linenumber noDisplay">15</div>
                   
                   <div class="apparatus app_2_l_15_1" data-app-id="app_2_l_15_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">LIGHT</div>
@@ -411,7 +411,7 @@
                
                
                <div class="line">
-                  <div class="linenumber invisible">17</div>
+                  <div class="linenumber noDisplay">17</div>
                   
                   <div class="apparatus app_2_l_17_1" data-app-id="app_2_l_17_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SHE</div>
@@ -421,7 +421,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">18</div>
+                  <div class="linenumber noDisplay">18</div>
                   
                   <div class="apparatus app_2_l_18_1" data-app-id="app_2_l_18_1">
                      <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">WEPT</div>
@@ -431,7 +431,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">19</div>
+                  <div class="linenumber noDisplay">19</div>
                   
                   <div class="apparatus app_2_l_19_1" data-app-id="app_2_l_19_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">AT</div>
@@ -441,7 +441,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">20</div>
+                  <div class="linenumber noDisplay">20</div>
                   
                   <div class="apparatus app_2_l_20_1" data-app-id="app_2_l_20_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">NIGHT</div>
@@ -456,7 +456,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">21</div>
+                  <div class="linenumber noDisplay">21</div>
                   
                   <div class="apparatus app_2_l_21_1" data-app-id="app_2_l_21_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">CURSED</div>
@@ -467,7 +467,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">22</div>
+                  <div class="linenumber noDisplay">22</div>
                   
                   <div class="apparatus app_2_l_22_1" data-app-id="app_2_l_22_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">TAUT</div>
@@ -477,7 +477,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">23</div>
+                  <div class="linenumber noDisplay">23</div>
                   
                   <div class="apparatus app_2_l_23_1" data-app-id="app_2_l_23_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SNARE</div>
@@ -489,7 +489,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">24</div>
+                  <div class="linenumber noDisplay">24</div>
                   
                   <div class="apparatus app_2_l_24_1" data-app-id="app_2_l_24_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">OF</div>
@@ -500,7 +500,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">25</div>
+                  <div class="linenumber noDisplay">25</div>
                   
                   <div class="apparatus app_2_l_25_1" data-app-id="app_2_l_25_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">DULLARD'S</div>
@@ -510,7 +510,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">26</div>
+                  <div class="linenumber noDisplay">26</div>
                   
                   <div class="apparatus app_2_l_26_1" data-app-id="app_2_l_26_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">AMPLE</div>
@@ -520,7 +520,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">27</div>
+                  <div class="linenumber noDisplay">27</div>
                   
                   <div class="apparatus app_2_l_27_1" data-app-id="app_2_l_27_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">PURSE</div>
@@ -535,7 +535,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">28</div>
+                  <div class="linenumber noDisplay">28</div>
                   
                   <div class="apparatus app_2_l_28_1" data-app-id="app_2_l_28_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">AT</div>
@@ -546,7 +546,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">29</div>
+                  <div class="linenumber noDisplay">29</div>
                   
                   <div class="apparatus app_2_l_29_1" data-app-id="app_2_l_29_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SPIRITLEDGE</div>
@@ -561,7 +561,7 @@
                
                
                <div class="line">
-                  <div class="linenumber invisible">31</div>
+                  <div class="linenumber noDisplay">31</div>
                   
                   <div class="apparatus app_2_l_31_1" data-app-id="app_2_l_31_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">YOUTH</div>
@@ -571,7 +571,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">32</div>
+                  <div class="linenumber noDisplay">32</div>
                   
                   <div class="apparatus app_2_l_32_1" data-app-id="app_2_l_32_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">OF</div>
@@ -581,7 +581,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">33</div>
+                  <div class="linenumber noDisplay">33</div>
                   
                   <div class="apparatus app_2_l_33_1" data-app-id="app_2_l_33_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">HER'S</div>
@@ -594,7 +594,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">34</div>
+                  <div class="linenumber noDisplay">34</div>
                   
                   <div class="apparatus app_2_l_34_1" data-app-id="app_2_l_34_1">
                      <div data-witness="a1 a2" class="reading a1 a2">BRIGHT</div>
@@ -610,7 +610,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">36</div>
+                  <div class="linenumber noDisplay">36</div>
                   
                   <div class="apparatus app_2_l_36_1" data-app-id="app_2_l_36_1">
                      <div data-witness="a1 a3" class="reading a1 a3">AT</div>
@@ -620,7 +620,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">37</div>
+                  <div class="linenumber noDisplay">37</div>
                   
                   <div class="apparatus app_2_l_37_1" data-app-id="app_2_l_37_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">WISDOMEDGE</div>
@@ -636,7 +636,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">38</div>
+                  <div class="linenumber noDisplay">38</div>
                   
                   <div class="apparatus app_2_l_38_1" data-app-id="app_2_l_38_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">TORN</div>
@@ -657,7 +657,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">41</div>
+                  <div class="linenumber noDisplay">41</div>
                   
                   <div class="apparatus app_2_l_41_1" data-app-id="app_2_l_41_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">GHINGA</div>
@@ -671,7 +671,7 @@
                
                
                <div class="line">
-                  <div class="linenumber invisible">43</div>
+                  <div class="linenumber noDisplay">43</div>
                   
                   <div class="apparatus app_2_l_43_1" data-app-id="app_2_l_43_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">FROM</div>
@@ -681,7 +681,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">44</div>
+                  <div class="linenumber noDisplay">44</div>
                   
                   <div class="apparatus app_2_l_44_1" data-app-id="app_2_l_44_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">HER'S</div>
@@ -692,7 +692,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">45</div>
+                  <div class="linenumber noDisplay">45</div>
                   
                   <div class="apparatus app_2_l_45_1" data-app-id="app_2_l_45_1">
                      <div data-witness="a1 a2 a4" class="reading a1 a2 a4">CURVE</div>
@@ -702,7 +702,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">46</div>
+                  <div class="linenumber noDisplay">46</div>
                   
                   <div class="apparatus app_2_l_46_1" data-app-id="app_2_l_46_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">DIVERGED</div>
@@ -719,7 +719,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">48</div>
+                  <div class="linenumber noDisplay">48</div>
                   
                   <div class="apparatus app_2_l_48_1" data-app-id="app_2_l_48_1">
                      <div data-witness="a1 a2 a4" class="reading a1 a2 a4">WITHIN</div>
@@ -731,7 +731,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">50</div>
+                  <div class="linenumber noDisplay">50</div>
                   
                   <div class="apparatus app_2_l_50_1" data-app-id="app_2_l_50_1">
                      <div data-witness="a1 a4" class="reading a1 a4">HEIR</div>
@@ -741,7 +741,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">51</div>
+                  <div class="linenumber noDisplay">51</div>
                   
                   <div class="apparatus app_2_l_51_1" data-app-id="app_2_l_51_1">
                      <div data-witness="a1 a2 a4" class="reading a1 a2 a4">SHE</div>
@@ -753,7 +753,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">52</div>
+                  <div class="linenumber noDisplay">52</div>
                   
                   <div class="apparatus app_2_l_52_1" data-app-id="app_2_l_52_1">
                      <div data-witness="a1" class="reading a1">SOB'S</div>
@@ -763,7 +763,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">53</div>
+                  <div class="linenumber noDisplay">53</div>
                   
                   <div class="apparatus app_2_l_53_1" data-app-id="app_2_l_53_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">ANEW</div>
@@ -782,7 +782,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">55</div>
+                  <div class="linenumber noDisplay">55</div>
                   
                   <div class="apparatus app_2_l_55_1" data-app-id="app_2_l_55_1">
                      <div data-witness="a1 a2 a4" class="reading a1 a2 a4">VAGRANT</div>
@@ -794,7 +794,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">57</div>
+                  <div class="linenumber noDisplay">57</div>
                   
                   <div class="apparatus app_2_l_57_1" data-app-id="app_2_l_57_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">SPILL</div>
@@ -812,7 +812,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">61</div>
+                  <div class="linenumber noDisplay">61</div>
                   
                   <div class="apparatus app_2_l_61_1" data-app-id="app_2_l_61_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">BEACON</div>
@@ -825,7 +825,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">62</div>
+                  <div class="linenumber noDisplay">62</div>
                   
                   <div class="apparatus app_2_l_62_1" data-app-id="app_2_l_62_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">ISLAND</div>
@@ -838,7 +838,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">63</div>
+                  <div class="linenumber noDisplay">63</div>
                   
                   <div class="apparatus app_2_l_63_1" data-app-id="app_2_l_63_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">BED</div>
@@ -851,7 +851,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">64</div>
+                  <div class="linenumber noDisplay">64</div>
                   
                   <div class="apparatus app_2_l_64_1" data-app-id="app_2_l_64_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">TO</div>
@@ -861,7 +861,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">65</div>
+                  <div class="linenumber noDisplay">65</div>
                   
                   <div class="apparatus app_2_l_65_1" data-app-id="app_2_l_65_1">
                      <div data-witness="a1 a2" class="reading a1 a2">BEAR</div>
@@ -874,7 +874,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">66</div>
+                  <div class="linenumber noDisplay">66</div>
                   
                   <div class="apparatus app_2_l_66_1" data-app-id="app_2_l_66_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">SPECKELED</div>
@@ -884,7 +884,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">67</div>
+                  <div class="linenumber noDisplay">67</div>
                   
                   <div class="apparatus app_2_l_67_1" data-app-id="app_2_l_67_1">
                      <div data-witness="a1 a2 a4" class="reading a1 a2 a4">ORCHIDS</div>
@@ -898,7 +898,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">70</div>
+                  <div class="linenumber noDisplay">70</div>
                   
                   <div class="apparatus app_2_l_70_1" data-app-id="app_2_l_70_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">GLARE</div>
@@ -918,7 +918,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">75</div>
+                  <div class="linenumber noDisplay">75</div>
                   
                   <div class="apparatus app_2_l_75_1" data-app-id="app_2_l_75_1">
                      <div data-witness="a1 a2" class="reading a1 a2">HAS</div>
@@ -928,7 +928,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">76</div>
+                  <div class="linenumber noDisplay">76</div>
                   
                   <div class="apparatus app_2_l_76_1" data-app-id="app_2_l_76_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SITE</div>
@@ -946,7 +946,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">79</div>
+                  <div class="linenumber noDisplay">79</div>
                   
                   <div class="apparatus app_2_l_79_1" data-app-id="app_2_l_79_1">
                      <div data-witness="a1 a2 a4 a6" class="reading a1 a2 a4 a6">NOWHERE</div>
@@ -961,7 +961,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">80</div>
+                  <div class="linenumber noDisplay">80</div>
                   
                   <div class="apparatus app_2_l_80_1" data-app-id="app_2_l_80_1">
                      <div data-witness="a1 a2" class="reading a1 a2">SUN</div>
@@ -970,7 +970,7 @@
                </div>
                
                <div class="line">
-                  <div class="linenumber invisible">81</div>
+                  <div class="linenumber noDisplay">81</div>
                   
                   <div class="apparatus app_2_l_81_1" data-app-id="app_2_l_81_1">
                      <div data-witness="a1 a2" class="reading a1 a2">WILL</div>
@@ -980,7 +980,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">82</div>
+                  <div class="linenumber noDisplay">82</div>
                   
                   <div class="apparatus app_2_l_82_1" data-app-id="app_2_l_82_1">
                      <div data-witness="a1 a2" class="reading a1 a2">ILL !</div>
@@ -994,7 +994,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">83</div>
+                  <div class="linenumber noDisplay">83</div>
                   
                   <div class="apparatus app_2_l_83_1" data-app-id="app_2_l_83_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">BIRTH</div>
@@ -1009,7 +1009,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">84</div>
+                  <div class="linenumber noDisplay">84</div>
                   
                   <div class="apparatus app_2_l_84_1" data-app-id="app_2_l_84_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">BLIGHT</div>
@@ -1026,7 +1026,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">85</div>
+                  <div class="linenumber noDisplay">85</div>
                   
                   <div class="apparatus app_2_l_85_1" data-app-id="app_2_l_85_1">
                      <div data-witness="a1 a2 a4" class="reading a1 a2 a4">THISTLEDOWNFLIGHT</div>
@@ -1049,7 +1049,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">86</div>
+                  <div class="linenumber noDisplay">86</div>
                   
                   <div class="apparatus app_2_l_86_1" data-app-id="app_2_l_86_1">
                      <div data-witness="a1 " class="reading a1 ">CHINGHA" FOR "DJUNA"</div>
@@ -1067,7 +1067,7 @@
                
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="a2">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="a2">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness a2
             </div>
             <div class="mssContent">
@@ -1087,7 +1087,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">1</div>
+                  <div class="linenumber noDisplay">1</div>
                   
                   <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">GHINGHA </div>
@@ -1100,7 +1100,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">2</div>
+                  <div class="linenumber noDisplay">2</div>
                   
                   <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">I</div>
@@ -1110,7 +1110,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">3</div>
+                  <div class="linenumber noDisplay">3</div>
                   
                   <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
                      <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">TREMBLE</div>
@@ -1126,7 +1126,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">4</div>
+                  <div class="linenumber noDisplay">4</div>
                   
                   <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">DO</div>
@@ -1136,7 +1136,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">5</div>
+                  <div class="linenumber noDisplay">5</div>
                   
                   <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">NOT</div>
@@ -1147,7 +1147,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">6</div>
+                  <div class="linenumber noDisplay">6</div>
                   
                   <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
                      <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">LAUGH</div>
@@ -1162,7 +1162,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">7</div>
+                  <div class="linenumber noDisplay">7</div>
                   
                   <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">BORN</div>
@@ -1174,7 +1174,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">8</div>
+                  <div class="linenumber noDisplay">8</div>
                   
                   <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
                      <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">FINE</div>
@@ -1184,7 +1184,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">9</div>
+                  <div class="linenumber noDisplay">9</div>
                   
                   <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">FLOWER</div>
@@ -1198,7 +1198,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">10</div>
+                  <div class="linenumber noDisplay">10</div>
                   
                   <div class="apparatus app_2_l_10_1" data-app-id="app_2_l_10_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">BY</div>
@@ -1209,7 +1209,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">11</div>
+                  <div class="linenumber noDisplay">11</div>
                   
                   <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
                      <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">ORCHID</div>
@@ -1219,7 +1219,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">13</div>
+                  <div class="linenumber noDisplay">13</div>
                   
                   <div class="apparatus app_2_l_13_1" data-app-id="app_2_l_13_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SPECKLED</div>
@@ -1232,7 +1232,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">14</div>
+                  <div class="linenumber noDisplay">14</div>
                   
                   <div class="apparatus app_2_l_14_1" data-app-id="app_2_l_14_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">DARK</div>
@@ -1246,7 +1246,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">15</div>
+                  <div class="linenumber noDisplay">15</div>
                   
                   <div class="apparatus app_2_l_15_1" data-app-id="app_2_l_15_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">LIGHT</div>
@@ -1263,7 +1263,7 @@
                
                
                <div class="line">
-                  <div class="linenumber invisible">17</div>
+                  <div class="linenumber noDisplay">17</div>
                   
                   <div class="apparatus app_2_l_17_1" data-app-id="app_2_l_17_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SHE</div>
@@ -1273,7 +1273,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">18</div>
+                  <div class="linenumber noDisplay">18</div>
                   
                   <div class="apparatus app_2_l_18_1" data-app-id="app_2_l_18_1">
                      <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">WEPT</div>
@@ -1283,7 +1283,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">19</div>
+                  <div class="linenumber noDisplay">19</div>
                   
                   <div class="apparatus app_2_l_19_1" data-app-id="app_2_l_19_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">AT</div>
@@ -1293,7 +1293,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">20</div>
+                  <div class="linenumber noDisplay">20</div>
                   
                   <div class="apparatus app_2_l_20_1" data-app-id="app_2_l_20_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">NIGHT</div>
@@ -1308,7 +1308,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">21</div>
+                  <div class="linenumber noDisplay">21</div>
                   
                   <div class="apparatus app_2_l_21_1" data-app-id="app_2_l_21_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">CURSED</div>
@@ -1319,7 +1319,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">22</div>
+                  <div class="linenumber noDisplay">22</div>
                   
                   <div class="apparatus app_2_l_22_1" data-app-id="app_2_l_22_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">TAUT</div>
@@ -1329,7 +1329,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">23</div>
+                  <div class="linenumber noDisplay">23</div>
                   
                   <div class="apparatus app_2_l_23_1" data-app-id="app_2_l_23_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SNARE</div>
@@ -1341,7 +1341,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">24</div>
+                  <div class="linenumber noDisplay">24</div>
                   
                   <div class="apparatus app_2_l_24_1" data-app-id="app_2_l_24_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">OF</div>
@@ -1352,7 +1352,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">25</div>
+                  <div class="linenumber noDisplay">25</div>
                   
                   <div class="apparatus app_2_l_25_1" data-app-id="app_2_l_25_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">DULLARD'S</div>
@@ -1362,7 +1362,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">26</div>
+                  <div class="linenumber noDisplay">26</div>
                   
                   <div class="apparatus app_2_l_26_1" data-app-id="app_2_l_26_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">AMPLE</div>
@@ -1372,7 +1372,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">27</div>
+                  <div class="linenumber noDisplay">27</div>
                   
                   <div class="apparatus app_2_l_27_1" data-app-id="app_2_l_27_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">PURSE</div>
@@ -1387,7 +1387,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">28</div>
+                  <div class="linenumber noDisplay">28</div>
                   
                   <div class="apparatus app_2_l_28_1" data-app-id="app_2_l_28_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">AT</div>
@@ -1398,7 +1398,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">29</div>
+                  <div class="linenumber noDisplay">29</div>
                   
                   <div class="apparatus app_2_l_29_1" data-app-id="app_2_l_29_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SPIRITLEDGE</div>
@@ -1413,7 +1413,7 @@
                
                
                <div class="line">
-                  <div class="linenumber invisible">31</div>
+                  <div class="linenumber noDisplay">31</div>
                   
                   <div class="apparatus app_2_l_31_1" data-app-id="app_2_l_31_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">YOUTH</div>
@@ -1423,7 +1423,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">32</div>
+                  <div class="linenumber noDisplay">32</div>
                   
                   <div class="apparatus app_2_l_32_1" data-app-id="app_2_l_32_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">OF</div>
@@ -1433,7 +1433,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">33</div>
+                  <div class="linenumber noDisplay">33</div>
                   
                   <div class="apparatus app_2_l_33_1" data-app-id="app_2_l_33_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">HER'S</div>
@@ -1446,7 +1446,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">34</div>
+                  <div class="linenumber noDisplay">34</div>
                   
                   <div class="apparatus app_2_l_34_1" data-app-id="app_2_l_34_1">
                      <div data-witness="a1 a2" class="reading a1 a2">BRIGHT</div>
@@ -1464,7 +1464,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">37</div>
+                  <div class="linenumber noDisplay">37</div>
                   
                   <div class="apparatus app_2_l_37_1" data-app-id="app_2_l_37_1">
                      <div data-witness="a2 a6" class="reading a2 a6">AT</div>
@@ -1483,7 +1483,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">38</div>
+                  <div class="linenumber noDisplay">38</div>
                   
                   <div class="apparatus app_2_l_38_1" data-app-id="app_2_l_38_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">TORN</div>
@@ -1504,7 +1504,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">41</div>
+                  <div class="linenumber noDisplay">41</div>
                   
                   <div class="apparatus app_2_l_41_1" data-app-id="app_2_l_41_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">GHINGA</div>
@@ -1518,7 +1518,7 @@
                
                
                <div class="line">
-                  <div class="linenumber invisible">43</div>
+                  <div class="linenumber noDisplay">43</div>
                   
                   <div class="apparatus app_2_l_43_1" data-app-id="app_2_l_43_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">FROM</div>
@@ -1528,7 +1528,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">44</div>
+                  <div class="linenumber noDisplay">44</div>
                   
                   <div class="apparatus app_2_l_44_1" data-app-id="app_2_l_44_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">HER'S</div>
@@ -1539,7 +1539,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">45</div>
+                  <div class="linenumber noDisplay">45</div>
                   
                   <div class="apparatus app_2_l_45_1" data-app-id="app_2_l_45_1">
                      <div data-witness="a1 a2 a4" class="reading a1 a2 a4">CURVE</div>
@@ -1549,7 +1549,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">46</div>
+                  <div class="linenumber noDisplay">46</div>
                   
                   <div class="apparatus app_2_l_46_1" data-app-id="app_2_l_46_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">DIVERGED</div>
@@ -1566,7 +1566,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">48</div>
+                  <div class="linenumber noDisplay">48</div>
                   
                   <div class="apparatus app_2_l_48_1" data-app-id="app_2_l_48_1">
                      <div data-witness="a1 a2 a4" class="reading a1 a2 a4">WITHIN</div>
@@ -1578,7 +1578,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">50</div>
+                  <div class="linenumber noDisplay">50</div>
                   
                   <div class="apparatus app_2_l_50_1" data-app-id="app_2_l_50_1">
                      <div data-witness="a2" class="reading a2">HERE &nbsp;<ins>HEIR</ins>
@@ -1590,7 +1590,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">51</div>
+                  <div class="linenumber noDisplay">51</div>
                   
                   <div class="apparatus app_2_l_51_1" data-app-id="app_2_l_51_1">
                      <div data-witness="a1 a2 a4" class="reading a1 a2 a4">SHE</div>
@@ -1602,7 +1602,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">52</div>
+                  <div class="linenumber noDisplay">52</div>
                   
                   <div class="apparatus app_2_l_52_1" data-app-id="app_2_l_52_1">
                      <div data-witness="a2" class="reading a2">SOBS</div>
@@ -1612,7 +1612,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">53</div>
+                  <div class="linenumber noDisplay">53</div>
                   
                   <div class="apparatus app_2_l_53_1" data-app-id="app_2_l_53_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">ANEW</div>
@@ -1631,7 +1631,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">55</div>
+                  <div class="linenumber noDisplay">55</div>
                   
                   <div class="apparatus app_2_l_55_1" data-app-id="app_2_l_55_1">
                      <div data-witness="a1 a2 a4" class="reading a1 a2 a4">VAGRANT</div>
@@ -1643,7 +1643,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">57</div>
+                  <div class="linenumber noDisplay">57</div>
                   
                   <div class="apparatus app_2_l_57_1" data-app-id="app_2_l_57_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">SPILL</div>
@@ -1661,7 +1661,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">61</div>
+                  <div class="linenumber noDisplay">61</div>
                   
                   <div class="apparatus app_2_l_61_1" data-app-id="app_2_l_61_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">BEACON</div>
@@ -1674,7 +1674,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">62</div>
+                  <div class="linenumber noDisplay">62</div>
                   
                   <div class="apparatus app_2_l_62_1" data-app-id="app_2_l_62_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">ISLAND</div>
@@ -1687,7 +1687,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">63</div>
+                  <div class="linenumber noDisplay">63</div>
                   
                   <div class="apparatus app_2_l_63_1" data-app-id="app_2_l_63_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">BED</div>
@@ -1700,7 +1700,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">64</div>
+                  <div class="linenumber noDisplay">64</div>
                   
                   <div class="apparatus app_2_l_64_1" data-app-id="app_2_l_64_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">TO</div>
@@ -1710,7 +1710,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">65</div>
+                  <div class="linenumber noDisplay">65</div>
                   
                   <div class="apparatus app_2_l_65_1" data-app-id="app_2_l_65_1">
                      <div data-witness="a1 a2" class="reading a1 a2">BEAR</div>
@@ -1723,7 +1723,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">66</div>
+                  <div class="linenumber noDisplay">66</div>
                   
                   <div class="apparatus app_2_l_66_1" data-app-id="app_2_l_66_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">SPECKELED</div>
@@ -1733,7 +1733,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">67</div>
+                  <div class="linenumber noDisplay">67</div>
                   
                   <div class="apparatus app_2_l_67_1" data-app-id="app_2_l_67_1">
                      <div data-witness="a1 a2 a4" class="reading a1 a2 a4">ORCHIDS</div>
@@ -1747,7 +1747,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">70</div>
+                  <div class="linenumber noDisplay">70</div>
                   
                   <div class="apparatus app_2_l_70_1" data-app-id="app_2_l_70_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">GLARE</div>
@@ -1767,7 +1767,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">75</div>
+                  <div class="linenumber noDisplay">75</div>
                   
                   <div class="apparatus app_2_l_75_1" data-app-id="app_2_l_75_1">
                      <div data-witness="a1 a2" class="reading a1 a2">HAS</div>
@@ -1783,7 +1783,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">76</div>
+                  <div class="linenumber noDisplay">76</div>
                   
                   <div class="apparatus app_2_l_76_1" data-app-id="app_2_l_76_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SITE</div>
@@ -1797,7 +1797,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">78</div>
+                  <div class="linenumber noDisplay">78</div>
                   
                   <div class="apparatus app_2_l_78_1" data-app-id="app_2_l_78_1">
                      <div data-witness="a2" class="reading a2">
@@ -1812,7 +1812,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">79</div>
+                  <div class="linenumber noDisplay">79</div>
                   
                   <div class="apparatus app_2_l_79_1" data-app-id="app_2_l_79_1">
                      <div data-witness="a1 a2 a4 a6" class="reading a1 a2 a4 a6">NOWHERE</div>
@@ -1827,7 +1827,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">80</div>
+                  <div class="linenumber noDisplay">80</div>
                   
                   <div class="apparatus app_2_l_80_1" data-app-id="app_2_l_80_1">
                      <div data-witness="a1 a2" class="reading a1 a2">SUN</div>
@@ -1836,7 +1836,7 @@
                </div>
                
                <div class="line">
-                  <div class="linenumber invisible">81</div>
+                  <div class="linenumber noDisplay">81</div>
                   
                   <div class="apparatus app_2_l_81_1" data-app-id="app_2_l_81_1">
                      <div data-witness="a1 a2" class="reading a1 a2">WILL</div>
@@ -1846,7 +1846,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">82</div>
+                  <div class="linenumber noDisplay">82</div>
                   
                   <div class="apparatus app_2_l_82_1" data-app-id="app_2_l_82_1">
                      <div data-witness="a1 a2" class="reading a1 a2">ILL !</div>
@@ -1860,7 +1860,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">83</div>
+                  <div class="linenumber noDisplay">83</div>
                   
                   <div class="apparatus app_2_l_83_1" data-app-id="app_2_l_83_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">BIRTH</div>
@@ -1875,7 +1875,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">84</div>
+                  <div class="linenumber noDisplay">84</div>
                   
                   <div class="apparatus app_2_l_84_1" data-app-id="app_2_l_84_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">BLIGHT</div>
@@ -1892,7 +1892,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">85</div>
+                  <div class="linenumber noDisplay">85</div>
                   
                   <div class="apparatus app_2_l_85_1" data-app-id="app_2_l_85_1">
                      <div data-witness="a1 a2 a4" class="reading a1 a2 a4">THISTLEDOWNFLIGHT</div>
@@ -1925,7 +1925,7 @@
                
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="a3">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="a3">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness a3
             </div>
             <div class="mssContent">
@@ -1945,7 +1945,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">1</div>
+                  <div class="linenumber noDisplay">1</div>
                   
                   <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">GHINGHA </div>
@@ -1961,7 +1961,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">2</div>
+                  <div class="linenumber noDisplay">2</div>
                   
                   <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">I</div>
@@ -1971,7 +1971,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">3</div>
+                  <div class="linenumber noDisplay">3</div>
                   
                   <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
                      <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">TREMBLE</div>
@@ -1984,7 +1984,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">4</div>
+                  <div class="linenumber noDisplay">4</div>
                   
                   <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">DO</div>
@@ -1994,7 +1994,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">5</div>
+                  <div class="linenumber noDisplay">5</div>
                   
                   <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">NOT</div>
@@ -2005,7 +2005,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">6</div>
+                  <div class="linenumber noDisplay">6</div>
                   
                   <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
                      <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">LAUGH</div>
@@ -2020,7 +2020,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">7</div>
+                  <div class="linenumber noDisplay">7</div>
                   
                   <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">BORN</div>
@@ -2032,7 +2032,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">8</div>
+                  <div class="linenumber noDisplay">8</div>
                   
                   <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
                      <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">FINE</div>
@@ -2042,7 +2042,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">9</div>
+                  <div class="linenumber noDisplay">9</div>
                   
                   <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">FLOWER</div>
@@ -2056,7 +2056,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">10</div>
+                  <div class="linenumber noDisplay">10</div>
                   
                   <div class="apparatus app_2_l_10_1" data-app-id="app_2_l_10_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">BY</div>
@@ -2067,7 +2067,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">11</div>
+                  <div class="linenumber noDisplay">11</div>
                   
                   <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
                      <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">ORCHID</div>
@@ -2077,7 +2077,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">13</div>
+                  <div class="linenumber noDisplay">13</div>
                   
                   <div class="apparatus app_2_l_13_1" data-app-id="app_2_l_13_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SPECKLED</div>
@@ -2087,7 +2087,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">14</div>
+                  <div class="linenumber noDisplay">14</div>
                   
                   <div class="apparatus app_2_l_14_1" data-app-id="app_2_l_14_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">DARK</div>
@@ -2101,7 +2101,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">15</div>
+                  <div class="linenumber noDisplay">15</div>
                   
                   <div class="apparatus app_2_l_15_1" data-app-id="app_2_l_15_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">LIGHT</div>
@@ -2114,7 +2114,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">16</div>
+                  <div class="linenumber noDisplay">16</div>
                   
                   <div class="apparatus app_2_l_16_1" data-app-id="app_2_l_16_1">
                      <div data-witness="a3" class="reading a3">
@@ -2126,7 +2126,7 @@
                </div>
                
                <div class="line">
-                  <div class="linenumber invisible">17</div>
+                  <div class="linenumber noDisplay">17</div>
                   
                   <div class="apparatus app_2_l_17_1" data-app-id="app_2_l_17_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SHE</div>
@@ -2136,7 +2136,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">18</div>
+                  <div class="linenumber noDisplay">18</div>
                   
                   <div class="apparatus app_2_l_18_1" data-app-id="app_2_l_18_1">
                      <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">WEPT</div>
@@ -2146,7 +2146,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">19</div>
+                  <div class="linenumber noDisplay">19</div>
                   
                   <div class="apparatus app_2_l_19_1" data-app-id="app_2_l_19_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">AT</div>
@@ -2156,7 +2156,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">20</div>
+                  <div class="linenumber noDisplay">20</div>
                   
                   <div class="apparatus app_2_l_20_1" data-app-id="app_2_l_20_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">NIGHT</div>
@@ -2168,7 +2168,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">21</div>
+                  <div class="linenumber noDisplay">21</div>
                   
                   <div class="apparatus app_2_l_21_1" data-app-id="app_2_l_21_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">CURSED</div>
@@ -2179,7 +2179,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">22</div>
+                  <div class="linenumber noDisplay">22</div>
                   
                   <div class="apparatus app_2_l_22_1" data-app-id="app_2_l_22_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">TAUT</div>
@@ -2189,7 +2189,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">23</div>
+                  <div class="linenumber noDisplay">23</div>
                   
                   <div class="apparatus app_2_l_23_1" data-app-id="app_2_l_23_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SNARE</div>
@@ -2201,7 +2201,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">24</div>
+                  <div class="linenumber noDisplay">24</div>
                   
                   <div class="apparatus app_2_l_24_1" data-app-id="app_2_l_24_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">OF</div>
@@ -2212,7 +2212,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">25</div>
+                  <div class="linenumber noDisplay">25</div>
                   
                   <div class="apparatus app_2_l_25_1" data-app-id="app_2_l_25_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">DULLARD'S</div>
@@ -2222,7 +2222,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">26</div>
+                  <div class="linenumber noDisplay">26</div>
                   
                   <div class="apparatus app_2_l_26_1" data-app-id="app_2_l_26_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">AMPLE</div>
@@ -2232,7 +2232,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">27</div>
+                  <div class="linenumber noDisplay">27</div>
                   
                   <div class="apparatus app_2_l_27_1" data-app-id="app_2_l_27_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">PURSE</div>
@@ -2244,7 +2244,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">28</div>
+                  <div class="linenumber noDisplay">28</div>
                   
                   <div class="apparatus app_2_l_28_1" data-app-id="app_2_l_28_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">AT</div>
@@ -2255,7 +2255,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">29</div>
+                  <div class="linenumber noDisplay">29</div>
                   
                   <div class="apparatus app_2_l_29_1" data-app-id="app_2_l_29_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SPIRITLEDGE</div>
@@ -2266,7 +2266,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">30</div>
+                  <div class="linenumber noDisplay">30</div>
                   
                   <div class="apparatus app_2_l_30_1" data-app-id="app_2_l_30_1">
                      <div data-witness="a3" class="reading a3">BRIGHT</div>
@@ -2275,7 +2275,7 @@
                </div>
                
                <div class="line">
-                  <div class="linenumber invisible">31</div>
+                  <div class="linenumber noDisplay">31</div>
                   
                   <div class="apparatus app_2_l_31_1" data-app-id="app_2_l_31_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">YOUTH</div>
@@ -2285,7 +2285,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">32</div>
+                  <div class="linenumber noDisplay">32</div>
                   
                   <div class="apparatus app_2_l_32_1" data-app-id="app_2_l_32_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">OF</div>
@@ -2295,7 +2295,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">33</div>
+                  <div class="linenumber noDisplay">33</div>
                   
                   <div class="apparatus app_2_l_33_1" data-app-id="app_2_l_33_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">HER'S</div>
@@ -2305,7 +2305,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">34</div>
+                  <div class="linenumber noDisplay">34</div>
                   
                   <div class="apparatus app_2_l_34_1" data-app-id="app_2_l_34_1">
                      <div data-witness="a3" class="reading a3">
@@ -2318,7 +2318,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">35</div>
+                  <div class="linenumber noDisplay">35</div>
                   
                   <div class="apparatus app_2_l_35_1" data-app-id="app_2_l_35_1">
                      <div data-witness="a3" class="reading a3">
@@ -2334,7 +2334,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">36</div>
+                  <div class="linenumber noDisplay">36</div>
                   
                   <div class="apparatus app_2_l_36_1" data-app-id="app_2_l_36_1">
                      <div data-witness="a1 a3" class="reading a1 a3">AT</div>
@@ -2344,7 +2344,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">37</div>
+                  <div class="linenumber noDisplay">37</div>
                   
                   <div class="apparatus app_2_l_37_1" data-app-id="app_2_l_37_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">WISDOMEDGE</div>
@@ -2357,7 +2357,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">38</div>
+                  <div class="linenumber noDisplay">38</div>
                   
                   <div class="apparatus app_2_l_38_1" data-app-id="app_2_l_38_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">TORN</div>
@@ -2370,7 +2370,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">39</div>
+                  <div class="linenumber noDisplay">39</div>
                   
                   <div class="apparatus app_2_l_39_1" data-app-id="app_2_l_39_1">
                      <div data-witness="a3" class="reading a3">
@@ -2386,7 +2386,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">41</div>
+                  <div class="linenumber noDisplay">41</div>
                   
                   <div class="apparatus app_2_l_41_1" data-app-id="app_2_l_41_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">GHINGA</div>
@@ -2402,7 +2402,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">42</div>
+                  <div class="linenumber noDisplay">42</div>
                   
                   <div class="apparatus app_2_l_42_1" data-app-id="app_2_l_42_1">
                      <div data-witness="a3" class="reading a3">
@@ -2413,7 +2413,7 @@
                </div>
                
                <div class="line">
-                  <div class="linenumber invisible">43</div>
+                  <div class="linenumber noDisplay">43</div>
                   
                   <div class="apparatus app_2_l_43_1" data-app-id="app_2_l_43_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">FROM</div>
@@ -2423,7 +2423,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">44</div>
+                  <div class="linenumber noDisplay">44</div>
                   
                   <div class="apparatus app_2_l_44_1" data-app-id="app_2_l_44_1">
                      <div data-witness="a1 a2 a3" class="reading a1 a2 a3">HER'S</div>
@@ -2437,7 +2437,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">45</div>
+                  <div class="linenumber noDisplay">45</div>
                   
                   <div class="apparatus app_2_l_45_1" data-app-id="app_2_l_45_1">
                      <div data-witness="a3 a4" class="reading a3 a4">PATH</div>
@@ -2447,7 +2447,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">46</div>
+                  <div class="linenumber noDisplay">46</div>
                   
                   <div class="apparatus app_2_l_46_1" data-app-id="app_2_l_46_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">DIVERGED</div>
@@ -2468,7 +2468,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">47</div>
+                  <div class="linenumber noDisplay">47</div>
                   
                   <div class="apparatus app_2_l_47_1" data-app-id="app_2_l_47_1">
                      <div data-witness="a3" class="reading a3">AM<ins class="rend-superscript"><del>WHY</del>
@@ -2499,7 +2499,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">48</div>
+                  <div class="linenumber noDisplay">48</div>
                   
                   <div class="apparatus app_2_l_48_1" data-app-id="app_2_l_48_1">
                      <div data-witness="a3" class="reading a3">I</div>
@@ -2509,7 +2509,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">49</div>
+                  <div class="linenumber noDisplay">49</div>
                   
                   <div class="apparatus app_2_l_49_1" data-app-id="app_2_l_49_1">
                      <div data-witness="a3" class="reading a3">
@@ -2522,7 +2522,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">50</div>
+                  <div class="linenumber noDisplay">50</div>
                   
                   <div class="apparatus app_2_l_50_1" data-app-id="app_2_l_50_1">
                      <div data-witness="a3" class="reading a3">
@@ -2539,7 +2539,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">52</div>
+                  <div class="linenumber noDisplay">52</div>
                   
                   <div class="apparatus app_2_l_52_1" data-app-id="app_2_l_52_1">
                      <div data-witness="a3" class="reading a3">QUAKE</div>
@@ -2549,7 +2549,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">53</div>
+                  <div class="linenumber noDisplay">53</div>
                   
                   <div class="apparatus app_2_l_53_1" data-app-id="app_2_l_53_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">ANEW</div>
@@ -2566,7 +2566,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">54</div>
+                  <div class="linenumber noDisplay">54</div>
                   
                   <div class="apparatus app_2_l_54_1" data-app-id="app_2_l_54_1">
                      <div data-witness="a3" class="reading a3">
@@ -2580,7 +2580,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">55</div>
+                  <div class="linenumber noDisplay">55</div>
                   
                   <div class="apparatus app_2_l_55_1" data-app-id="app_2_l_55_1">
                      <div data-witness="a3" class="reading a3">
@@ -2593,7 +2593,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">56</div>
+                  <div class="linenumber noDisplay">56</div>
                   
                   <div class="apparatus app_2_l_56_1" data-app-id="app_2_l_56_1">
                      <div data-witness="a3" class="reading a3">
@@ -2606,7 +2606,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">57</div>
+                  <div class="linenumber noDisplay">57</div>
                   
                   <div class="apparatus app_2_l_57_1" data-app-id="app_2_l_57_1">
                      <div data-witness="a3" class="reading a3">
@@ -2630,7 +2630,7 @@
                </div>
                
                <div class="line">
-                  <div class="linenumber invisible">58</div>
+                  <div class="linenumber noDisplay">58</div>
                   
                   <div class="apparatus app_2_l_58_1" data-app-id="app_2_l_58_1">
                      <div data-witness="a3" class="reading a3">TOO<ins class="rend-superscript"><del>DOOMED</del>
@@ -2642,7 +2642,7 @@
                </div>
                
                <div class="line">
-                  <div class="linenumber invisible">59</div>
+                  <div class="linenumber noDisplay">59</div>
                   
                   <div class="apparatus app_2_l_59_1" data-app-id="app_2_l_59_1">
                      <div data-witness="a3" class="reading a3">BLOOD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<del>VAGRANT</del>HEIR<del>ESS</del>
@@ -2653,7 +2653,7 @@
                </div>
                
                <div class="line">
-                  <div class="linenumber invisible">60</div>
+                  <div class="linenumber noDisplay">60</div>
                   
                   <div class="apparatus app_2_l_60_1" data-app-id="app_2_l_60_1">
                      <div data-witness="a3" class="reading a3">
@@ -2666,7 +2666,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">61</div>
+                  <div class="linenumber noDisplay">61</div>
                   
                   <div class="apparatus app_2_l_61_1" data-app-id="app_2_l_61_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">BEACON</div>
@@ -2676,7 +2676,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">62</div>
+                  <div class="linenumber noDisplay">62</div>
                   
                   <div class="apparatus app_2_l_62_1" data-app-id="app_2_l_62_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">ISLAND</div>
@@ -2686,7 +2686,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">63</div>
+                  <div class="linenumber noDisplay">63</div>
                   
                   <div class="apparatus app_2_l_63_1" data-app-id="app_2_l_63_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">BED</div>
@@ -2696,7 +2696,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">64</div>
+                  <div class="linenumber noDisplay">64</div>
                   
                   <div class="apparatus app_2_l_64_1" data-app-id="app_2_l_64_1">
                      <div data-witness="a3" class="reading a3">
@@ -2717,7 +2717,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">66</div>
+                  <div class="linenumber noDisplay">66</div>
                   
                   <div class="apparatus app_2_l_66_1" data-app-id="app_2_l_66_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">SPECKELED</div>
@@ -2727,7 +2727,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">67</div>
+                  <div class="linenumber noDisplay">67</div>
                   
                   <div class="apparatus app_2_l_67_1" data-app-id="app_2_l_67_1">
                      <div data-witness="a3" class="reading a3">ORHID'S</div>
@@ -2737,7 +2737,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">68</div>
+                  <div class="linenumber noDisplay">68</div>
                   
                   <div class="apparatus app_2_l_68_1" data-app-id="app_2_l_68_1">
                      <div data-witness="a3" class="reading a3">
@@ -2750,7 +2750,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">69</div>
+                  <div class="linenumber noDisplay">69</div>
                   
                   <div class="apparatus app_2_l_69_1" data-app-id="app_2_l_69_1">
                      <div data-witness="a3" class="reading a3">
@@ -2763,7 +2763,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">70</div>
+                  <div class="linenumber noDisplay">70</div>
                   
                   <div class="apparatus app_2_l_70_1" data-app-id="app_2_l_70_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">GLARE</div>
@@ -2776,7 +2776,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">71</div>
+                  <div class="linenumber noDisplay">71</div>
                   
                   <div class="apparatus app_2_l_71_1" data-app-id="app_2_l_71_1">
                      <div data-witness="a3" class="reading a3">
@@ -2797,7 +2797,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">76</div>
+                  <div class="linenumber noDisplay">76</div>
                   
                   <div class="apparatus app_2_l_76_1" data-app-id="app_2_l_76_1">
                      <div data-witness="a3" class="reading a3">
@@ -2820,7 +2820,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">77</div>
+                  <div class="linenumber noDisplay">77</div>
                   
                   <div class="apparatus app_2_l_77_1" data-app-id="app_2_l_77_1">
                      <div data-witness="a3" class="reading a3">
@@ -2833,7 +2833,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">78</div>
+                  <div class="linenumber noDisplay">78</div>
                   
                   <div class="apparatus app_2_l_78_1" data-app-id="app_2_l_78_1">
                      <div data-witness="a3" class="reading a3">
@@ -2848,7 +2848,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">79</div>
+                  <div class="linenumber noDisplay">79</div>
                   
                   <div class="apparatus app_2_l_79_1" data-app-id="app_2_l_79_1">
                      <div data-witness="a3" class="reading a3">NxWHERE?<ins class="rend-subscript">RIGHT</ins>
@@ -2868,7 +2868,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">80</div>
+                  <div class="linenumber noDisplay">80</div>
                   
                   <div class="apparatus app_2_l_80_1" data-app-id="app_2_l_80_1">
                      <div data-witness="a3" class="reading a3">
@@ -2879,7 +2879,7 @@
                </div>
                
                <div class="line">
-                  <div class="linenumber invisible">81</div>
+                  <div class="linenumber noDisplay">81</div>
                   
                   <div class="apparatus app_2_l_81_1" data-app-id="app_2_l_81_1">
                      <div data-witness="a3" class="reading a3">
@@ -2895,7 +2895,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">83</div>
+                  <div class="linenumber noDisplay">83</div>
                   
                   <div class="apparatus app_2_l_83_1" data-app-id="app_2_l_83_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">BIRTH</div>
@@ -2917,7 +2917,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">84</div>
+                  <div class="linenumber noDisplay">84</div>
                   
                   <div class="apparatus app_2_l_84_1" data-app-id="app_2_l_84_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">BLIGHT</div>
@@ -2931,7 +2931,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">85</div>
+                  <div class="linenumber noDisplay">85</div>
                   
                   <div class="apparatus app_2_l_85_1" data-app-id="app_2_l_85_1">
                      <div data-witness="a3" class="reading a3">THISTLExxWNFLIGHT</div>
@@ -2953,7 +2953,7 @@
                
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="a4">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="a4">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness a4
             </div>
             <div class="mssContent">
@@ -3078,7 +3078,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">41</div>
+                  <div class="linenumber noDisplay">41</div>
                   
                   <div class="apparatus app_2_l_41_1" data-app-id="app_2_l_41_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">GHINGA</div>
@@ -3088,7 +3088,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">42</div>
+                  <div class="linenumber noDisplay">42</div>
                   
                   <div class="apparatus app_2_l_42_1" data-app-id="app_2_l_42_1">
                      <div data-witness="a4" class="reading a4">
@@ -3100,7 +3100,7 @@
                </div>
                
                <div class="line">
-                  <div class="linenumber invisible">43</div>
+                  <div class="linenumber noDisplay">43</div>
                   
                   <div class="apparatus app_2_l_43_1" data-app-id="app_2_l_43_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">FROM</div>
@@ -3110,7 +3110,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">44</div>
+                  <div class="linenumber noDisplay">44</div>
                   
                   <div class="apparatus app_2_l_44_1" data-app-id="app_2_l_44_1">
                      <div data-witness="a4" class="reading a4">HER<del>S</del>S
@@ -3122,7 +3122,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">45</div>
+                  <div class="linenumber noDisplay">45</div>
                   
                   <div class="apparatus app_2_l_45_1" data-app-id="app_2_l_45_1">
                      <div data-witness="a3 a4" class="reading a3 a4">PATH</div>
@@ -3141,7 +3141,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">46</div>
+                  <div class="linenumber noDisplay">46</div>
                   
                   <div class="apparatus app_2_l_46_1" data-app-id="app_2_l_46_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">DIVERGED</div>
@@ -3155,7 +3155,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">48</div>
+                  <div class="linenumber noDisplay">48</div>
                   
                   <div class="apparatus app_2_l_48_1" data-app-id="app_2_l_48_1">
                      <div data-witness="a1 a2 a4" class="reading a1 a2 a4">WITHIN</div>
@@ -3167,7 +3167,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">50</div>
+                  <div class="linenumber noDisplay">50</div>
                   
                   <div class="apparatus app_2_l_50_1" data-app-id="app_2_l_50_1">
                      <div data-witness="a1 a4" class="reading a1 a4">HEIR</div>
@@ -3177,7 +3177,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">51</div>
+                  <div class="linenumber noDisplay">51</div>
                   
                   <div class="apparatus app_2_l_51_1" data-app-id="app_2_l_51_1">
                      <div data-witness="a1 a2 a4" class="reading a1 a2 a4">SHE</div>
@@ -3189,7 +3189,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">52</div>
+                  <div class="linenumber noDisplay">52</div>
                   
                   <div class="apparatus app_2_l_52_1" data-app-id="app_2_l_52_1">
                      <div data-witness="a4" class="reading a4">
@@ -3202,7 +3202,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">53</div>
+                  <div class="linenumber noDisplay">53</div>
                   
                   <div class="apparatus app_2_l_53_1" data-app-id="app_2_l_53_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">ANEW</div>
@@ -3219,7 +3219,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">54</div>
+                  <div class="linenumber noDisplay">54</div>
                   
                   <div class="apparatus app_2_l_54_1" data-app-id="app_2_l_54_1">
                      <div data-witness="a4" class="reading a4">
@@ -3232,7 +3232,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">55</div>
+                  <div class="linenumber noDisplay">55</div>
                   
                   <div class="apparatus app_2_l_55_1" data-app-id="app_2_l_55_1">
                      <div data-witness="a1 a2 a4" class="reading a1 a2 a4">VAGRANT</div>
@@ -3244,7 +3244,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">57</div>
+                  <div class="linenumber noDisplay">57</div>
                   
                   <div class="apparatus app_2_l_57_1" data-app-id="app_2_l_57_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">SPILL</div>
@@ -3259,7 +3259,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">61</div>
+                  <div class="linenumber noDisplay">61</div>
                   
                   <div class="apparatus app_2_l_61_1" data-app-id="app_2_l_61_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">BEACON</div>
@@ -3269,7 +3269,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">62</div>
+                  <div class="linenumber noDisplay">62</div>
                   
                   <div class="apparatus app_2_l_62_1" data-app-id="app_2_l_62_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">ISLAND</div>
@@ -3279,7 +3279,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">63</div>
+                  <div class="linenumber noDisplay">63</div>
                   
                   <div class="apparatus app_2_l_63_1" data-app-id="app_2_l_63_1">
                      <div data-witness="a4" class="reading a4">
@@ -3302,7 +3302,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">66</div>
+                  <div class="linenumber noDisplay">66</div>
                   
                   <div class="apparatus app_2_l_66_1" data-app-id="app_2_l_66_1">
                      <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">SPECKELED</div>
@@ -3312,7 +3312,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">67</div>
+                  <div class="linenumber noDisplay">67</div>
                   
                   <div class="apparatus app_2_l_67_1" data-app-id="app_2_l_67_1">
                      <div data-witness="a1 a2 a4" class="reading a1 a2 a4">ORCHIDS</div>
@@ -3326,7 +3326,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">70</div>
+                  <div class="linenumber noDisplay">70</div>
                   
                   <div class="apparatus app_2_l_70_1" data-app-id="app_2_l_70_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">GLARE</div>
@@ -3336,7 +3336,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">71</div>
+                  <div class="linenumber noDisplay">71</div>
                   
                   <div class="apparatus app_2_l_71_1" data-app-id="app_2_l_71_1">
                      <div data-witness="a4" class="reading a4">
@@ -3348,7 +3348,7 @@
                </div>
                
                <div class="line">
-                  <div class="linenumber invisible">72</div>
+                  <div class="linenumber noDisplay">72</div>
                   
                   <div class="apparatus app_2_l_72_1" data-app-id="app_2_l_72_1">
                      <div data-witness="a4" class="reading a4">
@@ -3361,7 +3361,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">73</div>
+                  <div class="linenumber noDisplay">73</div>
                   
                   <div class="apparatus app_2_l_73_1" data-app-id="app_2_l_73_1">
                      <div data-witness="a4" class="reading a4">
@@ -3374,7 +3374,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">74</div>
+                  <div class="linenumber noDisplay">74</div>
                   
                   <div class="apparatus app_2_l_74_1" data-app-id="app_2_l_74_1">
                      <div data-witness="a4" class="reading a4">
@@ -3387,7 +3387,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">75</div>
+                  <div class="linenumber noDisplay">75</div>
                   
                   <div class="apparatus app_2_l_75_1" data-app-id="app_2_l_75_1">
                      <div data-witness="a4" class="reading a4">
@@ -3400,7 +3400,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">76</div>
+                  <div class="linenumber noDisplay">76</div>
                   
                   <div class="apparatus app_2_l_76_1" data-app-id="app_2_l_76_1">
                      <div data-witness="a4" class="reading a4">
@@ -3421,7 +3421,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">79</div>
+                  <div class="linenumber noDisplay">79</div>
                   
                   <div class="apparatus app_2_l_79_1" data-app-id="app_2_l_79_1">
                      <div data-witness="a1 a2 a4 a6" class="reading a1 a2 a4 a6">NOWHERE</div>
@@ -3463,7 +3463,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">82</div>
+                  <div class="linenumber noDisplay">82</div>
                   
                   <div class="apparatus app_2_l_82_1" data-app-id="app_2_l_82_1">
                      <div data-witness="a4" class="reading a4">
@@ -3480,7 +3480,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">83</div>
+                  <div class="linenumber noDisplay">83</div>
                   
                   <div class="apparatus app_2_l_83_1" data-app-id="app_2_l_83_1">
                      <div data-witness="a4" class="reading a4">NIL</div>
@@ -3501,7 +3501,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">84</div>
+                  <div class="linenumber noDisplay">84</div>
                   
                   <div class="apparatus app_2_l_84_1" data-app-id="app_2_l_84_1">
                      <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">BLIGHT</div>
@@ -3515,7 +3515,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">85</div>
+                  <div class="linenumber noDisplay">85</div>
                   
                   <div class="apparatus app_2_l_85_1" data-app-id="app_2_l_85_1">
                      <div data-witness="a1 a2 a4" class="reading a1 a2 a4">THISTLEDOWNFLIGHT</div>
@@ -3537,7 +3537,7 @@
                
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="a5">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="a5">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness a5
             </div>
             <div class="mssContent">
@@ -3770,7 +3770,7 @@
                
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="a6">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="a6">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness a6
             </div>
             <div class="mssContent">
@@ -3790,7 +3790,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">1</div>
+                  <div class="linenumber noDisplay">1</div>
                   
                   <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
                      <div data-witness="a6" class="reading a6">GINGA</div>
@@ -3802,7 +3802,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">3</div>
+                  <div class="linenumber noDisplay">3</div>
                   
                   <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
                      <div data-witness="a6" class="reading a6">
@@ -3825,7 +3825,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">6</div>
+                  <div class="linenumber noDisplay">6</div>
                   
                   <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
                      <div data-witness="a6" class="reading a6">MAY NOT</div>
@@ -3847,7 +3847,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">8</div>
+                  <div class="linenumber noDisplay">8</div>
                   
                   <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
                      <div data-witness="a6" class="reading a6">MOTHER</div>
@@ -3869,7 +3869,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">11</div>
+                  <div class="linenumber noDisplay">11</div>
                   
                   <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
                      <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">ORCHID</div>
@@ -3893,7 +3893,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">18</div>
+                  <div class="linenumber noDisplay">18</div>
                   
                   <div class="apparatus app_2_l_18_1" data-app-id="app_2_l_18_1">
                      <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">WEPT</div>
@@ -3914,7 +3914,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">21</div>
+                  <div class="linenumber noDisplay">21</div>
                   
                   <div class="apparatus app_2_l_21_1" data-app-id="app_2_l_21_1">
                      <div data-witness="a6" class="reading a6">CURSING</div>
@@ -3954,7 +3954,7 @@
                
                
                <div class="line">
-                  <div class="linenumber invisible">31</div>
+                  <div class="linenumber noDisplay">31</div>
                   
                   <div class="apparatus app_2_l_31_1" data-app-id="app_2_l_31_1">
                      <div data-witness="a6" class="reading a6">
@@ -3970,7 +3970,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">32</div>
+                  <div class="linenumber noDisplay">32</div>
                   
                   <div class="apparatus app_2_l_32_1" data-app-id="app_2_l_32_1">
                      <div data-witness="a6" class="reading a6">TORN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SPIRIT BORN</div>
@@ -3980,7 +3980,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">33</div>
+                  <div class="linenumber noDisplay">33</div>
                   
                   <div class="apparatus app_2_l_33_1" data-app-id="app_2_l_33_1">
                      <div data-witness="a6" class="reading a6">
@@ -3995,7 +3995,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">34</div>
+                  <div class="linenumber noDisplay">34</div>
                   
                   <div class="apparatus app_2_l_34_1" data-app-id="app_2_l_34_1">
                      <div data-witness="a6" class="reading a6">SOUL FORLORN</div>
@@ -4010,7 +4010,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">37</div>
+                  <div class="linenumber noDisplay">37</div>
                   
                   <div class="apparatus app_2_l_37_1" data-app-id="app_2_l_37_1">
                      <div data-witness="a2 a6" class="reading a2 a6">AT</div>
@@ -4032,7 +4032,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">40</div>
+                  <div class="linenumber noDisplay">40</div>
                   
                   <div class="apparatus app_2_l_40_1" data-app-id="app_2_l_40_1">
                      <div data-witness="a6" class="reading a6">WHY</div>
@@ -4042,7 +4042,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">41</div>
+                  <div class="linenumber noDisplay">41</div>
                   
                   <div class="apparatus app_2_l_41_1" data-app-id="app_2_l_41_1">
                      <div data-witness="a6" class="reading a6">GINGA</div>
@@ -4060,7 +4060,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">46</div>
+                  <div class="linenumber noDisplay">46</div>
                   
                   <div class="apparatus app_2_l_46_1" data-app-id="app_2_l_46_1">
                      <div data-witness="a6" class="reading a6">PATH</div>
@@ -4097,7 +4097,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">53</div>
+                  <div class="linenumber noDisplay">53</div>
                   
                   <div class="apparatus app_2_l_53_1" data-app-id="app_2_l_53_1">
                      <div data-witness="a6" class="reading a6">TO MUST I QUAKE</div>
@@ -4122,7 +4122,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">54</div>
+                  <div class="linenumber noDisplay">54</div>
                   
                   <div class="apparatus app_2_l_54_1" data-app-id="app_2_l_54_1">
                      <div data-witness="a6" class="reading a6">
@@ -4140,7 +4140,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">57</div>
+                  <div class="linenumber noDisplay">57</div>
                   
                   <div class="apparatus app_2_l_57_1" data-app-id="app_2_l_57_1">
                      <div data-witness="a6" class="reading a6">
@@ -4153,7 +4153,7 @@
                </div>
                
                <div class="line">
-                  <div class="linenumber invisible">58</div>
+                  <div class="linenumber noDisplay">58</div>
                   
                   <div class="apparatus app_2_l_58_1" data-app-id="app_2_l_58_1">
                      <div data-witness="a6" class="reading a6">
@@ -4167,7 +4167,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">61</div>
+                  <div class="linenumber noDisplay">61</div>
                   
                   <div class="apparatus app_2_l_61_1" data-app-id="app_2_l_61_1">
                      <div data-witness="a6" class="reading a6">HAS<ins>IS</ins>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4189,7 +4189,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">66</div>
+                  <div class="linenumber noDisplay">66</div>
                   
                   <div class="apparatus app_2_l_66_1" data-app-id="app_2_l_66_1">
                      <div data-witness="a6" class="reading a6">FOR</div>
@@ -4230,7 +4230,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">79</div>
+                  <div class="linenumber noDisplay">79</div>
                   
                   <div class="apparatus app_2_l_79_1" data-app-id="app_2_l_79_1">
                      <div data-witness="a6" class="reading a6">IS IT </div>
@@ -4259,7 +4259,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">83</div>
+                  <div class="linenumber noDisplay">83</div>
                   
                   <div class="apparatus app_2_l_83_1" data-app-id="app_2_l_83_1">
                      <div data-witness="a6" class="reading a6">BUT</div>
@@ -4277,7 +4277,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">84</div>
+                  <div class="linenumber noDisplay">84</div>
                   
                   <div class="apparatus app_2_l_84_1" data-app-id="app_2_l_84_1">
                      <div data-witness="a6" class="reading a6">
@@ -4296,7 +4296,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">86</div>
+                  <div class="linenumber noDisplay">86</div>
                   
                   <div class="apparatus app_2_l_86_1" data-app-id="app_2_l_86_1">
                      <div data-witness="a6" class="reading a6">FOR MOTHER <del>ME</del>
@@ -4308,7 +4308,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">87</div>
+                  <div class="linenumber noDisplay">87</div>
                   
                   <div class="apparatus app_2_l_87_1" data-app-id="app_2_l_87_1">
                      <div data-witness="a6" class="reading a6">OUR NAME —</div>
@@ -4318,7 +4318,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">88</div>
+                  <div class="linenumber noDisplay">88</div>
                   
                   <div class="apparatus app_2_l_88_1" data-app-id="app_2_l_88_1">
                      <div data-witness="a6" class="reading a6">GINGA — BROTHER</div>
@@ -4328,7 +4328,7 @@
                			
                
                <div class="line">
-                  <div class="linenumber invisible">89</div>
+                  <div class="linenumber noDisplay">89</div>
                   
                   <div class="apparatus app_2_l_89_1" data-app-id="app_2_l_89_1">
                      <div data-witness="a6" class="reading a6">FLAME?</div>
@@ -4340,7 +4340,7 @@
                
             </div>
          </div>
-         <div id="notesPanel" class="ui-widget-content ui-resizable panel mssPanel invisible">
+         <div id="notesPanel" class="ui-widget-content ui-resizable panel mssPanel noDisplay">
             <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Textual Notes
                

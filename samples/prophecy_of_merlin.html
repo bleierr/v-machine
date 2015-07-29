@@ -22,7 +22,7 @@
          </div>
          <nav id="mainControls">
             <ul>
-               <li><button class="topMenuButton dropdownButton" id="selectWitness">3 Total Versions<img class="invisible" src="../vm-images/arrowup.png" alt=""></img><img src="../vm-images/arrowdown.png" alt=""></img></button><ul id="witnessList" class="dropdown">
+               <li><button class="topMenuButton dropdownButton" id="selectWitness">3 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt=""></img><img src="../vm-images/arrowdown.png" alt=""></img></button><ul id="witnessList" class="dropdown notVisible">
                      <li data-panelid="dublin">
                         <div class="listText">
                            <div>The Prophecy of Merlin</div>
@@ -43,14 +43,14 @@
                      </li>
                   </ul>
                </li>
-               <li data-panelid="linenumber" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
+               <li id="linenumberOnOff" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
                <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
                <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
             </ul>
          </nav>
       </div>
       <div id="mssArea">
-         <div id="bibPanel" class="ui-widget-content ui-resizable panel mssPanel invisible">
+         <div id="bibPanel" class="ui-widget-content ui-resizable panel mssPanel noDisplay">
             <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Bibliographic Information
                
@@ -118,7 +118,7 @@
                		
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="dublin">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="dublin">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness dublin
             </div>
             <div class="mssContent">
@@ -137,7 +137,7 @@
                   				
                   				
                   <div class="line">
-                     <div class="linenumber invisible">2</div>
+                     <div class="linenumber noDisplay">2</div>
                      					
                      <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
                         <div data-witness="dublin" class="reading dublin">When lordes wille is londes law, 
@@ -153,7 +153,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber invisible">3</div>
+                     <div class="linenumber noDisplay">3</div>
                      					
                      <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
                         <div data-witness="dublin" class="reading dublin">Prestes wylle trechery, and gyle hold soth saw,
@@ -169,7 +169,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber invisible">4</div>
+                     <div class="linenumber noDisplay">4</div>
                      					
                      <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
                         <div data-witness="dublin" class="reading dublin">Lechery callyd pryvé solace,
@@ -185,7 +185,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber invisible">5</div>
+                     <div class="linenumber noDisplay">5</div>
                      					
                      <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
                         <div data-witness="dublin" class="reading dublin">And robbery is hold no trespace - 
@@ -203,7 +203,7 @@
                   				
                   				
                   <div class="line">
-                     <div class="linenumber invisible">8</div>
+                     <div class="linenumber noDisplay">8</div>
                      					
                      <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
                         <div data-witness="dublin" class="reading dublin">Then schal the lond of Albyon torne into confusioun! 
@@ -224,7 +224,7 @@
                   				
                   				
                   <div class="line">
-                     <div class="linenumber invisible">9</div>
+                     <div class="linenumber noDisplay">9</div>
                      					
                      <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
                         <div data-witness="dublin" class="reading dublin">A M CCCC lx and on, few lordes or ellys noone. 
@@ -254,7 +254,7 @@
                		
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="oxford">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="oxford">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness oxford
             </div>
             <div class="mssContent">
@@ -273,7 +273,7 @@
                   				
                   				
                   <div class="line">
-                     <div class="linenumber invisible">2</div>
+                     <div class="linenumber noDisplay">2</div>
                      					
                      <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
                         <div data-witness="oxford" class="reading oxford">Whane lordis wol leefe theire olde lawes,
@@ -295,7 +295,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber invisible">3</div>
+                     <div class="linenumber noDisplay">3</div>
                      					
                      <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
                         <div data-witness="oxford" class="reading oxford">And preestis beon varyinge in theire sawes, 
@@ -316,7 +316,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber invisible">4</div>
+                     <div class="linenumber noDisplay">4</div>
                      					
                      <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
                         <div data-witness="oxford" class="reading oxford">And leccherie is holden solace, 
@@ -332,7 +332,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber invisible">5</div>
+                     <div class="linenumber noDisplay">5</div>
                      					
                      <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
                         <div data-witness="oxford" class="reading oxford">And oppressyon for truwe purchace; </div>
@@ -341,7 +341,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber invisible">6</div>
+                     <div class="linenumber noDisplay">6</div>
                      					
                      <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
                         <div data-witness="oxford" class="reading oxford">And whan the moon is on David stall, 
@@ -367,7 +367,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber invisible">7</div>
+                     <div class="linenumber noDisplay">7</div>
                      					
                      <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
                         <div data-witness="oxford" class="reading oxford">And the kynge passe Arthures hall, 
@@ -383,7 +383,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber invisible">8</div>
+                     <div class="linenumber noDisplay">8</div>
                      					
                      <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
                         <div data-witness="oxford" class="reading oxford">Than is the lande of Albyoun 
@@ -414,7 +414,7 @@
                		
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="cambridge">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="cambridge">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness cambridge
             </div>
             <div class="mssContent">
@@ -432,7 +432,7 @@
                <div class="lg lg-n1" data-line-id="lg1">
                   				
                   <div class="line">
-                     <div class="linenumber invisible">1</div>
+                     <div class="linenumber noDisplay">1</div>
                      					
                      <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
                         <div data-witness="cambridge" class="reading cambridge">When feythe fayleth in prestys sawys, 
@@ -471,7 +471,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber invisible">2</div>
+                     <div class="linenumber noDisplay">2</div>
                      					
                      <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
                         <div data-witness="cambridge" class="reading cambridge">And lordys wyll be londys lawys,
@@ -488,7 +488,7 @@
                   				
                   				
                   <div class="line">
-                     <div class="linenumber invisible">4</div>
+                     <div class="linenumber noDisplay">4</div>
                      					
                      <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
                         <div data-witness="cambridge" class="reading cambridge">And lechery is prevy solas,
@@ -504,7 +504,7 @@
                   </div>
                   				
                   <div class="line">
-                     <div class="linenumber invisible">5</div>
+                     <div class="linenumber noDisplay">5</div>
                      					
                      <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
                         <div data-witness="cambridge" class="reading cambridge">And robbery ys goode purchas:
@@ -527,7 +527,7 @@
                   				
                   				
                   <div class="line">
-                     <div class="linenumber invisible">8</div>
+                     <div class="linenumber noDisplay">8</div>
                      					
                      <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
                         <div data-witness="cambridge" class="reading cambridge">Than shall the londe of Albeon 
@@ -551,7 +551,7 @@
                		
             </div>
          </div>
-         <div id="notesPanel" class="ui-widget-content ui-resizable panel mssPanel invisible">
+         <div id="notesPanel" class="ui-widget-content ui-resizable panel mssPanel noDisplay">
             <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Textual Notes
                

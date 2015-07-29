@@ -151,13 +151,13 @@
                   <xsl:attribute name="id">selectWitness</xsl:attribute>
                   <xsl:value-of select="count($witnesses)"></xsl:value-of>
                   <xsl:text> Total Versions</xsl:text>
-                  <img class="invisible" src="../vm-images/arrowup.png" alt=""/>
+                  <img class="noDisplay" src="../vm-images/arrowup.png" alt=""/>
                   <img src="../vm-images/arrowdown.png" alt=""/>
                </button>
                <!-- RB: version dropdown -->
                <ul>
                   <xsl:attribute name="id">witnessList</xsl:attribute>
-                  <xsl:attribute name="class">dropdown</xsl:attribute>
+                  <xsl:attribute name="class">dropdown notVisible</xsl:attribute>
                   <xsl:call-template name="versionDropdown"/>
                </ul>
             </li>
@@ -194,7 +194,7 @@
    <xsl:template name="topMenu">
       <xsl:if test="//tei:l[@n]">
          <li>
-            <xsl:attribute name="data-panelid">linenumber</xsl:attribute>
+            <xsl:attribute name="id">linenumberOnOff</xsl:attribute>
             <xsl:attribute name="title">Clicking this button turns the line numbers on or off.</xsl:attribute>
             <button><xsl:attribute name="class">topMenuButton</xsl:attribute>
                 <xsl:text>Line numbers</xsl:text>
@@ -259,7 +259,7 @@
       <!-- RB: added draggable resizeable -->
       <div>
          <xsl:attribute name="class">
-            <xsl:text>ui-widget-content ui-resizable panel mssPanel invisible</xsl:text>
+            <xsl:text>ui-widget-content ui-resizable panel mssPanel noDisplay</xsl:text>
          </xsl:attribute>
          <xsl:attribute name="id">
             <xsl:value-of select="$witID"></xsl:value-of>
@@ -355,7 +355,7 @@
    <xsl:template match="/tei:TEI/tei:teiHeader/tei:fileDesc">
       <div id="bibPanel">
          <xsl:attribute name="class">
-            <xsl:text>ui-widget-content ui-resizable panel mssPanel invisible</xsl:text>
+            <xsl:text>ui-widget-content ui-resizable panel mssPanel noDisplay</xsl:text>
          </xsl:attribute>
          
          
@@ -487,7 +487,7 @@
       <xsl:if test="//tei:notesStmt/tei:note[@type='critIntro']">
          <div id="critPanel">
             <xsl:attribute name="class">
-               <xsl:text>ui-widget-content ui-resizable panel mssPanel invisible</xsl:text>
+               <xsl:text>ui-widget-content ui-resizable panel mssPanel noDisplay</xsl:text>
             </xsl:attribute>
            
                <div class="panelBanner">
@@ -542,7 +542,7 @@
    <xsl:template name="notesPanel">
       <div id="notesPanel">
          <xsl:attribute name="class">
-            <xsl:text>ui-widget-content ui-resizable panel mssPanel invisible</xsl:text>
+            <xsl:text>ui-widget-content ui-resizable panel mssPanel noDisplay</xsl:text>
          </xsl:attribute>
          
          <div class="panelBanner">
@@ -700,7 +700,7 @@
             
             <div>
                <xsl:attribute name="class">
-                  <xsl:text>linenumber invisible</xsl:text>
+                  <xsl:text>linenumber noDisplay</xsl:text>
                </xsl:attribute>
                <xsl:value-of select="@n" />
             </div>
@@ -761,7 +761,7 @@
             
             <div>
                <xsl:attribute name="class">
-                  <xsl:text>linenumber invisible</xsl:text>
+                  <xsl:text>linenumber noDisplay</xsl:text>
                </xsl:attribute>
                <xsl:value-of select="@n" />
             </div>
@@ -1205,7 +1205,7 @@
    <xsl:template name="imageViewer">
       <xsl:param name="imgId"></xsl:param>
       <xsl:param name="imgUrl"></xsl:param>
-      <div class="draggable resizable ui-resizable panel imgPanel invisible" id="{$imgId}">
+      <div class="draggable resizable ui-resizable panel imgPanel noDisplay" id="{$imgId}">
          <div title="Click to drag panel." class="viewerHandle handle_imageViewer">
             <span class="viewerHandleLt title_imageViewer">
                <xsl:value-of select="$imgUrl"></xsl:value-of>

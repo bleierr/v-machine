@@ -22,7 +22,7 @@
          </div>
          <nav id="mainControls">
             <ul>
-               <li><button class="topMenuButton dropdownButton" id="selectWitness">10 Total Versions<img class="invisible" src="../vm-images/arrowup.png" alt=""></img><img src="../vm-images/arrowdown.png" alt=""></img></button><ul id="witnessList" class="dropdown">
+               <li><button class="topMenuButton dropdownButton" id="selectWitness">10 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt=""></img><img src="../vm-images/arrowdown.png" alt=""></img></button><ul id="witnessList" class="dropdown notVisible">
                      <li data-panelid="pub1927">
                         <div class="listText">
                            <div>First</div>
@@ -85,7 +85,7 @@
                      </li>
                   </ul>
                </li>
-               <li data-panelid="linenumber" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
+               <li id="linenumberOnOff" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
                <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
                <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
                <li data-panelid="critPanel"><button class="topMenuButton listText" title="Clicking this button triggers the critical introduction panel to appear or disappear.">Critical introduction</button></li>
@@ -93,7 +93,7 @@
          </nav>
       </div>
       <div id="mssArea">
-         <div id="bibPanel" class="ui-widget-content ui-resizable panel mssPanel invisible">
+         <div id="bibPanel" class="ui-widget-content ui-resizable panel mssPanel noDisplay">
             <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Bibliographic Information
                
@@ -199,7 +199,7 @@
                
             </div>
          </div>
-         <div id="critPanel" class="ui-widget-content ui-resizable panel mssPanel invisible">
+         <div id="critPanel" class="ui-widget-content ui-resizable panel mssPanel noDisplay">
             <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Critical Introduction
                
@@ -215,7 +215,7 @@
                </p>
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="pub1927">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="pub1927">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness pub1927
             </div>
             <div class="mssContent">
@@ -245,7 +245,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">1</div>
+                        <div class="linenumber noDisplay">1</div>
                         
                         <div class="apparatus a3" data-app-id="a3">
                            <div data-witness="pub1927" class="reading pub1927">Nature causes brass to oxidize </div>
@@ -256,7 +256,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">2</div>
+                        <div class="linenumber noDisplay">2</div>
                         
                         <div class="apparatus a4" data-app-id="a4">
                            <div data-witness="pub1927" class="reading pub1927">People to congest - </div>
@@ -273,7 +273,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">3</div>
+                        <div class="linenumber noDisplay">3</div>
                         
                         <div class="apparatus a6" data-app-id="a6">
                            <div data-witness="pub1927" class="reading pub1927">By dull-radiopenetrated soil </div>
@@ -300,7 +300,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">4</div>
+                        <div class="linenumber noDisplay">4</div>
                         
                         
                         <div class="apparatus a19b" data-app-id="a19b">
@@ -318,7 +318,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">5</div>  
+                        <div class="linenumber noDisplay">5</div>  
                         <div class="apparatus a9b" data-app-id="a9b">
                            <div data-witness="pub1927" class="reading pub1927">Cosmic hand's dynamic gang </div>
                         </div>
@@ -326,7 +326,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">6</div>
+                        <div class="linenumber noDisplay">6</div>
                         
                         <div class="apparatus a7a" data-app-id="a7a">
                            <div data-witness="pub1927" class="reading pub1927">Polish - </div>
@@ -337,7 +337,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">7</div>
+                        <div class="linenumber noDisplay">7</div>
                         
                         
                         <div class="apparatus a9d" data-app-id="a9d">
@@ -351,7 +351,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">9</div>
+                        <div class="linenumber noDisplay">9</div>
                         
                         
                         
@@ -363,7 +363,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">10</div>
+                        <div class="linenumber noDisplay">10</div>
                         
                         
                         
@@ -383,7 +383,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">11</div>
+                        <div class="linenumber noDisplay">11</div>
                         
                         
                         
@@ -399,7 +399,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">12</div>
+                        <div class="linenumber noDisplay">12</div>
                         
                         
                         
@@ -429,7 +429,7 @@
                
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="va9">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="va9">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness va9
             </div>
             <div class="mssContent">
@@ -455,7 +455,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">1</div>
+                        <div class="linenumber noDisplay">1</div>
                         
                         <div class="apparatus a3" data-app-id="a3">
                            <div data-witness="va1 va2 va3 va5 va7 va8 va9 va6" class="reading va1 va2 va3 va5 va7 va8 va9 va6">NATURE </div>
@@ -475,7 +475,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">2</div>
+                        <div class="linenumber noDisplay">2</div>
                         
                         <div class="apparatus a4" data-app-id="a4">
                            <div data-witness="va1 va2 va3 va5 va7 va8 va9 va6" class="reading va1 va2 va3 va5 va7 va8 va9 va6">
@@ -503,7 +503,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">3</div>
+                        <div class="linenumber noDisplay">3</div>
                         
                         <div class="apparatus a6" data-app-id="a6">
                            <div data-witness="va9" class="reading va9">BY DULL </div>
@@ -555,7 +555,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">4</div>
+                        <div class="linenumber noDisplay">4</div>
                         
                         
                         <div class="apparatus a19b" data-app-id="a19b">
@@ -609,7 +609,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">7</div>
+                        <div class="linenumber noDisplay">7</div>
                         
                         <div class="apparatus a7a" data-app-id="a7a">
                            <div data-witness="va9" class="reading va9"><del class=" rend-overstrike">TO </del> POLISH 
@@ -633,7 +633,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">9</div>
+                        <div class="linenumber noDisplay">9</div>
                         
                         
                         
@@ -645,7 +645,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">10</div>
+                        <div class="linenumber noDisplay">10</div>
                         
                         <div class="apparatus a18" data-app-id="a18">
                            <div data-witness="va1 va2 va4 va5 va7 va8 va9" class="reading va1 va2 va4 va5 va7 va8 va9"> CONTRA NATURE </div>
@@ -680,7 +680,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">11</div>
+                        <div class="linenumber noDisplay">11</div>
                         
                         
                         
@@ -696,7 +696,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">12</div>
+                        <div class="linenumber noDisplay">12</div>
                         
                         
                         <div class="apparatus a19b" data-app-id="a19b">
@@ -736,7 +736,7 @@
                
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="va8">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="va8">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness va8
             </div>
             <div class="mssContent">
@@ -765,7 +765,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">1</div>
+                        <div class="linenumber noDisplay">1</div>
                         
                         <div class="apparatus a3" data-app-id="a3">
                            <div data-witness="va1 va2 va3 va5 va7 va8 va9 va6" class="reading va1 va2 va3 va5 va7 va8 va9 va6">NATURE </div>
@@ -788,7 +788,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">2</div>
+                        <div class="linenumber noDisplay">2</div>
                         
                         <div class="apparatus a4" data-app-id="a4">
                            <div data-witness="va8" class="reading va8">
@@ -839,7 +839,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">3</div>
+                        <div class="linenumber noDisplay">3</div>
                         
                         <div class="apparatus a6" data-app-id="a6">
                            <div data-witness="va7 va8 va6" class="reading va7 va8 va6">DORMANT WITHIN SOIL FOR PROGRESS' </div>
@@ -945,7 +945,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">6</div>
+                        <div class="linenumber noDisplay">6</div>
                         
                         <div class="apparatus a7a" data-app-id="a7a">
                            <div data-witness="va5 va7 va8 va6" class="reading va5 va7 va8 va6">POLISH</div>
@@ -959,7 +959,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">7</div>
+                        <div class="linenumber noDisplay">7</div>
                         
                         
                         <div class="apparatus a9d" data-app-id="a9d">
@@ -976,7 +976,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">9</div>
+                        <div class="linenumber noDisplay">9</div>
                         
                         
                         <div class="apparatus a19b" data-app-id="a19b">
@@ -988,7 +988,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">10</div>
+                        <div class="linenumber noDisplay">10</div>
                         
                         <div class="apparatus a18" data-app-id="a18">
                            <div data-witness="va1 va2 va4 va5 va7 va8 va9" class="reading va1 va2 va4 va5 va7 va8 va9"> CONTRA NATURE </div>
@@ -1017,7 +1017,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">11</div>
+                        <div class="linenumber noDisplay">11</div>
                         
                         
                         
@@ -1053,7 +1053,7 @@
                
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="va7">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="va7">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness va7
             </div>
             <div class="mssContent">
@@ -1081,7 +1081,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">1</div>
+                        <div class="linenumber noDisplay">1</div>
                         
                         <div class="apparatus a3" data-app-id="a3">
                            <div data-witness="va1 va2 va3 va5 va7 va8 va9 va6" class="reading va1 va2 va3 va5 va7 va8 va9 va6">NATURE </div>
@@ -1121,7 +1121,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">2</div>
+                        <div class="linenumber noDisplay">2</div>
                         
                         <div class="apparatus a4" data-app-id="a4">
                            <div data-witness="va1 va2 va3 va5 va7 va6" class="reading va1 va2 va3 va5 va7 va6">NATURE </div>
@@ -1158,7 +1158,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">3</div>
+                        <div class="linenumber noDisplay">3</div>
                         
                         <div class="apparatus a6" data-app-id="a6">
                            <div data-witness="va7" class="reading va7"><del class=" rend-overstrike">BECAUSE OF </del> RADIO - 
@@ -1233,7 +1233,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">4</div>
+                        <div class="linenumber noDisplay">4</div>
                         
                         <div class="apparatus a3a" data-app-id="a3a">
                            <div data-witness="va1 va2 va3 va4 va5 va7 va6" class="reading va1 va2 va3 va4 va5 va7 va6">WITH INDEFATIGEABLE RUB</div>
@@ -1297,7 +1297,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">6</div>
+                        <div class="linenumber noDisplay">6</div>
                         
                         <div class="apparatus a7a" data-app-id="a7a">
                            <div data-witness="va5 va7 va8 va6" class="reading va5 va7 va8 va6">POLISH</div>
@@ -1311,7 +1311,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">7</div>
+                        <div class="linenumber noDisplay">7</div>
                         
                         
                         <div class="apparatus a9d" data-app-id="a9d">
@@ -1328,7 +1328,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">9</div>
+                        <div class="linenumber noDisplay">9</div>
                         
                         
                         
@@ -1343,7 +1343,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">10</div>
+                        <div class="linenumber noDisplay">10</div>
                         
                         <div class="apparatus a18" data-app-id="a18">
                            <div data-witness="va1 va2 va4 va5 va7 va8 va9" class="reading va1 va2 va4 va5 va7 va8 va9"> CONTRA NATURE </div>
@@ -1372,7 +1372,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">11</div>
+                        <div class="linenumber noDisplay">11</div>
                         
                         
                         
@@ -1388,7 +1388,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">12</div>
+                        <div class="linenumber noDisplay">12</div>
                         
                         
                         <div class="apparatus a19b" data-app-id="a19b">
@@ -1419,7 +1419,7 @@
                
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="va6">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="va6">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness va6
             </div>
             <div class="mssContent">
@@ -1446,7 +1446,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">1</div>
+                        <div class="linenumber noDisplay">1</div>
                         
                         <div class="apparatus a3" data-app-id="a3">
                            <div data-witness="va1 va2 va3 va5 va7 va8 va9 va6" class="reading va1 va2 va3 va5 va7 va8 va9 va6">NATURE </div>
@@ -1478,7 +1478,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">2</div>
+                        <div class="linenumber noDisplay">2</div>
                         
                         <div class="apparatus a4" data-app-id="a4">
                            <div data-witness="va1 va2 va3 va5 va7 va6" class="reading va1 va2 va3 va5 va7 va6">NATURE </div>
@@ -1519,7 +1519,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">3</div>
+                        <div class="linenumber noDisplay">3</div>
                         
                         <div class="apparatus a6" data-app-id="a6">
                            <div data-witness="va1 va2 va3 va4 va5 va6" class="reading va1 va2 va3 va4 va5 va6">BECAUSE OF </div>
@@ -1575,7 +1575,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">4</div>
+                        <div class="linenumber noDisplay">4</div>
                         
                         <div class="apparatus a3a" data-app-id="a3a">
                            <div data-witness="va1 va2 va3 va4 va5 va7 va6" class="reading va1 va2 va3 va4 va5 va7 va6">WITH INDEFATIGEABLE RUB</div>
@@ -1651,7 +1651,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">6</div>
+                        <div class="linenumber noDisplay">6</div>
                         
                         <div class="apparatus a7a" data-app-id="a7a">
                            <div data-witness="va5 va7 va8 va6" class="reading va5 va7 va8 va6">POLISH</div>
@@ -1662,7 +1662,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">7</div>
+                        <div class="linenumber noDisplay">7</div>
                         
                         
                         <div class="apparatus a9d" data-app-id="a9d">
@@ -1676,7 +1676,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">9</div>
+                        <div class="linenumber noDisplay">9</div>
                         
                         
                         
@@ -1697,7 +1697,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">10</div>
+                        <div class="linenumber noDisplay">10</div>
                         
                         
                         
@@ -1720,7 +1720,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">11</div>
+                        <div class="linenumber noDisplay">11</div>
                         
                         
                         
@@ -1765,7 +1765,7 @@
                
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="va5">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="va5">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness va5
             </div>
             <div class="mssContent">
@@ -1792,7 +1792,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">1</div>
+                        <div class="linenumber noDisplay">1</div>
                         
                         <div class="apparatus a3" data-app-id="a3">
                            <div data-witness="va1 va2 va3 va5 va7 va8 va9 va6" class="reading va1 va2 va3 va5 va7 va8 va9 va6">NATURE </div>
@@ -1812,7 +1812,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">2</div>
+                        <div class="linenumber noDisplay">2</div>
                         
                         <div class="apparatus a4" data-app-id="a4">
                            <div data-witness="va1 va2 va3 va5 va7 va6" class="reading va1 va2 va3 va5 va7 va6">NATURE </div>
@@ -1846,7 +1846,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">3</div>
+                        <div class="linenumber noDisplay">3</div>
                         
                         <div class="apparatus a6" data-app-id="a6">
                            <div data-witness="va1 va2 va3 va4 va5 va6" class="reading va1 va2 va3 va4 va5 va6">BECAUSE OF </div>
@@ -1911,7 +1911,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">4</div>
+                        <div class="linenumber noDisplay">4</div>
                         
                         <div class="apparatus a3a" data-app-id="a3a">
                            <div data-witness="va1 va2 va3 va4 va5 va7 va6" class="reading va1 va2 va3 va4 va5 va7 va6">WITH INDEFATIGEABLE RUB</div>
@@ -1965,7 +1965,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">5</div>
+                        <div class="linenumber noDisplay">5</div>
                         
                         <div class="apparatus a10a" data-app-id="a10a">
                            <div data-witness="va5" class="reading va5">FATE FLURY ONTO SPIRIT PRESS </div>
@@ -1993,7 +1993,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">6</div>
+                        <div class="linenumber noDisplay">6</div>
                         
                         <div class="apparatus a7a" data-app-id="a7a">
                            <div data-witness="va5 va7 va8 va6" class="reading va5 va7 va8 va6">POLISH</div>
@@ -2004,7 +2004,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">7</div>
+                        <div class="linenumber noDisplay">7</div>
                         
                         
                         <div class="apparatus a9d" data-app-id="a9d">
@@ -2032,7 +2032,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">10</div>
+                        <div class="linenumber noDisplay">10</div>
                         
                         <div class="apparatus a18" data-app-id="a18">
                            <div data-witness="va1 va2 va4 va5 va7 va8 va9" class="reading va1 va2 va4 va5 va7 va8 va9"> CONTRA NATURE </div>
@@ -2099,7 +2099,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">11</div>
+                        <div class="linenumber noDisplay">11</div>
                         
                         <div class="apparatus a18a" data-app-id="a18a">
                            <div data-witness="va3 va4 va5" class="reading va3 va4 va5">FOR </div>
@@ -2141,7 +2141,7 @@
                
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="va4">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="va4">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness va4
             </div>
             <div class="mssContent">
@@ -2262,7 +2262,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">1</div>
+                        <div class="linenumber noDisplay">1</div>
                         
                         <div class="apparatus a3" data-app-id="a3">
                            <div data-witness="va1 va2 va3 va4 va5" class="reading va1 va2 va3 va4 va5">INTENDS</div>
@@ -2273,7 +2273,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">2</div>
+                        <div class="linenumber noDisplay">2</div>
                         
                         <div class="apparatus a4" data-app-id="a4">
                            <div data-witness="va4" class="reading va4">
@@ -2296,7 +2296,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">3</div>
+                        <div class="linenumber noDisplay">3</div>
                         
                         <div class="apparatus a6" data-app-id="a6">
                            <div data-witness="va1 va2 va3 va4 va5 va6" class="reading va1 va2 va3 va4 va5 va6">BECAUSE OF </div>
@@ -2332,7 +2332,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">4</div>
+                        <div class="linenumber noDisplay">4</div>
                         
                         <div class="apparatus a3a" data-app-id="a3a">
                            <div data-witness="va1 va2 va3 va4 va5 va7 va6" class="reading va1 va2 va3 va4 va5 va7 va6">WITH INDEFATIGEABLE RUB</div>
@@ -2418,7 +2418,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">7</div>
+                        <div class="linenumber noDisplay">7</div>
                         
                         
                         <div class="apparatus a9d" data-app-id="a9d">
@@ -2447,7 +2447,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">10</div>
+                        <div class="linenumber noDisplay">10</div>
                         
                         <div class="apparatus a18" data-app-id="a18">
                            <div data-witness="va1 va2 va4 va5 va7 va8 va9" class="reading va1 va2 va4 va5 va7 va8 va9"> CONTRA NATURE </div>
@@ -2473,7 +2473,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">11</div>
+                        <div class="linenumber noDisplay">11</div>
                         
                         <div class="apparatus a18a" data-app-id="a18a">
                            <div data-witness="va3 va4 va5" class="reading va3 va4 va5">FOR </div>
@@ -2495,7 +2495,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">12</div>
+                        <div class="linenumber noDisplay">12</div>
                         
                         <div class="apparatus a18" data-app-id="a18">
                            <div data-witness="va4" class="reading va4">LORD CONTRA CHAOS.</div>
@@ -2523,7 +2523,7 @@
                
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="va3">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="va3">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness va3
             </div>
             <div class="mssContent">
@@ -2549,7 +2549,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">1</div>
+                        <div class="linenumber noDisplay">1</div>
                         
                         <div class="apparatus a3" data-app-id="a3">
                            <div data-witness="va1 va2 va3 va5 va7 va8 va9 va6" class="reading va1 va2 va3 va5 va7 va8 va9 va6">NATURE </div>
@@ -2572,7 +2572,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">2</div>
+                        <div class="linenumber noDisplay">2</div>
                         
                         <div class="apparatus a4" data-app-id="a4">
                            <div data-witness="va1 va2 va3 va5 va7 va6" class="reading va1 va2 va3 va5 va7 va6">NATURE </div>
@@ -2609,7 +2609,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">3</div>
+                        <div class="linenumber noDisplay">3</div>
                         
                         <div class="apparatus a6" data-app-id="a6">
                            <div data-witness="va1 va2 va3 va4 va5 va6" class="reading va1 va2 va3 va4 va5 va6">BECAUSE OF </div>
@@ -2667,7 +2667,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">4</div>
+                        <div class="linenumber noDisplay">4</div>
                         
                         <div class="apparatus a3a" data-app-id="a3a">
                            <div data-witness="va1 va2 va3 va4 va5 va7 va6" class="reading va1 va2 va3 va4 va5 va7 va6">WITH INDEFATIGEABLE RUB</div>
@@ -2743,7 +2743,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">7</div>
+                        <div class="linenumber noDisplay">7</div>
                         
                         
                         <div class="apparatus a9d" data-app-id="a9d">
@@ -2795,7 +2795,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">11</div>
+                        <div class="linenumber noDisplay">11</div>
                         
                         <div class="apparatus a18a" data-app-id="a18a">
                            <div data-witness="va3 va4 va5" class="reading va3 va4 va5">FOR </div>
@@ -2840,7 +2840,7 @@
                
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="va2">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="va2">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness va2
             </div>
             <div class="mssContent">
@@ -2869,7 +2869,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">1</div>
+                        <div class="linenumber noDisplay">1</div>
                         
                         <div class="apparatus a3" data-app-id="a3">
                            <div data-witness="va1 va2 va3 va5 va7 va8 va9 va6" class="reading va1 va2 va3 va5 va7 va8 va9 va6">NATURE </div>
@@ -2892,7 +2892,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">2</div>
+                        <div class="linenumber noDisplay">2</div>
                         
                         <div class="apparatus a4" data-app-id="a4">
                            <div data-witness="va1 va2 va3 va5 va7 va6" class="reading va1 va2 va3 va5 va7 va6">NATURE </div>
@@ -2929,7 +2929,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">3</div>
+                        <div class="linenumber noDisplay">3</div>
                         
                         <div class="apparatus a6" data-app-id="a6">
                            <div data-witness="va1 va2 va3 va4 va5 va6" class="reading va1 va2 va3 va4 va5 va6">BECAUSE OF </div>
@@ -2997,7 +2997,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">4</div>
+                        <div class="linenumber noDisplay">4</div>
                         
                         <div class="apparatus a3a" data-app-id="a3a">
                            <div data-witness="va1 va2 va3 va4 va5 va7 va6" class="reading va1 va2 va3 va4 va5 va7 va6">WITH INDEFATIGEABLE RUB</div>
@@ -3070,7 +3070,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">7</div>
+                        <div class="linenumber noDisplay">7</div>
                         
                         
                         <div class="apparatus a9d" data-app-id="a9d">
@@ -3134,7 +3134,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber invisible">9</div>
+                        <div class="linenumber noDisplay">9</div>
                         
                         <div class="apparatus a17" data-app-id="a17">
                            <div data-witness="va2" class="reading va2">PROGRESS -</div>
@@ -3146,7 +3146,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">10</div>
+                        <div class="linenumber noDisplay">10</div>
                         
                         <div class="apparatus a18" data-app-id="a18">
                            <div data-witness="va1 va2" class="reading va1 va2">NATURE </div>
@@ -3175,7 +3175,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">11</div>
+                        <div class="linenumber noDisplay">11</div>
                         
                         <div class="apparatus a18a" data-app-id="a18a">
                            <div data-witness="va2" class="reading va2"><del class=" rend-overstrike">FOR </del> BY <del class=" rend-overstrike">| | </del>
@@ -3351,7 +3351,7 @@
                
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="va1">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="va1">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness va1
             </div>
             <div class="mssContent">
@@ -3380,7 +3380,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">1</div>
+                        <div class="linenumber noDisplay">1</div>
                         
                         <div class="apparatus a3" data-app-id="a3">
                            <div data-witness="va1 va2 va3 va5 va7 va8 va9 va6" class="reading va1 va2 va3 va5 va7 va8 va9 va6">NATURE </div>
@@ -3418,7 +3418,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">2</div>
+                        <div class="linenumber noDisplay">2</div>
                         
                         <div class="apparatus a4" data-app-id="a4">
                            <div data-witness="va1 va2 va3 va5 va7 va6" class="reading va1 va2 va3 va5 va7 va6">NATURE </div>
@@ -3472,7 +3472,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">3</div>
+                        <div class="linenumber noDisplay">3</div>
                         
                         <div class="apparatus a6" data-app-id="a6">
                            <div data-witness="va1 va2 va3 va4 va5 va6" class="reading va1 va2 va3 va4 va5 va6">BECAUSE OF </div>
@@ -3547,7 +3547,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">4</div>
+                        <div class="linenumber noDisplay">4</div>
                         
                         <div class="apparatus a3a" data-app-id="a3a">
                            <div data-witness="va1 va2 va3 va4 va5 va7 va6" class="reading va1 va2 va3 va4 va5 va7 va6">WITH INDEFATIGEABLE RUB</div>
@@ -3637,7 +3637,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">7</div>
+                        <div class="linenumber noDisplay">7</div>
                         
                         
                         <div class="apparatus a9d" data-app-id="a9d">
@@ -3701,7 +3701,7 @@
                      </div>
                      
                      <div class="line">
-                        <div class="linenumber invisible">9</div>
+                        <div class="linenumber noDisplay">9</div>
                         
                         <div class="apparatus a17" data-app-id="a17">
                            <div data-witness="va1" class="reading va1">FOR CIVILISATIONS </div>
@@ -3720,7 +3720,7 @@
                      
                      
                      <div class="line">
-                        <div class="linenumber invisible">10</div>
+                        <div class="linenumber noDisplay">10</div>
                         
                         <div class="apparatus a18" data-app-id="a18">
                            <div data-witness="va1 va2" class="reading va1 va2">NATURE </div>
@@ -3785,7 +3785,7 @@
                
             </div>
          </div>
-         <div id="notesPanel" class="ui-widget-content ui-resizable panel mssPanel invisible">
+         <div id="notesPanel" class="ui-widget-content ui-resizable panel mssPanel noDisplay">
             <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Textual Notes
                

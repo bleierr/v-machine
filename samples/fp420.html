@@ -22,7 +22,7 @@
          </div>
          <nav id="mainControls">
             <ul>
-               <li><button class="topMenuButton dropdownButton" id="selectWitness">3 Total Versions<img class="invisible" src="../vm-images/arrowup.png" alt=""></img><img src="../vm-images/arrowdown.png" alt=""></img></button><ul id="witnessList" class="dropdown">
+               <li><button class="topMenuButton dropdownButton" id="selectWitness">3 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt=""></img><img src="../vm-images/arrowdown.png" alt=""></img></button><ul id="witnessList" class="dropdown notVisible">
                      <li data-panelid="A456">
                         <div class="listText">
                            <div>A 456, version sent to unknown
@@ -47,14 +47,14 @@
                      </li>
                   </ul>
                </li>
-               <li data-panelid="linenumber" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
+               <li id="linenumberOnOff" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
                <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
                <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
             </ul>
          </nav>
       </div>
       <div id="mssArea">
-         <div id="bibPanel" class="ui-widget-content ui-resizable panel mssPanel invisible">
+         <div id="bibPanel" class="ui-widget-content ui-resizable panel mssPanel noDisplay">
             <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Bibliographic Information
                
@@ -112,7 +112,7 @@
                	 
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="A456">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="A456">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness A456
             </div>
             <div class="mssContent"> 
@@ -122,7 +122,7 @@
                   <div class="lg" data-line-id="lg"> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">1</div>There are two Ripenings 
+                        <div class="linenumber noDisplay">1</div>There are two Ripenings 
                         				
                         <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
                            <div data-witness="A456 H47" class="reading A456 H47"> -</div>
@@ -130,7 +130,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">2</div> 
+                        <div class="linenumber noDisplay">2</div> 
                         				
                         <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
                            <div data-witness="A456" class="reading A456">one -</div>
@@ -142,7 +142,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">3</div> 
+                        <div class="linenumber noDisplay">3</div> 
                         				
                         <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
                            <div data-witness="A456 ATr60a" class="reading A456 ATr60a">Whose forces 
@@ -155,7 +155,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">4</div> 
+                        <div class="linenumber noDisplay">4</div> 
                         				
                         <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
                            <div data-witness="A456" class="reading A456">wind</div>
@@ -163,7 +163,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">5</div>Until the 
+                        <div class="linenumber noDisplay">5</div>Until the 
                         				
                         <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
                            <div data-witness="A456 H47" class="reading A456 H47">Velvet</div>
@@ -175,7 +175,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">6</div> 
+                        <div class="linenumber noDisplay">6</div> 
                         				
                         <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
                            <div data-witness="A456" class="reading A456">Drops</div>
@@ -191,7 +191,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">7</div> 
+                        <div class="linenumber noDisplay">7</div> 
                         				
                         <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
                            <div data-witness="A456" class="reading A456">ground -</div>
@@ -199,7 +199,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">8</div>A 
+                        <div class="linenumber noDisplay">8</div>A 
                         				
                         <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
                            <div data-witness="A456 ATr60a" class="reading A456 ATr60a">homelier</div>
@@ -207,7 +207,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">9</div>A 
+                        <div class="linenumber noDisplay">9</div>A 
                         				
                         <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
                            <div data-witness="A456 ATr60a" class="reading A456 ATr60a">process</div>
@@ -219,7 +219,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">10</div> 
+                        <div class="linenumber noDisplay">10</div> 
                         				
                         <div class="apparatus app_2_l_10_1" data-app-id="app_2_l_10_1">
                            <div data-witness="A456 ATr60a" class="reading A456 ATr60a">That</div>
@@ -235,7 +235,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">11</div> 
+                        <div class="linenumber noDisplay">11</div> 
                         				
                         <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
                            <div data-witness="A456 H47" class="reading A456 H47">alone</div>
@@ -247,7 +247,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">12</div> 
+                        <div class="linenumber noDisplay">12</div> 
                         				
                         <div class="apparatus app_2_l_12_1" data-app-id="app_2_l_12_1">
                            <div data-witness="A456" class="reading A456">In</div>
@@ -273,7 +273,7 @@
                	 
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="ATr60a">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="ATr60a">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness ATr60a
             </div>
             <div class="mssContent"> 
@@ -283,7 +283,7 @@
                   <div class="lg" data-line-id="lg"> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">1</div>There are two Ripenings 
+                        <div class="linenumber noDisplay">1</div>There are two Ripenings 
                         				
                         <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
                            <div data-witness="ATr60a" class="reading ATr60a"></div>
@@ -291,7 +291,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">2</div> 
+                        <div class="linenumber noDisplay">2</div> 
                         				
                         <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
                            <div data-witness="ATr60a" class="reading ATr60a">one</div>
@@ -303,7 +303,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">3</div> 
+                        <div class="linenumber noDisplay">3</div> 
                         				
                         <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
                            <div data-witness="A456 ATr60a" class="reading A456 ATr60a">Whose forces 
@@ -316,7 +316,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">4</div> 
+                        <div class="linenumber noDisplay">4</div> 
                         				
                         <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
                            <div data-witness="ATr60a" class="reading ATr60a">wind,</div>
@@ -324,7 +324,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">5</div>Until the 
+                        <div class="linenumber noDisplay">5</div>Until the 
                         				
                         <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
                            <div data-witness="ATr60a" class="reading ATr60a">velvet</div>
@@ -336,7 +336,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">6</div> 
+                        <div class="linenumber noDisplay">6</div> 
                         				
                         <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
                            <div data-witness="ATr60a" class="reading ATr60a">Drop</div>
@@ -352,7 +352,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">7</div> 
+                        <div class="linenumber noDisplay">7</div> 
                         				
                         <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
                            <div data-witness="ATr60a" class="reading ATr60a">Ground -</div>
@@ -360,7 +360,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">8</div>A 
+                        <div class="linenumber noDisplay">8</div>A 
                         				
                         <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
                            <div data-witness="A456 ATr60a" class="reading A456 ATr60a">homelier</div>
@@ -368,7 +368,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">9</div>A 
+                        <div class="linenumber noDisplay">9</div>A 
                         				
                         <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
                            <div data-witness="A456 ATr60a" class="reading A456 ATr60a">process</div>
@@ -380,7 +380,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">10</div> 
+                        <div class="linenumber noDisplay">10</div> 
                         				
                         <div class="apparatus app_2_l_10_1" data-app-id="app_2_l_10_1">
                            <div data-witness="A456 ATr60a" class="reading A456 ATr60a">That</div>
@@ -396,7 +396,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">11</div> 
+                        <div class="linenumber noDisplay">11</div> 
                         				
                         <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
                            <div data-witness="ATr60a" class="reading ATr60a">Frosts alone</div>
@@ -408,7 +408,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">12</div> 
+                        <div class="linenumber noDisplay">12</div> 
                         				
                         <div class="apparatus app_2_l_12_1" data-app-id="app_2_l_12_1">
                            <div data-witness="ATr60a" class="reading ATr60a">On</div>
@@ -434,7 +434,7 @@
                	 
             </div>
          </div>
-         <div class="ui-widget-content ui-resizable panel mssPanel invisible" id="H47">
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="H47">
             <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness H47
             </div>
             <div class="mssContent"> 
@@ -444,7 +444,7 @@
                   <div class="lg" data-line-id="lg"> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">1</div>There are two Ripenings 
+                        <div class="linenumber noDisplay">1</div>There are two Ripenings 
                         				
                         <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
                            <div data-witness="A456 H47" class="reading A456 H47"> -</div>
@@ -452,7 +452,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">2</div> 
+                        <div class="linenumber noDisplay">2</div> 
                         				
                         <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
                            <div data-witness="H47" class="reading H47">One -</div>
@@ -464,7 +464,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">3</div> 
+                        <div class="linenumber noDisplay">3</div> 
                         				
                         <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
                            <div data-witness="H47" class="reading H47">spheric + round</div>
@@ -472,7 +472,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">4</div> 
+                        <div class="linenumber noDisplay">4</div> 
                         				
                         <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
                            <div data-witness="H47" class="reading H47"></div>
@@ -480,7 +480,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">5</div>Until the 
+                        <div class="linenumber noDisplay">5</div>Until the 
                         				
                         <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
                            <div data-witness="A456 H47" class="reading A456 H47">Velvet</div>
@@ -492,7 +492,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">6</div> 
+                        <div class="linenumber noDisplay">6</div> 
                         				
                         <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
                            <div data-witness="H47" class="reading H47">Drop,</div>
@@ -510,7 +510,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">7</div> 
+                        <div class="linenumber noDisplay">7</div> 
                         				
                         <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
                            <div data-witness="H47" class="reading H47"></div>
@@ -518,7 +518,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">8</div>A 
+                        <div class="linenumber noDisplay">8</div>A 
                         				
                         <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
                            <div data-witness="H47" class="reading H47">Homelier -</div>
@@ -526,7 +526,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">9</div>A 
+                        <div class="linenumber noDisplay">9</div>A 
                         				
                         <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
                            <div data-witness="H47" class="reading H47">Process</div>
@@ -538,7 +538,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">10</div> 
+                        <div class="linenumber noDisplay">10</div> 
                         				
                         <div class="apparatus app_2_l_10_1" data-app-id="app_2_l_10_1">
                            <div data-witness="H47" class="reading H47">+ Which</div>
@@ -554,7 +554,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">11</div> 
+                        <div class="linenumber noDisplay">11</div> 
                         				
                         <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
                            <div data-witness="A456 H47" class="reading A456 H47">alone</div>
@@ -566,7 +566,7 @@
                      </div> 
                      			 
                      <div class="line">
-                        <div class="linenumber invisible">12</div> 
+                        <div class="linenumber noDisplay">12</div> 
                         				
                         <div class="apparatus app_2_l_12_1" data-app-id="app_2_l_12_1">
                            <div data-witness="H47" class="reading H47">+ In</div>
@@ -593,7 +593,7 @@
                	 
             </div>
          </div>
-         <div id="notesPanel" class="ui-widget-content ui-resizable panel mssPanel invisible">
+         <div id="notesPanel" class="ui-widget-content ui-resizable panel mssPanel noDisplay">
             <div class="panelBanner"><img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg"></img>
                Textual Notes
                
