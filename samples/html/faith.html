@@ -1,0 +1,665 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:util="customfunction" lang="en">
+   <head>
+      <title>"Faith is a fine invention" -- The Versioning Machine 5.0</title>
+      <meta charset="utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="../../src/vmachine.css"></link>
+      <link rel="stylesheet" type="text/css" href="../../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="../../src/panzoom/panzoom.css"></link><script src="../../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script><script type="text/javascript">
+      
+      var initialVisibility = {};
+      initialVisibility["bibPanel"] = true;
+      initialVisibility["versions"] = 3;
+      initialVisibility["critPanel"] = true;
+      initialVisibility["linenumber"] = true;
+      initialVisibility["notesPanel"] = false;
+   var timelinePoints = new Array();var timelineDurations = new Array();</script><script type="text/javascript" src="../../src/vmachine.js"></script></head>
+   <body>
+      <div id="mainBanner">
+         <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../../vm-images/LogoSilver.png"></img></div>
+         <div id="headline">
+            <h1>"Faith is a fine invention"</h1>
+         </div>
+         <nav id="mainControls">
+            <ul>
+               <li><button id="selectWitness" class="topMenuButton dropdownButton">7 Total Versions<img class="noDisplay" src="../../vm-images/arrowup.png" alt="arrow up"></img><img src="../../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="witnessList" class="dropdown notVisible">
+                     <li data-panelid="a660">
+                        <div class="listText">
+                           <div>A 660, verse embedded in letter to Samuel
+                              						Bowles.
+                           </div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="h201">
+                        <div class="listText">
+                           <div>H 201, fascicle version of poem.</div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="h72">
+                        <div class="listText">
+                           <div>H 72, fascicle version of poem.</div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="p1891">
+                        <div class="listText">
+                           <div>Published as poem XXX in the second volume of Todd and
+                              						Higginson's Poems of Emily Dickinson.
+                           </div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="l1894">
+                        <div class="listText">
+                           <div>Letter to Samuel Bowles published in Todd's edition of
+                              						Dickinson's letters.
+                           </div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="cp32">
+                        <div class="listText">
+                           <div>Published as poem LVI in Martha Dickinson Bianchi's
+                              							Complete Poems of Emily
+                              						Dickinson.
+                           </div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="ll227">
+                        <div class="listText">
+                           <div>Letter to Samuel Bowles published in Bianchi's The Life and Letters of Emily Dickinson.</div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
+               <li id="linenumberOnOff" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
+               <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
+               <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
+            </ul>
+         </nav>
+      </div>
+      <div id="mssArea">
+         <div id="bibPanel" class="ui-widget-content ui-resizable panel mssPanel noDisplay">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>
+               Bibliographic Information
+               
+            </div>
+            <div class="bibContent">
+               <h2>"Faith is a fine invention"</h2>
+               <h3>
+                  by by Emily Dickinson
+               </h3>
+               <h4>Original Source</h4>
+               				
+               <p>See Witness List.</p>
+               			
+               <h4>Witness List</h4>
+               <ul>
+                  <li><strong>Witness a660:</strong> A 660, verse embedded in letter to Samuel
+                     						Bowles.
+                  </li>
+                  <li><strong>Witness h201:</strong> H 201, fascicle version of poem.
+                  </li>
+                  <li><strong>Witness h72:</strong> H 72, fascicle version of poem.
+                  </li>
+                  <li><strong>Witness p1891:</strong> Published as poem XXX in the second volume of Todd and
+                     						Higginson's Poems of Emily Dickinson.
+                  </li>
+                  <li><strong>Witness l1894:</strong> Letter to Samuel Bowles published in Todd's edition of
+                     						Dickinson's letters.
+                  </li>
+                  <li><strong>Witness cp32:</strong> Published as poem LVI in Martha Dickinson Bianchi's
+                     							Complete Poems of Emily
+                     						Dickinson.
+                  </li>
+                  <li><strong>Witness ll227:</strong> Letter to Samuel Bowles published in Bianchi's The Life and Letters of Emily Dickinson.
+                  </li>
+               </ul>
+               <h4>Electronic Edition Information:</h4>
+               <h5>Responsibility Statement:</h5>
+               <ul>
+                  <li>Text encoding by Jarom McDonald. </li>
+               </ul>
+               <h5>Publication Details:</h5>
+               				
+               <p>Published by The Versioning Machine project.</p>
+               				
+               					
+               <p>This poem is available only for demonstration purposes. It was created as
+                  						part of a research project to experiment with ways of displaying multiple
+                  						witnesses of a TEI-encoded poem using XML, XSLT and JavaScript.
+               </p>
+               				
+               			
+               <h4>Encoding Principles</h4>
+               			
+               				
+               <p>Test document for versioning machine project. Marked-up collation of three
+                  					manuscript witnesses: A 660, H 201, and H 72, and four early print witnesses:
+                  					Poems (1891)--XXX, Letters (1894)--p. 191, Complete Poems (1924)--LVI, and Life
+                  					and Letters (1926)--p. 227. 
+               </p>
+               				
+               <p>DTD constructed from TEI prose base with tagsets for linking, figures, analysis,
+                  					transcr, textcrit.
+               </p>
+               			
+               			
+               		
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="a660">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness a660
+            </div>
+            <div class="mssContent">
+               			
+               <div class="div1" data-line-id="div1">
+                  				
+                  <div class="lg" data-line-id="lg">
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">1</div>
+                        						
+                        <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                           <div data-witness="a660 h72" class="reading a660 h72">"Faith"</div>
+                        </div> is a fine invention
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">2</div>
+                        						
+                        <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
+                           <div data-witness="a660 ll227" class="reading a660 ll227">When </div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_2_1" data-app-id="app_4_l_2_1">
+                           <div data-witness="a660 h201 h72" class="reading a660 h201 h72">Gentlemen </div>
+                        </div>
+                        						
+                        <div class="apparatus app_6_l_2_1" data-app-id="app_6_l_2_1">
+                           <div data-witness="a660 ll227" class="reading a660 ll227">can </div>
+                        </div>
+                        						
+                        <div class="apparatus app_8_l_2_1" data-app-id="app_8_l_2_1">
+                           <div data-witness="a660 h201 h72" class="reading a660 h201 h72">
+                              								<span class="hi rend-underline">see</span>
+                              							
+                           </div>
+                        </div>
+                        						
+                        <div class="apparatus app_10_l_2_1" data-app-id="app_10_l_2_1">
+                           <div data-witness="a660 h201" class="reading a660 h201"> -</div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">3</div> But 
+                        <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                           <div data-witness="a660 h201" class="reading a660 h201">
+                              								<span class="hi rend-underline">Microscopes</span>
+                              							
+                           </div>
+                        </div> are prudent
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">4</div> In an 
+                        <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
+                           <div data-witness="a660 h201 h72" class="reading a660 h201 h72">Emergency</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_4_1" data-app-id="app_4_l_4_1">
+                           <div data-witness="a660 l1894" class="reading a660 l1894">. </div>
+                        </div>
+                        					
+                     </div>
+                     				
+                  </div>
+                  			
+               </div>
+               		
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="h201">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness h201
+            </div>
+            <div class="mssContent">
+               			
+               <div class="div1" data-line-id="div1">
+                  				
+                  <div class="lg" data-line-id="lg">
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">1</div>
+                        						
+                        <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                           <div data-witness="h201 l1894 ll227" class="reading h201 l1894 ll227">Faith</div>
+                        </div> is a fine invention
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">2</div>
+                        						
+                        <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
+                           <div data-witness="h201 h72 p1891 l1894 cp32" class="reading h201 h72 p1891 l1894 cp32">For </div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_2_1" data-app-id="app_4_l_2_1">
+                           <div data-witness="a660 h201 h72" class="reading a660 h201 h72">Gentlemen </div>
+                        </div>
+                        						
+                        <div class="apparatus app_6_l_2_1" data-app-id="app_6_l_2_1">
+                           <div data-witness="h201 h72 p1891 l1894 cp32" class="reading h201 h72 p1891 l1894 cp32">who </div>
+                        </div>
+                        						
+                        <div class="apparatus app_8_l_2_1" data-app-id="app_8_l_2_1">
+                           <div data-witness="a660 h201 h72" class="reading a660 h201 h72">
+                              								<span class="hi rend-underline">see</span>
+                              							
+                           </div>
+                        </div>
+                        						
+                        <div class="apparatus app_10_l_2_1" data-app-id="app_10_l_2_1">
+                           <div data-witness="a660 h201" class="reading a660 h201"> -</div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">3</div> But 
+                        <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                           <div data-witness="a660 h201" class="reading a660 h201">
+                              								<span class="hi rend-underline">Microscopes</span>
+                              							
+                           </div>
+                        </div> are prudent
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">4</div> In an 
+                        <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
+                           <div data-witness="a660 h201 h72" class="reading a660 h201 h72">Emergency</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_4_1" data-app-id="app_4_l_4_1">
+                           <div data-witness="h201 h72 p1891 ll227 cp32" class="reading h201 h72 p1891 ll227 cp32">!</div>
+                        </div>
+                        					
+                     </div>
+                     				
+                  </div>
+                  			
+               </div>
+               		
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="h72">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness h72
+            </div>
+            <div class="mssContent">
+               			
+               <div class="div1" data-line-id="div1">
+                  				
+                  <div class="lg" data-line-id="lg">
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">1</div>
+                        						
+                        <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                           <div data-witness="a660 h72" class="reading a660 h72">"Faith"</div>
+                        </div> is a fine invention
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">2</div>
+                        						
+                        <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
+                           <div data-witness="h201 h72 p1891 l1894 cp32" class="reading h201 h72 p1891 l1894 cp32">For </div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_2_1" data-app-id="app_4_l_2_1">
+                           <div data-witness="a660 h201 h72" class="reading a660 h201 h72">Gentlemen </div>
+                        </div>
+                        						
+                        <div class="apparatus app_6_l_2_1" data-app-id="app_6_l_2_1">
+                           <div data-witness="h201 h72 p1891 l1894 cp32" class="reading h201 h72 p1891 l1894 cp32">who </div>
+                        </div>
+                        						
+                        <div class="apparatus app_8_l_2_1" data-app-id="app_8_l_2_1">
+                           <div data-witness="a660 h201 h72" class="reading a660 h201 h72">
+                              								<span class="hi rend-underline">see</span>
+                              							
+                           </div>
+                        </div>
+                        						
+                        <div class="apparatus app_10_l_2_1" data-app-id="app_10_l_2_1">
+                           <div data-witness="h72 ll227" class="reading h72 ll227">!</div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">3</div> But 
+                        <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                           <div data-witness="h72" class="reading h72">Microscopes</div>
+                        </div> are prudent
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">4</div> In an 
+                        <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
+                           <div data-witness="a660 h201 h72" class="reading a660 h201 h72">Emergency</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_4_1" data-app-id="app_4_l_4_1">
+                           <div data-witness="h201 h72 p1891 ll227 cp32" class="reading h201 h72 p1891 ll227 cp32">!</div>
+                        </div>
+                        					
+                     </div>
+                     				
+                  </div>
+                  			
+               </div>
+               		
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="p1891">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness p1891
+            </div>
+            <div class="mssContent">
+               <div class="facs-images"><img src="../../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink p1891" data-witness-id="p1891" data-img-url="images/p1891.jpg" data-img-id=""></img></div>
+               			
+               <div class="div1" data-line-id="div1">
+                  				
+                  <div class="lg" data-line-id="lg">
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">1</div>
+                        						
+                        <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                           <div data-witness="p1891 cp32" class="reading p1891 cp32">FAITH</div>
+                        </div> is a fine invention
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">2</div>
+                        						
+                        <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
+                           <div data-witness="h201 h72 p1891 l1894 cp32" class="reading h201 h72 p1891 l1894 cp32">For </div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_2_1" data-app-id="app_4_l_2_1">
+                           <div data-witness="p1891 l1894 cp32 ll227" class="reading p1891 l1894 cp32 ll227">gentlemen </div>
+                        </div>
+                        						
+                        <div class="apparatus app_6_l_2_1" data-app-id="app_6_l_2_1">
+                           <div data-witness="h201 h72 p1891 l1894 cp32" class="reading h201 h72 p1891 l1894 cp32">who </div>
+                        </div>
+                        						
+                        <div class="apparatus app_8_l_2_1" data-app-id="app_8_l_2_1">
+                           <div data-witness="p1891 l1894 cp32 ll227" class="reading p1891 l1894 cp32 ll227">see</div>
+                        </div>
+                        						
+                        <div class="apparatus app_10_l_2_1" data-app-id="app_10_l_2_1">
+                           <div data-witness="p1891 cp32" class="reading p1891 cp32">;</div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">3</div> But 
+                        <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                           <div data-witness="p1891 l1894 cp32 ll227" class="reading p1891 l1894 cp32 ll227">microscopes</div>
+                        </div> are prudent
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">4</div> In an 
+                        <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
+                           <div data-witness="p1891 l1894 cp32 ll227" class="reading p1891 l1894 cp32 ll227">emergency</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_4_1" data-app-id="app_4_l_4_1">
+                           <div data-witness="h201 h72 p1891 ll227 cp32" class="reading h201 h72 p1891 ll227 cp32">!</div>
+                        </div>
+                        					
+                     </div>
+                     				
+                  </div>
+                  			
+               </div>
+               		
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="l1894">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness l1894
+            </div>
+            <div class="mssContent">
+               			
+               <div class="div1" data-line-id="div1">
+                  				
+                  <div class="lg" data-line-id="lg">
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">1</div>
+                        						
+                        <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                           <div data-witness="h201 l1894 ll227" class="reading h201 l1894 ll227">Faith</div>
+                        </div> is a fine invention
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">2</div>
+                        						
+                        <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
+                           <div data-witness="h201 h72 p1891 l1894 cp32" class="reading h201 h72 p1891 l1894 cp32">For </div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_2_1" data-app-id="app_4_l_2_1">
+                           <div data-witness="p1891 l1894 cp32 ll227" class="reading p1891 l1894 cp32 ll227">gentlemen </div>
+                        </div>
+                        						
+                        <div class="apparatus app_6_l_2_1" data-app-id="app_6_l_2_1">
+                           <div data-witness="h201 h72 p1891 l1894 cp32" class="reading h201 h72 p1891 l1894 cp32">who </div>
+                        </div>
+                        						
+                        <div class="apparatus app_8_l_2_1" data-app-id="app_8_l_2_1">
+                           <div data-witness="p1891 l1894 cp32 ll227" class="reading p1891 l1894 cp32 ll227">see</div>
+                        </div>
+                        						
+                        <div class="apparatus app_10_l_2_1" data-app-id="app_10_l_2_1">
+                           <div data-witness="l1894" class="reading l1894">,</div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">3</div> But 
+                        <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                           <div data-witness="p1891 l1894 cp32 ll227" class="reading p1891 l1894 cp32 ll227">microscopes</div>
+                        </div> are prudent
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">4</div> In an 
+                        <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
+                           <div data-witness="p1891 l1894 cp32 ll227" class="reading p1891 l1894 cp32 ll227">emergency</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_4_1" data-app-id="app_4_l_4_1">
+                           <div data-witness="a660 l1894" class="reading a660 l1894">. 
+                              <hr class="pagebreak l1894"></hr>
+                           </div>
+                        </div>
+                        					
+                     </div>
+                     				
+                  </div>
+                  			
+               </div>
+               		
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="cp32">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness cp32
+            </div>
+            <div class="mssContent">
+               			
+               <div class="div1" data-line-id="div1">
+                  				
+                  <div class="lg" data-line-id="lg">
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">1</div>
+                        						
+                        <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                           <div data-witness="p1891 cp32" class="reading p1891 cp32">FAITH</div>
+                        </div> is a fine invention
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">2</div>
+                        						
+                        <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
+                           <div data-witness="h201 h72 p1891 l1894 cp32" class="reading h201 h72 p1891 l1894 cp32">For </div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_2_1" data-app-id="app_4_l_2_1">
+                           <div data-witness="p1891 l1894 cp32 ll227" class="reading p1891 l1894 cp32 ll227">gentlemen </div>
+                        </div>
+                        						
+                        <div class="apparatus app_6_l_2_1" data-app-id="app_6_l_2_1">
+                           <div data-witness="h201 h72 p1891 l1894 cp32" class="reading h201 h72 p1891 l1894 cp32">who </div>
+                        </div>
+                        						
+                        <div class="apparatus app_8_l_2_1" data-app-id="app_8_l_2_1">
+                           <div data-witness="p1891 l1894 cp32 ll227" class="reading p1891 l1894 cp32 ll227">see</div>
+                        </div>
+                        						
+                        <div class="apparatus app_10_l_2_1" data-app-id="app_10_l_2_1">
+                           <div data-witness="p1891 cp32" class="reading p1891 cp32">;</div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">3</div> But 
+                        <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                           <div data-witness="p1891 l1894 cp32 ll227" class="reading p1891 l1894 cp32 ll227">microscopes</div>
+                        </div> are prudent
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">4</div> In an 
+                        <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
+                           <div data-witness="p1891 l1894 cp32 ll227" class="reading p1891 l1894 cp32 ll227">emergency</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_4_1" data-app-id="app_4_l_4_1">
+                           <div data-witness="h201 h72 p1891 ll227 cp32" class="reading h201 h72 p1891 ll227 cp32">!</div>
+                        </div>
+                        					
+                     </div>
+                     				
+                  </div>
+                  			
+               </div>
+               		
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="ll227">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness ll227
+            </div>
+            <div class="mssContent">
+               <div class="facs-images"><img src="../../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink ll227" data-witness-id="ll227" data-img-url="images/ll227.jpg" data-img-id=""></img></div>
+               			
+               <div class="div1" data-line-id="div1">
+                  				
+                  <div class="lg" data-line-id="lg">
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">1</div>
+                        						
+                        <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                           <div data-witness="h201 l1894 ll227" class="reading h201 l1894 ll227">Faith</div>
+                        </div> is a fine invention
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">2</div>
+                        						
+                        <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
+                           <div data-witness="a660 ll227" class="reading a660 ll227">When </div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_2_1" data-app-id="app_4_l_2_1">
+                           <div data-witness="p1891 l1894 cp32 ll227" class="reading p1891 l1894 cp32 ll227">gentlemen </div>
+                        </div>
+                        						
+                        <div class="apparatus app_6_l_2_1" data-app-id="app_6_l_2_1">
+                           <div data-witness="a660 ll227" class="reading a660 ll227">can </div>
+                        </div>
+                        						
+                        <div class="apparatus app_8_l_2_1" data-app-id="app_8_l_2_1">
+                           <div data-witness="p1891 l1894 cp32 ll227" class="reading p1891 l1894 cp32 ll227">see</div>
+                        </div>
+                        						
+                        <div class="apparatus app_10_l_2_1" data-app-id="app_10_l_2_1">
+                           <div data-witness="h72 ll227" class="reading h72 ll227">!</div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">3</div> But 
+                        <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                           <div data-witness="p1891 l1894 cp32 ll227" class="reading p1891 l1894 cp32 ll227">microscopes</div>
+                        </div> are prudent
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">4</div> In an 
+                        <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
+                           <div data-witness="p1891 l1894 cp32 ll227" class="reading p1891 l1894 cp32 ll227">emergency</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_4_1" data-app-id="app_4_l_4_1">
+                           <div data-witness="h201 h72 p1891 ll227 cp32" class="reading h201 h72 p1891 ll227 cp32">!</div>
+                        </div>
+                        					
+                     </div>
+                     				
+                  </div>
+                  			
+               </div>
+               		
+            </div>
+         </div>
+         <div id="notesPanel" class="ui-widget-content ui-resizable panel mssPanel noDisplay">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>
+               Textual Notes
+               
+            </div>
+            <div id="noNotesFound" class="noteContent">
+               Sorry, but there are no notes associated with
+               any currently displayed witness.
+               
+            </div>
+         </div>
+         <div class="draggable resizable ui-resizable panel imgPanel noDisplay" id="image1">
+            <div title="Click to drag panel." class="viewerHandle handle_imageViewer"><span class="viewerHandleLt title_imageViewer">images/cp32.jpg</span><img class="viewerHandleRt closePanel" src="../../vm-images/closePanel.svg" title="Close panel" alt="X (Close panel)"></img></div>
+            <div class="viewerContent" id="content_imageViewer">
+               <div class="panzoom-parent" style="overflow:visible">
+                  <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="../images/cp32.jpg"></img></div>
+               </div>
+               <div class="buttons"><button class="zoom-out">-</button><input type="range" min="0" max="100" class="zoom-range"></input><button class="zoom-in">+</button></div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

@@ -4,15 +4,22 @@
     exclude-result-prefixes="xs"
     version="2.0">
     
-    <xsl:variable name="indexPage">../samples.html</xsl:variable>
-    
-    <xsl:variable name="vmLogo">../vm-images/LogoSilver.png</xsl:variable>
-    
-    <xsl:variable name="menuIcon">../vm-images/menuicon.png</xsl:variable>
-    
-    <xsl:variable name="cssInclude">../src/vmachine.css</xsl:variable>
-    
-    <xsl:variable name="cssJQuery-UI">../src/js/jquery-ui-1.11.3/jquery-ui.min.css</xsl:variable>
+    <xsl:variable name="indexPage">../../samples.html</xsl:variable>
+  
+  <xsl:variable name="vmImages">../../vm-images/</xsl:variable>
+  <!-- include files in vm-images folder -->
+  <xsl:variable name="vmLogo"><xsl:value-of select="$vmImages"/><xsl:text>LogoSilver.png</xsl:text></xsl:variable>
+  <xsl:variable name="menuArrowUp"><xsl:value-of select="$vmImages"/><xsl:text>arrowup.png</xsl:text></xsl:variable>
+  <xsl:variable name="menuArrowDown"><xsl:value-of select="$vmImages"/><xsl:text>arrowdown.png</xsl:text></xsl:variable>
+  <xsl:variable name="closePanelButton"><xsl:value-of select="$vmImages"/><xsl:text>closePanel.svg</xsl:text></xsl:variable>
+  <xsl:variable name="imageIcon"><xsl:value-of select="$vmImages"/><xsl:text>image.svg</xsl:text></xsl:variable>
+   
+   <!-- path to folder of facsimile images, the path is encoded in the tei files like this: images/imagename.jpg -->
+  <xsl:variable name="facsImageFolder">../</xsl:variable>  
+  
+  <!-- include file form src folder -->
+  <xsl:variable name="cssInclude">../../src/vmachine.css</xsl:variable>
+  <xsl:variable name="cssJQuery-UI">../../src/js/jquery-ui-1.11.3/jquery-ui.min.css</xsl:variable>
     
     
     <!-- The JavaScript include file. Keep in mind that, as of April 1, 2008,
@@ -24,12 +31,11 @@
    move the JavaScript includes into the same directory as your TEI documents,
    and modify the filename below (for example, "../src/vmachine.js" becomes
    "vmachine.js") -->
-    <xsl:variable name="jsInclude">../src/vmachine.js</xsl:variable>
+    <xsl:variable name="jsInclude">../../src/vmachine.js</xsl:variable>
     
     <!-- JQuery include files -->
-    <xsl:variable name="jsJquery">../src/js/jquery-1.11.2.min.js</xsl:variable>
-    <xsl:variable name="jsJquery-UI">../src/js/jquery-ui-1.11.3/jquery-ui.min.js</xsl:variable>
-  <xsl:variable name="jsUnderscore">../src/js/underscore-min.js</xsl:variable>
+    <xsl:variable name="jsJquery">../../src/js/jquery-1.11.2.min.js</xsl:variable>
+    <xsl:variable name="jsJquery-UI">../../src/js/jquery-ui-1.11.3/jquery-ui.min.js</xsl:variable>
     
     
     <!-- The number of version/witness panels to be displayed initially -->

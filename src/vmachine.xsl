@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="2.0" exclude-result-prefixes="tei"
+<xsl:stylesheet version="1.0" exclude-result-prefixes="tei"
    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
    xmlns:tei="http://www.tei-c.org/ns/1.0"
    xmlns="http://www.w3.org/1999/xhtml" xmlns:util="customfunction">
@@ -79,16 +79,12 @@
             </xsl:attribute>
          </script>
          
-         <!-- Underscore library reference -->
-         <script type="text/javascript">
-            <xsl:attribute name="src">
-               <xsl:value-of select="$jsUnderscore" />
-            </xsl:attribute>
-         </script>
+         
          <!-- RB: JS and CSS files for the zoom and pan effect -->
          <!-- RB: jquery.panzoom plugin from https://github.com/timmywil/jquery.panzoom -->
-         <link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link>
-         <script src="../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script>
+         <link rel="stylesheet" type="text/css" href="../../src/panzoom/panzoom.css"></link>
+         <script src="../../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script>
+        
         
          <script type="text/javascript">
             <!-- JS to set up global variable -->
@@ -146,13 +142,11 @@
       <nav id="mainControls">
          <ul>
             <li>
-               <button>
-                  <xsl:attribute name="class">topMenuButton dropdownButton</xsl:attribute>
-                  <xsl:attribute name="id">selectWitness</xsl:attribute>
+               <button id="selectWitness" class="topMenuButton dropdownButton">
                   <xsl:value-of select="count($witnesses)"></xsl:value-of>
                   <xsl:text> Total Versions</xsl:text>
-                  <img class="noDisplay" src="../vm-images/arrowup.png" alt=""/>
-                  <img src="../vm-images/arrowdown.png" alt=""/>
+                  <img class="noDisplay" src="{$menuArrowUp}" alt="arrow up"/>
+                  <img src="{$menuArrowDown}" alt="arrow down"/>
                </button>
                <!-- RB: version dropdown -->
                <ul>
@@ -246,7 +240,7 @@
          <xsl:for-each select="//tei:facsimile/tei:graphic">
             
             <xsl:call-template name="imageViewer" >
-               <xsl:with-param name="imgUrl" select="@url"></xsl:with-param>
+               <xsl:with-param name="imgUrl"><xsl:value-of select="@url"/></xsl:with-param>
                <xsl:with-param name="imgId" select="@xml:id"></xsl:with-param>
             </xsl:call-template>
          </xsl:for-each>
@@ -265,7 +259,7 @@
             <xsl:value-of select="$witID"></xsl:value-of>
          </xsl:attribute>
          <div class="panelBanner">
-            <img class="closePanel" title="Close panel" src="../vm-images/closePanel.svg" alt="X (Close panel)" />
+            <img class="closePanel" title="Close panel" src="{$closePanelButton}" alt="X (Close panel)" />
             <xsl:text>Witness </xsl:text><xsl:value-of select="$witID"></xsl:value-of>
          </div>
          <div class="mssContent">
@@ -360,7 +354,7 @@
          
          
          <div class="panelBanner">
-            <img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg" />
+            <img class="closePanel" title="Close panel" src="{$closePanelButton}" alt="X (Close panel)" />
             Bibliographic Information
          </div>
          <div class="bibContent">
@@ -491,7 +485,7 @@
             </xsl:attribute>
            
                <div class="panelBanner">
-                  <img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg" />
+                  <img class="closePanel" title="Close panel" src="{$closePanelButton}" alt="X (Close panel)" />
                   Critical Introduction
                </div>
                <div class="critContent">
@@ -546,7 +540,7 @@
          </xsl:attribute>
          
          <div class="panelBanner">
-            <img class="closePanel" title="Close panel" alt="X (Close panel)" src="../vm-images/closePanel.svg" />
+            <img class="closePanel" title="Close panel" src="{$closePanelButton}" alt="X (Close panel)" />
             Textual Notes
          </div>
          <xsl:for-each select="//tei:body//tei:note[not(@type='image')]">
@@ -662,7 +656,7 @@
       <xsl:param name="witness" />
       <xsl:param name="imgID"/>
       <xsl:if test="$imageURL != ''">
-         <img src="../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer">
+         <img src="{$imageIcon}" alt="Facsimile Image Placeholder" title="Open the image viewer">
             <xsl:attribute name="class">
                <xsl:text>imageLink</xsl:text>
                <xsl:if test="$witness != ''">
@@ -1210,7 +1204,7 @@
             <span class="viewerHandleLt title_imageViewer">
                <xsl:value-of select="$imgUrl"></xsl:value-of>
             </span>
-            <img class="viewerHandleRt closePanel" title="Close panel" alt="X" src="../vm-images/closePanel.svg" />
+            <img class="viewerHandleRt closePanel" src="{$closePanelButton}" title="Close panel" alt="X (Close panel)" />
          </div>
          <div class="viewerContent" id="content_imageViewer">
              
@@ -1221,6 +1215,7 @@
             <div class="panzoom">
                      <img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image">
                         <xsl:attribute name="src">
+                           <xsl:value-of select="$facsImageFolder"/>
                            <xsl:value-of select="$imgUrl" />
                         </xsl:attribute>
                         

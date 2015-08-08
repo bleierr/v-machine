@@ -1,0 +1,599 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:util="customfunction" lang="en">
+   <head>
+      <title>"There are two Ripenings" -- The Versioning Machine 5.0</title>
+      <meta charset="utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="../../src/vmachine.css"></link>
+      <link rel="stylesheet" type="text/css" href="../../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="../../src/panzoom/panzoom.css"></link><script src="../../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script><script type="text/javascript">
+      
+      var initialVisibility = {};
+      initialVisibility["bibPanel"] = true;
+      initialVisibility["versions"] = 3;
+      initialVisibility["critPanel"] = true;
+      initialVisibility["linenumber"] = true;
+      initialVisibility["notesPanel"] = false;
+   var timelinePoints = new Array();var timelineDurations = new Array();</script><script type="text/javascript" src="../../src/vmachine.js"></script></head>
+   <body>
+      <div id="mainBanner">
+         <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../../vm-images/LogoSilver.png"></img></div>
+         <div id="headline">
+            <h1>"There are two Ripenings"</h1>
+         </div>
+         <nav id="mainControls">
+            <ul>
+               <li><button id="selectWitness" class="topMenuButton dropdownButton">3 Total Versions<img class="noDisplay" src="../../vm-images/arrowup.png" alt="arrow up"></img><img src="../../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="witnessList" class="dropdown notVisible">
+                     <li data-panelid="A456">
+                        <div class="listText">
+                           <div>A 456, version sent to unknown recipient.</div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="ATr60a">
+                        <div class="listText">
+                           <div>A Tr60a, version transcribed by Todd and sent to
+                              						Anthon
+                           </div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="H47">
+                        <div class="listText">
+                           <div>H 47, Fascicle 14</div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
+               <li id="linenumberOnOff" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
+               <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
+               <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
+            </ul>
+         </nav>
+      </div>
+      <div id="mssArea">
+         <div id="bibPanel" class="ui-widget-content ui-resizable panel mssPanel noDisplay">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>
+               Bibliographic Information
+               
+            </div>
+            <div class="bibContent">
+               <h2>"There are two Ripenings"</h2>
+               <h3>
+                  by By Emily Dickinson.
+               </h3>
+               <h4>Original Source</h4>
+               				
+               <p>See Witness List.</p>
+               			
+               <h4>Witness List</h4>
+               <ul>
+                  <li><strong>Witness A456:</strong> A 456, version sent to unknown recipient.
+                  </li>
+                  <li><strong>Witness ATr60a:</strong> A Tr60a, version transcribed by Todd and sent to
+                     						Anthon
+                  </li>
+                  <li><strong>Witness H47:</strong> H 47, Fascicle 14
+                  </li>
+               </ul>
+               <h4>Textual Notes</h4>
+               <div class="note"><em class="label">render:</em> Additions appear in a green, fixed-width
+                  					font.
+               </div>
+               <h4>Electronic Edition Information:</h4>
+               <h5>Responsibility Statement:</h5>
+               <ul>
+                  <li>Edited and marked up by Lara Vetter. </li>
+               </ul>
+               <h5>Publication Details:</h5>
+               				
+               <p>Published by The Versioning Machine project.</p>
+               				
+               					
+               <p>This poem is available only for demonstration purposes. It was created as
+                  						part of a research project to experiment with ways of displaying multiple
+                  						witnesses of a TEI-encoded poem using XML, XSLT and JavaScript.
+               </p>
+               				
+               			
+               <h4>Encoding Principles</h4>
+               			
+               				
+               <p>Test document for versioning machine project. Marked-up collation of all three
+                  					versions: A 456, A Tr60a, H 47. Note that I have removed issue of transcription
+                  					by another hand in order to better demonstrate method.
+               </p>
+               				
+               <p>DTD constructed from TEI prose base with tagsets for linking, figures, analysis,
+                  					transcr, textcrit.
+               </p>
+               			
+               			
+               		
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="A456">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness A456
+            </div>
+            <div class="mssContent">
+               			
+               <div class="div1" data-line-id="div1">
+                  				
+                  <div class="lg" data-line-id="lg">
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">1</div>There are two Ripenings 
+                        <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                           <div data-witness="A456 H47" class="reading A456 H47"> -</div>
+                        </div>
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">2</div>
+                        						
+                        <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
+                           <div data-witness="A456" class="reading A456">one -</div>
+                        </div> of 
+                        <div class="apparatus app_4_l_2_1" data-app-id="app_4_l_2_1">
+                           <div data-witness="A456" class="reading A456">sight -</div>
+                        </div>
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">3</div>
+                        						
+                        <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                           <div data-witness="A456 ATr60a" class="reading A456 ATr60a">Whose forces 
+                              <div class="apparatus app_2_rdg1" data-app-id="app_2_rdg1">
+                                 <div data-witness="A456" class="reading A456">Spheric</div>
+                              </div>
+                           </div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">4</div>
+                        						
+                        <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
+                           <div data-witness="A456" class="reading A456">wind</div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">5</div>Until the 
+                        <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
+                           <div data-witness="A456 H47" class="reading A456 H47">Velvet</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_5_1" data-app-id="app_4_l_5_1">
+                           <div data-witness="A456 ATr60a" class="reading A456 ATr60a">product</div>
+                        </div>
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">6</div>
+                        						
+                        <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
+                           <div data-witness="A456" class="reading A456">Drops</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_6_1" data-app-id="app_4_l_6_1">
+                           <div data-witness="A456 ATr60a" class="reading A456 ATr60a">spicy</div>
+                        </div> to the 
+                        <div class="apparatus app_6_l_6_1" data-app-id="app_6_l_6_1">
+                           <div data-witness="A456 ATr60a" class="reading A456 ATr60a"></div>
+                        </div>
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">7</div>
+                        						
+                        <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
+                           <div data-witness="A456" class="reading A456">ground -</div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">8</div>A 
+                        <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
+                           <div data-witness="A456 ATr60a" class="reading A456 ATr60a">homelier</div>
+                        </div> maturing -
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">9</div>A 
+                        <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
+                           <div data-witness="A456 ATr60a" class="reading A456 ATr60a">process</div>
+                        </div> in 
+                        <div class="apparatus app_4_l_9_1" data-app-id="app_4_l_9_1">
+                           <div data-witness="A456 H47" class="reading A456 H47">the Bur -</div>
+                        </div>
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">10</div>
+                        						
+                        <div class="apparatus app_2_l_10_1" data-app-id="app_2_l_10_1">
+                           <div data-witness="A456 ATr60a" class="reading A456 ATr60a">That</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_10_1" data-app-id="app_4_l_10_1">
+                           <div data-witness="A456" class="reading A456">teeth</div>
+                        </div> of 
+                        <div class="apparatus app_6_l_10_1" data-app-id="app_6_l_10_1">
+                           <div data-witness="A456" class="reading A456">Frosts</div>
+                        </div>
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">11</div>
+                        						
+                        <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
+                           <div data-witness="A456 H47" class="reading A456 H47">alone</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_11_1" data-app-id="app_4_l_11_1">
+                           <div data-witness="A456 ATr60a" class="reading A456 ATr60a">disclose</div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">12</div>
+                        						
+                        <div class="apparatus app_2_l_12_1" data-app-id="app_2_l_12_1">
+                           <div data-witness="A456" class="reading A456">In</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_12_1" data-app-id="app_4_l_12_1">
+                           <div data-witness="A456 ATr60a" class="reading A456 ATr60a">far</div>
+                        </div> October 
+                        <div class="apparatus app_6_l_12_1" data-app-id="app_6_l_12_1">
+                           <div data-witness="A456" class="reading A456">Air.</div>
+                        </div>
+                     </div>
+                     				
+                  </div>
+                  				
+                  					
+                  <div class="apparatus app_2_ab1" data-app-id="app_2_ab1">
+                     <div data-witness="A456 ATr60a" class="reading A456 ATr60a"></div>
+                  </div>
+                  				
+                  			
+               </div>
+               		
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="ATr60a">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness ATr60a
+            </div>
+            <div class="mssContent">
+               			
+               <div class="div1" data-line-id="div1">
+                  				
+                  <div class="lg" data-line-id="lg">
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">1</div>There are two Ripenings 
+                        <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                           <div data-witness="ATr60a" class="reading ATr60a"></div>
+                        </div>
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">2</div>
+                        						
+                        <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
+                           <div data-witness="ATr60a" class="reading ATr60a">one</div>
+                        </div> of 
+                        <div class="apparatus app_4_l_2_1" data-app-id="app_4_l_2_1">
+                           <div data-witness="ATr60a" class="reading ATr60a">sight</div>
+                        </div>
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">3</div>
+                        						
+                        <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                           <div data-witness="A456 ATr60a" class="reading A456 ATr60a">Whose forces 
+                              <div class="apparatus app_2_rdg1" data-app-id="app_2_rdg1">
+                                 <div data-witness="ATr60a" class="reading ATr60a">spheric</div>
+                              </div>
+                           </div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">4</div>
+                        						
+                        <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
+                           <div data-witness="ATr60a" class="reading ATr60a">wind,</div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">5</div>Until the 
+                        <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
+                           <div data-witness="ATr60a" class="reading ATr60a">velvet</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_5_1" data-app-id="app_4_l_5_1">
+                           <div data-witness="A456 ATr60a" class="reading A456 ATr60a">product</div>
+                        </div>
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">6</div>
+                        						
+                        <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
+                           <div data-witness="ATr60a" class="reading ATr60a">Drop</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_6_1" data-app-id="app_4_l_6_1">
+                           <div data-witness="A456 ATr60a" class="reading A456 ATr60a">spicy</div>
+                        </div> to the 
+                        <div class="apparatus app_6_l_6_1" data-app-id="app_6_l_6_1">
+                           <div data-witness="A456 ATr60a" class="reading A456 ATr60a"></div>
+                        </div>
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">7</div>
+                        						
+                        <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
+                           <div data-witness="ATr60a" class="reading ATr60a">Ground -</div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">8</div>A 
+                        <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
+                           <div data-witness="A456 ATr60a" class="reading A456 ATr60a">homelier</div>
+                        </div> maturing -
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">9</div>A 
+                        <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
+                           <div data-witness="A456 ATr60a" class="reading A456 ATr60a">process</div>
+                        </div> in 
+                        <div class="apparatus app_4_l_9_1" data-app-id="app_4_l_9_1">
+                           <div data-witness="ATr60a" class="reading ATr60a">Bur.</div>
+                        </div>
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">10</div>
+                        						
+                        <div class="apparatus app_2_l_10_1" data-app-id="app_2_l_10_1">
+                           <div data-witness="A456 ATr60a" class="reading A456 ATr60a">That</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_10_1" data-app-id="app_4_l_10_1">
+                           <div data-witness="H47 ATr60a" class="reading H47 ATr60a">Teeth</div>
+                        </div> of 
+                        <div class="apparatus app_6_l_10_1" data-app-id="app_6_l_10_1">
+                           <div data-witness="ATr60a" class="reading ATr60a">of</div>
+                        </div>
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">11</div>
+                        						
+                        <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
+                           <div data-witness="ATr60a" class="reading ATr60a">Frosts alone</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_11_1" data-app-id="app_4_l_11_1">
+                           <div data-witness="A456 ATr60a" class="reading A456 ATr60a">disclose</div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">12</div>
+                        						
+                        <div class="apparatus app_2_l_12_1" data-app-id="app_2_l_12_1">
+                           <div data-witness="ATr60a" class="reading ATr60a">On</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_12_1" data-app-id="app_4_l_12_1">
+                           <div data-witness="A456 ATr60a" class="reading A456 ATr60a">far</div>
+                        </div> October 
+                        <div class="apparatus app_6_l_12_1" data-app-id="app_6_l_12_1">
+                           <div data-witness="H47 ATr60a" class="reading H47 ATr60a">Air -</div>
+                        </div>
+                     </div>
+                     				
+                  </div>
+                  				
+                  					
+                  <div class="apparatus app_2_ab1" data-app-id="app_2_ab1">
+                     <div data-witness="A456 ATr60a" class="reading A456 ATr60a"></div>
+                  </div>
+                  				
+                  			
+               </div>
+               		
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="H47">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness H47
+            </div>
+            <div class="mssContent">
+               			
+               <div class="div1" data-line-id="div1">
+                  				
+                  <div class="lg" data-line-id="lg">
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">1</div>There are two Ripenings 
+                        <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                           <div data-witness="A456 H47" class="reading A456 H47"> -</div>
+                        </div>
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">2</div>
+                        						
+                        <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
+                           <div data-witness="H47" class="reading H47">One -</div>
+                        </div> of 
+                        <div class="apparatus app_4_l_2_1" data-app-id="app_4_l_2_1">
+                           <div data-witness="H47" class="reading H47">Sight - whose Forces</div>
+                        </div>
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">3</div>
+                        						
+                        <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                           <div data-witness="H47" class="reading H47">spheric + round</div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">4</div>
+                        						
+                        <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
+                           <div data-witness="H47" class="reading H47"></div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">5</div>Until the 
+                        <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
+                           <div data-witness="A456 H47" class="reading A456 H47">Velvet</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_5_1" data-app-id="app_4_l_5_1">
+                           <div data-witness="H47" class="reading H47">Product</div>
+                        </div>
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">6</div>
+                        						
+                        <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
+                           <div data-witness="H47" class="reading H47">Drop,</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_6_1" data-app-id="app_4_l_6_1">
+                           <div data-witness="H47" class="reading H47">spicy,</div>
+                        </div> to the 
+                        <div class="apparatus app_6_l_6_1" data-app-id="app_6_l_6_1">
+                           <div data-witness="H47" class="reading H47">Ground -
+                              <div class="stanzabreak"></div>
+                           </div>
+                        </div>
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">7</div>
+                        						
+                        <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
+                           <div data-witness="H47" class="reading H47"></div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">8</div>A 
+                        <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
+                           <div data-witness="H47" class="reading H47">Homelier -</div>
+                        </div> maturing -
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">9</div>A 
+                        <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
+                           <div data-witness="H47" class="reading H47">Process</div>
+                        </div> in 
+                        <div class="apparatus app_4_l_9_1" data-app-id="app_4_l_9_1">
+                           <div data-witness="A456 H47" class="reading A456 H47">the Bur -</div>
+                        </div>
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">10</div>
+                        						
+                        <div class="apparatus app_2_l_10_1" data-app-id="app_2_l_10_1">
+                           <div data-witness="H47" class="reading H47">+ Which</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_10_1" data-app-id="app_4_l_10_1">
+                           <div data-witness="H47 ATr60a" class="reading H47 ATr60a">Teeth</div>
+                        </div> of 
+                        <div class="apparatus app_6_l_10_1" data-app-id="app_6_l_10_1">
+                           <div data-witness="H47" class="reading H47">Frosts,</div>
+                        </div>
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">11</div>
+                        						
+                        <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
+                           <div data-witness="A456 H47" class="reading A456 H47">alone</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_11_1" data-app-id="app_4_l_11_1">
+                           <div data-witness="H47" class="reading H47">disclose -</div>
+                        </div>
+                        					
+                     </div>
+                     					
+                     <div class="line">
+                        <div class="linenumber noDisplay">12</div>
+                        						
+                        <div class="apparatus app_2_l_12_1" data-app-id="app_2_l_12_1">
+                           <div data-witness="H47" class="reading H47">+ In</div>
+                        </div>
+                        						
+                        <div class="apparatus app_4_l_12_1" data-app-id="app_4_l_12_1">
+                           <div data-witness="H47" class="reading H47">+ still</div>
+                        </div> October 
+                        <div class="apparatus app_6_l_12_1" data-app-id="app_6_l_12_1">
+                           <div data-witness="H47 ATr60a" class="reading H47 ATr60a">Air -</div>
+                        </div>
+                     </div>
+                     				
+                  </div>
+                  				
+                  					
+                  <div class="apparatus app_2_ab1" data-app-id="app_2_ab1">
+                     <div data-witness="H47" class="reading H47">
+                        							<ins>+ far - </ins>
+                        							<ins>+ that Teeth</ins>
+                        							<ins>+ on far - </ins>
+                        						
+                     </div>
+                  </div>
+                  				
+                  			
+               </div>
+               		
+            </div>
+         </div>
+         <div id="notesPanel" class="ui-widget-content ui-resizable panel mssPanel noDisplay">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>
+               Textual Notes
+               
+            </div>
+            <div id="noNotesFound" class="noteContent">
+               Sorry, but there are no notes associated with
+               any currently displayed witness.
+               
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,4386 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:util="customfunction" lang="en">
+   <head>
+      <title>Thistledownflight -- The Versioning Machine 5.0</title>
+      <meta charset="utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="../../src/vmachine.css"></link>
+      <link rel="stylesheet" type="text/css" href="../../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="../../src/panzoom/panzoom.css"></link><script src="../../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script><script type="text/javascript">
+      
+      var initialVisibility = {};
+      initialVisibility["bibPanel"] = true;
+      initialVisibility["versions"] = 3;
+      initialVisibility["critPanel"] = true;
+      initialVisibility["linenumber"] = true;
+      initialVisibility["notesPanel"] = false;
+   var timelinePoints = new Array();var timelineDurations = new Array();</script><script type="text/javascript" src="../../src/vmachine.js"></script></head>
+   <body>
+      <div id="mainBanner">
+         <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../../vm-images/LogoSilver.png"></img></div>
+         <div id="headline">
+            <h1>Thistledownflight</h1>
+         </div>
+         <nav id="mainControls">
+            <ul>
+               <li><button id="selectWitness" class="topMenuButton dropdownButton">6 Total Versions<img class="noDisplay" src="../../vm-images/arrowup.png" alt="arrow up"></img><img src="../../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="witnessList" class="dropdown notVisible">
+                     <li data-panelid="a1">
+                        <div class="listText">
+                           <div>Thitledownflight: Version 1 - Most-Finished version </div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="a2">
+                        <div class="listText">
+                           <div>Thistledownflight: Version 2 - Typed </div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="a3">
+                        <div class="listText">
+                           <div>Thistledownflight: Version 3</div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="a4">
+                        <div class="listText">
+                           <div>Thistledownflight: Version 3 - Rewritten Second Half </div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="a5">
+                        <div class="listText">
+                           <div>Ghinga: Version 4 - Images Only</div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="a6">
+                        <div class="listText">
+                           <div>Ginga: Version 5 - The Early Draft of Thistledownflight
+                              
+                           </div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
+               <li id="linenumberOnOff" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
+               <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
+               <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
+            </ul>
+         </nav>
+      </div>
+      <div id="mssArea">
+         <div id="bibPanel" class="ui-widget-content ui-resizable panel mssPanel noDisplay">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>
+               Bibliographic Information
+               
+            </div>
+            <div class="bibContent">
+               <h2>Thistledownflight</h2>
+               <h3>
+                  by 
+                  Elsa von Freytag-Loringhoven
+                  
+               </h3>
+               <h4>Original Source</h4>
+               
+               <p>The Baroness' poems and papers are contained in the Archives and Manuscripts
+                  Department at the University of Maryland Libraries. Complete papers cover the period
+                  from 1917-1933 and consist of manuscripts, drafts, notes, correspondence, drawings
+                  and photographs.
+               </p>
+               
+               <p>Textual transcription and analysis of the seven poems encoded here were undertaken
+                  in
+                  Fall 2003 by graduate students in William H. Sherman's English 601
+                  class, "Literary Research and Critical Contexts."
+               </p>
+               
+               <p>Text editing of "Thistledownflight" was performed by Helen Lucille
+                  DeVinney.
+               </p>
+               
+               <h4>Witness List</h4>
+               <ul>
+                  <li><strong>Witness a1:</strong> Thitledownflight: Version 1 - Most-Finished version 
+                  </li>
+                  <li><strong>Witness a2:</strong> Thistledownflight: Version 2 - Typed 
+                  </li>
+                  <li><strong>Witness a3:</strong> Thistledownflight: Version 3
+                  </li>
+                  <li><strong>Witness a4:</strong> Thistledownflight: Version 3 - Rewritten Second Half 
+                  </li>
+                  <li><strong>Witness a5:</strong> Ghinga: Version 4 - Images Only
+                  </li>
+                  <li><strong>Witness a6:</strong> Ginga: Version 5 - The Early Draft of Thistledownflight
+                     
+                  </li>
+               </ul>
+               <h4>Textual Notes</h4>
+               <div class="note">There are five versions of "Thistledownflight," presented here in
+                  the following order: four handwritten versions and one typewritten version (Version
+                  2) by the Baroness (in the order of the "most-finished" version to the earliest
+                  draft, as determined by the editor). Since Baroness rewrtoe the sencond half of the
+                  version 3 and it to the version 3, the second half version is separately encoded as
+                  Witness a4. The version 4 (Witness 5) is available only as the images. Titles of the
+                  latest three versions are "Thistledownflight". "Ginga" is used as titles for the
+                  earlier two versions. The poem is unpublished.
+                  <hr></hr>
+               </div>
+               <div class="note">The following is an excerpt from Helen Lucille
+                  DeVinney's transcription rationale:
+                  <hr></hr>
+               </div>
+               <div class="note">
+                  
+                  <p>The handwriting is her typical use of majuscule letters, and the letters
+                     themselves are slightly larger than her standard print. It is presented as a
+                     visual poem; the Baroness has taken pains to add her own artistic decorations to
+                     the paper. Her use of the page is sparse, and the layout of the words themselves
+                     is artistic. The placement of the line groupings is irregular, and, in the case of
+                     the final word “Thistledownflight,” she arranges the word itself in an artistic
+                     way. Interestingly, the poem is unsigned, as are each of the subsequent
+                     drafts.
+                  </p>
+                  
+                  
+                  <p>In some cases her handwriting seems to be slightly different in the corrections,
+                     but this alone is not enough to determine that the revisions occurred at another
+                     time. Her arrangement suggests that the poem was beginning to take shape: certain
+                     words or lines are clearly grouped and begin to suggest the arrangement of 2r/2v
+                     [Version 2]. She clearly leaves room for possibility....In 4r/4v [Version 4] we
+                     see the appearance of the later title "Thistle down flight," which are also the
+                     last lines of the poem. This version seems to precede 3r/3v [Version 3]; in 3r/3v
+                     we see the adoption of the title "Thistledownflight," as well as the arrangement
+                     and corrections of some of her revisions in 4r/4v. 
+                  </p>
+                  
+                  <hr></hr>
+               </div>
+               <div class="note">Read Helen Lucille DeVinney's essay <a class="link" href="">"Thistledownflight."</a>
+                  
+                  <hr></hr>
+               </div>
+               <div class="note">Additions appear in a green, fixed-width font. Deletions appear in
+                  a red, fixed-width font with strikethrough.
+               </div>
+               <h4>Electronic Edition Information:</h4>
+               <h5>Responsibility Statement:</h5>
+               <ul>
+                  <li>Encoded by  Kenichiro Shimada and  Helen Lucille DeVinney</li>
+               </ul>
+               <h5>Publication Details:</h5>
+               
+               <p>Published by Special Collections, University of Maryland Libraries.</p>
+               
+               
+               University of Maryland, College Park, MD  20742
+               
+               
+               2004
+               
+               
+               <p>Researchers can gain access to the Papers of Elsa von
+                  Freytag-Loringhoven in the Maryland Room, Hornbake Library, University
+                  of Maryland Libraries, College Park, MD 20742
+               </p>
+               
+               <p>"Thistiledownflight" manuscripts located in Series III, Box four, Folder 11;
+                  microfiche id numbers 5/920-5/927, 5/969.
+               </p>
+               
+               <p>Special Collections at the University of Maryland provides <a class="link" href="">more information about the
+                     microfilm edition of the papers</a>. 
+               </p>
+               
+               <p>Images and manuscripts drafts of this poem may not be reproduced or downloaded and
+                  used on another site without the explicit permission of UMD Archives. They may not
+                  be reproduced or downloaded and used on another site without the explicit
+                  permission of UMD Archives. Though the intellectual property of Elsa von
+                  Freytag-Loringhoven is in the public domain, all annotations and
+                  editorial commentary are copyrighted.
+               </p>
+               
+               
+               <h4>Encoding Principles</h4>
+               
+               
+               <p>DTD constructed from TEI poetry base with tagsets for linking, figures, analysis,
+                  transcr, textcrit.
+               </p>
+               
+               
+               
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="a1">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness a1
+            </div>
+            <div class="mssContent">
+               <div class="facs-images"><img src="../../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink a1" data-witness-id="a1" data-img-url="images/thistledown_1b.jpg" data-img-id=""></img><img src="../../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink a1" data-witness-id="a1" data-img-url="images/thistledown_1a.jpg" data-img-id=""></img></div>
+               
+               <div class="head" data-line-id="head">
+                  
+                  
+                  <div class="apparatus app_2_title1" data-app-id="app_2_title1">
+                     <div data-witness="a1" class="reading a1">Thistledownflight</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">1</div>
+                  
+                  <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">GHINGHA </div>
+                  </div>
+                  <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                     <div data-witness="a1 a3" class="reading a1 a3">—</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">2</div>
+                  
+                  <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">I</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">3</div>
+                  
+                  <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">TREMBLE</div>
+                  </div>
+                  <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                     <div data-witness="a1" class="reading a1">—</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">4</div>
+                  
+                  <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">DO</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">5</div>
+                  
+                  <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">NOT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">6</div>
+                  
+                  <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">LAUGH</div>
+                  </div>
+                  <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">!</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">7</div>
+                  
+                  <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">BORN</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">8</div>
+                  
+                  <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">FINE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">9</div>
+                  
+                  <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">FLOWER</div>
+                  </div>
+                  <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
+                     <div data-witness="a1 a3" class="reading a1 a3">—</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">10</div>
+                  
+                  <div class="apparatus app_2_l_10_1" data-app-id="app_2_l_10_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">BY</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">11</div>
+                  
+                  <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">ORCHID</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">13</div>
+                  
+                  <div class="apparatus app_2_l_13_1" data-app-id="app_2_l_13_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SPECKLED</div>
+                  </div>
+                  <div class="apparatus app_2_l_13_1" data-app-id="app_2_l_13_1">
+                     <div data-witness="a1" class="reading a1">—</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">14</div>
+                  
+                  <div class="apparatus app_2_l_14_1" data-app-id="app_2_l_14_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">DARK</div>
+                  </div>
+                  <div class="apparatus app_2_l_14_1" data-app-id="app_2_l_14_1">
+                     <div data-witness="a1 a3" class="reading a1 a3">—</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">15</div>
+                  
+                  <div class="apparatus app_2_l_15_1" data-app-id="app_2_l_15_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">LIGHT</div>
+                  </div>
+                  <div class="apparatus app_2_l_15_1" data-app-id="app_2_l_15_1">
+                     <div data-witness="a1" class="reading a1">—</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">17</div>
+                  
+                  <div class="apparatus app_2_l_17_1" data-app-id="app_2_l_17_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SHE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">18</div>
+                  
+                  <div class="apparatus app_2_l_18_1" data-app-id="app_2_l_18_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">WEPT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">19</div>
+                  
+                  <div class="apparatus app_2_l_19_1" data-app-id="app_2_l_19_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">AT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">20</div>
+                  
+                  <div class="apparatus app_2_l_20_1" data-app-id="app_2_l_20_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">NIGHT</div>
+                  </div>
+                  <div class="apparatus app_2_l_20_1" data-app-id="app_2_l_20_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">!</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">21</div>
+                  
+                  <div class="apparatus app_2_l_21_1" data-app-id="app_2_l_21_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">CURSED</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">22</div>
+                  
+                  <div class="apparatus app_2_l_22_1" data-app-id="app_2_l_22_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">TAUT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">23</div>
+                  
+                  <div class="apparatus app_2_l_23_1" data-app-id="app_2_l_23_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SNARE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">24</div>
+                  
+                  <div class="apparatus app_2_l_24_1" data-app-id="app_2_l_24_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">OF</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">25</div>
+                  
+                  <div class="apparatus app_2_l_25_1" data-app-id="app_2_l_25_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">DULLARD'S</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">26</div>
+                  
+                  <div class="apparatus app_2_l_26_1" data-app-id="app_2_l_26_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">AMPLE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">27</div>
+                  
+                  <div class="apparatus app_2_l_27_1" data-app-id="app_2_l_27_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">PURSE</div>
+                  </div>
+                  <div class="apparatus app_2_l_27_1" data-app-id="app_2_l_27_1">
+                     <div data-witness="a1" class="reading a1">—</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">28</div>
+                  
+                  <div class="apparatus app_2_l_28_1" data-app-id="app_2_l_28_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">AT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">29</div>
+                  
+                  <div class="apparatus app_2_l_29_1" data-app-id="app_2_l_29_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SPIRITLEDGE</div>
+                  </div>
+                  <div class="apparatus app_2_l_29_1" data-app-id="app_2_l_29_1">
+                     <div data-witness="a1" class="reading a1">—</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">31</div>
+                  
+                  <div class="apparatus app_2_l_31_1" data-app-id="app_2_l_31_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">YOUTH</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">32</div>
+                  
+                  <div class="apparatus app_2_l_32_1" data-app-id="app_2_l_32_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">OF</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">33</div>
+                  
+                  <div class="apparatus app_2_l_33_1" data-app-id="app_2_l_33_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">HER'S</div>
+                  </div>
+                  <div class="apparatus app_2_l_33_1" data-app-id="app_2_l_33_1">
+                     <div data-witness="a1" class="reading a1">—</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">34</div>
+                  
+                  <div class="apparatus app_2_l_34_1" data-app-id="app_2_l_34_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">BRIGHT</div>
+                  </div>
+                  <div class="apparatus app_2_l_34_1" data-app-id="app_2_l_34_1">
+                     <div data-witness="a1" class="reading a1">—</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">36</div>
+                  
+                  <div class="apparatus app_2_l_36_1" data-app-id="app_2_l_36_1">
+                     <div data-witness="a1 a3" class="reading a1 a3">AT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">37</div>
+                  
+                  <div class="apparatus app_2_l_37_1" data-app-id="app_2_l_37_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">WISDOMEDGE</div>
+                  </div>
+                  <div class="apparatus app_2_l_37_1" data-app-id="app_2_l_37_1">
+                     <div data-witness="a1" class="reading a1">—</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">38</div>
+                  
+                  <div class="apparatus app_2_l_38_1" data-app-id="app_2_l_38_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">TORN</div>
+                  </div>
+                  <div class="apparatus app_2_l_38_1" data-app-id="app_2_l_38_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">!</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">41</div>
+                  
+                  <div class="apparatus app_2_l_41_1" data-app-id="app_2_l_41_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">GHINGA</div>
+                  </div>
+                  <div class="apparatus app_2_l_41_1" data-app-id="app_2_l_41_1">
+                     <div data-witness="a1 a3" class="reading a1 a3">—</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">43</div>
+                  
+                  <div class="apparatus app_2_l_43_1" data-app-id="app_2_l_43_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">FROM</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">44</div>
+                  
+                  <div class="apparatus app_2_l_44_1" data-app-id="app_2_l_44_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">HER'S</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">45</div>
+                  
+                  <div class="apparatus app_2_l_45_1" data-app-id="app_2_l_45_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">CURVE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">46</div>
+                  
+                  <div class="apparatus app_2_l_46_1" data-app-id="app_2_l_46_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">DIVERGED</div>
+                  </div>
+                  <div class="apparatus app_2_l_46_1" data-app-id="app_2_l_46_1">
+                     <div data-witness="a1 a3" class="reading a1 a3">—</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">48</div>
+                  
+                  <div class="apparatus app_2_l_48_1" data-app-id="app_2_l_48_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">WITHIN</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">50</div>
+                  
+                  <div class="apparatus app_2_l_50_1" data-app-id="app_2_l_50_1">
+                     <div data-witness="a1 a4" class="reading a1 a4">HEIR</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">51</div>
+                  
+                  <div class="apparatus app_2_l_51_1" data-app-id="app_2_l_51_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">SHE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">52</div>
+                  
+                  <div class="apparatus app_2_l_52_1" data-app-id="app_2_l_52_1">
+                     <div data-witness="a1" class="reading a1">SOB'S</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">53</div>
+                  
+                  <div class="apparatus app_2_l_53_1" data-app-id="app_2_l_53_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">ANEW</div>
+                  </div>
+                  <div class="apparatus app_2_l_53_1" data-app-id="app_2_l_53_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">:</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">55</div>
+                  
+                  <div class="apparatus app_2_l_55_1" data-app-id="app_2_l_55_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">VAGRANT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">57</div>
+                  
+                  <div class="apparatus app_2_l_57_1" data-app-id="app_2_l_57_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">SPILL</div>
+                  </div>
+                  <div class="apparatus app_2_l_57_1" data-app-id="app_2_l_57_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">!</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">61</div>
+                  
+                  <div class="apparatus app_2_l_61_1" data-app-id="app_2_l_61_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">BEACON</div>
+                  </div>
+                  <div class="apparatus app_2_l_61_1" data-app-id="app_2_l_61_1">
+                     <div data-witness="a1" class="reading a1">—</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">62</div>
+                  
+                  <div class="apparatus app_2_l_62_1" data-app-id="app_2_l_62_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">ISLAND</div>
+                  </div>
+                  <div class="apparatus app_2_l_62_1" data-app-id="app_2_l_62_1">
+                     <div data-witness="a1" class="reading a1">—</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">63</div>
+                  
+                  <div class="apparatus app_2_l_63_1" data-app-id="app_2_l_63_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">BED</div>
+                  </div>
+                  <div class="apparatus app_2_l_63_1" data-app-id="app_2_l_63_1">
+                     <div data-witness="a1" class="reading a1">—</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">64</div>
+                  
+                  <div class="apparatus app_2_l_64_1" data-app-id="app_2_l_64_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">TO</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">65</div>
+                  
+                  <div class="apparatus app_2_l_65_1" data-app-id="app_2_l_65_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">BEAR</div>
+                  </div>
+                  <div class="apparatus app_2_l_65_1" data-app-id="app_2_l_65_1">
+                     <div data-witness="a1" class="reading a1">—</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">66</div>
+                  
+                  <div class="apparatus app_2_l_66_1" data-app-id="app_2_l_66_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">SPECKELED</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">67</div>
+                  
+                  <div class="apparatus app_2_l_67_1" data-app-id="app_2_l_67_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">ORCHIDS</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">70</div>
+                  
+                  <div class="apparatus app_2_l_70_1" data-app-id="app_2_l_70_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">GLARE</div>
+                  </div>
+                  <div class="apparatus app_2_l_70_1" data-app-id="app_2_l_70_1">
+                     <div data-witness="a1" class="reading a1">—</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">75</div>
+                  
+                  <div class="apparatus app_2_l_75_1" data-app-id="app_2_l_75_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">HAS</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">76</div>
+                  
+                  <div class="apparatus app_2_l_76_1" data-app-id="app_2_l_76_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SITE</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">79</div>
+                  
+                  <div class="apparatus app_2_l_79_1" data-app-id="app_2_l_79_1">
+                     <div data-witness="a1 a2 a4 a6" class="reading a1 a2 a4 a6">NOWHERE</div>
+                  </div>
+                  <div class="apparatus app_2_l_79_1" data-app-id="app_2_l_79_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">!</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">80</div>
+                  
+                  <div class="apparatus app_2_l_80_1" data-app-id="app_2_l_80_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">SUN</div>
+                  </div>
+                  
+               </div>
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">81</div>
+                  
+                  <div class="apparatus app_2_l_81_1" data-app-id="app_2_l_81_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">WILL</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">82</div>
+                  
+                  <div class="apparatus app_2_l_82_1" data-app-id="app_2_l_82_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">ILL !</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">83</div>
+                  
+                  <div class="apparatus app_2_l_83_1" data-app-id="app_2_l_83_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">BIRTH</div>
+                  </div>
+                  <div class="apparatus app_2_l_83_1" data-app-id="app_2_l_83_1">
+                     <div data-witness="a1 a3 a6" class="reading a1 a3 a6">—</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">84</div>
+                  
+                  <div class="apparatus app_2_l_84_1" data-app-id="app_2_l_84_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">BLIGHT</div>
+                  </div>
+                  <div class="apparatus app_2_l_84_1" data-app-id="app_2_l_84_1">
+                     <div data-witness="a1" class="reading a1">—</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">85</div>
+                  
+                  <div class="apparatus app_2_l_85_1" data-app-id="app_2_l_85_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">THISTLEDOWNFLIGHT</div>
+                  </div>
+                  <div class="apparatus app_2_l_85_1" data-app-id="app_2_l_85_1">
+                     <div data-witness="a1" class="reading a1">!
+                        <div class="noteicon">n
+                           <div class="note"><strong>Note:</strong>  The original layout is diagonal (up-down-up);
+                              see the image. 
+                           </div>
+                        </div>
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">86</div>
+                  
+                  <div class="apparatus app_2_l_86_1" data-app-id="app_2_l_86_1">
+                     <div data-witness="a1 " class="reading a1 ">CHINGHA" FOR "DJUNA"</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="a2">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness a2
+            </div>
+            <div class="mssContent">
+               <div class="facs-images"><img src="../../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink a2" data-witness-id="a2" data-img-url="images/thistledown_3.jpg" data-img-id=""></img><img src="../../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink a2" data-witness-id="a2" data-img-url="images/thistledown_2.jpg" data-img-id=""></img></div>
+               
+               <div class="head" data-line-id="head">
+                  
+                  
+                  <div class="apparatus app_2_title1" data-app-id="app_2_title1">
+                     <div data-witness="a2" class="reading a2">Thistledownflight</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">1</div>
+                  
+                  <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">GHINGHA </div>
+                  </div>
+                  <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                     <div data-witness="a2" class="reading a2">–</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">2</div>
+                  
+                  <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">I</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">3</div>
+                  
+                  <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">TREMBLE</div>
+                  </div>
+                  <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                     <div data-witness="a2" class="reading a2">–</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">4</div>
+                  
+                  <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">DO</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">5</div>
+                  
+                  <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">NOT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">6</div>
+                  
+                  <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">LAUGH</div>
+                  </div>
+                  <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">!</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">7</div>
+                  
+                  <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">BORN</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">8</div>
+                  
+                  <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">FINE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">9</div>
+                  
+                  <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">FLOWER</div>
+                  </div>
+                  <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
+                     <div data-witness="a2" class="reading a2">–</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">10</div>
+                  
+                  <div class="apparatus app_2_l_10_1" data-app-id="app_2_l_10_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">BY</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">11</div>
+                  
+                  <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">ORCHID</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">13</div>
+                  
+                  <div class="apparatus app_2_l_13_1" data-app-id="app_2_l_13_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SPECKLED</div>
+                  </div>
+                  <div class="apparatus app_2_l_13_1" data-app-id="app_2_l_13_1">
+                     <div data-witness="a2" class="reading a2">– </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">14</div>
+                  
+                  <div class="apparatus app_2_l_14_1" data-app-id="app_2_l_14_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">DARK</div>
+                  </div>
+                  <div class="apparatus app_2_l_14_1" data-app-id="app_2_l_14_1">
+                     <div data-witness="a2" class="reading a2">–</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">15</div>
+                  
+                  <div class="apparatus app_2_l_15_1" data-app-id="app_2_l_15_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">LIGHT</div>
+                  </div>
+                  <div class="apparatus app_2_l_15_1" data-app-id="app_2_l_15_1">
+                     <div data-witness="a2" class="reading a2">–</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">17</div>
+                  
+                  <div class="apparatus app_2_l_17_1" data-app-id="app_2_l_17_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SHE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">18</div>
+                  
+                  <div class="apparatus app_2_l_18_1" data-app-id="app_2_l_18_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">WEPT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">19</div>
+                  
+                  <div class="apparatus app_2_l_19_1" data-app-id="app_2_l_19_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">AT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">20</div>
+                  
+                  <div class="apparatus app_2_l_20_1" data-app-id="app_2_l_20_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">NIGHT</div>
+                  </div>
+                  <div class="apparatus app_2_l_20_1" data-app-id="app_2_l_20_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">!</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">21</div>
+                  
+                  <div class="apparatus app_2_l_21_1" data-app-id="app_2_l_21_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">CURSED</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">22</div>
+                  
+                  <div class="apparatus app_2_l_22_1" data-app-id="app_2_l_22_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">TAUT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">23</div>
+                  
+                  <div class="apparatus app_2_l_23_1" data-app-id="app_2_l_23_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SNARE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">24</div>
+                  
+                  <div class="apparatus app_2_l_24_1" data-app-id="app_2_l_24_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">OF</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">25</div>
+                  
+                  <div class="apparatus app_2_l_25_1" data-app-id="app_2_l_25_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">DULLARD'S</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">26</div>
+                  
+                  <div class="apparatus app_2_l_26_1" data-app-id="app_2_l_26_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">AMPLE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">27</div>
+                  
+                  <div class="apparatus app_2_l_27_1" data-app-id="app_2_l_27_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">PURSE</div>
+                  </div>
+                  <div class="apparatus app_2_l_27_1" data-app-id="app_2_l_27_1">
+                     <div data-witness="a2" class="reading a2">––</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">28</div>
+                  
+                  <div class="apparatus app_2_l_28_1" data-app-id="app_2_l_28_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">AT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">29</div>
+                  
+                  <div class="apparatus app_2_l_29_1" data-app-id="app_2_l_29_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SPIRITLEDGE</div>
+                  </div>
+                  <div class="apparatus app_2_l_29_1" data-app-id="app_2_l_29_1">
+                     <div data-witness="a2" class="reading a2">–</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">31</div>
+                  
+                  <div class="apparatus app_2_l_31_1" data-app-id="app_2_l_31_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">YOUTH</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">32</div>
+                  
+                  <div class="apparatus app_2_l_32_1" data-app-id="app_2_l_32_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">OF</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">33</div>
+                  
+                  <div class="apparatus app_2_l_33_1" data-app-id="app_2_l_33_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">HER'S</div>
+                  </div>
+                  <div class="apparatus app_2_l_33_1" data-app-id="app_2_l_33_1">
+                     <div data-witness="a2" class="reading a2">–</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">34</div>
+                  
+                  <div class="apparatus app_2_l_34_1" data-app-id="app_2_l_34_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">BRIGHT</div>
+                  </div>
+                  <div class="apparatus app_2_l_34_1" data-app-id="app_2_l_34_1">
+                     <div data-witness="a2" class="reading a2">––</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">37</div>
+                  
+                  <div class="apparatus app_2_l_37_1" data-app-id="app_2_l_37_1">
+                     <div data-witness="a2 a6" class="reading a2 a6">AT</div>
+                  </div>
+                  <div class="apparatus app_2_l_37_1" data-app-id="app_2_l_37_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">WISDOMEDGE</div>
+                  </div>
+                  <div class="apparatus app_2_l_37_1" data-app-id="app_2_l_37_1">
+                     <div data-witness="a2" class="reading a2">–</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">38</div>
+                  
+                  <div class="apparatus app_2_l_38_1" data-app-id="app_2_l_38_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">TORN</div>
+                  </div>
+                  <div class="apparatus app_2_l_38_1" data-app-id="app_2_l_38_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">!</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">41</div>
+                  
+                  <div class="apparatus app_2_l_41_1" data-app-id="app_2_l_41_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">GHINGA</div>
+                  </div>
+                  <div class="apparatus app_2_l_41_1" data-app-id="app_2_l_41_1">
+                     <div data-witness="a2" class="reading a2">–</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">43</div>
+                  
+                  <div class="apparatus app_2_l_43_1" data-app-id="app_2_l_43_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">FROM</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">44</div>
+                  
+                  <div class="apparatus app_2_l_44_1" data-app-id="app_2_l_44_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">HER'S</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">45</div>
+                  
+                  <div class="apparatus app_2_l_45_1" data-app-id="app_2_l_45_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">CURVE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">46</div>
+                  
+                  <div class="apparatus app_2_l_46_1" data-app-id="app_2_l_46_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">DIVERGED</div>
+                  </div>
+                  <div class="apparatus app_2_l_46_1" data-app-id="app_2_l_46_1">
+                     <div data-witness="a2" class="reading a2">––</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">48</div>
+                  
+                  <div class="apparatus app_2_l_48_1" data-app-id="app_2_l_48_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">WITHIN</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">50</div>
+                  
+                  <div class="apparatus app_2_l_50_1" data-app-id="app_2_l_50_1">
+                     <div data-witness="a2" class="reading a2">HERE &nbsp;<ins>HEIR</ins>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">51</div>
+                  
+                  <div class="apparatus app_2_l_51_1" data-app-id="app_2_l_51_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">SHE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">52</div>
+                  
+                  <div class="apparatus app_2_l_52_1" data-app-id="app_2_l_52_1">
+                     <div data-witness="a2" class="reading a2">SOBS</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">53</div>
+                  
+                  <div class="apparatus app_2_l_53_1" data-app-id="app_2_l_53_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">ANEW</div>
+                  </div>
+                  <div class="apparatus app_2_l_53_1" data-app-id="app_2_l_53_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">:</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">55</div>
+                  
+                  <div class="apparatus app_2_l_55_1" data-app-id="app_2_l_55_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">VAGRANT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">57</div>
+                  
+                  <div class="apparatus app_2_l_57_1" data-app-id="app_2_l_57_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">SPILL</div>
+                  </div>
+                  <div class="apparatus app_2_l_57_1" data-app-id="app_2_l_57_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">!</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">61</div>
+                  
+                  <div class="apparatus app_2_l_61_1" data-app-id="app_2_l_61_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">BEACON</div>
+                  </div>
+                  <div class="apparatus app_2_l_61_1" data-app-id="app_2_l_61_1">
+                     <div data-witness="a2" class="reading a2">–</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">62</div>
+                  
+                  <div class="apparatus app_2_l_62_1" data-app-id="app_2_l_62_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">ISLAND</div>
+                  </div>
+                  <div class="apparatus app_2_l_62_1" data-app-id="app_2_l_62_1">
+                     <div data-witness="a2" class="reading a2">–</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">63</div>
+                  
+                  <div class="apparatus app_2_l_63_1" data-app-id="app_2_l_63_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">BED</div>
+                  </div>
+                  <div class="apparatus app_2_l_63_1" data-app-id="app_2_l_63_1">
+                     <div data-witness="a2" class="reading a2">–</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">64</div>
+                  
+                  <div class="apparatus app_2_l_64_1" data-app-id="app_2_l_64_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">TO</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">65</div>
+                  
+                  <div class="apparatus app_2_l_65_1" data-app-id="app_2_l_65_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">BEAR</div>
+                  </div>
+                  <div class="apparatus app_2_l_65_1" data-app-id="app_2_l_65_1">
+                     <div data-witness="a2" class="reading a2">–</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">66</div>
+                  
+                  <div class="apparatus app_2_l_66_1" data-app-id="app_2_l_66_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">SPECKELED</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">67</div>
+                  
+                  <div class="apparatus app_2_l_67_1" data-app-id="app_2_l_67_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">ORCHIDS</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">70</div>
+                  
+                  <div class="apparatus app_2_l_70_1" data-app-id="app_2_l_70_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">GLARE</div>
+                  </div>
+                  <div class="apparatus app_2_l_70_1" data-app-id="app_2_l_70_1">
+                     <div data-witness="a2" class="reading a2">–</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">75</div>
+                  
+                  <div class="apparatus app_2_l_75_1" data-app-id="app_2_l_75_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">HAS</div>
+                  </div>
+                  <div class="apparatus app_2_l_75_1" data-app-id="app_2_l_75_1">
+                     <div data-witness="a2" class="reading a2">
+                        <del>FOUND</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">76</div>
+                  
+                  <div class="apparatus app_2_l_76_1" data-app-id="app_2_l_76_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SITE</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">78</div>
+                  
+                  <div class="apparatus app_2_l_78_1" data-app-id="app_2_l_78_1">
+                     <div data-witness="a2" class="reading a2">
+                        <del>NOWHERE</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">79</div>
+                  
+                  <div class="apparatus app_2_l_79_1" data-app-id="app_2_l_79_1">
+                     <div data-witness="a1 a2 a4 a6" class="reading a1 a2 a4 a6">NOWHERE</div>
+                  </div>
+                  <div class="apparatus app_2_l_79_1" data-app-id="app_2_l_79_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">!</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">80</div>
+                  
+                  <div class="apparatus app_2_l_80_1" data-app-id="app_2_l_80_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">SUN</div>
+                  </div>
+                  
+               </div>
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">81</div>
+                  
+                  <div class="apparatus app_2_l_81_1" data-app-id="app_2_l_81_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">WILL</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">82</div>
+                  
+                  <div class="apparatus app_2_l_82_1" data-app-id="app_2_l_82_1">
+                     <div data-witness="a1 a2" class="reading a1 a2">ILL !</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">83</div>
+                  
+                  <div class="apparatus app_2_l_83_1" data-app-id="app_2_l_83_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">BIRTH</div>
+                  </div>
+                  <div class="apparatus app_2_l_83_1" data-app-id="app_2_l_83_1">
+                     <div data-witness="a2" class="reading a2">–</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">84</div>
+                  
+                  <div class="apparatus app_2_l_84_1" data-app-id="app_2_l_84_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">BLIGHT</div>
+                  </div>
+                  <div class="apparatus app_2_l_84_1" data-app-id="app_2_l_84_1">
+                     <div data-witness="a2" class="reading a2">–</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">85</div>
+                  
+                  <div class="apparatus app_2_l_85_1" data-app-id="app_2_l_85_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">THISTLEDOWNFLIGHT</div>
+                  </div>
+                  <div class="apparatus app_2_l_85_1" data-app-id="app_2_l_85_1">
+                     <div data-witness="a2" class="reading a2">!
+                        <div class="noteicon">n
+                           <div class="note"><strong>Note:</strong>  The original layout is diagonal; see the
+                              image. 
+                           </div>
+                        </div>
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="a3">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness a3
+            </div>
+            <div class="mssContent">
+               <div class="facs-images"><img src="../../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink a3" data-witness-id="a3" data-img-url="images/thistledown_4a.jpg" data-img-id=""></img></div>
+               
+               <div class="head" data-line-id="head">
+                  
+                  
+                  <div class="apparatus app_2_title1" data-app-id="app_2_title1">
+                     <div data-witness="a3" class="reading a3">Thistle down flight</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">1</div>
+                  
+                  <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">GHINGHA </div>
+                  </div>
+                  <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                     <div data-witness="a1 a3" class="reading a1 a3">—</div>
+                  </div>
+                  <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                     <div data-witness="a3" class="reading a3">(DJUNA)</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">2</div>
+                  
+                  <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">I</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">3</div>
+                  
+                  <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">TREMBLE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">4</div>
+                  
+                  <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">DO</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">5</div>
+                  
+                  <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">NOT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">6</div>
+                  
+                  <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">LAUGH</div>
+                  </div>
+                  <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">!</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">7</div>
+                  
+                  <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">BORN</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">8</div>
+                  
+                  <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">FINE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">9</div>
+                  
+                  <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">FLOWER</div>
+                  </div>
+                  <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
+                     <div data-witness="a1 a3" class="reading a1 a3">—</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">10</div>
+                  
+                  <div class="apparatus app_2_l_10_1" data-app-id="app_2_l_10_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">BY</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">11</div>
+                  
+                  <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">ORCHID</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">13</div>
+                  
+                  <div class="apparatus app_2_l_13_1" data-app-id="app_2_l_13_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SPECKLED</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">14</div>
+                  
+                  <div class="apparatus app_2_l_14_1" data-app-id="app_2_l_14_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">DARK</div>
+                  </div>
+                  <div class="apparatus app_2_l_14_1" data-app-id="app_2_l_14_1">
+                     <div data-witness="a1 a3" class="reading a1 a3">—</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">15</div>
+                  
+                  <div class="apparatus app_2_l_15_1" data-app-id="app_2_l_15_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">LIGHT</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">16</div>
+                  
+                  <div class="apparatus app_2_l_16_1" data-app-id="app_2_l_16_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>DOOMED</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">17</div>
+                  
+                  <div class="apparatus app_2_l_17_1" data-app-id="app_2_l_17_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SHE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">18</div>
+                  
+                  <div class="apparatus app_2_l_18_1" data-app-id="app_2_l_18_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">WEPT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">19</div>
+                  
+                  <div class="apparatus app_2_l_19_1" data-app-id="app_2_l_19_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">AT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">20</div>
+                  
+                  <div class="apparatus app_2_l_20_1" data-app-id="app_2_l_20_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">NIGHT</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">21</div>
+                  
+                  <div class="apparatus app_2_l_21_1" data-app-id="app_2_l_21_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">CURSED</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">22</div>
+                  
+                  <div class="apparatus app_2_l_22_1" data-app-id="app_2_l_22_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">TAUT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">23</div>
+                  
+                  <div class="apparatus app_2_l_23_1" data-app-id="app_2_l_23_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SNARE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">24</div>
+                  
+                  <div class="apparatus app_2_l_24_1" data-app-id="app_2_l_24_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">OF</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">25</div>
+                  
+                  <div class="apparatus app_2_l_25_1" data-app-id="app_2_l_25_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">DULLARD'S</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">26</div>
+                  
+                  <div class="apparatus app_2_l_26_1" data-app-id="app_2_l_26_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">AMPLE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">27</div>
+                  
+                  <div class="apparatus app_2_l_27_1" data-app-id="app_2_l_27_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">PURSE</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">28</div>
+                  
+                  <div class="apparatus app_2_l_28_1" data-app-id="app_2_l_28_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">AT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">29</div>
+                  
+                  <div class="apparatus app_2_l_29_1" data-app-id="app_2_l_29_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SPIRITLEDGE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">30</div>
+                  
+                  <div class="apparatus app_2_l_30_1" data-app-id="app_2_l_30_1">
+                     <div data-witness="a3" class="reading a3">BRIGHT</div>
+                  </div>
+                  
+               </div>
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">31</div>
+                  
+                  <div class="apparatus app_2_l_31_1" data-app-id="app_2_l_31_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">YOUTH</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">32</div>
+                  
+                  <div class="apparatus app_2_l_32_1" data-app-id="app_2_l_32_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">OF</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">33</div>
+                  
+                  <div class="apparatus app_2_l_33_1" data-app-id="app_2_l_33_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">HER'S</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">34</div>
+                  
+                  <div class="apparatus app_2_l_34_1" data-app-id="app_2_l_34_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>BRIGHT</del>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<del>WORN</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">35</div>
+                  
+                  <div class="apparatus app_2_l_35_1" data-app-id="app_2_l_35_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>WORN</del>
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">36</div>
+                  
+                  <div class="apparatus app_2_l_36_1" data-app-id="app_2_l_36_1">
+                     <div data-witness="a1 a3" class="reading a1 a3">AT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">37</div>
+                  
+                  <div class="apparatus app_2_l_37_1" data-app-id="app_2_l_37_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">WISDOMEDGE</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">38</div>
+                  
+                  <div class="apparatus app_2_l_38_1" data-app-id="app_2_l_38_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">TORN</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">39</div>
+                  
+                  <div class="apparatus app_2_l_39_1" data-app-id="app_2_l_39_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>BLIGHT</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">41</div>
+                  
+                  <div class="apparatus app_2_l_41_1" data-app-id="app_2_l_41_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">GHINGA</div>
+                  </div>
+                  <div class="apparatus app_2_l_41_1" data-app-id="app_2_l_41_1">
+                     <div data-witness="a1 a3" class="reading a1 a3">—</div>
+                  </div>
+                  <div class="apparatus app_2_l_41_1" data-app-id="app_2_l_41_1">
+                     <div data-witness="a3" class="reading a3">&nbsp;(DJUNA)</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">42</div>
+                  
+                  <div class="apparatus app_2_l_42_1" data-app-id="app_2_l_42_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>WHY</del>—
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">43</div>
+                  
+                  <div class="apparatus app_2_l_43_1" data-app-id="app_2_l_43_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">FROM</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">44</div>
+                  
+                  <div class="apparatus app_2_l_44_1" data-app-id="app_2_l_44_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">HER'S</div>
+                  </div>
+                  <div class="apparatus app_2_l_44_1" data-app-id="app_2_l_44_1">
+                     <div data-witness="a3" class="reading a3">—</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">45</div>
+                  
+                  <div class="apparatus app_2_l_45_1" data-app-id="app_2_l_45_1">
+                     <div data-witness="a3 a4" class="reading a3 a4">PATH</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">46</div>
+                  
+                  <div class="apparatus app_2_l_46_1" data-app-id="app_2_l_46_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">DIVERGED</div>
+                  </div>
+                  <div class="apparatus app_2_l_46_1" data-app-id="app_2_l_46_1">
+                     <div data-witness="a1 a3" class="reading a1 a3">—</div>
+                  </div>
+                  <div class="apparatus app_2_l_46_1" data-app-id="app_2_l_46_1">
+                     <div data-witness="a3" class="reading a3">
+                        <ins class="rend-superscript">YET</ins>
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">47</div>
+                  
+                  <div class="apparatus app_2_l_47_1" data-app-id="app_2_l_47_1">
+                     <div data-witness="a3" class="reading a3">AM<ins class="rend-superscript"><del>WHY</del>
+                           </ins>
+                        
+                        <div class="noteicon">n
+                           <div class="note"><strong>Note:</strong>  This paragraph was revised several times. As well as the
+                              other parts of the Version 3, all rewritten parts here are organized in a way
+                              of “a word in a line.” See the image of Version 3 in order to acquire the
+                              actual locations and layouts. In the far left of the first column, there is
+                              rewritten paragraph “YET IS SHE URGED D IN HEIR TO QUAKE ANEW VAGRANT FORLORAN
+                              SPILL” ("FORLORAN" is crossed out). Next this paragraph, there is another
+                              revised paragraph “YET WITHIN HEIR SHE QUAKES ANEW”("YET" is crossed out). Left
+                              side of the second column, there are another revisions. “YET IS SHE URGED TO,"
+                              “QUAKE ANEW IN HEIR,” “TOO VGRANT SPILL.” 
+                           </div>
+                        </div>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">48</div>
+                  
+                  <div class="apparatus app_2_l_48_1" data-app-id="app_2_l_48_1">
+                     <div data-witness="a3" class="reading a3">I</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">49</div>
+                  
+                  <div class="apparatus app_2_l_49_1" data-app-id="app_2_l_49_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>F</del>URGED 
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">50</div>
+                  
+                  <div class="apparatus app_2_l_50_1" data-app-id="app_2_l_50_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>TO TO WITH</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">52</div>
+                  
+                  <div class="apparatus app_2_l_52_1" data-app-id="app_2_l_52_1">
+                     <div data-witness="a3" class="reading a3">QUAKE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">53</div>
+                  
+                  <div class="apparatus app_2_l_53_1" data-app-id="app_2_l_53_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">ANEW</div>
+                  </div>
+                  <div class="apparatus app_2_l_53_1" data-app-id="app_2_l_53_1">
+                     <div data-witness="a3" class="reading a3">!</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">54</div>
+                  
+                  <div class="apparatus app_2_l_54_1" data-app-id="app_2_l_54_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>IS</del>&nbsp;<del>FOR</del>&nbsp;<del>IS</del>
+                        <ins class="rend-superscript">FOR</ins>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">55</div>
+                  
+                  <div class="apparatus app_2_l_55_1" data-app-id="app_2_l_55_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>HEIR BULB</del>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<del>VAGRANT</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">56</div>
+                  
+                  <div class="apparatus app_2_l_56_1" data-app-id="app_2_l_56_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>DOOMED DOOMED</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">57</div>
+                  
+                  <div class="apparatus app_2_l_57_1" data-app-id="app_2_l_57_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>VAGRANCY</del>
+                        <ins class="rend-superscript">FOR</ins>
+                        
+                     </div>
+                  </div>
+                  <div class="apparatus app_2_l_57_1" data-app-id="app_2_l_57_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">SPILL</div>
+                  </div>
+                  <div class="apparatus app_2_l_57_1" data-app-id="app_2_l_57_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>DOOM</del>
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">58</div>
+                  
+                  <div class="apparatus app_2_l_58_1" data-app-id="app_2_l_58_1">
+                     <div data-witness="a3" class="reading a3">TOO<ins class="rend-superscript"><del>DOOMED</del>
+                           </ins>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<del>LIGHT</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">59</div>
+                  
+                  <div class="apparatus app_2_l_59_1" data-app-id="app_2_l_59_1">
+                     <div data-witness="a3" class="reading a3">BLOOD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<del>VAGRANT</del>HEIR<del>ESS</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">60</div>
+                  
+                  <div class="apparatus app_2_l_60_1" data-app-id="app_2_l_60_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>HAS</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">61</div>
+                  
+                  <div class="apparatus app_2_l_61_1" data-app-id="app_2_l_61_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">BEACON</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">62</div>
+                  
+                  <div class="apparatus app_2_l_62_1" data-app-id="app_2_l_62_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">ISLAND</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">63</div>
+                  
+                  <div class="apparatus app_2_l_63_1" data-app-id="app_2_l_63_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">BED</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">64</div>
+                  
+                  <div class="apparatus app_2_l_64_1" data-app-id="app_2_l_64_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>FOR</del>
+                        
+                     </div>
+                  </div>
+                  <div class="apparatus app_2_l_64_1" data-app-id="app_2_l_64_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">TO</div>
+                  </div>
+                  <div class="apparatus app_2_l_64_1" data-app-id="app_2_l_64_1">
+                     <div data-witness="a3" class="reading a3">BEAR</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">66</div>
+                  
+                  <div class="apparatus app_2_l_66_1" data-app-id="app_2_l_66_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">SPECKELED</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">67</div>
+                  
+                  <div class="apparatus app_2_l_67_1" data-app-id="app_2_l_67_1">
+                     <div data-witness="a3" class="reading a3">ORHID'S</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">68</div>
+                  
+                  <div class="apparatus app_2_l_68_1" data-app-id="app_2_l_68_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>DARK —</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">69</div>
+                  
+                  <div class="apparatus app_2_l_69_1" data-app-id="app_2_l_69_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>LIGHT</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">70</div>
+                  
+                  <div class="apparatus app_2_l_70_1" data-app-id="app_2_l_70_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">GLARE</div>
+                  </div>
+                  <div class="apparatus app_2_l_70_1" data-app-id="app_2_l_70_1">
+                     <div data-witness="a3" class="reading a3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DARK—LIGHT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">71</div>
+                  
+                  <div class="apparatus app_2_l_71_1" data-app-id="app_2_l_71_1">
+                     <div data-witness="a3" class="reading a3">
+                        <ins>
+                           <del>HAS</del>
+                           </ins>&nbsp;&nbsp;&nbsp;TO BEAR
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">76</div>
+                  
+                  <div class="apparatus app_2_l_76_1" data-app-id="app_2_l_76_1">
+                     <div data-witness="a3" class="reading a3">
+                        <ins>HAS</ins>
+                        
+                     </div>
+                  </div>
+                  <div class="apparatus app_2_l_76_1" data-app-id="app_2_l_76_1">
+                     <div data-witness="a1 a2 a3" class="reading a1 a2 a3">SITE</div>
+                  </div>
+                  <div class="apparatus app_2_l_76_1" data-app-id="app_2_l_76_1">
+                     <div data-witness="a3" class="reading a3">&nbsp;&nbsp;&nbsp;<del>FINDS FOUND</del>
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">77</div>
+                  
+                  <div class="apparatus app_2_l_77_1" data-app-id="app_2_l_77_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>ON</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">78</div>
+                  
+                  <div class="apparatus app_2_l_78_1" data-app-id="app_2_l_78_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>EARTH</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">79</div>
+                  
+                  <div class="apparatus app_2_l_79_1" data-app-id="app_2_l_79_1">
+                     <div data-witness="a3" class="reading a3">NxWHERE?<ins class="rend-subscript">RIGHT</ins>
+                        
+                        <div class="noteicon">p
+                           <div class="note"><strong>Physical note:</strong> There is a gray oval from this line to the
+                              bottom of the page. See the image.
+                           </div>
+                        </div>
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">80</div>
+                  
+                  <div class="apparatus app_2_l_80_1" data-app-id="app_2_l_80_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>MOTHER</del>&nbsp;xxGHT
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">81</div>
+                  
+                  <div class="apparatus app_2_l_81_1" data-app-id="app_2_l_81_1">
+                     <div data-witness="a3" class="reading a3">
+                        <del>NIL</del>!
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">83</div>
+                  
+                  <div class="apparatus app_2_l_83_1" data-app-id="app_2_l_83_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">BIRTH</div>
+                  </div>
+                  <div class="apparatus app_2_l_83_1" data-app-id="app_2_l_83_1">
+                     <div data-witness="a1 a3 a6" class="reading a1 a3 a6">—</div>
+                  </div>
+                  <div class="apparatus app_2_l_83_1" data-app-id="app_2_l_83_1">
+                     <div data-witness="a3" class="reading a3">
+                        x
+                        <del>RIGHT</del>
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">84</div>
+                  
+                  <div class="apparatus app_2_l_84_1" data-app-id="app_2_l_84_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">BLIGHT</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">85</div>
+                  
+                  <div class="apparatus app_2_l_85_1" data-app-id="app_2_l_85_1">
+                     <div data-witness="a3" class="reading a3">THISTLExxWNFLIGHT</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="a4">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness a4
+            </div>
+            <div class="mssContent">
+               <div class="facs-images"><img src="../../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink a4" data-witness-id="a4" data-img-url="images/thistledown_4b.jpg" data-img-id=""></img></div>
+               
+               <div class="head" data-line-id="head">
+                  
+                  
+                  <div class="apparatus app_2_title1" data-app-id="app_2_title1">
+                     <div data-witness="a4" class="reading a4">Thistle down flight-Second half of Version 3 
+                        <div class="noteicon">n
+                           <div class="note"><strong>Note:</strong> Baroness rewrote the second half (second column) of Version 3. This part is
+                              separately encoded in order to enjoy advantages of the Versioning
+                              Machine.
+                           </div>
+                        </div>
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">41</div>
+                  
+                  <div class="apparatus app_2_l_41_1" data-app-id="app_2_l_41_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">GHINGA</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">42</div>
+                  
+                  <div class="apparatus app_2_l_42_1" data-app-id="app_2_l_42_1">
+                     <div data-witness="a4" class="reading a4">
+                        <del>THOUGH</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">43</div>
+                  
+                  <div class="apparatus app_2_l_43_1" data-app-id="app_2_l_43_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">FROM</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">44</div>
+                  
+                  <div class="apparatus app_2_l_44_1" data-app-id="app_2_l_44_1">
+                     <div data-witness="a4" class="reading a4">HER<del>S</del>S
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">45</div>
+                  
+                  <div class="apparatus app_2_l_45_1" data-app-id="app_2_l_45_1">
+                     <div data-witness="a3 a4" class="reading a3 a4">PATH</div>
+                  </div>
+                  <div class="apparatus app_2_l_45_1" data-app-id="app_2_l_45_1">
+                     <div data-witness="a4" class="reading a4">
+                        <del>COURSE BED</del>
+                        
+                     </div>
+                  </div>
+                  <div class="apparatus app_2_l_45_1" data-app-id="app_2_l_45_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">CURVE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">46</div>
+                  
+                  <div class="apparatus app_2_l_46_1" data-app-id="app_2_l_46_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">DIVERGED</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">48</div>
+                  
+                  <div class="apparatus app_2_l_48_1" data-app-id="app_2_l_48_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">WITHIN</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">50</div>
+                  
+                  <div class="apparatus app_2_l_50_1" data-app-id="app_2_l_50_1">
+                     <div data-witness="a1 a4" class="reading a1 a4">HEIR</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">51</div>
+                  
+                  <div class="apparatus app_2_l_51_1" data-app-id="app_2_l_51_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">SHE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">52</div>
+                  
+                  <div class="apparatus app_2_l_52_1" data-app-id="app_2_l_52_1">
+                     <div data-witness="a4" class="reading a4">
+                        <del>QUAKE</del>&nbsp;<del>WEPS</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">53</div>
+                  
+                  <div class="apparatus app_2_l_53_1" data-app-id="app_2_l_53_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">ANEW</div>
+                  </div>
+                  <div class="apparatus app_2_l_53_1" data-app-id="app_2_l_53_1">
+                     <div data-witness="a4" class="reading a4">&nbsp;&nbsp;&nbsp;SOBS</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">54</div>
+                  
+                  <div class="apparatus app_2_l_54_1" data-app-id="app_2_l_54_1">
+                     <div data-witness="a4" class="reading a4">
+                        <del>IN</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">55</div>
+                  
+                  <div class="apparatus app_2_l_55_1" data-app-id="app_2_l_55_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">VAGRANT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">57</div>
+                  
+                  <div class="apparatus app_2_l_57_1" data-app-id="app_2_l_57_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">SPILL</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">61</div>
+                  
+                  <div class="apparatus app_2_l_61_1" data-app-id="app_2_l_61_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">BEACON</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">62</div>
+                  
+                  <div class="apparatus app_2_l_62_1" data-app-id="app_2_l_62_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">ISLAND</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">63</div>
+                  
+                  <div class="apparatus app_2_l_63_1" data-app-id="app_2_l_63_1">
+                     <div data-witness="a4" class="reading a4">
+                        <del>BED</del>
+                        
+                     </div>
+                  </div>
+                  <div class="apparatus app_2_l_63_1" data-app-id="app_2_l_63_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">BED</div>
+                  </div>
+                  <div class="apparatus app_2_l_63_1" data-app-id="app_2_l_63_1">
+                     <div data-witness="a4" class="reading a4">TO</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">66</div>
+                  
+                  <div class="apparatus app_2_l_66_1" data-app-id="app_2_l_66_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">SPECKELED</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">67</div>
+                  
+                  <div class="apparatus app_2_l_67_1" data-app-id="app_2_l_67_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">ORCHIDS</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">70</div>
+                  
+                  <div class="apparatus app_2_l_70_1" data-app-id="app_2_l_70_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">GLARE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">71</div>
+                  
+                  <div class="apparatus app_2_l_71_1" data-app-id="app_2_l_71_1">
+                     <div data-witness="a4" class="reading a4">
+                        <del>DARK DARK</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">72</div>
+                  
+                  <div class="apparatus app_2_l_72_1" data-app-id="app_2_l_72_1">
+                     <div data-witness="a4" class="reading a4">
+                        <del>LIGHT LIGHT</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">73</div>
+                  
+                  <div class="apparatus app_2_l_73_1" data-app-id="app_2_l_73_1">
+                     <div data-witness="a4" class="reading a4">
+                        <del>TO FLEW</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">74</div>
+                  
+                  <div class="apparatus app_2_l_74_1" data-app-id="app_2_l_74_1">
+                     <div data-witness="a4" class="reading a4">
+                        <del>BEAR</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">75</div>
+                  
+                  <div class="apparatus app_2_l_75_1" data-app-id="app_2_l_75_1">
+                     <div data-witness="a4" class="reading a4">
+                        <del>HAS</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">76</div>
+                  
+                  <div class="apparatus app_2_l_76_1" data-app-id="app_2_l_76_1">
+                     <div data-witness="a4" class="reading a4">
+                        <del>SITE</del>
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">79</div>
+                  
+                  <div class="apparatus app_2_l_79_1" data-app-id="app_2_l_79_1">
+                     <div data-witness="a1 a2 a4 a6" class="reading a1 a2 a4 a6">NOWHERE</div>
+                  </div>
+                  <div class="apparatus app_2_l_79_1" data-app-id="app_2_l_79_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">!</div>
+                  </div>
+                  <div class="apparatus app_2_l_79_1" data-app-id="app_2_l_79_1">
+                     <div data-witness="a4" class="reading a4">
+                        <ins class="rend-subscript">
+                           <del>ON EARTH</del>
+                           </ins>
+                        <del>ILL WILL</del>
+                        
+                        <div class="noteicon">n
+                           <div class="note"><strong>Note:</strong>  There are three rewritten attempts about this part. In the
+                              space on the left hand side of the column, there is the rewriting, “SUN WILL
+                              EARTH BEARS" ("EARTH" and "BEARS" are crossed out). On the righthad side of the
+                              column, there are two revising attempts. One is “SH WE IS ARE NIL ILL" ("WE,"
+                              "ARE," and "NIL" are crossed out). Another is “SUN WILLED ILL MOTHER RIGHT
+                              BIRTH" (This part is actually closed out with the zigzag line). See the
+                              image.
+                           </div>
+                        </div>
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">82</div>
+                  
+                  <div class="apparatus app_2_l_82_1" data-app-id="app_2_l_82_1">
+                     <div data-witness="a4" class="reading a4">
+                        <del>BIRTH RIGHT</del>
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">83</div>
+                  
+                  <div class="apparatus app_2_l_83_1" data-app-id="app_2_l_83_1">
+                     <div data-witness="a4" class="reading a4">NIL</div>
+                  </div>
+                  <div class="apparatus app_2_l_83_1" data-app-id="app_2_l_83_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">BIRTH</div>
+                  </div>
+                  <div class="apparatus app_2_l_83_1" data-app-id="app_2_l_83_1">
+                     <div data-witness="a4" class="reading a4"> &nbsp;&nbsp;&nbsp;<ins><del>EARTH</del>
+                           </ins>
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">84</div>
+                  
+                  <div class="apparatus app_2_l_84_1" data-app-id="app_2_l_84_1">
+                     <div data-witness="a1 a2 a3 a4" class="reading a1 a2 a3 a4">BLIGHT</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">85</div>
+                  
+                  <div class="apparatus app_2_l_85_1" data-app-id="app_2_l_85_1">
+                     <div data-witness="a1 a2 a4" class="reading a1 a2 a4">THISTLEDOWNFLIGHT</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="a5">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness a5
+            </div>
+            <div class="mssContent">
+               <div class="facs-images"><img src="../../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink a5" data-witness-id="a5" data-img-url="images/thistledown_5b.jpg" data-img-id=""></img><img src="../../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink a5" data-witness-id="a5" data-img-url="images/thistledown_5a.jpg" data-img-id=""></img></div>
+               
+               <div class="head" data-line-id="head">
+                  
+                  
+                  <div class="apparatus app_2_title1" data-app-id="app_2_title1">
+                     <div data-witness="a5 a6" class="reading a5 a6">GINGA</div>
+                  </div>
+                  <div class="apparatus app_2_title1" data-app-id="app_2_title1">
+                     <div data-witness="a5" class="reading a5">
+                        
+                        <div class="noteicon">n
+                           <div class="note"><strong>Note:</strong>  Version4 (Witness5) was not encoded since there are too
+                              many revisions (in this version) to apply parallel segmentation.
+                           </div>
+                        </div>
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="a6">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness a6
+            </div>
+            <div class="mssContent">
+               <div class="facs-images"><img src="../../vm-images/image.svg" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imageLink a6" data-witness-id="a6" data-img-url="images/To Be-1.jpg" data-img-id=""></img></div>
+               
+               <div class="head" data-line-id="head">
+                  
+                  
+                  <div class="apparatus app_2_title1" data-app-id="app_2_title1">
+                     <div data-witness="a5 a6" class="reading a5 a6">GINGA</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">1</div>
+                  
+                  <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                     <div data-witness="a6" class="reading a6">GINGA</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">3</div>
+                  
+                  <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                     <div data-witness="a6" class="reading a6">
+                        <del>MUST</del>I
+                     </div>
+                  </div>
+                  <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">TREMBLE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">6</div>
+                  
+                  <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
+                     <div data-witness="a6" class="reading a6">MAY NOT</div>
+                  </div>
+                  <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">LAUGH</div>
+                  </div>
+                  <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
+                     <div data-witness="a6" class="reading a6">—</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">8</div>
+                  
+                  <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
+                     <div data-witness="a6" class="reading a6">MOTHER</div>
+                  </div>
+                  <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">FINE</div>
+                  </div>
+                  <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
+                     <div data-witness="a6" class="reading a6">FLOWER</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">11</div>
+                  
+                  <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">ORCHID</div>
+                  </div>
+                  <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
+                     <div data-witness="a6" class="reading a6">SPPECKLED DARK-LIGHT</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">18</div>
+                  
+                  <div class="apparatus app_2_l_18_1" data-app-id="app_2_l_18_1">
+                     <div data-witness="a1 a2 a3 a6" class="reading a1 a2 a3 a6">WEPT</div>
+                  </div>
+                  <div class="apparatus app_2_l_18_1" data-app-id="app_2_l_18_1">
+                     <div data-witness="a6" class="reading a6">
+                        <ins>AT</ins>
+                        <del>MORN</del>NIGHT SUMPTUOUS<ins class="rend-superscript">MEAGER</ins>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">21</div>
+                  
+                  <div class="apparatus app_2_l_21_1" data-app-id="app_2_l_21_1">
+                     <div data-witness="a6" class="reading a6">CURSING</div>
+                  </div>
+                  <div class="apparatus app_2_l_21_1" data-app-id="app_2_l_21_1">
+                     <div data-witness="a6" class="reading a6">
+                        <del>PROPER</del>
+                        <ins class="place-superscript">SNARING</ins>
+                        <ins class="place-infraliniar">SNARE OF AMPLE</ins>LIFE'S PURSE
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">31</div>
+                  
+                  <div class="apparatus app_2_l_31_1" data-app-id="app_2_l_31_1">
+                     <div data-witness="a6" class="reading a6">
+                        <del>BRIGHT</del>
+                        
+                     </div>
+                  </div>
+                  <div class="apparatus app_2_l_31_1" data-app-id="app_2_l_31_1">
+                     <div data-witness="a6" class="reading a6">OF HERS</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">32</div>
+                  
+                  <div class="apparatus app_2_l_32_1" data-app-id="app_2_l_32_1">
+                     <div data-witness="a6" class="reading a6">TORN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SPIRIT BORN</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">33</div>
+                  
+                  <div class="apparatus app_2_l_33_1" data-app-id="app_2_l_33_1">
+                     <div data-witness="a6" class="reading a6">
+                        <del>AT AGE OF</del>
+                        <ins>AT</ins>
+                        <del>WSDOM WORN EDGE</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">34</div>
+                  
+                  <div class="apparatus app_2_l_34_1" data-app-id="app_2_l_34_1">
+                     <div data-witness="a6" class="reading a6">SOUL FORLORN</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">37</div>
+                  
+                  <div class="apparatus app_2_l_37_1" data-app-id="app_2_l_37_1">
+                     <div data-witness="a2 a6" class="reading a2 a6">AT</div>
+                  </div>
+                  <div class="apparatus app_2_l_37_1" data-app-id="app_2_l_37_1">
+                     <div data-witness="a6" class="reading a6">WISDOM EDGE</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">40</div>
+                  
+                  <div class="apparatus app_2_l_40_1" data-app-id="app_2_l_40_1">
+                     <div data-witness="a6" class="reading a6">WHY</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">41</div>
+                  
+                  <div class="apparatus app_2_l_41_1" data-app-id="app_2_l_41_1">
+                     <div data-witness="a6" class="reading a6">GINGA</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">46</div>
+                  
+                  <div class="apparatus app_2_l_46_1" data-app-id="app_2_l_46_1">
+                     <div data-witness="a6" class="reading a6">PATH</div>
+                  </div>
+                  <div class="apparatus app_2_l_46_1" data-app-id="app_2_l_46_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">DIVERGED</div>
+                  </div>
+                  <div class="apparatus app_2_l_46_1" data-app-id="app_2_l_46_1">
+                     <div data-witness="a6" class="reading a6">
+                        <del>FROM HERS</del>
+                        <ins class="rend-superscript">AM I URGED</ins>
+                        <ins class="rend-subscript">FROM HERS</ins>
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">53</div>
+                  
+                  <div class="apparatus app_2_l_53_1" data-app-id="app_2_l_53_1">
+                     <div data-witness="a6" class="reading a6">TO MUST I QUAKE</div>
+                  </div>
+                  <div class="apparatus app_2_l_53_1" data-app-id="app_2_l_53_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">ANEW</div>
+                  </div>
+                  <div class="apparatus app_2_l_53_1" data-app-id="app_2_l_53_1">
+                     <div data-witness="a6" class="reading a6">
+                        <ins class="rend-subscript">
+                           <del>FRESH</del>
+                           </ins>
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">54</div>
+                  
+                  <div class="apparatus app_2_l_54_1" data-app-id="app_2_l_54_1">
+                     <div data-witness="a6" class="reading a6">
+                        <del>IS</del>HER SPARK WITHIN<del>MY HORSE HOUSE</del>
+                        <ins class="rend-subscript">YOUNG SHELL</ins>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">57</div>
+                  
+                  <div class="apparatus app_2_l_57_1" data-app-id="app_2_l_57_1">
+                     <div data-witness="a6" class="reading a6">
+                        <del>IS IT</del>&nbsp; <del>IS IT</del>CURSED TOO?
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">58</div>
+                  
+                  <div class="apparatus app_2_l_58_1" data-app-id="app_2_l_58_1">
+                     <div data-witness="a6" class="reading a6">
+                        <del>IS THERE NO</del>ISLE HOT BEDSTEAD
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">61</div>
+                  
+                  <div class="apparatus app_2_l_61_1" data-app-id="app_2_l_61_1">
+                     <div data-witness="a6" class="reading a6">HAS<ins>IS</ins>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     </div>
+                  </div>
+                  <div class="apparatus app_2_l_61_1" data-app-id="app_2_l_61_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">BEACON</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">66</div>
+                  
+                  <div class="apparatus app_2_l_66_1" data-app-id="app_2_l_66_1">
+                     <div data-witness="a6" class="reading a6">FOR</div>
+                  </div>
+                  <div class="apparatus app_2_l_66_1" data-app-id="app_2_l_66_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">SPECKELED</div>
+                  </div>
+                  <div class="apparatus app_2_l_66_1" data-app-id="app_2_l_66_1">
+                     <div data-witness="a6" class="reading a6">ORCHIDS GLARE</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">79</div>
+                  
+                  <div class="apparatus app_2_l_79_1" data-app-id="app_2_l_79_1">
+                     <div data-witness="a6" class="reading a6">IS IT </div>
+                  </div>
+                  <div class="apparatus app_2_l_79_1" data-app-id="app_2_l_79_1">
+                     <div data-witness="a1 a2 a4 a6" class="reading a1 a2 a4 a6">NOWHERE</div>
+                  </div>
+                  <div class="apparatus app_2_l_79_1" data-app-id="app_2_l_79_1">
+                     <div data-witness="a6" class="reading a6">
+                        <del>?</del>
+                        <del>ON EARTH</del>
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">83</div>
+                  
+                  <div class="apparatus app_2_l_83_1" data-app-id="app_2_l_83_1">
+                     <div data-witness="a6" class="reading a6">BUT</div>
+                  </div>
+                  <div class="apparatus app_2_l_83_1" data-app-id="app_2_l_83_1">
+                     <div data-witness="a1 a2 a3 a4 a6" class="reading a1 a2 a3 a4 a6">BIRTH</div>
+                  </div>
+                  <div class="apparatus app_2_l_83_1" data-app-id="app_2_l_83_1">
+                     <div data-witness="a1 a3 a6" class="reading a1 a3 a6">—</div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">84</div>
+                  
+                  <div class="apparatus app_2_l_84_1" data-app-id="app_2_l_84_1">
+                     <div data-witness="a6" class="reading a6">
+                        <del>BLIGHT</del>
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="stanzabreak"></div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">86</div>
+                  
+                  <div class="apparatus app_2_l_86_1" data-app-id="app_2_l_86_1">
+                     <div data-witness="a6" class="reading a6">FOR MOTHER <del>ME</del>
+                        
+                     </div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">87</div>
+                  
+                  <div class="apparatus app_2_l_87_1" data-app-id="app_2_l_87_1">
+                     <div data-witness="a6" class="reading a6">OUR NAME —</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">88</div>
+                  
+                  <div class="apparatus app_2_l_88_1" data-app-id="app_2_l_88_1">
+                     <div data-witness="a6" class="reading a6">GINGA — BROTHER</div>
+                  </div>
+                  
+               </div>
+               
+               
+               <div class="line">
+                  <div class="linenumber noDisplay">89</div>
+                  
+                  <div class="apparatus app_2_l_89_1" data-app-id="app_2_l_89_1">
+                     <div data-witness="a6" class="reading a6">FLAME?</div>
+                  </div>
+                  
+               </div>
+               
+               
+               
+            </div>
+         </div>
+         <div id="notesPanel" class="ui-widget-content ui-resizable panel mssPanel noDisplay">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>
+               Textual Notes
+               
+            </div>
+            <div class="noteContent a4">
+               <div class="witnesses">a4</div><strong>Note: </strong>Baroness rewrote the second half (second column) of Version 3. This part is
+               separately encoded in order to enjoy advantages of the Versioning
+               Machine.
+            </div>
+            <div class="noteContent a5">
+               <div class="witnesses">a5</div><strong>Note: </strong> Version4 (Witness5) was not encoded since there are too
+               many revisions (in this version) to apply parallel segmentation.
+            </div>
+            <div class="noteContent a3">
+               <div class="witnesses">a3</div>
+               <div class="position" onclick="matchLine('lined2e960');">Line number 47</div><strong>Note: </strong> This paragraph was revised several times. As well as the
+               other parts of the Version 3, all rewritten parts here are organized in a way
+               of “a word in a line.” See the image of Version 3 in order to acquire the
+               actual locations and layouts. In the far left of the first column, there is
+               rewritten paragraph “YET IS SHE URGED D IN HEIR TO QUAKE ANEW VAGRANT FORLORAN
+               SPILL” ("FORLORAN" is crossed out). Next this paragraph, there is another
+               revised paragraph “YET WITHIN HEIR SHE QUAKES ANEW”("YET" is crossed out). Left
+               side of the second column, there are another revisions. “YET IS SHE URGED TO,"
+               “QUAKE ANEW IN HEIR,” “TOO VGRANT SPILL.” 
+            </div>
+            <div class="noteContent a3">
+               <div class="witnesses">a3</div>
+               <div class="position" onclick="matchLine('lined2e1550');">Line number 79</div><strong>Physical note: </strong>There is a gray oval from this line to the
+               bottom of the page. See the image.
+            </div>
+            <div class="noteContent a4">
+               <div class="witnesses">a4</div>
+               <div class="position" onclick="matchLine('lined2e1550');">Line number 79</div><strong>Note: </strong> There are three rewritten attempts about this part. In the
+               space on the left hand side of the column, there is the rewriting, “SUN WILL
+               EARTH BEARS" ("EARTH" and "BEARS" are crossed out). On the righthad side of the
+               column, there are two revising attempts. One is “SH WE IS ARE NIL ILL" ("WE,"
+               "ARE," and "NIL" are crossed out). Another is “SUN WILLED ILL MOTHER RIGHT
+               BIRTH" (This part is actually closed out with the zigzag line). See the
+               image.
+            </div>
+            <div class="noteContent a1">
+               <div class="witnesses">a1</div>
+               <div class="position" onclick="matchLine('lined2e1719');">Line number 85</div><strong>Note: </strong> The original layout is diagonal (up-down-up);
+               see the image. 
+            </div>
+            <div class="noteContent a2">
+               <div class="witnesses">a2</div>
+               <div class="position" onclick="matchLine('lined2e1719');">Line number 85</div><strong>Note: </strong> The original layout is diagonal; see the
+               image. 
+            </div>
+            <div id="noNotesFound" class="noteContent">
+               Sorry, but there are no notes associated with
+               any currently displayed witness.
+               
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
