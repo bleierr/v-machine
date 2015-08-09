@@ -1,3 +1,5 @@
+
+
 body{
     width:100%;
     margin:0;
@@ -552,7 +554,7 @@ img.highlight{
 
 /* BEGIN responsive styles media queries*/
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 1000px){
 	div#mainBanner nav li button{
 	font-size:0.9em;
 	}
@@ -560,13 +562,14 @@ img.highlight{
 	font-size:0.9em;
 	}
 	#mainControls, h1{
-		min-width: 350px;
+		padding-top: 1em;
+		font-size: 1.2em;
 	}
 	#mainControls > ul > li {
 		padding: 10px 5px 2px 5px;
 	}
 }
-@media screen and (max-width: 600px){
+@media screen and (max-width: 800px){
 	div#mainBanner nav li button{
 	font-size:0.8em;
 	}
@@ -576,7 +579,16 @@ img.highlight{
 	#mainControls > ul > li {
 		padding: 0 5px 2px 5px;
 	}
+	
 }
+@media screen and (max-width: 600px){
+	#mainControls, h1{
+		padding-top: 1.2em;
+		font-size: 1em;
+	}
+	
+}
+
 /*END responsive styles*/
 
 

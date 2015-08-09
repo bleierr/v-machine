@@ -1,4 +1,14 @@
-	
+/* Copyright (C) 1883 Thomas Edison - All Rights Reserved
+ * You may use, distribute and modify this code under the
+ * terms of the XYZ license, which unfortunately won't be
+ * written for another century.
+ *
+ * You should have received a copy of the XYZ license with
+ * this file. If not, please write to: , or visit :
+ */
+
+
+
 function moveToFront($that){
 	/*function to change the stack order of a JQuery panel element and adds it to the front of all visible panels*/
 	$(".activePanel").each(function(){
@@ -11,7 +21,7 @@ function moveToFront($that){
 function totalPanelWidth(){
 	/*function to calculate and return the total panel width of visible panels*/
 	var totalWidth = 0;
-	$("div.mssPanel:not(.noDisplay)").each(function(){
+	$("div.panel:not(.noDisplay)").each(function(){
 		var wid = $(this).width();
 		totalWidth += wid;
 	});
@@ -200,7 +210,7 @@ $.fn.changePanelVisibility = function(top,left) {
 	}
 }
 
-$.fn.mssPanelClick = function() {
+$.fn.panelClick = function() {
 	/* plugin to add a mousedown event to manuscript panels
 	brings the panel to front
 	*/
@@ -209,7 +219,7 @@ $.fn.mssPanelClick = function() {
 		});
 };
 
-$.fn.mssPanelHover = function() {
+$.fn.panelHover = function() {
 	/* plugin to add a hover event to manuscript panels
 	on hover the class 'highlight' is added or removed
 	*/
@@ -352,6 +362,78 @@ $.fn.audioMatch = function() {
 		});
 };
 
+function initialSetup(keyword){
+	//The initialVisibility global can be set in settings.xsl
+	for (item in initialVisibility){
+		if(initialVisibility[item]){
+			return true;
+		}
+	}
+}
+
+function bibPanel(){
+	var keyword = "bibPanel";
+	var panelPos = totalPanelWidth();
+	if(initialSetup(keyword)){
+		//bibPanel visible
+		$("#"+keyword).changePanelVisibility(0, panelPos);
+		$("nav *[data-panelid='"+ keyword +"']").toggleOnOffButton();
+	}	
+	$("#"+keyword).panelClick();
+	$("#"+keyword).panelHover();
+}
+function notesPanel(){
+	var keyword = "notesPanel";
+	var panelPos = totalPanelWidth();
+	if(initialSetup(keyword)){
+		//notesPanel visible
+		$("#"+keyword).changePanelVisibility(0, panelPos);
+		$("nav *[data-panelid='"+ keyword +"']").toggleOnOffButton();
+		$("#mssArea .noteicon").toggle();
+	}	
+	$("#"+keyword).panelClick();
+	$("#"+keyword).panelHover();
+}
+function critPanel(){
+	var keyword = "critPanel";
+	var panelPos = totalPanelWidth();
+	if(initialSetup(keyword)){
+		//critPanel visible
+		$("#"+keyword).changePanelVisibility(0, panelPos);
+		$("nav *[data-panelid='"+ keyword +"']").toggleOnOffButton();
+	}	
+	$("#"+keyword).panelClick();
+	$("#"+keyword).panelHover();
+}
+function linenumber(){
+	keyword = "linenumber";
+	if(initialSetup(keyword)){
+		//linenumbers visible
+		$(".linenumber").toggleClass("noDisplay");
+		$("nav li#linenumberOnOff").toggleOnOffButton();
+	}
+}
+
+function mssPanels(){
+	//initial setup
+	//open the witness/version panels
+	var keyword = "versions";
+	var versions = initialVisibility[keyword];
+	$("#witnessList li").each(function(idx){
+				var panelPos = totalPanelWidth();
+				var wit = $(this).attr("data-panelid");
+				if(idx < versions){
+					$("#"+wit).changePanelVisibility(false, panelPos);
+					$("*[data-panelid='"+wit+"']").toggleOnOffButton();
+				}	
+			});
+	//add functionality to manuscript panels
+	$(".mssPanel").panelClick();
+	$(".mssPanel").panelHover();
+	
+}
+
+
 $(document).ready(function() {  
 	
 	/*****initial panel and visibility setup *****/
@@ -359,38 +441,12 @@ $(document).ready(function() {
 	var bannerHeight = $("#mainBanner").height();
 	
 	//The initialVisibility global can be set in settings.xsl
-	for (item in initialVisibility){
-		if(item === "versions"){
-			
-			//open the witness/version panels
-			$("#witnessList li").each(function(idx){
-				var panelPos = totalPanelWidth();
-				var wit = $(this).attr("data-panelid");
-				if(idx < initialVisibility[item]){
-					$("#"+wit).changePanelVisibility(bannerHeight, panelPos);
-					$("*[data-panelid='"+wit+"']").toggleOnOffButton();
-				}	
-			});
-		}
-		else{
-			var panelPos = totalPanelWidth();
-			
-			if(item === "linenumber"){
-				if(initialVisibility[item]){
-					$(".linenumber").toggleClass("noDisplay");
-					$("nav li#linenumberOnOff").toggleOnOffButton();
-				}
-			}
-			else{
-				if(initialVisibility[item]){
-					$("#"+item).changePanelVisibility(bannerHeight, panelPos);
-					$("nav *[data-panelid='"+ item +"']").toggleOnOffButton();
-				}
-			}
-		
-		}
-	}
-	
+	bibPanel();
+	mssPanels();
+	notesPanel();
+	critPanel();
+	linenumber();
+
 	//after the visibility of all necessary panels is changed the workspace has to be resized to fit panels
 	workspaceResize();
 	
@@ -425,9 +481,6 @@ $(document).ready(function() {
 	{helper: "ui-resizable-helper"}
 	);
 	
-	//add functionality to manuscript panels
-	$(".mssPanel").mssPanelClick();
-	$(".mssPanel").mssPanelHover();
 	
 	//add functionality to image panels
 	$(".imgPanel").zoomPan();

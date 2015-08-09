@@ -349,7 +349,7 @@
    <xsl:template match="/tei:TEI/tei:teiHeader/tei:fileDesc">
       <div id="bibPanel">
          <xsl:attribute name="class">
-            <xsl:text>ui-widget-content ui-resizable panel mssPanel noDisplay</xsl:text>
+            <xsl:text>ui-widget-content ui-resizable panel noDisplay</xsl:text>
          </xsl:attribute>
          
          
@@ -481,7 +481,7 @@
       <xsl:if test="//tei:notesStmt/tei:note[@type='critIntro']">
          <div id="critPanel">
             <xsl:attribute name="class">
-               <xsl:text>ui-widget-content ui-resizable panel mssPanel noDisplay</xsl:text>
+               <xsl:text>ui-widget-content ui-resizable panel noDisplay</xsl:text>
             </xsl:attribute>
            
                <div class="panelBanner">
@@ -536,7 +536,7 @@
    <xsl:template name="notesPanel">
       <div id="notesPanel">
          <xsl:attribute name="class">
-            <xsl:text>ui-widget-content ui-resizable panel mssPanel noDisplay</xsl:text>
+            <xsl:text>ui-widget-content ui-resizable panel noDisplay</xsl:text>
          </xsl:attribute>
          
          <div class="panelBanner">
