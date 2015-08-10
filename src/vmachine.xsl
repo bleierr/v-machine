@@ -102,18 +102,6 @@
       </head>
    </xsl:template>
    
-   
-   
-   <xsl:template name="jsGlobalSettings">
-      <!-- The number of version/witness panels to be displayed initially -->
-      var initialVisibility = {};
-      initialVisibility["bibPanel"] = <xsl:value-of select="$displayBibInfo"></xsl:value-of>;
-      initialVisibility["versions"] = <xsl:value-of select="$versionsVisible" />;
-      initialVisibility["critPanel"] = <xsl:value-of select="$displayCritInfo"></xsl:value-of>;
-      initialVisibility["linenumber"] = <xsl:value-of select="$displayLineNumber"></xsl:value-of>;
-      initialVisibility["notesPanel"] = <xsl:value-of select="$displayNotesPanel"></xsl:value-of>;
-   </xsl:template>
-   
    <xsl:template name="mainBanner">
       <div id="mainBanner">
          <xsl:call-template name="brandingLogo" />

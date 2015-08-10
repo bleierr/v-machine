@@ -1,13 +1,28 @@
-/* Copyright (C) 1883 Thomas Edison - All Rights Reserved
- * You may use, distribute and modify this code under the
- * terms of the XYZ license, which unfortunately won't be
- * written for another century.
- *
- * You should have received a copy of the XYZ license with
- * this file. If not, please write to: , or visit :
- */
+/**
+	* @license vmachine.js for VM 5.0
+	* Updated: Aug 10 2015 by roman bleier
+	* Adds JS functionality to VM 5.0
+	* Copyright (c) 2015 roman bleier
+	* Released under the MIT license
+	* Permission is hereby granted, free of charge, to any person obtaining
+	* a copy of this software and associated documentation files (the
+	* "Software"), to deal in the Software without restriction, including
+	* without limitation the rights to use, copy, modify, merge, publish,
+	* distribute, sublicense, and/or sell copies of the Software, and to
+	* permit persons to whom the Software is furnished to do so, subject to
+	* the following conditions:
 
+	* The above copyright notice and this permission notice shall be
+	* included in all copies or substantial portions of the Software.
 
+	* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+	* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+	* NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+	* LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+	* OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+	* WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+	**/
 
 function moveToFront($that){
 	/*function to change the stack order of a JQuery panel element and adds it to the front of all visible panels*/
@@ -29,7 +44,7 @@ function totalPanelWidth(){
 }
 
 function PanelInPosXY(selector, top, left){
-	/* function to find if a panel/element is in the location left/top 
+	/** @PanelInPosXY function to find if a panel/element is in the location left/top 
 	*param selector: JQuery selector ( for instance to select all panels, or all visibal panels)
 	*param left: the left coordinates of the panel/element 
 	*param top: the top coordinates of the panel/element
@@ -48,31 +63,36 @@ function PanelInPosXY(selector, top, left){
 }
 
 function workspaceResize(){
-	/*plugin resizes the workspace depending on how many panels are visible, if panel is opened the workspace becomes larger, if a panel is closed it becomes smaller*/
+	/** @workspaceResize resizes the workspace depending on how many panels are visible, 
+	* if panel is opened the workspace becomes larger, 
+	* if a panel is closed it becomes smaller
+	*/
             var mssAreaWidth = $('#mssArea').width();
-            var w = totalPanelWidth();
+            var panelsWidth = totalPanelWidth();
 			var windowWidth = $(window).width();
-            if( windowWidth > w){
+            if( windowWidth > panelsWidth){
                 $('#mssArea').width(windowWidth);
+				mssAreaWidth = windowWidth;
             }
             else{
-                $('#mssArea').width(w+100);
+                $('#mssArea').width(panelsWidth + 100);
+				mssAreaWidth = panelsWidth + 100;
             }
-			/*move panel that is outside of workspace into workspace*/
-			$("div.panel").each(function(idx, element){
+			
+			/*moves panel that is outside of workspace into workspace*/
+			$("div.panel:not(.noDisplay)").each(function(idx, element){
 				$ele = $(element);
 				var l = $ele.position().left;
 				var t = $ele.position().top;
 				var w = $ele.width();
+				console.log(l);
 				
-				console.log("Left: "+l);
-				console.log("Top: "+t);
-				
-				if( (l + w) > windowWidth ){
-					$ele.offset({top:t, left:windowWidth-w});
+				if( (l + w) > mssAreaWidth ){
+					$ele.offset({top:t, left:mssAreaWidth-w});
 				}
 			});
-			/*height of workspace*/
+			
+			/* correct height of workspace*/
 			var panelHeight = 0;
 			$(".panel").each(function(idx, element){
 				var h = $(element).height();
@@ -144,9 +164,9 @@ $.fn.panelButtonClick = function() {
 			$("#"+dataPanelId).each(function(){
 					var top = $(this).css("top");
 					var left = $(this).css("left");
-					if(left === "auto" || top === "auto"){
+					if(left === "-1px" || top === "-1px"){
 						//if no panel is at default coordinate
-						if(top == "auto"){
+						if(top == "-1px"){
 							top = $("#mainBanner").height();
 						}
 						left = 0;
@@ -191,6 +211,15 @@ $.fn.changePanelVisibility = function(top,left) {
 	/* plugin to change the visibility of a panel and move it to different location
 	param top and left are the coordinates where the panel should be moved to*/
 	$(this).toggleClass("noDisplay");
+	
+	if( top === "-1px" || top === -1){
+		top = $("#mainBanner").height();
+	}
+	else if( left === "-1px" || left === -1 ){
+		left = 0;
+	
+	}
+	
 	if(!(top===undefined || left===undefined)){
 	
 		if($.type(top) === "string"){
@@ -362,21 +391,14 @@ $.fn.audioMatch = function() {
 		});
 };
 
-function initialSetup(keyword){
-	//The initialVisibility global can be set in settings.xsl
-	for (item in initialVisibility){
-		if(initialVisibility[item]){
-			return true;
-		}
-	}
-}
+/***** Initial setup of panels  *****/
 
 function bibPanel(){
 	var keyword = "bibPanel";
 	var panelPos = totalPanelWidth();
-	if(initialSetup(keyword)){
-		//bibPanel visible
-		$("#"+keyword).changePanelVisibility(0, panelPos);
+	if(INITIAL_DISPLAY_BIB_PANEL){
+		//bibPanel visible, constant INITIAL_DISPLAY_BIB_PANEL can be found in settings.xsl
+		$("#"+keyword).changePanelVisibility("-1px", panelPos);
 		$("nav *[data-panelid='"+ keyword +"']").toggleOnOffButton();
 	}	
 	$("#"+keyword).panelClick();
@@ -385,9 +407,10 @@ function bibPanel(){
 function notesPanel(){
 	var keyword = "notesPanel";
 	var panelPos = totalPanelWidth();
-	if(initialSetup(keyword)){
-		//notesPanel visible
-		$("#"+keyword).changePanelVisibility(0, panelPos);
+	
+	if(INITIAL_DISPLAY_NOTES_PANEL){
+		//notesPanel visible, constant INITIAL_DISPLAY_NOTES_PANEL can be found in settings.xsl
+		$("#"+keyword).changePanelVisibility("-1px", panelPos);
 		$("nav *[data-panelid='"+ keyword +"']").toggleOnOffButton();
 		$("#mssArea .noteicon").toggle();
 	}	
@@ -397,9 +420,9 @@ function notesPanel(){
 function critPanel(){
 	var keyword = "critPanel";
 	var panelPos = totalPanelWidth();
-	if(initialSetup(keyword)){
-		//critPanel visible
-		$("#"+keyword).changePanelVisibility(0, panelPos);
+	if(INITIAL_DISPLAY_CRIT_PANEL){
+		//critPanel visible, constant INITIAL_DISPLAY_CRIT_PANEL can be found in settings.xsl
+		$("#"+keyword).changePanelVisibility("-1px", panelPos);
 		$("nav *[data-panelid='"+ keyword +"']").toggleOnOffButton();
 	}	
 	$("#"+keyword).panelClick();
@@ -407,40 +430,35 @@ function critPanel(){
 }
 function linenumber(){
 	keyword = "linenumber";
-	if(initialSetup(keyword)){
-		//linenumbers visible
+	if(INITIAL_DISPLAY_LINENUMBERS){
+		//linenumbers visible, constant INITIAL_DISPLAY_LINENUMBERS can be found in settings.xsl
 		$(".linenumber").toggleClass("noDisplay");
 		$("nav li#linenumberOnOff").toggleOnOffButton();
 	}
 }
-
 function mssPanels(){
 	//initial setup
 	//open the witness/version panels
 	var keyword = "versions";
-	var versions = initialVisibility[keyword];
+	//manuscript panels visible, constant INITIAL_DISPLAY_NUM_VERSIONS can be found in settings.xsl
+	var versions = INITIAL_DISPLAY_NUM_VERSIONS;
 	$("#witnessList li").each(function(idx){
 				var panelPos = totalPanelWidth();
 				var wit = $(this).attr("data-panelid");
 				if(idx < versions){
-					$("#"+wit).changePanelVisibility(false, panelPos);
+					$("#"+wit).changePanelVisibility("-1px", panelPos);
 					$("*[data-panelid='"+wit+"']").toggleOnOffButton();
 				}	
 			});
 	//add functionality to manuscript panels
 	$(".mssPanel").panelClick();
 	$(".mssPanel").panelHover();
-	
 }
-
+/***** END initial setup of panels  *****/
 
 $(document).ready(function() {  
 	
 	/*****initial panel and visibility setup *****/
-	
-	var bannerHeight = $("#mainBanner").height();
-	
-	//The initialVisibility global can be set in settings.xsl
 	bibPanel();
 	mssPanels();
 	notesPanel();
@@ -469,20 +487,20 @@ $(document).ready(function() {
 	//create popup for note, choice, etc.
 	$("div.noteicon, div.choice, div.rdgGrp").hoverPopupNote();
 	
-	//adds the match line or apparatus highlighting
+	//adds match line/apparatus highlighting plugin
 	$(".apparatus").matchApp();
+	//adds match audio with transcription plugin
 	$(".apparatus").audioMatch();
 	
-	//add draggable and resizeable to all panels (img + mss)
+	/**add draggable and resizeable to all panels (img + mss)*/
 	$( ".panel" ).draggable({
 		containment: "parent",
 		zIndex: 6
 	}).resizable(
 	{helper: "ui-resizable-helper"}
 	);
-	
-	
-	//add functionality to image panels
+		
+	/**add functionality to image panels*/
 	$(".imgPanel").zoomPan();
 	$(".imgPanel").imgPanelHover();
 	$(".imgPanel").imgPanelMousedown();

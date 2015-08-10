@@ -2,9 +2,10 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="xs"
-    version="2.0">
-    
-    <xsl:variable name="indexPage">../../samples.html</xsl:variable>
+    version="1.0">
+      
+  <xsl:variable name="indexPage">../../samples.html</xsl:variable>
+  
   
   <xsl:variable name="vmImages">../../vm-images/</xsl:variable>
   <!-- include files in vm-images folder -->
@@ -21,56 +22,38 @@
   <xsl:variable name="cssInclude">../../src/vmachine.css</xsl:variable>
   <xsl:variable name="cssJQuery-UI">../../src/js/jquery-ui-1.11.3/jquery-ui.min.css</xsl:variable>
     
-    
-    <!-- The JavaScript include file. Keep in mind that, as of April 1, 2008,
-   the current beta version of Firefox 3.0 has instituted strong JavaScript
-   security policies that prevent the inclusion of any JS files from outside
-   of the current directory when loading a document from the local filesystem
-   (i.e., anything on your local computer not beginning with "http://").
-   Because of this, if you want to use the VM offline, you will need to
-   move the JavaScript includes into the same directory as your TEI documents,
-   and modify the filename below (for example, "../src/vmachine.js" becomes
-   "vmachine.js") -->
-    <xsl:variable name="jsInclude">../../src/vmachine.js</xsl:variable>
-    
-    <!-- JQuery include files -->
-    <xsl:variable name="jsJquery">../../src/js/jquery-1.11.2.min.js</xsl:variable>
-    <xsl:variable name="jsJquery-UI">../../src/js/jquery-ui-1.11.3/jquery-ui.min.js</xsl:variable>
-    
-    
-    <!-- The number of version/witness panels to be displayed initially -->
-  <xsl:variable name="versionsVisible">3</xsl:variable>
-    
-    <!-- To change the VM so that the bibliographic information page does not
-   appear at the initial load, change "true" to "false" below -->
-    <xsl:variable name="displayBibInfo">true</xsl:variable>
-    
-    <!-- critical information should be encoded as tei:notesStmt/tei:note[@type='critIntro'] in the TEI files -->
-  <!-- To change the VM so that the critical information page does not
-   appear at the initial load, change "true" to "false" below -->
-    <xsl:variable name="displayCritInfo">true</xsl:variable>
-    
-    <!-- To change the VM so that line numbers are hidden by default, change
-  "true" to "false" below -->
-    <xsl:variable name="displayLineNumber">true</xsl:variable>
+  <!-- The JavaScript include file. -->  
+  <xsl:variable name="jsInclude">../../src/vmachine.js</xsl:variable>
+      
+  <!-- JQuery include files -->  
+  <xsl:variable name="jsJquery">../../src/js/jquery-1.11.2.min.js</xsl:variable>   
+  <xsl:variable name="jsJquery-UI">../../src/js/jquery-ui-1.11.3/jquery-ui.min.js</xsl:variable>
   
+  <xsl:template name="jsGlobalSettings">
+    <!-- The number of version/witness panels to be displayed initially -->
+    /*NOTES PANEL: To change the VM so that the notes panel page does not
+    appear at the initial load, change the constant INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */
+    INITIAL_DISPLAY_NOTES_PANEL = true;
     
-    <xsl:variable name="displayNotesPanel">false</xsl:variable>
+    /*BIB PANEL: To change the VM so that the bibliographic information page does not
+    appear at the initial load, change the constant INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */
+    INITIAL_DISPLAY_BIB_PANEL = true;
     
-    
-    <!-- To change the VM's default method of displaying notes, modify the
-   following variable:
-      - popup: Popup footnote icons
-      - inline: Inline note viewer panel
-      - none: Hide notes
-   -->
-    
-    
-    
-   
+    /**The number of version/witness panels to be displayed initially */
+    INITIAL_DISPLAY_NUM_VERSIONS = 3;
     
     
+    /** CRIT PANEL: Critical information should be encoded as tei:notesStmt/tei:note[@type='critIntro'] in the TEI files -->
+    * To change the VM so that the critical information page does not
+    * appear at the initial load, change the constant INITIAL_DISPLAY_CRIT_PANEL from "true" to "false" */
+    INITIAL_DISPLAY_CRIT_PANEL = true;
     
     
+    /** To change the VM so that line numbers are hidden by default, change the constant INITIAL_DISPLAY_LINENUMBERS from
+      * "true" to "false" below */
+    INITIAL_DISPLAY_LINENUMBERS = true;
+    
+  </xsl:template>
+  
     
 </xsl:stylesheet>
