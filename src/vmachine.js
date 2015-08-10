@@ -51,9 +51,7 @@ function PanelInPosXY(selector, top, left){
 	*/
 	panelPresent = false;
 	$(selector).each(function(){
-			console.log("left top " + left + " " + top );
 			var pos = $(this).position();
-			console.log("pos left top " + pos.left + " " + pos.top );
 			if(pos.left == left && pos.top == top){
 					panelPresent = true;
 			}
@@ -85,8 +83,7 @@ function workspaceResize(){
 				var l = $ele.position().left;
 				var t = $ele.position().top;
 				var w = $ele.width();
-				console.log(l);
-				
+
 				if( (l + w) > mssAreaWidth ){
 					$ele.offset({top:t, left:mssAreaWidth-w});
 				}
@@ -176,8 +173,6 @@ $.fn.panelButtonClick = function() {
 							left += 50;
 						}
 					}
-					console.log(top);
-					console.log(left);
 					$(this).changePanelVisibility(top, left);
 					moveToFront($(this));
 				});		
@@ -351,13 +346,27 @@ $.fn.hoverPopupNote = function() {
 		//the location of the note content has to be added to the find method
 		var noteContent = $(this).find("div.note, div.corr, span.altRdg").html();
 		
-		$("#showNote").html(noteContent);
-		$("#showNote").css({
+		$showNote = $("#showNote");
+		
+		$showNote.html(noteContent);
+		$showNote.css({
 			"position": "absolute",
 			"top": e.pageY + 5,
 			"left": e.pageX + 5,
 		}).show();
-	
+		
+		console.log("Note height" + $showNote.height() );
+		console.log("Innerdocument height" + window.innerHeight );
+		console.log("PageY" + e.pageY );
+		
+		if((e.pageY + $showNote.height()) > window.innerHeight){
+			$showNote.css({
+				"left": "auto",
+				"right": window.innerWidth - e.pageX
+			});
+		}
+		
+		
 	}, function(e){
 		/* on hover out hide the note */
 		$("#showNote").hide();

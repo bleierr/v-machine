@@ -1,4 +1,4 @@
-body { background: #F5FCFF; color: #333666; }
+/*body { background: #F5FCFF; color: #333666; }*/
 div.section { text-align: center; margin: 0; }
 
 .item-images{
@@ -10,8 +10,8 @@ float:left;
 position:absolute;
 bottom:0;
 left:0;
-height:25px;
-padding:10px 0px;
+/*height:25px;
+padding:10px 0px;*/
 overflow:hidden;
 background:#fff;
 z-index:10;
@@ -28,7 +28,7 @@ overflow:visible;
 }
 .zoom-range{
 	width: 30%;
-	margin: auto;
+	/*margin: auto;*/
 }
 .viewerContent .buttons button{
 	cursor:pointer;
