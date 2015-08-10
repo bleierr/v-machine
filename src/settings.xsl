@@ -29,6 +29,11 @@
   <xsl:variable name="jsJquery">../../src/js/jquery-1.11.2.min.js</xsl:variable>   
   <xsl:variable name="jsJquery-UI">../../src/js/jquery-ui-1.11.3/jquery-ui.min.js</xsl:variable>
   
+  <!-- ZoomPan files -->
+  
+  <xsl:variable name="cssJQueryZoomPan">../../src/panzoom/panzoom.css</xsl:variable>
+  <xsl:variable name="jsJqueryZoomPan">../../src/panzoom/jquery.panzoom.min.js</xsl:variable>
+  
   <xsl:template name="jsGlobalSettings">
     <!-- The number of version/witness panels to be displayed initially -->
     /*NOTES PANEL: To change the VM so that the notes panel page does not

@@ -80,10 +80,17 @@
          </script>
          
          
-         <!-- RB: JS and CSS files for the zoom and pan effect -->
-         <!-- RB: jquery.panzoom plugin from https://github.com/timmywil/jquery.panzoom -->
-         <link rel="stylesheet" type="text/css" href="../../src/panzoom/panzoom.css"></link>
-         <script src="../../src/panzoom/jquery.panzoom.min.js" type="text/javascript">//</script>
+         <!-- jquery.panzoom plugin from https://github.com/timmywil/jquery.panzoom -->
+         <link rel="stylesheet" type="text/css">
+            <xsl:attribute name="href">
+               <xsl:value-of select="$cssJQueryZoomPan" />
+            </xsl:attribute>
+         </link>
+         <script type="text/javascript">
+            <xsl:attribute name="src">
+               <xsl:value-of select="$jsJqueryZoomPan" />
+            </xsl:attribute>
+         </script>
         
         
          <script type="text/javascript">
@@ -94,7 +101,7 @@
          </script>
          
          <script type="text/javascript">
-            <!-- custom JS file -->
+            <!-- custom JS file has to be added after the Global JS settings-->
             <xsl:attribute name="src">
                <xsl:value-of select="$jsInclude" />
             </xsl:attribute>
