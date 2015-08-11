@@ -1,35 +1,35 @@
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:util="customfunction" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
    <head>
       <title>"Faith is a fine invention" -- The Versioning Machine 5.0</title>
       <meta charset="utf-8"></meta>
       <link rel="stylesheet" type="text/css" href="../../src/vmachine.css"></link>
       <link rel="stylesheet" type="text/css" href="../../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="../../src/panzoom/panzoom.css"></link><script type="text/javascript" src="../../src/panzoom/jquery.panzoom.min.js"></script><script type="text/javascript">
-    
-    /*NOTES PANEL: To change the VM so that the notes panel page does not
-    appear at the initial load, change the constant INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */
-    INITIAL_DISPLAY_NOTES_PANEL = true;
-    
-    /*BIB PANEL: To change the VM so that the bibliographic information page does not
-    appear at the initial load, change the constant INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */
-    INITIAL_DISPLAY_BIB_PANEL = true;
-    
-    /**The number of version/witness panels to be displayed initially */
-    INITIAL_DISPLAY_NUM_VERSIONS = 3;
-    
-    
-    /** CRIT PANEL: Critical information should be encoded as tei:notesStmt/tei:note[@type='critIntro'] in the TEI files --&gt;
-    * To change the VM so that the critical information page does not
-    * appear at the initial load, change the constant INITIAL_DISPLAY_CRIT_PANEL from "true" to "false" */
-    INITIAL_DISPLAY_CRIT_PANEL = true;
-    
-    
-    /** To change the VM so that line numbers are hidden by default, change the constant INITIAL_DISPLAY_LINENUMBERS from
+      
+      /*NOTES PANEL: To change the VM so that the notes panel page does not
+      appear at the initial load, change the constant INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */
+      INITIAL_DISPLAY_NOTES_PANEL = true;
+      
+      /*BIB PANEL: To change the VM so that the bibliographic information page does not
+      appear at the initial load, change the constant INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */
+      INITIAL_DISPLAY_BIB_PANEL = true;
+      
+      /**The number of version/witness panels to be displayed initially */
+      INITIAL_DISPLAY_NUM_VERSIONS = 10;
+      
+      
+      /** CRIT PANEL: Critical information should be encoded as tei:notesStmt/tei:note[@type='critIntro'] in the TEI files --&gt;
+      * To change the VM so that the critical information page does not
+      * appear at the initial load, change the constant INITIAL_DISPLAY_CRIT_PANEL from "true" to "false" */
+      INITIAL_DISPLAY_CRIT_PANEL = false;
+      
+      
+      /** To change the VM so that line numbers are hidden by default, change the constant INITIAL_DISPLAY_LINENUMBERS from
       * "true" to "false" below */
-    INITIAL_DISPLAY_LINENUMBERS = true;
-    
-  var timelinePoints = new Array();var timelineDurations = new Array();</script><script type="text/javascript" src="../../src/vmachine.js"></script></head>
+      INITIAL_DISPLAY_LINENUMBERS = false;
+      
+   var timelinePoints = new Array();var timelineDurations = new Array();</script><script type="text/javascript" src="../../src/vmachine.js"></script></head>
    <body>
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../../vm-images/LogoSilver.png"></img></div>

@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0" exclude-result-prefixes="tei"
    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
    xmlns:tei="http://www.tei-c.org/ns/1.0"
-   xmlns="http://www.w3.org/1999/xhtml" xmlns:util="customfunction">
+   xmlns="http://www.w3.org/1999/xhtml">
    
    <!--Old doctype declaration-->
    <!--<xsl:output method="html" version="4.01" encoding="utf-8" indent="yes" doctype-system="http://www.w3.org/TR/html4/strict.dtd" doctype-public="-//W3C//DTD HTML 4.01//EN" />-->
@@ -12,7 +12,7 @@
 
    <!-- <xsl:strip-space elements="*" /> -->
    
-   <xsl:include href="settings.xsl" />
+   <xsl:include href="settings.xsl" /> 
    
    <xsl:variable name="fullTitle">
       <xsl:choose>
@@ -60,7 +60,6 @@
             </xsl:attribute>
          </link>
          
-         
          <!-- JQuery and JQuery UI libraries references -->
          <link rel="stylesheet" type="text/css">
             <xsl:attribute name="href">
@@ -107,6 +106,32 @@
             </xsl:attribute>
          </script>
       </head>
+   </xsl:template>
+   
+   <xsl:template name="jsGlobalSettings">
+      <!-- INITIAL SETUP: panel display, line numbers, etc. -->
+      /*NOTES PANEL: To change the VM so that the notes panel page does not
+      appear at the initial load, change the constant INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */
+      INITIAL_DISPLAY_NOTES_PANEL = <xsl:value-of select="$displayNotes"/>;
+      
+      /*BIB PANEL: To change the VM so that the bibliographic information page does not
+      appear at the initial load, change the constant INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */
+      INITIAL_DISPLAY_BIB_PANEL = <xsl:value-of select="$displayBibInfo"/>;
+      
+      /**The number of version/witness panels to be displayed initially */
+      INITIAL_DISPLAY_NUM_VERSIONS = <xsl:value-of select="$displayVersions"/>;
+      
+      
+      /** CRIT PANEL: Critical information should be encoded as tei:notesStmt/tei:note[@type='critIntro'] in the TEI files -->
+      * To change the VM so that the critical information page does not
+      * appear at the initial load, change the constant INITIAL_DISPLAY_CRIT_PANEL from "true" to "false" */
+      INITIAL_DISPLAY_CRIT_PANEL = <xsl:value-of select="$displayCritInfo"/>;
+      
+      
+      /** To change the VM so that line numbers are hidden by default, change the constant INITIAL_DISPLAY_LINENUMBERS from
+      * "true" to "false" below */
+      INITIAL_DISPLAY_LINENUMBERS = <xsl:value-of select="$displayLineNumbers"/>;
+      
    </xsl:template>
    
    <xsl:template name="mainBanner">

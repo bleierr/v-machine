@@ -6,7 +6,6 @@
       
   <xsl:variable name="indexPage">../../samples.html</xsl:variable>
   
-  
   <xsl:variable name="vmImages">../../vm-images/</xsl:variable>
   <!-- include files in vm-images folder -->
   <xsl:variable name="vmLogo"><xsl:value-of select="$vmImages"/><xsl:text>LogoSilver.png</xsl:text></xsl:variable>
@@ -33,32 +32,27 @@
   
   <xsl:variable name="cssJQueryZoomPan">../../src/panzoom/panzoom.css</xsl:variable>
   <xsl:variable name="jsJqueryZoomPan">../../src/panzoom/jquery.panzoom.min.js</xsl:variable>
+    
+  <!-- VM initial setup modifications -->
+  <!-- NOTES PANEL: To change the VM so that the notes panel page does not
+    appear at the initial load, change the below variable value from "true" to "false" below -->
+    <xsl:variable name="displayNotes">true</xsl:variable>
   
-  <xsl:template name="jsGlobalSettings">
-    <!-- The number of version/witness panels to be displayed initially -->
-    /*NOTES PANEL: To change the VM so that the notes panel page does not
-    appear at the initial load, change the constant INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */
-    INITIAL_DISPLAY_NOTES_PANEL = true;
-    
-    /*BIB PANEL: To change the VM so that the bibliographic information page does not
-    appear at the initial load, change the constant INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */
-    INITIAL_DISPLAY_BIB_PANEL = true;
-    
-    /**The number of version/witness panels to be displayed initially */
-    INITIAL_DISPLAY_NUM_VERSIONS = 3;
-    
-    
-    /** CRIT PANEL: Critical information should be encoded as tei:notesStmt/tei:note[@type='critIntro'] in the TEI files -->
-    * To change the VM so that the critical information page does not
-    * appear at the initial load, change the constant INITIAL_DISPLAY_CRIT_PANEL from "true" to "false" */
-    INITIAL_DISPLAY_CRIT_PANEL = true;
-    
-    
-    /** To change the VM so that line numbers are hidden by default, change the constant INITIAL_DISPLAY_LINENUMBERS from
-      * "true" to "false" below */
-    INITIAL_DISPLAY_LINENUMBERS = true;
-    
-  </xsl:template>
+  <!-- BIB PANEL: To change the VM so that the bibliographic information page does not
+    appear at the initial load, change the below variable value from "true" to "false" below -->
+    <xsl:variable name="displayBibInfo">true</xsl:variable>
+  
+  <!-- The number of version/witness panels to be displayed initially can be modified by changing the number below -->
+  <xsl:variable name="displayVersions">10</xsl:variable>
+  
+  <!-- CRIT PANEL: Critical information should be encoded as tei:notesStmt/tei:note[@type='critIntro'] in the TEI files
+    To change the VM so that the critical information page does not appear at the initial load 
+    change the variable value from "true" to "false" -->
+  <xsl:variable name="displayCritInfo">false</xsl:variable>
+  
+  <!-- To change the VM so that line numbers are hidden by default, change the variable below from
+       "true" to "false" -->
+  <xsl:variable name="displayLineNumbers">false</xsl:variable>
   
     
 </xsl:stylesheet>
