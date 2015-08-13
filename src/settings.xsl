@@ -4,9 +4,9 @@
     exclude-result-prefixes="xs"
     version="2.0">
       
-  <xsl:variable name="indexPage">../../samples.html</xsl:variable>
+  <xsl:variable name="indexPage">../samples.html</xsl:variable>
   
-  <xsl:variable name="vmImages">../../vm-images/</xsl:variable>
+  <xsl:variable name="vmImages">../vm-images/</xsl:variable>
   <!-- include files in vm-images folder -->
   <xsl:variable name="vmLogo"><xsl:value-of select="$vmImages"/><xsl:text>LogoSilver.png</xsl:text></xsl:variable>
   <xsl:variable name="menuArrowUp"><xsl:value-of select="$vmImages"/><xsl:text>arrowup.png</xsl:text></xsl:variable>
@@ -18,32 +18,32 @@
   <xsl:variable name="facsImageFolder">../</xsl:variable>  
   
   <!-- include file form src folder -->
-  <xsl:variable name="cssInclude">../../src/vmachine.css</xsl:variable>
-  <xsl:variable name="cssJQuery-UI">../../src/js/jquery-ui-1.11.3/jquery-ui.min.css</xsl:variable>
+  <xsl:variable name="cssInclude">../src/vmachine.css</xsl:variable>
+  <xsl:variable name="cssJQuery-UI">../src/js/jquery-ui-1.11.3/jquery-ui.min.css</xsl:variable>
     
   <!-- The JavaScript include file. -->  
-  <xsl:variable name="jsInclude">../../src/vmachine.js</xsl:variable>
+  <xsl:variable name="jsInclude">../src/vmachine.js</xsl:variable>
       
   <!-- JQuery include files -->  
-  <xsl:variable name="jsJquery">../../src/js/jquery-1.11.2.min.js</xsl:variable>   
-  <xsl:variable name="jsJquery-UI">../../src/js/jquery-ui-1.11.3/jquery-ui.min.js</xsl:variable>
+  <xsl:variable name="jsJquery">../src/js/jquery-1.11.2.min.js</xsl:variable>   
+  <xsl:variable name="jsJquery-UI">../src/js/jquery-ui-1.11.3/jquery-ui.min.js</xsl:variable>
   
   <!-- ZoomPan files -->
   
-  <xsl:variable name="cssJQueryZoomPan">../../src/panzoom/panzoom.css</xsl:variable>
-  <xsl:variable name="jsJqueryZoomPan">../../src/panzoom/jquery.panzoom.min.js</xsl:variable>
+  <xsl:variable name="cssJQueryZoomPan">../src/panzoom/panzoom.css</xsl:variable>
+  <xsl:variable name="jsJqueryZoomPan">../src/panzoom/jquery.panzoom.min.js</xsl:variable>
     
   <!-- VM initial setup modifications -->
   <!-- NOTES PANEL: To change the VM so that the notes panel page does not
     appear at the initial load, change the below variable value from "true" to "false" below -->
-    <xsl:variable name="displayNotes">true</xsl:variable>
+    <xsl:variable name="displayNotes">false</xsl:variable>
   
   <!-- BIB PANEL: To change the VM so that the bibliographic information page does not
     appear at the initial load, change the below variable value from "true" to "false" below -->
     <xsl:variable name="displayBibInfo">true</xsl:variable>
   
   <!-- The number of version/witness panels to be displayed initially can be modified by changing the number below -->
-  <xsl:variable name="displayVersions">10</xsl:variable>
+  <xsl:variable name="displayVersions">2</xsl:variable>
   
   <!-- CRIT PANEL: Critical information should be encoded as tei:notesStmt/tei:note[@type='critIntro'] in the TEI files
     To change the VM so that the critical information page does not appear at the initial load 
@@ -52,7 +52,7 @@
   
   <!-- To change the VM so that line numbers are hidden by default, change the variable below from
        "true" to "false" -->
-  <xsl:variable name="displayLineNumbers">false</xsl:variable>
+  <xsl:variable name="displayLineNumbers">true</xsl:variable>
   
     
 </xsl:stylesheet>

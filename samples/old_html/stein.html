@@ -1,0 +1,1436 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+   <head>
+      <title>A CARAFE, THAT IS A BLIND GLASS -- The Versioning Machine 5.0</title>
+      <meta charset="utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="../../src/vmachine.css"></link>
+      <link rel="stylesheet" type="text/css" href="../../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="../../src/panzoom/panzoom.css"></link><script type="text/javascript" src="../../src/panzoom/jquery.panzoom.min.js"></script><script type="text/javascript">
+      
+      /*NOTES PANEL: To change the VM so that the notes panel page does not
+      appear at the initial load, change the constant INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */
+      INITIAL_DISPLAY_NOTES_PANEL = true;
+      
+      /*BIB PANEL: To change the VM so that the bibliographic information page does not
+      appear at the initial load, change the constant INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */
+      INITIAL_DISPLAY_BIB_PANEL = true;
+      
+      /**The number of version/witness panels to be displayed initially */
+      INITIAL_DISPLAY_NUM_VERSIONS = 10;
+      
+      
+      /** CRIT PANEL: Critical information should be encoded as tei:notesStmt/tei:note[@type='critIntro'] in the TEI files --&gt;
+      * To change the VM so that the critical information page does not
+      * appear at the initial load, change the constant INITIAL_DISPLAY_CRIT_PANEL from "true" to "false" */
+      INITIAL_DISPLAY_CRIT_PANEL = false;
+      
+      
+      /** To change the VM so that line numbers are hidden by default, change the constant INITIAL_DISPLAY_LINENUMBERS from
+      * "true" to "false" below */
+      INITIAL_DISPLAY_LINENUMBERS = false;
+      
+   var timelinePoints = new Array();
+timelinePoints['mlrp_1']=0;
+timelinePoints['mlrp_2']=2.25;
+timelinePoints['mlrp_3']=3.5;
+timelinePoints['mlrp_4']=6.5;
+timelinePoints['mlrp_5']=7.5;
+timelinePoints['mlrp_6']=8.5;
+timelinePoints['mlrp_7']=10.5;
+timelinePoints['mlrp_8']=11.75;
+timelinePoints['mlrp_9']=13;
+timelinePoints['mlrp_10']=14.5;
+timelinePoints['mlrp_11']=15.75;
+timelinePoints['mlrp_12']=16.5;
+timelinePoints['mlrp_13']=18;
+timelinePoints['mlrp_14']=19.25;
+timelinePoints['mlrp_15']=20.25;
+timelinePoints['mlrp_16']=21.5;
+timelinePoints['mlrp_17']=23;
+timelinePoints['mlrp_18']=24.75;
+timelinePoints['mlrp_19']=26.25;
+timelinePoints['mlre_1']=0;
+timelinePoints['mlre_2']=2.25;
+timelinePoints['mlre_3']=3.5;
+timelinePoints['mlre_4']=4.75;
+timelinePoints['mlre_5']=6;
+timelinePoints['mlre_6']=7.25;
+timelinePoints['mlre_7']=8.5;
+timelinePoints['mlre_8']=9.75;
+timelinePoints['mlre_9']=11;
+timelinePoints['mlre_10']=12.25;
+timelinePoints['mlre_11']=13.5;
+timelinePoints['mlre_12']=14.75;
+timelinePoints['mlre_13']=16;
+timelinePoints['mlre_14']=17.25;
+timelinePoints['mlre_15']=18.5;
+timelinePoints['mlre_16']=19.75;
+timelinePoints['mlre_17']=21;
+timelinePoints['mlre_18']=22.25;
+timelinePoints['mlre_19']=23.5;
+timelinePoints['mlre_20']=24.75;
+timelinePoints['mlre_21']=26;
+timelinePoints['mlre_22']=27.25;
+timelinePoints['mlre_23']=28.5;
+timelinePoints['mlre_24']=29.75;
+timelinePoints['mlre_25']=31;
+timelinePoints['mlre_26']=32.25;
+timelinePoints['mlre_27']=33.5;
+timelinePoints['mlre_28']=34.75;
+timelinePoints['mlre_29']=36;
+timelinePoints['mlre_30']=37.25;
+timelinePoints['mlre_31']=38.5;
+timelinePoints['mlre_32']=39.75;
+timelinePoints['mlre_33']=41;
+timelinePoints['mlre_34']=42.25;
+timelinePoints['mlre_35']=43.5;
+timelinePoints['mlre_36']=44.75;
+timelinePoints['mlre_37']=46;
+timelinePoints['mlre_38']=47.25;
+timelinePoints['mlre_39']=48.5;
+timelinePoints['mlre_40']=49.75;
+timelinePoints['mlre_41']=51;
+timelinePoints['mlre_42']=52.25;
+timelinePoints['mlre_43']=53.5;
+timelinePoints['mlre_44']=54.75;
+timelinePoints['mlre_45']=56;
+timelinePoints['mlre_46']=57.25;
+timelinePoints['mlre_47']=58.5;
+timelinePoints['mlre_48']=59.75;
+timelinePoints['mlre_49']=61;
+timelinePoints['mlre_50']=62.25;
+timelinePoints['mlre_51']=63.5;
+timelinePoints['mlre_52']=64.75;
+timelinePoints['mlre_53']=66;
+timelinePoints['mlre_54']=67.25;
+timelinePoints['mlre_55']=68.5;
+timelinePoints['mlre_56']=69.75;
+timelinePoints['mlre_57']=71;
+timelinePoints['mlre_58']=72.25;
+timelinePoints['mlre_59']=73.5;
+timelinePoints['mlre_60']=74.75;
+timelinePoints['mlre_61']=76;
+timelinePoints['mlre_62']=77.25;
+timelinePoints['mlre_63']=78.5;
+timelinePoints['mlre_64']=79.75;
+timelinePoints['mlre_65']=81;
+timelinePoints['mlre_66']=82.25;
+timelinePoints['mlre_67']=83.5;
+timelinePoints['mlre_68']=84.75;
+timelinePoints['mlre_69']=86;
+timelinePoints['mlre_70']=87.25;
+timelinePoints['mlre_71']=88.5;
+timelinePoints['mlre_72']=89.75;
+timelinePoints['mlre_73']=91;
+timelinePoints['mlre_74']=92.25;
+timelinePoints['mlre_75']=93.5;
+timelinePoints['mlre_76']=94.75;
+timelinePoints['mlre_77']=96;
+timelinePoints['mlre_78']=97.25;
+timelinePoints['mlre_79']=98.5;
+timelinePoints['mlre_80']=99.75;
+timelinePoints['mlre_81']=101;
+timelinePoints['mlre_82']=102.25;
+timelinePoints['mlre_83']=103.5;
+timelinePoints['mlre_84']=104.75;
+timelinePoints['mlre_85']=106;
+timelinePoints['mlre_86']=107.25;
+timelinePoints['mlre_87']=108.5;
+timelinePoints['mlre_88']=109.75;
+timelinePoints['mlre_89']=111;
+timelinePoints['mlre_90']=112.25;
+timelinePoints['mlre_91']=113.5;
+timelinePoints['mlre_92']=114.75;
+timelinePoints['mlre_93']=116;
+timelinePoints['mlre_94']=117.25;
+timelinePoints['mlre_95']=118.5;
+timelinePoints['mlre_96']=119.75;
+timelinePoints['mlre_97']=121;
+timelinePoints['mlre_98']=122.25;
+timelinePoints['mlre_99']=123.5;
+timelinePoints['mlre_100']=124.75;
+timelinePoints['mlre_101']=126;
+timelinePoints['mlre_102']=127.25;
+timelinePoints['mlre_103']=128.5;
+timelinePoints['mlre_104']=129.75;
+timelinePoints['mlre_105']=131;
+timelinePoints['mlre_106']=132.25;
+timelinePoints['mlre_107']=133.5;
+timelinePoints['mlre_108']=134.75;
+timelinePoints['mlre_109']=136;
+timelinePoints['mlre_110']=137.25;
+timelinePoints['mlre_111']=138.5;
+timelinePoints['mlre_112']=139.75;
+timelinePoints['mlre_113']=141;
+timelinePoints['mlre_114']=142.25;
+timelinePoints['mlre_115']=143.5;
+timelinePoints['mlre_116']=144.75;var timelineDurations = new Array();
+timelineDurations['mlrp_1']=0;
+timelineDurations['mlrp_1']=2.25;
+timelineDurations['mlrp_2']=1.25;
+timelineDurations['mlrp_3']=3;
+timelineDurations['mlrp_4']=1;
+timelineDurations['mlrp_5']=1;
+timelineDurations['mlrp_6']=2;
+timelineDurations['mlrp_7']=1.25;
+timelineDurations['mlrp_8']=1.25;
+timelineDurations['mlrp_9']=1.5;
+timelineDurations['mlrp_10']=1.25;
+timelineDurations['mlrp_11']=.75;
+timelineDurations['mlrp_12']=1.5;
+timelineDurations['mlrp_13']=1.25;
+timelineDurations['mlrp_14']=1;
+timelineDurations['mlrp_15']=1.25;
+timelineDurations['mlrp_16']=1.5;
+timelineDurations['mlrp_17']=1.75;
+timelineDurations['mlrp_18']=1.5;
+timelineDurations['mlre_1']=0;
+timelineDurations['mlre_1']=2.25;
+timelineDurations['mlre_2']=1.25;
+timelineDurations['mlre_3']=1.25;
+timelineDurations['mlre_4']=1.25;
+timelineDurations['mlre_5']=1.25;
+timelineDurations['mlre_6']=1.25;
+timelineDurations['mlre_7']=1.25;
+timelineDurations['mlre_8']=1.25;
+timelineDurations['mlre_9']=1.25;
+timelineDurations['mlre_10']=1.25;
+timelineDurations['mlre_11']=1.25;
+timelineDurations['mlre_12']=1.25;
+timelineDurations['mlre_13']=1.25;
+timelineDurations['mlre_14']=1.25;
+timelineDurations['mlre_15']=1.25;
+timelineDurations['mlre_16']=1.25;
+timelineDurations['mlre_17']=1.25;
+timelineDurations['mlre_18']=1.25;
+timelineDurations['mlre_19']=1.25;
+timelineDurations['mlre_20']=1.25;
+timelineDurations['mlre_21']=1.25;
+timelineDurations['mlre_22']=1.25;
+timelineDurations['mlre_23']=1.25;
+timelineDurations['mlre_24']=1.25;
+timelineDurations['mlre_25']=1.25;
+timelineDurations['mlre_26']=1.25;
+timelineDurations['mlre_27']=1.25;
+timelineDurations['mlre_28']=1.25;
+timelineDurations['mlre_29']=1.25;
+timelineDurations['mlre_30']=1.25;
+timelineDurations['mlre_31']=1.25;
+timelineDurations['mlre_32']=1.25;
+timelineDurations['mlre_33']=1.25;
+timelineDurations['mlre_34']=1.25;
+timelineDurations['mlre_35']=1.25;
+timelineDurations['mlre_36']=1.25;
+timelineDurations['mlre_37']=1.25;
+timelineDurations['mlre_38']=1.25;
+timelineDurations['mlre_39']=1.25;
+timelineDurations['mlre_40']=1.25;
+timelineDurations['mlre_41']=1.25;
+timelineDurations['mlre_42']=1.25;
+timelineDurations['mlre_43']=1.25;
+timelineDurations['mlre_44']=1.25;
+timelineDurations['mlre_45']=1.25;
+timelineDurations['mlre_46']=1.25;
+timelineDurations['mlre_47']=1.25;
+timelineDurations['mlre_48']=1.25;
+timelineDurations['mlre_49']=1.25;
+timelineDurations['mlre_50']=1.25;
+timelineDurations['mlre_51']=1.25;
+timelineDurations['mlre_52']=1.25;
+timelineDurations['mlre_53']=1.25;
+timelineDurations['mlre_54']=1.25;
+timelineDurations['mlre_55']=1.25;
+timelineDurations['mlre_56']=1.25;
+timelineDurations['mlre_57']=1.25;
+timelineDurations['mlre_58']=1.25;
+timelineDurations['mlre_59']=1.25;
+timelineDurations['mlre_60']=1.25;
+timelineDurations['mlre_61']=1.25;
+timelineDurations['mlre_62']=1.25;
+timelineDurations['mlre_63']=1.25;
+timelineDurations['mlre_64']=1.25;
+timelineDurations['mlre_65']=1.25;
+timelineDurations['mlre_66']=1.25;
+timelineDurations['mlre_67']=1.25;
+timelineDurations['mlre_68']=1.25;
+timelineDurations['mlre_69']=1.25;
+timelineDurations['mlre_70']=1.25;
+timelineDurations['mlre_71']=1.25;
+timelineDurations['mlre_72']=1.25;
+timelineDurations['mlre_73']=1.25;
+timelineDurations['mlre_74']=1.25;
+timelineDurations['mlre_75']=1.25;
+timelineDurations['mlre_76']=1.25;
+timelineDurations['mlre_77']=1.25;
+timelineDurations['mlre_78']=1.25;
+timelineDurations['mlre_79']=1.25;
+timelineDurations['mlre_80']=1.25;
+timelineDurations['mlre_81']=1.25;
+timelineDurations['mlre_82']=1.25;
+timelineDurations['mlre_83']=1.25;
+timelineDurations['mlre_84']=1.25;
+timelineDurations['mlre_85']=1.25;
+timelineDurations['mlre_86']=1.25;
+timelineDurations['mlre_87']=1.25;
+timelineDurations['mlre_88']=1.25;
+timelineDurations['mlre_89']=1.25;
+timelineDurations['mlre_90']=1.25;
+timelineDurations['mlre_91']=1.25;
+timelineDurations['mlre_92']=1.25;
+timelineDurations['mlre_93']=1.25;
+timelineDurations['mlre_94']=1.25;
+timelineDurations['mlre_95']=1.25;
+timelineDurations['mlre_96']=1.25;
+timelineDurations['mlre_97']=1.25;
+timelineDurations['mlre_98']=1.25;
+timelineDurations['mlre_99']=1.25;
+timelineDurations['mlre_100']=1.25;
+timelineDurations['mlre_101']=1.25;
+timelineDurations['mlre_102']=1.25;
+timelineDurations['mlre_103']=1.25;
+timelineDurations['mlre_104']=1.25;
+timelineDurations['mlre_105']=1.25;
+timelineDurations['mlre_106']=1.25;
+timelineDurations['mlre_107']=1.25;
+timelineDurations['mlre_108']=1.25;
+timelineDurations['mlre_109']=1.25;
+timelineDurations['mlre_110']=1.25;
+timelineDurations['mlre_111']=1.25;
+timelineDurations['mlre_112']=1.25;
+timelineDurations['mlre_113']=1.25;
+timelineDurations['mlre_114']=1.25;
+timelineDurations['mlre_115']=1.25;</script><script type="text/javascript" src="../../src/vmachine.js"></script></head>
+   <body>
+      <div id="mainBanner">
+         <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../../vm-images/LogoSilver.png"></img></div>
+         <div id="headline">
+            <h1>A CARAFE, THAT IS A BLIND GLASS</h1>
+         </div>
+         <nav id="mainControls">
+            <ul>
+               <li><button id="selectWitness" class="topMenuButton dropdownButton">3 Total Versions<img class="noDisplay" src="../../vm-images/arrowup.png" alt="arrow up"></img><img src="../../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="witnessList" class="dropdown notVisible">
+                     <li data-panelid="poem">
+                        <div class="listText">
+                           <div>A CARAFE, THAT IS A BLIND GLASS</div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="essay">
+                        <div class="listText">
+                           <div>Reading a Selection from Tender Buttons</div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="reading_poem">
+                        <div class="listText">
+                           <div>Mac Low Reading, 1990</div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
+               <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
+               <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
+               <li data-panelid="critPanel"><button class="topMenuButton listText" title="Clicking this button triggers the critical introduction panel to appear or disappear.">Critical introduction</button></li>
+            </ul>
+         </nav>
+      </div>
+      <div id="mssArea">
+         <div id="bibPanel" class="ui-widget-content ui-resizable panel noDisplay">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>
+               Bibliographic Information
+               
+            </div>
+            <div class="bibContent">
+               <h2>A CARAFE, THAT IS A BLIND GLASS</h2>
+               <h4>Original Source</h4>
+               
+               
+               
+               "A CARAFE, THAT IS A BLIND GLASS" is transcribed from the 1914
+               Marie Claire edition of Tender Buttons. "Reading a Selection from Tender
+               Buttons" is transcribed from Language no. 6, and the audio of Jackson Mac
+               Low is housed by and used with permission from <a class="link" href="http://writing.upenn.edu/pennsound/x/Mac-Low.php">PennSound</a>.
+               
+               
+               
+               
+               <h4>Witness List</h4>
+               <ul>
+                  <li><strong>Witness poem:</strong> A CARAFE, THAT IS A BLIND GLASS
+                  </li>
+                  <li><strong>Witness essay:</strong> Reading a Selection from Tender Buttons
+                  </li>
+                  <li><strong>Witness reading_poem:</strong> Mac Low Reading, 1990
+                  </li>
+               </ul>
+               <h4>Textual Notes</h4>
+               <div class="note"><em class="label">critIntro:</em> 
+                  
+                  <p>This edition combines "A CARAFE THAT IS A BLIND GLASS," the first section of
+                     Gertrude Stein's Tender Buttons, originally published in 1914, with an essay on
+                     the section by Jackson Mac Low, published in Language No. 6 and audio of Mac Low
+                     reading the poem in Charles Bernstein's poetry seminar in 1990. It is intended as
+                     a demonstration of the Versioning Machine 5.0's audio alignment features.
+                  </p>
+                  
+               </div>
+               <h4>Electronic Edition Information:</h4>
+               <h5>Responsibility Statement:</h5>
+               <ul>
+                  <li>Transcribed, encoded, and edited by Daniel Carter</li>
+               </ul>
+               <h5>Publication Details:</h5>
+               
+               <p>Published by Daniel Carter.</p>
+               
+               
+               
+               
+               <p>The audio of Jackson Mac Low's reading is used here with permission from
+                  PennSound. The text of Mac Low's essay, "Reading a Selection from Tender Buttons,"
+                  is used with permission from Charles Bernstein.
+               </p>
+               
+               
+               
+               
+               <h4>Encoding Principles</h4>
+               
+               
+               <p></p>
+               
+               
+               <p>Transcriptions are encoded in TEI(P5)-conformant XML using a schema created for the
+                  Versioning Machine 5.0.
+               </p>
+               
+               
+               <p></p>
+               
+               
+               
+               <p></p>
+               
+               
+               
+               
+               
+               
+            </div>
+         </div>
+         <div id="critPanel" class="ui-widget-content ui-resizable panel noDisplay">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>
+               Critical Introduction
+               
+            </div>
+            <div class="critContent">
+               <h4>Critical Introduction</h4>
+               <p>This edition combines "A CARAFE THAT IS A BLIND GLASS," the first section of
+                  Gertrude Stein's Tender Buttons, originally published in 1914, with an essay on
+                  the section by Jackson Mac Low, published in Language No. 6 and audio of Mac Low
+                  reading the poem in Charles Bernstein's poetry seminar in 1990. It is intended as
+                  a demonstration of the Versioning Machine 5.0's audio alignment features.
+               </p>
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="poem">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness poem
+            </div>
+            <div class="mssContent">
+               
+               
+               
+               
+               
+               
+               <div class="div type-poem" data-line-id="div">
+                  
+                  <div class="head" data-line-id="head">
+                     
+                     <div class="apparatus carafe" data-app-id="carafe">
+                        <div data-witness="poem" class="reading poem"> A CARAFE, </div>
+                     </div>
+                     
+                     <div class="apparatus app_4_head1" data-app-id="app_4_head1">
+                        <div data-witness="poem" class="reading poem"> THAT IS A </div>
+                     </div>
+                     
+                     <div class="apparatus blind" data-app-id="blind">
+                        <div data-witness="poem" class="reading poem"> BLIND GLASS </div>
+                     </div>
+                     
+                  </div>
+                  
+                  <div class="paragraph">
+                     
+                     <div class="apparatus kind" data-app-id="kind">
+                        <div data-witness="poem" class="reading poem"> A kind </div>
+                     </div>
+                     
+                     <div class="apparatus glass" data-app-id="glass">
+                        <div data-witness="poem" class="reading poem"> in glass and </div>
+                     </div>
+                     
+                     <div class="apparatus cousin" data-app-id="cousin">
+                        <div data-witness="poem" class="reading poem"> a cousin, </div>
+                     </div>
+                     
+                     <div class="apparatus spectacle" data-app-id="spectacle">
+                        <div data-witness="poem" class="reading poem"> a spectacle </div>
+                     </div>
+                     
+                     <div class="apparatus strange" data-app-id="strange">
+                        <div data-witness="poem" class="reading poem"> and nothing strange </div>
+                     </div>
+                     
+                     <div class="apparatus color" data-app-id="color">
+                        <div data-witness="poem" class="reading poem"> a single hurt color </div>
+                     </div>
+                     
+                     <div class="apparatus arrangement" data-app-id="arrangement">
+                        <div data-witness="poem" class="reading poem"> and an arrangement </div>
+                     </div>
+                     
+                     <div class="apparatus system" data-app-id="system">
+                        <div data-witness="poem" class="reading poem"> in a system </div>
+                     </div>
+                     
+                     <div class="apparatus pointing" data-app-id="pointing">
+                        <div data-witness="poem" class="reading poem"> to pointing. </div>
+                     </div>
+                     
+                     <div class="apparatus this" data-app-id="this">
+                        <div data-witness="poem" class="reading poem"> All this and </div>
+                     </div>
+                     
+                     <div class="apparatus ordinary" data-app-id="ordinary">
+                        <div data-witness="poem" class="reading poem"> not ordinary, </div>
+                     </div>
+                     
+                     <div class="apparatus unordered" data-app-id="unordered">
+                        <div data-witness="poem" class="reading poem"> not unordered </div>
+                     </div>
+                     
+                     <div class="apparatus resembling" data-app-id="resembling">
+                        <div data-witness="poem" class="reading poem"> in not resembling. </div>
+                     </div>
+                     
+                     <div class="apparatus difference" data-app-id="difference">
+                        <div data-witness="poem" class="reading poem"> The difference </div>
+                     </div>
+                     
+                     <div class="apparatus spreading" data-app-id="spreading">
+                        <div data-witness="poem" class="reading poem"> is spreading. </div>
+                     </div>
+                     
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="essay">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness essay
+            </div>
+            <div class="mssContent">
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="div" data-line-id="div">
+                  
+                  <div class="head" data-line-id="head">
+                     
+                     <div class="apparatus reading_a_selection" data-app-id="reading_a_selection">
+                        <div data-witness="essay" class="reading essay"> READING A SELECTION FROM TENDER BUTTONS </div>
+                     </div>
+                     
+                  </div>
+                  
+                  
+                  <div class="paragraph">
+                     
+                     <div class="apparatus app_2_p1" data-app-id="app_2_p1">
+                        <div data-witness="essay" class="reading essay"> I start reading </div>
+                     </div>
+                     
+                     <div class="apparatus carafe" data-app-id="carafe">
+                        <div data-witness="essay" class="reading essay"> "A CARAFE </div>
+                     </div>
+                     
+                     <div class="apparatus app_6_p1" data-app-id="app_6_p1">
+                        <div data-witness="essay" class="reading essay"> THAT IS </div>
+                     </div>
+                     
+                     <div class="apparatus blind" data-app-id="blind">
+                        <div data-witness="essay" class="reading essay"> A BLIND GLASS." </div>
+                     </div>
+                     
+                     <div class="apparatus app_10_p1" data-app-id="app_10_p1">
+                        <div data-witness="essay" class="reading essay"> I go from word to word, seeing the shapes of the printed words,
+                           hearing the sounds inwardly, noting rhymes, assonances, alliterations. Where an
+                           image is suggested, I see it inwardly. 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus app_12_p1" data-app-id="app_12_p1">
+                        <div data-witness="essay" class="reading essay"> I go from word to word, seeing the shapes of the printed words,
+                           hearing the sounds inwardly, noting rhymes, assonances, alliterations. Where an
+                           image is suggested, I see it inwardly. I hear the alliteration 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus kind" data-app-id="kind">
+                        <div data-witness="essay" class="reading essay"> "kind," </div>
+                     </div>
+                     
+                     <div class="apparatus cousin" data-app-id="cousin">
+                        <div data-witness="essay" class="reading essay"> "cousin," </div>
+                     </div>
+                     
+                     <div class="apparatus color" data-app-id="color">
+                        <div data-witness="essay" class="reading essay"> "color," </div>
+                     </div>
+                     
+                     <div class="apparatus app_20_p1" data-app-id="app_20_p1">
+                        <div data-witness="essay" class="reading essay"> with the near-alliteration </div>
+                     </div>
+                     
+                     <div class="apparatus glass" data-app-id="glass">
+                        <div data-witness="essay" class="reading essay"> "glass." </div>
+                     </div>
+                     
+                     <div class="apparatus app_24_p1" data-app-id="app_24_p1">
+                        <div data-witness="essay" class="reading essay"> The rhyme in </div>
+                     </div>
+                     
+                     <div class="apparatus strange" data-app-id="strange">
+                        <div data-witness="essay" class="reading essay"> "strange" &amp; </div>
+                     </div>
+                     
+                     <div class="apparatus arrangement" data-app-id="arrangement">
+                        <div data-witness="essay" class="reading essay"> "arrangement." </div>
+                     </div>
+                     
+                     <div class="apparatus app_30_p1" data-app-id="app_30_p1">
+                        <div data-witness="essay" class="reading essay"> The alliteration of s's: </div>
+                     </div>
+                     
+                     <div class="apparatus spectacle" data-app-id="spectacle">
+                        <div data-witness="essay" class="reading essay"> "spectacle," </div>
+                     </div>
+                     
+                     <div class="apparatus strange" data-app-id="strange">
+                        <div data-witness="essay" class="reading essay"> "strange," </div>
+                     </div>
+                     
+                     <div class="apparatus single" data-app-id="single">
+                        <div data-witness="essay" class="reading essay"> "single," </div>
+                     </div>
+                     
+                     <div class="apparatus system" data-app-id="system">
+                        <div data-witness="essay" class="reading essay"> "system," </div>
+                     </div>
+                     
+                     <div class="apparatus spreading" data-app-id="spreading">
+                        <div data-witness="essay" class="reading essay"> "spreading." </div>
+                     </div>
+                     
+                     <div class="apparatus app_42_p1" data-app-id="app_42_p1">
+                        <div data-witness="essay" class="reading essay"> The assonance of short i's that binds the three sentences
+                           
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus system" data-app-id="system">
+                        <div data-witness="essay" class="reading essay"> ("system," </div>
+                     </div>
+                     
+                     <div class="apparatus this" data-app-id="this">
+                        <div data-witness="essay" class="reading essay"> "this," </div>
+                     </div>
+                     
+                     <div class="apparatus difference" data-app-id="difference">
+                        <div data-witness="essay" class="reading essay"> "difference") </div>
+                     </div>
+                     
+                     <div class="apparatus app_50_p1" data-app-id="app_50_p1">
+                        <div data-witness="essay" class="reading essay"> as does the ending of each sentence with an "ing" (which is
+                           reinforced by the short e's in 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus resembling" data-app-id="resembling">
+                        <div data-witness="essay" class="reading essay"> "resembling" </div>
+                     </div>
+                     
+                     <div class="apparatus app_54_p1" data-app-id="app_54_p1">
+                        <div data-witness="essay" class="reading essay"> &amp; </div>
+                     </div>
+                     
+                     <div class="apparatus spreading" data-app-id="spreading">
+                        <div data-witness="essay" class="reading essay"> "spreading"). </div>
+                     </div>
+                     
+                     <div class="apparatus app_58_p1" data-app-id="app_58_p1">
+                        <div data-witness="essay" class="reading essay"> There are also the 2nd sentence's rhymes ( </div>
+                     </div>
+                     
+                     <div class="apparatus ordinary" data-app-id="ordinary">
+                        <div data-witness="essay" class="reading essay"> "ordinary," </div>
+                     </div>
+                     
+                     <div class="apparatus unordered" data-app-id="unordered">
+                        <div data-witness="essay" class="reading essay"> "unordered") </div>
+                     </div>
+                     
+                     <div class="apparatus app_64_p1" data-app-id="app_64_p1">
+                        <div data-witness="essay" class="reading essay"> &amp; the alliterative sequence </div>
+                     </div>
+                     
+                     <div class="apparatus spectacle" data-app-id="spectacle">
+                        <div data-witness="essay" class="reading essay"> "spectacle," </div>
+                     </div>
+                     
+                     <div class="apparatus pointing" data-app-id="pointing">
+                        <div data-witness="essay" class="reading essay"> "pointing," </div>
+                     </div>
+                     
+                     <div class="apparatus spreading" data-app-id="spreading">
+                        <div data-witness="essay" class="reading essay"> "spreading." </div>
+                     </div>
+                     
+                     <div class="apparatus app_72_p1" data-app-id="app_72_p1">
+                        <div data-witness="essay" class="reading essay"> The three sentences are a bound system of sounds. But can I
+                           specify anything beyond the sounds? To use a phrase I first heard from Spencer
+                           Holst, it gives "the sensation of meaning," but can I connect the meanings of
+                           the words as readily as I find their sounds connected? Beyond the obvious fact
+                           that the carafe is made of glass, I can see only certain connections of
+                           meanings: 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus blind" data-app-id="blind">
+                        <div data-witness="essay" class="reading essay"> "a blind glass," </div>
+                     </div>
+                     
+                     <div class="apparatus kind" data-app-id="kind">
+                        <div data-witness="essay" class="reading essay"> "a kind </div>
+                     </div>
+                     
+                     <div class="apparatus glass" data-app-id="glass">
+                        <div data-witness="essay" class="reading essay"> in glass" </div>
+                     </div>
+                     
+                     <div class="apparatus app_80_p1" data-app-id="app_80_p1">
+                        <div data-witness="essay" class="reading essay"> (I didn't notice consciously the </div>
+                     </div>
+                     
+                     <div class="apparatus blind" data-app-id="blind">
+                        <div data-witness="essay" class="reading essay"> "blind"- </div>
+                     </div>
+                     
+                     <div class="apparatus kind" data-app-id="kind">
+                        <div data-witness="essay" class="reading essay"> "kind" </div>
+                     </div>
+                     
+                     <div class="apparatus app_86_p1" data-app-id="app_86_p1">
+                        <div data-witness="essay" class="reading essay"> rhyme before), &amp; then </div>
+                     </div>
+                     
+                     <div class="apparatus spectacle" data-app-id="spectacle">
+                        <div data-witness="essay" class="reading essay"> "a spectacle" </div>
+                     </div>
+                     
+                     <div class="apparatus app_90_p1" data-app-id="app_90_p1">
+                        <div data-witness="essay" class="reading essay"> (something seen or to be seen, but also </div>
+                     </div>
+                     
+                     <div class="apparatus spectacles" data-app-id="spectacles">
+                        <div data-witness="essay" class="reading essay"> "spectacles" are </div>
+                     </div>
+                     
+                     <div class="apparatus glass" data-app-id="glass">
+                        <div data-witness="essay" class="reading essay"> "glasses"). </div>
+                     </div>
+                     
+                     <div class="apparatus app_96_p1" data-app-id="app_96_p1">
+                        <div data-witness="essay" class="reading essay"> Then </div>
+                     </div>
+                     
+                     <div class="apparatus nothing" data-app-id="nothing">
+                        <div data-witness="essay" class="reading essay"> "nothing strange," </div>
+                     </div>
+                     
+                     <div class="apparatus ordinary" data-app-id="ordinary">
+                        <div data-witness="essay" class="reading essay"> "not ordinary," </div>
+                     </div>
+                     
+                     <div class="apparatus unordered" data-app-id="unordered">
+                        <div data-witness="essay" class="reading essay"> "not unordered," </div>
+                     </div>
+                     
+                     <div class="apparatus resembling" data-app-id="resembling">
+                        <div data-witness="essay" class="reading essay"> "not resembling," </div>
+                     </div>
+                     
+                     <div class="apparatus app_106_p1" data-app-id="app_106_p1">
+                        <div data-witness="essay" class="reading essay"> &amp; </div>
+                     </div>
+                     
+                     <div class="apparatus difference" data-app-id="difference">
+                        <div data-witness="essay" class="reading essay"> "difference" </div>
+                     </div>
+                     
+                     <div class="apparatus app_110_p1" data-app-id="app_110_p1">
+                        <div data-witness="essay" class="reading essay"> form a meaning sequence. Another sequence of meanings: </div>
+                     </div>
+                     
+                     <div class="apparatus blind" data-app-id="blind">
+                        <div data-witness="essay" class="reading essay"> "blind," </div>
+                     </div>
+                     
+                     <div class="apparatus spectacle" data-app-id="spectacle">
+                        <div data-witness="essay" class="reading essay"> "spectacle" </div>
+                     </div>
+                     
+                     <div class="apparatus app_116_p1" data-app-id="app_116_p1">
+                        <div data-witness="essay" class="reading essay"> (with the intervening </div>
+                     </div>
+                     
+                     <div class="apparatus glass" data-app-id="glass">
+                        <div data-witness="essay" class="reading essay"> "glass"'s </div>
+                     </div>
+                     
+                     <div class="apparatus app_120_p1" data-app-id="app_120_p1">
+                        <div data-witness="essay" class="reading essay"> causing the ambiguity of </div>
+                     </div>
+                     
+                     <div class="apparatus spectacle" data-app-id="spectacle">
+                        <div data-witness="essay" class="reading essay"> "spectacle" </div>
+                     </div>
+                     
+                     <div class="apparatus app_124_p1" data-app-id="app_124_p1">
+                        <div data-witness="essay" class="reading essay"> which might not have been as apparent without them), &amp;
+                           
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus color" data-app-id="color">
+                        <div data-witness="essay" class="reading essay"> "color," </div>
+                     </div>
+                     
+                     <div class="apparatus app_128_p1" data-app-id="app_128_p1">
+                        <div data-witness="essay" class="reading essay"> that seems to carry over to </div>
+                     </div>
+                     
+                     <div class="apparatus arrangement" data-app-id="arrangement">
+                        <div data-witness="essay" class="reading essay"> "arrangement," </div>
+                     </div>
+                     
+                     <div class="apparatus pointing" data-app-id="pointing">
+                        <div data-witness="essay" class="reading essay"> "pointing," </div>
+                     </div>
+                     
+                     <div class="apparatus unordered" data-app-id="unordered">
+                        <div data-witness="essay" class="reading essay"> "not unordered," </div>
+                     </div>
+                     
+                     <div class="apparatus resembling" data-app-id="resembling">
+                        <div data-witness="essay" class="reading essay"> "not resembling," </div>
+                     </div>
+                     
+                     <div class="apparatus app_138_p1" data-app-id="app_138_p1">
+                        <div data-witness="essay" class="reading essay"> &amp; even to </div>
+                     </div>
+                     
+                     <div class="apparatus spreading" data-app-id="spreading">
+                        <div data-witness="essay" class="reading essay"> "spreading." </div>
+                     </div>
+                     
+                     <div class="apparatus app_142_p1" data-app-id="app_142_p1">
+                        <div data-witness="essay" class="reading essay"> The sequence </div>
+                     </div>
+                     
+                     <div class="apparatus kind" data-app-id="kind">
+                        <div data-witness="essay" class="reading essay"> "kind" </div>
+                     </div>
+                     
+                     <div class="apparatus app_146_p1" data-app-id="app_146_p1">
+                        <div data-witness="essay" class="reading essay"> (with its two meanings), </div>
+                     </div>
+                     
+                     <div class="apparatus cousin" data-app-id="cousin">
+                        <div data-witness="essay" class="reading essay"> "cousin," </div>
+                     </div>
+                     
+                     <div class="apparatus strange" data-app-id="strange">
+                        <div data-witness="essay" class="reading essay"> "nothing strange" </div>
+                     </div>
+                     
+                     <div class="apparatus app_152_p1" data-app-id="app_152_p1">
+                        <div data-witness="essay" class="reading essay"> seems opposed to </div>
+                     </div>
+                     
+                     <div class="apparatus ordinary" data-app-id="ordinary">
+                        <div data-witness="essay" class="reading essay"> "not ordinary," </div>
+                     </div>
+                     
+                     <div class="apparatus resembling" data-app-id="resembling">
+                        <div data-witness="essay" class="reading essay"> "not resembling," </div>
+                     </div>
+                     
+                     <div class="apparatus app_158_p1" data-app-id="app_158_p1">
+                        <div data-witness="essay" class="reading essay"> &amp; </div>
+                     </div>
+                     
+                     <div class="apparatus difference" data-app-id="difference">
+                        <div data-witness="essay" class="reading essay"> "The difference </div>
+                     </div>
+                     
+                     <div class="apparatus spreading" data-app-id="spreading">
+                        <div data-witness="essay" class="reading essay"> is spreading.": </div>
+                     </div>
+                     
+                     <div class="apparatus app_164_p1" data-app-id="app_164_p1">
+                        <div data-witness="essay" class="reading essay"> a meaning movement from near-sameness to greater &amp; greater
+                           difference. 
+                        </div>
+                     </div>
+                     
+                  </div>
+                  
+                  
+                  <div class="paragraph">
+                     
+                     <div class="apparatus color" data-app-id="color">
+                        <div data-witness="essay" class="reading essay"> "A single hurt color" </div>
+                     </div>
+                     
+                     <div class="apparatus app_4_p1" data-app-id="app_4_p1">
+                        <div data-witness="essay" class="reading essay"> is the most emotional phrase, altho </div>
+                     </div>
+                     
+                     <div class="apparatus blind" data-app-id="blind">
+                        <div data-witness="essay" class="reading essay"> "blind glass" </div>
+                     </div>
+                     
+                     <div class="apparatus app_8_p1" data-app-id="app_8_p1">
+                        <div data-witness="essay" class="reading essay"> with its implied oxymoron (glass is usually transparent—at
+                           least we first think of transparency when we hear the word 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus glass" data-app-id="glass">
+                        <div data-witness="essay" class="reading essay"> "glass" </div>
+                     </div>
+                     
+                     <div class="apparatus app_12_p1" data-app-id="app_12_p1">
+                        <div data-witness="essay" class="reading essay"> —&amp; </div>
+                     </div>
+                     
+                     <div class="apparatus app_14_p1" data-app-id="app_14_p1">
+                        <div data-witness="essay" class="reading essay"> when it is made into spectacle lenses, it helps people to see
+                           better) is perhaps even more so. Maybe the 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus color" data-app-id="color">
+                        <div data-witness="essay" class="reading essay"> "single hurt color" </div>
+                     </div>
+                     
+                     <div class="apparatus app_18_p1" data-app-id="app_18_p1">
+                        <div data-witness="essay" class="reading essay"> is the blackness of blindness. The whole poem suddenly seems to
+                           be about seeing! 
+                        </div>
+                     </div>
+                     
+                  </div>
+                  
+                  
+                  <div class="paragraph">
+                     
+                     <div class="apparatus app_2_p1" data-app-id="app_2_p1">
+                        <div data-witness="essay" class="reading essay"> But what of the </div>
+                     </div>
+                     
+                     <div class="apparatus carafe" data-app-id="carafe">
+                        <div data-witness="essay" class="reading essay"> "carafe" </div>
+                     </div>
+                     
+                     <div class="apparatus app_6_p1" data-app-id="app_6_p1">
+                        <div data-witness="essay" class="reading essay"> that starts it all? Why is it </div>
+                     </div>
+                     
+                     <div class="apparatus blind" data-app-id="blind">
+                        <div data-witness="essay" class="reading essay"> "a blind glass"? </div>
+                     </div>
+                     
+                     <div class="apparatus app_10_p1" data-app-id="app_10_p1">
+                        <div data-witness="essay" class="reading essay"> Ordinarily a carafe is one of the least </div>
+                     </div>
+                     
+                     <div class="apparatus blind" data-app-id="blind">
+                        <div data-witness="essay" class="reading essay"> "blind" </div>
+                     </div>
+                     
+                     <div class="apparatus app_14_p1" data-app-id="app_14_p1">
+                        <div data-witness="essay" class="reading essay"> —that is, the most transparent-of glass containers. It usually
+                           contains plain water. The OED defines it as "a glass water-bottle for the
+                           table, bedroom, etc." Its Romance forms (F. carafe, It. caraffa, Neapol.
+                           carrafa (a measure of liquids), Sp. &amp; Pg. garrafa, Sicil. carabba) are
+                           related by some authorities to the Pers. garabah, a large flagon, &amp; the
+                           Arabic gharafa, to draw or lift water. 
+                        </div>
+                     </div>
+                     
+                  </div>
+                  
+                  
+                  <div class="paragraph">
+                     
+                     <div class="apparatus app_2_p1" data-app-id="app_2_p1">
+                        <div data-witness="essay" class="reading essay"> Why, then, is this carafe a blind glass? </div>
+                     </div>
+                     
+                  </div>
+                  
+                  
+                  <div class="paragraph">
+                     
+                     <div class="apparatus app_2_p1" data-app-id="app_2_p1">
+                        <div data-witness="essay" class="reading essay"> Is the whole poem then a </div>
+                     </div>
+                     
+                     <div class="apparatus pointing" data-app-id="pointing">
+                        <div data-witness="essay" class="reading essay"> "pointing" </div>
+                     </div>
+                     
+                     <div class="apparatus app_6_p1" data-app-id="app_6_p1">
+                        <div data-witness="essay" class="reading essay"> from the ordinary transparent carafe </div>
+                     </div>
+                     
+                     <div class="apparatus strange" data-app-id="strange">
+                        <div data-witness="essay" class="reading essay"> ("nothing strange") </div>
+                     </div>
+                     
+                     <div class="apparatus app_10_p1" data-app-id="app_10_p1">
+                        <div data-witness="essay" class="reading essay"> to one </div>
+                     </div>
+                     
+                     <div class="apparatus ordinary" data-app-id="ordinary">
+                        <div data-witness="essay" class="reading essay"> "not ordinary" </div>
+                     </div>
+                     
+                     <div class="apparatus app_14_p1" data-app-id="app_14_p1">
+                        <div data-witness="essay" class="reading essay"> —one that is </div>
+                     </div>
+                     
+                     <div class="apparatus blind" data-app-id="blind">
+                        <div data-witness="essay" class="reading essay"> "blind" </div>
+                     </div>
+                     
+                     <div class="apparatus app_18_p1" data-app-id="app_18_p1">
+                        <div data-witness="essay" class="reading essay"> —an orderly </div>
+                     </div>
+                     
+                     <div class="apparatus unordered" data-app-id="unordered">
+                        <div data-witness="essay" class="reading essay"> ("not unordered") </div>
+                     </div>
+                     
+                     <div class="apparatus app_22_p1" data-app-id="app_22_p1">
+                        <div data-witness="essay" class="reading essay"> movement </div>
+                     </div>
+                     
+                     <div class="apparatus spreading" data-app-id="spreading">
+                        <div data-witness="essay" class="reading essay"> "spreading" </div>
+                     </div>
+                     
+                     <div class="apparatus app_26_p1" data-app-id="app_26_p1">
+                        <div data-witness="essay" class="reading essay"> from transparency &amp; clarity thru the </div>
+                     </div>
+                     
+                     <div class="apparatus color" data-app-id="color">
+                        <div data-witness="essay" class="reading essay"> "single hurt color" </div>
+                     </div>
+                     
+                     <div class="apparatus app_30_p1" data-app-id="app_30_p1">
+                        <div data-witness="essay" class="reading essay"> to the implied darkness &amp; opacity of blindness, a movement
+                           condensed &amp; made explicit in the title? 
+                        </div>
+                     </div>
+                     
+                  </div>
+                  
+               </div>
+               
+               
+               
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="reading_poem">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness reading_poem
+            </div>
+            <div class="mssContent">reading_poem
+               <div class="audioPlayer reading_poem" data-witness="reading_poem">
+                  <audio controls="controls" preload="none">
+                     <source class="audiosource" src="audio/mac_low_poem.mp3" type="audio/mp3"></source>
+                     <source class="audiosource" src="audio/mac_low_poem.ogg" type="audio/ogg"></source>Your browser does not support the audio element.
+                  </audio>
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="div" data-line-id="div">
+                  
+                  <div class="paragraph">
+                     
+                     <div class="apparatus carafe" data-app-id="carafe" data-timeline-start="0" data-timeline-interval="2.25">
+                        <div data-witness="reading_poem" class="reading reading_poem">
+                           
+                           
+                           
+                            A carafe. A carafe 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus app_4_u1" data-app-id="app_4_u1" data-timeline-start="2.25" data-timeline-interval="1.25">
+                        <div data-witness="reading_poem" class="reading reading_poem">
+                           
+                           
+                            that is a 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus blind" data-app-id="blind" data-timeline-start="3.5" data-timeline-interval="3">
+                        <div data-witness="reading_poem" class="reading reading_poem">
+                           
+                           
+                            blind glass. 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus kind" data-app-id="kind" data-timeline-start="6.5" data-timeline-interval="1">
+                        <div data-witness="reading_poem" class="reading reading_poem">
+                           
+                           
+                            A kind 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus glass" data-app-id="glass" data-timeline-start="7.5" data-timeline-interval="1">
+                        <div data-witness="reading_poem" class="reading reading_poem">
+                           
+                           
+                            in glass 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus cousin" data-app-id="cousin" data-timeline-start="8.5" data-timeline-interval="2">
+                        <div data-witness="reading_poem" class="reading reading_poem">
+                           
+                           
+                            and a cousin, 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus spectacle" data-app-id="spectacle" data-timeline-start="10.5" data-timeline-interval="1.25">
+                        <div data-witness="reading_poem" class="reading reading_poem">
+                           
+                           
+                            a spectacle 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus strange" data-app-id="strange" data-timeline-start="11.75" data-timeline-interval="1.25">
+                        <div data-witness="reading_poem" class="reading reading_poem">
+                           
+                           
+                            and nothing strange 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus color" data-app-id="color" data-timeline-start="13" data-timeline-interval="1.5">
+                        <div data-witness="reading_poem" class="reading reading_poem">
+                           
+                           
+                            a single hurt color 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus arrangement" data-app-id="arrangement" data-timeline-start="14.5" data-timeline-interval="1.25">
+                        <div data-witness="reading_poem" class="reading reading_poem">
+                           
+                           
+                            and an arrangement 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus system" data-app-id="system" data-timeline-start="15.75" data-timeline-interval=".75">
+                        <div data-witness="reading_poem" class="reading reading_poem">
+                           
+                           
+                            in a system 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus pointing" data-app-id="pointing" data-timeline-start="16.5" data-timeline-interval="1.5">
+                        <div data-witness="reading_poem" class="reading reading_poem">
+                           
+                           
+                            to pointing. 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus this" data-app-id="this" data-timeline-start="18" data-timeline-interval="1.25">
+                        <div data-witness="reading_poem" class="reading reading_poem">
+                           
+                           
+                            All this and 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus ordinary" data-app-id="ordinary" data-timeline-start="19.25" data-timeline-interval="1">
+                        <div data-witness="reading_poem" class="reading reading_poem">
+                           
+                           
+                            not ordinary, 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus unordered" data-app-id="unordered" data-timeline-start="20.25" data-timeline-interval="1.25">
+                        <div data-witness="reading_poem" class="reading reading_poem">
+                           
+                           
+                            not unordered 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus resembling" data-app-id="resembling" data-timeline-start="21.5" data-timeline-interval="1.5">
+                        <div data-witness="reading_poem" class="reading reading_poem">
+                           
+                           
+                            in not resembling. 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus difference" data-app-id="difference" data-timeline-start="23" data-timeline-interval="1.75">
+                        <div data-witness="reading_poem" class="reading reading_poem">
+                           
+                           
+                            The difference 
+                        </div>
+                     </div>
+                     
+                     <div class="apparatus spreading" data-app-id="spreading" data-timeline-start="24.75" data-timeline-interval="1.5">
+                        <div data-witness="reading_poem" class="reading reading_poem">
+                           
+                           
+                            is spreading. 
+                        </div>
+                     </div>
+                     
+                  </div>
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+            </div>
+         </div>
+         <div id="notesPanel" class="ui-widget-content ui-resizable panel noDisplay">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>
+               Textual Notes
+               
+            </div>
+            <div id="noNotesFound" class="noteContent">
+               Sorry, but there are no notes associated with
+               any currently displayed witness.
+               
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

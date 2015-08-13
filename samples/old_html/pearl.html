@@ -1,0 +1,3509 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+   <head>
+      <title>The Pearl -- The Versioning Machine 5.0</title>
+      <meta charset="utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="../../src/vmachine.css"></link>
+      <link rel="stylesheet" type="text/css" href="../../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="../../src/panzoom/panzoom.css"></link><script type="text/javascript" src="../../src/panzoom/jquery.panzoom.min.js"></script><script type="text/javascript">
+      
+      /*NOTES PANEL: To change the VM so that the notes panel page does not
+      appear at the initial load, change the constant INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */
+      INITIAL_DISPLAY_NOTES_PANEL = true;
+      
+      /*BIB PANEL: To change the VM so that the bibliographic information page does not
+      appear at the initial load, change the constant INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */
+      INITIAL_DISPLAY_BIB_PANEL = true;
+      
+      /**The number of version/witness panels to be displayed initially */
+      INITIAL_DISPLAY_NUM_VERSIONS = 10;
+      
+      
+      /** CRIT PANEL: Critical information should be encoded as tei:notesStmt/tei:note[@type='critIntro'] in the TEI files --&gt;
+      * To change the VM so that the critical information page does not
+      * appear at the initial load, change the constant INITIAL_DISPLAY_CRIT_PANEL from "true" to "false" */
+      INITIAL_DISPLAY_CRIT_PANEL = false;
+      
+      
+      /** To change the VM so that line numbers are hidden by default, change the constant INITIAL_DISPLAY_LINENUMBERS from
+      * "true" to "false" below */
+      INITIAL_DISPLAY_LINENUMBERS = false;
+      
+   var timelinePoints = new Array();var timelineDurations = new Array();</script><script type="text/javascript" src="../../src/vmachine.js"></script></head>
+   <body>
+      <div id="mainBanner">
+         <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../../vm-images/LogoSilver.png"></img></div>
+         <div id="headline">
+            <h1>The Pearl</h1>
+         </div>
+         <nav id="mainControls">
+            <ul>
+               <li><button id="selectWitness" class="topMenuButton dropdownButton">3 Total Versions<img class="noDisplay" src="../../vm-images/arrowup.png" alt="arrow up"></img><img src="../../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="witnessList" class="dropdown notVisible">
+                     <li data-panelid="w">
+                        <div class="listText">
+                           <div>Williams MS. Jones B62</div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="b">
+                        <div class="listText">
+                           <div>Bodleian MS. Tanner 307</div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                     <li data-panelid="p">
+                        <div class="listText">
+                           <div>The Temple: Sacred Poems and Private Ejaculations, first edition
+                              (Cambridge, 1633)
+                           </div>
+                           <div><button>OFF</button></div>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
+               <li id="linenumberOnOff" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
+               <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
+               <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
+            </ul>
+         </nav>
+      </div>
+      <div id="mssArea">
+         <div id="bibPanel" class="ui-widget-content ui-resizable panel noDisplay">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>
+               Bibliographic Information
+               
+            </div>
+            <div class="bibContent">
+               <h2>The Pearl</h2>
+               <h4>Original Source</h4>
+               
+               
+               
+               See witness list.
+               
+               
+               
+               
+               <h4>Witness List</h4>
+               <ul>
+                  <li><strong>Witness w:</strong> Williams MS. Jones B62
+                  </li>
+                  <li><strong>Witness b:</strong> Bodleian MS. Tanner 307
+                  </li>
+                  <li><strong>Witness p:</strong> The Temple: Sacred Poems and Private Ejaculations, first edition
+                     (Cambridge, 1633)
+                  </li>
+               </ul>
+               <h4>Textual Notes</h4>
+               <div class="note"></div>
+               <h4>Electronic Edition Information:</h4>
+               <h5>Responsibility Statement:</h5>
+               <ul>
+                  <li>Transcribed, encoded, and edited by Robert Whalen</li>
+                  <li>Sponsored by Northern Michigan University and the National Endowment for the Humanities</li>
+                  <li>Funding provided by Northern Michigan University and the National Endowment for the Humanities</li>
+               </ul>
+               <h5>Publication Details:</h5>
+               
+               <p>Published by Robert Whalen for demonstration purposes only. May not be reproduced without
+                  permission..
+               </p>
+               
+               
+               
+               
+               
+               
+               <p></p>
+               
+               
+               
+               <h4>Encoding Principles</h4>
+               
+               
+               <p>"The Pearl" is part of a comprehensive edition of George Herbert's English verse,
+                  <span class="hi rend-italic">The Digital Temple</span>. This larger project includes
+                  computer-readable transcriptions, in both original- and modern-spelling versions,
+                  of
+                  Williams MS. Jones B62, Bodleian MS. Tanner 307, and a copy of <span class="hi rend-italic">The
+                     Temple: Sacred Poems and Private Ejaculations</span>, first edition (Cambridge,
+                  1633); high-resolution digital images of the sources (excepting the Latin verse in
+                  Williams); an apparatus that includes critical, textual, and technical introductions
+                  and annotations; and a user interface with which to navigate these materials.
+               </p>
+               
+               
+               <p>Transcriptions are encoded in TEI(P5)-conformant XML.</p>
+               
+               
+               <p>Currently, only the Williams images and transcriptions are captured directly from
+                  the
+                  source. Images (where available) and transcriptions of the Bodleian MS. and first
+                  edition are captured from Scolar black-and-white facsimiles.
+               </p>
+               
+               
+               
+               
+               <p>Apparent errors are preserved and editorial corrections provided using SIC and
+                  CORR tags, but only where the editor conjectures that the original scribe or
+                  compositor would have recognized the instance as an error. For example, what
+                  according to modern usage is incorrect subject/verb agreement might have been
+                  deemed acceptable to a seventeenth-century scribe or compositor. All such
+                  instances are treated instead using the ORIG and REG tags. (See below.) 
+               </p>
+               
+               
+               
+               <p>Original spellings, abbreviations, and orthography are preserved and
+                  regularizations provided. Where in the manuscripts a character's status as
+                  majuscule or miniscule is ambiguous, the editor has silently chosen one or the
+                  other based on context and judgment (i.e., does not register such ambiguity in
+                  either the markup or the notes).
+               </p>
+               
+               
+               
+               <p>Original quotation marks, if any, are preserved.</p>
+               
+               
+               
+               <p>Original hyphenation is preserved.</p>
+               
+               
+               
+               
+               
+               
+               
+               
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="w">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness w
+            </div>
+            <div class="mssContent">
+               
+               
+               <hr class="pagebreak w"></hr>
+               <div class="facs-images"></div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="div type-poem rend-right" data-line-id="div">
+                  
+                  
+                  <div class="head" data-line-id="head">
+                     
+                     <div class="apparatus app_2_head1" data-app-id="app_2_head1">
+                        <div data-witness="w" class="reading w">The 
+                           <div class="choice">Pearle
+                              <div class="corr">
+                                 <div class="interior"><strong>Regularized form:</strong> Pearl
+                                 </div>
+                              </div>
+                           </div>: Matth: 13.45.
+                        </div>
+                     </div>
+                     
+                  </div>
+                  
+                  
+                  <div class="lg lg-n1 type-stanza" data-line-id="lg1">
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">1</div>
+                        
+                        <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                           <div data-witness="w" class="reading w">I know 
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">wayes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> ways
+                                    </div>
+                                 </div>
+                              </div> of
+                              learning, both the Head
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">2</div>
+                        
+                        <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
+                           <div data-witness="w" class="reading w">And Pipes that feed 
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">Preſs
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> Press
+                                    </div>
+                                 </div>
+                              </div> and
+                              make it 
+                              <div class="choice">runn
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> run
+                                    </div>
+                                 </div>
+                              </div>.
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">3</div>
+                        
+                        <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                           <div data-witness="w" class="reading w">What reason hath from Nature purchased</div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">4</div>
+                        
+                        <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
+                           <div data-witness="w" class="reading w">
+                              <div class="choice">Ør
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> Or
+                                    </div>
+                                 </div>
+                              </div>
+                              of itself like a good 
+                              <div class="choice">huſwife
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> housewife
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">spunn
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> spun
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">5</div>
+                        
+                        <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
+                           <div data-witness="w" class="reading w">In 
+                              <div class="choice">lawes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> laws
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">Policie
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> Policy
+                                    </div>
+                                 </div>
+                              </div>: what 
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">starres
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> stars
+                                    </div>
+                                 </div>
+                              </div>
+                              conspire:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">6</div>
+                        
+                        <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
+                           <div data-witness="w" class="reading w">What willing Nature speaks, what 
+                              <div class="choice">forst
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> forc'd
+                                    </div>
+                                 </div>
+                              </div> by
+                              fire:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">7</div>
+                        
+                        <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
+                           <div data-witness="w" class="reading w">Both th'old 
+                              <div class="choice">diſcoveries
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> discoveries
+                                    </div>
+                                 </div>
+                              </div>,
+                              
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div> new-found seas,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">8</div>
+                        
+                        <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
+                           <div data-witness="w" class="reading w">The stock and surplus, cause and History.</div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     
+                     
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">9</div>
+                        
+                        <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
+                           <div data-witness="w" class="reading w">All these stand open or I have the 
+                              <div class="choice">keyes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> keys
+                                    </div>
+                                 </div>
+                              </div>.
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">10</div>
+                        
+                        <div class="apparatus app_2_l_10_1" data-app-id="app_2_l_10_1">
+                           <div data-witness="w" class="reading w">Yet I love Thee.</div>
+                        </div>
+                        
+                     </div>
+                     
+                  </div>
+                  
+                  
+                  <div class="lg lg-n2 type-stanza" data-line-id="lg2">
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">11</div>
+                        
+                        <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
+                           <div data-witness="w" class="reading w">I know the 
+                              <div class="choice">wayes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> ways
+                                    </div>
+                                 </div>
+                              </div> of Honour:
+                              what maintains
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">12</div>
+                        
+                        <div class="apparatus app_2_l_12_1" data-app-id="app_2_l_12_1">
+                           <div data-witness="w" class="reading w">The quick 
+                              <div class="choice">returnes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> returns
+                                    </div>
+                                 </div>
+                              </div> of 
+                              <div class="choice">curtesie
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> courtesy
+                                    </div>
+                                 </div>
+                              </div> and 
+                              <div class="choice">witt
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> wit
+                                    </div>
+                                 </div>
+                              </div>:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">13</div>
+                        
+                        <div class="apparatus app_2_l_13_1" data-app-id="app_2_l_13_1">
+                           <div data-witness="w" class="reading w">In 
+                              <div class="choice">vyes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> vies
+                                    </div>
+                                 </div>
+                              </div> of 
+                              <div class="choice">fauours
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> favours
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">whither
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> whether
+                                    </div>
+                                 </div>
+                              </div> party
+                              gains,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">14</div>
+                        
+                        <div class="apparatus app_2_l_14_1" data-app-id="app_2_l_14_1">
+                           <div data-witness="w" class="reading w">When glory 
+                              <div class="choice">swels
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> swells
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">hart
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> heart
+                                    </div>
+                                 </div>
+                              </div> and
+                              moldeth it
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">15</div>
+                        
+                        <div class="apparatus app_2_l_15_1" data-app-id="app_2_l_15_1">
+                           <div data-witness="w" class="reading w">To all 
+                              <div class="choice">expreſsions
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> expressions
+                                    </div>
+                                 </div>
+                              </div>
+                              both of hand 
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div> eye
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">16</div>
+                        
+                        <div class="apparatus app_2_l_16_1" data-app-id="app_2_l_16_1">
+                           <div data-witness="w" class="reading w">
+                              <div class="choice">W<span class="hi rend-superscript">ch</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> Which
+                                    </div>
+                                 </div>
+                              </div> on the world a 
+                              <div class="choice">tru
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> true
+                                    </div>
+                                 </div>
+                              </div>-love-
+                              <div class="choice">knott
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> knot
+                                    </div>
+                                 </div>
+                              </div> may
+                              
+                              <div class="choice">tye
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> tie
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">17</div>
+                        
+                        <div class="apparatus app_2_l_17_1" data-app-id="app_2_l_17_1">
+                           <div data-witness="w" class="reading w">And 
+                              <div class="choice">beare
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> bear
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div> bundle 
+                              <div class="choice">wheresoere
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> wheresoe'er
+                                    </div>
+                                 </div>
+                              </div> it
+                              goes.
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">18</div>
+                        
+                        <div class="apparatus app_2_l_18_1" data-app-id="app_2_l_18_1">
+                           <div data-witness="w" class="reading w">How many drams of spirit there must 
+                              <div class="choice">bee
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> be
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">19</div>
+                        
+                        <div class="apparatus app_2_l_19_1" data-app-id="app_2_l_19_1">
+                           <div data-witness="w" class="reading w">To sell my life 
+                              <div class="choice">vnto
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> unto
+                                    </div>
+                                 </div>
+                              </div> my 
+                              <div class="choice">frends
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> friends
+                                    </div>
+                                 </div>
+                              </div>
+                              or foes
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">20</div>
+                        
+                        <div class="apparatus app_2_l_20_1" data-app-id="app_2_l_20_1">
+                           <div data-witness="w" class="reading w">Yet I love Thee.</div>
+                        </div>
+                        
+                     </div>
+                     
+                  </div>
+                  
+                  
+                  <hr class="pagebreak w"></hr>
+                  <div class="facs-images"></div>
+                  
+                  
+                  
+                  
+                  <div class="lg lg-n3 type-stanza" data-line-id="lg3">
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">21</div>
+                        
+                        <div class="apparatus app_2_l_21_1" data-app-id="app_2_l_21_1">
+                           <div data-witness="w" class="reading w">I know 
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">wayes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> ways
+                                    </div>
+                                 </div>
+                              </div> of
+                              Pleasure: the sweet strains,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">22</div>
+                        
+                        <div class="apparatus app_2_l_22_1" data-app-id="app_2_l_22_1">
+                           <div data-witness="w" class="reading w">The <del class=" rend-strike">gustos</del>
+                              <ins class="rend-supralinear">lullings</ins> and the relishes of 
+                              <div class="choice">itt
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> it
+                                    </div>
+                                 </div>
+                              </div>.
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic"><del class=" rend-strike">gustos</del></span>: keen enjoyments
+                                    (<span class="hi rend-italic">OED</span> 2).
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">23</div>
+                        
+                        <div class="apparatus app_2_l_23_1" data-app-id="app_2_l_23_1">
+                           <div data-witness="w" class="reading w">The propositions of 
+                              <div class="choice">hott
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> hot
+                                    </div>
+                                 </div>
+                              </div> blood and
+                              brains:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">24</div>
+                        
+                        <div class="apparatus app_2_l_24_1" data-app-id="app_2_l_24_1">
+                           <div data-witness="w" class="reading w">What mirth 
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">Musick
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> Music
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">meane
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> mean
+                                    </div>
+                                 </div>
+                              </div>, what
+                              
+                              <div class="choice">loue
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> love
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">witt
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> wit
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">25</div>
+                        
+                        <div class="apparatus app_2_l_25_1" data-app-id="app_2_l_25_1">
+                           <div data-witness="w" class="reading w">Have done these <del class=" rend-strike">twenty</del>
+                              <ins class="rend-supralinear">many</ins> hundred 
+                              <div class="choice">yeers
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> years
+                                    </div>
+                                 </div>
+                              </div> and
+                              more:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">26</div>
+                        
+                        <div class="apparatus app_2_l_26_1" data-app-id="app_2_l_26_1">
+                           <div data-witness="w" class="reading w">
+                              <del class=" rend-strike">Where both their 
+                                 <div class="choice">baſkets
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> baskets
+                                       </div>
+                                    </div>
+                                 </div> are
+                                 
+                                 <div class="choice">w<span class="hi rend-superscript">th</span>
+                                    all
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> withal
+                                       </div>
+                                    </div>
+                                 </div> their store</del>
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">their</span>: i.e., <span class="hi rend-italic">loue</span>'s and
+                                    <span class="hi rend-italic">witt</span>'s.
+                                 </div>
+                              </div>
+                              
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">27</div>
+                        
+                        <div class="apparatus app_2_l_27_1" data-app-id="app_2_l_27_1">
+                           <div data-witness="w" class="reading w">
+                              <del class=" rend-strike">The smacks of dainties and their exaltation:</del>
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">smacks</span>: agreeable flavours (<span class="hi rend-italic">OED</span> 1.c). <span class="hi rend-italic">dainties</span>: choice viands (<span class="hi rend-italic">OED</span> 6). <span class="hi rend-italic">their exaltation</span>:
+                                    the elation they cause (<span class="hi rend-italic">OED</span> 2.b).
+                                 </div>
+                              </div>
+                              
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">28</div>
+                        
+                        <div class="apparatus app_2_l_28_1" data-app-id="app_2_l_28_1">
+                           <div data-witness="w" class="reading w">
+                              <del class=" rend-strike">What both 
+                                 <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> the
+                                       </div>
+                                    </div>
+                                 </div>
+                                 stops and pegs of pleasure 
+                                 <div class="choice">bee
+                                    <div class="corr">
+                                       <div class="interior"><strong>Regularized form:</strong> be
+                                       </div>
+                                    </div>
+                                 </div>:</del>
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">stops</span>: ventages or apertures on the tube of a
+                                    wind instrument (<span class="hi rend-italic">OED</span> 15.a). <span class="hi rend-italic">pegs</span>: tuning pegs of a stringed instrument (<span class="hi rend-italic">OED</span> 2.a).
+                                 </div>
+                              </div>
+                              
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">29</div>
+                        
+                        <div class="apparatus app_2_l_29_1" data-app-id="app_2_l_29_1">
+                           <div data-witness="w" class="reading w">The 
+                              <div class="choice">ioyes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> joys
+                                    </div>
+                                 </div>
+                              </div> of Company or
+                              Contemplation
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> "The pleasures of society or solitary
+                                    reflection."
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">30</div>
+                        
+                        <div class="apparatus app_2_l_30_1" data-app-id="app_2_l_30_1">
+                           <div data-witness="w" class="reading w">Yet I love Thee</div>
+                        </div>
+                        
+                     </div>
+                     
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="lg lg-n4 type-stanza" data-line-id="lg4">
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">31</div>
+                        
+                        <div class="apparatus app_2_l_31_1" data-app-id="app_2_l_31_1">
+                           <div data-witness="w" class="reading w">I know all these 
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div> have them in
+                              my hand.
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">32</div>
+                        
+                        <div class="apparatus app_2_l_32_1" data-app-id="app_2_l_32_1">
+                           <div data-witness="w" class="reading w">Therefore not 
+                              <div class="choice">seeled
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> sealed
+                                    </div>
+                                 </div>
+                              </div>, but 
+                              <div class="choice">w<span class="hi rend-superscript">th</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> with
+                                    </div>
+                                 </div>
+                              </div> open eyes
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">33</div>
+                        
+                        <div class="apparatus app_2_l_33_1" data-app-id="app_2_l_33_1">
+                           <div data-witness="w" class="reading w">I fly to thee, and fully 
+                              <div class="choice">vnderstand
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> understand
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">34</div>
+                        
+                        <div class="apparatus app_2_l_34_1" data-app-id="app_2_l_34_1">
+                           <div data-witness="w" class="reading w">Both the 
+                              <div class="choice">maine
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> main
+                                    </div>
+                                 </div>
+                              </div> sale and
+                              the Commodities
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">35</div>
+                        
+                        <div class="apparatus app_2_l_35_1" data-app-id="app_2_l_35_1">
+                           <div data-witness="w" class="reading w">And at what rate 
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div> price I 
+                              <div class="choice">haue
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> have
+                                    </div>
+                                 </div>
+                              </div> thy
+                              love,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">36</div>
+                        
+                        <div class="apparatus app_2_l_36_1" data-app-id="app_2_l_36_1">
+                           <div data-witness="w" class="reading w">
+                              <div class="choice">W<span class="hi rend-superscript">th</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> With
+                                    </div>
+                                 </div>
+                              </div> all the Circumstances
+                              
+                              <div class="choice">y<span class="hi rend-superscript">t</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> that
+                                    </div>
+                                 </div>
+                              </div> may 
+                              <div class="choice">moue
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> move
+                                    </div>
+                                 </div>
+                              </div>.
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">37</div>
+                        
+                        <div class="apparatus app_2_l_37_1" data-app-id="app_2_l_37_1">
+                           <div data-witness="w" class="reading w">Yet 
+                              <div class="choice">th<ins class="rend-infralinear">‸</ins><ins class="rend-supralinear">r</ins>ough
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> through
+                                    </div>
+                                 </div>
+                              </div> these labyrinths
+                              not my 
+                              <div class="choice">groueling
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> groveling
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">witt
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> wit
+                                    </div>
+                                 </div>
+                              </div>,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">38</div>
+                        
+                        <div class="apparatus app_2_l_38_1" data-app-id="app_2_l_38_1">
+                           <div data-witness="w" class="reading w">But thy silk-twist, 
+                              <div class="choice">lett
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> let
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">downe
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> down
+                                    </div>
+                                 </div>
+                              </div> from
+                              
+                              <div class="choice">Heauen
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> Heaven
+                                    </div>
+                                 </div>
+                              </div> to 
+                              <div class="choice">mee
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> me
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">39</div>
+                        
+                        <div class="apparatus app_2_l_39_1" data-app-id="app_2_l_39_1">
+                           <div data-witness="w" class="reading w">Did both conduct and teach 
+                              <div class="choice">mee
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> me
+                                    </div>
+                                 </div>
+                              </div> how by 
+                              <div class="choice">itt
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> it
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">40</div>
+                        
+                        <div class="apparatus app_2_l_40_1" data-app-id="app_2_l_40_1">
+                           <div data-witness="w" class="reading w">To 
+                              <div class="choice">clime
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> climb
+                                    </div>
+                                 </div>
+                              </div> to
+                              Thee.
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                  </div>
+                  
+               </div>
+               
+               
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="b">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness b
+            </div>
+            <div class="mssContent">
+               
+               
+               
+               
+               
+               <hr class="pagebreak b"></hr>
+               <div class="facs-images"></div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <div class="div type-poem rend-right" data-line-id="div">
+                  
+                  
+                  <div class="head" data-line-id="head">
+                     
+                     <div class="apparatus app_2_head1" data-app-id="app_2_head1">
+                        <div data-witness="b" class="reading b">The 
+                           <div class="choice">Pearle
+                              <div class="corr">
+                                 <div class="interior"><strong>Regularized form:</strong> Pearl
+                                 </div>
+                              </div>
+                           </div>
+                           Math. 13.
+                        </div>
+                     </div>
+                     
+                  </div>
+                  
+                  
+                  <div class="lg lg-n1 type-stanza" data-line-id="lg1">
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">1</div>
+                        
+                        <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                           <div data-witness="b" class="reading b">I know 
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">waies
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> ways
+                                    </div>
+                                 </div>
+                              </div> of
+                              Learning. both the head
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">2</div>
+                        
+                        <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
+                           <div data-witness="b" class="reading b">And pipes, 
+                              <div class="choice">y<span class="hi rend-superscript">t</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> that
+                                    </div>
+                                 </div>
+                              </div> feed 
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">presse
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> press
+                                    </div>
+                                 </div>
+                              </div>,
+                              
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div> make
+                              it 
+                              <div class="choice">runne
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> run
+                                    </div>
+                                 </div>
+                              </div>:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">3</div>
+                        
+                        <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                           <div data-witness="b" class="reading b">What reason hath from Nature borrowed,</div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">4</div>
+                        
+                        <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
+                           <div data-witness="b" class="reading b">Or of 
+                              <div class="choice">it
+                                 selfe
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> itself
+                                    </div>
+                                 </div>
+                              </div>, like a good 
+                              <div class="choice">huswife
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> housewife
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">spunne
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> spun
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">5</div>
+                        
+                        <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
+                           <div data-witness="b" class="reading b">In Laws 
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">Policie
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> Policy
+                                    </div>
+                                 </div>
+                              </div>. what 
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">starres
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> stars
+                                    </div>
+                                 </div>
+                              </div>
+                              conspire,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">6</div>
+                        
+                        <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
+                           <div data-witness="b" class="reading b">What willing Nature 
+                              <div class="choice">speakes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> speaks
+                                    </div>
+                                 </div>
+                              </div>, what
+                              forc'd by fire.
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">7</div>
+                        
+                        <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
+                           <div data-witness="b" class="reading b">Both the'old 
+                              <div class="choice">discoueries
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> discoveries
+                                    </div>
+                                 </div>
+                              </div>,
+                              
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">New
+                                 found
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> New-found
+                                    </div>
+                                 </div>
+                              </div> seas,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">8</div>
+                        
+                        <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
+                           <div data-witness="b" class="reading b">The stock 
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div> surplus, cause
+                              and history:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <hr class="pagebreak b"></hr>
+                     <div class="facs-images"></div>
+                     
+                     
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">9</div>
+                        
+                        <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
+                           <div data-witness="b" class="reading b">All these stand open, or I 
+                              <div class="choice">haue
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> have
+                                    </div>
+                                 </div>
+                              </div> the 
+                              <div class="choice">keyes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> keys
+                                    </div>
+                                 </div>
+                              </div>.
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">10</div>
+                        
+                        <div class="apparatus app_2_l_10_1" data-app-id="app_2_l_10_1">
+                           <div data-witness="b" class="reading b">Yet I 
+                              <div class="choice">loue
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> love
+                                    </div>
+                                 </div>
+                              </div> thee.
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                  </div>
+                  
+                  
+                  <div class="lg lg-n2 type-stanza" data-line-id="lg2">
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">11</div>
+                        
+                        <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
+                           <div data-witness="b" class="reading b">I know 
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">wayes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> ways
+                                    </div>
+                                 </div>
+                              </div> of 
+                              <div class="choice">honor
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> honour
+                                    </div>
+                                 </div>
+                              </div>.
+                              what 
+                              <div class="choice">mantaines
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> maintains
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">12</div>
+                        
+                        <div class="apparatus app_2_l_12_1" data-app-id="app_2_l_12_1">
+                           <div data-witness="b" class="reading b">The quick 
+                              <div class="choice">returnes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> returns
+                                    </div>
+                                 </div>
+                              </div> of 
+                              <div class="choice">curtesie
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> courtesy
+                                    </div>
+                                 </div>
+                              </div> and 
+                              <div class="choice">witt
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> wit
+                                    </div>
+                                 </div>
+                              </div>:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">13</div>
+                        
+                        <div class="apparatus app_2_l_13_1" data-app-id="app_2_l_13_1">
+                           <div data-witness="b" class="reading b">In 
+                              <div class="choice">vyes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> vies
+                                    </div>
+                                 </div>
+                              </div> of 
+                              <div class="choice">fauo<span class="hi rend-superscript">rs</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> favours
+                                    </div>
+                                 </div>
+                              </div>, whether party 
+                              <div class="choice">gaines
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> gains
+                                    </div>
+                                 </div>
+                              </div>,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">14</div>
+                        
+                        <div class="apparatus app_2_l_14_1" data-app-id="app_2_l_14_1">
+                           <div data-witness="b" class="reading b">When Glory swells 
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div>
+                              heart, 
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div>
+                              moldeth it
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">15</div>
+                        
+                        <div class="apparatus app_2_l_15_1" data-app-id="app_2_l_15_1">
+                           <div data-witness="b" class="reading b">To all expressions both of hand 
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">eie
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> eye
+                                    </div>
+                                 </div>
+                              </div>,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">16</div>
+                        
+                        <div class="apparatus app_2_l_16_1" data-app-id="app_2_l_16_1">
+                           <div data-witness="b" class="reading b">
+                              <div class="choice">W<span class="hi rend-superscript">ch</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> Which
+                                    </div>
+                                 </div>
+                              </div> on 
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div> World a true-
+                              <div class="choice">loue
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> love
+                                    </div>
+                                 </div>
+                              </div>-knot
+                              may tie
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">17</div>
+                        
+                        <div class="apparatus app_2_l_17_1" data-app-id="app_2_l_17_1">
+                           <div data-witness="b" class="reading b">And 
+                              <div class="choice">beare
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> bear
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div> bundle, 
+                              <div class="choice">wheresoere
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> wheresoe'er
+                                    </div>
+                                 </div>
+                              </div> it
+                              goes:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">18</div>
+                        
+                        <div class="apparatus app_2_l_18_1" data-app-id="app_2_l_18_1">
+                           <div data-witness="b" class="reading b">How many 
+                              <div class="choice">drammes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> drams
+                                    </div>
+                                 </div>
+                              </div> of
+                              spirit there must 
+                              <div class="choice">bee
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> be
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">19</div>
+                        
+                        <div class="apparatus app_2_l_19_1" data-app-id="app_2_l_19_1">
+                           <div data-witness="b" class="reading b">To sell my life 
+                              <div class="choice">vnto
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> unto
+                                    </div>
+                                 </div>
+                              </div> my 
+                              <div class="choice">freinds
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> friends
+                                    </div>
+                                 </div>
+                              </div> or
+                              foes.
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">20</div>
+                        
+                        <div class="apparatus app_2_l_20_1" data-app-id="app_2_l_20_1">
+                           <div data-witness="b" class="reading b">Yet I 
+                              <div class="choice">loue
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> love
+                                    </div>
+                                 </div>
+                              </div> thee.
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="lg lg-n3 type-stanza" data-line-id="lg3">
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">21</div>
+                        
+                        <div class="apparatus app_2_l_21_1" data-app-id="app_2_l_21_1">
+                           <div data-witness="b" class="reading b">I know 
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">waies
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> ways
+                                    </div>
+                                 </div>
+                              </div> of
+                              Pleasure. 
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div> sweet 
+                              <div class="choice">straines
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> strains
+                                    </div>
+                                 </div>
+                              </div>,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">22</div>
+                        
+                        <div class="apparatus app_2_l_22_1" data-app-id="app_2_l_22_1">
+                           <div data-witness="b" class="reading b">The Lullings 
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">rellishes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> relishes
+                                    </div>
+                                 </div>
+                              </div> of 
+                              <div class="choice">itt
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> it
+                                    </div>
+                                 </div>
+                              </div>:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">23</div>
+                        
+                        <div class="apparatus app_2_l_23_1" data-app-id="app_2_l_23_1">
+                           <div data-witness="b" class="reading b">The propositions of 
+                              <div class="choice">hott
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> hot
+                                    </div>
+                                 </div>
+                              </div> blood 
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">braines
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> brains
+                                    </div>
+                                 </div>
+                              </div>:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">24</div>
+                        
+                        <div class="apparatus app_2_l_24_1" data-app-id="app_2_l_24_1">
+                           <div data-witness="b" class="reading b">What Mirth 
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">Musiq
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> Music
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">meane
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> mean
+                                    </div>
+                                 </div>
+                              </div>: what
+                              
+                              <div class="choice">loue
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> love
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">witt
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> wit
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">25</div>
+                        
+                        <div class="apparatus app_2_l_25_1" data-app-id="app_2_l_25_1">
+                           <div data-witness="b" class="reading b">
+                              <div class="choice">Haue
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> Have
+                                    </div>
+                                 </div>
+                              </div> done these twenty
+                              hundred 
+                              <div class="choice">yeares
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> years
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div>
+                              more:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">26</div>
+                        
+                        <div class="apparatus app_2_l_26_1" data-app-id="app_2_l_26_1">
+                           <div data-witness="b" class="reading b">I know 
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">proiects
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> projects
+                                    </div>
+                                 </div>
+                              </div> of 
+                              <div class="choice">vnbundled
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> unbundled
+                                    </div>
+                                 </div>
+                              </div>
+                              store:
+                           </div>
+                        </div>
+                        <div class="apparatus app_2_l_26_1" data-app-id="app_2_l_26_1">
+                           <div data-witness="b p" class="reading b p">
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">vnbundled/unbridled</span>: Whereas the #b version
+                                    means merely unpacked or released, the #p revision means unrestrained or
+                                    undisciplined (as of a horse without a bridle).
+                                 </div>
+                              </div>
+                              
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">27</div>
+                        
+                        <div class="apparatus app_2_l_27_1" data-app-id="app_2_l_27_1">
+                           <div data-witness="b" class="reading b">My stuff is flesh, not 
+                              <div class="choice">brasse
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> brass
+                                    </div>
+                                 </div>
+                              </div>; my
+                              senses 
+                              <div class="choice">liue
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> live
+                                    </div>
+                                 </div>
+                              </div>,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">28</div>
+                        
+                        <div class="apparatus app_2_l_28_1" data-app-id="app_2_l_28_1">
+                           <div data-witness="b" class="reading b">And grumble oft; that they 
+                              <div class="choice">haue
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> have
+                                    </div>
+                                 </div>
+                              </div> more in 
+                              <div class="choice">mee
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> me
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">29</div>
+                        
+                        <div class="apparatus app_2_l_29_1" data-app-id="app_2_l_29_1">
+                           <div data-witness="b" class="reading b">
+                              <div class="choice">Then
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> Than
+                                    </div>
+                                 </div>
+                              </div> he, 
+                              <div class="choice">y<span class="hi rend-superscript">t</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> that
+                                    </div>
+                                 </div>
+                              </div> curbs them, being but
+                              one to 
+                              <div class="choice">fiue
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> five
+                                    </div>
+                                 </div>
+                              </div>.
+                           </div>
+                        </div>
+                        <div class="apparatus app_2_l_29_1" data-app-id="app_2_l_29_1">
+                           <div data-witness="b p" class="reading b p">
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">Lines 27-29</span>: "I am made of flesh and my five
+                                    senses complain often that they are restrained by Reason even though
+                                    outnumbering him five to one."
+                                 </div>
+                              </div>
+                              
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">30</div>
+                        
+                        <div class="apparatus app_2_l_30_1" data-app-id="app_2_l_30_1">
+                           <div data-witness="b" class="reading b">Yet I 
+                              <div class="choice">loue
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> love
+                                    </div>
+                                 </div>
+                              </div> thee.
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                  </div>
+                  
+                  
+                  
+                  
+                  <hr class="pagebreak b"></hr>
+                  <div class="facs-images"></div>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="lg lg-n4 type-stanza" data-line-id="lg4">
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">31</div>
+                        
+                        <div class="apparatus app_2_l_31_1" data-app-id="app_2_l_31_1">
+                           <div data-witness="b" class="reading b">I know all these, 
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">haue
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> have
+                                    </div>
+                                 </div>
+                              </div> them
+                              in my hand.
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">32</div>
+                        
+                        <div class="apparatus app_2_l_32_1" data-app-id="app_2_l_32_1">
+                           <div data-witness="b" class="reading b">Therefore not sealed, but with open eyes</div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">33</div>
+                        
+                        <div class="apparatus app_2_l_33_1" data-app-id="app_2_l_33_1">
+                           <div data-witness="b" class="reading b">I fly to thee, and fully 
+                              <div class="choice">vnderstand
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> understand
+                                    </div>
+                                 </div>
+                              </div>,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">34</div>
+                        
+                        <div class="apparatus app_2_l_34_1" data-app-id="app_2_l_34_1">
+                           <div data-witness="b" class="reading b">Both 
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">maine
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> main
+                                    </div>
+                                 </div>
+                              </div> sale,
+                              and the commodities:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">35</div>
+                        
+                        <div class="apparatus app_2_l_35_1" data-app-id="app_2_l_35_1">
+                           <div data-witness="b" class="reading b">And at what rate 
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div> price I 
+                              <div class="choice">haue
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> have
+                                    </div>
+                                 </div>
+                              </div> thy 
+                              <div class="choice">loue
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> love
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">36</div>
+                        
+                        <div class="apparatus app_2_l_36_1" data-app-id="app_2_l_36_1">
+                           <div data-witness="b" class="reading b">With all 
+                              <div class="choice">y<span class="hi rend-superscript">e</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> the
+                                    </div>
+                                 </div>
+                              </div> circumstances, 
+                              <div class="choice">y<span class="hi rend-superscript">t</span><div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> that
+                                    </div>
+                                 </div>
+                              </div> may 
+                              <div class="choice">moue
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> move
+                                    </div>
+                                 </div>
+                              </div>,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">37</div>
+                        
+                        <div class="apparatus app_2_l_37_1" data-app-id="app_2_l_37_1">
+                           <div data-witness="b" class="reading b">Yet through these 
+                              <div class="choice">labarinths
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> labyrinths
+                                    </div>
+                                 </div>
+                              </div>,
+                              not my 
+                              <div class="choice">groueling
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> groveling
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">witt
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> wit
+                                    </div>
+                                 </div>
+                              </div>,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">38</div>
+                        
+                        <div class="apparatus app_2_l_38_1" data-app-id="app_2_l_38_1">
+                           <div data-witness="b" class="reading b">But thy silk twist, let 
+                              <div class="choice">downe
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> down
+                                    </div>
+                                 </div>
+                              </div> from 
+                              <div class="choice">heauen
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> heaven
+                                    </div>
+                                 </div>
+                              </div>
+                              to 
+                              <div class="choice">mee
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> me
+                                    </div>
+                                 </div>
+                              </div>,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">39</div>
+                        
+                        <div class="apparatus app_2_l_39_1" data-app-id="app_2_l_39_1">
+                           <div data-witness="b" class="reading b">Did both conduct, 
+                              <div class="choice">&amp;
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> and
+                                    </div>
+                                 </div>
+                              </div> teach 
+                              <div class="choice">mee
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> me
+                                    </div>
+                                 </div>
+                              </div>, how by
+                              it
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">40</div>
+                        
+                        <div class="apparatus app_2_l_40_1" data-app-id="app_2_l_40_1">
+                           <div data-witness="b" class="reading b">To 
+                              <div class="choice">climbe
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> climb
+                                    </div>
+                                 </div>
+                              </div> to
+                              Thee.
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                  </div>
+                  
+               </div>
+               
+               
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="p">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>Witness p
+            </div>
+            <div class="mssContent">
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               <hr class="pagebreak p"></hr>
+               <div class="facs-images"></div>
+               
+               
+               
+               
+               <div class="div type-poem rend-right" data-line-id="div">
+                  
+                  
+                  <div class="head" data-line-id="head">
+                     
+                     <div class="apparatus app_2_head1" data-app-id="app_2_head1">
+                        <div data-witness="p" class="reading p">¶ The Pearl. <span class="hi rend-italic">
+                              Matth. </span>
+                           13.
+                        </div>
+                     </div>
+                     
+                  </div>
+                  
+                  
+                  <div class="lg lg-n1 type-stanza" data-line-id="lg1">
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">1</div>
+                        
+                        <div class="apparatus app_2_l_1_1" data-app-id="app_2_l_1_1">
+                           <div data-witness="p" class="reading p">I 
+                              <div class="choice">Know
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> know
+                                    </div>
+                                 </div>
+                              </div> the 
+                              <div class="choice">wayes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> ways
+                                    </div>
+                                 </div>
+                              </div> of
+                              learning; both the head
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">2</div>
+                        
+                        <div class="apparatus app_2_l_2_1" data-app-id="app_2_l_2_1">
+                           <div data-witness="p" class="reading p">And pipes that feed the 
+                              <div class="choice">preſſe
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> press
+                                    </div>
+                                 </div>
+                              </div>, and
+                              make it 
+                              <div class="choice">runne
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> run
+                                    </div>
+                                 </div>
+                              </div>;
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">3</div>
+                        
+                        <div class="apparatus app_2_l_3_1" data-app-id="app_2_l_3_1">
+                           <div data-witness="p" class="reading p">What 
+                              <div class="choice">reaſon
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> reason
+                                    </div>
+                                 </div>
+                              </div> hath
+                              from nature borrowed,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">4</div>
+                        
+                        <div class="apparatus app_2_l_4_1" data-app-id="app_2_l_4_1">
+                           <div data-witness="p" class="reading p">Or of 
+                              <div class="choice">it
+                                 ſelf
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> itself
+                                    </div>
+                                 </div>
+                              </div>, like a good 
+                              <div class="choice">huſwife
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> housewife
+                                    </div>
+                                 </div>
+                              </div>, 
+                              <div class="choice">ſpunne
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> spun
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">5</div>
+                        
+                        <div class="apparatus app_2_l_5_1" data-app-id="app_2_l_5_1">
+                           <div data-witness="p" class="reading p">In laws and 
+                              <div class="choice">policie
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> policy
+                                    </div>
+                                 </div>
+                              </div>; what
+                              the 
+                              <div class="choice">ﬅarres
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> stars
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">conſpire
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> conspire
+                                    </div>
+                                 </div>
+                              </div>,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">6</div>
+                        
+                        <div class="apparatus app_2_l_6_1" data-app-id="app_2_l_6_1">
+                           <div data-witness="p" class="reading p">What willing nature 
+                              <div class="choice">ſpeaks
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> speaks
+                                    </div>
+                                 </div>
+                              </div>, what forc'd by 
+                              <div class="choice">ﬁre
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> fire
+                                    </div>
+                                 </div>
+                              </div>;
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">7</div>
+                        
+                        <div class="apparatus app_2_l_7_1" data-app-id="app_2_l_7_1">
+                           <div data-witness="p" class="reading p">Both th' old 
+                              <div class="choice">diſcoveries
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> discoveries
+                                    </div>
+                                 </div>
+                              </div>,
+                              and the 
+                              <div class="choice">new
+                                 found
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> new-found
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">ſeas
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> seas
+                                    </div>
+                                 </div>
+                              </div>,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">8</div>
+                        
+                        <div class="apparatus app_2_l_8_1" data-app-id="app_2_l_8_1">
+                           <div data-witness="p" class="reading p">The 
+                              <div class="choice">ﬅock
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> stock
+                                    </div>
+                                 </div>
+                              </div> and 
+                              <div class="choice">ſurplus
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> surplus
+                                    </div>
+                                 </div>
+                              </div>, 
+                              <div class="choice">cauſe
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> cause
+                                    </div>
+                                 </div>
+                              </div> and
+                              
+                              <div class="choice">hiﬅorie
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> history
+                                    </div>
+                                 </div>
+                              </div>:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     
+                     
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">9</div>
+                        
+                        <div class="apparatus app_2_l_9_1" data-app-id="app_2_l_9_1">
+                           <div data-witness="p" class="reading p">All 
+                              <div class="choice">theſe
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> these
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">ﬅand
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> stand
+                                    </div>
+                                 </div>
+                              </div>
+                              open, or I have the 
+                              <div class="choice">keyes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> keys
+                                    </div>
+                                 </div>
+                              </div>:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">10</div>
+                        
+                        <div class="apparatus app_2_l_10_1" data-app-id="app_2_l_10_1">
+                           <div data-witness="p" class="reading p">Yet I love thee.</div>
+                        </div>
+                        
+                     </div>
+                     
+                  </div>
+                  
+                  
+                  <div class="lg lg-n2 type-stanza" data-line-id="lg2">
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">11</div>
+                        
+                        <div class="apparatus app_2_l_11_1" data-app-id="app_2_l_11_1">
+                           <div data-witness="p" class="reading p">I know the 
+                              <div class="choice">wayes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> ways
+                                    </div>
+                                 </div>
+                              </div> of honour,
+                              what maintains
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">12</div>
+                        
+                        <div class="apparatus app_2_l_12_1" data-app-id="app_2_l_12_1">
+                           <div data-witness="p" class="reading p">The quick returns of 
+                              <div class="choice">courteſie
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> courtesy
+                                    </div>
+                                 </div>
+                              </div> and
+                              wit:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">13</div>
+                        
+                        <div class="apparatus app_2_l_13_1" data-app-id="app_2_l_13_1">
+                           <div data-witness="p" class="reading p">In vies of favours whether 
+                              <div class="choice">partie
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> party
+                                    </div>
+                                 </div>
+                              </div>
+                              gains,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">14</div>
+                        
+                        <div class="apparatus app_2_l_14_1" data-app-id="app_2_l_14_1">
+                           <div data-witness="p" class="reading p">When 
+                              <div class="choice">glorie
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> glory
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">ſwells
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> swells
+                                    </div>
+                                 </div>
+                              </div>
+                              the heart, and moldeth it
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">15</div>
+                        
+                        <div class="apparatus app_2_l_15_1" data-app-id="app_2_l_15_1">
+                           <div data-witness="p" class="reading p">To all 
+                              <div class="choice">expreſſions
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> expressions
+                                    </div>
+                                 </div>
+                              </div> both of
+                              hand and eye,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">16</div>
+                        
+                        <div class="apparatus app_2_l_16_1" data-app-id="app_2_l_16_1">
+                           <div data-witness="p" class="reading p">Which on the world a true-love-knot may tie,</div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">17</div>
+                        
+                        <div class="apparatus app_2_l_17_1" data-app-id="app_2_l_17_1">
+                           <div data-witness="p" class="reading p">And bear the bundle, 
+                              <div class="choice">whereſoe're
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> wheresoe'er
+                                    </div>
+                                 </div>
+                              </div>
+                              it goes:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">18</div>
+                        
+                        <div class="apparatus app_2_l_18_1" data-app-id="app_2_l_18_1">
+                           <div data-witness="p" class="reading p">How many 
+                              <div class="choice">drammes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> drams
+                                    </div>
+                                 </div>
+                              </div> of 
+                              <div class="choice">ſpirit
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> spirit
+                                    </div>
+                                 </div>
+                              </div>
+                              there 
+                              <div class="choice">muﬅ
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> must
+                                    </div>
+                                 </div>
+                              </div>
+                              be
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">19</div>
+                        
+                        <div class="apparatus app_2_l_19_1" data-app-id="app_2_l_19_1">
+                           <div data-witness="p" class="reading p">To 
+                              <div class="choice">ſell
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> sell
+                                    </div>
+                                 </div>
+                              </div> my life unto my
+                              friends or foes:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">20</div>
+                        
+                        <div class="apparatus app_2_l_20_1" data-app-id="app_2_l_20_1">
+                           <div data-witness="p" class="reading p">Yet I love thee.</div>
+                        </div>
+                        
+                     </div>
+                     
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="lg lg-n3 type-stanza" data-line-id="lg3">
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">21</div>
+                        
+                        <div class="apparatus app_2_l_21_1" data-app-id="app_2_l_21_1">
+                           <div data-witness="p" class="reading p">I know the 
+                              <div class="choice">wayes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> ways
+                                    </div>
+                                 </div>
+                              </div> of 
+                              <div class="choice">pleaſure
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> pleasure
+                                    </div>
+                                 </div>
+                              </div>, the 
+                              <div class="choice">ſweet
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> sweet
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">ﬅrains
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> strains
+                                    </div>
+                                 </div>
+                              </div>,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">22</div>
+                        
+                        <div class="apparatus app_2_l_22_1" data-app-id="app_2_l_22_1">
+                           <div data-witness="p" class="reading p">The lullings and the 
+                              <div class="choice">reliſhes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> relishes
+                                    </div>
+                                 </div>
+                              </div> of
+                              it;
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">23</div>
+                        
+                        <div class="apparatus app_2_l_23_1" data-app-id="app_2_l_23_1">
+                           <div data-witness="p" class="reading p">The 
+                              <div class="choice">propoſitions
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> propositions
+                                    </div>
+                                 </div>
+                              </div> of hot
+                              
+                              <div class="choice">bloud
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> blood
+                                    </div>
+                                 </div>
+                              </div>
+                              and brains;
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">24</div>
+                        
+                        <div class="apparatus app_2_l_24_1" data-app-id="app_2_l_24_1">
+                           <div data-witness="p" class="reading p">What mirth and 
+                              <div class="choice">muſick
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> music
+                                    </div>
+                                 </div>
+                              </div> mean; what love
+                              and wit
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">25</div>
+                        
+                        <div class="apparatus app_2_l_25_1" data-app-id="app_2_l_25_1">
+                           <div data-witness="p" class="reading p">Have done 
+                              <div class="choice">theſe
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> these
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">twentie
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> twenty
+                                    </div>
+                                 </div>
+                              </div>
+                              hundred 
+                              <div class="choice">yeares
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> years
+                                    </div>
+                                 </div>
+                              </div>, and
+                              more:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">26</div>
+                        
+                        <div class="apparatus app_2_l_26_1" data-app-id="app_2_l_26_1">
+                           <div data-witness="p" class="reading p">I know the projects of
+                              unbridled 
+                              <div class="choice">ﬅore
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> store
+                                    </div>
+                                 </div>
+                              </div>:
+                           </div>
+                        </div>
+                        <div class="apparatus app_2_l_26_1" data-app-id="app_2_l_26_1">
+                           <div data-witness="b p" class="reading b p">
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">vnbundled/unbridled</span>: Whereas the #b version
+                                    means merely unpacked or released, the #p revision means unrestrained or
+                                    undisciplined (as of a horse without a bridle).
+                                 </div>
+                              </div>
+                              
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">27</div>
+                        
+                        <div class="apparatus app_2_l_27_1" data-app-id="app_2_l_27_1">
+                           <div data-witness="p" class="reading p">My 
+                              <div class="choice">ﬅuﬀe
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> stuff
+                                    </div>
+                                 </div>
+                              </div> is 
+                              <div class="choice">ﬂeſh
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> flesh
+                                    </div>
+                                 </div>
+                              </div>, not 
+                              <div class="choice">braſſe
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> brass
+                                    </div>
+                                 </div>
+                              </div>; my 
+                              <div class="choice">ſenſes
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> senses
+                                    </div>
+                                 </div>
+                              </div>
+                              live,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">28</div>
+                        
+                        <div class="apparatus app_2_l_28_1" data-app-id="app_2_l_28_1">
+                           <div data-witness="p" class="reading p">And grumble oft, that they have more in me</div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">29</div>
+                        
+                        <div class="apparatus app_2_l_29_1" data-app-id="app_2_l_29_1">
+                           <div data-witness="p" class="reading p">
+                              <div class="choice">Then
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> Than
+                                    </div>
+                                 </div>
+                              </div> he that curbs
+                              them, being but one to 
+                              <div class="choice">ﬁve
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> five
+                                    </div>
+                                 </div>
+                              </div>:
+                           </div>
+                        </div>
+                        <div class="apparatus app_2_l_29_1" data-app-id="app_2_l_29_1">
+                           <div data-witness="b p" class="reading b p">
+                              
+                              <div class="noteicon">n
+                                 <div class="note"><strong>Note:</strong> <span class="hi rend-italic">Lines 27-29</span>: "I am made of flesh and my five
+                                    senses complain often that they are restrained by Reason even though
+                                    outnumbering him five to one."
+                                 </div>
+                              </div>
+                              
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">30</div>
+                        
+                        <div class="apparatus app_2_l_30_1" data-app-id="app_2_l_30_1">
+                           <div data-witness="p" class="reading p">Yet I love thee.</div>
+                        </div>
+                        
+                     </div>
+                     
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <hr class="pagebreak p"></hr>
+                  <div class="facs-images"></div>
+                  
+                  
+                  
+                  
+                  <div class="lg lg-n4 type-stanza" data-line-id="lg4">
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">31</div>
+                        
+                        <div class="apparatus app_2_l_31_1" data-app-id="app_2_l_31_1">
+                           <div data-witness="p" class="reading p">I know all 
+                              <div class="choice">theſe
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> these
+                                    </div>
+                                 </div>
+                              </div>, and have
+                              them in my hand:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">32</div>
+                        
+                        <div class="apparatus app_2_l_32_1" data-app-id="app_2_l_32_1">
+                           <div data-witness="p" class="reading p">Therefore not 
+                              <div class="choice">ſealed
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> sealed
+                                    </div>
+                                 </div>
+                              </div>, but
+                              with open eyes
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">33</div>
+                        
+                        <div class="apparatus app_2_l_33_1" data-app-id="app_2_l_33_1">
+                           <div data-witness="p" class="reading p">I 
+                              <div class="choice">ﬂie
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> fly
+                                    </div>
+                                 </div>
+                              </div> to thee, and fully
+                              
+                              <div class="choice">underﬅand
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> understand
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">34</div>
+                        
+                        <div class="apparatus app_2_l_34_1" data-app-id="app_2_l_34_1">
+                           <div data-witness="p" class="reading p">Both the main 
+                              <div class="choice">ſale
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> sale
+                                    </div>
+                                 </div>
+                              </div>, and the
+                              commodities;
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">35</div>
+                        
+                        <div class="apparatus app_2_l_35_1" data-app-id="app_2_l_35_1">
+                           <div data-witness="p" class="reading p">And at what rate and price I have thy love;</div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">36</div>
+                        
+                        <div class="apparatus app_2_l_36_1" data-app-id="app_2_l_36_1">
+                           <div data-witness="p" class="reading p">With all the 
+                              <div class="choice">circumﬅances
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> circumstances
+                                    </div>
+                                 </div>
+                              </div>
+                              that may move:
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">37</div>
+                        
+                        <div class="apparatus app_2_l_37_1" data-app-id="app_2_l_37_1">
+                           <div data-witness="p" class="reading p">Yet through the labyrinths, not my groveling wit,</div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">38</div>
+                        
+                        <div class="apparatus app_2_l_38_1" data-app-id="app_2_l_38_1">
+                           <div data-witness="p" class="reading p">But thy 
+                              <div class="choice">ſilk
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> silk
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div class="choice">twiﬅ
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> twist
+                                    </div>
+                                 </div>
+                              </div> let
+                              down from heav'n to me,
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">39</div>
+                        
+                        <div class="apparatus app_2_l_39_1" data-app-id="app_2_l_39_1">
+                           <div data-witness="p" class="reading p">Did both 
+                              <div class="choice">conduct
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> conduct
+                                    </div>
+                                 </div>
+                              </div> and teach me, how
+                              by it
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     <div class="line">
+                        <div class="linenumber noDisplay">40</div>
+                        
+                        <div class="apparatus app_2_l_40_1" data-app-id="app_2_l_40_1">
+                           <div data-witness="p" class="reading p">To 
+                              <div class="choice">climbe
+                                 <div class="corr">
+                                    <div class="interior"><strong>Regularized form:</strong> climb
+                                    </div>
+                                 </div>
+                              </div> to
+                              thee.
+                           </div>
+                        </div>
+                        
+                     </div>
+                     
+                  </div>
+                  
+               </div>
+               
+               
+            </div>
+         </div>
+         <div id="notesPanel" class="ui-widget-content ui-resizable panel noDisplay">
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../../vm-images/closePanel.svg" alt="X (Close panel)"></img>
+               Textual Notes
+               
+            </div>
+            <div class="noteContent"><strong>Note: </strong>"Again, the kingdom of heaven is like unto a merchant man, seeking goodly
+               pearls: who, when he had found one pearl of great price, went and sold all that
+               he had, and bought it" (Matthew 13:45-46). Elaborating this passage from the
+               Sermon on the Mount, the poem reviews wistfully even while denouncing much of
+               what is positive in worldly experience: the pleasures of intellect, social
+               distinction, and the flesh.
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e429');">Line number 2</div><strong>Note: </strong><span class="hi rend-italic">Lines 1-2</span>: The <span class="hi rend-italic">Head/head</span>
+               and <span class="hi rend-italic">Pipes/pipes</span> can be read as both mechanical
+               components of the printing press and the human head and its channels through
+               which experience enters the mind via the eyes and ears and, transformed into
+               knowledge, exits via the mouth (speech being counterpart to the printed
+               word). This opening metaphor immediately establishes the tone of the poem by
+               suggesting that much of human knowledge is but a mechanistic response to
+               sensory stimuli—knowledge which <span class="hi rend-italic">reason/reaſon
+                  hath from Nature/nature</span> (line 3).
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e633');">Line number 5</div><strong>Note: </strong><span class="hi rend-italic">Lines 4-5, or … Policie/policie</span>: Reason,
+               like a resourceful housewife who makes due with the materials at her
+               immediate disposal, is self-sufficient with respect to the knowledge and
+               practice of law and politics. <span class="hi rend-italic">conspire/conſpire</span>: combine harmoniously (<span class="hi rend-italic">OED</span> 3.a).
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e748');">Line number 6</div><strong>Note: </strong>"What is immediately apparent, what revealed by fire," the latter
+               referring perhaps to some alchemical or occult process through which
+               nature's secrets are exposed.
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e895');">Line number 8</div><strong>Note: </strong>The abundance of knowledge already acquired, and how it came to be (i.e.,
+               philology).
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e960');">Line number 9</div><strong>Note: </strong><span class="hi rend-italic">keyes</span>: i.e., means and methods with which to
+               unlock nature's secrets (see line 6 and note).
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e1105');">Line number 12</div><strong>Note: </strong>"The courtier's skill in lively banter."
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e1175');">Line number 13</div><strong>Note: </strong>"Which of two courtiers wins favour in a contest of deference to a person
+               of rank."
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e1375');">Line number 16</div><strong>Note: </strong><span class="hi rend-italic">tru/true-love/loue-knot</span>: ornamental knot used as a
+               symbol of true love.
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e1447');">Line number 17</div><strong>Note: </strong><span class="hi rend-italic">Lines 15-17</span>: "When the desire for fame and
+               reputation at court is evident in subtle physical gestures and glances: a
+               wooing of the world as though it were a mistress—a pretence which,
+               like a burdensome load, must always be sustained."
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e1520');">Line number 18</div><strong>Note: </strong><span class="hi rend-italic">drams/drammes</span>: small amounts (<span class="hi rend-italic">OED</span> 3.b). <span class="hi rend-italic">spirit/ſpirit</span>: mental vigor,
+               courage (<span class="hi rend-italic">OED</span> 13.a); vital bodily fluid (<span class="hi rend-italic">OED</span> 16.a); distilled alcohol (<span class="hi rend-italic">OED</span> 21).
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e1595');">Line number 19</div><strong>Note: </strong><span class="hi rend-italic">Lines 18-19</span>: The speaker bemoans the considerable
+               energy it takes to sustain worldly respectability, wryly suggesting that
+               such effort can be mustered at all only with a little fortifying courage
+               from the bottle.
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e1684');">Line number 21</div><strong>Note: </strong><span class="hi rend-italic">strains/straines/ﬅrains</span>: passages of song or verse
+               (<span class="hi rend-italic">OED</span> 13.b); sexual exertions.
+            </div>
+            <div class="noteContent w">
+               <div class="witnesses">w</div>
+               <div class="position" onclick="matchLine('lined2e1783');">Line number 22</div><strong>Note: </strong><span class="hi rend-italic"><del class=" rend-strike">gustos</del></span>: keen enjoyments
+               (<span class="hi rend-italic">OED</span> 2).
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e1783');">Line number 22</div><strong>Note: </strong><span class="hi rend-italic">lullings/Lullings</span>: soothing songs (<span class="hi rend-italic">OED</span> 1.b); soothing caresses (<span class="hi rend-italic">OED</span> lull, v.1, 1). <span class="hi rend-italic">relishes/rellishes/reliſhes</span>: pleasing flavours or qualities (<span class="hi rend-italic">OED</span> 1.d); and, as Wilcox (325) notes, musical
+               embellishments (<span class="hi rend-italic">OED</span> relish, n.3).
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e1882');">Line number 23</div><strong>Note: </strong><span class="hi rend-italic">propositions/propoſitions</span>: schemes or courses of action (<span class="hi rend-italic">OED</span> 2.a).
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e2062');">Line number 25</div><strong>Note: </strong><span class="hi rend-italic">Lines 24-25</span>: "What are the major cultural
+               achievements inspired by love from Classical antiquity to the
+               present."
+            </div>
+            <div class="noteContent w">
+               <div class="witnesses">w</div>
+               <div class="position" onclick="matchLine('lined2e2137');">Line number 26</div><strong>Note: </strong><span class="hi rend-italic">their</span>: i.e., <span class="hi rend-italic">loue</span>'s and
+               <span class="hi rend-italic">witt</span>'s.
+            </div>
+            <div class="noteContent b p">
+               <div class="witnesses">b p</div>
+               <div class="position" onclick="matchLine('lined2e2137');">Line number 26</div><strong>Note: </strong><span class="hi rend-italic">vnbundled/unbridled</span>: Whereas the #b version
+               means merely unpacked or released, the #p revision means unrestrained or
+               undisciplined (as of a horse without a bridle).
+            </div>
+            <div class="noteContent w">
+               <div class="witnesses">w</div>
+               <div class="position" onclick="matchLine('lined2e2227');">Line number 27</div><strong>Note: </strong><span class="hi rend-italic">smacks</span>: agreeable flavours (<span class="hi rend-italic">OED</span> 1.c). <span class="hi rend-italic">dainties</span>: choice viands (<span class="hi rend-italic">OED</span> 6). <span class="hi rend-italic">their exaltation</span>:
+               the elation they cause (<span class="hi rend-italic">OED</span> 2.b).
+            </div>
+            <div class="noteContent w">
+               <div class="witnesses">w</div>
+               <div class="position" onclick="matchLine('lined2e2312');">Line number 28</div><strong>Note: </strong><span class="hi rend-italic">stops</span>: ventages or apertures on the tube of a
+               wind instrument (<span class="hi rend-italic">OED</span> 15.a). <span class="hi rend-italic">pegs</span>: tuning pegs of a stringed instrument (<span class="hi rend-italic">OED</span> 2.a).
+            </div>
+            <div class="noteContent w">
+               <div class="witnesses">w</div>
+               <div class="position" onclick="matchLine('lined2e2373');">Line number 29</div><strong>Note: </strong>"The pleasures of society or solitary
+               reflection."
+            </div>
+            <div class="noteContent b p">
+               <div class="witnesses">b p</div>
+               <div class="position" onclick="matchLine('lined2e2373');">Line number 29</div><strong>Note: </strong><span class="hi rend-italic">Lines 27-29</span>: "I am made of flesh and my five
+               senses complain often that they are restrained by Reason even though
+               outnumbering him five to one."
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e2496');">Line number 31</div><strong>Note: </strong><span class="hi rend-italic">have/haue them in my hand</span>: i.e., by virtue of
+               having written this poem.
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e2668');">Line number 35</div><strong>Note: </strong><span class="hi rend-italic">Lines 32-35</span>: Using a cold, mercantile language of
+               exchange, the speaker arrogantly presumes to comprehend the extent of the
+               sacrifice required to follow Christ. Worse yet, he fails utterly to
+               comprehend the extent of Christ's sacrifice relative to his own.
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e2723');">Line number 36</div><strong>Note: </strong>"The speaker even claims to be able to anticipate changes in
+               circumstances and to understand how they will affect the agreement" (Wilcox,
+               326).
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e2797');">Line number 37</div><strong>Note: </strong><span class="hi rend-italic">labyrinths/labarinths</span>: mazes, recalling the story
+               of Theseus and the Minotaur in Ovid's <span class="hi rend-italic">Metamorphoses</span>
+               (8.130ff.). After slaying the beast, Theseus finds his way out of the
+               labyrinth by means of Ariadne's thread (the latter suggested here by the <span class="hi rend-italic">silk twist/twiﬅ</span> in the following line). <span class="hi rend-italic">groueling/groveling witt/wit</span>: This sudden assertion
+               that the poem to this point has been merely obsequious seems entirely at
+               odds with the arrogance of the lines (32-36) immediately preceding. The
+               crucial question is whether the acknowledgement of such folly has
+               sufficiently corrected it. But perhaps that is the point: nothing the
+               speaker says or does can redeem him. The poem's conclusion is the moment
+               before the <span class="hi rend-italic">clime/climbe</span> (line 40) has even
+               begun.
+            </div>
+            <div class="noteContent">
+               <div class="position" onclick="matchLine('lined2e2876');">Line number 38</div><strong>Note: </strong><span class="hi rend-italic">silk-/silk/ſilk
+                  twist/twiﬅ</span>: In addition to the echo of Ovid (see line 37 and note),
+               Wilcox (326-27) cites three possible interpretations of this much-discussed
+               phrase: an echo of Jacob's ladder linking heaven and earth (Genesis 28:12);
+               the proverbial "threefold cord" that "is not quickly broken" (Ecclesiastes
+               3:12) and therefore a type of the Trinity; and a passage in Calvin's <span class="hi rend-italic">Institutes</span> (1.6.3) in which the "twist" of God's Word
+               is said to lead the Christian to salvation.
+            </div>
+            <div id="noNotesFound" class="noteContent">
+               Sorry, but there are no notes associated with
+               any currently displayed witness.
+               
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
