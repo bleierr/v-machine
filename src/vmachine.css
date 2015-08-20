@@ -1,7 +1,7 @@
 /**
 	* @license vmachine.js for VM 5.0
 	* Updated: Aug 10 2015 by roman bleier
-	* Adds JS functionality to VM 5.0
+	* Adds CSS styling to VM 5.0
 	* Copyright (c) 2015 roman bleier
 	* Released under the MIT license
 	* Permission is hereby granted, free of charge, to any person obtaining
@@ -367,6 +367,10 @@ div.mssContent div.paragraph div.reading{
     margin:6px 0;
 }
 
+div.apparatus div.reading{
+    display:inline-block;
+}
+
 div.apparatus{
     display:inline-block;
 }
@@ -566,8 +570,11 @@ img.highlight{
 }
 
 /* change colour of match app/line highlight*/
-.matchHi{
+.matchLineHi, .matchLineHiClicked{
 	background-color: #F0E68C;
+}
+.matchAppHi, .matchAppHiClicked{
+	background-color: #F6E613;
 }
 
 .ui-resizable-helper { border: 2px dotted #2c577f; }

@@ -14,8 +14,8 @@
   <xsl:variable name="closePanelButton"><xsl:value-of select="$vmImages"/><xsl:text>closePanel.svg</xsl:text></xsl:variable>
   <xsl:variable name="imageIcon"><xsl:value-of select="$vmImages"/><xsl:text>image.svg</xsl:text></xsl:variable>
    
-   <!-- path to folder of facsimile images, the path is encoded in the tei files like this: images/imagename.jpg -->
-  <xsl:variable name="facsImageFolder">../</xsl:variable>  
+   <!-- path to folder of facsimile images, the path is encoded in the TEI files like this: images/imagename.jpg -->
+  <xsl:variable name="facsImageFolder"></xsl:variable>  
   
   <!-- include file form src folder -->
   <xsl:variable name="cssInclude">../src/vmachine.css</xsl:variable>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="../../src/vmachine.xsl" type="text/xsl" ?>
-<?xml-model href="../../schema/vmachine.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="../../schema/vmachine.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet href="../src/vmachine.xsl" type="text/xsl" ?>
+<?xml-model href="../schema/vmachine.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/vmachine.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
 
     <teiHeader>
@@ -139,9 +139,6 @@
             <div>
 
                 <head>
-
-
-
                     <app>
 
                         <rdg wit="#t7989-1-2">Nocturne, St. Eloi, 1918.</rdg>
@@ -160,27 +157,21 @@
                         <rdg wit="#nocturne_poems">NOCTURNE</rdg>
 
                     </app>
-
-
                     <note type="critical" anchored="true">
-
                         <p>Saint Eloi, one of the most popular Saints of the Middle Ages, founded a
                             monastery near the present village of Mont St. Eloi, five miles
                             northwest of the city of Arras in northern France. The ruins of the
                             monastery remain, and in 1917-18 were close to the Western Front. There
                             is also a British Military Cemetery nearby.</p>
-
                         <p>Eloi may also be a reference to the words of Christ on the cross: 'Eloi,
                             Eloi, lamma sabacthani? . . . My God, my God, why hast thou forsaken
                             me?' (Mark 15:34-5).</p>
-
                     </note>
                 </head>
 
                 <div type="dedication">
 
                     <p>
-
                         <app>
 
                             <rdg wit="#t7989-1-1">
@@ -188,9 +179,7 @@
                                     Geoffrey<lb/> England Taylor, 2nd Lieutenant, R.F.A.,<lb/> died
                                     of wounds received in action, in<lb/> France, September, 26,
                                     1918.</hi>
-
                                 <note type="biographical" anchored="true">
-
                                     <p>Geoffrey England Taylor, a fellow cadet at the training
                                         academy at Bloomsbury in London, was MacGreevy's closest
                                         friend during the war. Both men were drafted to the same
@@ -198,7 +187,6 @@
                                         to trench mortars: 'the greatest misfortune that could
                                         befall a gunner-officer. Trench mortars were regarded with
                                         horror . . . [they were] a suicide club.' </p>
-
                                     <p>While MacGreevy was recovering from his shoulder wound in
                                         Manchester, he found Taylor's name in the Died of Wounds
                                         section of the Casualty List. The death of Geoffrey Taylor,
@@ -206,29 +194,28 @@
                                         MacGreevy the worst horror of war: the destruction of
                                         'life's hopes and dreams'; 'intelligence and beauty'. <title
                                             rend="italic">Memoirs</title>, pp. 318-19. </p>
-
-
                                 </note>
                             </rdg>
 
                             <rdg wit="#nocturne_poems">
                                 <hi rend="italic">To Geoffrey England Taylor, 2nd Lieutenant,
                                     R.F.A.,<lb/> "Died of wounds"</hi>. <note type="biographical"
-                                    anchored="true"> <p>Geoffrey England Taylor, a fellow cadet at
-                                        the training academy at Bloomsbury in London, was
-                                        MacGreevy's closest friend during the war. Both men were
-                                        drafted to the same division in France. MacGreevy was
-                                        assigned to guns, Taylor to trench mortars: 'the greatest
-                                        misfortune that could befall a gunner-officer. Trench
-                                        mortars were regarded with horror . . . [they were] a
-                                        suicide club.' </p> <p>While MacGreevy was recovering from
-                                        his shoulder wound in Manchester, he found Taylor's name in
-                                        the Died of Wounds section of the Casualty List. The death
-                                        of Geoffrey Taylor, 'one of the most sensitively gentle' of
-                                        men, represented to MacGreevy the worst horror of war: the
-                                        destruction of 'life's hopes and dreams'; 'intelligence and
-                                        beauty'. <title rend="italic">Memoirs</title>, pp. 318-19.
-                                    </p> </note>
+                                    anchored="true">
+                                    <p>Geoffrey England Taylor, a fellow cadet at the training
+                                        academy at Bloomsbury in London, was MacGreevy's closest
+                                        friend during the war. Both men were drafted to the same
+                                        division in France. MacGreevy was assigned to guns, Taylor
+                                        to trench mortars: 'the greatest misfortune that could
+                                        befall a gunner-officer. Trench mortars were regarded with
+                                        horror . . . [they were] a suicide club.' </p>
+                                    <p>While MacGreevy was recovering from his shoulder wound in
+                                        Manchester, he found Taylor's name in the Died of Wounds
+                                        section of the Casualty List. The death of Geoffrey Taylor,
+                                        'one of the most sensitively gentle' of men, represented to
+                                        MacGreevy the worst horror of war: the destruction of
+                                        'life's hopes and dreams'; 'intelligence and beauty'. <title
+                                            rend="italic">Memoirs</title>, pp. 318-19. </p>
+                                </note>
                             </rdg>
 
                         </app>
@@ -243,7 +230,6 @@
                         <l n="1"> I labour in a barren place,</l>
 
                         <l n="2">
-
                             <app>
 
                                 <rdg wit="#t7989-1-2">Afraid, aware, <del type="hand">little</del>
@@ -256,7 +242,6 @@
                         </l>
 
                         <l n="3">
-
                             <app>
 
                                 <rdg wit="#t7989-1-2">Far away, stars wheeling on through

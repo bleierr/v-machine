@@ -373,11 +373,38 @@ $.fn.hoverPopupNote = function() {
 	});
 };
 
-$.fn.matchApp = function() {
-	/* plugin that adds a apparatus/line matching functionality */
+$.fn.matchAppHover = function() {
+	/* plugin that adds a apparatus matching functionality */
+		this.hover(function(){
+			var app = $(this).attr("data-app-id");
+			$("."+app).addClass("matchAppHi");
+		},function(){
+			var app = $(this).attr("data-app-id");
+			$("."+app).removeClass("matchAppHi");
+		});
+};
+$.fn.matchAppClick = function() {
+	/* plugin that adds a line matching functionality */
 		this.click(function(){
 			var app = $(this).attr("data-app-id");
-			$("."+app).toggleClass("matchHi");
+			$("."+app).toggleClass("matchAppHiClicked");
+		});
+};
+$.fn.matchLineHover = function() {
+	/* plugin that adds a apparatus matching functionality */
+		this.hover(function(){
+			var line = $(this).attr("data-line-id");
+			$("."+line).parent().addClass("matchLineHi");
+		},function(){
+			var line = $(this).attr("data-line-id");
+			$("."+line).parent().removeClass("matchLineHi");
+		});
+};
+$.fn.matchLineClick = function() {
+	/* plugin that adds a line matching functionality */
+		this.click(function(){
+			var line = $(this).attr("data-line-id");
+			$("."+line).parent().toggleClass("matchLineHiClicked");
 		});
 };
 /***** END Functionality popup notes and apparatus/line matching *****/
@@ -445,10 +472,53 @@ function linenumber(){
 		$("nav li#linenumberOnOff").toggleOnOffButton();
 	}
 }
+
+function descendentsHaveClass(ele, className){
+	var found = false
+	
+	$(ele).find("*").each(function(){
+		if($(this).hasClass(className)){
+			found = true
+		}
+	});
+	
+	
+	return found
+}
+
+
+
 function mssPanels(){
 	//initial setup
 	//open the witness/version panels
 	var keyword = "versions";
+	
+	//by default the vmachine.xsl displays all versions in each panel, not relevant versions have to be hidden
+	$(".mssPanel").each(function(idx){
+		var mssId = $(this).attr("id");
+		
+		$(this).find(".mssContent *").filter(function(idx, ele){
+			var hide = true;
+			if( descendentsHaveClass(ele, mssId) || ($(ele).hasClass(mssId)) ){
+				hide = false;
+			}
+			console.log(ele.tagName);
+			if( $(ele).hasClass("linenumber") ){
+				hide = false;
+			}
+			if( $(ele).hasClass("del") || $(ele).hasClass("add") || $(ele).hasClass("corr") || $(ele).hasClass("reg") ){
+				hide = false;
+			}
+			if( $(ele).hasClass("linebreak") ){
+				hide = false;
+			}
+			return hide;
+		
+		}).hide();
+		
+	
+	});
+	
 	//manuscript panels visible, constant INITIAL_DISPLAY_NUM_VERSIONS can be found in settings.xsl
 	var versions = INITIAL_DISPLAY_NUM_VERSIONS;
 	$("#witnessList li").each(function(idx){
@@ -497,9 +567,13 @@ $(document).ready(function() {
 	$("div.noteicon, div.choice, div.rdgGrp").hoverPopupNote();
 	
 	//adds match line/apparatus highlighting plugin
-	$(".apparatus").matchApp();
+	$(".apparatus").matchAppHover();
+	$(".apparatus").matchAppClick();
 	//adds match audio with transcription plugin
 	$(".apparatus").audioMatch();
+	
+	$(".linenumber").matchLineClick();
+	$(".linenumber").matchLineHover();
 	
 	/**add draggable and resizeable to all panels (img + mss)*/
 	$( ".panel" ).draggable({
