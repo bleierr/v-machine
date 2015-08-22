@@ -1,27 +1,9 @@
 /**
 	* @license vmachine.js for VM 5.0
-	* Updated: Aug 10 2015 by roman bleier
+	* Updated: Aug 22 2015 by roman bleier
 	* Adds JS functionality to VM 5.0
 	* Copyright (c) 2015 roman bleier
-	* Released under the MIT license
-	* Permission is hereby granted, free of charge, to any person obtaining
-	* a copy of this software and associated documentation files (the
-	* "Software"), to deal in the Software without restriction, including
-	* without limitation the rights to use, copy, modify, merge, publish,
-	* distribute, sublicense, and/or sell copies of the Software, and to
-	* permit persons to whom the Software is furnished to do so, subject to
-	* the following conditions:
-
-	* The above copyright notice and this permission notice shall be
-	* included in all copies or substantial portions of the Software.
-
-	* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-	* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-	* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-	* NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-	* LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-	* OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-	* WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+	* 
 	**/
 
 function moveToFront($that){
@@ -44,7 +26,7 @@ function totalPanelWidth(){
 }
 
 function PanelInPosXY(selector, top, left){
-	/** @PanelInPosXY function to find if a panel/element is in the location left/top 
+	/** PanelInPosXY function to find if a panel/element is in the location left/top 
 	*param selector: JQuery selector ( for instance to select all panels, or all visibal panels)
 	*param left: the left coordinates of the panel/element 
 	*param top: the top coordinates of the panel/element
@@ -61,7 +43,7 @@ function PanelInPosXY(selector, top, left){
 }
 
 function workspaceResize(){
-	/** @workspaceResize resizes the workspace depending on how many panels are visible, 
+	/** workspaceResize resizes the workspace depending on how many panels are visible, 
 	* if panel is opened the workspace becomes larger, 
 	* if a panel is closed it becomes smaller
 	*/
@@ -103,7 +85,9 @@ function workspaceResize(){
 /***** Functionality of dropdown menu and top menu *****/
 
 $.fn.toggleOnOffButton = function() {
-	/*plugin toggles between ON and OFF status of a button of top menu and dropdown*/
+	/**
+	*plugin toggles between ON and OFF status of a button of top menu and dropdown
+	**/
 	return $(this).each(function(){
     var b = $(this).find("button");
 		var content = b.html();
@@ -118,31 +102,31 @@ $.fn.toggleOnOffButton = function() {
 		});
 	}
 
-$.fn.dropdownButtonClick = function() {
-	/*plugin to add a click event to a dropdown button
-	on click the following list with class 'dropdown will be shown
-	*/
-    return this.click(function(e){
-        e.stopPropagation();
-		/* change visibility of the dropdown list, 
+$.fn.selectWitnessMenu = function() {
+	/**selectWitnessMenu plugin to add hover effect to the button #selectWitnessButton
+	* on hover the dropdown #witnessList will be shown or hidden
+	**/
+    $(this).hover(function(){
+        /* change visibility of the dropdown list, 
 		statement 'ul#witnessList.notVisible li{visibility: hidden;}' in css necessary 
 		*/
-		$(".dropdownButton").next(".dropdown").toggleClass('notVisible');
-		/* change visibility of dropdown if click anywhere on the web page */
-		$('html').click(function (e) {
-			var container = $(".dropdown");
-			//check if the clicked area is dropDown or not
-			if (container.has(e.target).length === 0) {
-				$(".dropdown").addClass('notVisible');
-			}
-		});
-    });
+		$("#witnessList").removeClass('notVisible');
+    },function(){
+		$("#witnessList").addClass('notVisible');
+	});
+	/* adds hovereffect on dropdown #witnessList */
+	$("#witnessList").hover(function(){
+			$(this).removeClass('notVisible');
+		},function(){
+			$(this).addClass('notVisible');
+		}
+	);
 };
 
 $.fn.linenumberOnOff = function() {
-	/*plugin to add a click event to linenumberOnOff button
-	on click the line numbers in the panels become invisible
-	*/
+	/**plugin to add a click event to linenumberOnOff button
+	*on click the line numbers in the panels become invisible
+	**/
     return this.click(function(){
 		$(".linenumber").toggleClass("noDisplay");
 		$("#linenumberOnOff").toggleOnOffButton();
@@ -150,6 +134,9 @@ $.fn.linenumberOnOff = function() {
 }
 
 $.fn.panelButtonClick = function() {
+	/**panelButtonClick plugin to control the click effect in the dropDownButton selectWitness
+	*on click witness or version panels become invisible or visible
+	**/
     return this.click(function(){
 			var dataPanelId = $(this).attr("data-panelid");
 			
@@ -183,6 +170,9 @@ $.fn.panelButtonClick = function() {
 };
 	
 $.fn.panelButtonHover = function() {
+	/**panelButtonHover plugin to add hover effect to the dropDownButton selectWitness
+	*on hover corresponding witness or version panels will be highlighted
+	**/
     return this.hover(function(){
 		/*mouse enter event*/
 		var p = $(this).attr("data-panelid");
@@ -264,6 +254,10 @@ $.fn.closePanelClick = function() {
 	*/
     return this.click(function(){
 		var w = $(this).closest(".panel").attr("id");
+		
+		if ( w === "notesPanel"){
+			$(".noteicon").toggle();
+		}		
 		$(this).closest(".panel").addClass("noDisplay");
 		$("*[data-panelid='"+w+"']").toggleOnOffButton();
 		workspaceResize();
@@ -308,11 +302,13 @@ $.fn.imgLinkHover = function() {
 		this.hover(function(){
 			/* current hover event add class 'highlight' on hover*/
 				$(this).addClass("highlight");
+				$(this).css({"border":"1px solid red"});
 				var panelId = $(this).attr("data-img-id");
 				$(".imgPanel[id='" + panelId + "']").addClass("highlight");
 			},function(){
 			/* on hover out remove 'highlight' class*/
 				$(this).removeClass("highlight");
+				$(this).css({"border":"1px solid white"});
 				var panelId = $(this).attr("data-img-id");
 				$(".imgPanel[id='" + panelId + "']").removeClass("highlight");
 			});		
@@ -327,11 +323,11 @@ $.fn.imgPanelHover = function() {
 	/* plugin to add a hover event to the image panels*/
     return this.hover(function(){
 			var imageId = $(this).attr("id");
-			$("img[data-img-id='" + imageId +"']").addClass("highlight");
+			$("img[data-img-id='" + imageId +"']").css({"border":"1px solid red"});
 			$(this).addClass("highlight");
 		}, function(){
 			var imageId = $(this).attr("id");
-			$("img[data-img-id='" + imageId +"']").removeClass("highlight");
+			$("img[data-img-id='" + imageId +"']").css({"border":"1px solid white"});
 			$(this).removeClass("highlight");
 		});
 };
@@ -393,37 +389,44 @@ $.fn.matchAppClick = function() {
 $.fn.matchLineHover = function() {
 	/* plugin that adds a apparatus matching functionality */
 		this.hover(function(){
-			var line = $(this).attr("data-line-id");
-			$("."+line).parent().addClass("matchLineHi");
+			var line = $(this).closest("div.lineWrapper").attr("data-line-id");
+			$("."+line).closest("div.lineWrapper").addClass("matchLineHi");
 		},function(){
-			var line = $(this).attr("data-line-id");
-			$("."+line).parent().removeClass("matchLineHi");
+			var line = $(this).closest("div.lineWrapper").attr("data-line-id");
+			$("."+line).closest("div.lineWrapper").removeClass("matchLineHi");
 		});
 };
 $.fn.matchLineClick = function() {
 	/* plugin that adds a line matching functionality */
 		this.click(function(){
-			var line = $(this).attr("data-line-id");
-			$("."+line).parent().toggleClass("matchLineHiClicked");
+			var line = $(this).closest("div.lineWrapper").attr("data-line-id");
+			$("."+line).closest("div.lineWrapper").toggleClass("matchLineHiClicked");
 		});
 };
 /***** END Functionality popup notes and apparatus/line matching *****/
 
 $.fn.audioMatch = function() {
 		/**app to add **/
-		this.click(function(){
-			if($(this).hasClass("matchHi")){
+		this.mousedown(function(){
+			//var witId = $(this).attr("data-reading-wits"); //it should only be one ID reading for audio tracks
+			
 				var timeStart = $(this).attr("data-timeline-start");
 				var timeInterval = $(this).attr("data-timeline-interval");
 				
 				$(this).closest(".mssPanel").find("audio").each(function(){
 					var $audio = $(this);
-					$audio.prop("currentTime",timeStart);
-					$audio.trigger('play');
-					setTimeout(function(){$audio.trigger('pause')}, 1000 * timeInterval);
 					
+					
+					if( $audio.prop('currentTime')=== 0 ){
+						$audio.trigger('play');
+					}
+					else{
+						$audio.prop("currentTime",timeStart);
+						$audio.trigger('play');
+						}
 				});
-			}
+				
+			
 		});
 };
 
@@ -449,7 +452,8 @@ function notesPanel(){
 		$("#"+keyword).changePanelVisibility("-1px", panelPos);
 		$("nav *[data-panelid='"+ keyword +"']").toggleOnOffButton();
 		$("#mssArea .noteicon").toggle();
-	}	
+	}
+	
 	$("#"+keyword).panelClick();
 	$("#"+keyword).panelHover();
 }
@@ -481,8 +485,6 @@ function descendentsHaveClass(ele, className){
 			found = true
 		}
 	});
-	
-	
 	return found
 }
 
@@ -491,7 +493,6 @@ function descendentsHaveClass(ele, className){
 function mssPanels(){
 	//initial setup
 	//open the witness/version panels
-	var keyword = "versions";
 	
 	//by default the vmachine.xsl displays all versions in each panel, not relevant versions have to be hidden
 	$(".mssPanel").each(function(idx){
@@ -502,11 +503,17 @@ function mssPanels(){
 			if( descendentsHaveClass(ele, mssId) || ($(ele).hasClass(mssId)) ){
 				hide = false;
 			}
-			console.log(ele.tagName);
 			if( $(ele).hasClass("linenumber") ){
 				hide = false;
 			}
 			if( $(ele).hasClass("del") || $(ele).hasClass("add") || $(ele).hasClass("corr") || $(ele).hasClass("reg") ){
+				hide = false;
+			}
+			var firstAncestorDiv = $(ele).closest("div")[0];
+			if( $(firstAncestorDiv).hasClass("noteicon") || $(firstAncestorDiv).hasClass("note") ){
+				hide = false;
+			}
+			if( $(ele).parent().hasClass("audioPlayer") ){
 				hide = false;
 			}
 			if( $(ele).hasClass("linebreak") ){
@@ -554,7 +561,7 @@ $(document).ready(function() {
 	$(".closePanel").closePanelClick();
 	
 	//dropdown functionality
-	$(".dropdownButton").dropdownButtonClick();
+	$("#selectWitness").selectWitnessMenu();
 	
 	//click and hover event for panel buttons
 	$("li[data-panelid]").panelButtonClick();
@@ -570,10 +577,10 @@ $(document).ready(function() {
 	$(".apparatus").matchAppHover();
 	$(".apparatus").matchAppClick();
 	//adds match audio with transcription plugin
-	$(".apparatus").audioMatch();
+	$(".audioReading").audioMatch();
 	
-	$(".linenumber").matchLineClick();
-	$(".linenumber").matchLineHover();
+	$("div.linenumber").matchLineClick();
+	$("div.linenumber").matchLineHover();
 	
 	/**add draggable and resizeable to all panels (img + mss)*/
 	$( ".panel" ).draggable({

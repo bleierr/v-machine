@@ -220,6 +220,7 @@
                <xsl:text>Bibliographic panel</xsl:text>
             </button>
          </li>
+      <xsl:if test="//tei:body//tei:note">
          <li>
             <xsl:attribute name="data-panelid">notesPanel</xsl:attribute>
             <xsl:attribute name="title">Clicking this button triggers the notes panel to appear or disappear.</xsl:attribute>
@@ -228,6 +229,7 @@
                <xsl:text>Notes panel</xsl:text>
             </button>
          </li>
+      </xsl:if>
       <xsl:if test="//tei:notesStmt/tei:note[@type='critIntro']">
             <li>
                <xsl:attribute name="data-panelid">critPanel</xsl:attribute>
@@ -296,7 +298,6 @@
    <xsl:template name="audioPlayer">
       <xsl:param name="witId"/>
       <!--foreach witness with media-->
-      <xsl:value-of select="$witId"></xsl:value-of>
       <xsl:for-each select="//tei:witDetail[@target = concat('#',$witId) and tei:media[@url]]">
          
          <div>
@@ -304,6 +305,8 @@
             <xsl:attribute name="data-witness"><xsl:value-of select="translate(@wit, '#', '')" /></xsl:attribute>
             <!--<audio controls="controls">-->
             <audio controls="controls" preload="none">
+               <xsl:attribute name="id" select="$witId"/>
+               
             <!--foreach source-->
                <xsl:for-each select="//tei:witDetail[@target = concat('#',$witId) and tei:media[@url]]/tei:media">
                
@@ -563,6 +566,7 @@
                   </xsl:if>
                   <xsl:choose>
                      <xsl:when test="ancestor::tei:l">
+                        <!--  ???? this still needs revision -->
                         <div class="position">
                            <xsl:attribute name="onclick">
                               <xsl:text>matchLine('line</xsl:text>
@@ -688,37 +692,43 @@
    
    
    <xsl:template match="tei:l">
-      <div>
-         <xsl:attribute name="class">
-            <xsl:text>line</xsl:text>
-               <xsl:if test="not(descendant::tei:rdg) or not(descendant::tei:app) or not(not(descendant::tei:lem))">
-                    <xsl:for-each select="$witnesses">
-                        <xsl:text> </xsl:text>
-                        <xsl:value-of select="@xml:id"></xsl:value-of>
-                    </xsl:for-each>
+      <xsl:variable name="lineId">
+         <xsl:text>line_</xsl:text>
+         <xsl:choose>
+            <xsl:when test="@n">
+               <xsl:if test="parent::tei:lg[@n]">
+                  <xsl:value-of select="parent::tei:lg/@n"></xsl:value-of>
+                  <xsl:text>_</xsl:text>
                </xsl:if>
-            <xsl:if test="not(descendant::tei:app)">
-               <xsl:text> </xsl:text>
-               <xsl:text>apparatus app_line_</xsl:text>
+               <xsl:value-of select="@n" />
+            </xsl:when>
+            <xsl:otherwise>
                <xsl:value-of select="count(preceding::tei:l)+1"></xsl:value-of>
-            </xsl:if>
-         </xsl:attribute>
-         <!-- if there is no app encoded within the line, the line is the app for all witnesses -->
-         <xsl:if test="not(descendant::tei:app)">
-            <xsl:attribute name="data-app-id">
-               <xsl:text>app_line_</xsl:text>
-               <xsl:value-of select="count(preceding::tei:l)+1"></xsl:value-of>
-            </xsl:attribute>
-         </xsl:if>
-         
+            </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <!-- lineWrapper is necessary for the correct line highlighting -->
+      <div class="lineWrapper {$lineId}" data-line-id="{$lineId}">
+         <!-- here starts the actual line div -->
+         <div>
+           <xsl:attribute name="class">
+              <xsl:text>line</xsl:text>
+              <xsl:if test="not(descendant::tei:rdg) or not(descendant::tei:app)">
+              <xsl:for-each select="$witnesses">
+                  <xsl:text> </xsl:text>
+                  <xsl:value-of select="@xml:id"></xsl:value-of>
+               </xsl:for-each>
+              </xsl:if>
+           </xsl:attribute>
+            
          <xsl:if test="@n">
-            <xsl:variable name="lineNr" select="@n"></xsl:variable>
-            <div class="linenumber noDisplay line_{$lineNr}" data-line-id="line_{$lineNr}">
-               <xsl:value-of select="$lineNr" />
+            <div class="linenumber noDisplay">
+               <xsl:value-of select="@n" />
             </div>
          </xsl:if>
             <xsl:apply-templates/>
          </div>
+      </div>
    </xsl:template>
    
    
@@ -1134,6 +1144,7 @@
    </xsl:template>
    
    <xsl:template match="tei:rdg|tei:lem">
+      <xsl:variable name="currentWitId" select="@wit"/>
       <xsl:variable name="readings">
          <xsl:call-template name="string-replace-all">
             <xsl:with-param name="text" select="@wit"></xsl:with-param>
@@ -1143,7 +1154,11 @@
       </xsl:variable>
       
          <div>
-            <xsl:attribute name="class">reading <xsl:value-of select="$readings"></xsl:value-of></xsl:attribute>
+            <xsl:attribute name="class">reading <xsl:value-of select="$readings"></xsl:value-of>
+               <xsl:if test="tei:timeline/tei:when">
+                  <xsl:text> audioReading</xsl:text>
+               </xsl:if>
+            </xsl:attribute>
             <xsl:attribute name="data-reading-wits"><xsl:value-of select="$readings"></xsl:value-of></xsl:attribute>
             
             
@@ -1157,9 +1172,16 @@
                   </xsl:if>  
                </xsl:for-each>
                <xsl:if test="tei:timeline[@unit='s']">
-                  <xsl:variable name="refID" select="translate(parent::rdg/@wit,'#','')"></xsl:variable>
+                  
                   <xsl:attribute name="data-timeline-start">
-                     <xsl:value-of select="sum(preceding::tei:rdg[contains(@wit, $refID)]/tei:timeline/tei:when/@interval)" />
+                     <xsl:choose>
+                        <xsl:when test="tei:when/@since">
+                           <xsl:text>0</xsl:text> 
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <xsl:value-of select="sum(preceding::tei:rdg[@wit=$currentWitId]/tei:timeline/tei:when/@interval)"/>
+                        </xsl:otherwise>
+                     </xsl:choose> 
                   </xsl:attribute>
                   
                   <xsl:attribute name="data-timeline-interval">

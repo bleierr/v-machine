@@ -652,19 +652,16 @@
          </p>
 
          <p>
-
             <app>
                <rdg wit="#nb4"> I PLAYED<lb/>
                </rdg>
             </app>
-
             <app loc="grateful">
                <rdg wit="#nb4"> GRATEFUL </rdg>
             </app>
             <app loc="american_official">
                <rdg wit="#nb4"> ONE OF THOSE<lb/> OFFICIALS </rdg>
             </app>
-
          </p>
 
          <p>
@@ -1201,7 +1198,6 @@
                <rdg wit="#book">or a tennis court. So the film built a swimming pool and a tennis
                   court. </rdg>
             </app>
-
          </p>
 
          <p>
@@ -1299,13 +1295,11 @@
                   image of an oscillator from a seventh-grade science project, I don't remember who
                   had one, but it was a grid-work oscillator. </rdg>
             </app>
-
             <app loc="b52">
                <rdg wit="#book"> "It seems a single B-52 . . . ," I remembered B-52s from many
                   drunken dinners in front of the TV during That War. "Opened up over Neak Luong . .
                   . ," I was having trouble with Neak Luong. </rdg>
             </app>
-
             <app loc="in_character">
                <rdg wit="#book"> It was a night shoot and I was a little hung over. At times I was
                   calling it Luong Neak. I was a little shaky from that heavy party the night
@@ -1482,7 +1476,6 @@
                   debauch. On the Gulf of ... Siam, in the town of Waheen, in what was supposed to
                   be the Hotel Phnom Penh. </rdg>
             </app>
-
             <app loc="leak_sam">
                <rdg wit="#v1983">
                   <timeline unit="s">
@@ -1491,7 +1484,6 @@
                   drunk and was leaking information to Sidney Schanberg, played by Sam Waterston.
                </rdg>
             </app>
-
             <app loc="hotel_phnom_penh">
                <rdg wit="#v1983">
                   <timeline unit="s">
@@ -1500,7 +1492,6 @@
                   fact the film had remade the hotel to suit their purposes. The actual Hotel Phnom
                   Penh they put up big letters for it, </rdg>
             </app>
-
             <app loc="swimming_pool">
                <rdg wit="#v1983">
                   <timeline unit="s">
@@ -1508,7 +1499,6 @@
                   </timeline> and they built a swimming pool—because this hotel didn’t have one—they
                   built a swimming pool </rdg>
             </app>
-
             <app loc="tennis_court">
                <rdg wit="#v1983">
                   <timeline unit="s">
@@ -1516,7 +1506,6 @@
                   </timeline> and a tennis court so it would be look exactly like Hotel Phnom Penh.
                </rdg>
             </app>
-
             <app loc="neak_long">
                <rdg wit="#v1983">
                   <timeline unit="s">
@@ -1526,7 +1515,6 @@
                   that was coming up had to do with Neak Luong, which was a um … was a uh uh strate-
                   strategic uh town um ... um vital to Lon Nol’s control ... </rdg>
             </app>
-
             <app loc="beacons1">
                <rdg wit="#v1983">
                   <timeline unit="s">
@@ -1790,7 +1778,6 @@
                   </timeline> So I was recuperating from my marijuana hangover for my last big
                   scene, with Sam Waterston who was playing Sydney Schanberg. </rdg>
             </app>
-
             <app loc="gulf_of_siam">
                <rdg wit="#v1984">
                   <timeline unit="s">
@@ -1839,7 +1826,6 @@
                   the bombs all on automatic. Uh so the beacon could be anywhere, you know. There
                   was one on top of the American embassy even. </rdg>
             </app>
-
             <app loc="neak_long_strategic">
                <rdg wit="#v1984">
                   <timeline unit="s">
@@ -1847,7 +1833,6 @@
                   </timeline> There was one in a strategic town called Neak Luong, a ferry town,
                </rdg>
             </app>
-
             <app loc="forgot_switch">
                <rdg wit="#v1984">
                   <timeline unit="s">
@@ -1856,7 +1841,6 @@
                   entire town was bombed, right up the center with a load of B-5- load of um bomb
                   B-52 bombs. </rdg>
             </app>
-
             <app loc="700_dollars">
                <rdg wit="#v1984">
                   <timeline unit="s">
@@ -1898,7 +1882,6 @@
                   they give money to the Cambodian families who'd lost people in the bombing. You
                   know these are civilian Cambodians, </rdg>
             </app>
-
             <app loc="100_dollars">
                <rdg wit="#v1984">
                   <timeline unit="s">
@@ -1906,22 +1889,18 @@
                   </timeline> and they give a 100 dollar bill to people who had died in the family,
                </rdg>
             </app>
-
             <app loc="50_dollars">
                <rdg wit="#v1984">
                   <timeline unit="s">
                      <when since="#tl_1984_16" interval="2.25" xml:id="tl_1984_17"/>
                   </timeline> and 50 dollars ones who lost arms and legs. </rdg>
             </app>
-
-
             <app loc="grateful">
                <rdg wit="#v1984">
                   <timeline unit="s">
                      <when since="#tl_1984_17" interval="1.5" xml:id="tl_1984_18"/>
                   </timeline> And the Cambodians are thankful. </rdg>
             </app>
-
             <app loc="sid_walks">
                <rdg wit="#v1984">
                   <timeline unit="s">
@@ -1933,7 +1912,6 @@
                   felt closer to life in his life when he was that close to death. It was a big
                   high. He said he's never had any like like it since. </rdg>
             </app>
-
             <app loc="elizabeth_ants">
                <rdg wit="#v1984">
                   <timeline unit="s">
@@ -2071,7 +2049,6 @@
                   let's take it again, Take 60. Let's roll it boys and girls! Here we go." <lb/> "A
                   computer malfunction put out a wrong set of'-" </rdg>
             </app>
-
             <app loc="888_troops">
                <rdg wit="#v1984">
                   <timeline unit="s">
@@ -2084,7 +2061,6 @@
                   malfunction put out the wrong set of coordinates. Seems a single B-52 opened"--
                </rdg>
             </app>
-
             <!--<app loc="pigeon">
                <rdg wit="#v1984">
                   <timeline unit="s" >

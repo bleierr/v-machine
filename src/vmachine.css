@@ -238,6 +238,7 @@ div#mssArea div.panel div.mssContent img.imageLink{
     height:24px;
     margin:0 5px;
     cursor:pointer;
+	border: 1px solid white;
 }
 .facs-images{
     float:right;
@@ -267,6 +268,10 @@ div#mssArea div.panel div.critContent{
     padding:10px;
 }
 
+#bibPanel, #notesPanel, #critPanel{
+overflow: hidden;
+}
+
 div.head,
 div.line,
 div.paragraph{
@@ -285,7 +290,6 @@ div.line div.emptynumber{
     float:left;
     margin-left:-2.5em;
     width:2em;
-    background:white;
 }
 div.line div.linenumber{
     text-align:right;
@@ -314,7 +318,6 @@ div.choice,
 div.rdgGrp{
     cursor:pointer;
     position:relative;
-    /*z-index:24;*/
 }
 div.noteicon{
     bottom:7px;
@@ -322,7 +325,6 @@ div.noteicon{
     margin-right:6px;
     font-size:85%;
     color:#003366;
-    /* text-decoration: underline; */
     border-bottom:1px solid #000066;
     display:inline
 }
@@ -551,8 +553,7 @@ button{
 
 
 div.panel.highlight,
-.dropdown .highlight,
-img.highlight{
+.dropdown .highlight{
 	border: 1px solid red;
 }
 
