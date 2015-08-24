@@ -339,7 +339,8 @@
    <xsl:template name="facs-images">
       <xsl:param name="witId" />
          <!-- RB:make only a div if images exist -->
-            <div class="facs-images" data-witness-id="{$witId}">
+      <div data-witness-id="{$witId}">
+         <xsl:attribute name="class">facs-images <xsl:value-of select="$witId"></xsl:value-of></xsl:attribute>
                <xsl:for-each select="//tei:note[@type='image']/tei:witDetail[@target = concat('#',$witId)]//tei:graphic[@url]">
                   <xsl:call-template name="imageLink">
                      <xsl:with-param name="imageURL" select="@url" />
@@ -626,29 +627,32 @@
       </div>
    </xsl:template>
    
-   <xsl:template match="tei:head|tei:epigraph|tei:div|tei:div1|tei:div2|tei:div3|tei:div4|tei:div5|tei:div6|tei:div7|tei:div8|tei:lg">
+   <xsl:template match="//tei:body//text()[normalize-space()]">
+      <span class="textcontent"><xsl:value-of select="."></xsl:value-of></span>
+   </xsl:template>
+   
+   <xsl:template match="tei:head|tei:epigraph|tei:div|tei:div1|tei:div2|tei:div3|tei:div4|tei:div5|tei:div6|tei:div7|tei:div8|tei:lg|tei:ab">
       <!-- <xsl:param name="witID" tunnel="yes"></xsl:param>
       <xsl:if test="descendant::*[contains(@wit, concat('#',$witID))]"> -->
          <div>
             <xsl:attribute name="class">
                <xsl:value-of select="name(.)" />
+               
                <xsl:if test="@n">
                   <xsl:text> </xsl:text>
                   <xsl:value-of select="name(.)" />
                   <xsl:text>-n</xsl:text>
                   <xsl:value-of select="@n" />
                </xsl:if>
-               <xsl:if test="@n and @type">
-                  <xsl:text> </xsl:text>
-               </xsl:if>
+               
                <xsl:if test="@type">
+                  <xsl:text> </xsl:text>
                   <xsl:text>type-</xsl:text>
                   <xsl:value-of select="@type" />
                </xsl:if>
-               <xsl:if test="(@n and @rend) or (@type and @rend)">
-                  <xsl:text> </xsl:text>
-               </xsl:if>
+               
                <xsl:if test="@rend">
+                  <xsl:text> </xsl:text>
                   <xsl:text>rend-</xsl:text>
                   <xsl:value-of select="@rend" />
                </xsl:if>
@@ -883,6 +887,7 @@
    
    <xsl:template match="tei:pb">
       <!-- ??????????????????? might need revision see autumn!!! -->
+      
       <hr>
             <xsl:attribute name="class">
                <xsl:text>pagebreak</xsl:text>
@@ -898,7 +903,13 @@
          </xsl:if>
          </hr>
          <xsl:if test="not(ancestor::tei:l) and @facs">
-            <div class="facs-images">
+            <div>
+               <xsl:attribute name="class">facs-images
+                  <xsl:if test="@ed">
+                     <xsl:text> </xsl:text>
+                     <xsl:value-of select="translate(@ed,'#','')" />
+                  </xsl:if>
+               </xsl:attribute>
                <xsl:if test="@ed">
                   <xsl:attribute name="data-witness-id">
                      <xsl:value-of select="translate(@ed,'#','')" />
@@ -1144,19 +1155,42 @@
    </xsl:template>
    
    <xsl:template match="tei:rdg|tei:lem">
-      <xsl:variable name="currentWitId" select="@wit"/>
       <xsl:variable name="readings">
-         <xsl:call-template name="string-replace-all">
-            <xsl:with-param name="text" select="@wit"></xsl:with-param>
-            <xsl:with-param name="replace"><xsl:text>#</xsl:text></xsl:with-param>
-            <xsl:with-param name="by"><xsl:text></xsl:text></xsl:with-param>
-         </xsl:call-template>
+         <xsl:choose>
+            <xsl:when test="//tei:listWit[@xml:id]">
+               <xsl:choose>
+                  <xsl:when test="contains(@wit, //tei:listWit/@xml:id)">
+                     <xsl:for-each select="//tei:listWit[@xml:id]/tei:witness">
+                        <xsl:value-of select="@xml:id"></xsl:value-of>
+                        <xsl:text> </xsl:text>
+                     </xsl:for-each>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:call-template name="string-replace-all">
+                        <xsl:with-param name="text" select="@wit"></xsl:with-param>
+                        <xsl:with-param name="replace"><xsl:text>#</xsl:text></xsl:with-param>
+                        <xsl:with-param name="by"><xsl:text></xsl:text></xsl:with-param>
+                     </xsl:call-template>
+                  </xsl:otherwise>
+               </xsl:choose>
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:call-template name="string-replace-all">
+                  <xsl:with-param name="text" select="@wit"></xsl:with-param>
+                  <xsl:with-param name="replace"><xsl:text>#</xsl:text></xsl:with-param>
+                  <xsl:with-param name="by"><xsl:text></xsl:text></xsl:with-param>
+               </xsl:call-template>
+            </xsl:otherwise>
+         </xsl:choose>
       </xsl:variable>
-      
-         <div>
+      <xsl:variable name="currentWitId" select="@wit"/>
+      <div>
             <xsl:attribute name="class">reading <xsl:value-of select="$readings"></xsl:value-of>
                <xsl:if test="tei:timeline/tei:when">
                   <xsl:text> audioReading</xsl:text>
+               </xsl:if>
+               <xsl:if test="not(*) and not(normalize-space())">
+                  <xsl:text> emptyReading</xsl:text>
                </xsl:if>
             </xsl:attribute>
             <xsl:attribute name="data-reading-wits"><xsl:value-of select="$readings"></xsl:value-of></xsl:attribute>
@@ -1191,6 +1225,7 @@
             </xsl:if>
             <xsl:apply-templates/>   
          </div>
+      
    </xsl:template>
   
   <!--   <xsl:template match="tei:app">

@@ -94,7 +94,6 @@
          <pb ed="t7989-1-9" facs="#i7989-1-9"/>
          <pb ed="pub" facs="#autumn-pub"/>
          <head>
-
             <app>
                <rdg wit="#t7989-1-10">A Short History of Our Own Times.</rdg>
                <rdg wit="#t7989-1-8">
@@ -120,21 +119,23 @@
                   captures the despair and weariness of a nation torn apart by war and bitter
                   political divisions.</p>
             </note>
-
          </head>
          <lg n="1">
-            <l n="1"> 
+            <l n="1">
                <app>
-                  <rdg wit="#t7989-1-10 #t7989-1-7 #t7989-1-8 #t7989-1-9 #pub">The sun burns out,</rdg>
-               </app> 
+                  <rdg wit="#t7989-1-10 #t7989-1-7 #t7989-1-8 #t7989-1-9 #pub">The sun burns
+                     out,</rdg>
+               </app>
             </l>
-            <l n="2"> 
+            <l n="2">
                <app>
                   <rdg wit="#t7989-1-8 #pub">The world withers</rdg>
                   <rdg wit="#t7989-1-10 #t7989-1-7 #t7989-1-9">The world withers,</rdg>
                </app>
                <app>
-                  <rdg wit="#t7989-1-8 #t7989-1-7 #t7989-1-9 #pub"><milestone unit="stanza"/></rdg>
+                  <rdg wit="#t7989-1-8 #t7989-1-7 #t7989-1-9 #pub">
+                     <milestone unit="stanza"/>
+                  </rdg>
                </app>
             </l>
             <l n="3">
@@ -144,16 +145,17 @@
             </l>
             <l n="4">
                <app>
-                  <rdg wit="#t7989-1-10 #t7989-1-7 #t7989-1-8 #t7989-1-9 #pub">And time grows afraid</rdg>
+                  <rdg wit="#t7989-1-10 #t7989-1-7 #t7989-1-8 #t7989-1-9 #pub">And time grows
+                     afraid</rdg>
                </app>
                <app loc="triumph">
-                  <rdg wit="#t7989-1-10 #t7989-1-8 #t7989-1-9 #pub">of the triumph of time. <note type="gloss" anchored="true">
-                        <p>The fifth of six
-                           allegorical triumphs in Petrarch's Trionfi is <emph rend="italic">the
-                              Triumph of Time</emph>. Petrarch's Triumphs, often depicted as Father
-                           Time in his chariot surrounded by symbolic devices such as the scythe and
-                           hourglass, were frequently represented by Baroque and Renaissance
-                           artists.</p>
+                  <rdg wit="#t7989-1-10 #t7989-1-8 #t7989-1-9 #pub">of the triumph of time. <note
+                        type="gloss" anchored="true">
+                        <p>The fifth of six allegorical triumphs in Petrarch's Trionfi is <emph
+                              rend="italic">the Triumph of Time</emph>. Petrarch's Triumphs, often
+                           depicted as Father Time in his chariot surrounded by symbolic devices
+                           such as the scythe and hourglass, were frequently represented by Baroque
+                           and Renaissance artists.</p>
                         <p>MacGreevy, however, may be thinking of one or more of the paintings that
                            he saw during his visit to the Prado in Madrid in 1924. One is Goya's
                            Saturn [Time] Devouring His Son, and the other is Pieter Brueghel the
@@ -167,17 +169,17 @@
             <l n="5">
                <app loc="triumph">
                   <rdg wit="#t7989-1-7">Of the triumph of time. <note type="gloss" anchored="true"
-                        ><p>The fifth of six allegorical triumphs in Petrarch's Trionfi is <emph
-                           rend="italic">the Triumph of Time</emph>. Petrarch's Triumphs, often
-                        depicted as Father Time in his chariot surrounded by symbolic devices such
-                        as the scythe and hourglass, were frequently represented by Baroque and
-                        Renaissance artists.</p>
-                     <p>MacGreevy, however, may be thinking of one or more of
-                        the paintings that he saw during his visit to the Prado in Madrid in 1924.
-                        One is Goya's Saturn [Time] Devouring His Son, and the other is Pieter
-                        Brueghel the Elder's The Triumph of Death, which depicts a whole society
-                        visited by death riding a pale horse (using imagery from the Apocalypse)
-                        against a background of barren landscape and a darkened sky.</p></note>
+                           ><p>The fifth of six allegorical triumphs in Petrarch's Trionfi is <emph
+                              rend="italic">the Triumph of Time</emph>. Petrarch's Triumphs, often
+                           depicted as Father Time in his chariot surrounded by symbolic devices
+                           such as the scythe and hourglass, were frequently represented by Baroque
+                           and Renaissance artists.</p>
+                        <p>MacGreevy, however, may be thinking of one or more of the paintings that
+                           he saw during his visit to the Prado in Madrid in 1924. One is Goya's
+                           Saturn [Time] Devouring His Son, and the other is Pieter Brueghel the
+                           Elder's The Triumph of Death, which depicts a whole society visited by
+                           death riding a pale horse (using imagery from the Apocalypse) against a
+                           background of barren landscape and a darkened sky.</p></note>
                   </rdg>
                </app>
             </l>

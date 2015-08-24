@@ -423,8 +423,7 @@ span.unclear{
 }
 
 .stanzabreak{
-    display:block;
-	height: 1em;
+    display:none;
 }
 div.type-stanza{
     margin-bottom:25px;
@@ -432,8 +431,11 @@ div.type-stanza{
 .pagebreak{
     margin:10px auto 10px auto;
     clear:right;
+	min-width:20px;
 }
-
+div.rend-right{
+	text-align:right;
+}
 .clickable{
     cursor:pointer;
 }

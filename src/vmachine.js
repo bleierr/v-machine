@@ -351,9 +351,9 @@ $.fn.hoverPopupNote = function() {
 			"left": e.pageX + 5,
 		}).show();
 		
-		console.log("Note height" + $showNote.height() );
-		console.log("Innerdocument height" + window.innerHeight );
-		console.log("PageY" + e.pageY );
+		//console.log("Note height" + $showNote.height() );
+		//console.log("Innerdocument height" + window.innerHeight );
+		//console.log("PageY" + e.pageY );
 		
 		if((e.pageY + $showNote.height()) > window.innerHeight){
 			$showNote.css({
@@ -475,6 +475,7 @@ function linenumber(){
 		$(".linenumber").toggleClass("noDisplay");
 		$("nav li#linenumberOnOff").toggleOnOffButton();
 	}
+	
 }
 
 function descendentsHaveClass(ele, className){
@@ -495,18 +496,27 @@ function mssPanels(){
 	//open the witness/version panels
 	
 	//by default the vmachine.xsl displays all versions in each panel, not relevant versions have to be hidden
-	$(".mssPanel").each(function(idx){
+	/***$(".mssPanel").each(function(idx){
 		var mssId = $(this).attr("id");
 		
 		$(this).find(".mssContent *").filter(function(idx, ele){
 			var hide = true;
-			if( descendentsHaveClass(ele, mssId) || ($(ele).hasClass(mssId)) ){
+			if( descendentsHaveClass(ele, mssId) ){
+				hide = false;
+			}
+			
 				hide = false;
 			}
 			if( $(ele).hasClass("linenumber") ){
 				hide = false;
 			}
-			if( $(ele).hasClass("del") || $(ele).hasClass("add") || $(ele).hasClass("corr") || $(ele).hasClass("reg") ){
+			if( $(ele).hasClass("choice") || $(ele).hasClass("interior") || $(ele).hasClass("sic") || $(ele).hasClass("corr") || $(ele).hasClass("orig") || $(ele).hasClass("reg") || $(ele).hasClass("abbr") || $(ele).hasClass("expan") ){
+				hide = false;
+			}
+			if( $(ele).hasClass("unclear") ){
+				hide = false;
+			}
+			if( $(ele).prop("tagName") == "DEL" || $(ele).prop("tagName") == "INS" ){
 				hide = false;
 			}
 			var firstAncestorDiv = $(ele).closest("div")[0];
@@ -519,12 +529,72 @@ function mssPanels(){
 			if( $(ele).hasClass("linebreak") ){
 				hide = false;
 			}
+			if( $(ele).hasClass("emptyReading") ){
+				hide = true;
+			}
+			
 			return hide;
 		
 		}).hide();
 		
-	
+		
+		
+		});***/
+		
+	$(".line, .head, .headtype-main, .ab, .closer, .paragraph").each(function(){
+		var $ele = $(this);
+		var mssPanel = $ele.closest(".mssPanel")[0];	
+		var mssId = $(mssPanel).attr("id");	
+		var showElement = false;
+		
+		//if the line contains text directly
+		if ( $ele.children(".textcontent").length > 0 ) {
+			showElement = true;
+		}
+		$ele.find(".apparatus").each(function(){
+			var $app = $(this);
+			var showApp = false;
+			$app.find(".reading").each(function(){
+					var $rdg = $(this);
+					if($rdg.hasClass(mssId) && !$rdg.hasClass("emptyReading")){
+						showApp = true;
+						showElement = true;
+						}else{
+						$rdg.hide();
+					}
+				});
+			if(!showApp){
+				$app.hide();
+				}
+			});
+		
+		
+		if(!showElement){
+			if($ele.hasClass("line")){
+				//for instance the parent element lineWrapper
+				$ele.parent().hide();
+			}
+			else{
+				$ele.hide();
+			}
+		}
 	});
+	
+	$(".facs-images, .pagebreak").each(function(){
+		var $ele = $(this);
+		var mssPanel = $(this).closest(".mssPanel")[0];	
+		var mssId = $(mssPanel).attr("id");	
+		var showElement = false;
+		//if the facs-images or pagebreak has the same class as the panel ID
+		if ($ele.hasClass(mssId)) {
+			showElement = true;
+			};
+		if(!showElement){
+			$ele.hide();
+		}
+	});
+	
+	
 	
 	//manuscript panels visible, constant INITIAL_DISPLAY_NUM_VERSIONS can be found in settings.xsl
 	var versions = INITIAL_DISPLAY_NUM_VERSIONS;
