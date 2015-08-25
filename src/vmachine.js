@@ -496,50 +496,6 @@ function mssPanels(){
 	//open the witness/version panels
 	
 	//by default the vmachine.xsl displays all versions in each panel, not relevant versions have to be hidden
-	/***$(".mssPanel").each(function(idx){
-		var mssId = $(this).attr("id");
-		
-		$(this).find(".mssContent *").filter(function(idx, ele){
-			var hide = true;
-			if( descendentsHaveClass(ele, mssId) ){
-				hide = false;
-			}
-			
-				hide = false;
-			}
-			if( $(ele).hasClass("linenumber") ){
-				hide = false;
-			}
-			if( $(ele).hasClass("choice") || $(ele).hasClass("interior") || $(ele).hasClass("sic") || $(ele).hasClass("corr") || $(ele).hasClass("orig") || $(ele).hasClass("reg") || $(ele).hasClass("abbr") || $(ele).hasClass("expan") ){
-				hide = false;
-			}
-			if( $(ele).hasClass("unclear") ){
-				hide = false;
-			}
-			if( $(ele).prop("tagName") == "DEL" || $(ele).prop("tagName") == "INS" ){
-				hide = false;
-			}
-			var firstAncestorDiv = $(ele).closest("div")[0];
-			if( $(firstAncestorDiv).hasClass("noteicon") || $(firstAncestorDiv).hasClass("note") ){
-				hide = false;
-			}
-			if( $(ele).parent().hasClass("audioPlayer") ){
-				hide = false;
-			}
-			if( $(ele).hasClass("linebreak") ){
-				hide = false;
-			}
-			if( $(ele).hasClass("emptyReading") ){
-				hide = true;
-			}
-			
-			return hide;
-		
-		}).hide();
-		
-		
-		
-		});***/
 		
 	$(".line, .head, .headtype-main, .ab, .closer, .paragraph").each(function(){
 		var $ele = $(this);
@@ -664,7 +620,7 @@ $(document).ready(function() {
 	$(".imgPanel").zoomPan();
 	$(".imgPanel").imgPanelHover();
 	$(".imgPanel").imgPanelMousedown();
-	$(".imageLink").imgLinkClick();
-	$(".imageLink").imgLinkHover();
+	$(".imgLink").imgLinkClick();
+	$(".imgLink").imgLinkHover();
 	
 });

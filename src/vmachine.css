@@ -226,13 +226,8 @@ div#mssArea div.panel div.mssContent{
     padding:0;
     line-height:20px;
 }
-div#mssArea div.panel div.mssContent div.mssImages{
-    float:right;
-    width:24px;
-    height:24px;
-    margin:0;
-}
-div#mssArea div.panel div.mssContent img.imageLink{
+
+div#mssArea div.panel div.mssContent img.imgLink{
     float:left;
     width:24px;
     height:24px;

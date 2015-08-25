@@ -253,13 +253,24 @@
                </xsl:call-template>
             </xsl:for-each>
          <xsl:call-template name="notesPanel" />
-         
-         <xsl:for-each select="//tei:facsimile/tei:graphic">
-            <xsl:call-template name="imageViewer" >
-               <xsl:with-param name="imgUrl"><xsl:value-of select="@url"/></xsl:with-param>
-               <xsl:with-param name="imgId" select="@xml:id"/>
-            </xsl:call-template>
-         </xsl:for-each>
+         <xsl:choose>
+            <xsl:when test="/tei:TEI/tei:facsimile/tei:graphic[@url]">
+               <xsl:for-each select="/tei:TEI/tei:facsimile/tei:graphic[@url]">
+                <xsl:call-template name="imgViewer" >
+                   <xsl:with-param name="imgUrl" select="@url"></xsl:with-param>
+                   <xsl:with-param name="imgId" select="@xml:id"/>
+                </xsl:call-template>
+             </xsl:for-each>
+            </xsl:when>
+            <xsl:when test="//tei:note[@type='image']//tei:witDetail//tei:graphic[@url]">
+               <xsl:for-each select="//tei:note[@type='image']//tei:witDetail//tei:graphic[@url]">
+                  <xsl:call-template name="imgViewer" >
+                     <xsl:with-param name="imgUrl" select="@url"></xsl:with-param>
+                     <xsl:with-param name="imgId" select="@xml:id"/>
+                  </xsl:call-template>
+               </xsl:for-each>
+            </xsl:when>
+         </xsl:choose>
       </div>
    </xsl:template>
    
@@ -338,17 +349,19 @@
    
    <xsl:template name="facs-images">
       <xsl:param name="witId" />
-         <!-- RB:make only a div if images exist -->
-      <div data-witness-id="{$witId}">
-         <xsl:attribute name="class">facs-images <xsl:value-of select="$witId"></xsl:value-of></xsl:attribute>
+      <!-- RB:make only a div if images exist -->
+      <xsl:if test="not(//tei:pb[@facs])">
+         <div data-witness-id="{$witId}">
+               <xsl:attribute name="class">facs-images <xsl:value-of select="$witId"></xsl:value-of></xsl:attribute>
                <xsl:for-each select="//tei:note[@type='image']/tei:witDetail[@target = concat('#',$witId)]//tei:graphic[@url]">
-                  <xsl:call-template name="imageLink">
-                     <xsl:with-param name="imageURL" select="@url" />
+                  <xsl:call-template name="imgLink">
+                     <xsl:with-param name="imgUrl" select="@url" />
                      <xsl:with-param name="imgId" select="@xml:id"></xsl:with-param>
-                     <xsl:with-param name="witness" select="translate(ancestor::tei:witDetail/@wit,'#','')" />
+                     <xsl:with-param name="wit" select="translate(ancestor::tei:witDetail/@wit,'#','')" />
                   </xsl:call-template>
                </xsl:for-each>
             </div>
+      </xsl:if>
    </xsl:template>
    
    <xsl:template match="tei:body">
@@ -664,29 +677,37 @@
       <!-- </xsl:if> -->
    </xsl:template>
 
-   <xsl:template name="imageLink">
-      <xsl:param name="imageURL" />
-      <xsl:param name="witness" />
+   <xsl:template name="imgLink">
+      <xsl:param name="imgUrl" />
+      <xsl:param name="wit" />
       <xsl:param name="imgId"/>
-      <xsl:if test="$imageURL != ''">
+      
+      <xsl:if test="$imgUrl != ''">
          <img src="{$imageIcon}" alt="Facsimile Image Placeholder" title="Open the image viewer">
             <xsl:attribute name="class">
-               <xsl:text>imageLink</xsl:text>
-               <xsl:if test="$witness != ''">
+               <xsl:text>imgLink</xsl:text>
+               <xsl:if test="$wit != ''">
                   <xsl:text> </xsl:text>
-                  <xsl:value-of select="$witness" />
+                  <xsl:value-of select="$wit" />
                </xsl:if>
             </xsl:attribute>
             <xsl:attribute name="data-witness-id">
-               <xsl:if test="$witness != ''">
-                  <xsl:value-of select="$witness" />
+               <xsl:if test="$wit != ''">
+                  <xsl:value-of select="$wit" />
                </xsl:if>
             </xsl:attribute>
             <xsl:attribute name="data-img-url">
-               <xsl:value-of select="$imageURL" />
+               <xsl:value-of select="$imgUrl" />
             </xsl:attribute>
             <xsl:attribute name="data-img-id">
-               <xsl:value-of select="$imgId" />
+            <xsl:choose>
+               <xsl:when test="$imgId">
+                  <xsl:value-of select="$imgId" />
+               </xsl:when>
+               <xsl:otherwise>
+                  <xsl:value-of select="translate(translate($imgUrl,'/','-'),'.','-')" />
+               </xsl:otherwise>
+            </xsl:choose>
             </xsl:attribute>
          </img>
       </xsl:if>
@@ -734,100 +755,6 @@
          </div>
       </div>
    </xsl:template>
-   
-   
-  <!-- <xsl:template match="tei:l[@n][descendant::tei:rdg]">
-      <xsl:param name="witID" tunnel="yes" />
-      
-      <xsl:if test="descendant::tei:rdg[contains(@wit,$witID)]">
-         <div>
-            <xsl:attribute name="class">
-               <xsl:text>line</xsl:text>
-            </xsl:attribute>
-            
-            <div>
-               <xsl:attribute name="class">
-                  <xsl:text>linenumber noDisplay</xsl:text>
-               </xsl:attribute>
-               <xsl:value-of select="@n" />
-            </div>
-            <xsl:apply-templates>
-               <xsl:with-param name="witID" tunnel="yes" select="$witID"></xsl:with-param>
-            </xsl:apply-templates>
-         </div>
-         
-      </xsl:if>
-      
-   </xsl:template>
-   
-   <xsl:template match="tei:l[not(@n)]">
-      <xsl:param name="witID" tunnel="yes" />
-      
-      <xsl:if test="descendant::tei:rdg[contains(@wit,$witID)]">
-      <div>
-               <xsl:attribute name="class">
-                  <xsl:text>line</xsl:text>
-               </xsl:attribute>
-               
-               <xsl:choose>
-                  <xsl:when test="tei:app">
-                           <xsl:apply-templates>
-                              <xsl:with-param name="witID" tunnel="yes" select="$witID"></xsl:with-param>
-                           </xsl:apply-templates>
-                  </xsl:when>
-                  <xsl:when test="tei:rdg">
-                     <xsl:apply-templates>
-                        <xsl:with-param name="witID" tunnel="yes" select="$witID"></xsl:with-param>
-                     </xsl:apply-templates>
-                  </xsl:when>
-                  <xsl:otherwise>
-                     
-                     <div>
-                        <xsl:attribute name="data-witness">
-                           <xsl:value-of select="translate(@wit,'#','')" />
-                        </xsl:attribute>
-                        <xsl:attribute name="class">
-                           <xsl:text>reading </xsl:text>
-                           <xsl:value-of select="translate(@wit,'#','')" />
-                        </xsl:attribute>
-                        <xsl:apply-templates />
-                     </div>
-                  </xsl:otherwise>
-               </xsl:choose>
-          </div>
-      </xsl:if>
-   </xsl:template>
-   
-   <xsl:template match="tei:l[not(descendant::tei:rdg)]">
-      <xsl:param name="witID" tunnel="yes" />
-
-      <div>
-            <xsl:attribute name="class">
-               <xsl:text>line</xsl:text>
-            </xsl:attribute>
-            
-            <div>
-               <xsl:attribute name="class">
-                  <xsl:text>linenumber noDisplay</xsl:text>
-               </xsl:attribute>
-               <xsl:value-of select="@n" />
-            </div>
-                  <div>
-                     <xsl:attribute name="data-witness">
-                        <xsl:value-of select="translate(@wit,'#','')" />
-                     </xsl:attribute>
-                     <xsl:attribute name="class">
-                        <xsl:text>apparatus </xsl:text>
-                        <xsl:text>app-all-</xsl:text><xsl:number></xsl:number>
-                     </xsl:attribute>
-                     <xsl:attribute name="data-app-id">
-                        <xsl:text>app-all-</xsl:text><xsl:number></xsl:number>
-                     </xsl:attribute>
-                     <xsl:apply-templates />
-                  </div>
-         </div>
-   </xsl:template> --> 
-   
    
    <xsl:template match="tei:hi">
       <span>
@@ -886,8 +813,7 @@
    </xsl:template>
    
    <xsl:template match="tei:pb">
-      <!-- ??????????????????? might need revision see autumn!!! -->
-      
+         
       <hr>
             <xsl:attribute name="class">
                <xsl:text>pagebreak</xsl:text>
@@ -902,7 +828,10 @@
             </xsl:attribute>
          </xsl:if>
          </hr>
-         <xsl:if test="not(ancestor::tei:l) and @facs">
+         <xsl:if test="@facs">
+            <xsl:variable name="imgId">
+               <xsl:value-of select="translate(@facs,'#','')" />
+            </xsl:variable>
             <div>
                <xsl:attribute name="class">facs-images
                   <xsl:if test="@ed">
@@ -915,14 +844,13 @@
                      <xsl:value-of select="translate(@ed,'#','')" />
                   </xsl:attribute>
                </xsl:if>
-            <xsl:call-template name="imageLink">
-               <xsl:with-param name="imgId" select="substring-after(@facs,'#')"></xsl:with-param>
-               <xsl:with-param name="imageURL">
+            <xsl:call-template name="imgLink">
+               <xsl:with-param name="imgId" select="$imgId"/>
+               <xsl:with-param name="imgUrl">
                   <xsl:choose>
                      <xsl:when test="contains(@facs,'#')">
-                        <xsl:variable name="facsID" select="translate(@facs,'#','')" />
-                        <xsl:if test="//tei:facsimile//tei:graphic[@xml:id = $facsID]/@url">
-                           <xsl:value-of select="//tei:facsimile//tei:graphic[@xml:id = $facsID]/@url" />
+                        <xsl:if test="//tei:graphic[@xml:id = $imgId]/@url">
+                           <xsl:value-of select="//tei:graphic[@xml:id = $imgId]/@url" />
                         </xsl:if>
                      </xsl:when>
                      <xsl:otherwise>
@@ -930,7 +858,7 @@
                      </xsl:otherwise>
                   </xsl:choose>
                </xsl:with-param>
-               <xsl:with-param name="witness">
+               <xsl:with-param name="wit">
                   <xsl:choose>
                      <xsl:when test="@ed">
                         <xsl:value-of select="translate(@ed,'#','')" />
@@ -1383,17 +1311,25 @@
       </div>
    </xsl:template>
    
-   <xsl:template name="imageViewer">
+   <xsl:template name="imgViewer">
       <xsl:param name="imgId"></xsl:param>
       <xsl:param name="imgUrl"></xsl:param>
-      <div class="draggable resizable ui-resizable panel imgPanel noDisplay" id="{$imgId}">
-         <div title="Click to drag panel." class="viewerHandle handle_imageViewer">
-            <span class="viewerHandleLt title_imageViewer">
+      <div class="draggable resizable ui-resizable panel imgPanel noDisplay">
+         <xsl:attribute name="id">
+            <xsl:choose>
+               <xsl:when test="$imgId">
+                  <xsl:value-of select="$imgId" />
+               </xsl:when>
+               <xsl:otherwise><xsl:value-of select="translate(translate($imgUrl,'/','-'),'.','-')" /></xsl:otherwise>
+            </xsl:choose>
+         </xsl:attribute>
+         <div title="Click to drag panel." class="viewerHandle handle_imgViewer">
+            <span class="viewerHandleLt title_imgViewer">
                <xsl:value-of select="$imgUrl"></xsl:value-of>
             </span>
             <img class="viewerHandleRt closePanel" src="{$closePanelButton}" title="Close panel" alt="X (Close panel)" />
          </div>
-         <div class="viewerContent" id="content_imageViewer">
+         <div class="viewerContent" id="content_imgViewer">
              
             <!-- RB: jquery.panzoom plugin from https://github.com/timmywil/jquery.panzoom The links to the JS and CSS files are in the facsimile template-->
             
