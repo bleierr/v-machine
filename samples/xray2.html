@@ -33,80 +33,81 @@
    <body>
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/LogoSilver.png"></img></div>
-         <div id="headline">
-            <h1>Xray</h1>
+         <div id="bannerImageContainer"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/HeaderBackground.svg"></img><div id="headline">
+               <h1>Xray</h1>
+            </div>
+            <nav id="mainControls">
+               <ul>
+                  <li><button id="selectWitness" class="topMenuButton dropdownButton">10 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt="arrow up"></img><img src="../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="witnessList" class="dropdown notVisible">
+                        <li data-panelid="pub1927">
+                           <div class="listText">
+                              <div>First</div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="va9">
+                           <div class="listText">
+                              <div>Second </div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="va8">
+                           <div class="listText">
+                              <div>Third </div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="va7">
+                           <div class="listText">
+                              <div>Fourth </div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="va6">
+                           <div class="listText">
+                              <div>Fifth </div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="va5">
+                           <div class="listText">
+                              <div>Sixth </div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="va4">
+                           <div class="listText">
+                              <div>Seventh </div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="va3">
+                           <div class="listText">
+                              <div>Eighth </div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="va2">
+                           <div class="listText">
+                              <div>Ninth </div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="va1">
+                           <div class="listText">
+                              <div>Tenth </div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                     </ul>
+                  </li>
+                  <li id="linenumberOnOff" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
+                  <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
+                  <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
+                  <li data-panelid="critPanel"><button class="topMenuButton listText" title="Clicking this button triggers the critical introduction panel to appear or disappear.">Critical introduction</button></li>
+               </ul>
+            </nav>
          </div>
-         <nav id="mainControls">
-            <ul>
-               <li><button id="selectWitness" class="topMenuButton dropdownButton">10 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt="arrow up"></img><img src="../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="witnessList" class="dropdown notVisible">
-                     <li data-panelid="pub1927">
-                        <div class="listText">
-                           <div>First</div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="va9">
-                        <div class="listText">
-                           <div>Second </div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="va8">
-                        <div class="listText">
-                           <div>Third </div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="va7">
-                        <div class="listText">
-                           <div>Fourth </div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="va6">
-                        <div class="listText">
-                           <div>Fifth </div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="va5">
-                        <div class="listText">
-                           <div>Sixth </div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="va4">
-                        <div class="listText">
-                           <div>Seventh </div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="va3">
-                        <div class="listText">
-                           <div>Eighth </div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="va2">
-                        <div class="listText">
-                           <div>Ninth </div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="va1">
-                        <div class="listText">
-                           <div>Tenth </div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                  </ul>
-               </li>
-               <li id="linenumberOnOff" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
-               <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
-               <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
-               <li data-panelid="critPanel"><button class="topMenuButton listText" title="Clicking this button triggers the critical introduction panel to appear or disappear.">Critical introduction</button></li>
-            </ul>
-         </nav>
       </div>
       <div id="mssArea">
          <div id="bibPanel" class="ui-widget-content ui-resizable panel noDisplay">
@@ -14513,12 +14514,12 @@
             </div>
             <div class="noteContent va4">
                <div class="witnesses">va4</div>
-               <div class="position" onclick="matchLine('lined2e239');">Unnumbered line</div><strong>Critical note: </strong><span class="textcontent">This fragment is a manuscript version of
+               <div class="position line_7">Unnumbered line</div><strong>Critical note: </strong><span class="textcontent">This fragment is a manuscript version of
                   Freytag-Loringhoven's compilation poem "Ostentatious: Westward:
                   Eastward: Agog."</span></div>
             <div class="noteContent va1">
                <div class="witnesses">va1</div>
-               <div class="position" onclick="matchLine('lined2e1035');">Unnumbered line</div><strong>Critical note: </strong><span class="textcontent">This added span, from "Polishing brass knockers .
+               <div class="position line_26">Unnumbered line</div><strong>Critical note: </strong><span class="textcontent">This added span, from "Polishing brass knockers .
                   . . to civilizations progress" appears on the manuscript before
                   the frist line "Nature intends . . ."</span></div>
             <div class="noteContent va2">

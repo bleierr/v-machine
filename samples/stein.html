@@ -303,36 +303,37 @@ timelineDurations['mlre_115']=1.25;</script><script type="text/javascript" src="
    <body>
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/LogoSilver.png"></img></div>
-         <div id="headline">
-            <h1>A CARAFE, THAT IS A BLIND GLASS</h1>
+         <div id="bannerImageContainer"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/HeaderBackground.svg"></img><div id="headline">
+               <h1>A CARAFE, THAT IS A BLIND GLASS</h1>
+            </div>
+            <nav id="mainControls">
+               <ul>
+                  <li><button id="selectWitness" class="topMenuButton dropdownButton">3 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt="arrow up"></img><img src="../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="witnessList" class="dropdown notVisible">
+                        <li data-panelid="poem">
+                           <div class="listText">
+                              <div>A CARAFE, THAT IS A BLIND GLASS</div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="essay">
+                           <div class="listText">
+                              <div>Reading a Selection from Tender Buttons</div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="reading_poem">
+                           <div class="listText">
+                              <div>Mac Low Reading, 1990</div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                     </ul>
+                  </li>
+                  <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
+                  <li data-panelid="critPanel"><button class="topMenuButton listText" title="Clicking this button triggers the critical introduction panel to appear or disappear.">Critical introduction</button></li>
+               </ul>
+            </nav>
          </div>
-         <nav id="mainControls">
-            <ul>
-               <li><button id="selectWitness" class="topMenuButton dropdownButton">3 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt="arrow up"></img><img src="../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="witnessList" class="dropdown notVisible">
-                     <li data-panelid="poem">
-                        <div class="listText">
-                           <div>A CARAFE, THAT IS A BLIND GLASS</div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="essay">
-                        <div class="listText">
-                           <div>Reading a Selection from Tender Buttons</div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="reading_poem">
-                        <div class="listText">
-                           <div>Mac Low Reading, 1990</div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                  </ul>
-               </li>
-               <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
-               <li data-panelid="critPanel"><button class="topMenuButton listText" title="Clicking this button triggers the critical introduction panel to appear or disappear.">Critical introduction</button></li>
-            </ul>
-         </nav>
       </div>
       <div id="mssArea">
          <div id="bibPanel" class="ui-widget-content ui-resizable panel noDisplay">

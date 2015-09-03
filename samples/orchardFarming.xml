@@ -68,7 +68,6 @@
                     <witDetail wit="#va3" target="#va3" place="apparatus">Reel 5, Frame 182<graphic
                             url="images/litmss-003276-0001.jpg"/>
                     </witDetail>
-
                     <witDetail wit="#va4" target="#va4" place="apparatus">Reel 5, Frame 183<graphic
                             url="images/litmss-003277-0001.jpg"/>
                     </witDetail>
@@ -81,8 +80,6 @@
                     <p>Elements such as those represented graphically in this poem would not have
                         presented well on the printed publication page. Indeed, it is quite often
                         that, as the Baroness writes, "Print teeth bite." </p>
-
-
                 </note>
 
 
@@ -578,11 +575,9 @@
                     <l n="42">
                         <app loc="a42b">
                             <rdg wit="#va1">
-
                                 <del rend="overstrike">
                                     <unclear>??</unclear>
                                 </del>
-
                                 <add place="below">SULPHUR</add>
                             </rdg>
                             <rdg wit="#va2 #va3">SAFRON </rdg>
@@ -590,7 +585,6 @@
                         </app>
                     </l>
                     <l n="43">
-
                         <app loc="a49">
                             <rdg wit="#va1 #va2">BRICK </rdg>
                             <rdg wit="#va3">CRIMSON </rdg>

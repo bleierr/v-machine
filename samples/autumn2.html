@@ -33,55 +33,56 @@
    <body>
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/LogoSilver.png"></img></div>
-         <div id="headline">
-            <h1>Autumn, 1922</h1>
+         <div id="bannerImageContainer"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/HeaderBackground.svg"></img><div id="headline">
+               <h1>Autumn, 1922</h1>
+            </div>
+            <nav id="mainControls">
+               <ul>
+                  <li><button id="selectWitness" class="topMenuButton dropdownButton">5 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt="arrow up"></img><img src="../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="witnessList" class="dropdown notVisible">
+                        <li data-panelid="t7989-1-10">
+                           <div class="listText">
+                              <div>'A Short History of Our Own Time' (TCD MS
+                                 7989/1/10)
+                              </div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="t7989-1-8">
+                           <div class="listText">
+                              <div>'Civil War', which was deleted and replaced with
+                                 'Ireland, Autumn 1922' (TCD MS 7989/1/8)
+                              </div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="t7989-1-7">
+                           <div class="listText">
+                              <div>'Ireland Autumn, 1922' (TCD MS 7989/1/7)</div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="t7989-1-9">
+                           <div class="listText">
+                              <div>'Ireland, Autumn, 1922 (TCD MS 7989/1/9)</div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="pub">
+                           <div class="listText">
+                              <div>published in Poems under the title
+                                 'Autumn, 1922'
+                              </div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                     </ul>
+                  </li>
+                  <li id="linenumberOnOff" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
+                  <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
+                  <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
+               </ul>
+            </nav>
          </div>
-         <nav id="mainControls">
-            <ul>
-               <li><button id="selectWitness" class="topMenuButton dropdownButton">5 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt="arrow up"></img><img src="../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="witnessList" class="dropdown notVisible">
-                     <li data-panelid="t7989-1-10">
-                        <div class="listText">
-                           <div>'A Short History of Our Own Time' (TCD MS
-                              7989/1/10)
-                           </div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="t7989-1-8">
-                        <div class="listText">
-                           <div>'Civil War', which was deleted and replaced with
-                              'Ireland, Autumn 1922' (TCD MS 7989/1/8)
-                           </div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="t7989-1-7">
-                        <div class="listText">
-                           <div>'Ireland Autumn, 1922' (TCD MS 7989/1/7)</div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="t7989-1-9">
-                        <div class="listText">
-                           <div>'Ireland, Autumn, 1922 (TCD MS 7989/1/9)</div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="pub">
-                        <div class="listText">
-                           <div>published in Poems under the title
-                              'Autumn, 1922'
-                           </div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                  </ul>
-               </li>
-               <li id="linenumberOnOff" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
-               <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
-               <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
-            </ul>
-         </nav>
       </div>
       <div id="mssArea">
          <div id="bibPanel" class="ui-widget-content ui-resizable panel noDisplay">
@@ -1393,7 +1394,7 @@
             </div>
             <div class="noteContent t7989-1-10 t7989-1-8 t7989-1-9 pub">
                <div class="witnesses">t7989-1-10 t7989-1-8 t7989-1-9 pub</div>
-               <div class="position" onclick="matchLine('lined2e242');">Line number 4</div><strong>Gloss note: </strong>
+               <div class="position line_1_4">Line number 4</div><strong>Gloss note: </strong>
                
                <p><span class="textcontent">The fifth of six allegorical triumphs in Petrarch's Trionfi is </span><span class="textcontent">the Triumph of Time</span><span class="textcontent">. Petrarch's Triumphs, often
                      depicted as Father Time in his chariot surrounded by symbolic devices
@@ -1410,7 +1411,7 @@
             </div>
             <div class="noteContent t7989-1-7">
                <div class="witnesses">t7989-1-7</div>
-               <div class="position" onclick="matchLine('lined2e269');">Line number 5</div><strong>Gloss note: </strong><p><span class="textcontent">The fifth of six allegorical triumphs in Petrarch's Trionfi is </span><span class="textcontent">the Triumph of Time</span><span class="textcontent">. Petrarch's Triumphs, often
+               <div class="position line_1_5">Line number 5</div><strong>Gloss note: </strong><p><span class="textcontent">The fifth of six allegorical triumphs in Petrarch's Trionfi is </span><span class="textcontent">the Triumph of Time</span><span class="textcontent">. Petrarch's Triumphs, often
                      depicted as Father Time in his chariot surrounded by symbolic devices
                      such as the scythe and hourglass, were frequently represented by Baroque
                      and Renaissance artists.</span></p>

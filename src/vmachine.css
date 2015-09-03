@@ -3,25 +3,7 @@
 	* Updated: Aug 10 2015 by roman bleier
 	* Adds CSS styling to VM 5.0
 	* Copyright (c) 2015 roman bleier
-	* Released under the MIT license
-	* Permission is hereby granted, free of charge, to any person obtaining
-	* a copy of this software and associated documentation files (the
-	* "Software"), to deal in the Software without restriction, including
-	* without limitation the rights to use, copy, modify, merge, publish,
-	* distribute, sublicense, and/or sell copies of the Software, and to
-	* permit persons to whom the Software is furnished to do so, subject to
-	* the following conditions:
-
-	* The above copyright notice and this permission notice shall be
-	* included in all copies or substantial portions of the Software.
-
-	* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-	* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-	* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-	* NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-	* LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-	* OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-	* WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+	
 	**/
 	
 body{
@@ -61,27 +43,41 @@ h6{
 div#mainBanner{
     float:left;
     width:100%;
-    height: 8em;
-	position:fixed;
+	height: 10em;
+    position:fixed;
 	top:0;
 	left:0;
 	z-index:10;
-	background-color:#B2CCE5;
-	background-image: url("../vm-images/HeaderBackground.svg");
+	background-color:#b2cce5;
 	background-size: cover;
 	background-repeat:no-repeat;
 }
 div#mainBanner div#brandingLogo{
     float:left;
-	width: 8em;
+	width: 10%;
+	height: 10em;
+	background-color:#6699cc;
 }
 
 div#mainBanner div#brandingLogo img{
     width: 80%;
 	margin: 10%;
 }
+
+div#mainBanner div#bannerImageContainer{
+    width: 70%;
+	float: left;
+}
+
+div#mainBanner div#bannerImageContainer>img{
+	height: 10em;
+	margin-left:-5px;
+}
+
 div#headline{
 	padding:1em;
+	position: absolute;
+	top: 0;
 	}
 div#mainBanner div#headline h1{
     margin:0;
@@ -96,12 +92,12 @@ div#mainBanner div#headline span.versionCount{
 
 /* BEGIN styles top navigation and dropdown menu*/
 div#mainBanner nav#mainControls{
-    border-top:none;
-    border-right:none;
-    border-bottom:none;
-    border-left:0.08em solid black;
+    border:none;
     margin:0;
     padding:0;
+	position:absolute;
+	bottom:10px;
+	width:100%;
 }
 nav#mainControls button img{
 	height:0.5em;/*controls the size of the arrow button in dropdown menu*/
@@ -158,7 +154,7 @@ div#mssArea{
     float:left;
     width:100%;
 	height: 100%;
-    margin:8em 0 0;
+    margin:10em 0 0;
 	padding: 0 0 2em 0;
     overflow:hidden;
 	z-index:10;
@@ -489,7 +485,7 @@ span.viewerHandleLt{
 #mainControls > ul > li{
     display:inline-block;
     list-style-type:none;
-    padding: 9px 5px 5px 15px;; /* changed from 5px*/
+    padding: 0 5px 5px 15px;; /* changed from 5px*/
     font-size: 1em; /*changed from 1.2em*/
     font-family:sans-serif;/*added*/
     position:relative;
@@ -584,38 +580,27 @@ div.panel.highlight,
 
 
 /* BEGIN responsive styles media queries*/
-
-@media screen and (max-width: 1000px){
-	div#mainBanner nav li button{
-	font-size:0.9em;
-	}
-	div#mainBanner nav li .dropdown li{
-	font-size:0.9em;
-	}
-	#mainControls, h1{
-		padding-top: 1em;
-		font-size: 1.2em;
-	}
-	#mainControls > ul > li {
-		padding: 10px 5px 2px 5px;
-	}
-}
 @media screen and (max-width: 800px){
-	div#mainBanner nav li button{
-	font-size:0.8em;
-	}
-	div#mainBanner nav li .dropdown li{
-	font-size:0.8em;
-	}
-	#mainControls > ul > li {
-		padding: 0 5px 2px 5px;
+	
+	div#mainBanner nav#mainControls{
+		position:absolute;
+		bottom:0;
 	}
 	
 }
+
 @media screen and (max-width: 600px){
-	#mainControls, h1{
-		padding-top: 1.2em;
+	#mainBanner #headline h1{
 		font-size: 1em;
+	}
+	div#mainBanner div#bannerImageContainer>img{
+	display: none;
+	}
+	#mainControls >ul>li>button{
+		font-size: 1em;
+	}
+	#mainControls>ul>li{
+		padding:2px;
 	}
 	
 }

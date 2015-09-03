@@ -391,9 +391,11 @@ $.fn.matchLineHover = function() {
 		this.hover(function(){
 			var line = $(this).closest("div.lineWrapper").attr("data-line-id");
 			$("."+line).closest("div.lineWrapper").addClass("matchLineHi");
+			$("#notesPanel .position."+line).parent(".noteContent").addClass("matchLineHi");
 		},function(){
 			var line = $(this).closest("div.lineWrapper").attr("data-line-id");
 			$("."+line).closest("div.lineWrapper").removeClass("matchLineHi");
+			$("#notesPanel .position."+line).parent(".noteContent").removeClass("matchLineHi");
 		});
 };
 $.fn.matchLineClick = function() {
@@ -401,6 +403,7 @@ $.fn.matchLineClick = function() {
 		this.click(function(){
 			var line = $(this).closest("div.lineWrapper").attr("data-line-id");
 			$("."+line).closest("div.lineWrapper").toggleClass("matchLineHiClicked");
+			$("#notesPanel .position."+line).parent(".noteContent").toggleClass("matchLineHiClicked");
 		});
 };
 /***** END Functionality popup notes and apparatus/line matching *****/

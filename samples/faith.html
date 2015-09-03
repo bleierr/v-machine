@@ -33,69 +33,70 @@
    <body>
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/LogoSilver.png"></img></div>
-         <div id="headline">
-            <h1>"Faith is a fine invention"</h1>
+         <div id="bannerImageContainer"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/HeaderBackground.svg"></img><div id="headline">
+               <h1>"Faith is a fine invention"</h1>
+            </div>
+            <nav id="mainControls">
+               <ul>
+                  <li><button id="selectWitness" class="topMenuButton dropdownButton">7 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt="arrow up"></img><img src="../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="witnessList" class="dropdown notVisible">
+                        <li data-panelid="a660">
+                           <div class="listText">
+                              <div>A 660, verse embedded in letter to Samuel
+                                 						Bowles.
+                              </div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="h201">
+                           <div class="listText">
+                              <div>H 201, fascicle version of poem.</div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="h72">
+                           <div class="listText">
+                              <div>H 72, fascicle version of poem.</div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="p1891">
+                           <div class="listText">
+                              <div>Published as poem XXX in the second volume of Todd and
+                                 						Higginson's Poems of Emily Dickinson.
+                              </div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="l1894">
+                           <div class="listText">
+                              <div>Letter to Samuel Bowles published in Todd's edition of
+                                 						Dickinson's letters.
+                              </div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="cp32">
+                           <div class="listText">
+                              <div>Published as poem LVI in Martha Dickinson Bianchi's
+                                 							Complete Poems of Emily
+                                 						Dickinson.
+                              </div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="ll227">
+                           <div class="listText">
+                              <div>Letter to Samuel Bowles published in Bianchi's The Life and Letters of Emily Dickinson.</div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                     </ul>
+                  </li>
+                  <li id="linenumberOnOff" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
+                  <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
+               </ul>
+            </nav>
          </div>
-         <nav id="mainControls">
-            <ul>
-               <li><button id="selectWitness" class="topMenuButton dropdownButton">7 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt="arrow up"></img><img src="../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="witnessList" class="dropdown notVisible">
-                     <li data-panelid="a660">
-                        <div class="listText">
-                           <div>A 660, verse embedded in letter to Samuel
-                              						Bowles.
-                           </div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="h201">
-                        <div class="listText">
-                           <div>H 201, fascicle version of poem.</div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="h72">
-                        <div class="listText">
-                           <div>H 72, fascicle version of poem.</div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="p1891">
-                        <div class="listText">
-                           <div>Published as poem XXX in the second volume of Todd and
-                              						Higginson's Poems of Emily Dickinson.
-                           </div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="l1894">
-                        <div class="listText">
-                           <div>Letter to Samuel Bowles published in Todd's edition of
-                              						Dickinson's letters.
-                           </div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="cp32">
-                        <div class="listText">
-                           <div>Published as poem LVI in Martha Dickinson Bianchi's
-                              							Complete Poems of Emily
-                              						Dickinson.
-                           </div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="ll227">
-                        <div class="listText">
-                           <div>Letter to Samuel Bowles published in Bianchi's The Life and Letters of Emily Dickinson.</div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                  </ul>
-               </li>
-               <li id="linenumberOnOff" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
-               <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
-            </ul>
-         </nav>
       </div>
       <div id="mssArea">
          <div id="bibPanel" class="ui-widget-content ui-resizable panel noDisplay">

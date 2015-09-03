@@ -33,37 +33,38 @@
    <body>
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/LogoSilver.png"></img></div>
-         <div id="headline">
-            <h1>Prophecy of Merlin</h1>
+         <div id="bannerImageContainer"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/HeaderBackground.svg"></img><div id="headline">
+               <h1>Prophecy of Merlin</h1>
+            </div>
+            <nav id="mainControls">
+               <ul>
+                  <li><button id="selectWitness" class="topMenuButton dropdownButton">3 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt="arrow up"></img><img src="../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="witnessList" class="dropdown notVisible">
+                        <li data-panelid="dublin">
+                           <div class="listText">
+                              <div>The Prophecy of Merlin</div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="oxford">
+                           <div class="listText">
+                              <div>The Prophecy of Merlin</div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="cambridge">
+                           <div class="listText">
+                              <div>The Prophecy of Merlin</div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                     </ul>
+                  </li>
+                  <li id="linenumberOnOff" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
+                  <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
+                  <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
+               </ul>
+            </nav>
          </div>
-         <nav id="mainControls">
-            <ul>
-               <li><button id="selectWitness" class="topMenuButton dropdownButton">3 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt="arrow up"></img><img src="../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="witnessList" class="dropdown notVisible">
-                     <li data-panelid="dublin">
-                        <div class="listText">
-                           <div>The Prophecy of Merlin</div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="oxford">
-                        <div class="listText">
-                           <div>The Prophecy of Merlin</div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="cambridge">
-                        <div class="listText">
-                           <div>The Prophecy of Merlin</div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                  </ul>
-               </li>
-               <li id="linenumberOnOff" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
-               <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
-               <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
-            </ul>
-         </nav>
       </div>
       <div id="mssArea">
          <div id="bibPanel" class="ui-widget-content ui-resizable panel noDisplay">
@@ -1228,11 +1229,11 @@
             </div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined2e116');">Line number 1</div><strong>Gloss note: </strong><span class="textcontent">With sharpened swords, and men ready to
+               <div class="position line_1_1">Line number 1</div><strong>Gloss note: </strong><span class="textcontent">With sharpened swords, and men ready to
                   								terrorize</span></div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined2e116');">Line number 1</div><strong>Critical note: </strong>
+               <div class="position line_1_1">Line number 1</div><strong>Critical note: </strong>
                								
                <p><span class="textcontent">sayings; When feythe fayleth. Versions of this lyric - identified
                      									as "Chaucer's Proverbs" - were regularly printed in earlier
@@ -1314,54 +1315,54 @@
             </div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined2e190');">Line number 2</div><strong>Gloss note: </strong><span class="textcontent">the law of the land</span></div>
+               <div class="position line_1_2">Line number 2</div><strong>Gloss note: </strong><span class="textcontent">the law of the land</span></div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined2e190');">Line number 2</div><strong>Gloss note: </strong><span class="textcontent">abandon</span></div>
+               <div class="position line_1_2">Line number 2</div><strong>Gloss note: </strong><span class="textcontent">abandon</span></div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined2e190');">Line number 2</div><strong>Critical note: </strong><span class="textcontent"> leefe. So Skeat and Gray.
+               <div class="position line_1_2">Line number 2</div><strong>Critical note: </strong><span class="textcontent"> leefe. So Skeat and Gray.
                   								Robbins, Index and Supplement, § 3986 transcribes leefe as leese.
                   								The MS can sustain either reading.</span></div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined2e190');">Line number 2</div><strong>Gloss note: </strong><span class="textcontent">law of the land </span></div>
+               <div class="position line_1_2">Line number 2</div><strong>Gloss note: </strong><span class="textcontent">law of the land </span></div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined2e217');">Line number 3</div><strong>Critical note: </strong><span class="textcontent">Priests intend treachery, and guile
+               <div class="position line_1_3">Line number 3</div><strong>Critical note: </strong><span class="textcontent">Priests intend treachery, and guile
                   								turns into figures of speech </span></div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined2e217');">Line number 3</div><strong>Gloss note: </strong><span class="textcontent">teachings;</span></div>
+               <div class="position line_1_3">Line number 3</div><strong>Gloss note: </strong><span class="textcontent">teachings;</span></div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined2e217');">Line number 3</div><strong>Critical note: </strong><span class="textcontent">beon. So MS; Skeat, Gray
+               <div class="position line_1_3">Line number 3</div><strong>Critical note: </strong><span class="textcontent">beon. So MS; Skeat, Gray
                   								been.</span></div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined2e238');">Line number 4</div><strong>Gloss note: </strong><span class="textcontent">is called secret pleasure </span></div>
+               <div class="position line_1_4">Line number 4</div><strong>Gloss note: </strong><span class="textcontent">is called secret pleasure </span></div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined2e238');">Line number 4</div><strong>Gloss note: </strong><span class="textcontent">lechery is considered to be </span></div>
+               <div class="position line_1_4">Line number 4</div><strong>Gloss note: </strong><span class="textcontent">lechery is considered to be </span></div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined2e238');">Line number 4</div><strong>Gloss note: </strong><span class="textcontent">secret comfort </span></div>
+               <div class="position line_1_4">Line number 4</div><strong>Gloss note: </strong><span class="textcontent">secret comfort </span></div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined2e262');">Line number 5</div><strong>Gloss note: </strong><span class="textcontent">held to be no crime </span></div>
+               <div class="position line_1_5">Line number 5</div><strong>Gloss note: </strong><span class="textcontent">held to be no crime </span></div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined2e262');">Line number 5</div><strong>Gloss note: </strong><span class="textcontent">booty </span></div>
+               <div class="position line_1_5">Line number 5</div><strong>Gloss note: </strong><span class="textcontent">booty </span></div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined2e262');">Line number 5</div><strong>Note: </strong><span class="textcontent">purchas. Skeat glosses purchas as
+               <div class="position line_1_5">Line number 5</div><strong>Note: </strong><span class="textcontent">purchas. Skeat glosses purchas as
                   								"bargain." It is that which is acquired.</span></div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined2e287');">Line number 6</div><strong>Gloss note: </strong><span class="textcontent"> David's stable </span></div>
+               <div class="position line_1_6">Line number 6</div><strong>Gloss note: </strong><span class="textcontent"> David's stable </span></div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined2e287');">Line number 6</div><strong>Note: </strong><span class="textcontent">David stall. David's stable, a
+               <div class="position line_1_6">Line number 6</div><strong>Note: </strong><span class="textcontent">David stall. David's stable, a
                   								reference to Christ's birth in Bethlehem (city of David). Of the
                   								apocalyptic element in this poem Gray comments: "On the more
                   								intellectual prophetic tradition, reflected in the Joachimite dream
@@ -1369,30 +1370,30 @@
                   								in the Later Middle Ages (Oxford, 1969)." </span></div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined2e302');">Line number 7</div><strong>Gloss note: </strong><span class="textcontent"> by-passes </span></div>
+               <div class="position line_1_7">Line number 7</div><strong>Gloss note: </strong><span class="textcontent"> by-passes </span></div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined2e314');">Line number 8</div><strong>Critical note: </strong><span class="textcontent">Albyon. The legendary, antique
+               <div class="position line_1_8">Line number 8</div><strong>Critical note: </strong><span class="textcontent">Albyon. The legendary, antique
                   								name for Britain, as in Geoffrey of Monmouth's History of the Kings
                   								of Britain. The fool in King Lear quotes this or a related poem when
                   								he says: "Then shall the realm of Albion / Come to great confusion"
                   								(III.ii.85-86). </span></div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined2e314');">Line number 8</div><strong>Gloss note: </strong><span class="textcontent">Near; its</span></div>
+               <div class="position line_1_8">Line number 8</div><strong>Gloss note: </strong><span class="textcontent">Near; its</span></div>
             <div class="noteContent oxford">
                <div class="witnesses">oxford</div>
-               <div class="position" onclick="matchLine('lined2e314');">Line number 8</div><strong>Critical note: </strong><span class="textcontent">Than is the. Skeat's correction of
+               <div class="position line_1_8">Line number 8</div><strong>Critical note: </strong><span class="textcontent">Than is the. Skeat's correction of
                   								MS Þat is is.</span></div>
             <div class="noteContent cambridge">
                <div class="witnesses">cambridge</div>
-               <div class="position" onclick="matchLine('lined2e314');">Line number 8</div><strong>Note: </strong><span class="textcontent">Britain </span></div>
+               <div class="position line_1_8">Line number 8</div><strong>Note: </strong><span class="textcontent">Britain </span></div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined2e345');">Line number 9</div><strong>Gloss note: </strong><span class="textcontent">In 1461 [there are]; </span></div>
+               <div class="position line_1_9">Line number 9</div><strong>Gloss note: </strong><span class="textcontent">In 1461 [there are]; </span></div>
             <div class="noteContent dublin">
                <div class="witnesses">dublin</div>
-               <div class="position" onclick="matchLine('lined2e345');">Line number 9</div><strong>Critical note: </strong><span class="textcontent">A M CCCC lx and on. RHR does not
+               <div class="position line_1_9">Line number 9</div><strong>Critical note: </strong><span class="textcontent">A M CCCC lx and on. RHR does not
                   								print this part of the poem, nor does he include the material I have
                   								here numbered 7-10 as if it were subjoined to the above six lines.
                   								The lyrics are separate poems, yet the thought seems to be related.

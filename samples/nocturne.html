@@ -33,47 +33,48 @@
    <body>
       <div id="mainBanner">
          <div id="brandingLogo"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/LogoSilver.png"></img></div>
-         <div id="headline">
-            <h1>Nocturne</h1>
+         <div id="bannerImageContainer"><img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/HeaderBackground.svg"></img><div id="headline">
+               <h1>Nocturne</h1>
+            </div>
+            <nav id="mainControls">
+               <ul>
+                  <li><button id="selectWitness" class="topMenuButton dropdownButton">4 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt="arrow up"></img><img src="../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="witnessList" class="dropdown notVisible">
+                        <li data-panelid="t7989-1-2">
+                           <div class="listText">
+                              <div>'Nocturne, Saint Eloi, 1918' (TCD
+                                 7878/1/2)
+                              </div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="t7989-1-3">
+                           <div class="listText">
+                              <div>'Nocturne of St. Eloi, 1918' (TCD MS
+                                 7989/1/3)
+                              </div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="t7989-1-1">
+                           <div class="listText">
+                              <div>'Nocturne, Saint Eloi' (TCD MS 79891/1)</div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                        <li data-panelid="nocturne_poems">
+                           <div class="listText">
+                              <div>published in Poems as 'Nocturne'</div>
+                              <div><button>OFF</button></div>
+                           </div>
+                        </li>
+                     </ul>
+                  </li>
+                  <li id="linenumberOnOff" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
+                  <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
+                  <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
+               </ul>
+            </nav>
          </div>
-         <nav id="mainControls">
-            <ul>
-               <li><button id="selectWitness" class="topMenuButton dropdownButton">4 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt="arrow up"></img><img src="../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="witnessList" class="dropdown notVisible">
-                     <li data-panelid="t7989-1-2">
-                        <div class="listText">
-                           <div>'Nocturne, Saint Eloi, 1918' (TCD
-                              7878/1/2)
-                           </div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="t7989-1-3">
-                        <div class="listText">
-                           <div>'Nocturne of St. Eloi, 1918' (TCD MS
-                              7989/1/3)
-                           </div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="t7989-1-1">
-                        <div class="listText">
-                           <div>'Nocturne, Saint Eloi' (TCD MS 79891/1)</div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                     <li data-panelid="nocturne_poems">
-                        <div class="listText">
-                           <div>published in Poems as 'Nocturne'</div>
-                           <div><button>OFF</button></div>
-                        </div>
-                     </li>
-                  </ul>
-               </li>
-               <li id="linenumberOnOff" title="Clicking this button turns the line numbers on or off."><button class="topMenuButton">Line numbers</button></li>
-               <li data-panelid="bibPanel" title="Clicking this button triggers the bibliographic panel to appear or disappear."><button class="topMenuButton">Bibliographic panel</button></li>
-               <li data-panelid="notesPanel" title="Clicking this button triggers the notes panel to appear or disappear."><button class="topMenuButton listText">Notes panel</button></li>
-            </ul>
-         </nav>
       </div>
       <div id="mssArea">
          <div id="bibPanel" class="ui-widget-content ui-resizable panel noDisplay">
@@ -1069,7 +1070,7 @@
             </div>
             <div class="noteContent t7989-1-1">
                <div class="witnesses">t7989-1-1</div>
-               <div class="position" onclick="matchApp('app-d2e202');">
+               <div class="position apparatus_2">
                   Highlight prose section
                   
                </div><strong>Biographical note: </strong>
@@ -1092,7 +1093,7 @@
             </div>
             <div class="noteContent nocturne_poems">
                <div class="witnesses">nocturne_poems</div>
-               <div class="position" onclick="matchApp('app-d2e202');">
+               <div class="position apparatus_2">
                   Highlight prose section
                   
                </div><strong>Biographical note: </strong>

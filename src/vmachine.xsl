@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="2.0" exclude-result-prefixes="tei"
+<xsl:stylesheet version="1.0" exclude-result-prefixes="tei"
    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
    xmlns:tei="http://www.tei-c.org/ns/1.0"
    xmlns="http://www.w3.org/1999/xhtml">
@@ -133,8 +133,11 @@
    <xsl:template name="mainBanner">
       <div id="mainBanner">
          <xsl:call-template name="brandingLogo" />
-         <xsl:call-template name="headline" />
-         <xsl:call-template name="mainControls" />
+         <div id="bannerImageContainer">
+            <img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/HeaderBackground.svg"/>
+            <xsl:call-template name="headline" />
+            <xsl:call-template name="mainControls" />
+         </div>
       </div>
    </xsl:template>
    
@@ -580,12 +583,27 @@
                   </xsl:if>
                   <xsl:choose>
                      <xsl:when test="ancestor::tei:l">
-                        <!--  ???? this still needs revision -->
-                        <div class="position">
-                           <xsl:attribute name="onclick">
-                              <xsl:text>matchLine('line</xsl:text>
-                              <xsl:value-of select="generate-id(ancestor::tei:l)" />
-                              <xsl:text>');</xsl:text>
+                        <xsl:variable name="lineId">
+                           <xsl:text>line_</xsl:text>
+                           <xsl:choose>
+                              <xsl:when test="ancestor::tei:l[@n]">
+                                 <xsl:if test="ancestor::tei:lg[@n]">
+                                    <xsl:value-of select="ancestor::tei:lg/@n"></xsl:value-of>
+                                    <xsl:text>_</xsl:text>
+                                 </xsl:if>
+                                 <xsl:value-of select="ancestor::tei:l/@n" />
+                              </xsl:when>
+                              <xsl:otherwise>
+                                 <xsl:for-each select="ancestor::tei:l">
+                                    <xsl:value-of select="count(preceding::tei:l)+1"></xsl:value-of>
+                                 </xsl:for-each>
+                              </xsl:otherwise>
+                           </xsl:choose>
+                        </xsl:variable>
+                        <div>
+                           <xsl:attribute name="class">
+                              <xsl:text>position </xsl:text>
+                              <xsl:value-of select="$lineId"/>
                            </xsl:attribute>
                            <xsl:choose>
                               <xsl:when test="ancestor::tei:l[@n]">
@@ -599,11 +617,24 @@
                         </div>
                      </xsl:when>
                      <xsl:when test="ancestor::tei:p and ancestor::tei:app">
+                        
+                        <xsl:variable name="appId">
+                           <xsl:text>apparatus_</xsl:text>
+                           <xsl:choose>
+                              <xsl:when test="ancestor::tei:app[@loc]">
+                                 <xsl:value-of select="ancestor::tei:app/@loc" />
+                              </xsl:when>
+                              <xsl:otherwise>
+                                 <xsl:for-each select="ancestor::tei:app[1]">
+                                    <xsl:value-of select="count(preceding::tei:app)+1"></xsl:value-of>
+                                 </xsl:for-each>
+                              </xsl:otherwise>
+                           </xsl:choose>
+                        </xsl:variable>
                         <div class="position">
-                           <xsl:attribute name="onclick">
-                              <xsl:text>matchApp('app-</xsl:text>
-                              <xsl:value-of select="generate-id(ancestor::tei:app)" />
-                              <xsl:text>');</xsl:text>
+                           <xsl:attribute name="class">
+                              <xsl:text>position </xsl:text>
+                              <xsl:value-of select="$appId" />
                            </xsl:attribute>
                            Highlight prose section
                         </div>
