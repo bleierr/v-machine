@@ -54,14 +54,15 @@ div#mainBanner{
 }
 div#mainBanner div#brandingLogo{
     float:left;
-	width: 10%;
+	max-width: 10%;
 	height: 10em;
 	background-color:#6699cc;
 }
 
 div#mainBanner div#brandingLogo img{
-    width: 80%;
-	margin: 10%;
+    max-width: 80%;
+	margin:5%;
+	max-height:90%;
 }
 
 div#mainBanner div#bannerImageContainer{
@@ -593,9 +594,11 @@ div.panel.highlight,
 	#mainBanner #headline h1{
 		font-size: 1em;
 	}
+	
 	div#mainBanner div#bannerImageContainer>img{
 	display: none;
 	}
+	
 	#mainControls >ul>li>button{
 		font-size: 1em;
 	}
