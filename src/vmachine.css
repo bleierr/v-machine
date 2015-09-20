@@ -1,8 +1,7 @@
 /**
-	* @license vmachine.js for VM 5.0
+	* @license vmachine.css for VM 5.0
 	* Updated: Aug 10 2015 by roman bleier
 	* Adds CSS styling to VM 5.0
-	* Copyright (c) 2015 roman bleier
 	
 	**/
 	
@@ -553,15 +552,21 @@ div.panel.highlight,
 
 
 #showNote{
-	display:none;
-    padding:7px 20px;
-    font-size:105%;
-    color:black;
-    text-align:left;
-    border:thick solid #003366;
-    background:white;
-    font-weight:400 !important;
+	padding:7px 20px;
+    	font-size:105%;
+    	color:black;
+    	text-align:left;
+    	border:thick solid #003366;
+    	background:white;
+    	font-weight:400 !important;
 	z-index:6;
+	max-width: 500px;
+	max-height: 500px;
+	overflow:auto;
+}
+
+#showNote.clicked{
+	display:block;
 }
 
 /* change colour of match app/line highlight*/

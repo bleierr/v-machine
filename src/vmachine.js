@@ -2,7 +2,6 @@
 	* @license vmachine.js for VM 5.0
 	* Updated: Aug 22 2015 by roman bleier
 	* Adds JS functionality to VM 5.0
-	* Copyright (c) 2015 roman bleier
 	* 
 	**/
 
@@ -260,6 +259,7 @@ $.fn.closePanelClick = function() {
 		}		
 		$(this).closest(".panel").addClass("noDisplay");
 		$("*[data-panelid='"+w+"']").toggleOnOffButton();
+		$showNote.removeClass("clicked")
 		workspaceResize();
 	});
 };
@@ -335,37 +335,47 @@ $.fn.imgPanelHover = function() {
 
 /***** Functionality popup notes and apparatus/line matching *****/
 
+$.fn.clickPopupNote = function() {
+	/* plugin to add a click effect and popup note */
+	var noteIcon = this;	
+	//"div.noteicon, div.choice, div.rdgGrp"
+
+	$(document).click(function(e) { 
+    		if(!$(e.target).closest(noteIcon).length) {
+        		$('#showNote').removeClass("clicked");
+    		}        
+	});
+
+	return this.click(function(e){
+		$showNote = $("#showNote");
+		$showNote.toggleClass("clicked");
+		
+	});
+}
+
 $.fn.hoverPopupNote = function() {
 	/* plugin to add a hover effect and popup note */
+	$("<div id='showNote'>empty note</div>").appendTo("body").addClass("noDisplay");
+
 	return this.hover(function(e){
-		$("<div id='showNote'>empty note</div>").appendTo("body");
+		
 		//the location of the note content has to be added to the find method
 		var noteContent = $(this).find("div.note, div.corr, span.altRdg").html();
 		
 		$showNote = $("#showNote");
+		$showNote.removeClass("clicked")
 		
 		$showNote.html(noteContent);
 		$showNote.css({
 			"position": "absolute",
 			"top": e.pageY + 5,
 			"left": e.pageX + 5,
-		}).show();
-		
-		//console.log("Note height" + $showNote.height() );
-		//console.log("Innerdocument height" + window.innerHeight );
-		//console.log("PageY" + e.pageY );
-		
-		if((e.pageY + $showNote.height()) > window.innerHeight){
-			$showNote.css({
-				"left": "auto",
-				"right": window.innerWidth - e.pageX
-			});
-		}
+		}).removeClass("noDisplay");
 		
 		
 	}, function(e){
 		/* on hover out hide the note */
-		$("#showNote").hide();
+		$("#showNote").addClass("noDisplay");
 	});
 };
 
@@ -500,7 +510,7 @@ function mssPanels(){
 	
 	//by default the vmachine.xsl displays all versions in each panel, not relevant versions have to be hidden
 		
-	$(".line, .head, .headtype-main, .ab, .closer, .paragraph").each(function(){
+	$(".mssPanel .line, .mssPanel .head, .mssPanel .headtype-main, .mssPanel .ab, .mssPanel .closer, .mssPanel .paragraph").each(function(){
 		var $ele = $(this);
 		var mssPanel = $ele.closest(".mssPanel")[0];	
 		var mssId = $(mssPanel).attr("id");	
@@ -601,6 +611,7 @@ $(document).ready(function() {
 	
 	//create popup for note, choice, etc.
 	$("div.noteicon, div.choice, div.rdgGrp").hoverPopupNote();
+	$("div.noteicon, div.choice, div.rdgGrp").clickPopupNote();
 	
 	//adds match line/apparatus highlighting plugin
 	$(".apparatus").matchAppHover();

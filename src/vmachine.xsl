@@ -319,7 +319,9 @@
             <xsl:attribute name="data-witness"><xsl:value-of select="translate(@wit, '#', '')" /></xsl:attribute>
             <!--<audio controls="controls">-->
             <audio controls="controls" preload="none">
-               <xsl:attribute name="id" select="$witId"/>
+               <xsl:attribute name="id">
+                  <xsl:value-of select="$witId"/>
+               </xsl:attribute>
                
             <!--foreach source-->
                <xsl:for-each select="//tei:witDetail[@target = concat('#',$witId) and tei:media[@url]]/tei:media">
@@ -512,13 +514,10 @@
                   Critical Introduction
                </div>
                <div class="critContent">
-                  <xsl:if test="tei:notesStmt/tei:note[@type='critIntro']">
-                     <h4>Critical Introduction</h4>
-                     <xsl:for-each select="tei:notesStmt/tei:note[@type='critIntro']/tei:p | tei:notesStmt/tei:note[@type='critIntro']/tei:lg">
-                        <xsl:apply-templates select="." />
+                  <h4>Critical Introduction</h4>
+                     <xsl:for-each select="//tei:notesStmt">
+                        <xsl:apply-templates select="tei:note[@type='critIntro']" />
                      </xsl:for-each>
-                     
-                  </xsl:if>
                </div>
             </div>
       </xsl:if>
@@ -676,9 +675,7 @@
    </xsl:template>
    
    <xsl:template match="tei:head|tei:epigraph|tei:div|tei:div1|tei:div2|tei:div3|tei:div4|tei:div5|tei:div6|tei:div7|tei:div8|tei:lg|tei:ab">
-      <!-- <xsl:param name="witID" tunnel="yes"></xsl:param>
-      <xsl:if test="descendant::*[contains(@wit, concat('#',$witID))]"> -->
-         <div>
+     <div>
             <xsl:attribute name="class">
                <xsl:value-of select="name(.)" />
                
@@ -705,7 +702,6 @@
             <xsl:apply-templates/>
             
          </div>
-      <!-- </xsl:if> -->
    </xsl:template>
 
    <xsl:template name="imgLink">
@@ -745,6 +741,12 @@
    </xsl:template>
 
    <xsl:template match="tei:fw" />
+   
+   <xsl:template match="tei:note[@type='critIntro']//tei:l">
+      <div class="line">
+         <xsl:apply-templates></xsl:apply-templates>
+      </div>
+   </xsl:template>
    
    
    <xsl:template match="tei:l">
@@ -1011,7 +1013,7 @@
       </xsl:if>
    </xsl:template>
    
-   <xsl:template match="tei:note">
+   <xsl:template match="tei:note[not(@type='critIntro')]">
       <div class="noteicon">
          <xsl:choose>
             <xsl:when test="@type = 'critical'">
