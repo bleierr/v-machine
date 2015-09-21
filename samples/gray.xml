@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?xml-stylesheet type="text/xsl" href="../src/vmachine.xsl"?>
 <?xml-model href="../schema/vmachine.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../schema/vmachine.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
@@ -37,7 +36,7 @@
             </availability>
             <distributor/>
          </publicationStmt>
-         
+
          <notesStmt>
             <note type="image" anchored="true">
                <witDetail wit="#nb1" target="#nb1" place="apparatus"> Notebook 1 <graphic

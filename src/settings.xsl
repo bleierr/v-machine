@@ -11,8 +11,9 @@
   <xsl:variable name="vmLogo"><xsl:value-of select="$vmImages"/><xsl:text>LogoSilver.png</xsl:text></xsl:variable>
   <xsl:variable name="menuArrowUp"><xsl:value-of select="$vmImages"/><xsl:text>arrowup.png</xsl:text></xsl:variable>
   <xsl:variable name="menuArrowDown"><xsl:value-of select="$vmImages"/><xsl:text>arrowdown.png</xsl:text></xsl:variable>
-  <xsl:variable name="closePanelButton"><xsl:value-of select="$vmImages"/><xsl:text>closePanel.svg</xsl:text></xsl:variable>
-  <xsl:variable name="imageIcon"><xsl:value-of select="$vmImages"/><xsl:text>image.svg</xsl:text></xsl:variable>
+  <xsl:variable name="closePanelButton"><xsl:value-of select="$vmImages"/><xsl:text>closePanel.png</xsl:text></xsl:variable>
+  <xsl:variable name="imageIcon"><xsl:value-of select="$vmImages"/><xsl:text>image.png</xsl:text></xsl:variable>
+  <xsl:variable name="bannerImg"><xsl:value-of select="$vmImages"/><xsl:text>HeaderBackground.png</xsl:text></xsl:variable>
    
    <!-- path to folder of facsimile images, the path is encoded in the TEI files like this: images/imagename.jpg -->
   <xsl:variable name="facsImageFolder"></xsl:variable>  

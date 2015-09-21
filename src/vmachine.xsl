@@ -134,7 +134,7 @@
       <div id="mainBanner">
          <xsl:call-template name="brandingLogo" />
          <div id="bannerImageContainer">
-            <img id="logo" alt="Powered by the Versioning Machine" src="../vm-images/HeaderBackground.svg"/>
+            <img id="logo" alt="Powered by the Versioning Machine" src="{$bannerImg}"/>
             <xsl:call-template name="headline" />
             <xsl:call-template name="mainControls" />
          </div>

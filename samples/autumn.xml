@@ -48,14 +48,15 @@
       <encodingDesc>
          <editorialDecl>
             <p>This is a demonstration document for the Versioning Machine of parallel segmentation
-               encoding utilising TEIP5. </p>
+               encoding utilising TEIP5. This revision incorporates location-referenced encoding to
+               ensure that every variation can be compared across versions.</p>
 
          </editorialDecl>
          <variantEncoding method="parallel-segmentation" location="internal"/>
       </encodingDesc>
       <revisionDesc>
-         <change>Proofing and Additional Encoding by <name>Lara Vetter</name> and <name>Susan
-               Schreibman</name>
+         <change>Proofing and Additional Encoding by <name>Lara Vetter</name>, <name>Susan
+               Schreibman</name>, and <name>Joshua D. Savage</name>
             <date>2002</date>.</change>
          <change>change>Re-encoded text for TEIP5<name>Susan Schreibman</name><date>July
             2008</date></change>
@@ -120,13 +121,20 @@
             </note>
          </head>
          <lg n="1">
-            <l n="1"> The sun burns out, </l>
+            <l n="1">
+               <app>
+                  <rdg wit="#t7989-1-10 #t7989-1-7 #t7989-1-8 #t7989-1-9 #pub">The sun burns
+                     out,</rdg>
+               </app>
+            </l>
             <l n="2">
                <app>
-                  <rdg wit="#t7989-1-10">The world withers,</rdg>
-                  <rdg wit="#t7989-1-7 #t7989-1-9">The world withers,<milestone unit="stanza"/>
-                  </rdg>
-                  <rdg wit="#t7989-1-8 #pub">The world withers<milestone unit="stanza"/>
+                  <rdg wit="#t7989-1-8 #pub">The world withers</rdg>
+                  <rdg wit="#t7989-1-10 #t7989-1-7 #t7989-1-9">The world withers,</rdg>
+               </app>
+               <app>
+                  <rdg wit="#t7989-1-8 #t7989-1-7 #t7989-1-9 #pub">
+                     <milestone unit="stanza"/>
                   </rdg>
                </app>
             </l>
@@ -137,13 +145,17 @@
             </l>
             <l n="4">
                <app>
-                  <rdg wit="#t7989-1-10 #t7989-1-8 #t7989-1-9 #pub">And time grows afraid of the
-                     triumph of time. <note type="gloss" anchored="true"><p>The fifth of six
-                           allegorical triumphs in Petrarch's Trionfi is <emph rend="italic">the
-                              Triumph of Time</emph>. Petrarch's Triumphs, often depicted as Father
-                           Time in his chariot surrounded by symbolic devices such as the scythe and
-                           hourglass, were frequently represented by Baroque and Renaissance
-                           artists.</p>
+                  <rdg wit="#t7989-1-10 #t7989-1-7 #t7989-1-8 #t7989-1-9 #pub">And time grows
+                     afraid</rdg>
+               </app>
+               <app loc="triumph">
+                  <rdg wit="#t7989-1-10 #t7989-1-8 #t7989-1-9 #pub">of the triumph of time. <note
+                        type="gloss" anchored="true">
+                        <p>The fifth of six allegorical triumphs in Petrarch's Trionfi is <emph
+                              rend="italic">the Triumph of Time</emph>. Petrarch's Triumphs, often
+                           depicted as Father Time in his chariot surrounded by symbolic devices
+                           such as the scythe and hourglass, were frequently represented by Baroque
+                           and Renaissance artists.</p>
                         <p>MacGreevy, however, may be thinking of one or more of the paintings that
                            he saw during his visit to the Prado in Madrid in 1924. One is Goya's
                            Saturn [Time] Devouring His Son, and the other is Pieter Brueghel the
@@ -152,22 +164,22 @@
                            background of barren landscape and a darkened sky.</p>
                      </note>
                   </rdg>
-                  <rdg wit="#t7989-1-7">And time grows afraid</rdg>
                </app>
             </l>
             <l n="5">
-               <app>
+               <app loc="triumph">
                   <rdg wit="#t7989-1-7">Of the triumph of time. <note type="gloss" anchored="true"
-                        >The fifth of six allegorical triumphs in Petrarch's Trionfi is <emph
-                           rend="italic">the Triumph of Time</emph>. Petrarch's Triumphs, often
-                        depicted as Father Time in his chariot surrounded by symbolic devices such
-                        as the scythe and hourglass, were frequently represented by Baroque and
-                        Renaissance artists. MacGreevy, however, may be thinking of one or more of
-                        the paintings that he saw during his visit to the Prado in Madrid in 1924.
-                        One is Goya's Saturn [Time] Devouring His Son, and the other is Pieter
-                        Brueghel the Elder's The Triumph of Death, which depicts a whole society
-                        visited by death riding a pale horse (using imagery from the Apocalypse)
-                        against a background of barren landscape and a darkened sky.</note>
+                           ><p>The fifth of six allegorical triumphs in Petrarch's Trionfi is <emph
+                              rend="italic">the Triumph of Time</emph>. Petrarch's Triumphs, often
+                           depicted as Father Time in his chariot surrounded by symbolic devices
+                           such as the scythe and hourglass, were frequently represented by Baroque
+                           and Renaissance artists.</p>
+                        <p>MacGreevy, however, may be thinking of one or more of the paintings that
+                           he saw during his visit to the Prado in Madrid in 1924. One is Goya's
+                           Saturn [Time] Devouring His Son, and the other is Pieter Brueghel the
+                           Elder's The Triumph of Death, which depicts a whole society visited by
+                           death riding a pale horse (using imagery from the Apocalypse) against a
+                           background of barren landscape and a darkened sky.</p></note>
                   </rdg>
                </app>
             </l>
