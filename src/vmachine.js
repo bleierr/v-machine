@@ -110,8 +110,10 @@ $.fn.selectWitnessMenu = function() {
 		statement 'ul#witnessList.notVisible li{visibility: hidden;}' in css necessary 
 		*/
 		$("#witnessList").removeClass('notVisible');
+		$(this).find("img").toggleClass('noDisplay');
     },function(){
 		$("#witnessList").addClass('notVisible');
+		$(this).find("img").toggleClass('noDisplay');
 	});
 	/* adds hovereffect on dropdown #witnessList */
 	$("#witnessList").hover(function(){
@@ -253,14 +255,18 @@ $.fn.closePanelClick = function() {
 	*/
     return this.click(function(){
 		var w = $(this).closest(".panel").attr("id");
+		var panel = $(this).closest(".panel");
 		
 		if ( w === "notesPanel"){
 			$(".noteicon").toggle();
 		}		
 		$(this).closest(".panel").addClass("noDisplay");
 		$("*[data-panelid='"+w+"']").toggleOnOffButton();
-		$showNote.removeClass("clicked")
+		//$showNote.removeClass("clicked")
 		workspaceResize();
+		$(panel).find("audio").each(function(){
+			$(this).trigger("pause");
+			});
 	});
 };
 
@@ -625,7 +631,8 @@ $(document).ready(function() {
 	/**add draggable and resizeable to all panels (img + mss)*/
 	$( ".panel" ).draggable({
 		containment: "parent",
-		zIndex: 6
+		zIndex: 6, 
+		cancel: ".textcontent"
 	}).resizable(
 	{helper: "ui-resizable-helper"}
 	);

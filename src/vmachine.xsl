@@ -354,7 +354,6 @@
    
    <xsl:template name="facs-images">
       <xsl:param name="witId" />
-      <!-- RB:make only a div if images exist -->
       <xsl:if test="not(//tei:pb[@facs])">
          <div data-witness-id="{$witId}">
                <xsl:attribute name="class">facs-images <xsl:value-of select="$witId"></xsl:value-of></xsl:attribute>

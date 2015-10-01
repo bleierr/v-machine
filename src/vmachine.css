@@ -172,7 +172,7 @@ div.panel{
 	left: -1px;
 	top: -1px;
 	background:white;
-    
+    cursor: move;
 }
 /*position:absolute to prevent that adjacent panels get moved on resize*/
 div.panel.ui-resizable{
@@ -271,16 +271,14 @@ div.paragraph{
 div.line{
     margin:0 4em 0 2.5em;
     padding:0;
-    cursor:pointer;
-}
-div.line{
-	cursor:pointer;
+	cursor: auto;
 }
 div.line div.linenumber,
 div.line div.emptynumber{
     float:left;
     margin-left:-2.5em;
     width:2em;
+	
 }
 div.line div.linenumber{
     text-align:right;
@@ -366,6 +364,7 @@ div.apparatus div.reading{
 
 div.apparatus{
     display:inline-block;
+	cursor: pointer;
 }
 
 em.label{
