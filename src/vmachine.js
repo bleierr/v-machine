@@ -101,22 +101,22 @@ $.fn.toggleOnOffButton = function() {
 		});
 	}
 
-$.fn.selectWitnessMenu = function() {
-	/**selectWitnessMenu plugin to add hover effect to the button #selectWitnessButton
-	* on hover the dropdown #witnessList will be shown or hidden
+$.fn.versionMenu = function() {
+	/**versionMenu plugin to add hover effect to the button #selectVersionButton
+	* on hover the dropdown #versionList will be shown or hidden
 	**/
     $(this).hover(function(){
         /* change visibility of the dropdown list, 
-		statement 'ul#witnessList.notVisible li{visibility: hidden;}' in css necessary 
+		statement 'ul#versionList.notVisible li{visibility: hidden;}' in css necessary 
 		*/
-		$("#witnessList").removeClass('notVisible');
+		$("#versionList").removeClass('notVisible');
 		$(this).find("img").toggleClass('noDisplay');
     },function(){
-		$("#witnessList").addClass('notVisible');
+		$("#versionList").addClass('notVisible');
 		$(this).find("img").toggleClass('noDisplay');
 	});
-	/* adds hovereffect on dropdown #witnessList */
-	$("#witnessList").hover(function(){
+	/* adds hovereffect on dropdown #versionList */
+	$("#versionList").hover(function(){
 			$(this).removeClass('notVisible');
 		},function(){
 			$(this).addClass('notVisible');
@@ -135,8 +135,8 @@ $.fn.linenumberOnOff = function() {
 }
 
 $.fn.panelButtonClick = function() {
-	/**panelButtonClick plugin to control the click effect in the dropDownButton selectWitness
-	*on click witness or version panels become invisible or visible
+	/**panelButtonClick plugin to control the click effect in the dropDownButton selectVersion
+	*on click version panels become invisible or visible
 	**/
     return this.click(function(){
 			var dataPanelId = $(this).attr("data-panelid");
@@ -171,8 +171,8 @@ $.fn.panelButtonClick = function() {
 };
 	
 $.fn.panelButtonHover = function() {
-	/**panelButtonHover plugin to add hover effect to the dropDownButton selectWitness
-	*on hover corresponding witness or version panels will be highlighted
+	/**panelButtonHover plugin to add hover effect to the dropDownButton selectVersion
+	*on hover corresponding version panels will be highlighted
 	**/
     return this.hover(function(){
 		/*mouse enter event*/
@@ -191,7 +191,7 @@ $.fn.panelButtonHover = function() {
 
 /***** END Functionality of dropdown menu and top menu *****/
 
-/***** Functionality and visibility of Witness, Biblio, and Note panels *****/
+/***** Functionality and visibility of version, biblio, and note panels *****/
 
 $.fn.changePanelVisibility = function(top,left) {
 	/* plugin to change the visibility of a panel and move it to different location
@@ -226,7 +226,7 @@ $.fn.changePanelVisibility = function(top,left) {
 }
 
 $.fn.panelClick = function() {
-	/* plugin to add a mousedown event to manuscript panels
+	/* plugin to add a mousedown event to panels
 	brings the panel to front
 	*/
     return this.mousedown(function(){
@@ -235,7 +235,7 @@ $.fn.panelClick = function() {
 };
 
 $.fn.panelHover = function() {
-	/* plugin to add a hover event to manuscript panels
+	/* plugin to add a hover event to panels
 	on hover the class 'highlight' is added or removed
 	*/
     return this.hover(function(){
@@ -249,7 +249,7 @@ $.fn.panelHover = function() {
 	});
 };
 
-$.fn.closePanelClick = function() {
+$.fn.closeButtonClick = function() {
 	/* plugin to add a click event to the closing button ('X') of panels 
 	after a panel is closed the workspace has to be resized
 	*/
@@ -270,7 +270,7 @@ $.fn.closePanelClick = function() {
 	});
 };
 
-/***** END Functionality and visibility of Witness, Biblio, and Note panels *****/
+/***** END Functionality and visibility of Version, Biblio, and Note panels *****/
 
 /***** Functionality related to image panels *****/
 
@@ -339,7 +339,7 @@ $.fn.imgPanelHover = function() {
 };
 /***** END Functionality related to image panels *****/
 
-/***** Functionality popup notes and apparatus/line matching *****/
+/***** Functionality popup notes *****/
 
 $.fn.clickPopupNote = function() {
 	/* plugin to add a click effect and popup note */
@@ -385,6 +385,10 @@ $.fn.hoverPopupNote = function() {
 	});
 };
 
+/***** END Functionality related to popup notes *****/
+
+/***** Functionality apparatus/line matching *****/
+
 $.fn.matchAppHover = function() {
 	/* plugin that adds a apparatus matching functionality */
 		this.hover(function(){
@@ -422,8 +426,9 @@ $.fn.matchLineClick = function() {
 			$("#notesPanel .position."+line).parent(".noteContent").toggleClass("matchLineHiClicked");
 		});
 };
-/***** END Functionality popup notes and apparatus/line matching *****/
+/***** END Functionality apparatus/line matching *****/
 
+/***** Functionality audio player and audio-text matching *****/
 $.fn.audioMatch = function() {
 		/**app to add **/
 		this.mousedown(function(){
@@ -449,7 +454,9 @@ $.fn.audioMatch = function() {
 		});
 };
 
-/***** Initial setup of panels  *****/
+/***** END Functionality related to audio player and audio-text matching *****/
+
+/***** Initial setup of panels *****/
 
 function bibPanel(){
 	var keyword = "bibPanel";
@@ -497,22 +504,9 @@ function linenumber(){
 	
 }
 
-function descendentsHaveClass(ele, className){
-	var found = false
-	
-	$(ele).find("*").each(function(){
-		if($(this).hasClass(className)){
-			found = true
-		}
-	});
-	return found
-}
-
-
-
 function mssPanels(){
 	//initial setup
-	//open the witness/version panels
+	//open the version panels
 	
 	//by default the vmachine.xsl displays all versions in each panel, not relevant versions have to be hidden
 		
@@ -542,8 +536,6 @@ function mssPanels(){
 				$app.hide();
 				}
 			});
-		
-		
 		if(!showElement){
 			if($ele.hasClass("line")){
 				//for instance the parent element lineWrapper
@@ -568,12 +560,9 @@ function mssPanels(){
 			$ele.hide();
 		}
 	});
-	
-	
-	
 	//manuscript panels visible, constant INITIAL_DISPLAY_NUM_VERSIONS can be found in settings.xsl
 	var versions = INITIAL_DISPLAY_NUM_VERSIONS;
-	$("#witnessList li").each(function(idx){
+	$("#versionList li").each(function(idx){
 				var panelPos = totalPanelWidth();
 				var wit = $(this).attr("data-panelid");
 				if(idx < versions){
@@ -603,10 +592,10 @@ $(document).ready(function() {
 	
 	/***** activate all plugins *****/
 	//close panel via X sign 
-	$(".closePanel").closePanelClick();
+	$(".closePanel").closeButtonClick();
 	
 	//dropdown functionality
-	$("#selectWitness").selectWitnessMenu();
+	$("#selectVersion").versionMenu();
 	
 	//click and hover event for panel buttons
 	$("li[data-panelid]").panelButtonClick();
@@ -632,7 +621,7 @@ $(document).ready(function() {
 	$( ".panel" ).draggable({
 		containment: "parent",
 		zIndex: 6, 
-		cancel: ".textcontent"
+		cancel: ".textcontent, .zoom-range"
 	}).resizable(
 	{helper: "ui-resizable-helper"}
 	);

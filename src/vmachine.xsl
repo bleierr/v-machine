@@ -161,7 +161,7 @@
       <nav id="mainControls">
          <ul>
             <li>
-               <button id="selectWitness" class="topMenuButton dropdownButton">
+               <button id="selectVersion" class="topMenuButton dropdownButton">
                   <xsl:value-of select="count($witnesses)"></xsl:value-of>
                   <xsl:text> Total Versions</xsl:text>
                   <img class="noDisplay" src="{$menuArrowUp}" alt="arrow up"/>
@@ -169,7 +169,7 @@
                </button>
                <!-- RB: version dropdown -->
                <ul>
-                  <xsl:attribute name="id">witnessList</xsl:attribute>
+                  <xsl:attribute name="id">versionList</xsl:attribute>
                   <xsl:attribute name="class">dropdown notVisible</xsl:attribute>
                   <xsl:call-template name="versionDropdown"/>
                </ul>
@@ -287,7 +287,15 @@
          <div class="panelBanner">
             <img class="closePanel" title="Close panel" src="{$closePanelButton}" alt="X (Close panel)" />
             <!-- To change the title of the panel banner of each version panel change the text below -->
-            <xsl:text>Witness </xsl:text><xsl:value-of select="$witId"></xsl:value-of>
+            <xsl:text>Version </xsl:text>
+            <xsl:choose>
+               <xsl:when test="string-length($witId)>20">
+                  <a title="{$witId}" style="color:black, text-decoration:none,cursor:move"><xsl:value-of select="substring($witId,0,20)"/><xsl:text>...</xsl:text></a>
+               </xsl:when>
+               <xsl:otherwise>
+                  <xsl:value-of select="$witId"></xsl:value-of>
+               </xsl:otherwise>
+            </xsl:choose>
          </div>
          <div class="mssContent">
             <xsl:if test="//tei:witDetail[@target = concat('#',$witId) and tei:media[@url]]">
@@ -316,7 +324,7 @@
          
          <div>
             <xsl:attribute name="class">audioPlayer <xsl:value-of select="translate(@wit, '#', '')" /></xsl:attribute>
-            <xsl:attribute name="data-witness"><xsl:value-of select="translate(@wit, '#', '')" /></xsl:attribute>
+            <xsl:attribute name="data-version"><xsl:value-of select="translate(@wit, '#', '')" /></xsl:attribute>
             <!--<audio controls="controls">-->
             <audio controls="controls" preload="none">
                <xsl:attribute name="id">
@@ -355,7 +363,7 @@
    <xsl:template name="facs-images">
       <xsl:param name="witId" />
       <xsl:if test="not(//tei:pb[@facs])">
-         <div data-witness-id="{$witId}">
+         <div data-version-id="{$witId}">
                <xsl:attribute name="class">facs-images <xsl:value-of select="$witId"></xsl:value-of></xsl:attribute>
                <xsl:for-each select="//tei:note[@type='image']/tei:witDetail[@target = concat('#',$witId)]//tei:graphic[@url]">
                   <xsl:call-template name="imgLink">
@@ -717,7 +725,7 @@
                   <xsl:value-of select="$wit" />
                </xsl:if>
             </xsl:attribute>
-            <xsl:attribute name="data-witness-id">
+            <xsl:attribute name="data-version-id">
                <xsl:if test="$wit != ''">
                   <xsl:value-of select="$wit" />
                </xsl:if>
@@ -855,7 +863,7 @@
                </xsl:if>
             </xsl:attribute>
          <xsl:if test="@ed">
-            <xsl:attribute name="data-witness-id">
+            <xsl:attribute name="data-version-id">
                <xsl:value-of select="translate(@ed,'#','')" />
             </xsl:attribute>
          </xsl:if>
@@ -872,7 +880,7 @@
                   </xsl:if>
                </xsl:attribute>
                <xsl:if test="@ed">
-                  <xsl:attribute name="data-witness-id">
+                  <xsl:attribute name="data-version-id">
                      <xsl:value-of select="translate(@ed,'#','')" />
                   </xsl:attribute>
                </xsl:if>
@@ -961,10 +969,7 @@
             <div>
                <xsl:attribute name="class">
                   <xsl:text>rdgGrp</xsl:text>
-<!--    MDH: @wit is not allowed on <rdgGrp>, so I'm commenting this out.         -->
-                  <!--<xsl:if test="@wit">
-                     <xsl:value-of select="concat(' ',translate(@wit,'#',''))" />
-                  </xsl:if>-->
+
                </xsl:attribute>
                <xsl:value-of select="tei:rdg[position() = 1]" />
                <div class="altRdg">
@@ -1157,7 +1162,6 @@
             
             
             <xsl:if test="tei:timeline/tei:when">
-               <!-- tei:timeline/tei:when is important for audio encoding -->
                <xsl:for-each select="tei:timeline/tei:when">
                   <xsl:if test="@since">
                      <xsl:attribute name="data-timeline">
@@ -1187,107 +1191,6 @@
          </div>
       
    </xsl:template>
-  
-  <!--   <xsl:template match="tei:app">
-      <xsl:param name="witID" tunnel="yes"></xsl:param>
-      
-      <xsl:variable name="uniqueID">
-         <xsl:choose>
-            <xsl:when test="@loc"><xsl:value-of select="@loc"/></xsl:when>
-            <xsl:otherwise>
-               <xsl:value-of select="name(.)"></xsl:value-of>
-               <xsl:text>_</xsl:text>
-               <xsl:value-of select="position()"></xsl:value-of>
-               <xsl:text>_</xsl:text>
-               <xsl:value-of select="name(parent::node())"></xsl:value-of>
-               <xsl:if test="parent::node()[@n]">
-                   <xsl:text>_</xsl:text><xsl:value-of select="parent::node()/@n"></xsl:value-of><xsl:text>_</xsl:text>
-               </xsl:if>
-               <xsl:value-of select="parent::node()/position()"></xsl:value-of>
-            </xsl:otherwise>
-         </xsl:choose>
-      </xsl:variable>
-      <xsl:variable name="refID">#<xsl:value-of select="$witID"/></xsl:variable>
-      
-      <xsl:for-each select="tei:rdg">
-         <xsl:variable name="wit" select="@wit"></xsl:variable>
-         <xsl:if test="contains($wit, $witID) or contains($wit, 'all')">
-            <div>
-               <xsl:if test="tei:rdg[contains(@wit, $refID)]/tei:timeline/tei:when">
-                  <xsl:for-each select="tei:rdg[contains(@wit, $refID)]/tei:timeline/tei:when">
-      
-                     <xsl:if test="@since">
-                        <xsl:attribute name="data-timeline">
-                           <xsl:value-of select="translate(@since,'#','')" />
-                        </xsl:attribute> 
-                     </xsl:if>  
-                  </xsl:for-each>
-               </xsl:if>
-               <xsl:attribute name="class">
-                  <xsl:text>apparatus </xsl:text>
-                  <xsl:value-of select="$uniqueID"></xsl:value-of>
-                  <xsl:if test="@loc">
-                     <xsl:text> app-</xsl:text>
-                     <xsl:value-of select="@loc" />
-                  </xsl:if>
-               </xsl:attribute>-->
-               <!-- ID for apparatus: important for highlighting of text lines and location based referencing -->
-              <!-- <xsl:attribute name="data-app-id">
-                  <xsl:value-of select="$uniqueID"></xsl:value-of>
-               </xsl:attribute>
-               <xsl:if test="tei:timeline[@unit='s']">
-                  <xsl:attribute name="data-timeline-start">
-                     
-                     <xsl:value-of select="sum(preceding::tei:rdg[contains(@wit, $refID)]/tei:timeline/tei:when/@interval)" />
-                  </xsl:attribute>
-                  
-                  <xsl:attribute name="data-timeline-interval">
-                     <xsl:value-of select="tei:timeline/tei:when/@interval" />
-                  </xsl:attribute>
-               </xsl:if>
-               
-               
-                     <xsl:choose>
-                        <xsl:when test="not(ancestor::tei:rdgGrp)">
-                           <div>
-                              <xsl:attribute name="data-witness">
-                                 <xsl:value-of select="translate(@wit,'#','')" />
-                              </xsl:attribute>
-                              <xsl:attribute name="class">
-                                 <xsl:text>reading </xsl:text>
-                                 <xsl:value-of select="translate(@wit,'#','')" />
-                              </xsl:attribute>
-                              <xsl:apply-templates>
-                                 <xsl:with-param name="witID" tunnel="yes" select="$witID"></xsl:with-param>
-                              </xsl:apply-templates>
-                           </div>
-                        </xsl:when>
-                        <xsl:otherwise>
-                           <div>
-                              <xsl:attribute name="class">rdg</xsl:attribute>
-                              <xsl:attribute name="data-line-id"><xsl:value-of select="@wit"/></xsl:attribute>
-                              <xsl:apply-templates>
-                                 <xsl:with-param name="witID" tunnel="yes" select="$witID"></xsl:with-param>
-                              </xsl:apply-templates>
-                           </div>
-                        </xsl:otherwise>
-                     </xsl:choose>
-               
-            </div>
-         </xsl:if>
-      </xsl:for-each>
-   </xsl:template> --> 
-   
-   <!-- <xsl:template match="tei:rdg|tei:lem">
-      <xsl:param name="witID" tunnel="yes"></xsl:param>
-      
-      <xsl:if test="contains(@wit, concat('#',$witID))">
-         <xsl:apply-templates>
-            <xsl:with-param name="witID" tunnel="yes" select="$witID"></xsl:with-param>
-         </xsl:apply-templates>
-      </xsl:if>
-      
-   </xsl:template>-->
  
    <xsl:template match="tei:choice">
       <xsl:choose>
@@ -1357,7 +1260,14 @@
          </xsl:attribute>
          <div title="Click to drag panel." class="viewerHandle handle_imgViewer">
             <span class="viewerHandleLt title_imgViewer">
-               <xsl:value-of select="$imgUrl"></xsl:value-of>
+               <xsl:choose>
+                  <xsl:when test="string-length($imgUrl)>20">
+                     <a title="{$imgUrl}" style="color:black, text-decoration:none,cursor:move"><xsl:value-of select="substring($imgUrl,0,20)"/><xsl:text>...</xsl:text></a>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:value-of select="$imgUrl"></xsl:value-of>
+                  </xsl:otherwise>
+               </xsl:choose>
             </span>
             <img class="viewerHandleRt closePanel" src="{$closePanelButton}" title="Close panel" alt="X (Close panel)" />
          </div>
@@ -1385,9 +1295,6 @@
                <button class="zoom-in">+</button>
                
             </div>
-            
-            
-            
             <!-- End implementation of jquery.panzoom -->
          </div>
          
@@ -1444,10 +1351,6 @@
         
         <xsl:for-each select="//tei:when">
             <xsl:choose>
-<!--              MDH: Change to the way we deal with @absolute: it may not be there. -->
-              <!--<xsl:when test="@absolute">
-                <xsl:text>&#x0a;timelinePoints['</xsl:text><xsl:value-of select="@xml:id"/><xsl:text>']=</xsl:text><xsl:value-of select="@absolute"/><xsl:text>;</xsl:text>
-              </xsl:when>-->
                 <xsl:when test="not(@since)">
                   <xsl:text>&#x0a;timelinePoints['</xsl:text><xsl:value-of select="@xml:id"/><xsl:text>']=</xsl:text><xsl:choose><xsl:when test="@absolute"><xsl:value-of select="@absolute"/></xsl:when><xsl:otherwise>0</xsl:otherwise></xsl:choose><xsl:text>;</xsl:text>
                 </xsl:when>
@@ -1481,10 +1384,6 @@
       
          <xsl:for-each select="//tei:when">
             <xsl:choose>
-<!--              MDH: Change to the way we deal with @absolute: it may not be there. -->
-                <!--<xsl:when test="@absolute">
-                    <xsl:text>&#x0a;timelineDurations['</xsl:text><xsl:value-of select="@xml:id"/><xsl:text>']=0;</xsl:text>
-                </xsl:when>-->
               <xsl:when test="not(@since)">
                 <xsl:text>&#x0a;timelineDurations['</xsl:text><xsl:value-of select="@xml:id"/><xsl:text>']=0;</xsl:text>
               </xsl:when>
