@@ -16,7 +16,10 @@
   <xsl:variable name="bannerImg"><xsl:value-of select="$vmImages"/><xsl:text>HeaderBackground.png</xsl:text></xsl:variable>
    
    <!-- path to folder of facsimile images, the path is encoded in the TEI files like this: images/imagename.jpg -->
-  <xsl:variable name="facsImageFolder"></xsl:variable>  
+  <xsl:variable name="facsImageFolder"></xsl:variable> 
+  
+  <!-- logoLink: path to samples page (VM logo links to this path) -->
+  <xsl:variable name="logoLink">../samples.html</xsl:variable> 
   
   <!-- include file form src folder -->
   <xsl:variable name="cssInclude">../src/vmachine.css</xsl:variable>

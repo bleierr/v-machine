@@ -134,16 +134,21 @@
       <div id="mainBanner">
          <xsl:call-template name="brandingLogo" />
          <div id="bannerImageContainer">
-            <img id="logo" alt="Powered by the Versioning Machine" src="{$bannerImg}"/>
+            
+               <img id="logo" alt="Powered by the Versioning Machine" src="{$bannerImg}"/>
+            
             <xsl:call-template name="headline" />
             <xsl:call-template name="mainControls" />
+            
          </div>
       </div>
    </xsl:template>
    
    <xsl:template name="brandingLogo">
       <div id="brandingLogo">
+         <a href="{$logoLink}">
          <img id="logo" alt="Powered by the Versioning Machine" src="{$vmLogo}"/>
+         </a>
       </div>
    </xsl:template>
    
