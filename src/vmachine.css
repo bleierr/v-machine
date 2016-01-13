@@ -163,7 +163,7 @@ div#mssArea{
 div.panel{
     float:left;
     border:1px solid black;
-	width:300px;
+	width:350px;
     min-height:250px;
     min-width:250px;
     margin:0;
@@ -257,6 +257,12 @@ div#mssArea div.panel div.noteContent div.position{
 div#mssArea div.panel div.bibContent,
 div#mssArea div.panel div.critContent{
     padding:10px;
+}
+
+div#mssArea div.panel div.bibContent,
+div#mssArea div.panel div.critContent,
+div#mssArea div.panel div.noteContent{
+    cursor:text;
 }
 
 #bibPanel, #notesPanel, #critPanel{
@@ -359,11 +365,11 @@ div.mssContent div.paragraph div.reading{
 }
 
 div.apparatus div.reading{
-    display:inline-block;
+    display:none;
 }
 
 div.apparatus{
-    display:inline-block;
+    display:none;
 	cursor: pointer;
 }
 
@@ -398,6 +404,9 @@ span.unclear{
 .rend-strikethrough,
 .rend-strike{
     text-decoration:line-through;
+}
+.rend-center{
+	text-align:center;
 }
 
 .place-above,
@@ -496,7 +505,7 @@ span.viewerHandleLt{
     font-weight: 300;
 	display:block;
     background-color:#2c577f;
-	font-size: 1.2em; /* changed from 1.5em*/
+	font-size: 1.2em; 
     margin:0;
 	border-bottom:1px solid #333;
     border-left:1px solid #333;
@@ -529,6 +538,12 @@ span.viewerHandleLt{
 	width: 3em;
 	height: 2em;
 }
+
+.dropdown a{
+	color:black;
+	text-decoration: none;
+}
+
 button{
 	background-color:#2c577f;
 	color: #fff;

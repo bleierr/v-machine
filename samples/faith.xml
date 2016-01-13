@@ -55,9 +55,11 @@
 			<variantEncoding location="internal" method="parallel-segmentation"/>
 		</encodingDesc>
 	</teiHeader>
+	
 	<facsimile>
 		<graphic xml:id="image1" url="images/cp32.jpg"/>
 	</facsimile>
+	
 	<text>
 		<front>
 			<div>

@@ -3,9 +3,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="xs"
     version="1.0">
-      
-  <xsl:variable name="indexPage">../samples.html</xsl:variable>
-  
+    
   <xsl:variable name="vmImages">../vm-images/</xsl:variable>
   <!-- include files in vm-images folder -->
   <xsl:variable name="vmLogo"><xsl:value-of select="$vmImages"/><xsl:text>LogoSilver.png</xsl:text></xsl:variable>
@@ -19,7 +17,7 @@
   <xsl:variable name="facsImageFolder"></xsl:variable> 
   
   <!-- logoLink: path to samples page (VM logo links to this path) -->
-  <xsl:variable name="logoLink">../samples.html</xsl:variable> 
+  <xsl:variable name="logoLink">../samples.html</xsl:variable>
   
   <!-- include file form src folder -->
   <xsl:variable name="cssInclude">../src/vmachine.css</xsl:variable>

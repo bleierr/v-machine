@@ -163,14 +163,11 @@
       </profileDesc>
 
    </teiHeader>
-
-   <!--
    <facsimile>
       <graphic url="images/w15v.jpg" xml:id="w15v"/>
       <graphic url="images/b15v.jpg" xml:id="b15v"/>
       <graphic url="images/p10v.jpg" xml:id="p10"/>
    </facsimile>
--->
 
    <text>
       <front>
@@ -350,8 +347,7 @@
                         all things is God" (Hebrews 3:4-6).</note>
                   </app>
                </l>
-               <l n="4">
-                  <app>
+               <l n="4">this <app>
                      <rdg wit="#w">No <w lemma="workman">
                            <choice>
                               <orig>workmans</orig>

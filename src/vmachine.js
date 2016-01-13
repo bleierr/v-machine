@@ -3,19 +3,14 @@
 	* Updated: Aug 22 2015 by roman bleier
 	* Adds JS functionality to VM 5.0
 	* 
+	* The document-ready statement executing jquery plugins is at the end of this script!
+	* Some input comes from global variables added via the XSLT script - see settings.xsl and comments further below.
+	*
 	**/
 
-function moveToFront($that){
-	/*function to change the stack order of a JQuery panel element and adds it to the front of all visible panels*/
-	$(".activePanel").each(function(){
-				$(this).css({"z-index":2}).removeClass("activePanel");
-			});			
-		$that.addClass("activePanel").css({"z-index":5, "opacity":1});
-		$that.nextAll().insertBefore($that);
-}
 	
 function totalPanelWidth(){
-	/*function to calculate and return the total panel width of visible panels*/
+	/***function to calculate and return the total panel width of visible panels***/
 	var totalWidth = 0;
 	$("div.panel:not(.noDisplay)").each(function(){
 		var wid = $(this).width();
@@ -26,7 +21,7 @@ function totalPanelWidth(){
 
 function PanelInPosXY(selector, top, left){
 	/** PanelInPosXY function to find if a panel/element is in the location left/top 
-	*param selector: JQuery selector ( for instance to select all panels, or all visibal panels)
+	*param selector: JQuery selector ( for instance to select all panels, or all visible panels)
 	*param left: the left coordinates of the panel/element 
 	*param top: the top coordinates of the panel/element
 	*/
@@ -41,20 +36,33 @@ function PanelInPosXY(selector, top, left){
 	return panelPresent;
 }
 
-function workspaceResize(){
-	/** workspaceResize resizes the workspace depending on how many panels are visible, 
+
+$.fn.moveToFront = function() {
+	/** moves panels (mssPanel, imgPanel, etc) to front. Adds a higher z-index**/
+			$that = $(this);
+			$that.addClass("activePanel").css({"z-index":5, "opacity":1});
+			$that.nextAll().insertBefore($that);
+			
+			$(".activePanel").each(function(){
+				$(this).css({"z-index":2}).removeClass("activePanel");
+			});	
+
+}
+
+$.fn.mssAreaResize = function (){
+	/** resizes the workspace (area where the versions are displayed) depending on how many panels are visible, 
 	* if panel is opened the workspace becomes larger, 
 	* if a panel is closed it becomes smaller
 	*/
-            var mssAreaWidth = $('#mssArea').width();
+            var mssAreaWidth = $(this).width();
             var panelsWidth = totalPanelWidth();
 			var windowWidth = $(window).width();
             if( windowWidth > panelsWidth){
-                $('#mssArea').width(windowWidth);
+                $(this).width(windowWidth);
 				mssAreaWidth = windowWidth;
             }
             else{
-                $('#mssArea').width(panelsWidth + 100);
+                $(this).width(panelsWidth + 100);
 				mssAreaWidth = panelsWidth + 100;
             }
 			
@@ -78,7 +86,7 @@ function workspaceResize(){
 					panelHeight = h;
 				}
 			});
-			$("#mssArea").css({"height":panelHeight+100});
+			$(this).css({"height":panelHeight+100});
 }
 
 /***** Functionality of dropdown menu and top menu *****/
@@ -162,9 +170,9 @@ $.fn.panelButtonClick = function() {
 						}
 					}
 					$(this).changePanelVisibility(top, left);
-					moveToFront($(this));
+					$(this).moveToFront();
 				});		
-				workspaceResize();
+				$("#mssArea").mssAreaResize();
 		$("*[data-panelid='"+dataPanelId+"']").toggleOnOffButton();
 			
 	});
@@ -226,18 +234,18 @@ $.fn.changePanelVisibility = function(top,left) {
 }
 
 $.fn.panelClick = function() {
-	/* plugin to add a mousedown event to panels
+	/** plugin to add a mousedown event to panels
 	brings the panel to front
-	*/
+	**/
     return this.mousedown(function(){
-			moveToFront($(this));
+			$(this).moveToFront();
 		});
 };
 
 $.fn.panelHover = function() {
-	/* plugin to add a hover event to panels
+	/** plugin to add a hover event to panels
 	on hover the class 'highlight' is added or removed
-	*/
+	**/
     return this.hover(function(){
 			$(this).addClass("highlight");
 			var p = $(this).attr("id");
@@ -250,9 +258,9 @@ $.fn.panelHover = function() {
 };
 
 $.fn.closeButtonClick = function() {
-	/* plugin to add a click event to the closing button ('X') of panels 
-	after a panel is closed the workspace has to be resized
-	*/
+	/** plugin to add a click event to the closing button ('X') of panels 
+	after a panel is closed the mssArea has to be resized
+	**/
     return this.click(function(){
 		var w = $(this).closest(".panel").attr("id");
 		var panel = $(this).closest(".panel");
@@ -263,7 +271,7 @@ $.fn.closeButtonClick = function() {
 		$(this).closest(".panel").addClass("noDisplay");
 		$("*[data-panelid='"+w+"']").toggleOnOffButton();
 		//$showNote.removeClass("clicked")
-		workspaceResize();
+		$("#mssArea").mssAreaResize();
 		$(panel).find("audio").each(function(){
 			$(this).trigger("pause");
 			});
@@ -300,7 +308,7 @@ $.fn.imgLinkClick = function() {
 					"left": e.pageX,
 					}).toggleClass("noDisplay").addClass("activePanel");
 				//move the image panel to the front of all visible panels
-				moveToFront($("#"+imgId))
+				$("#"+imgId).moveToFront();
 			});
 };
 $.fn.imgLinkHover = function() {
@@ -322,7 +330,7 @@ $.fn.imgLinkHover = function() {
 $.fn.imgPanelMousedown = function() {
 	/* plugin to add a mousedown event to image panels */
     return this.mousedown(function(){
-			moveToFront($(this));
+			$(this).moveToFront();
 	});	
 };
 $.fn.imgPanelHover = function() {
@@ -342,7 +350,7 @@ $.fn.imgPanelHover = function() {
 /***** Functionality popup notes *****/
 
 $.fn.clickPopupNote = function() {
-	/* plugin to add a click effect and popup note */
+	/*** plugin to add a click effect and popup note ***/
 	var noteIcon = this;	
 	//"div.noteicon, div.choice, div.rdgGrp"
 
@@ -360,7 +368,7 @@ $.fn.clickPopupNote = function() {
 }
 
 $.fn.hoverPopupNote = function() {
-	/* plugin to add a hover effect and popup note */
+	/*** plugin to add a hover effect and popup note ***/
 	$("<div id='showNote'>empty note</div>").appendTo("body").addClass("noDisplay");
 
 	return this.hover(function(e){
@@ -390,7 +398,7 @@ $.fn.hoverPopupNote = function() {
 /***** Functionality apparatus/line matching *****/
 
 $.fn.matchAppHover = function() {
-	/* plugin that adds a apparatus matching functionality */
+	/*** plugin that adds a apparatus matching functionality ***/
 		this.hover(function(){
 			var app = $(this).attr("data-app-id");
 			$("."+app).addClass("matchAppHi");
@@ -400,14 +408,14 @@ $.fn.matchAppHover = function() {
 		});
 };
 $.fn.matchAppClick = function() {
-	/* plugin that adds a line matching functionality */
+	/*** plugin that adds a line matching functionality ***/
 		this.click(function(){
 			var app = $(this).attr("data-app-id");
 			$("."+app).toggleClass("matchAppHiClicked");
 		});
 };
 $.fn.matchLineHover = function() {
-	/* plugin that adds a apparatus matching functionality */
+	/*** plugin that adds a apparatus matching functionality ***/
 		this.hover(function(){
 			var line = $(this).closest("div.lineWrapper").attr("data-line-id");
 			$("."+line).closest("div.lineWrapper").addClass("matchLineHi");
@@ -419,7 +427,7 @@ $.fn.matchLineHover = function() {
 		});
 };
 $.fn.matchLineClick = function() {
-	/* plugin that adds a line matching functionality */
+	/*** plugin that adds a line matching functionality ***/
 		this.click(function(){
 			var line = $(this).closest("div.lineWrapper").attr("data-line-id");
 			$("."+line).closest("div.lineWrapper").toggleClass("matchLineHiClicked");
@@ -430,27 +438,26 @@ $.fn.matchLineClick = function() {
 
 /***** Functionality audio player and audio-text matching *****/
 $.fn.audioMatch = function() {
+		
 		/**app to add **/
 		this.mousedown(function(){
-			//var witId = $(this).attr("data-reading-wits"); //it should only be one ID reading for audio tracks
-			
+				
 				var timeStart = $(this).attr("data-timeline-start");
 				var timeInterval = $(this).attr("data-timeline-interval");
 				
 				$(this).closest(".mssPanel").find("audio").each(function(){
 					var $audio = $(this);
 					
-					
-					if( $audio.prop('currentTime')=== 0 ){
+					if( $audio.prop('currentTime') === 0){
 						$audio.trigger('play');
 					}
 					else{
-						$audio.prop("currentTime",timeStart);
-						$audio.trigger('play');
-						}
+					
+					$audio.prop("currentTime",timeStart);
+					$audio.trigger('play');
+					}
+						
 				});
-				
-			
 		});
 };
 
@@ -458,34 +465,46 @@ $.fn.audioMatch = function() {
 
 /***** Initial setup of panels *****/
 
-function bibPanel(){
+$.fn.bibPanel = function() {
+	/*** Plugin responsible for the initial setup of bibPanel (visible: yes/no) 
+	Plugin adds also click and hover effects to panel
+	***/
 	var keyword = "bibPanel";
 	var panelPos = totalPanelWidth();
+	$("#"+keyword).appendTo(this);
 	if(INITIAL_DISPLAY_BIB_PANEL){
 		//bibPanel visible, constant INITIAL_DISPLAY_BIB_PANEL can be found in settings.xsl
 		$("#"+keyword).changePanelVisibility("-1px", panelPos);
 		$("nav *[data-panelid='"+ keyword +"']").toggleOnOffButton();
-	}	
+	}
 	$("#"+keyword).panelClick();
 	$("#"+keyword).panelHover();
 }
-function notesPanel(){
+
+$.fn.notesPanel = function() {
+	/*** Plugin responsible for the initial setup of notesPanel (visible: yes/no) 
+	Plugin adds also click and hover effects to panel
+	***/
 	var keyword = "notesPanel";
 	var panelPos = totalPanelWidth();
-	
+	$("#"+keyword).appendTo(this);
 	if(INITIAL_DISPLAY_NOTES_PANEL){
 		//notesPanel visible, constant INITIAL_DISPLAY_NOTES_PANEL can be found in settings.xsl
 		$("#"+keyword).changePanelVisibility("-1px", panelPos);
 		$("nav *[data-panelid='"+ keyword +"']").toggleOnOffButton();
 		$("#mssArea .noteicon").toggle();
 	}
-	
 	$("#"+keyword).panelClick();
 	$("#"+keyword).panelHover();
 }
-function critPanel(){
+
+$.fn.critPanel = function() {
+	/*** Plugin responsible for the initial setup of critPanel (visible: yes/no) 
+	Plugin adds also click and hover effects to panel
+	***/
 	var keyword = "critPanel";
 	var panelPos = totalPanelWidth();
+	$("#"+keyword).appendTo(this);
 	if(INITIAL_DISPLAY_CRIT_PANEL){
 		//critPanel visible, constant INITIAL_DISPLAY_CRIT_PANEL can be found in settings.xsl
 		$("#"+keyword).changePanelVisibility("-1px", panelPos);
@@ -494,58 +513,24 @@ function critPanel(){
 	$("#"+keyword).panelClick();
 	$("#"+keyword).panelHover();
 }
-function linenumber(){
+
+
+
+$.fn.linenumber = function (){
+	/*** Plugin responsible for the initial setup line numbers (on/off) ***/
 	keyword = "linenumber";
 	if(INITIAL_DISPLAY_LINENUMBERS){
-		//linenumbers visible, constant INITIAL_DISPLAY_LINENUMBERS can be found in settings.xsl
+		//line numbers visible, constant INITIAL_DISPLAY_LINENUMBERS can be found in settings.xsl
 		$(".linenumber").toggleClass("noDisplay");
 		$("nav li#linenumberOnOff").toggleOnOffButton();
 	}
 	
 }
 
-function mssPanels(){
-	//initial setup
-	//open the version panels
-	
-	//by default the vmachine.xsl displays all versions in each panel, not relevant versions have to be hidden
-		
-	$(".mssPanel .line, .mssPanel .head, .mssPanel .headtype-main, .mssPanel .ab, .mssPanel .closer, .mssPanel .paragraph").each(function(){
-		var $ele = $(this);
-		var mssPanel = $ele.closest(".mssPanel")[0];	
-		var mssId = $(mssPanel).attr("id");	
-		var showElement = false;
-		
-		//if the line contains text directly
-		if ( $ele.children(".textcontent").length > 0 ) {
-			showElement = true;
-		}
-		$ele.find(".apparatus").each(function(){
-			var $app = $(this);
-			var showApp = false;
-			$app.find(".reading").each(function(){
-					var $rdg = $(this);
-					if($rdg.hasClass(mssId) && !$rdg.hasClass("emptyReading")){
-						showApp = true;
-						showElement = true;
-						}else{
-						$rdg.hide();
-					}
-				});
-			if(!showApp){
-				$app.hide();
-				}
-			});
-		if(!showElement){
-			if($ele.hasClass("line")){
-				//for instance the parent element lineWrapper
-				$ele.parent().hide();
-			}
-			else{
-				$ele.hide();
-			}
-		}
-	});
+$.fn.mssPanels = function (){
+	/*** Plugin responsible for the initial setup of the manuscript panels (mssPanel) 
+	Plugin adds click and hover effects to panels
+	***/
 	
 	$(".facs-images, .pagebreak").each(function(){
 		var $ele = $(this);
@@ -563,6 +548,7 @@ function mssPanels(){
 	//manuscript panels visible, constant INITIAL_DISPLAY_NUM_VERSIONS can be found in settings.xsl
 	var versions = INITIAL_DISPLAY_NUM_VERSIONS;
 	$("#versionList li").each(function(idx){
+				
 				var panelPos = totalPanelWidth();
 				var wit = $(this).attr("data-panelid");
 				if(idx < versions){
@@ -573,22 +559,31 @@ function mssPanels(){
 	//add functionality to manuscript panels
 	$(".mssPanel").panelClick();
 	$(".mssPanel").panelHover();
+	
+	$(".mssPanel .panelBanner a").css({"color":"white", "text-decoration":"none"});
+	
+	
+	
 }
 /***** END initial setup of panels  *****/
 
+
+
+/***** DOCUMENT READY: INITIALIZE PLUGINS ******/
+
 $(document).ready(function() {  
 	
-	/*****initial panel and visibility setup *****/
-	bibPanel();
-	mssPanels();
-	notesPanel();
-	critPanel();
-	linenumber();
+	/***** init panels and visibility *****/
+	$("#mssArea").bibPanel();
+	$("#mssArea").mssPanels();
+	$("#mssArea").notesPanel();
+	$("#mssArea").critPanel();
+	$("#mssArea").linenumber();
 
-	//after the visibility of all necessary panels is changed the workspace has to be resized to fit panels
-	workspaceResize();
+	//after the visibility of all necessary panels is changed the workspace/mssArea has to be resized to fit panels
+	$("#mssArea").mssAreaResize();
 	
-	/*****END initial panel and visibility setup *****/
+	/*****END init panel and visibility *****/
 	
 	/***** activate all plugins *****/
 	//close panel via X sign 
@@ -621,7 +616,7 @@ $(document).ready(function() {
 	$( ".panel" ).draggable({
 		containment: "parent",
 		zIndex: 6, 
-		cancel: ".textcontent, .zoom-range"
+		cancel: ".textcontent, .zoom-range, .bibContent, .noteConent, .critContent"
 	}).resizable(
 	{helper: "ui-resizable-helper"}
 	);

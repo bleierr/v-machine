@@ -4,8 +4,8 @@
    <head>
       <title>The Altar -- The Versioning Machine 5.0</title>
       <meta charset="utf-8"></meta>
-      <link rel="stylesheet" type="text/css" href="../src/vmachine.css"></link>
-      <link rel="stylesheet" type="text/css" href="../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script type="text/javascript" src="../src/panzoom/jquery.panzoom.min.js"></script><script type="text/javascript">
+      <link rel="stylesheet" type="text/css" href="../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="../src/vmachine.css"></link><script type="text/javascript" src="../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script type="text/javascript" src="../src/panzoom/jquery.panzoom.min.js"></script><script type="text/javascript">
       
       /*NOTES PANEL: To change the VM so that the notes panel page does not
       appear at the initial load, change the constant INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */
@@ -18,15 +18,13 @@
       /**The number of version/witness panels to be displayed initially */
       INITIAL_DISPLAY_NUM_VERSIONS = 2;
       
-      
       /** CRIT PANEL: Critical information should be encoded as tei:notesStmt/tei:note[@type='critIntro'] in the TEI files --&gt;
       * To change the VM so that the critical information page does not
       * appear at the initial load, change the constant INITIAL_DISPLAY_CRIT_PANEL from "true" to "false" */
       INITIAL_DISPLAY_CRIT_PANEL = false;
       
-      
       /** To change the VM so that line numbers are hidden by default, change the constant INITIAL_DISPLAY_LINENUMBERS from
-      * "true" to "false" below */
+      * "true" to "false" */
       INITIAL_DISPLAY_LINENUMBERS = true;
       
    var timelinePoints = new Array();var timelineDurations = new Array();</script><script type="text/javascript" src="../src/vmachine.js"></script></head>
@@ -41,21 +39,19 @@
                   <li><button id="selectVersion" class="topMenuButton dropdownButton">3 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt="arrow up"></img><img src="../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="versionList" class="dropdown notVisible">
                         <li data-panelid="w">
                            <div class="listText">
-                              <div>Williams MS. Jones B62</div>
+                              <div><a href="#" title="w: Williams MS. Jones B62">Version w</a></div>
                               <div><button>OFF</button></div>
                            </div>
                         </li>
                         <li data-panelid="b">
                            <div class="listText">
-                              <div>Bodleian MS. Tanner 307</div>
+                              <div><a href="#" title="b: Bodleian MS. Tanner 307">Version b</a></div>
                               <div><button>OFF</button></div>
                            </div>
                         </li>
                         <li data-panelid="p">
                            <div class="listText">
-                              <div>The Temple: Sacred Poems and Private Ejaculations, first edition
-                                 (Cambridge, 1633)
-                              </div>
+                              <div><a href="#" title="p: The Temple: Sacred Poems and Private Ejaculations, first edition&#xA;                  (Cambridge, 1633)">Version p</a></div>
                               <div><button>OFF</button></div>
                            </div>
                         </li>
@@ -181,24 +177,23 @@
             </div>
          </div>
          <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="w">
-            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img>Version w
-            </div>
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img><a title="Version w: Williams MS. Jones B62">Version w: Williams MS. Jones B62</a></div>
             <div class="mssContent">
                
                
                <hr class="pagebreak w" data-version-id="w"></hr>
-               <div class="facs-images&#xA;                   w" data-version-id="w"></div>
+               <div class="facs-images&#xA;                   w" data-version-id="w"><img src="../vm-images/image.png" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imgLink w" data-version-id="w" data-img-url="images/w15v.jpg" data-img-id="w15v"></img></div>
                
                
                
                <hr class="pagebreak b" data-version-id="b"></hr>
-               <div class="facs-images&#xA;                   b" data-version-id="b"></div>
+               <div class="facs-images&#xA;                   b" data-version-id="b"><img src="../vm-images/image.png" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imgLink b" data-version-id="b" data-img-url="images/b15v.jpg" data-img-id="b15v"></img></div>
                
                
                
                
                <hr class="pagebreak p" data-version-id="p"></hr>
-               <div class="facs-images&#xA;                   p" data-version-id="p"></div>
+               <div class="facs-images&#xA;                   p" data-version-id="p"><img src="../vm-images/image.png" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imgLink p" data-version-id="p" data-img-url="images/p10v.jpg" data-img-id="p10"></img></div>
                
                
                
@@ -208,9 +203,9 @@
                   
                   <div class="head rend-center">
                      
-                     <div class="apparatus apparatus_1" data-app-id="apparatus_1">
+                     <div style="display:inline-block" class="apparatus apparatus_1" data-app-id="apparatus_1">
                         
-                        <div class="reading w" data-reading-wits="w"><span class="hi rend-underline"><span class="textcontent">The Altar</span></span><span class="textcontent">.</span></div>
+                        <div style="display:inline-block" class="reading w" data-reading-wits="w"><span class="hi rend-underline"><span class="textcontent">The Altar</span></span><span class="textcontent">.</span></div>
                         
                         <div class="reading b" data-reading-wits="b">
                            <span class="hi rend-underline"><span class="textcontent">The Altar</span></span>
@@ -267,9 +262,9 @@
                         <div class="line">
                            <div class="linenumber noDisplay">1</div>
                            
-                           <div class="apparatus apparatus_2" data-app-id="apparatus_2">
+                           <div style="display:inline-block" class="apparatus apparatus_2" data-app-id="apparatus_2">
                               
-                              <div class="reading w" data-reading-wits="w"><span class="textcontent">A broken Altar lord thy servant </span>
+                              <div style="display:inline-block" class="reading w" data-reading-wits="w"><span class="textcontent">A broken Altar lord thy servant </span>
                                  
                                  <div class="choice"><span class="textcontent">reares</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">rears</span></div>
@@ -321,9 +316,9 @@
                         <div class="line">
                            <div class="linenumber noDisplay">2</div>
                            
-                           <div class="apparatus apparatus_3" data-app-id="apparatus_3">
+                           <div style="display:inline-block" class="apparatus apparatus_3" data-app-id="apparatus_3">
                               
-                              <div class="reading w" data-reading-wits="w"><span class="textcontent">Made of a </span>
+                              <div style="display:inline-block" class="reading w" data-reading-wits="w"><span class="textcontent">Made of a </span>
                                  
                                  <div class="choice"><span class="textcontent">Hart</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">Heart</span></div>
@@ -389,9 +384,9 @@
                         <div class="line">
                            <div class="linenumber noDisplay">3</div>
                            
-                           <div class="apparatus apparatus_4" data-app-id="apparatus_4">
+                           <div style="display:inline-block" class="apparatus apparatus_4" data-app-id="apparatus_4">
                               
-                              <div class="reading w" data-reading-wits="w"><span class="textcontent">Whose parts are as thy hand did frame</span></div>
+                              <div style="display:inline-block" class="reading w" data-reading-wits="w"><span class="textcontent">Whose parts are as thy hand did frame</span></div>
                               
                               <div class="reading b" data-reading-wits="b"><span class="textcontent">Whose parts are, as thy hand did frame;</span></div>
                               
@@ -418,11 +413,9 @@
                      
                      <div class="lineWrapper line_1_4" data-line-id="line_1_4">
                         <div class="line">
-                           <div class="linenumber noDisplay">4</div>
-                           
-                           <div class="apparatus apparatus_5" data-app-id="apparatus_5">
+                           <div class="linenumber noDisplay">4</div><span class="textcontent">this </span><div style="display:inline-block" class="apparatus apparatus_5" data-app-id="apparatus_5">
                               
-                              <div class="reading w" data-reading-wits="w"><span class="textcontent">No </span>
+                              <div style="display:inline-block" class="reading w" data-reading-wits="w"><span class="textcontent">No </span>
                                  
                                  <div class="choice"><span class="textcontent">workmans</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">workman's</span></div>
@@ -489,9 +482,9 @@
                         <div class="line">
                            <div class="linenumber noDisplay">5</div>
                            
-                           <div class="apparatus apparatus_6" data-app-id="apparatus_6">
+                           <div style="display:inline-block" class="apparatus apparatus_6" data-app-id="apparatus_6">
                               
-                              <div class="reading w" data-reading-wits="w"><span class="textcontent">A </span>
+                              <div style="display:inline-block" class="reading w" data-reading-wits="w"><span class="textcontent">A </span>
                                  
                                  <div class="choice"><span class="textcontent">Hart</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">Heart</span></div>
@@ -516,9 +509,9 @@
                         <div class="line">
                            <div class="linenumber noDisplay">6</div>
                            
-                           <div class="apparatus apparatus_7" data-app-id="apparatus_7">
+                           <div style="display:inline-block" class="apparatus apparatus_7" data-app-id="apparatus_7">
                               
-                              <div class="reading w" data-reading-wits="w"><span class="textcontent">Is such a stone</span></div>
+                              <div style="display:inline-block" class="reading w" data-reading-wits="w"><span class="textcontent">Is such a stone</span></div>
                               
                               <div class="reading b" data-reading-wits="b"><span class="textcontent">Is such a stone,</span></div>
                               
@@ -545,9 +538,9 @@
                         <div class="line">
                            <div class="linenumber noDisplay">7</div>
                            
-                           <div class="apparatus apparatus_8" data-app-id="apparatus_8">
+                           <div style="display:inline-block" class="apparatus apparatus_8" data-app-id="apparatus_8">
                               
-                              <div class="reading w" data-reading-wits="w"><span class="textcontent">As nothing but</span></div>
+                              <div style="display:inline-block" class="reading w" data-reading-wits="w"><span class="textcontent">As nothing but</span></div>
                               
                               <div class="reading b" data-reading-wits="b"><span class="textcontent">As nothing but</span></div>
                               
@@ -562,9 +555,9 @@
                         <div class="line">
                            <div class="linenumber noDisplay">8</div>
                            
-                           <div class="apparatus apparatus_9" data-app-id="apparatus_9">
+                           <div style="display:inline-block" class="apparatus apparatus_9" data-app-id="apparatus_9">
                               
-                              <div class="reading w" data-reading-wits="w"><span class="textcontent">Thy </span>
+                              <div style="display:inline-block" class="reading w" data-reading-wits="w"><span class="textcontent">Thy </span>
                                  
                                  <div class="choice"><span class="textcontent">powre</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">power</span></div>
@@ -598,9 +591,9 @@
                         <div class="line">
                            <div class="linenumber noDisplay">9</div>
                            
-                           <div class="apparatus apparatus_10" data-app-id="apparatus_10">
+                           <div style="display:inline-block" class="apparatus apparatus_10" data-app-id="apparatus_10">
                               
-                              <div class="reading w" data-reading-wits="w"><span class="textcontent">Wherefore each part</span></div>
+                              <div style="display:inline-block" class="reading w" data-reading-wits="w"><span class="textcontent">Wherefore each part</span></div>
                               
                               <div class="reading b" data-reading-wits="b">
                                  
@@ -621,9 +614,9 @@
                         <div class="line">
                            <div class="linenumber noDisplay">10</div>
                            
-                           <div class="apparatus apparatus_11" data-app-id="apparatus_11">
+                           <div style="display:inline-block" class="apparatus apparatus_11" data-app-id="apparatus_11">
                               
-                              <div class="reading w" data-reading-wits="w">
+                              <div style="display:inline-block" class="reading w" data-reading-wits="w">
                                  
                                  
                                  <div class="choice"><span class="textcontent">Øf</span><div class="corr">
@@ -653,9 +646,9 @@
                         <div class="line">
                            <div class="linenumber noDisplay">11</div>
                            
-                           <div class="apparatus apparatus_12" data-app-id="apparatus_12">
+                           <div style="display:inline-block" class="apparatus apparatus_12" data-app-id="apparatus_12">
                               
-                              <div class="reading w" data-reading-wits="w"><span class="textcontent">Meets in this frame</span></div>
+                              <div style="display:inline-block" class="reading w" data-reading-wits="w"><span class="textcontent">Meets in this frame</span></div>
                               
                               <div class="reading b p" data-reading-wits="b p"><span class="textcontent">Meets in this frame,</span></div>
                               
@@ -675,9 +668,9 @@
                         <div class="line">
                            <div class="linenumber noDisplay">12</div>
                            
-                           <div class="apparatus apparatus_13" data-app-id="apparatus_13">
+                           <div style="display:inline-block" class="apparatus apparatus_13" data-app-id="apparatus_13">
                               
-                              <div class="reading w" data-reading-wits="w"><span class="textcontent">To </span>
+                              <div style="display:inline-block" class="reading w" data-reading-wits="w"><span class="textcontent">To </span>
                                  
                                  <div class="choice"><span class="textcontent">praiſe</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">praise</span></div>
@@ -706,9 +699,9 @@
                         <div class="line">
                            <div class="linenumber noDisplay">13</div>
                            
-                           <div class="apparatus apparatus_14" data-app-id="apparatus_14">
+                           <div style="display:inline-block" class="apparatus apparatus_14" data-app-id="apparatus_14">
                               
-                              <div class="reading w" data-reading-wits="w"><span class="textcontent">That If I chance to hold my peace</span></div>
+                              <div style="display:inline-block" class="reading w" data-reading-wits="w"><span class="textcontent">That If I chance to hold my peace</span></div>
                               
                               <div class="reading b" data-reading-wits="b"><span class="textcontent">That, if I chance to hold my peace,</span></div>
                               
@@ -723,9 +716,9 @@
                         <div class="line">
                            <div class="linenumber noDisplay">14</div>
                            
-                           <div class="apparatus apparatus_15" data-app-id="apparatus_15">
+                           <div style="display:inline-block" class="apparatus apparatus_15" data-app-id="apparatus_15">
                               
-                              <div class="reading w" data-reading-wits="w">
+                              <div style="display:inline-block" class="reading w" data-reading-wits="w">
                                  
                                  
                                  <div class="choice"><span class="textcontent">Theſe</span><div class="corr">
@@ -794,9 +787,9 @@
                         <div class="line">
                            <div class="linenumber noDisplay">15</div>
                            
-                           <div class="apparatus apparatus_16" data-app-id="apparatus_16">
+                           <div style="display:inline-block" class="apparatus apparatus_16" data-app-id="apparatus_16">
                               
-                              <div class="reading w" data-reading-wits="w">
+                              <div style="display:inline-block" class="reading w" data-reading-wits="w">
                                  
                                  
                                  <div class="choice"><span class="textcontent">Ø</span><div class="corr">
@@ -867,9 +860,9 @@
                         <div class="line">
                            <div class="linenumber noDisplay">16</div>
                            
-                           <div class="apparatus apparatus_17" data-app-id="apparatus_17">
+                           <div style="display:inline-block" class="apparatus apparatus_17" data-app-id="apparatus_17">
                               
-                              <div class="reading w" data-reading-wits="w"><span class="textcontent">And </span>
+                              <div style="display:inline-block" class="reading w" data-reading-wits="w"><span class="textcontent">And </span>
                                  
                                  <div class="choice"><span class="textcontent">sanctifie</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">sanctify</span></div>
@@ -920,24 +913,23 @@
             </div>
          </div>
          <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="b">
-            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img>Version b
-            </div>
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img><a title="Version b: Bodleian MS. Tanner 307">Version b: Bodleian MS. Tanner 307</a></div>
             <div class="mssContent">
                
                
                <hr class="pagebreak w" data-version-id="w"></hr>
-               <div class="facs-images&#xA;                   w" data-version-id="w"></div>
+               <div class="facs-images&#xA;                   w" data-version-id="w"><img src="../vm-images/image.png" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imgLink w" data-version-id="w" data-img-url="images/w15v.jpg" data-img-id="w15v"></img></div>
                
                
                
                <hr class="pagebreak b" data-version-id="b"></hr>
-               <div class="facs-images&#xA;                   b" data-version-id="b"></div>
+               <div class="facs-images&#xA;                   b" data-version-id="b"><img src="../vm-images/image.png" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imgLink b" data-version-id="b" data-img-url="images/b15v.jpg" data-img-id="b15v"></img></div>
                
                
                
                
                <hr class="pagebreak p" data-version-id="p"></hr>
-               <div class="facs-images&#xA;                   p" data-version-id="p"></div>
+               <div class="facs-images&#xA;                   p" data-version-id="p"><img src="../vm-images/image.png" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imgLink p" data-version-id="p" data-img-url="images/p10v.jpg" data-img-id="p10"></img></div>
                
                
                
@@ -947,11 +939,11 @@
                   
                   <div class="head rend-center">
                      
-                     <div class="apparatus apparatus_1" data-app-id="apparatus_1">
+                     <div style="display:inline-block" class="apparatus apparatus_1" data-app-id="apparatus_1">
                         
                         <div class="reading w" data-reading-wits="w"><span class="hi rend-underline"><span class="textcontent">The Altar</span></span><span class="textcontent">.</span></div>
                         
-                        <div class="reading b" data-reading-wits="b">
+                        <div style="display:inline-block" class="reading b" data-reading-wits="b">
                            <span class="hi rend-underline"><span class="textcontent">The Altar</span></span>
                            
                         </div>
@@ -1006,7 +998,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">1</div>
                            
-                           <div class="apparatus apparatus_2" data-app-id="apparatus_2">
+                           <div style="display:inline-block" class="apparatus apparatus_2" data-app-id="apparatus_2">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">A broken Altar lord thy servant </span>
                                  
@@ -1018,7 +1010,7 @@
                                  
                               </div>
                               
-                              <div class="reading b" data-reading-wits="b"><span class="textcontent">A broken Altar, Lord, thy servant </span>
+                              <div style="display:inline-block" class="reading b" data-reading-wits="b"><span class="textcontent">A broken Altar, Lord, thy servant </span>
                                  
                                  <div class="choice"><span class="textcontent">reares</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">rears</span></div>
@@ -1060,7 +1052,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">2</div>
                            
-                           <div class="apparatus apparatus_3" data-app-id="apparatus_3">
+                           <div style="display:inline-block" class="apparatus apparatus_3" data-app-id="apparatus_3">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">Made of a </span>
                                  
@@ -1090,7 +1082,7 @@
                                  </div>
                                  <span class="textcontent">.</span></div>
                               
-                              <div class="reading b" data-reading-wits="b"><span class="textcontent">Made of a heart, </span>
+                              <div style="display:inline-block" class="reading b" data-reading-wits="b"><span class="textcontent">Made of a heart, </span>
                                  
                                  <div class="choice"><span class="textcontent">&amp;</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">and</span></div>
@@ -1128,11 +1120,11 @@
                         <div class="line">
                            <div class="linenumber noDisplay">3</div>
                            
-                           <div class="apparatus apparatus_4" data-app-id="apparatus_4">
+                           <div style="display:inline-block" class="apparatus apparatus_4" data-app-id="apparatus_4">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">Whose parts are as thy hand did frame</span></div>
                               
-                              <div class="reading b" data-reading-wits="b"><span class="textcontent">Whose parts are, as thy hand did frame;</span></div>
+                              <div style="display:inline-block" class="reading b" data-reading-wits="b"><span class="textcontent">Whose parts are, as thy hand did frame;</span></div>
                               
                               <div class="reading p" data-reading-wits="p">
                                  
@@ -1157,9 +1149,7 @@
                      
                      <div class="lineWrapper line_1_4" data-line-id="line_1_4">
                         <div class="line">
-                           <div class="linenumber noDisplay">4</div>
-                           
-                           <div class="apparatus apparatus_5" data-app-id="apparatus_5">
+                           <div class="linenumber noDisplay">4</div><span class="textcontent">this </span><div style="display:inline-block" class="apparatus apparatus_5" data-app-id="apparatus_5">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">No </span>
                                  
@@ -1183,7 +1173,7 @@
                                  </div>
                                  <span class="textcontent"> same</span></div>
                               
-                              <div class="reading b" data-reading-wits="b"><span class="textcontent">No </span>
+                              <div style="display:inline-block" class="reading b" data-reading-wits="b"><span class="textcontent">No </span>
                                  
                                  <div class="choice"><span class="textcontent">workemans</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">workman's</span></div>
@@ -1228,7 +1218,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">5</div>
                            
-                           <div class="apparatus apparatus_6" data-app-id="apparatus_6">
+                           <div style="display:inline-block" class="apparatus apparatus_6" data-app-id="apparatus_6">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">A </span>
                                  
@@ -1238,7 +1228,7 @@
                                  </div>
                                  <span class="textcontent"> alone</span></div>
                               
-                              <div class="reading b" data-reading-wits="b"><span class="textcontent">A heart alone</span></div>
+                              <div style="display:inline-block" class="reading b" data-reading-wits="b"><span class="textcontent">A heart alone</span></div>
                               
                               <div class="reading p" data-reading-wits="p"><span class="textcontent">A </span><span class="textcontent">H E A R T</span><span class="textcontent"> alone</span></div>
                               
@@ -1255,11 +1245,11 @@
                         <div class="line">
                            <div class="linenumber noDisplay">6</div>
                            
-                           <div class="apparatus apparatus_7" data-app-id="apparatus_7">
+                           <div style="display:inline-block" class="apparatus apparatus_7" data-app-id="apparatus_7">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">Is such a stone</span></div>
                               
-                              <div class="reading b" data-reading-wits="b"><span class="textcontent">Is such a stone,</span></div>
+                              <div style="display:inline-block" class="reading b" data-reading-wits="b"><span class="textcontent">Is such a stone,</span></div>
                               
                               <div class="reading p" data-reading-wits="p"><span class="textcontent">Is </span>
                                  
@@ -1284,11 +1274,11 @@
                         <div class="line">
                            <div class="linenumber noDisplay">7</div>
                            
-                           <div class="apparatus apparatus_8" data-app-id="apparatus_8">
+                           <div style="display:inline-block" class="apparatus apparatus_8" data-app-id="apparatus_8">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">As nothing but</span></div>
                               
-                              <div class="reading b" data-reading-wits="b"><span class="textcontent">As nothing but</span></div>
+                              <div style="display:inline-block" class="reading b" data-reading-wits="b"><span class="textcontent">As nothing but</span></div>
                               
                               <div class="reading p" data-reading-wits="p"><span class="textcontent">As nothing but</span></div>
                               
@@ -1301,7 +1291,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">8</div>
                            
-                           <div class="apparatus apparatus_9" data-app-id="apparatus_9">
+                           <div style="display:inline-block" class="apparatus apparatus_9" data-app-id="apparatus_9">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">Thy </span>
                                  
@@ -1317,7 +1307,7 @@
                                  </div>
                                  <span class="textcontent">.</span></div>
                               
-                              <div class="reading b" data-reading-wits="b"><span class="textcontent">Thy power doth cut.</span></div>
+                              <div style="display:inline-block" class="reading b" data-reading-wits="b"><span class="textcontent">Thy power doth cut.</span></div>
                               
                               <div class="reading p" data-reading-wits="p"><span class="textcontent">Thy </span><span class="textcontent">pow'r</span><span class="textcontent"> doth cut.</span></div>
                               
@@ -1337,11 +1327,11 @@
                         <div class="line">
                            <div class="linenumber noDisplay">9</div>
                            
-                           <div class="apparatus apparatus_10" data-app-id="apparatus_10">
+                           <div style="display:inline-block" class="apparatus apparatus_10" data-app-id="apparatus_10">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">Wherefore each part</span></div>
                               
-                              <div class="reading b" data-reading-wits="b">
+                              <div style="display:inline-block" class="reading b" data-reading-wits="b">
                                  
                                  <div class="choice"><span class="textcontent">Wherefor</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">Wherefore</span></div>
@@ -1360,7 +1350,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">10</div>
                            
-                           <div class="apparatus apparatus_11" data-app-id="apparatus_11">
+                           <div style="display:inline-block" class="apparatus apparatus_11" data-app-id="apparatus_11">
                               
                               <div class="reading w" data-reading-wits="w">
                                  
@@ -1379,7 +1369,7 @@
                                  
                               </div>
                               
-                              <div class="reading b" data-reading-wits="b"><span class="textcontent">Of my hard heart</span></div>
+                              <div style="display:inline-block" class="reading b" data-reading-wits="b"><span class="textcontent">Of my hard heart</span></div>
                               
                               <div class="reading p" data-reading-wits="p"><span class="textcontent">Of my hard heart</span></div>
                               
@@ -1392,11 +1382,11 @@
                         <div class="line">
                            <div class="linenumber noDisplay">11</div>
                            
-                           <div class="apparatus apparatus_12" data-app-id="apparatus_12">
+                           <div style="display:inline-block" class="apparatus apparatus_12" data-app-id="apparatus_12">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">Meets in this frame</span></div>
                               
-                              <div class="reading b p" data-reading-wits="b p"><span class="textcontent">Meets in this frame,</span></div>
+                              <div style="display:inline-block" class="reading b p" data-reading-wits="b p"><span class="textcontent">Meets in this frame,</span></div>
                               
                               <div class="noteicon">n
                                  <div class="note"><strong>Note:</strong> <span class="hi rend-italic"><span class="textcontent">frame</span></span><span class="textcontent">: i.e., the poem; the stone altar of
@@ -1414,7 +1404,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">12</div>
                            
-                           <div class="apparatus apparatus_13" data-app-id="apparatus_13">
+                           <div style="display:inline-block" class="apparatus apparatus_13" data-app-id="apparatus_13">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">To </span>
                                  
@@ -1424,7 +1414,7 @@
                                  </div>
                                  <span class="textcontent"> thy name</span></div>
                               
-                              <div class="reading b" data-reading-wits="b"><span class="textcontent">To praise thy Name.</span></div>
+                              <div style="display:inline-block" class="reading b" data-reading-wits="b"><span class="textcontent">To praise thy Name.</span></div>
                               
                               <div class="reading p" data-reading-wits="p"><span class="textcontent">To </span>
                                  
@@ -1445,11 +1435,11 @@
                         <div class="line">
                            <div class="linenumber noDisplay">13</div>
                            
-                           <div class="apparatus apparatus_14" data-app-id="apparatus_14">
+                           <div style="display:inline-block" class="apparatus apparatus_14" data-app-id="apparatus_14">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">That If I chance to hold my peace</span></div>
                               
-                              <div class="reading b" data-reading-wits="b"><span class="textcontent">That, if I chance to hold my peace,</span></div>
+                              <div style="display:inline-block" class="reading b" data-reading-wits="b"><span class="textcontent">That, if I chance to hold my peace,</span></div>
                               
                               <div class="reading p" data-reading-wits="p"><span class="textcontent">That if I chance to hold my peace,</span></div>
                               
@@ -1462,7 +1452,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">14</div>
                            
-                           <div class="apparatus apparatus_15" data-app-id="apparatus_15">
+                           <div style="display:inline-block" class="apparatus apparatus_15" data-app-id="apparatus_15">
                               
                               <div class="reading w" data-reading-wits="w">
                                  
@@ -1487,7 +1477,7 @@
                                  
                               </div>
                               
-                              <div class="reading b" data-reading-wits="b"><span class="textcontent">These stones to praise thee may not cease.</span></div>
+                              <div style="display:inline-block" class="reading b" data-reading-wits="b"><span class="textcontent">These stones to praise thee may not cease.</span></div>
                               
                               <div class="reading p" data-reading-wits="p">
                                  
@@ -1533,7 +1523,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">15</div>
                            
-                           <div class="apparatus apparatus_16" data-app-id="apparatus_16">
+                           <div style="display:inline-block" class="apparatus apparatus_16" data-app-id="apparatus_16">
                               
                               <div class="reading w" data-reading-wits="w">
                                  
@@ -1576,7 +1566,7 @@
                                  </div>
                                  <span class="textcontent"> mine,</span></div>
                               
-                              <div class="reading b" data-reading-wits="b"><span class="textcontent">O </span>
+                              <div style="display:inline-block" class="reading b" data-reading-wits="b"><span class="textcontent">O </span>
                                  
                                  <div class="choice"><span class="textcontent">lett</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">let</span></div>
@@ -1606,7 +1596,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">16</div>
                            
-                           <div class="apparatus apparatus_17" data-app-id="apparatus_17">
+                           <div style="display:inline-block" class="apparatus apparatus_17" data-app-id="apparatus_17">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">And </span>
                                  
@@ -1622,7 +1612,7 @@
                                  </div>
                                  <span class="textcontent"> thine.</span></div>
                               
-                              <div class="reading b" data-reading-wits="b"><span class="textcontent">And sanctify this Altar to be thine.</span></div>
+                              <div style="display:inline-block" class="reading b" data-reading-wits="b"><span class="textcontent">And sanctify this Altar to be thine.</span></div>
                               
                               <div class="reading p" data-reading-wits="p"><span class="textcontent">And </span>
                                  
@@ -1659,24 +1649,24 @@
             </div>
          </div>
          <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="p">
-            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img>Version p
-            </div>
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img><a title="Version p: The Temple: Sacred Poems and Private Ejaculations, first edition&#xA;                  (Cambridge, 1633)">Version p: The Temple: Sacred Poems and Private Ejaculations, first edition
+                  (Cambridge, 1633)</a></div>
             <div class="mssContent">
                
                
                <hr class="pagebreak w" data-version-id="w"></hr>
-               <div class="facs-images&#xA;                   w" data-version-id="w"></div>
+               <div class="facs-images&#xA;                   w" data-version-id="w"><img src="../vm-images/image.png" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imgLink w" data-version-id="w" data-img-url="images/w15v.jpg" data-img-id="w15v"></img></div>
                
                
                
                <hr class="pagebreak b" data-version-id="b"></hr>
-               <div class="facs-images&#xA;                   b" data-version-id="b"></div>
+               <div class="facs-images&#xA;                   b" data-version-id="b"><img src="../vm-images/image.png" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imgLink b" data-version-id="b" data-img-url="images/b15v.jpg" data-img-id="b15v"></img></div>
                
                
                
                
                <hr class="pagebreak p" data-version-id="p"></hr>
-               <div class="facs-images&#xA;                   p" data-version-id="p"></div>
+               <div class="facs-images&#xA;                   p" data-version-id="p"><img src="../vm-images/image.png" alt="Facsimile Image Placeholder" title="Open the image viewer" class="imgLink p" data-version-id="p" data-img-url="images/p10v.jpg" data-img-id="p10"></img></div>
                
                
                
@@ -1686,7 +1676,7 @@
                   
                   <div class="head rend-center">
                      
-                     <div class="apparatus apparatus_1" data-app-id="apparatus_1">
+                     <div style="display:inline-block" class="apparatus apparatus_1" data-app-id="apparatus_1">
                         
                         <div class="reading w" data-reading-wits="w"><span class="hi rend-underline"><span class="textcontent">The Altar</span></span><span class="textcontent">.</span></div>
                         
@@ -1695,7 +1685,7 @@
                            
                         </div>
                         
-                        <div class="reading p" data-reading-wits="p"><span class="textcontent">The Altar.</span></div>
+                        <div style="display:inline-block" class="reading p" data-reading-wits="p"><span class="textcontent">The Altar.</span></div>
                         
                      </div>
                      
@@ -1745,7 +1735,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">1</div>
                            
-                           <div class="apparatus apparatus_2" data-app-id="apparatus_2">
+                           <div style="display:inline-block" class="apparatus apparatus_2" data-app-id="apparatus_2">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">A broken Altar lord thy servant </span>
                                  
@@ -1767,7 +1757,7 @@
                                  
                               </div>
                               
-                              <div class="reading p" data-reading-wits="p"><span class="textcontent">A broken </span><span class="textcontent">A L T A R</span><span class="textcontent">, Lord, thy </span>
+                              <div style="display:inline-block" class="reading p" data-reading-wits="p"><span class="textcontent">A broken </span><span class="textcontent">A L T A R</span><span class="textcontent">, Lord, thy </span>
                                  
                                  <div class="choice"><span class="textcontent">ſervant</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">servant</span></div>
@@ -1799,7 +1789,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">2</div>
                            
-                           <div class="apparatus apparatus_3" data-app-id="apparatus_3">
+                           <div style="display:inline-block" class="apparatus apparatus_3" data-app-id="apparatus_3">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">Made of a </span>
                                  
@@ -1850,7 +1840,7 @@
                                  </div>
                                  <span class="textcontent">.</span></div>
                               
-                              <div class="reading p" data-reading-wits="p"><span class="textcontent">Made of a heart, and cemented with </span>
+                              <div style="display:inline-block" class="reading p" data-reading-wits="p"><span class="textcontent">Made of a heart, and cemented with </span>
                                  
                                  <div class="choice"><span class="textcontent">teares</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">tears</span></div>
@@ -1867,13 +1857,13 @@
                         <div class="line">
                            <div class="linenumber noDisplay">3</div>
                            
-                           <div class="apparatus apparatus_4" data-app-id="apparatus_4">
+                           <div style="display:inline-block" class="apparatus apparatus_4" data-app-id="apparatus_4">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">Whose parts are as thy hand did frame</span></div>
                               
                               <div class="reading b" data-reading-wits="b"><span class="textcontent">Whose parts are, as thy hand did frame;</span></div>
                               
-                              <div class="reading p" data-reading-wits="p">
+                              <div style="display:inline-block" class="reading p" data-reading-wits="p">
                                  
                                  
                                  <div class="choice"><span class="textcontent">Whoſe</span><div class="corr">
@@ -1896,9 +1886,7 @@
                      
                      <div class="lineWrapper line_1_4" data-line-id="line_1_4">
                         <div class="line">
-                           <div class="linenumber noDisplay">4</div>
-                           
-                           <div class="apparatus apparatus_5" data-app-id="apparatus_5">
+                           <div class="linenumber noDisplay">4</div><span class="textcontent">this </span><div style="display:inline-block" class="apparatus apparatus_5" data-app-id="apparatus_5">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">No </span>
                                  
@@ -1944,7 +1932,7 @@
                                  </div>
                                  <span class="textcontent"> same.</span></div>
                               
-                              <div class="reading p" data-reading-wits="p"><span class="textcontent">No </span>
+                              <div style="display:inline-block" class="reading p" data-reading-wits="p"><span class="textcontent">No </span>
                                  
                                  <div class="choice"><span class="textcontent">workmans</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">workman's</span></div>
@@ -1967,7 +1955,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">5</div>
                            
-                           <div class="apparatus apparatus_6" data-app-id="apparatus_6">
+                           <div style="display:inline-block" class="apparatus apparatus_6" data-app-id="apparatus_6">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">A </span>
                                  
@@ -1979,7 +1967,7 @@
                               
                               <div class="reading b" data-reading-wits="b"><span class="textcontent">A heart alone</span></div>
                               
-                              <div class="reading p" data-reading-wits="p"><span class="textcontent">A </span><span class="textcontent">H E A R T</span><span class="textcontent"> alone</span></div>
+                              <div style="display:inline-block" class="reading p" data-reading-wits="p"><span class="textcontent">A </span><span class="textcontent">H E A R T</span><span class="textcontent"> alone</span></div>
                               
                               <div class="noteicon">n
                                  <div class="note"><strong>Note:</strong> <span class="hi rend-italic"><span class="textcontent">alone</span></span><span class="textcontent">: only.</span></div>
@@ -1994,13 +1982,13 @@
                         <div class="line">
                            <div class="linenumber noDisplay">6</div>
                            
-                           <div class="apparatus apparatus_7" data-app-id="apparatus_7">
+                           <div style="display:inline-block" class="apparatus apparatus_7" data-app-id="apparatus_7">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">Is such a stone</span></div>
                               
                               <div class="reading b" data-reading-wits="b"><span class="textcontent">Is such a stone,</span></div>
                               
-                              <div class="reading p" data-reading-wits="p"><span class="textcontent">Is </span>
+                              <div style="display:inline-block" class="reading p" data-reading-wits="p"><span class="textcontent">Is </span>
                                  
                                  <div class="choice"><span class="textcontent">ſuch</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">such</span></div>
@@ -2023,13 +2011,13 @@
                         <div class="line">
                            <div class="linenumber noDisplay">7</div>
                            
-                           <div class="apparatus apparatus_8" data-app-id="apparatus_8">
+                           <div style="display:inline-block" class="apparatus apparatus_8" data-app-id="apparatus_8">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">As nothing but</span></div>
                               
                               <div class="reading b" data-reading-wits="b"><span class="textcontent">As nothing but</span></div>
                               
-                              <div class="reading p" data-reading-wits="p"><span class="textcontent">As nothing but</span></div>
+                              <div style="display:inline-block" class="reading p" data-reading-wits="p"><span class="textcontent">As nothing but</span></div>
                               
                            </div>
                            
@@ -2040,7 +2028,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">8</div>
                            
-                           <div class="apparatus apparatus_9" data-app-id="apparatus_9">
+                           <div style="display:inline-block" class="apparatus apparatus_9" data-app-id="apparatus_9">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">Thy </span>
                                  
@@ -2058,7 +2046,7 @@
                               
                               <div class="reading b" data-reading-wits="b"><span class="textcontent">Thy power doth cut.</span></div>
                               
-                              <div class="reading p" data-reading-wits="p"><span class="textcontent">Thy </span><span class="textcontent">pow'r</span><span class="textcontent"> doth cut.</span></div>
+                              <div style="display:inline-block" class="reading p" data-reading-wits="p"><span class="textcontent">Thy </span><span class="textcontent">pow'r</span><span class="textcontent"> doth cut.</span></div>
                               
                               <div class="noteicon">n
                                  <div class="note"><strong>Note:</strong> <span class="hi rend-italic"><span class="textcontent">Lines 5-8</span></span><span class="textcontent">: "Only a heart is so hard as that God's
@@ -2076,7 +2064,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">9</div>
                            
-                           <div class="apparatus apparatus_10" data-app-id="apparatus_10">
+                           <div style="display:inline-block" class="apparatus apparatus_10" data-app-id="apparatus_10">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">Wherefore each part</span></div>
                               
@@ -2088,7 +2076,7 @@
                                  </div>
                                  <span class="textcontent"> each part</span></div>
                               
-                              <div class="reading p" data-reading-wits="p"><span class="textcontent">Wherefore each part</span></div>
+                              <div style="display:inline-block" class="reading p" data-reading-wits="p"><span class="textcontent">Wherefore each part</span></div>
                               
                            </div>
                            
@@ -2099,7 +2087,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">10</div>
                            
-                           <div class="apparatus apparatus_11" data-app-id="apparatus_11">
+                           <div style="display:inline-block" class="apparatus apparatus_11" data-app-id="apparatus_11">
                               
                               <div class="reading w" data-reading-wits="w">
                                  
@@ -2120,7 +2108,7 @@
                               
                               <div class="reading b" data-reading-wits="b"><span class="textcontent">Of my hard heart</span></div>
                               
-                              <div class="reading p" data-reading-wits="p"><span class="textcontent">Of my hard heart</span></div>
+                              <div style="display:inline-block" class="reading p" data-reading-wits="p"><span class="textcontent">Of my hard heart</span></div>
                               
                            </div>
                            
@@ -2131,11 +2119,11 @@
                         <div class="line">
                            <div class="linenumber noDisplay">11</div>
                            
-                           <div class="apparatus apparatus_12" data-app-id="apparatus_12">
+                           <div style="display:inline-block" class="apparatus apparatus_12" data-app-id="apparatus_12">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">Meets in this frame</span></div>
                               
-                              <div class="reading b p" data-reading-wits="b p"><span class="textcontent">Meets in this frame,</span></div>
+                              <div style="display:inline-block" class="reading b p" data-reading-wits="b p"><span class="textcontent">Meets in this frame,</span></div>
                               
                               <div class="noteicon">n
                                  <div class="note"><strong>Note:</strong> <span class="hi rend-italic"><span class="textcontent">frame</span></span><span class="textcontent">: i.e., the poem; the stone altar of
@@ -2153,7 +2141,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">12</div>
                            
-                           <div class="apparatus apparatus_13" data-app-id="apparatus_13">
+                           <div style="display:inline-block" class="apparatus apparatus_13" data-app-id="apparatus_13">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">To </span>
                                  
@@ -2165,7 +2153,7 @@
                               
                               <div class="reading b" data-reading-wits="b"><span class="textcontent">To praise thy Name.</span></div>
                               
-                              <div class="reading p" data-reading-wits="p"><span class="textcontent">To </span>
+                              <div style="display:inline-block" class="reading p" data-reading-wits="p"><span class="textcontent">To </span>
                                  
                                  <div class="choice"><span class="textcontent">praiſe</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">praise</span></div>
@@ -2184,13 +2172,13 @@
                         <div class="line">
                            <div class="linenumber noDisplay">13</div>
                            
-                           <div class="apparatus apparatus_14" data-app-id="apparatus_14">
+                           <div style="display:inline-block" class="apparatus apparatus_14" data-app-id="apparatus_14">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">That If I chance to hold my peace</span></div>
                               
                               <div class="reading b" data-reading-wits="b"><span class="textcontent">That, if I chance to hold my peace,</span></div>
                               
-                              <div class="reading p" data-reading-wits="p"><span class="textcontent">That if I chance to hold my peace,</span></div>
+                              <div style="display:inline-block" class="reading p" data-reading-wits="p"><span class="textcontent">That if I chance to hold my peace,</span></div>
                               
                            </div>
                            
@@ -2201,7 +2189,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">14</div>
                            
-                           <div class="apparatus apparatus_15" data-app-id="apparatus_15">
+                           <div style="display:inline-block" class="apparatus apparatus_15" data-app-id="apparatus_15">
                               
                               <div class="reading w" data-reading-wits="w">
                                  
@@ -2228,7 +2216,7 @@
                               
                               <div class="reading b" data-reading-wits="b"><span class="textcontent">These stones to praise thee may not cease.</span></div>
                               
-                              <div class="reading p" data-reading-wits="p">
+                              <div style="display:inline-block" class="reading p" data-reading-wits="p">
                                  
                                  
                                  <div class="choice"><span class="textcontent">Theſe</span><div class="corr">
@@ -2272,7 +2260,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">15</div>
                            
-                           <div class="apparatus apparatus_16" data-app-id="apparatus_16">
+                           <div style="display:inline-block" class="apparatus apparatus_16" data-app-id="apparatus_16">
                               
                               <div class="reading w" data-reading-wits="w">
                                  
@@ -2323,7 +2311,7 @@
                                  </div>
                                  <span class="textcontent"> thy blessed sacrifice be mine,</span></div>
                               
-                              <div class="reading p" data-reading-wits="p"><span class="textcontent">O let thy </span>
+                              <div style="display:inline-block" class="reading p" data-reading-wits="p"><span class="textcontent">O let thy </span>
                                  
                                  <div class="choice"><span class="textcontent">ble</span><span class="textcontent">ſſ</span><span class="textcontent">ed</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">blessed</span></div>
@@ -2345,7 +2333,7 @@
                         <div class="line">
                            <div class="linenumber noDisplay">16</div>
                            
-                           <div class="apparatus apparatus_17" data-app-id="apparatus_17">
+                           <div style="display:inline-block" class="apparatus apparatus_17" data-app-id="apparatus_17">
                               
                               <div class="reading w" data-reading-wits="w"><span class="textcontent">And </span>
                                  
@@ -2363,7 +2351,7 @@
                               
                               <div class="reading b" data-reading-wits="b"><span class="textcontent">And sanctify this Altar to be thine.</span></div>
                               
-                              <div class="reading p" data-reading-wits="p"><span class="textcontent">And </span>
+                              <div style="display:inline-block" class="reading p" data-reading-wits="p"><span class="textcontent">And </span>
                                  
                                  <div class="choice"><span class="textcontent">ſan</span><span class="textcontent">ct</span><span class="textcontent">iﬁe</span><div class="corr">
                                        <div class="interior"><strong>Regularized form:</strong> <span class="textcontent">sanctify</span></div>
@@ -2479,6 +2467,33 @@
                Sorry, but there are no notes associated with
                any currently displayed witness.
                
+            </div>
+         </div>
+         <div class="draggable resizable ui-resizable panel imgPanel noDisplay" id="w15v">
+            <div title="Click to drag panel." class="viewerHandle handle_imgViewer"><span class="viewerHandleLt title_imgViewer">images/w15v.jpg</span><img class="viewerHandleRt closePanel" src="../vm-images/closePanel.png" title="Close panel" alt="X (Close panel)"></img></div>
+            <div class="viewerContent" id="content_imgViewer">
+               <div class="panzoom-parent" style="overflow:visible">
+                  <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/w15v.jpg"></img></div>
+               </div>
+               <div class="buttons"><button class="zoom-out">-</button><input type="range" min="0" max="100" class="zoom-range"></input><button class="zoom-in">+</button></div>
+            </div>
+         </div>
+         <div class="draggable resizable ui-resizable panel imgPanel noDisplay" id="b15v">
+            <div title="Click to drag panel." class="viewerHandle handle_imgViewer"><span class="viewerHandleLt title_imgViewer">images/b15v.jpg</span><img class="viewerHandleRt closePanel" src="../vm-images/closePanel.png" title="Close panel" alt="X (Close panel)"></img></div>
+            <div class="viewerContent" id="content_imgViewer">
+               <div class="panzoom-parent" style="overflow:visible">
+                  <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/b15v.jpg"></img></div>
+               </div>
+               <div class="buttons"><button class="zoom-out">-</button><input type="range" min="0" max="100" class="zoom-range"></input><button class="zoom-in">+</button></div>
+            </div>
+         </div>
+         <div class="draggable resizable ui-resizable panel imgPanel noDisplay" id="p10">
+            <div title="Click to drag panel." class="viewerHandle handle_imgViewer"><span class="viewerHandleLt title_imgViewer">images/p10v.jpg</span><img class="viewerHandleRt closePanel" src="../vm-images/closePanel.png" title="Close panel" alt="X (Close panel)"></img></div>
+            <div class="viewerContent" id="content_imgViewer">
+               <div class="panzoom-parent" style="overflow:visible">
+                  <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/p10v.jpg"></img></div>
+               </div>
+               <div class="buttons"><button class="zoom-out">-</button><input type="range" min="0" max="100" class="zoom-range"></input><button class="zoom-in">+</button></div>
             </div>
          </div>
       </div>

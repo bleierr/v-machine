@@ -93,9 +93,10 @@
          <div>
 
             <listWit>
+               <witness xml:id="reading_poem">Mac Low Reading, 1990</witness>
                <witness xml:id="poem">A CARAFE, THAT IS A BLIND GLASS</witness>
                <witness xml:id="essay">Reading a Selection from Tender Buttons</witness>
-               <witness xml:id="reading_poem">Mac Low Reading, 1990</witness>
+               <!--<witness xml:id="reading_essay">Reading a Selection from Tender Buttons (audio)</witness>-->
             </listWit>
 
             <witDetail wit="#reading_poem" target="#reading_poem">

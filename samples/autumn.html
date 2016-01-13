@@ -4,8 +4,8 @@
    <head>
       <title>Autumn, 1922 -- The Versioning Machine 5.0</title>
       <meta charset="utf-8"></meta>
-      <link rel="stylesheet" type="text/css" href="../src/vmachine.css"></link>
-      <link rel="stylesheet" type="text/css" href="../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link><script type="text/javascript" src="../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script type="text/javascript" src="../src/panzoom/jquery.panzoom.min.js"></script><script type="text/javascript">
+      <link rel="stylesheet" type="text/css" href="../src/js/jquery-ui-1.11.3/jquery-ui.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="../src/vmachine.css"></link><script type="text/javascript" src="../src/js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css"></link><script type="text/javascript" src="../src/panzoom/jquery.panzoom.min.js"></script><script type="text/javascript">
       
       /*NOTES PANEL: To change the VM so that the notes panel page does not
       appear at the initial load, change the constant INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */
@@ -18,15 +18,13 @@
       /**The number of version/witness panels to be displayed initially */
       INITIAL_DISPLAY_NUM_VERSIONS = 2;
       
-      
       /** CRIT PANEL: Critical information should be encoded as tei:notesStmt/tei:note[@type='critIntro'] in the TEI files --&gt;
       * To change the VM so that the critical information page does not
       * appear at the initial load, change the constant INITIAL_DISPLAY_CRIT_PANEL from "true" to "false" */
       INITIAL_DISPLAY_CRIT_PANEL = false;
       
-      
       /** To change the VM so that line numbers are hidden by default, change the constant INITIAL_DISPLAY_LINENUMBERS from
-      * "true" to "false" below */
+      * "true" to "false" */
       INITIAL_DISPLAY_LINENUMBERS = true;
       
    var timelinePoints = new Array();var timelineDurations = new Array();</script><script type="text/javascript" src="../src/vmachine.js"></script></head>
@@ -41,37 +39,31 @@
                   <li><button id="selectVersion" class="topMenuButton dropdownButton">5 Total Versions<img class="noDisplay" src="../vm-images/arrowup.png" alt="arrow up"></img><img src="../vm-images/arrowdown.png" alt="arrow down"></img></button><ul id="versionList" class="dropdown notVisible">
                         <li data-panelid="t7989-1-10">
                            <div class="listText">
-                              <div>'A Short History of Our Own Time' (TCD MS
-                                 7989/1/10)
-                              </div>
+                              <div><a href="#" title="t7989-1-10: 'A Short History of Our Own Time' (TCD MS&#xA;                  7989/1/10)">Version t7989-1-10</a></div>
                               <div><button>OFF</button></div>
                            </div>
                         </li>
                         <li data-panelid="t7989-1-8">
                            <div class="listText">
-                              <div>'Civil War', which was deleted and replaced with
-                                 'Ireland, Autumn 1922' (TCD MS 7989/1/8)
-                              </div>
+                              <div><a href="#" title="t7989-1-8: 'Civil War', which was deleted and replaced with&#xA;                  'Ireland, Autumn 1922' (TCD MS 7989/1/8)">Version t7989-1-8</a></div>
                               <div><button>OFF</button></div>
                            </div>
                         </li>
                         <li data-panelid="t7989-1-7">
                            <div class="listText">
-                              <div>'Ireland Autumn, 1922' (TCD MS 7989/1/7)</div>
+                              <div><a href="#" title="t7989-1-7: 'Ireland Autumn, 1922' (TCD MS 7989/1/7)">Version t7989-1-7</a></div>
                               <div><button>OFF</button></div>
                            </div>
                         </li>
                         <li data-panelid="t7989-1-9">
                            <div class="listText">
-                              <div>'Ireland, Autumn, 1922 (TCD MS 7989/1/9)</div>
+                              <div><a href="#" title="t7989-1-9: 'Ireland, Autumn, 1922 (TCD MS 7989/1/9)">Version t7989-1-9</a></div>
                               <div><button>OFF</button></div>
                            </div>
                         </li>
                         <li data-panelid="pub">
                            <div class="listText">
-                              <div>published in Poems under the title
-                                 'Autumn, 1922'
-                              </div>
+                              <div><a href="#" title="pub: published in Poems under the title&#xA;                  'Autumn, 1922'">Version pub</a></div>
                               <div><button>OFF</button></div>
                            </div>
                         </li>
@@ -97,11 +89,13 @@
                </h3>
                <h4>Original Source</h4>
                
-               <p>Diplomatic editions of MacGreevy's poetry were created from Collected Poems of Thomas MacGreevy: An Annotated Edition, edited by
+               <p>Diplomatic editions of MacGreevy's poetry were created from 
+                  <div class="title rend-italic">Collected Poems of Thomas MacGreevy: An Annotated Edition</div>, edited by
                   Susan Schreibman (Anna Livia Press and The Catholic University of America Press,
                   1991). Images of MacGreevy's published poems were taken from MacGreevy's own copy
                   of
-                  Poems (Heinemann, 1934). Manuscript copies are from
+                  
+                  <div class="title rend-italic">Poems</div> (Heinemann, 1934). Manuscript copies are from
                   MacGreevy's papers at Trinity College, Dublin (individual manuscript numbers appear
                   in the witness list below).
                </p>
@@ -170,8 +164,8 @@
             </div>
          </div>
          <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="t7989-1-10">
-            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img>Version t7989-1-10
-            </div>
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img><a title="Version t7989-1-10: 'A Short History of Our Own Time' (TCD MS&#xA;                  7989/1/10)">Version t7989-1-10: 'A Short History of Our Own Time' (TCD MS
+                  7989/1/10)</a></div>
             <div class="mssContent">
                
                
@@ -192,9 +186,9 @@
                
                <div class="head">
                   
-                  <div class="apparatus apparatus_1" data-app-id="apparatus_1">
+                  <div style="display:inline-block" class="apparatus apparatus_1" data-app-id="apparatus_1">
                      
-                     <div class="reading t7989-1-10" data-reading-wits="t7989-1-10"><span class="textcontent">A Short History of Our Own Times.</span></div>
+                     <div style="display:inline-block" class="reading t7989-1-10" data-reading-wits="t7989-1-10"><span class="textcontent">A Short History of Our Own Times.</span></div>
                      
                      <div class="reading t7989-1-8" data-reading-wits="t7989-1-8">
                         <del class="del rend-typed"><span class="textcontent">CIVIL WAR</span></del>
@@ -238,9 +232,9 @@
                      <div class="line">
                         <div class="linenumber noDisplay">1</div>
                         
-                        <div class="apparatus apparatus_2" data-app-id="apparatus_2">
+                        <div style="display:inline-block" class="apparatus apparatus_2" data-app-id="apparatus_2">
                            
-                           <div class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">The sun burns
+                           <div style="display:inline-block" class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">The sun burns
                                  out,</span></div>
                            
                         </div>
@@ -252,11 +246,11 @@
                      <div class="line">
                         <div class="linenumber noDisplay">2</div>
                         
-                        <div class="apparatus apparatus_3" data-app-id="apparatus_3">
+                        <div style="display:inline-block" class="apparatus apparatus_3" data-app-id="apparatus_3">
                            
                            <div class="reading t7989-1-8 pub" data-reading-wits="t7989-1-8 pub"><span class="textcontent">The world withers</span></div>
                            
-                           <div class="reading t7989-1-10 t7989-1-7 t7989-1-9" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-9"><span class="textcontent">The world withers,</span></div>
+                           <div style="display:inline-block" class="reading t7989-1-10 t7989-1-7 t7989-1-9" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-9"><span class="textcontent">The world withers,</span></div>
                            
                         </div>
                         
@@ -277,9 +271,9 @@
                      <div class="line">
                         <div class="linenumber noDisplay">3</div>
                         
-                        <div class="apparatus apparatus_5" data-app-id="apparatus_5">
+                        <div style="display:inline-block" class="apparatus apparatus_5" data-app-id="apparatus_5">
                            
-                           <div class="reading t7989-1-10" data-reading-wits="t7989-1-10"><span class="textcontent">Poets sing no more,</span></div>
+                           <div style="display:inline-block" class="reading t7989-1-10" data-reading-wits="t7989-1-10"><span class="textcontent">Poets sing no more,</span></div>
                            
                         </div>
                         
@@ -290,16 +284,16 @@
                      <div class="line">
                         <div class="linenumber noDisplay">4</div>
                         
-                        <div class="apparatus apparatus_6" data-app-id="apparatus_6">
+                        <div style="display:inline-block" class="apparatus apparatus_6" data-app-id="apparatus_6">
                            
-                           <div class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">And time grows
+                           <div style="display:inline-block" class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">And time grows
                                  afraid</span></div>
                            
                         </div>
                         
-                        <div class="apparatus apparatus_triumph" data-app-id="apparatus_triumph">
+                        <div style="display:inline-block" class="apparatus apparatus_triumph" data-app-id="apparatus_triumph">
                            
-                           <div class="reading t7989-1-10 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-8 t7989-1-9 pub"><span class="textcontent">of the triumph of time. </span><div class="noteicon">g
+                           <div style="display:inline-block" class="reading t7989-1-10 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-8 t7989-1-9 pub"><span class="textcontent">of the triumph of time. </span><div class="noteicon">g
                                  <div class="note"><strong>Gloss note:</strong> 
                                     
                                     <p><span class="textcontent">The fifth of six allegorical triumphs in Petrarch's Trionfi is </span><span class="textcontent">the Triumph of Time</span><span class="textcontent">. Petrarch's Triumphs, often
@@ -324,42 +318,14 @@
                      </div>
                   </div>
                   
-                  <div class="lineWrapper line_1_5" data-line-id="line_1_5">
-                     <div class="line">
-                        <div class="linenumber noDisplay">5</div>
-                        
-                        <div class="apparatus apparatus_triumph" data-app-id="apparatus_triumph">
-                           
-                           <div class="reading t7989-1-7" data-reading-wits="t7989-1-7"><span class="textcontent">Of the triumph of time. </span><div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> 
-                                    <p><span class="textcontent">The fifth of six allegorical triumphs in Petrarch's Trionfi is </span><span class="textcontent">the Triumph of Time</span><span class="textcontent">. Petrarch's Triumphs, often
-                                          depicted as Father Time in his chariot surrounded by symbolic devices
-                                          such as the scythe and hourglass, were frequently represented by Baroque
-                                          and Renaissance artists.</span></p>
-                                    
-                                    <p><span class="textcontent">MacGreevy, however, may be thinking of one or more of the paintings that
-                                          he saw during his visit to the Prado in Madrid in 1924. One is Goya's
-                                          Saturn [Time] Devouring His Son, and the other is Pieter Brueghel the
-                                          Elder's The Triumph of Death, which depicts a whole society visited by
-                                          death riding a pale horse (using imagery from the Apocalypse) against a
-                                          background of barren landscape and a darkened sky.</span></p>
-                                 </div>
-                              </div>
-                              
-                           </div>
-                           
-                        </div>
-                        
-                     </div>
-                  </div>
                   
                </div>
                
                <div class="closer">
                   
-                  <div class="apparatus apparatus_9" data-app-id="apparatus_9">
+                  <div style="display:inline-block" class="apparatus apparatus_9" data-app-id="apparatus_9">
                      
-                     <div class="reading t7989-1-10" data-reading-wits="t7989-1-10">
+                     <div style="display:inline-block" class="reading t7989-1-10" data-reading-wits="t7989-1-10">
                         
                         <div class="linebreak"></div>
                         <span class="textcontent">Thomas Mc Greevy,</span>
@@ -410,8 +376,8 @@
             </div>
          </div>
          <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="t7989-1-8">
-            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img>Version t7989-1-8
-            </div>
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img><a title="Version t7989-1-8: 'Civil War', which was deleted and replaced with&#xA;                  'Ireland, Autumn 1922' (TCD MS 7989/1/8)">Version t7989-1-8: 'Civil War', which was deleted and replaced with
+                  'Ireland, Autumn 1922' (TCD MS 7989/1/8)</a></div>
             <div class="mssContent">
                
                
@@ -432,11 +398,11 @@
                
                <div class="head">
                   
-                  <div class="apparatus apparatus_1" data-app-id="apparatus_1">
+                  <div style="display:inline-block" class="apparatus apparatus_1" data-app-id="apparatus_1">
                      
                      <div class="reading t7989-1-10" data-reading-wits="t7989-1-10"><span class="textcontent">A Short History of Our Own Times.</span></div>
                      
-                     <div class="reading t7989-1-8" data-reading-wits="t7989-1-8">
+                     <div style="display:inline-block" class="reading t7989-1-8" data-reading-wits="t7989-1-8">
                         <del class="del rend-typed"><span class="textcontent">CIVIL WAR</span></del>
                         <ins class="add rend-hand"><span class="textcontent"> Ireland, Autumn 1922</span></ins>
                         
@@ -478,9 +444,9 @@
                      <div class="line">
                         <div class="linenumber noDisplay">1</div>
                         
-                        <div class="apparatus apparatus_2" data-app-id="apparatus_2">
+                        <div style="display:inline-block" class="apparatus apparatus_2" data-app-id="apparatus_2">
                            
-                           <div class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">The sun burns
+                           <div style="display:inline-block" class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">The sun burns
                                  out,</span></div>
                            
                         </div>
@@ -492,17 +458,17 @@
                      <div class="line">
                         <div class="linenumber noDisplay">2</div>
                         
-                        <div class="apparatus apparatus_3" data-app-id="apparatus_3">
+                        <div style="display:inline-block" class="apparatus apparatus_3" data-app-id="apparatus_3">
                            
-                           <div class="reading t7989-1-8 pub" data-reading-wits="t7989-1-8 pub"><span class="textcontent">The world withers</span></div>
+                           <div style="display:inline-block" class="reading t7989-1-8 pub" data-reading-wits="t7989-1-8 pub"><span class="textcontent">The world withers</span></div>
                            
                            <div class="reading t7989-1-10 t7989-1-7 t7989-1-9" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-9"><span class="textcontent">The world withers,</span></div>
                            
                         </div>
                         
-                        <div class="apparatus apparatus_4" data-app-id="apparatus_4">
+                        <div style="display:inline-block" class="apparatus apparatus_4" data-app-id="apparatus_4">
                            
-                           <div class="reading t7989-1-8 t7989-1-7 t7989-1-9 pub" data-reading-wits="t7989-1-8 t7989-1-7 t7989-1-9 pub">
+                           <div style="display:inline-block" class="reading t7989-1-8 t7989-1-7 t7989-1-9 pub" data-reading-wits="t7989-1-8 t7989-1-7 t7989-1-9 pub">
                               
                               <div class="stanzabreak"></div>
                               
@@ -513,33 +479,21 @@
                      </div>
                   </div>
                   
-                  <div class="lineWrapper line_1_3" data-line-id="line_1_3">
-                     <div class="line">
-                        <div class="linenumber noDisplay">3</div>
-                        
-                        <div class="apparatus apparatus_5" data-app-id="apparatus_5">
-                           
-                           <div class="reading t7989-1-10" data-reading-wits="t7989-1-10"><span class="textcontent">Poets sing no more,</span></div>
-                           
-                        </div>
-                        
-                     </div>
-                  </div>
                   
                   <div class="lineWrapper line_1_4" data-line-id="line_1_4">
                      <div class="line">
                         <div class="linenumber noDisplay">4</div>
                         
-                        <div class="apparatus apparatus_6" data-app-id="apparatus_6">
+                        <div style="display:inline-block" class="apparatus apparatus_6" data-app-id="apparatus_6">
                            
-                           <div class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">And time grows
+                           <div style="display:inline-block" class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">And time grows
                                  afraid</span></div>
                            
                         </div>
                         
-                        <div class="apparatus apparatus_triumph" data-app-id="apparatus_triumph">
+                        <div style="display:inline-block" class="apparatus apparatus_triumph" data-app-id="apparatus_triumph">
                            
-                           <div class="reading t7989-1-10 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-8 t7989-1-9 pub"><span class="textcontent">of the triumph of time. </span><div class="noteicon">g
+                           <div style="display:inline-block" class="reading t7989-1-10 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-8 t7989-1-9 pub"><span class="textcontent">of the triumph of time. </span><div class="noteicon">g
                                  <div class="note"><strong>Gloss note:</strong> 
                                     
                                     <p><span class="textcontent">The fifth of six allegorical triumphs in Petrarch's Trionfi is </span><span class="textcontent">the Triumph of Time</span><span class="textcontent">. Petrarch's Triumphs, often
@@ -564,34 +518,6 @@
                      </div>
                   </div>
                   
-                  <div class="lineWrapper line_1_5" data-line-id="line_1_5">
-                     <div class="line">
-                        <div class="linenumber noDisplay">5</div>
-                        
-                        <div class="apparatus apparatus_triumph" data-app-id="apparatus_triumph">
-                           
-                           <div class="reading t7989-1-7" data-reading-wits="t7989-1-7"><span class="textcontent">Of the triumph of time. </span><div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> 
-                                    <p><span class="textcontent">The fifth of six allegorical triumphs in Petrarch's Trionfi is </span><span class="textcontent">the Triumph of Time</span><span class="textcontent">. Petrarch's Triumphs, often
-                                          depicted as Father Time in his chariot surrounded by symbolic devices
-                                          such as the scythe and hourglass, were frequently represented by Baroque
-                                          and Renaissance artists.</span></p>
-                                    
-                                    <p><span class="textcontent">MacGreevy, however, may be thinking of one or more of the paintings that
-                                          he saw during his visit to the Prado in Madrid in 1924. One is Goya's
-                                          Saturn [Time] Devouring His Son, and the other is Pieter Brueghel the
-                                          Elder's The Triumph of Death, which depicts a whole society visited by
-                                          death riding a pale horse (using imagery from the Apocalypse) against a
-                                          background of barren landscape and a darkened sky.</span></p>
-                                 </div>
-                              </div>
-                              
-                           </div>
-                           
-                        </div>
-                        
-                     </div>
-                  </div>
                   
                </div>
                
@@ -650,8 +576,7 @@
             </div>
          </div>
          <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="t7989-1-7">
-            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img>Version t7989-1-7
-            </div>
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img><a title="Version t7989-1-7: 'Ireland Autumn, 1922' (TCD MS 7989/1/7)">Version t7989-1-7: 'Ireland Autumn, 1922' (TCD MS 7989/1/7)</a></div>
             <div class="mssContent">
                
                
@@ -672,7 +597,7 @@
                
                <div class="head">
                   
-                  <div class="apparatus apparatus_1" data-app-id="apparatus_1">
+                  <div style="display:inline-block" class="apparatus apparatus_1" data-app-id="apparatus_1">
                      
                      <div class="reading t7989-1-10" data-reading-wits="t7989-1-10"><span class="textcontent">A Short History of Our Own Times.</span></div>
                      
@@ -682,7 +607,7 @@
                         
                      </div>
                      
-                     <div class="reading t7989-1-7 t7989-1-9" data-reading-wits="t7989-1-7 t7989-1-9"><span class="textcontent">IRELAND, AUTUMN, 1922</span></div>
+                     <div style="display:inline-block" class="reading t7989-1-7 t7989-1-9" data-reading-wits="t7989-1-7 t7989-1-9"><span class="textcontent">IRELAND, AUTUMN, 1922</span></div>
                      
                      <div class="reading pub" data-reading-wits="pub">
                         <ins class="add rend-hand"><span class="textcontent">IRELAND</span></ins><span class="textcontent"> AUTUMN, 1922</span></div>
@@ -718,9 +643,9 @@
                      <div class="line">
                         <div class="linenumber noDisplay">1</div>
                         
-                        <div class="apparatus apparatus_2" data-app-id="apparatus_2">
+                        <div style="display:inline-block" class="apparatus apparatus_2" data-app-id="apparatus_2">
                            
-                           <div class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">The sun burns
+                           <div style="display:inline-block" class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">The sun burns
                                  out,</span></div>
                            
                         </div>
@@ -732,17 +657,17 @@
                      <div class="line">
                         <div class="linenumber noDisplay">2</div>
                         
-                        <div class="apparatus apparatus_3" data-app-id="apparatus_3">
+                        <div style="display:inline-block" class="apparatus apparatus_3" data-app-id="apparatus_3">
                            
                            <div class="reading t7989-1-8 pub" data-reading-wits="t7989-1-8 pub"><span class="textcontent">The world withers</span></div>
                            
-                           <div class="reading t7989-1-10 t7989-1-7 t7989-1-9" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-9"><span class="textcontent">The world withers,</span></div>
+                           <div style="display:inline-block" class="reading t7989-1-10 t7989-1-7 t7989-1-9" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-9"><span class="textcontent">The world withers,</span></div>
                            
                         </div>
                         
-                        <div class="apparatus apparatus_4" data-app-id="apparatus_4">
+                        <div style="display:inline-block" class="apparatus apparatus_4" data-app-id="apparatus_4">
                            
-                           <div class="reading t7989-1-8 t7989-1-7 t7989-1-9 pub" data-reading-wits="t7989-1-8 t7989-1-7 t7989-1-9 pub">
+                           <div style="display:inline-block" class="reading t7989-1-8 t7989-1-7 t7989-1-9 pub" data-reading-wits="t7989-1-8 t7989-1-7 t7989-1-9 pub">
                               
                               <div class="stanzabreak"></div>
                               
@@ -753,26 +678,14 @@
                      </div>
                   </div>
                   
-                  <div class="lineWrapper line_1_3" data-line-id="line_1_3">
-                     <div class="line">
-                        <div class="linenumber noDisplay">3</div>
-                        
-                        <div class="apparatus apparatus_5" data-app-id="apparatus_5">
-                           
-                           <div class="reading t7989-1-10" data-reading-wits="t7989-1-10"><span class="textcontent">Poets sing no more,</span></div>
-                           
-                        </div>
-                        
-                     </div>
-                  </div>
                   
                   <div class="lineWrapper line_1_4" data-line-id="line_1_4">
                      <div class="line">
                         <div class="linenumber noDisplay">4</div>
                         
-                        <div class="apparatus apparatus_6" data-app-id="apparatus_6">
+                        <div style="display:inline-block" class="apparatus apparatus_6" data-app-id="apparatus_6">
                            
-                           <div class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">And time grows
+                           <div style="display:inline-block" class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">And time grows
                                  afraid</span></div>
                            
                         </div>
@@ -808,9 +721,9 @@
                      <div class="line">
                         <div class="linenumber noDisplay">5</div>
                         
-                        <div class="apparatus apparatus_triumph" data-app-id="apparatus_triumph">
+                        <div style="display:inline-block" class="apparatus apparatus_triumph" data-app-id="apparatus_triumph">
                            
-                           <div class="reading t7989-1-7" data-reading-wits="t7989-1-7"><span class="textcontent">Of the triumph of time. </span><div class="noteicon">g
+                           <div style="display:inline-block" class="reading t7989-1-7" data-reading-wits="t7989-1-7"><span class="textcontent">Of the triumph of time. </span><div class="noteicon">g
                                  <div class="note"><strong>Gloss note:</strong> 
                                     <p><span class="textcontent">The fifth of six allegorical triumphs in Petrarch's Trionfi is </span><span class="textcontent">the Triumph of Time</span><span class="textcontent">. Petrarch's Triumphs, often
                                           depicted as Father Time in his chariot surrounded by symbolic devices
@@ -890,8 +803,7 @@
             </div>
          </div>
          <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="t7989-1-9">
-            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img>Version t7989-1-9
-            </div>
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img><a title="Version t7989-1-9: 'Ireland, Autumn, 1922 (TCD MS 7989/1/9)">Version t7989-1-9: 'Ireland, Autumn, 1922 (TCD MS 7989/1/9)</a></div>
             <div class="mssContent">
                
                
@@ -912,7 +824,7 @@
                
                <div class="head">
                   
-                  <div class="apparatus apparatus_1" data-app-id="apparatus_1">
+                  <div style="display:inline-block" class="apparatus apparatus_1" data-app-id="apparatus_1">
                      
                      <div class="reading t7989-1-10" data-reading-wits="t7989-1-10"><span class="textcontent">A Short History of Our Own Times.</span></div>
                      
@@ -922,7 +834,7 @@
                         
                      </div>
                      
-                     <div class="reading t7989-1-7 t7989-1-9" data-reading-wits="t7989-1-7 t7989-1-9"><span class="textcontent">IRELAND, AUTUMN, 1922</span></div>
+                     <div style="display:inline-block" class="reading t7989-1-7 t7989-1-9" data-reading-wits="t7989-1-7 t7989-1-9"><span class="textcontent">IRELAND, AUTUMN, 1922</span></div>
                      
                      <div class="reading pub" data-reading-wits="pub">
                         <ins class="add rend-hand"><span class="textcontent">IRELAND</span></ins><span class="textcontent"> AUTUMN, 1922</span></div>
@@ -958,9 +870,9 @@
                      <div class="line">
                         <div class="linenumber noDisplay">1</div>
                         
-                        <div class="apparatus apparatus_2" data-app-id="apparatus_2">
+                        <div style="display:inline-block" class="apparatus apparatus_2" data-app-id="apparatus_2">
                            
-                           <div class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">The sun burns
+                           <div style="display:inline-block" class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">The sun burns
                                  out,</span></div>
                            
                         </div>
@@ -972,17 +884,17 @@
                      <div class="line">
                         <div class="linenumber noDisplay">2</div>
                         
-                        <div class="apparatus apparatus_3" data-app-id="apparatus_3">
+                        <div style="display:inline-block" class="apparatus apparatus_3" data-app-id="apparatus_3">
                            
                            <div class="reading t7989-1-8 pub" data-reading-wits="t7989-1-8 pub"><span class="textcontent">The world withers</span></div>
                            
-                           <div class="reading t7989-1-10 t7989-1-7 t7989-1-9" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-9"><span class="textcontent">The world withers,</span></div>
+                           <div style="display:inline-block" class="reading t7989-1-10 t7989-1-7 t7989-1-9" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-9"><span class="textcontent">The world withers,</span></div>
                            
                         </div>
                         
-                        <div class="apparatus apparatus_4" data-app-id="apparatus_4">
+                        <div style="display:inline-block" class="apparatus apparatus_4" data-app-id="apparatus_4">
                            
-                           <div class="reading t7989-1-8 t7989-1-7 t7989-1-9 pub" data-reading-wits="t7989-1-8 t7989-1-7 t7989-1-9 pub">
+                           <div style="display:inline-block" class="reading t7989-1-8 t7989-1-7 t7989-1-9 pub" data-reading-wits="t7989-1-8 t7989-1-7 t7989-1-9 pub">
                               
                               <div class="stanzabreak"></div>
                               
@@ -993,33 +905,21 @@
                      </div>
                   </div>
                   
-                  <div class="lineWrapper line_1_3" data-line-id="line_1_3">
-                     <div class="line">
-                        <div class="linenumber noDisplay">3</div>
-                        
-                        <div class="apparatus apparatus_5" data-app-id="apparatus_5">
-                           
-                           <div class="reading t7989-1-10" data-reading-wits="t7989-1-10"><span class="textcontent">Poets sing no more,</span></div>
-                           
-                        </div>
-                        
-                     </div>
-                  </div>
                   
                   <div class="lineWrapper line_1_4" data-line-id="line_1_4">
                      <div class="line">
                         <div class="linenumber noDisplay">4</div>
                         
-                        <div class="apparatus apparatus_6" data-app-id="apparatus_6">
+                        <div style="display:inline-block" class="apparatus apparatus_6" data-app-id="apparatus_6">
                            
-                           <div class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">And time grows
+                           <div style="display:inline-block" class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">And time grows
                                  afraid</span></div>
                            
                         </div>
                         
-                        <div class="apparatus apparatus_triumph" data-app-id="apparatus_triumph">
+                        <div style="display:inline-block" class="apparatus apparatus_triumph" data-app-id="apparatus_triumph">
                            
-                           <div class="reading t7989-1-10 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-8 t7989-1-9 pub"><span class="textcontent">of the triumph of time. </span><div class="noteicon">g
+                           <div style="display:inline-block" class="reading t7989-1-10 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-8 t7989-1-9 pub"><span class="textcontent">of the triumph of time. </span><div class="noteicon">g
                                  <div class="note"><strong>Gloss note:</strong> 
                                     
                                     <p><span class="textcontent">The fifth of six allegorical triumphs in Petrarch's Trionfi is </span><span class="textcontent">the Triumph of Time</span><span class="textcontent">. Petrarch's Triumphs, often
@@ -1044,40 +944,12 @@
                      </div>
                   </div>
                   
-                  <div class="lineWrapper line_1_5" data-line-id="line_1_5">
-                     <div class="line">
-                        <div class="linenumber noDisplay">5</div>
-                        
-                        <div class="apparatus apparatus_triumph" data-app-id="apparatus_triumph">
-                           
-                           <div class="reading t7989-1-7" data-reading-wits="t7989-1-7"><span class="textcontent">Of the triumph of time. </span><div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> 
-                                    <p><span class="textcontent">The fifth of six allegorical triumphs in Petrarch's Trionfi is </span><span class="textcontent">the Triumph of Time</span><span class="textcontent">. Petrarch's Triumphs, often
-                                          depicted as Father Time in his chariot surrounded by symbolic devices
-                                          such as the scythe and hourglass, were frequently represented by Baroque
-                                          and Renaissance artists.</span></p>
-                                    
-                                    <p><span class="textcontent">MacGreevy, however, may be thinking of one or more of the paintings that
-                                          he saw during his visit to the Prado in Madrid in 1924. One is Goya's
-                                          Saturn [Time] Devouring His Son, and the other is Pieter Brueghel the
-                                          Elder's The Triumph of Death, which depicts a whole society visited by
-                                          death riding a pale horse (using imagery from the Apocalypse) against a
-                                          background of barren landscape and a darkened sky.</span></p>
-                                 </div>
-                              </div>
-                              
-                           </div>
-                           
-                        </div>
-                        
-                     </div>
-                  </div>
                   
                </div>
                
                <div class="closer">
                   
-                  <div class="apparatus apparatus_9" data-app-id="apparatus_9">
+                  <div style="display:inline-block" class="apparatus apparatus_9" data-app-id="apparatus_9">
                      
                      <div class="reading t7989-1-10" data-reading-wits="t7989-1-10">
                         
@@ -1097,7 +969,7 @@
                         
                      </div>
                      
-                     <div class="reading t7989-1-9" data-reading-wits="t7989-1-9">
+                     <div style="display:inline-block" class="reading t7989-1-9" data-reading-wits="t7989-1-9">
                         
                         <div class="linebreak"></div>
                         <span class="textcontent">L. St. Senan </span>
@@ -1130,8 +1002,8 @@
             </div>
          </div>
          <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="pub">
-            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img>Version pub
-            </div>
+            <div class="panelBanner"><img class="closePanel" title="Close panel" src="../vm-images/closePanel.png" alt="X (Close panel)"></img><a title="Version pub: published in Poems under the title&#xA;                  'Autumn, 1922'">Version pub: published in Poems under the title
+                  'Autumn, 1922'</a></div>
             <div class="mssContent">
                
                
@@ -1152,7 +1024,7 @@
                
                <div class="head">
                   
-                  <div class="apparatus apparatus_1" data-app-id="apparatus_1">
+                  <div style="display:inline-block" class="apparatus apparatus_1" data-app-id="apparatus_1">
                      
                      <div class="reading t7989-1-10" data-reading-wits="t7989-1-10"><span class="textcontent">A Short History of Our Own Times.</span></div>
                      
@@ -1164,7 +1036,7 @@
                      
                      <div class="reading t7989-1-7 t7989-1-9" data-reading-wits="t7989-1-7 t7989-1-9"><span class="textcontent">IRELAND, AUTUMN, 1922</span></div>
                      
-                     <div class="reading pub" data-reading-wits="pub">
+                     <div style="display:inline-block" class="reading pub" data-reading-wits="pub">
                         <ins class="add rend-hand"><span class="textcontent">IRELAND</span></ins><span class="textcontent"> AUTUMN, 1922</span></div>
                      
                   </div>
@@ -1198,9 +1070,9 @@
                      <div class="line">
                         <div class="linenumber noDisplay">1</div>
                         
-                        <div class="apparatus apparatus_2" data-app-id="apparatus_2">
+                        <div style="display:inline-block" class="apparatus apparatus_2" data-app-id="apparatus_2">
                            
-                           <div class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">The sun burns
+                           <div style="display:inline-block" class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">The sun burns
                                  out,</span></div>
                            
                         </div>
@@ -1212,17 +1084,17 @@
                      <div class="line">
                         <div class="linenumber noDisplay">2</div>
                         
-                        <div class="apparatus apparatus_3" data-app-id="apparatus_3">
+                        <div style="display:inline-block" class="apparatus apparatus_3" data-app-id="apparatus_3">
                            
-                           <div class="reading t7989-1-8 pub" data-reading-wits="t7989-1-8 pub"><span class="textcontent">The world withers</span></div>
+                           <div style="display:inline-block" class="reading t7989-1-8 pub" data-reading-wits="t7989-1-8 pub"><span class="textcontent">The world withers</span></div>
                            
                            <div class="reading t7989-1-10 t7989-1-7 t7989-1-9" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-9"><span class="textcontent">The world withers,</span></div>
                            
                         </div>
                         
-                        <div class="apparatus apparatus_4" data-app-id="apparatus_4">
+                        <div style="display:inline-block" class="apparatus apparatus_4" data-app-id="apparatus_4">
                            
-                           <div class="reading t7989-1-8 t7989-1-7 t7989-1-9 pub" data-reading-wits="t7989-1-8 t7989-1-7 t7989-1-9 pub">
+                           <div style="display:inline-block" class="reading t7989-1-8 t7989-1-7 t7989-1-9 pub" data-reading-wits="t7989-1-8 t7989-1-7 t7989-1-9 pub">
                               
                               <div class="stanzabreak"></div>
                               
@@ -1233,33 +1105,21 @@
                      </div>
                   </div>
                   
-                  <div class="lineWrapper line_1_3" data-line-id="line_1_3">
-                     <div class="line">
-                        <div class="linenumber noDisplay">3</div>
-                        
-                        <div class="apparatus apparatus_5" data-app-id="apparatus_5">
-                           
-                           <div class="reading t7989-1-10" data-reading-wits="t7989-1-10"><span class="textcontent">Poets sing no more,</span></div>
-                           
-                        </div>
-                        
-                     </div>
-                  </div>
                   
                   <div class="lineWrapper line_1_4" data-line-id="line_1_4">
                      <div class="line">
                         <div class="linenumber noDisplay">4</div>
                         
-                        <div class="apparatus apparatus_6" data-app-id="apparatus_6">
+                        <div style="display:inline-block" class="apparatus apparatus_6" data-app-id="apparatus_6">
                            
-                           <div class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">And time grows
+                           <div style="display:inline-block" class="reading t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-7 t7989-1-8 t7989-1-9 pub"><span class="textcontent">And time grows
                                  afraid</span></div>
                            
                         </div>
                         
-                        <div class="apparatus apparatus_triumph" data-app-id="apparatus_triumph">
+                        <div style="display:inline-block" class="apparatus apparatus_triumph" data-app-id="apparatus_triumph">
                            
-                           <div class="reading t7989-1-10 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-8 t7989-1-9 pub"><span class="textcontent">of the triumph of time. </span><div class="noteicon">g
+                           <div style="display:inline-block" class="reading t7989-1-10 t7989-1-8 t7989-1-9 pub" data-reading-wits="t7989-1-10 t7989-1-8 t7989-1-9 pub"><span class="textcontent">of the triumph of time. </span><div class="noteicon">g
                                  <div class="note"><strong>Gloss note:</strong> 
                                     
                                     <p><span class="textcontent">The fifth of six allegorical triumphs in Petrarch's Trionfi is </span><span class="textcontent">the Triumph of Time</span><span class="textcontent">. Petrarch's Triumphs, often
@@ -1284,34 +1144,6 @@
                      </div>
                   </div>
                   
-                  <div class="lineWrapper line_1_5" data-line-id="line_1_5">
-                     <div class="line">
-                        <div class="linenumber noDisplay">5</div>
-                        
-                        <div class="apparatus apparatus_triumph" data-app-id="apparatus_triumph">
-                           
-                           <div class="reading t7989-1-7" data-reading-wits="t7989-1-7"><span class="textcontent">Of the triumph of time. </span><div class="noteicon">g
-                                 <div class="note"><strong>Gloss note:</strong> 
-                                    <p><span class="textcontent">The fifth of six allegorical triumphs in Petrarch's Trionfi is </span><span class="textcontent">the Triumph of Time</span><span class="textcontent">. Petrarch's Triumphs, often
-                                          depicted as Father Time in his chariot surrounded by symbolic devices
-                                          such as the scythe and hourglass, were frequently represented by Baroque
-                                          and Renaissance artists.</span></p>
-                                    
-                                    <p><span class="textcontent">MacGreevy, however, may be thinking of one or more of the paintings that
-                                          he saw during his visit to the Prado in Madrid in 1924. One is Goya's
-                                          Saturn [Time] Devouring His Son, and the other is Pieter Brueghel the
-                                          Elder's The Triumph of Death, which depicts a whole society visited by
-                                          death riding a pale horse (using imagery from the Apocalypse) against a
-                                          background of barren landscape and a darkened sky.</span></p>
-                                 </div>
-                              </div>
-                              
-                           </div>
-                           
-                        </div>
-                        
-                     </div>
-                  </div>
                   
                </div>
                
@@ -1436,7 +1268,7 @@
             </div>
          </div>
          <div class="draggable resizable ui-resizable panel imgPanel noDisplay" id="i7989-1-10">
-            <div title="Click to drag panel." class="viewerHandle handle_imgViewer"><span class="viewerHandleLt title_imgViewer"><a title="images/autumn_7989-1-10.jpg" style="color:black, text-decoration:none,cursor:move">images/autumn_7989-...</a></span><img class="viewerHandleRt closePanel" src="../vm-images/closePanel.png" title="Close panel" alt="X (Close panel)"></img></div>
+            <div title="Click to drag panel." class="viewerHandle handle_imgViewer"><span class="viewerHandleLt title_imgViewer">images/autumn_7989-1-10.jpg</span><img class="viewerHandleRt closePanel" src="../vm-images/closePanel.png" title="Close panel" alt="X (Close panel)"></img></div>
             <div class="viewerContent" id="content_imgViewer">
                <div class="panzoom-parent" style="overflow:visible">
                   <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/autumn_7989-1-10.jpg"></img></div>
@@ -1445,7 +1277,7 @@
             </div>
          </div>
          <div class="draggable resizable ui-resizable panel imgPanel noDisplay" id="i7989-1-8">
-            <div title="Click to drag panel." class="viewerHandle handle_imgViewer"><span class="viewerHandleLt title_imgViewer"><a title="images/autumn_7989-1-8.jpg" style="color:black, text-decoration:none,cursor:move">images/autumn_7989-...</a></span><img class="viewerHandleRt closePanel" src="../vm-images/closePanel.png" title="Close panel" alt="X (Close panel)"></img></div>
+            <div title="Click to drag panel." class="viewerHandle handle_imgViewer"><span class="viewerHandleLt title_imgViewer">images/autumn_7989-1-8.jpg</span><img class="viewerHandleRt closePanel" src="../vm-images/closePanel.png" title="Close panel" alt="X (Close panel)"></img></div>
             <div class="viewerContent" id="content_imgViewer">
                <div class="panzoom-parent" style="overflow:visible">
                   <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/autumn_7989-1-8.jpg"></img></div>
@@ -1454,7 +1286,7 @@
             </div>
          </div>
          <div class="draggable resizable ui-resizable panel imgPanel noDisplay" id="i7989-1-7">
-            <div title="Click to drag panel." class="viewerHandle handle_imgViewer"><span class="viewerHandleLt title_imgViewer"><a title="images/autumn_7989-1-7.jpg" style="color:black, text-decoration:none,cursor:move">images/autumn_7989-...</a></span><img class="viewerHandleRt closePanel" src="../vm-images/closePanel.png" title="Close panel" alt="X (Close panel)"></img></div>
+            <div title="Click to drag panel." class="viewerHandle handle_imgViewer"><span class="viewerHandleLt title_imgViewer">images/autumn_7989-1-7.jpg</span><img class="viewerHandleRt closePanel" src="../vm-images/closePanel.png" title="Close panel" alt="X (Close panel)"></img></div>
             <div class="viewerContent" id="content_imgViewer">
                <div class="panzoom-parent" style="overflow:visible">
                   <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/autumn_7989-1-7.jpg"></img></div>
@@ -1463,7 +1295,7 @@
             </div>
          </div>
          <div class="draggable resizable ui-resizable panel imgPanel noDisplay" id="i7989-1-9">
-            <div title="Click to drag panel." class="viewerHandle handle_imgViewer"><span class="viewerHandleLt title_imgViewer"><a title="images/autumn_7989-1-9.jpg" style="color:black, text-decoration:none,cursor:move">images/autumn_7989-...</a></span><img class="viewerHandleRt closePanel" src="../vm-images/closePanel.png" title="Close panel" alt="X (Close panel)"></img></div>
+            <div title="Click to drag panel." class="viewerHandle handle_imgViewer"><span class="viewerHandleLt title_imgViewer">images/autumn_7989-1-9.jpg</span><img class="viewerHandleRt closePanel" src="../vm-images/closePanel.png" title="Close panel" alt="X (Close panel)"></img></div>
             <div class="viewerContent" id="content_imgViewer">
                <div class="panzoom-parent" style="overflow:visible">
                   <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/autumn_7989-1-9.jpg"></img></div>
@@ -1472,7 +1304,7 @@
             </div>
          </div>
          <div class="draggable resizable ui-resizable panel imgPanel noDisplay" id="autumn-pub">
-            <div title="Click to drag panel." class="viewerHandle handle_imgViewer"><span class="viewerHandleLt title_imgViewer"><a title="images/autumn_pub.jpg" style="color:black, text-decoration:none,cursor:move">images/autumn_pub.j...</a></span><img class="viewerHandleRt closePanel" src="../vm-images/closePanel.png" title="Close panel" alt="X (Close panel)"></img></div>
+            <div title="Click to drag panel." class="viewerHandle handle_imgViewer"><span class="viewerHandleLt title_imgViewer">images/autumn_pub.jpg</span><img class="viewerHandleRt closePanel" src="../vm-images/closePanel.png" title="Close panel" alt="X (Close panel)"></img></div>
             <div class="viewerContent" id="content_imgViewer">
                <div class="panzoom-parent" style="overflow:visible">
                   <div class="panzoom"><img width="200" border="1px 2px, 2px, 1px solid #000;" alt="image" src="images/autumn_pub.jpg"></img></div>

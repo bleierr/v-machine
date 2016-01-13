@@ -8,8 +8,11 @@
 
    <!-- <xsl:strip-space elements="*" /> -->
    
+   <!-- IMPORT SETTINGS -->
    <xsl:include href="settings.xsl" /> 
    
+   
+   <!-- CREATE VARIABLE FOR EDITION TITLE -->
    <xsl:variable name="fullTitle">
       <xsl:choose>
          <xsl:when test="//tei:titleStmt/tei:title != ''">
@@ -28,11 +31,14 @@
       </xsl:call-template>
    </xsl:variable>
    
+   <!-- CREATE VARIABLE FOR WITNESSES/VERSIONS -->
    <xsl:variable name="witnesses" select="//tei:witness[@xml:id]" />
    
    <xsl:variable name="numWitnesses" select="count($witnesses)" />
+   
       
    <xsl:template match="/">
+      <!-- GENERATE BASIC HTML STRUCTURE -->
      <html lang="en">
          <xsl:call-template name="htmlHead" />
         <body> 
@@ -43,23 +49,30 @@
       </html>
    </xsl:template>
    
+   
+   <!-- **********START HTML HEAD TEMPLATES************ -->
+   
    <xsl:template name="htmlHead">
+      <!-- GENERATE HTML HEAD SECTION -->
       <head>
          <title>
             <xsl:value-of select="$truncatedTitle" />
             <xsl:text> -- The Versioning Machine 5.0</xsl:text>
          </title>
          <meta charset="utf-8"/>
-         <link rel="stylesheet" type="text/css">
-            <xsl:attribute name="href">
-               <xsl:value-of select="$cssInclude" />
-            </xsl:attribute>
-         </link>
+         
          
          <!-- JQuery and JQuery UI libraries references -->
          <link rel="stylesheet" type="text/css">
             <xsl:attribute name="href">
                <xsl:value-of select="$cssJQuery-UI" />
+            </xsl:attribute>
+         </link>
+         
+         <!-- include customn CSS -->
+         <link rel="stylesheet" type="text/css">
+            <xsl:attribute name="href">
+               <xsl:value-of select="$cssInclude" />
             </xsl:attribute>
          </link>
         
@@ -89,7 +102,7 @@
         
         
          <script type="text/javascript">
-            <!-- JS to set up global variable -->
+            <!-- JS to set up global variables -->
             <xsl:call-template name="jsGlobalSettings" />
             <xsl:call-template name="createTimelinePoints" />
             <xsl:call-template name="createTimelineDurations" />
@@ -104,6 +117,7 @@
       </head>
    </xsl:template>
    
+   <!-- JAVASCRIPT GLOBAL VARIABLES -->
    <xsl:template name="jsGlobalSettings">
       <!-- INITIAL SETUP: panel display, line numbers, etc. -->
       /*NOTES PANEL: To change the VM so that the notes panel page does not
@@ -117,18 +131,24 @@
       /**The number of version/witness panels to be displayed initially */
       INITIAL_DISPLAY_NUM_VERSIONS = <xsl:value-of select="$displayVersions"/>;
       
-      
       /** CRIT PANEL: Critical information should be encoded as tei:notesStmt/tei:note[@type='critIntro'] in the TEI files -->
       * To change the VM so that the critical information page does not
       * appear at the initial load, change the constant INITIAL_DISPLAY_CRIT_PANEL from "true" to "false" */
       INITIAL_DISPLAY_CRIT_PANEL = <xsl:value-of select="$displayCritInfo"/>;
       
-      
       /** To change the VM so that line numbers are hidden by default, change the constant INITIAL_DISPLAY_LINENUMBERS from
-      * "true" to "false" below */
+      * "true" to "false" */
       INITIAL_DISPLAY_LINENUMBERS = <xsl:value-of select="$displayLineNumbers"/>;
       
    </xsl:template>
+   
+   
+   <!-- **********END HTML HEAD TEMPLATES************ -->
+   
+   
+   
+   
+   <!-- **********START MAIN BANNER TEMPLATES************ -->
    
    <xsl:template name="mainBanner">
       <div id="mainBanner">
@@ -165,47 +185,52 @@
    <xsl:template name="mainControls">
       <nav id="mainControls">
          <ul>
-            <li>
-               <button id="selectVersion" class="topMenuButton dropdownButton">
-                  <xsl:value-of select="count($witnesses)"></xsl:value-of>
-                  <xsl:text> Total Versions</xsl:text>
-                  <img class="noDisplay" src="{$menuArrowUp}" alt="arrow up"/>
-                  <img src="{$menuArrowDown}" alt="arrow down"/>
-               </button>
-               <!-- RB: version dropdown -->
-               <ul>
-                  <xsl:attribute name="id">versionList</xsl:attribute>
-                  <xsl:attribute name="class">dropdown notVisible</xsl:attribute>
-                  <xsl:call-template name="versionDropdown"/>
-               </ul>
-            </li>
+            <!-- add version/witness dropdown menu -->
+            <xsl:call-template name="versionDropdown"/>
+            
+            <!-- add additional nav/control menu -->
             <xsl:call-template name="topMenu"/>
          </ul>
      </nav>
-      
    </xsl:template>
    
+   <!-- CREATE VERSION/WITNESS DROPDOWN MENU IN NAVIGATION BAR -->
    <xsl:template name="versionDropdown">
-     <xsl:for-each select="$witnesses">
-                 <li>
-                    <xsl:attribute name="data-panelid">
-                       <xsl:value-of select="@xml:id"></xsl:value-of>
-                    </xsl:attribute>
-                   <div>
-                      <xsl:attribute name="class">listText</xsl:attribute>
-                      
-                   <div>
-                         <xsl:value-of select="."></xsl:value-of>
-                   </div> 
-                   
-                    <div>
-                       <button>
-                          <xsl:text>OFF</xsl:text>
-                       </button>
-                    </div>
-                   </div>
-                </li>
-           </xsl:for-each>
+      
+      <li>
+      <button id="selectVersion" class="topMenuButton dropdownButton">
+         <xsl:value-of select="count($witnesses)"></xsl:value-of>
+         <xsl:text> Total Versions</xsl:text>
+         <img class="noDisplay" src="{$menuArrowUp}" alt="arrow up"/>
+         <img src="{$menuArrowDown}" alt="arrow down"/>
+      </button>
+         <ul>
+            <xsl:attribute name="id">versionList</xsl:attribute>
+            <xsl:attribute name="class">dropdown notVisible</xsl:attribute>
+            <xsl:for-each select="$witnesses">
+                     <li>
+                         <xsl:attribute name="data-panelid">
+                                    <xsl:value-of select="@xml:id"></xsl:value-of>
+                          </xsl:attribute>
+                     <div>
+                                   <xsl:attribute name="class">listText</xsl:attribute>
+                                   
+                                <div>
+                                   <xsl:variable name="witTitle"><xsl:value-of select="@xml:id"/><xsl:text>: </xsl:text><xsl:value-of select="."/></xsl:variable>
+                                   <a href="#" title="{$witTitle}"><xsl:text>Version </xsl:text><xsl:value-of select="@xml:id"/></a>
+                                </div> 
+                                
+                                 <div>
+                                    <button>
+                                       <xsl:text>OFF</xsl:text>
+                                    </button>
+                                 </div>
+                                </div>
+                             </li>
+                        </xsl:for-each>
+         </ul>
+         
+      </li>
   </xsl:template>
    
   
@@ -251,6 +276,13 @@
    </xsl:template>
    
    
+   <!-- **********END MAIN BANNER TEMPLATES************ -->
+   
+   
+   
+   
+   
+   <!-- **********START MANUSCRIPT/TRANSCRIPTION PANEL AREA TEMPLATES************ -->
    
    <xsl:template name="manuscriptArea">
       <div id="mssArea">
@@ -292,15 +324,11 @@
          <div class="panelBanner">
             <img class="closePanel" title="Close panel" src="{$closePanelButton}" alt="X (Close panel)" />
             <!-- To change the title of the panel banner of each version panel change the text below -->
-            <xsl:text>Version </xsl:text>
-            <xsl:choose>
-               <xsl:when test="string-length($witId)>20">
-                  <a title="{$witId}" style="color:black, text-decoration:none,cursor:move"><xsl:value-of select="substring($witId,0,20)"/><xsl:text>...</xsl:text></a>
-               </xsl:when>
-               <xsl:otherwise>
-                  <xsl:value-of select="$witId"></xsl:value-of>
-               </xsl:otherwise>
-            </xsl:choose>
+            
+            <xsl:variable name="witTitle"><xsl:text>Version </xsl:text><xsl:value-of select="$witId" />: <xsl:value-of select="//tei:witness[@xml:id = $witId]"/></xsl:variable>
+            
+            <a title="{$witTitle}"><xsl:value-of select="$witTitle"></xsl:value-of></a>
+            
          </div>
          <div class="mssContent">
             <xsl:if test="//tei:witDetail[@target = concat('#',$witId) and tei:media[@url]]">
@@ -311,11 +339,14 @@
             </xsl:if>
             <xsl:if test="//tei:note[@type='image']/tei:witDetail[@target = concat('#',$witId)]//tei:graphic[@url]">
                <!-- Add icons for facsimile images if encoded -->
+               
                <xsl:call-template name="facs-images">
                   <xsl:with-param name="witId" select="$witId"></xsl:with-param>
                </xsl:call-template>
             </xsl:if>
-            <xsl:apply-templates select="//tei:body" />
+            <xsl:apply-templates select="//tei:body">
+               <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+            </xsl:apply-templates>
             
          </div>
       </div>
@@ -330,7 +361,7 @@
          <div>
             <xsl:attribute name="class">audioPlayer <xsl:value-of select="translate(@wit, '#', '')" /></xsl:attribute>
             <xsl:attribute name="data-version"><xsl:value-of select="translate(@wit, '#', '')" /></xsl:attribute>
-            <!--<audio controls="controls">-->
+            <!-- create audio controls -->
             <audio controls="controls" preload="none">
                <xsl:attribute name="id">
                   <xsl:value-of select="$witId"/>
@@ -339,26 +370,16 @@
             <!--foreach source-->
                <xsl:for-each select="//tei:witDetail[@target = concat('#',$witId) and tei:media[@url]]/tei:media">
                
-               <!--<source>-->
-               <!--<xsl:attribute name="src"><xsl:value-of select="@url" /></xsl:attribute>
-                           <xsl:attribute name="type"><xsl:value-of select="@mimeType" /></xsl:attribute>-->
-               <!--  <span>
-                  <xsl:attribute name="class">audioSource</xsl:attribute>
-                  <xsl:attribute name="data-src"><xsl:value-of select="@url" /></xsl:attribute>
-                  <xsl:attribute name="data-type"><xsl:value-of select="@mimeType" /></xsl:attribute>
-                  -->
+              
                <source>
                   <xsl:attribute name="class">audiosource</xsl:attribute>
                   <xsl:attribute name="src"><xsl:value-of select="@url" /></xsl:attribute>
                   <xsl:attribute name="type"><xsl:value-of select="@mimeType" /></xsl:attribute>
                </source>
-                  <!-- </span>-->
-               <!--</source>-->
-               
+                 
             </xsl:for-each><!--foreach source-->
                <xsl:text>Your browser does not support the audio element.</xsl:text>
             </audio>
-            <!--</audio>-->
          </div>
          
       </xsl:for-each><!--foreach witness with media-->
@@ -367,7 +388,9 @@
    
    <xsl:template name="facs-images">
       <xsl:param name="witId" />
+      <error1></error1>
       <xsl:if test="not(//tei:pb[@facs])">
+         <error2></error2>
          <div data-version-id="{$witId}">
                <xsl:attribute name="class">facs-images <xsl:value-of select="$witId"></xsl:value-of></xsl:attribute>
                <xsl:for-each select="//tei:note[@type='image']/tei:witDetail[@target = concat('#',$witId)]//tei:graphic[@url]">
@@ -382,7 +405,10 @@
    </xsl:template>
    
    <xsl:template match="tei:body">
-      <xsl:apply-templates/>
+      <xsl:param name="witId"></xsl:param>
+      <xsl:apply-templates>
+         <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+      </xsl:apply-templates>
    </xsl:template>
    
    <xsl:template match="/tei:TEI/tei:teiHeader/tei:fileDesc">
@@ -686,7 +712,8 @@
       <span class="textcontent"><xsl:value-of select="."></xsl:value-of></span>
    </xsl:template>
    
-   <xsl:template match="tei:head|tei:epigraph|tei:div|tei:div1|tei:div2|tei:div3|tei:div4|tei:div5|tei:div6|tei:div7|tei:div8|tei:lg|tei:ab">
+   <xsl:template match="tei:head|tei:title|tei:epigraph|tei:div|tei:div1|tei:div2|tei:div3|tei:div4|tei:div5|tei:div6|tei:div7|tei:div8|tei:lg|tei:ab">
+      <xsl:param name="witId"></xsl:param>
      <div>
             <xsl:attribute name="class">
                <xsl:value-of select="name(.)" />
@@ -711,7 +738,9 @@
                </xsl:if>
             </xsl:attribute>
             
-            <xsl:apply-templates/>
+            <xsl:apply-templates>
+               <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+            </xsl:apply-templates>
             
          </div>
    </xsl:template>
@@ -762,6 +791,10 @@
    
    
    <xsl:template match="tei:l">
+      <xsl:param name="witId"></xsl:param>
+      
+      <xsl:if test="text()[normalize-space(.)!=''] or descendant::node()[contains(@wit, $witId)]or descendant::node()[@wit='#all']">
+      
       <xsl:variable name="lineId">
          <xsl:text>line_</xsl:text>
          <xsl:choose>
@@ -796,12 +829,16 @@
                <xsl:value-of select="@n" />
             </div>
          </xsl:if>
-            <xsl:apply-templates/>
+            <xsl:apply-templates>
+               <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+            </xsl:apply-templates>
          </div>
       </div>
+      </xsl:if>
    </xsl:template>
    
    <xsl:template match="tei:hi">
+      <xsl:param name="witId"></xsl:param>
       <span>
          <xsl:attribute name="class">
             <xsl:text>hi</xsl:text>
@@ -810,11 +847,14 @@
                <xsl:value-of select="@rend" />
             </xsl:if>
          </xsl:attribute>
-         <xsl:apply-templates />
+         <xsl:apply-templates >
+            <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+         </xsl:apply-templates>
       </span>
    </xsl:template>
    
    <xsl:template match="tei:del">
+      <xsl:param name="witId"></xsl:param>
       <del>
          <xsl:if test="@rend">
             <xsl:attribute name="class">
@@ -823,11 +863,14 @@
                <xsl:value-of select="@rend" />
             </xsl:attribute>
          </xsl:if>
-         <xsl:apply-templates />
+         <xsl:apply-templates >
+            <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+         </xsl:apply-templates>
       </del>
    </xsl:template>
    
    <xsl:template match="tei:add">
+      <xsl:param name="witId"></xsl:param>
       <ins>
             <xsl:attribute name="class">
                <xsl:value-of select="name(.)"></xsl:value-of>
@@ -843,13 +886,18 @@
                   <xsl:value-of select="@place" />
                </xsl:if>
             </xsl:attribute>
-         <xsl:apply-templates />
+         <xsl:apply-templates>
+            <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+         </xsl:apply-templates>
       </ins>
    </xsl:template>
    
    <xsl:template match="tei:unclear">
+      <xsl:param name="witId"></xsl:param>
       <span class="unclear">
-         <xsl:apply-templates />
+         <xsl:apply-templates>
+            <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+         </xsl:apply-templates>
       </span>
    </xsl:template>
    
@@ -858,7 +906,6 @@
    </xsl:template>
    
    <xsl:template match="tei:pb">
-         
       <hr>
             <xsl:attribute name="class">
                <xsl:text>pagebreak</xsl:text>
@@ -921,23 +968,28 @@
    
    
    <xsl:template match="tei:p|tei:u">
+      <xsl:param name="witId"></xsl:param>
       <!-- We cannot use the HTML <p>...</p> element here because of the
       different qualities of a TEI <p> and an HTML <p>. For example,
       TEI allows certain objects to be nested within a paragraph (like
       <table>...</table>) that HTML does not -->
       <xsl:choose>
          <xsl:when test="ancestor::tei:note or ancestor::tei:fileDesc or ancestor::tei:encodingDesc or tei:notesStmt">
-            <p><xsl:apply-templates /></p>
+            <p><xsl:apply-templates>
+               <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+            </xsl:apply-templates></p>
          </xsl:when>
          <xsl:otherwise>
             <div class="paragraph">
-               <xsl:apply-templates />
+               <xsl:apply-templates>
+                  <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+               </xsl:apply-templates>
             </div>
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
    
-   <!--DC-->
+   
    <xsl:template match="tei:milestone[@unit = 'stanza']">
       <div>
          <xsl:attribute name="class">
@@ -951,24 +1003,34 @@
    </xsl:template>
    
    <xsl:template match="tei:table">
+      <xsl:param name="witId"></xsl:param>
       <table class="mssTable">
-         <xsl:apply-templates />
+         <xsl:apply-templates>
+            <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+         </xsl:apply-templates>
       </table>
    </xsl:template>
    
    <xsl:template match="tei:table/tei:row">
+      <xsl:param name="witId"></xsl:param>
       <tr>
-         <xsl:apply-templates />
+         <xsl:apply-templates>
+            <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+         </xsl:apply-templates>
       </tr>
    </xsl:template>
    
    <xsl:template match="tei:table/tei:row/tei:cell">
+      <xsl:param name="witId"></xsl:param>
       <td>
-         <xsl:apply-templates />
+         <xsl:apply-templates>
+            <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+         </xsl:apply-templates>
       </td>
    </xsl:template>
    
    <xsl:template match="tei:rdgGrp">
+      <xsl:param name="witId"></xsl:param>
       <xsl:choose>
          <xsl:when test="count(tei:rdg) &gt; 1">
             <div>
@@ -979,7 +1041,9 @@
                <xsl:value-of select="tei:rdg[position() = 1]" />
                <div class="altRdg">
                   <xsl:for-each select="tei:rdg[position() &gt; 1]">
-                     <xsl:apply-templates />
+                     <xsl:apply-templates>
+                        <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+                     </xsl:apply-templates>
                      <xsl:if test="position() != last()">
                         <hr />
                      </xsl:if>
@@ -988,7 +1052,9 @@
             </div>
          </xsl:when>
          <xsl:otherwise>
-            <xsl:apply-templates />
+            <xsl:apply-templates>
+               <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+            </xsl:apply-templates>
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
@@ -1076,6 +1142,7 @@
    
    
    <xsl:template match="tei:app">
+      <xsl:param name="witId"></xsl:param>
       <xsl:variable name="selfNode" select="current()"></xsl:variable>
       <xsl:variable name="appId">
          <!-- loc ID for apparatus: important for highlighting of app and location based referencing -->
@@ -1091,6 +1158,14 @@
       </xsl:variable>
       
       <div>
+            <xsl:for-each select="*">
+               <xsl:if test="contains(@wit, $witId) or @wit='#all'">
+                  <xsl:attribute name="style">
+                     <xsl:text>display:inline-block</xsl:text>
+                  </xsl:attribute>
+               </xsl:if>
+            </xsl:for-each>
+         
          <xsl:attribute name="class">
             <xsl:text>apparatus </xsl:text>
             <xsl:value-of select="$appId"></xsl:value-of>
@@ -1098,7 +1173,9 @@
          <xsl:attribute name="data-app-id">
             <xsl:value-of select="$appId"></xsl:value-of>
          </xsl:attribute>
-         <xsl:apply-templates></xsl:apply-templates>
+         <xsl:apply-templates>
+            <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+         </xsl:apply-templates>
       </div>
    </xsl:template>
    
@@ -1125,6 +1202,7 @@
    </xsl:template>
    
    <xsl:template match="tei:rdg|tei:lem">
+      <xsl:param name="witId"></xsl:param>
       <xsl:variable name="readings">
          <xsl:choose>
             <xsl:when test="//tei:listWit[@xml:id]">
@@ -1155,6 +1233,12 @@
       </xsl:variable>
       <xsl:variable name="currentWitId" select="@wit"/>
       <div>
+         
+         <xsl:if test="contains(@wit, $witId) or @wit='#all'">
+            <xsl:attribute name="style">
+            <xsl:text>display:inline-block</xsl:text>
+            </xsl:attribute>
+         </xsl:if>
             <xsl:attribute name="class">reading <xsl:value-of select="$readings"></xsl:value-of>
                <xsl:if test="tei:timeline/tei:when">
                   <xsl:text> audioReading</xsl:text>
@@ -1192,12 +1276,15 @@
                   </xsl:attribute>
                </xsl:if>
             </xsl:if>
-            <xsl:apply-templates/>   
+            <xsl:apply-templates>
+               <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+            </xsl:apply-templates>   
          </div>
       
    </xsl:template>
  
    <xsl:template match="tei:choice">
+      <xsl:param name="witId"></xsl:param>
       <xsl:choose>
          <xsl:when test="tei:sic and tei:corr">
             <xsl:call-template name="displayChoice">
@@ -1228,7 +1315,7 @@
             </xsl:call-template>
          </xsl:when>
          <xsl:otherwise>
-            <xsl:apply-templates />
+            <xsl:apply-templates/>            
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
@@ -1266,8 +1353,9 @@
          <div title="Click to drag panel." class="viewerHandle handle_imgViewer">
             <span class="viewerHandleLt title_imgViewer">
                <xsl:choose>
-                  <xsl:when test="string-length($imgUrl)>20">
-                     <a title="{$imgUrl}" style="color:black, text-decoration:none,cursor:move"><xsl:value-of select="substring($imgUrl,0,20)"/><xsl:text>...</xsl:text></a>
+                  <xsl:when test="string-length($imgUrl)>30">
+                     <xsl:variable name="strgLength-29" select="string-length($imgUrl) - 29"></xsl:variable>
+                     <a title="{$imgUrl}"><xsl:text>...</xsl:text><xsl:value-of select="substring($imgUrl,$strgLength-29,30)"/></a>
                   </xsl:when>
                   <xsl:otherwise>
                      <xsl:value-of select="$imgUrl"></xsl:value-of>
@@ -1325,29 +1413,52 @@
             <xsl:value-of select="@target"/>
          </xsl:attribute>
          <xsl:value-of select="." />
-        
-         
       </a>
-      
    </xsl:template>
-  <xsl:template match="tei:closer">
-      <div class="closer">
-     
-         <xsl:apply-templates/>
-         
+  <xsl:template match="tei:closer|tei:closer|tei:salute|tei:signed">
+     <xsl:param name="witId"></xsl:param>
+      <div>    
+         <xsl:attribute name="class">
+            <xsl:value-of select="name(.)" />
+         </xsl:attribute>
+         <xsl:apply-templates>
+            <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+         </xsl:apply-templates>         
       </div>
-      
    </xsl:template>
    
    
    <xsl:template match="tei:head[(@type='section')]">
+      <xsl:param name="witId"></xsl:param>
       <div class="section">
          
-         <xsl:apply-templates/>
+         <xsl:apply-templates>
+            <xsl:with-param name="witId" select="$witId"></xsl:with-param>
+         </xsl:apply-templates>
          
       </div>
       
    </xsl:template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
    <xsl:template name="createTimelinePoints">   
