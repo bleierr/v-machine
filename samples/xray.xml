@@ -59,53 +59,46 @@
 
             <notesStmt>
 
-               <note type="image" anchored="true"> <p>The images are JPEGS derived from TIFFS scanned at 600 dpi.</p></note>
                 <note type="image" anchored="true">
-
-                    <witDetail wit="#pub1927" target="#pub1927" place="apparatus">First: this version appeared in <title rend="italic" level="j">transition</title> 7 (October 1927): 135. There is no image for this version. 
+                    <p>The images are JPEGS derived from TIFFS scanned at 600 dpi.</p></note>
+                <note type="image" anchored="true">
+                    <witDetail wit="#pub1927" target="#pub1927" place="apparatus">First: this
+                        version appeared in <title rend="italic" level="j">transition</title> 7
+                        (October 1927): 135. There is no image for this version. </witDetail>
+                    <witDetail wit="#va9" target="#va9" place="apparatus">Second: Reel 5, Frame 514 <figure>
+                            <graphic url="images/litmss-003138-0001.jpg"/>
+                        </figure>
                     </witDetail>
-                    <witDetail wit="#va9" target="#va9" place="apparatus">Second: Reel 5, Frame 514
-                        <figure><graphic
-                            url="images/litmss-003138-0001.jpg"/></figure>
+                    <witDetail wit="#va8" target="#va8" place="apparatus">Third: Reel 5, Frame 1130 <figure>
+                            <graphic url="images/litmss-003149-0001.jpg"/>
+                        </figure>
                     </witDetail>
-                    <witDetail wit="#va8" target="#va8" place="apparatus">Third: Reel 5, Frame 1130
-                        <figure><graphic
-                            url="images/litmss-003149-0001.jpg"/></figure>
+                    <witDetail wit="#va7" target="#va7" place="apparatus">Fourth: Reel 5, Frame 188 <figure>
+                            <graphic url="images/litmss-003281-0001.jpg"/>
+                        </figure>
                     </witDetail>
-                    
-                    <witDetail wit="#va7" target="#va7" place="apparatus">Fourth: Reel 5, Frame 188
-                       <figure> <graphic
-                            url="images/litmss-003281-0001.jpg"/></figure>
+                    <witDetail wit="#va6" target="#va6" place="apparatus">Fifth: Reel 5, Frame 23 <figure>
+                            <graphic url="images/litmss-003147-0001.jpg"/>
+                        </figure>
                     </witDetail>
-                    
-                    <witDetail wit="#va6" target="#va6" place="apparatus">Fifth: Reel 5, Frame 23
-                       <figure> <graphic
-                            url="images/litmss-003147-0001.jpg"/></figure>
-                        
+                    <witDetail wit="#va5" target="#va5" place="apparatus">Sixth: Reel 5, Frame 1132 <figure>
+                            <graphic url="images/litmss-003151-0001.jpg"/>
+                        </figure></witDetail>
+                    <witDetail wit="#va4" target="#va4" place="apparatus">Seventh: Reel 5, Frame
+                        1136 <figure>
+                            <graphic url="images/litmss-003155-0001.jpg"/>
+                        </figure></witDetail>
+                    <witDetail wit="#va3" target="#va3" place="apparatus">Eighth: Reel 5, Frame 1131 <figure>
+                            <graphic url="images/litmss-003150-0001.jpg"/>
+                        </figure></witDetail>
+                    <witDetail wit="#va2" target="#va2" place="apparatus">Ninth: Reel 5, Frame 1134 <figure>
+                            <graphic url="images/litmss-003153-0001.jpg"/>
+                        </figure>
                     </witDetail>
-                    <witDetail wit="#va5" target="#va5" place="apparatus">Sixth: Reel 5, Frame 1132
-                       <figure> <graphic
-                            url="images/litmss-003151-0001.jpg"/></figure></witDetail>
-                    
-                    
-                    
-                    <witDetail wit="#va4" target="#va4" place="apparatus">Seventh: Reel 5, Frame 1136
-                        <figure><graphic
-                            url="images/litmss-003155-0001.jpg"/></figure></witDetail>
-                    
-                    
-                    <witDetail wit="#va3" target="#va3" place="apparatus">Eighth: Reel 5, Frame 1131
-                       <figure> <graphic
-                            url="images/litmss-003150-0001.jpg"/></figure></witDetail>
-                    
-                    <witDetail wit="#va2" target="#va2" place="apparatus">Ninth: Reel 5, Frame 1134
-                       <figure> <graphic
-                            url="images/litmss-003153-0001.jpg"/></figure>
+                    <witDetail wit="#va1" target="#va1" place="apparatus">Tenth: Reel 5, Frame 1133 <figure>
+                            <graphic url="images/litmss-003152-0001.jpg"/>
+                        </figure>
                     </witDetail>
-                    <witDetail wit="#va1" target="#va1" place="apparatus">Tenth: Reel 5, Frame 1133
-                       <figure> <graphic
-                            url="images/litmss-003152-0001.jpg"/></figure>
-                    </witDetail>                   
                 </note>
 
 

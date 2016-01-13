@@ -59,19 +59,16 @@
 
                 <note type="image" anchored="true">
                     <witDetail wit="#va1" target="#va1" place="apparatus"> Reel 5, Frame 180
-                        <graphic url="images/litmss-003272-0001.jpg"/>
+                            <graphic url="images/litmss-003272-0001.jpg"/>
                         <graphic url="images/litmss-003274-0001.jpg"/>
                     </witDetail>
-                    <witDetail wit="#va2" target="#va2" place="apparatus">Reel 5, Frame
-                        181<graphic
+                    <witDetail wit="#va2" target="#va2" place="apparatus">Reel 5, Frame 181<graphic
                             url="images/litmss-003275-0001.jpg"/>
                     </witDetail>
-                    <witDetail wit="#va3" target="#va3" place="apparatus">Reel 5, Frame
-                        182<graphic
+                    <witDetail wit="#va3" target="#va3" place="apparatus">Reel 5, Frame 182<graphic
                             url="images/litmss-003277-0001.jpg"/>
                     </witDetail>
-                    <witDetail wit="#va4" target="#va4" place="apparatus">Reel 5, Frame
-                        183<graphic
+                    <witDetail wit="#va4" target="#va4" place="apparatus">Reel 5, Frame 183<graphic
                             url="images/litmss-003276-0001.jpg"/>
                     </witDetail>
                 </note>
@@ -120,7 +117,7 @@
         <front>
 
             <div>
-                
+
                 <listWit xml:id="all">
 
                     <witness xml:id="va1">First </witness>

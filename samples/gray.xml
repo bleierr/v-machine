@@ -8,7 +8,7 @@
       <fileDesc>
          <titleStmt>
             <title>The Neak Luong Exerpts from <emph rend="italics">Swimming to Cambodia</emph>, by
-               <persName>Spalding Gray</persName>
+                  <persName>Spalding Gray</persName>
             </title>
             <respStmt>
                <resp>Text transcribed and edited by</resp>
@@ -19,40 +19,42 @@
                <persName>Daniel Carter</persName>
             </respStmt>
          </titleStmt>
-         
+
          <editionStmt>
-            <p>Published by James Sitar, with permission from the Estate of Spalding Gray. Recordings 
-               and notebooks reproduced from the Harry Ransom Center, Universthoughity of Texas at Austin. Content 
-               copyright 2014, all rights reserved. Special thanks go to Tanya Clement, Quinn Stewart, Erin Donohue, 
-               and Daniel Carter for their advice and assistance with this project. </p>
-            
+            <p>Published by James Sitar, with permission from the Estate of Spalding Gray.
+               Recordings and notebooks reproduced from the Harry Ransom Center, Universthoughity of
+               Texas at Austin. Content copyright 2014, all rights reserved. Special thanks go to
+               Tanya Clement, Quinn Stewart, Erin Donohue, and Daniel Carter for their advice and
+               assistance with this project. </p>
+
          </editionStmt>
-         
+
          <publicationStmt>
             <publisher>James Sitar</publisher>
-            
+
             <address>
                     <addrLine>Adjunct Assistant Professor, Loyola University Chicago.</addrLine>
                     <addrLine>James(dot)Sitar(at)gmail(dot)com</addrLine>
                 </address>
-            
+
             <availability status="unknown">
-              
-               <p>These excerpts from Spalding Gray's performance notebooks and audio recordings of 
-                  <emph rend="italics">Swimming to Cambodia</emph> 
-                  are printed here with the support of the Harry Ransom Center, University of Texas 
-                  at Austin. Permission to reproduce images of Gray's notebooks has also been generously granted 
-                  by the library.</p>
-               <p>These materials are available from this site for demonstration purposes only.  The intellectual 
-                  property of <name>Spalding Gray</name> is copyright (c) Estate of Spalding Gray. 
-                  All transcriptions, annotations, and editorial commentary are copyright (c) James Sitar. These materials may 
-                  not be reproduced without explicit permission from the copyright holders. For copyright 
-                  information, please contact James Sitar.</p>
-               
+
+               <p>These excerpts from Spalding Gray's performance notebooks and audio recordings of
+                     <emph rend="italics">Swimming to Cambodia</emph> are printed here with the
+                  support of the Harry Ransom Center, University of Texas at Austin. Permission to
+                  reproduce images of Gray's notebooks has also been generously granted by the
+                  library.</p>
+               <p>These materials are available from this site for demonstration purposes only. The
+                  intellectual property of <name>Spalding Gray</name> is copyright (c) Estate of
+                  Spalding Gray. All transcriptions, annotations, and editorial commentary are
+                  copyright (c) James Sitar. These materials may not be reproduced without explicit
+                  permission from the copyright holders. For copyright information, please contact
+                  James Sitar.</p>
+
             </availability>
-            
+
          </publicationStmt>
-         
+
          <notesStmt>
             <note type="image" anchored="true">
                <witDetail wit="#nb1" target="#nb1" place="apparatus"> Notebook 1 <graphic
@@ -111,8 +113,8 @@
             <p/>
          </samplingDecl>
          <editorialDecl>
-            <p></p>
-            </editorialDecl>
+            <p/>
+         </editorialDecl>
 
 
 
