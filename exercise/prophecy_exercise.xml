@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="src/vmachine.xsl" type="text/xsl" ?>
+<?xml-model href="schema/vmachine.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="schema/vmachine.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Prophecy of Merlin</title>
+                <author>Anonymous</author>
+                <respStmt>
+                    <resp>Text Encoding by </resp>
+                    <name><!-- enter your name here --></name>
+                </respStmt>
+                
+            </titleStmt>
+            <publicationStmt>
+                <publisher><!-- enter your name here --></publisher>
+                <availability>
+                    <p>This poem is being made available for demonstration purposes only. It may not
+                        be reproduced without. For further information, please contact Susan
+                        Schreibman at <!-- enter your email address her --></p>
+                </availability>
+            </publicationStmt>
+            <notesStmt>
+                <note anchored="true">There are three MS versions of this poem transcribed by James
+                    M. Dean and made publicly available through
+                    http://www.lib.rochester.edu/camelot/. This version is based on his
+                    transcriptions. </note>
+            </notesStmt>
+            <sourceDesc>
+                <p>Diplomatic editions of this text are based on transcriptions created by James M
+                    Dean for The Camelot Project at the University of Rochester.
+                    http://www.lib.rochester.edu/camelot/..</p>
+                <p>Versions are from: Trinity College Dublin MS 516 fol. 115r; Oxford University,
+                    Bodleian Library MS 6943 fol. 78r; Magdalene College. Cambridge MS 1236 fol.
+                    91r.</p>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <editorialDecl>
+                <p>Test document for versioning machine project. Marked-up collation of The Prophecy
+                    of Merlin.</p>
+                <p>DTD constructed from TEI poetry base with tagsets for linking, figures, analysis,
+                    transcr, textcrit.</p>
+            </editorialDecl>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
+    </teiHeader>
+    <text>
+        <front>
+            <div>
+                <listWit>
+                    <witness xml:id="dublin">The Prophecy of Merlin</witness>
+                    <witness xml:id="oxford">The Prophecy of Merlin</witness>
+                    <witness xml:id="cambridge">The Prophecy of Merlin</witness>
+                </listWit>
+            </div>
+        </front>
+        <body>
+            <head>
+                <title>
+                    <app>
+                        <rdg wit="<!-- add witness(es) -->">The Prophecy of Merlin</rdg>
+                    </app>
+                </title>
+            </head>
+            <lg n="1">
+                <l n="1">
+                    <app>
+                        <rdg wit="<!-- add witness(es) -->">When feythe fayleth in prestys sawys, 
+                            <!-- add a gloss note here -->
+                        </rdg>
+                    </app>
+                </l>
+                <l n="2">
+                    <app>
+                        <rdg wit="<!-- add witness(es) -->">When lordes wille is londes law, 
+                        </rdg>
+                        <rdg wit="<!-- add witness(es) -->">Whane lordis wol leefe theire olde lawes,                            
+                        </rdg>
+                        <rdg wit="<!-- add witness(es) -->">And lordys wyll be londys lawys,
+                        </rdg>
+                    </app>
+                </l>
+                <l n="3">
+                    <app>
+                        <rdg wit="<!-- add witness(es) -->">Prestes wylle trechery, and gyle hold soth saw,
+                            <!-- add a critical note here -->
+                        </rdg>
+                        <rdg wit="<!-- add witness(es) -->">And preestis beon varyinge in theire sawes, 
+                        </rdg>
+                    </app>
+                </l>
+                
+            </lg>
+            
+            
+        </body>
+    </text>
+</TEI>
